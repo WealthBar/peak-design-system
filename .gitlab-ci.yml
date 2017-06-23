@@ -1,0 +1,44 @@
+image: "node:7.6.0"
+
+variables:
+  NODE_ENV: test
+
+# Cache gems and javascript modules in between builds
+cache:
+  untracked: true
+  key: "packages-2017-04-10"
+  paths:
+  - node_modules/
+
+.dokku_deploy: &dokku_deploy
+  - eval $(ssh-agent -s)
+  - ssh-add <(echo "$DOKKU_SSH_KEY")
+  - mkdir -p ~/.ssh
+  # For Docker builds disable host key checking. Be aware that by adding that
+  # you are suspectible to man-in-the-middle attacks.
+  # WARNING: Use this only with the Docker executor, if you use it with shell
+  # you will overwrite your user's SSH config.
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+test:
+  stage: test
+  services:
+  script:
+  - npm
+  - npm run ci
+  artifacts:
+    paths:
+      - coverage/
+    expire_in: 1 week
+  tags:
+    - node
+
+# To deplay to Dokku uncomment this and add app name
+# deploy:
+#   stage: deploy
+#   environment: production
+#   before_script: *dokku_deploy
+#   script:
+#   - git push dokku@dokku.wealth.bar:<app name> $CI_COMMIT_SHA:master
+#   only:
+#     - master
