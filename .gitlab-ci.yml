@@ -24,7 +24,7 @@ test:
   stage: test
   services:
   script:
-  - npm
+  - npm install
   - npm run ci
   artifacts:
     paths:
