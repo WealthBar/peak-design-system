@@ -29,11 +29,14 @@ module.exports = {
       'js': 'never',
       'vue': 'never'
     }],
-    // allow optionalDependencies
-    'import/no-extraneous-dependencies': ['error', {
-      'optionalDependencies': ['test/unit/index.js']
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": true, "optionalDependencies": true, "peerDependencies": true
     }],
+    "no-param-reassign": ["error", { "props": false }],
+    "consistent-return": 0,
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    // allow console during development
+    'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
   }
 }
