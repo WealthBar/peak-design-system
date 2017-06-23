@@ -1,19 +1,27 @@
 'use strict';
 
-var http = require("http"),
-  pathUtils = require("path"),
-  express = require("express"),
-  app = express(),
-  PORT = process.env.PORT || 5001,
-  appDir = pathUtils.resolve(__dirname, "../dist");
+const http = require("http");
+const path = require("path");
+const express = require("express");
+const app = express();
+const PORT = process.env.PORT || 5001;
+const appDir = path.resolve(__dirname, "../dist");
+const history = require('connect-history-api-fallback');
 
 app.use(express.static(appDir));
 
-app.get("*", function (req, res) {
-  res.sendfile(pathUtils.resolve(appDir, "index.html"));
+app.use(express.static(path.resolve(appDir, 'public')));
+
+app.use(history({
+  verbose: true,
+  index: path.resolve(appDir, 'index.html'),
+}));
+
+app.get('*', function (req, res) {
+  res.sendfile(path.resolve(appDir, 'index.html'));
 });
 
 http.createServer(app).listen(PORT, function () {
-  console.log("Express server listening on port " + PORT);
-  console.log("http://localhost:" + PORT);
+  console.log('Express server listening on port ' + PORT);
+  console.log('http://localhost:' + PORT);
 });
