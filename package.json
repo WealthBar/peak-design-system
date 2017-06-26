@@ -9,8 +9,8 @@
     "start": "node build/prod-server.js",
     "build": "node build/build.js",
     "lint": "eslint src/.",
-    "test": "NODE_ENV=test wprun -c build/webpack.base.conf.js -r ./util/test_helper.js src/**/*.test.js | tap-spec",
-    "test:watch": "NODE_ENV=test wprun -w -c build/webpack.base.conf.js -r ./util/test_helper.js src/**/*.test.js | tap-spec",
+    "test": "NODE_ENV=test wprun -c build/webpack.base.conf.js -r ./util/test_helper.js 'src/**/*.test.js' | tap-spec",
+    "test:watch": "NODE_ENV=test wprun -w -c build/webpack.base.conf.js -r ./util/test_helper.js 'src/**/*.test.js' | tap-spec",
     "test:coverage": "nyc -r text-summary -r html npm test",
     "coverage": "npm run test:coverage; open coverage/index.html",
     "ci": "npm run lint && npm run test:coverage"
