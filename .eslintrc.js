@@ -1,6 +1,8 @@
 // http://eslint.org/docs/user-guide/configuring
 
 module.exports = {
+  // babel parser for dynamic imports: import('./whatever')
+  parser: 'babel-eslint',
   root: true,
   env: {
     browser: true,
