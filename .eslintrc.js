@@ -30,6 +30,7 @@ module.exports = {
     "import/no-extraneous-dependencies": ["error", {
       "devDependencies": true, "optionalDependencies": true, "peerDependencies": true
     }],
+    "import/no-duplicates": 0,
     "no-param-reassign": ["error", { "props": false }],
     "consistent-return": 0,
     // allow debugger during development
