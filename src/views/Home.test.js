@@ -1,5 +1,5 @@
 import { mount } from 'avoriaz';
-import test from 'tape';
+import test from '@/lib/test';
 import Home from './Home';
 
 test('renders root element', (t) => {
@@ -8,4 +8,3 @@ test('renders root element', (t) => {
   t.equal(element.length, 1, 'should have exactly one root element');
   t.end();
 });
-

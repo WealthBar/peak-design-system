@@ -1,4 +1,4 @@
-import Login from './sessions/login';
-import Logout from './sessions/logout';
+import login from './sessions/login';
+import logout from './sessions/logout';
 
-export { Login, Logout };
+export { login, logout };

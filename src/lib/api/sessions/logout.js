@@ -1,6 +1,5 @@
 export default {
-  execute(loginData) {
+  async execute(loginData) {
     console.log(loginData);
-    // do something here
   },
 };

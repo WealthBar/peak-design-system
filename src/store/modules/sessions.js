@@ -1,6 +1,4 @@
-import { Login, Logout } from '@/lib/api';
-
-export const dependencies = { Login, Logout };
+import { login, logout } from '@/lib/api';
 
 export default {
   state: {
@@ -25,12 +23,12 @@ export default {
 
   actions: {
     async login({ commit }, loginData) {
-      const user = await Login.execute(loginData);
+      const user = await login.execute(loginData);
       commit('setCurrentUser', user);
     },
 
     async logout({ commit }) {
-      await Logout.execute();
+      await logout.execute();
       commit('setCurrentUser', null);
     },
   },
