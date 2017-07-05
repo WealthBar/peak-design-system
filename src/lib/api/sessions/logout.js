@@ -1,5 +1,5 @@
 export default {
-  async execute(loginData) {
-    console.log(loginData);
+  async execute() {
+    console.warn('Logout not yet implemented.');
   },
 };

@@ -1,6 +1,5 @@
 export default {
-  execute(loginData) {
-    console.log(loginData);
-    // do something here
+  async execute(loginData) {
+    console.warn(`Login not yet implemented. Received: ${loginData}`);
   },
 };
