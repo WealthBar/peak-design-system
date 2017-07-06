@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="login">
     <h3>Please Login</h3>
     <form @submit="submit($event)">
       <input type="email" placeholder="Email" v-model="email">
@@ -23,7 +23,6 @@ export default {
   methods: {
     submit(event) {
       event.preventDefault();
-      console.log(`login for: ${this.email}:${this.password}`);
       this.$store.dispatch('login', { email: this.email, password: this.password });
     },
   },

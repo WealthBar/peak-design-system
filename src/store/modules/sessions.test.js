@@ -1,5 +1,5 @@
 import Vuex from 'vuex';
-import test from '@/lib/test';
+import test from 'tape';
 import { login, logout } from '@/lib/api';
 import sessions from './sessions';
 

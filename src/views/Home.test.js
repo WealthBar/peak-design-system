@@ -1,5 +1,5 @@
 import { mount } from 'avoriaz';
-import test from '@/lib/test';
+import test from 'tape';
 import Home from './Home';
 
 test('renders root element', (t) => {

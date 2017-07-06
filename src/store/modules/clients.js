@@ -15,12 +15,8 @@ export default {
 
   actions: {
     async fetchClients({ commit }) {
-      try {
-        const clients = await fetchClients.execute();
-        commit('updateClients', clients);
-      } catch (err) {
-        throw err;
-      }
+      const clients = await fetchClients.execute();
+      commit('updateClients', clients);
     },
   },
 };

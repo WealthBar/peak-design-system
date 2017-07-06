@@ -1,5 +1,5 @@
 import Vuex from 'vuex';
-import test from '@/lib/test';
+import test from 'tape';
 import { fetchClients } from '@/lib/api';
 import clients from './clients';
 
