@@ -1,15 +1,27 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import { sessions } from './modules';
+import * as modules from './modules';
 
 Vue.use(Vuex);
 
 const state = {};
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state,
-  modules: {
-    sessions,
-  },
+  modules,
 });
+
+// Handle hot module reloading of store modules
+/* istanbul ignore next: webpack hmr block */
+if (module.hot) {
+  module.hot.accept(['./modules'], () => {
+    const newModules = require('./modules'); // eslint-disable-line global-require
+    console.log(store.state);
+    store.hotUpdate({
+      newModules,
+    });
+  });
+}
+
+export default store;

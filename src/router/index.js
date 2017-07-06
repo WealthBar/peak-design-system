@@ -1,22 +1,33 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import { Home, NotFound } from '@/views';
+import * as views from '@/views';
+import NotFound from '@/views/NotFound';
+import installPlugins from './plugins';
 
-/* istanbul ignore next: installing Vue plugin */
 Vue.use(Router);
 
-export default new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home,
-    },
-    {
-      path: '*',
-      name: '404',
-      component: NotFound,
-    },
-  ],
+const routes = [];
+
+Object.values(views).forEach((view) => {
+  routes.push({
+    path: view.path,
+    name: view.name,
+    meta: view.meta,
+    component: view,
+  });
 });
+
+routes.push({
+  path: '*',
+  name: 'Not Found',
+  component: NotFound,
+});
+
+const router = new Router({
+  mode: 'history',
+  routes,
+});
+
+installPlugins(router);
+
+export default router;

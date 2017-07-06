@@ -8,6 +8,7 @@
 <script>
 export default {
   name: 'app',
+  mete: {},
 };
 </script>
 

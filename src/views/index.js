@@ -1,4 +1,4 @@
 import Home from './Home';
-import NotFound from './NotFound';
+import Clients from './Clients';
 
-export { Home, NotFound };
+export { Home, Clients };

@@ -10,20 +10,27 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'login',
 
+  computed: {
+    ...mapGetters(['isLoggedIn', 'loginError']),
+  },
+
   data() {
     return {
-      email: 'test@wealthbar.test',
+      email: 'wealthbar@wealthbar.test',
       password: '',
     };
   },
 
   methods: {
-    submit(event) {
+    async submit(event) {
       event.preventDefault();
-      this.$store.dispatch('login', { email: this.email, password: this.password });
+      await this.$store.dispatch('login', { email: this.email, password: this.password });
+      if (this.isLoggedIn) { this.$router.push('/clients'); }
     },
   },
 };

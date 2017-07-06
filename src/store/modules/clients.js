@@ -5,11 +5,19 @@ export default {
     clients: [],
   },
 
-  getters: { },
+  getters: {
+    allClients(state) {
+      return state.clients;
+    },
+  },
 
   mutations: {
     updateClients(state, clients) {
       state.clients = clients;
+    },
+
+    addClient(state, client) {
+      state.clients.push(client);
     },
   },
 
@@ -17,6 +25,10 @@ export default {
     async fetchClients({ commit }) {
       const clients = await fetchClients.execute();
       commit('updateClients', clients);
+    },
+
+    async addClient({ commit }, { email, name }) {
+      commit('addClient', { email, name });
     },
   },
 };

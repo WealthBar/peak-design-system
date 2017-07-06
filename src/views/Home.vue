@@ -7,12 +7,19 @@
 
 <script>
 import { Login } from '@/lib/components';
+import store from '@/store';
 
 export default {
-  name: 'home',
+  path: '/',
+  name: 'Home',
+  beforeRouteEnter(to, from, next) {
+    if (store.getters.isLoggedIn) return next('/clients');
+    next();
+  },
+
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      msg: 'Something else',
     };
   },
   components: { Login },
