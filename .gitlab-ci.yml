@@ -33,12 +33,12 @@ test:
   tags:
     - node
 
-# To deplay to Dokku uncomment this and add app name
+# To deploy to Dokku uncomment this and add app name
 # deploy:
 #   stage: deploy
 #   environment: production
 #   before_script: *dokku_deploy
 #   script:
-#   - git push dokku@dokku.wealth.bar:<app name> $CI_COMMIT_SHA:master
+#   - git push dokku@dev-dokku.wealth.bar:<app name> $CI_COMMIT_SHA:master
 #   only:
 #     - master
