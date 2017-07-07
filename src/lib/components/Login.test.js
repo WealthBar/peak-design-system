@@ -1,5 +1,7 @@
 import { mount } from 'avoriaz';
 import test from 'tape';
+import store from '@/store';
+import router from '@/router';
 import Login from './Login';
 
 test('renders root element', (t) => {
@@ -21,16 +23,18 @@ test('Form handles calls submit handler', (t) => {
   t.end();
 });
 
-test('Methods: submit()', (t) => {
-  const $store = { dispatch: t.spy() };
+test('Methods: submit()', async (t) => {
+  t.stub(store, 'getters').value({ isLoggedIn: true });
+  t.stub(store, 'dispatch');
+  t.stub(router, 'push');
   const event = { preventDefault: t.spy() };
   const data = { email: 'test@wb.test', password: 'password' };
-  const wrapper = mount(Login, { data, globals: { $store } });
+  const wrapper = mount(Login, { data });
 
-  wrapper.vm.submit(event);
+  await wrapper.vm.submit(event);
 
   t.assert(event.preventDefault.called, 'event.preventDefault() called');
-  t.assert($store.dispatch.calledWithMatch('login'), 'login action dispatched.');
-  t.deepEqual($store.dispatch.args[0][1], data, 'login action displatched with loginData payload.');
+  t.assert(store.dispatch.calledWithMatch('login', t.sinon.match(data)), 'login action dispatched.');
+  t.assert(router.push.calledWith('/clients'), 'router push called with /clients route');
   t.end();
 });

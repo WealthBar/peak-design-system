@@ -1,4 +1,4 @@
-import { fetchClients } from '@/lib/api';
+import { fetchClients, createClient } from '@/lib/api';
 
 export default {
   state: {
@@ -28,7 +28,8 @@ export default {
     },
 
     async addClient({ commit }, { email, name }) {
-      commit('addClient', { email, name });
+      const result = await createClient.execute({ email, name });
+      commit('addClient', result);
     },
   },
 };

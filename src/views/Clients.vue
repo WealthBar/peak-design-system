@@ -15,7 +15,8 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+/* eslint-disable */
+import { mapGetters, mapActions } from '@/store';
 
 export default {
   name: 'Clients',
@@ -23,7 +24,7 @@ export default {
   meta: { requiresAuth: true },
 
   beforeMount() {
-    this.$store.dispatch('fetchClients');
+    this.fetchClients();
   },
 
   computed: {
@@ -38,9 +39,10 @@ export default {
   },
 
   methods: {
+    ...mapActions(['fetchClients', 'addClient']),
     async submit(event) {
       event.preventDefault();
-      await this.$store.dispatch('addClient', { name: this.name, email: this.email });
+      await this.addClient({ name: this.name, email: this.email });
       this.name = '';
       this.email = '';
     },

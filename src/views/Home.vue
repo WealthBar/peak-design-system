@@ -7,14 +7,18 @@
 
 <script>
 import { Login } from '@/lib/components';
-import store from '@/store';
+import { mapGetters } from '@/store';
 
 export default {
   path: '/',
   name: 'Home',
   beforeRouteEnter(to, from, next) {
-    if (store.getters.isLoggedIn) return next('/clients');
+    if (this.isLoggedIn) return next('/clients');
     next();
+  },
+
+  computed: {
+    ...mapGetters(['isLoggedIn']),
   },
 
   data() {

@@ -33,6 +33,7 @@ module.exports = {
     "import/no-duplicates": 0,
     "no-param-reassign": ["error", { "props": false }],
     "consistent-return": 0,
+    "no-shadow": ["error", { allow: ["t"] }],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     // allow console during development

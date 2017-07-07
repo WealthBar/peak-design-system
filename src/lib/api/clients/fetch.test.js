@@ -1,7 +1,7 @@
 import test from 'tape';
 import fetch from './fetch';
 
-test('test', (t) => {
-  t.assert(fetch.execute());
+test.skip('lib/api/clients/fetch', async (t) => {
+  await fetch.execute();
   t.end();
 });
