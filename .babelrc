@@ -7,8 +7,7 @@
   "env": {
     "test": {
       "presets": ["env", "stage-2"],
-      "plugins": [["istanbul", { "useInlineSourceMaps": false }]],
-      "sourceMaps": "inline"
+      "plugins": [["istanbul", { "useInlineSourceMaps": false }]]
     }
   }
 }

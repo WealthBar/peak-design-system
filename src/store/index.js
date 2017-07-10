@@ -25,4 +25,5 @@ if (module.hot) {
 }
 
 export { mapState, mapGetters, mapMutations, mapActions } from './helpers';
+
 export default store;

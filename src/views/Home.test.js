@@ -1,5 +1,4 @@
 import { mount } from 'avoriaz';
-// import store from '@/store';
 import test from 'tape';
 import Home from './Home';
 
@@ -10,16 +9,11 @@ test('views/Home renders root element', (t) => {
   t.end();
 });
 
-test('views/Home redirects to /clients when logged in', (t) => {
-  const route = {};
-  const next = t.spy();
+test('views/Home meta.redirect', (t) => {
+  let result = Home.meta.redirect({ isLoggedIn: false });
+  t.equal(result, undefined, 'Returns nothing if not logged in.');
 
-  Home.isLoggedIn = false;
-  Home.beforeRouteEnter(route, route, next);
-  t.assert(next.calledWithExactly(), 'beforeRouteEnter calls next when not logged in');
-
-  Home.isLoggedIn = true;
-  Home.beforeRouteEnter(route, route, next);
-  t.assert(next.calledWithExactly('/clients'), 'beforeRouteEnter calls next with /clients route when logged in');
+  result = Home.meta.redirect({ isLoggedIn: true });
+  t.equals(result, '/clients', 'returns /clients path if logged in.');
   t.end();
 });

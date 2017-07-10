@@ -12,9 +12,10 @@ import { mapGetters } from '@/store';
 export default {
   path: '/',
   name: 'Home',
-  beforeRouteEnter(to, from, next) {
-    if (this.isLoggedIn) return next('/clients');
-    next();
+  meta: {
+    redirect(vm) {
+      if (vm.isLoggedIn) return '/clients';
+    },
   },
 
   computed: {
@@ -26,6 +27,10 @@ export default {
       msg: 'Something else',
     };
   },
+
+  methods: {
+  },
+
   components: { Login },
 };
 </script>
