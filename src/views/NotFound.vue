@@ -8,6 +8,10 @@
 
 <script>
 export default {
+  route: {
+    path: '*',
+  },
+
   head: {
     title: 404,
   },

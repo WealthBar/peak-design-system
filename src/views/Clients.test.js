@@ -2,7 +2,7 @@ import { mount } from 'avoriaz';
 // import store from '@/store';
 import test from 'tape';
 // import clientData from '@/lib/api/clients/fetch.data';
-import Clients from './Clients';
+import Clients from './clients';
 
 test('views/Clients renders root element', (t) => {
   const wrapper = mount(Clients);

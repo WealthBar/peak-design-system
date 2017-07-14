@@ -10,25 +10,16 @@ import { Login } from '@/lib/components';
 import { mapGetters } from '@/store';
 
 export default {
-  path: '/',
-  name: 'Home',
-  meta: {
-    redirect(vm) {
-      if (vm.isLoggedIn) return '/clients';
+  route: {
+    meta: {
+      redirect(vm) {
+        if (vm.isLoggedIn) return '/clients';
+      },
     },
   },
 
   computed: {
     ...mapGetters(['isLoggedIn']),
-  },
-
-  data() {
-    return {
-      msg: 'Something else',
-    };
-  },
-
-  methods: {
   },
 
   components: { Login },
