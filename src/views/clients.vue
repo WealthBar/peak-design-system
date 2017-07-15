@@ -1,8 +1,13 @@
 <template>
   <section class="clients">
     <h3>Client List</h3>
+
     <ul>
-      <li v-for="client in allClients" :key="client.email">{{client.name}} <{{client.email}}></li>
+      <li v-for="client in allClients" :key="client.id">
+        <router-link :to="'/clients/' + client.id">
+          {{client.name}} <{{client.email}}> ({{client.id}})
+        </router-link>
+      </li>
     </ul>
 
     <h4>Add New Client</h4>
@@ -11,6 +16,7 @@
       <input type="email" placeholder="Email" v-model="email">
       <button type="submit">Add Client</button>
     </form>
+    <router-view></router-view>
   </section>
 </template>
 
@@ -19,9 +25,9 @@
 import { mapGetters, mapActions } from '@/store';
 
 export default {
-  name: 'Clients',
-  path: '/clients',
-  meta: { requiresAuth: true },
+  route: {
+    meta: { requiresAuth: true },
+  },
 
   beforeMount() {
     this.fetchClients();

@@ -17,13 +17,10 @@ const store = new Vuex.Store({
 if (module.hot) {
   module.hot.accept(['./modules'], () => {
     const newModules = require('./modules'); // eslint-disable-line global-require
-    console.log(store.state);
-    store.hotUpdate({
-      newModules,
-    });
+    store.hotUpdate({ newModules });
   });
 }
 
-export { mapState, mapGetters, mapMutations, mapActions } from './helpers';
+export { mapState, mapGetters, mapGetterMethods, mapMutations, mapActions } from './helpers';
 
 export default store;

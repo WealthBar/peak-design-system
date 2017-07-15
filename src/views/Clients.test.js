@@ -1,11 +1,12 @@
-import { mount } from 'avoriaz';
-// import store from '@/store';
+import { shallow } from 'avoriaz';
 import test from 'tape';
-// import clientData from '@/lib/api/clients/fetch.data';
+import { componentStub } from '@/lib/avoriaz';
 import Clients from './clients';
 
+componentStub(Clients, 'router-link', 'router-view');
+
 test('views/Clients renders root element', (t) => {
-  const wrapper = mount(Clients);
+  const wrapper = shallow(Clients);
   const element = wrapper.find('.clients');
   t.equal(element.length, 1, 'should have exactly one root element');
   t.end();
@@ -15,7 +16,7 @@ test('views/Clients submit', async (t) => {
   const event = { preventDefault: t.spy() };
   const name = 'Test';
   const email = 'test@test.test';
-  const wrapper = mount(Clients, { data: { name, email } });
+  const wrapper = shallow(Clients, { data: { name, email } });
   wrapper.vm.addClient = t.spy();
   await wrapper.vm.submit(event);
   t.equal(wrapper.vm.name, '', 'Clears name field after submit.');

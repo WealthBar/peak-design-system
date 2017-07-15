@@ -1,9 +1,9 @@
-import { mount } from 'avoriaz';
+import { shallow } from 'avoriaz';
 import test from 'tape';
 import Home from './index';
 
 test('views/index renders root element', (t) => {
-  const wrapper = mount(Home);
+  const wrapper = shallow(Home);
   const element = wrapper.find('.home');
   t.equal(element.length, 1, 'should have exactly one root element');
   t.end();

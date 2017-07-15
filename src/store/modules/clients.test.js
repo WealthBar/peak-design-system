@@ -15,7 +15,9 @@ test('Clients module state', (t) => {
 test('Clients module getters', (t) => {
   const data = [{ id: 1 }];
   store.state.clients.clients = data;
-  t.assert(store.getters.allClients, data, 'Provides allClients getter.');
+  t.equal(store.getters.allClients, data, 'Provides allClients getter.');
+
+  t.equal(store.getters.getClient(1), data[0], 'Provides getClient getter.');
   t.end();
 });
 

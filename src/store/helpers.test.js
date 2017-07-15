@@ -1,6 +1,6 @@
 import test from 'tape';
 /* eslint-disable */
-import { mapState, mapGetters, mapActions, mapMutations } from './helpers';
+import { mapState, mapGetters, mapGetterMethods, mapActions, mapMutations } from './helpers';
 /* eslint-enable */
 
 const store = { dispatch() { }, commit() { } };
@@ -16,6 +16,13 @@ test('mapGetters helper', (t) => {
   t.stub(store, 'getters').value({ test: 'value' });
   const results = mapGetters(['test'], store);
   t.equal(results.test(), 'value', 'can map a getters property');
+  t.end();
+});
+
+test('mapGetterMethods helper', (t) => {
+  t.stub(store, 'getters').value({ test: value => value });
+  const results = mapGetterMethods(['test'], store);
+  t.equal(results.test('value'), 'value', 'can map a getters method');
   t.end();
 });
 
