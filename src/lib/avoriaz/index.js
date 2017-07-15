@@ -1,4 +1,3 @@
-import componentStub from './component_stub';
+import { stubComponents, ComponentStub } from './stub_components';
 
-/* eslint-disable */
-export { componentStub };
+export { stubComponents, ComponentStub };

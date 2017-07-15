@@ -1,11 +1,11 @@
 import test from 'tape';
-import componentStub from './component_stub';
+import { stubComponents } from './stub_components';
 
 test('lib/avoriaz/componentStub creates component stubs by name', (t) => {
   const realComponent = {};
   const component = { components: { 'real-component': realComponent, 'override-component': realComponent } };
 
-  componentStub(component, 'component-one', 'component-two', 'override-component');
+  stubComponents(component, 'component-one', 'component-two', 'override-component');
 
   t.equal(component.components['component-one'].name, 'component-one', 'Adds a named stub.');
   t.equal(component.components['component-two'].name, 'component-two', 'Can add more than one stub.');

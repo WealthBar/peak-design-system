@@ -1,9 +1,9 @@
 import { shallow } from 'avoriaz';
 import test from 'tape';
-import { componentStub } from '@/lib/avoriaz';
+import { stubComponents } from '@/lib/avoriaz';
 import Clients from './clients';
 
-componentStub(Clients, 'router-link', 'router-view');
+stubComponents(Clients, 'router-link', 'router-view');
 
 test('views/Clients renders root element', (t) => {
   const wrapper = shallow(Clients);

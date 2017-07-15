@@ -7,7 +7,7 @@ export function ComponentStub(name) {
   };
 }
 
-export default function componentStub(component, ...components) {
+export function stubComponents(component, ...components) {
   const stubs = {};
   components.forEach((name) => {
     stubs[name] = new ComponentStub(name);
