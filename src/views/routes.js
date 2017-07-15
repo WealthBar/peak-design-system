@@ -59,7 +59,7 @@ export function nestRoutes([route, ...rest]) {
 
 export function generateRoutes(context) {
   const routes = context.keys().map((key) => {
-    const component = context(key);
+    const component = context(key).default;
     return generateRoute(key, component);
   });
   return nestRoutes(routes);
