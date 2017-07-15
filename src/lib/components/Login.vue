@@ -11,7 +11,6 @@
 
 <script>
 import { mapGetters, mapActions } from '@/store';
-import router from '@/router';
 
 export default {
   name: 'login',
@@ -33,7 +32,7 @@ export default {
     async submit(event) {
       event.preventDefault();
       await this.login({ email: this.email, password: this.password });
-      if (this.isLoggedIn) { router.push('/clients'); }
+      if (this.isLoggedIn) { this.$router.push('/clients'); }
     },
   },
 };
