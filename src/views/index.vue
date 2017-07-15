@@ -10,6 +10,10 @@ import { Login } from '@/lib/components';
 import { mapGetters } from '@/store';
 
 export default {
+  head: {
+    title: 'Vue Starter Kit | WealthBar',
+  },
+
   route: {
     meta: {
       redirect(vm) {

@@ -14,6 +14,18 @@ test('views/clients/_id/index renders root element', (t) => {
   t.end();
 });
 
+test('views/clients/_id/index sets the title', (t) => {
+  const thisStub = { client: { name } };
+
+  let head = View.head.apply(thisStub);
+  t.equal(head.title, `${name} | WealthBar`, 'if client then sets the title to the client name');
+
+  thisStub.client = null;
+  head = View.head.apply(thisStub);
+  t.assert(!head, 'if no client then does not set the title');
+  t.end();
+});
+
 test('views/clients/_id/index renders current client', async (t) => {
   const getClientStub = t.stub(View.methods, 'getClient');
   getClientStub.returns({ name, email });

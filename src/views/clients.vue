@@ -25,6 +25,10 @@
 import { mapGetters, mapActions } from '@/store';
 
 export default {
+  head: {
+    title: 'Client List | WealthBar',
+  },
+
   route: {
     meta: { requiresAuth: true },
   },

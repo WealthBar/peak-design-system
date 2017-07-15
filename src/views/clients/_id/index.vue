@@ -9,6 +9,13 @@
 import { mapGetterMethods } from '@/store';
 
 export default {
+  head() {
+    if (!this.client) return;
+    return {
+      title: `${this.client.name} | WealthBar`,
+    };
+  },
+
   route: {
     meta: { requiresAuth: true },
   },
