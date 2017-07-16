@@ -21,6 +21,6 @@ if (module.hot) {
   });
 }
 
-export { mapState, mapGetters, mapGetterMethods, mapMutations, mapActions } from './helpers';
+export * from './helpers';
 
 export default store;
