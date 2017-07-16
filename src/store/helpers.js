@@ -15,7 +15,6 @@ function mapMethods(methods) {
   return methods;
 }
 
-
 export function mapState(states, $store = store) {
   return bindResults($store, ms(states));
 }
