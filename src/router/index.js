@@ -1,12 +1,12 @@
 import Router from 'vue-router';
 import routes from '@/views/routes';
-import installPlugins from './plugins';
+import { installRouterPlugins } from '@/lib/vue';
 
 const router = new Router({
   mode: 'history',
   routes,
 });
 
-installPlugins(router);
+installRouterPlugins(router);
 
 export default router;

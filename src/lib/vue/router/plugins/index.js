@@ -1,7 +1,9 @@
 import auth from './auth';
 import redirect from './redirect';
 
-export default function (router) {
+function installRouterPlugins(router) {
   auth(router);
   redirect(router);
 }
+
+export { auth, redirect, installRouterPlugins };

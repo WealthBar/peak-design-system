@@ -3,7 +3,8 @@ import {
   parsePathTemplate,
   parseName,
   generateRoute,
-} from './routes';
+  buildRoutes,
+} from './build_routes';
 
 test('parsePathTempalte', (t) => {
   const expectations = {
@@ -60,5 +61,15 @@ test('generateRoute', (t) => {
 
   t.equal(route.path, '/path', 'Uses component route.path if there is one');
   t.equal(route.name, 'name', 'Uses component route.name if there is one.');
+  t.end();
+});
+
+test('buildRoutes', (t) => {
+  const context = t.stub();
+  const component = {};
+  context.returns({ default: component });
+  context.keys = () => ['./index.vue', './other.vue'];
+  const routes = buildRoutes(context);
+  t.equal(routes.length, 2, 'creates 2 routes for two keys in the context');
   t.end();
 });
