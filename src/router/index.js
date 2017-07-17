@@ -1,33 +1,12 @@
-import Vue from 'vue';
 import Router from 'vue-router';
-import * as views from '@/views';
-import NotFound from '@/views/NotFound';
-import installPlugins from './plugins';
-
-Vue.use(Router);
-
-const routes = [];
-
-Object.values(views).forEach((view) => {
-  routes.push({
-    path: view.path,
-    name: view.name,
-    meta: view.meta,
-    component: view,
-  });
-});
-
-routes.push({
-  path: '*',
-  name: 'Not Found',
-  component: NotFound,
-});
+import routes from '@/views/routes';
+import { installRouterPlugins } from '@/lib/vue';
 
 const router = new Router({
   mode: 'history',
   routes,
 });
 
-installPlugins(router);
+installRouterPlugins(router);
 
 export default router;

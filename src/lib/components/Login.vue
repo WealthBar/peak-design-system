@@ -10,8 +10,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from '@/store';
-import router from '@/router';
+import { mapGetters, mapActions } from '@/lib/vue';
 
 export default {
   name: 'login',
@@ -33,7 +32,7 @@ export default {
     async submit(event) {
       event.preventDefault();
       await this.login({ email: this.email, password: this.password });
-      if (this.isLoggedIn) { router.push('/clients'); }
+      if (this.isLoggedIn) { this.$router.push('/clients'); }
     },
   },
 };

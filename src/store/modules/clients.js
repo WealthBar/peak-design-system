@@ -9,6 +9,10 @@ export default {
     allClients(state) {
       return state.clients;
     },
+
+    getClient(state) {
+      return id => state.clients.find(c => c.id === +id);
+    },
   },
 
   mutations: {
