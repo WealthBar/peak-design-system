@@ -1,43 +1,55 @@
 import test from 'tape';
 /* eslint-disable */
-import { mapState, mapGetters, mapGetterMethods, mapActions, mapMutations } from './helpers';
+import { mapState, mapGetters, mapGetterMethods, mapActions, mapMutations, stubHelpers } from './helpers';
 /* eslint-enable */
 
-const store = { dispatch() { }, commit() { } };
+const $store = { state: { test: 'value' }, getters: { test: 'value' }, dispatch() { }, commit() { } };
+const thisStub = { $store };
 
 test('mapState helper', (t) => {
-  t.stub(store, 'state').value({ test: 'value' });
-  const results = mapState(['test'], store);
-  t.equal(results.test(), 'value', 'can map a state property');
+  const results = mapState(['test']);
+  t.equal(results.test.apply(thisStub), 'value', 'can map a state property');
   t.end();
 });
 
 test('mapGetters helper', (t) => {
-  t.stub(store, 'getters').value({ test: 'value' });
-  const results = mapGetters(['test'], store);
-  t.equal(results.test(), 'value', 'can map a getters property');
+  const results = mapGetters(['test']);
+  t.equal(results.test.apply(thisStub), 'value', 'can map a getters property');
   t.end();
 });
 
 test('mapGetterMethods helper', (t) => {
-  t.stub(store, 'getters').value({ test: value => value });
-  const results = mapGetterMethods(['test'], store);
-  t.equal(results.test('value'), 'value', 'can map a getters method');
+  $store.getters.test = value => value;
+  const results = mapGetterMethods(['test']);
+  t.equal(results.test.apply(thisStub, ['value']), 'value', 'can map a getters method');
   t.end();
 });
 
 test('mapActions helper', (t) => {
-  t.stub(store, 'dispatch');
-  const results = mapActions(['test'], store);
-  results.test('value');
-  t.assert(store.dispatch.calledWith('test', 'value'), 'can map an action');
+  t.spy($store, 'dispatch');
+  const results = mapActions(['test']);
+  results.test.apply(thisStub, ['value']);
+  t.assert($store.dispatch.calledWith('test', 'value'), 'can map an action');
   t.end();
 });
 
 test('mapMutations helper', (t) => {
-  t.stub(store, 'commit');
-  const results = mapMutations(['test'], store);
-  results.test('value');
-  t.assert(store.commit.calledWith('test', 'value'), 'can map a mutuation');
+  t.spy($store, 'commit');
+  const results = mapMutations(['test']);
+  results.test.apply(thisStub, ['value']);
+  t.assert($store.commit.calledWith('test', 'value'), 'can map a mutuation');
+  t.end();
+});
+
+test('stubHelpers', (t) => {
+  const stub = {};
+  const spy = () => stub;
+  const computed = { helper: { vuex: true }, notHelper: 'notHelper' };
+  const methods = { helper: { vuex: true }, notHelper: 'notHelper' };
+  stubHelpers(spy, { computed, methods });
+  t.equal(computed.helper, stub, 'replaces computed vuex helpers properties with a stub');
+  t.equal(computed.notHelper, 'notHelper', 'does not replace other computed properties');
+  t.equal(methods.helper, stub, 'replaces methods vuex helpers properties with a stub');
+  t.equal(methods.notHelper, 'notHelper', 'does not replace other methods properties');
   t.end();
 });

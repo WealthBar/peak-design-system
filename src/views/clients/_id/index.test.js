@@ -1,4 +1,5 @@
 import { shallow } from 'avoriaz';
+import { stubHelpers } from '@/store';
 import test from 'tape';
 import View from './index';
 
@@ -7,7 +8,8 @@ const email = 'test@test.test';
 const globals = { $route: { params: { id: 10 } } };
 
 test('views/clients/_id/index renders root element', (t) => {
-  t.stub(View.methods, 'getClient').returns({ name, email });
+  stubHelpers(t.stub, View);
+  View.methods.getClient.returns({ name, email });
   const wrapper = shallow(View, { globals });
   const element = wrapper.find('.client');
   t.equal(element.length, 1, 'should have exactly one root element');
@@ -27,13 +29,13 @@ test('views/clients/_id/index sets the title', (t) => {
 });
 
 test('views/clients/_id/index renders current client', async (t) => {
-  const getClientStub = t.stub(View.methods, 'getClient');
-  getClientStub.returns({ name, email });
+  stubHelpers(t.stub, View);
+  View.methods.getClient.returns({ name, email });
   const wrapper = shallow(View, { globals });
   const nameEl = wrapper.find('.client-name')[0];
   const emailEl = wrapper.find('.client-email')[0];
   t.equal(nameEl.text(), name, 'renders client name');
   t.equal(emailEl.text(), `<${email}>`, 'renders client email');
-  t.assert(getClientStub.calledWith(10), 'Gets the client by the route id');
+  t.assert(View.methods.getClient.calledWith(10), 'Gets the client by the route id');
   t.end();
 });

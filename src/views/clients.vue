@@ -50,6 +50,7 @@ export default {
 
   methods: {
     ...mapActions(['fetchClients', 'addClient']),
+
     async submit(event) {
       event.preventDefault();
       await this.addClient({ name: this.name, email: this.email });
