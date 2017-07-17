@@ -1,8 +1,10 @@
 import { shallow } from 'avoriaz';
+import { stubHelpers } from '@/lib/vue';
 import test from 'tape';
 import Home from './index';
 
 test('views/index renders root element', (t) => {
+  stubHelpers(t.spy, Home);
   const wrapper = shallow(Home);
   const element = wrapper.find('.home');
   t.equal(element.length, 1, 'should have exactly one root element');

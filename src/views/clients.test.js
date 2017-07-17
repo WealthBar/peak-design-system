@@ -1,7 +1,6 @@
 import { shallow } from 'avoriaz';
 import test from 'tape';
-import { stubComponents } from '@/lib/avoriaz';
-import { stubHelpers } from '@/store';
+import { stubComponents, stubHelpers } from '@/lib/vue';
 import Clients from './clients';
 
 stubComponents(Clients, 'router-link', 'router-view');

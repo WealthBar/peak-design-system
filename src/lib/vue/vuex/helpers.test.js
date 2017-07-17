@@ -44,12 +44,21 @@ test('mapMutations helper', (t) => {
 test('stubHelpers', (t) => {
   const stub = {};
   const spy = () => stub;
-  const computed = { helper: { vuex: true }, notHelper: 'notHelper' };
-  const methods = { helper: { vuex: true }, notHelper: 'notHelper' };
+  let computed = { helper: { vuex: true }, notHelper: 'notHelper' };
+  let methods = { helper: { vuex: true }, notHelper: 'notHelper' };
   stubHelpers(spy, { computed, methods });
   t.equal(computed.helper, stub, 'replaces computed vuex helpers properties with a stub');
   t.equal(computed.notHelper, 'notHelper', 'does not replace other computed properties');
   t.equal(methods.helper, stub, 'replaces methods vuex helpers properties with a stub');
   t.equal(methods.notHelper, 'notHelper', 'does not replace other methods properties');
+
+  computed = { helper: { vuex: true }, notHelper: 'notHelper' };
+  methods = { helper: { vuex: true }, notHelper: 'notHelper' };
+
+  stubHelpers(spy, { methods });
+  t.equal(methods.helper, stub, 'can stub only methods');
+
+  stubHelpers(spy, { computed });
+  t.equal(computed.helper, stub, 'can stub only computed properties');
   t.end();
 });

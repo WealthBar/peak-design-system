@@ -7,7 +7,7 @@
 
 <script>
 import { Login } from '@/lib/components';
-import { mapGetters } from '@/store';
+import { mapGetters } from '@/lib/vue';
 
 export default {
   head: {

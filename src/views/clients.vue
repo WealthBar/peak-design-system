@@ -22,7 +22,7 @@
 
 <script>
 /* eslint-disable */
-import { mapGetters, mapActions } from '@/store';
+import { mapGetters, mapActions } from '@/lib/vue';
 
 export default {
   head: {

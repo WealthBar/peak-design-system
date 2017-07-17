@@ -1,4 +1,5 @@
 import { shallow } from 'avoriaz';
+import { stubHelpers } from '@/lib/vue';
 import test from 'tape';
 import Login from './Login';
 
@@ -22,6 +23,7 @@ test('Form handles calls submit handler', (t) => {
 });
 
 test('Methods: submit()', async (t) => {
+  stubHelpers(t.spy, Login);
   const $router = { push: t.spy() };
   const event = { preventDefault: t.spy() };
   const data = { email: 'test@wb.test', password: 'password' };

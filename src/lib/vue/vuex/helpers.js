@@ -35,7 +35,7 @@ export function mapActions(...args) {
   return markResults(ma(...args));
 }
 
-export function stubHelpers(stubBuilder, { computed, methods }) {
+export function stubHelpers(stubBuilder, { computed = {}, methods = {} }) {
   [computed, methods].forEach((o) => {
     Object.keys(o).forEach((key) => {
       const method = o[key];

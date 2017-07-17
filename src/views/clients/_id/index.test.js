@@ -1,5 +1,5 @@
 import { shallow } from 'avoriaz';
-import { stubHelpers } from '@/store';
+import { stubHelpers } from '@/lib/vue';
 import test from 'tape';
 import View from './index';
 

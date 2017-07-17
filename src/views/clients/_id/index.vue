@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { mapGetterMethods } from '@/store';
+import { mapGetterMethods } from '@/lib/vue';
 
 export default {
   head() {

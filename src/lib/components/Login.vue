@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from '@/store';
+import { mapGetters, mapActions } from '@/lib/vue';
 
 export default {
   name: 'login',

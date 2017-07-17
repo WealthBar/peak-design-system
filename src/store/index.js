@@ -21,6 +21,4 @@ if (module.hot) {
   });
 }
 
-export * from './helpers';
-
 export default store;
