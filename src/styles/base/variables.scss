@@ -1,0 +1,59 @@
+
+// -- Colour -- //
+$brand: #00b298;
+$brand-light: #4dd6b2;
+$brand-med: #008f7a;
+$brand-dark: #0e6b64;
+
+$color2: #4464e4;
+$color2-light: #7994fe;
+$color2-med: #2f3ecc;
+$color2-dark: #252fa5;
+
+$color3: #84ce05;
+$color3-med: #5ab700;
+$color3-dark: #289100;
+
+$color4: #9b76ff;
+$color4-med: #7154ea;
+$color4-dark: #4c40bc;
+
+$alert: #e96654;
+$alert-light: #fd8f74;
+$alert-med: #d23d3d;
+$alert-dark: #b92028;
+
+$warning: #f0b911;
+
+// -- Greyscale -- //
+$white: #fff;
+$grey1: #f1f1f1;
+$grey2: #dfdfdf;
+$grey3: #a3a3a3;
+$grey4: #5b5b5b;
+$black: #303030;
+
+// -- Spacing sizes -- //
+$spacing: 1rem;
+$spacing-tiny: $spacing*0.25;
+$spacing-small: $spacing*0.5;
+$spacing-med: $spacing*0.75;
+$spacing-large: $spacing*3;
+$spacing-huge: $spacing*4;
+
+// -- Border Radius -- //
+$br: $spacing-tiny;
+
+// -- Button Sizes -- //
+$button-height: 2rem;
+$baseline-height: 1.375rem;
+
+// -- Font Stacks -- //
+$body-font: "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$header-font: "GT-Walsheim-Bold", sans-serif !default;
+
+// -- Media Queries -- //
+$sw-small: 'screen and (max-width: 32em)'; // use sparingly
+$sw-medium: 'screen and (min-width: 32em)';
+$sw-large: 'screen and (min-width: 52.25em)';
+$sw-xlarge: 'screen and (min-width: 75em)';

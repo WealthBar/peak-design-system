@@ -24,8 +24,8 @@ test:
   stage: test
   services:
   script:
-  - npm install
-  - npm run ci
+  - yarn install
+  - yarn run ci
   artifacts:
     paths:
       - coverage/

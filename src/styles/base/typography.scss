@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+#app { min-height: 100vh; }
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: $body-font;
+  font-size: 1rem;
+  line-height: $baseline-height;
+  color: $black;
+
+  // -- font smooving
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  text-rendering: optimizeLegibility;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+figcaption,
+figure,
+main,
+details,
+menu {
+  display: block;
+}
+
+p {
+  font-size: 1rem;
+  line-height: $baseline-height;
+  margin-bottom: $spacing;
+}
+
+h1 {
+  font-family: $header-font;
+  font-size: 1.875rem;
+  line-height: $baseline-height*2;
+}
+
+h2 {
+  font-family: $header-font;
+  font-size: 1.5rem;
+  line-height: $baseline-height*1.5;
+}
+
+h3 {
+  font-family: $header-font;
+  font-size: 1.25rem;
+  line-height: $baseline-height;
+}
+
+h4 {
+  font-family: $header-font;
+  font-size: 1rem;
+  line-height: $baseline-height;
+}
+
+h5 {
+  font-family: $body-font;
+  font-size: 1.125rem;
+  line-height: $baseline-height;
+}
+
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: normal;
+  color: $grey3;
+}
+
+small {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+a {
+  color: $brand;
+  text-decoration: underline;
+  a:hover, &:focus { color: $brand-light; }
+  &:visited { color: $brand-med; }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 1px;
+  margin: $spacing-small 0;
+  background-color: $grey2;
+  border: none;
+  overflow: visible;
+}
+
+/* stylelint-disable */
+
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* stylelint-enable */
