@@ -1,10 +1,10 @@
 import { shallow } from 'avoriaz';
 import { stubHelpers } from '@/lib/vue';
 import test from 'tape';
-import Login from './Login';
+import login from './login';
 
 test('renders root element', (t) => {
-  const wrapper = shallow(Login);
+  const wrapper = shallow(login);
   const element = wrapper.find('.login');
 
   t.equal(element.length, 1, 'should have exactly one root element');
@@ -13,7 +13,7 @@ test('renders root element', (t) => {
 
 test('Form handles calls submit handler', (t) => {
   const submit = t.stub();
-  const wrapper = shallow(Login, { methods: { submit } });
+  const wrapper = shallow(login, { methods: { submit } });
   const form = wrapper.find('form')[0];
 
   form.trigger('submit');
@@ -23,11 +23,11 @@ test('Form handles calls submit handler', (t) => {
 });
 
 test('Methods: submit()', async (t) => {
-  stubHelpers(t.spy, Login);
+  stubHelpers(t.spy, login);
   const $router = { push: t.spy() };
   const event = { preventDefault: t.spy() };
   const data = { email: 'test@wb.test', password: 'password' };
-  const wrapper = shallow(Login, { data, globals: { $router } });
+  const wrapper = shallow(login, { data, globals: { $router } });
 
   t.stub(wrapper.vm, 'isLoggedIn').value(false);
   t.stub(wrapper.vm, 'login').resolves();
