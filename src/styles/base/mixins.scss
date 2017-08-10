@@ -1,0 +1,28 @@
+@mixin button($font-size: 1rem, $height: $button-height, $font-weight: normal, $font-family: $body-font) {
+  border: none;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  text-align: center;
+  border-radius: $spacing-tiny;
+  padding: 0 $spacing-small;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  @include button-size($height, $font-size);
+}
+
+@mixin button-size($height: $button-height, $font-size: 1rem) {
+  height: $height;
+  font-size: $font-size;
+  line-height: $baseline-height;
+}
+
+@mixin button-colors($color: $brand, $color-light: $brand-light, $color-dark: $brand-med, $text-color: $white) {
+  background: linear-gradient(to bottom, $color-light, $color);
+  color: $text-color;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+
+  &:hover, &:focus, &:active {
+    background: linear-gradient(to bottom, $color, $color-dark);
+    color: $text-color;
+  }
+}

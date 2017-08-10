@@ -31,6 +31,7 @@ module.exports = {
       "devDependencies": true, "optionalDependencies": true, "peerDependencies": true
     }],
     "import/no-duplicates": 0,
+    "import/no-named-as-default": 0,
     "no-param-reassign": ["error", { "props": false }],
     "consistent-return": 0,
     "no-shadow": ["error", { allow: ["t"] }],

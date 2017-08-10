@@ -4,27 +4,29 @@
   "description": "Boilerplate for new WealthBar Vue apps",
   "author": "WealthBar <developers@wealthbar.com>",
   "private": true,
-  "scripts": {
-    "dev": "node build/dev-server.js",
+"scripts": {
+    "dev": "DEMO_MODE=true node build/dev-server.js",
+    "dev:local": "API_URL=http://localhost:3000/api node build/dev-server.js",
+    "prod": "API_URL=https://localhost:3000/api node build/prod-server.js",
     "start": "node build/prod-server.js",
     "build": "node build/build.js",
     "lint": "eslint src/.",
     "test": "NODE_ENV=test wprun -c build/webpack.base.conf.js -r ./util/test_helper.js 'src/**/*.test.js' | tap-spec",
     "test:watch": "NODE_ENV=test wprun -w -c build/webpack.base.conf.js -r ./util/test_helper.js 'src/**/*.test.js' | tap-spec",
     "test:debug": "NODE_ENV=test node inspect -c build/webpack.base.conf.js -r ./util/test_helper.js 'src/**/*.test.js' | tap-spec",
-    "test:coverage": "nyc -r text-summary -r html npm test",
-    "coverage": "npm run test:coverage; open coverage/index.html",
-    "ci": "npm run lint && npm run test:coverage"
+    "test:coverage": "nyc -r text-summary -r html yarn test",
+    "coverage": "yarn run test:coverage; open coverage/index.html",
+    "ci": "yarn run lint && yarn run test:coverage"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "connect-history-api-fallback": "^1.3.0",
-    "express": "^4.15.3",
-    "http": "0.0.0",
-    "path": "^0.12.7"
+    "express": "^4.15.3"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "avoriaz": "^2.4.3",
+    "axios": "^0.16.2",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
@@ -51,14 +53,20 @@
     "html-webpack-plugin": "^2.29.0",
     "http-proxy-middleware": "^0.17.3",
     "make-dir": "^1.0.0",
+    "node-sass": "^4.5.0",
     "nyc": "^11.0.3",
     "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^2.0.0",
     "ora": "^1.2.0",
     "rimraf": "^2.6.0",
+    "sass-loader": "^6.0.6",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
-    "sinon": "^2.3.6",
+    "sinon": "^2.3.7",
+    "stylelint": "^7.13.0",
+    "stylelint-config-standard": "^16.0.0",
+    "stylelint-processor-html": "^1.0.0",
+    "stylelint-webpack-plugin": "^0.8.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.7.0",
     "url-loader": "^0.5.8",
@@ -69,8 +77,8 @@
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.4.1",
     "vuex": "^2.3.1",
-    "webpack": "^2.6.1",
-    "webpack-bundle-analyzer": "^2.8.2",
+    "webpack": "^2.7.0",
+    "webpack-bundle-analyzer": "^2.8.3",
     "webpack-dev-middleware": "^1.11.0",
     "webpack-hot-middleware": "^2.18.2",
     "webpack-merge": "^4.1.0",
@@ -82,13 +90,10 @@
   },
   "nyc": {
     "all": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "instrument": false,
     "check-coverage": true,
-    "statements": 100,
-    "include": [
-      "src/*"
-    ]
+    "statements": 100
   },
   "browserslist": [
     "> 1%",
