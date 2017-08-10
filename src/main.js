@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Meta from 'vue-meta';
 
-import App from './App';
+import app from './app';
 import router from './router';
 import store from './store';
 
@@ -18,6 +18,6 @@ import store from './store';
     el: '#app',
     router,
     store,
-    render: h => h(App),
+    render: h => h(app),
   });
 }());
