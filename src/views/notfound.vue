@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>There's Nothing Here</h2>
-    <a href="/">Return Home</a></li>
+    <a href="/">Return Home</a>
   </div>
 </template>
 
