@@ -1,12 +1,12 @@
 <template>
   <section class="home">
-    <h1>WealthBar Vue Starter Kit</h1>
+    <banner></banner>
     <login></login>
   </section>
 </template>
 
 <script>
-import { login } from '@/components';
+import { banner, login } from '@/components';
 import { mapGetters } from '@/lib/vue';
 
 export default {
@@ -26,7 +26,7 @@ export default {
     ...mapGetters(['isLoggedIn']),
   },
 
-  components: { login },
+  components: { banner, login },
 };
 </script>
 

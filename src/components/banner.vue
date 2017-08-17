@@ -37,33 +37,26 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 3rem;
+    height: $spacing-large;
     border-bottom: 1px solid $grey2;
-    @media #{$sw-medium} { height: 4.5rem; }
+    @media #{$sw-medium} { height: $spacing-huge; }
   }
 
-  img {
-    height: 1rem;
-    @media #{$sw-medium} { height: 1.375rem; }
-  }
+  img { height: $baseline-height; }
 
   button {
     background: none;
     color: $black;
     border: none;
     box-shadow: none;
-    font-size: 1rem;
 
     span {
       display: none;
       padding-left: $spacing-small;
+      @media #{$sw-medium} { display: inline-block; }
     }
 
-    @media #{$sw-medium} {
-      height: 1.25rem;
-      .svg-icon { vertical-align: top; }
-      span { display: inline-block; }
-    }
+    .svg-icon { vertical-align: top; }
   }
 </style>
   
