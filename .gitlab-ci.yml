@@ -1,4 +1,4 @@
-image: "node:7.6.0"
+image: "node:8.4.0"
 
 variables:
   NODE_ENV: test
@@ -25,6 +25,7 @@ test:
   services:
   script:
   - yarn install
+  - yarn add global node-sass
   - yarn run ci
   artifacts:
     paths:
