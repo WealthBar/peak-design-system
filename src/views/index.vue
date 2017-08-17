@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { login } from '@/lib/components';
+import { login } from '@/components';
 import { mapGetters } from '@/lib/vue';
 
 export default {
