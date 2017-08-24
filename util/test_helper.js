@@ -1,6 +1,11 @@
 require('browser-env')();
-require('vue').config.productionTip = false;
+const Vue = require('vue');
+const svgicon = require('vue-svgicon');
 require('./tape_sinon');
+
+Vue.config.productionTip = false;
+
+Vue.use(svgicon, { tagName: 'svgicon' });
 
 // Node 8 prints a warning and catches unhandled promise rejections.
 // This results in useless messages when exceptions are thrown in

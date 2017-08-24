@@ -1,4 +1,5 @@
 import { fetchClients, createClient } from '@/lib/api';
+import { AuthError } from '@/lib/utils/errors';
 
 export default {
   state: {
@@ -27,13 +28,33 @@ export default {
 
   actions: {
     async fetchClients({ commit }) {
-      const clients = await fetchClients.execute();
-      commit('updateClients', clients);
+      try {
+        const fetchedClients = await fetchClients.execute();
+        const clients = fetchedClients.data.data.map(
+          ({
+            id, email, first_name, last_name,
+          }) => ({
+            id, email, firstName: first_name, lastName: last_name,
+          }));
+        commit('updateClients', clients);
+      } catch (exception) {
+        if (AuthError.ofType(exception)) {
+          return;
+        }
+        throw exception;
+      }
     },
 
-    async addClient({ commit }, { email, name }) {
-      const result = await createClient.execute({ email, name });
-      commit('addClient', result);
+    async addClient({ commit }, { email, firstName, lastName }) {
+      try {
+        const result = await createClient.execute({ email, firstName, lastName });
+        commit('addClient', result);
+      } catch (exception) {
+        if (AuthError.ofType(exception)) {
+          return;
+        }
+        throw exception;
+      }
     },
   },
 };

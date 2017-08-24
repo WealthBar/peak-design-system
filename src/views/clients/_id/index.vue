@@ -1,7 +1,7 @@
 <template>
   <section class="client" v-if="client">
     <h3>Selected Client</h3>
-    <div><span class="client-name">{{client.name}}</span> <span class="client-email"><{{client.email}}></span></div>
+    <div><span class="client-first-name">{{client.firstName}}</span> <span class="client-last-name">{{client.lastName}}</span> <span class="client-email"><{{client.email}}></span></div>
   </section>
 </template>
 
@@ -12,7 +12,7 @@ export default {
   head() {
     if (!this.client) return;
     return {
-      title: `${this.client.name} | WealthBar`,
+      title: `${this.client.firstName} ${this.client.lastName} | WealthBar`,
     };
   },
 

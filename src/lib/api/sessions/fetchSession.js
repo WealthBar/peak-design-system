@@ -1,12 +1,12 @@
 import caller from '@/lib/api/rest/caller';
+import { AuthError } from '@/lib/utils/errors';
 
 export default {
   async execute() {
     /* istanbul ignore next: development data */
     if (process.env.DEMO) {
-      const data = await import('./fetch.data');
-      return data.default;
+      throw new AuthError();
     }
-    return caller.get('/advisor_clients', { params: { limit: 99999 } });
+    return caller.get('/sessions');
   },
 };

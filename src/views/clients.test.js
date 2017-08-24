@@ -5,7 +5,7 @@ import Clients from './clients';
 
 stubComponents(Clients, 'router-link', 'router-view');
 
-test('views/Clients renders root element', (t) => {
+test('views/clients renders root element', (t) => {
   stubHelpers(t.stub, Clients);
   const wrapper = shallow(Clients);
   const element = wrapper.find('.clients');
@@ -13,16 +13,35 @@ test('views/Clients renders root element', (t) => {
   t.end();
 });
 
-test('views/Clients submit', async (t) => {
+test('views/clients submit', async (t) => {
   stubHelpers(t.stub, Clients);
   const event = { preventDefault: t.spy() };
-  const name = 'Test';
+  const firstName = 'First';
+  const lastName = 'Last';
   const email = 'test@test.test';
-  const wrapper = shallow(Clients, { data: { name, email } });
+  const wrapper = shallow(Clients, { data: { firstName, lastName, email } });
   await wrapper.vm.submit(event);
-  t.equal(wrapper.vm.name, '', 'Clears name field after submit.');
+  t.equal(wrapper.vm.firstName, '', 'Clears first name field after submit.');
+  t.equal(wrapper.vm.lastName, '', 'Clears last name field after submit.');
   t.equal(wrapper.vm.email, '', 'Clears email field after submit.');
   t.assert(event.preventDefault.called, 'Calls event.preventDefault');
-  t.assert(Clients.methods.addClient.calledWithMatch(t.sinon.match({ name, email })), 'Calls addClient with name and email');
+  t.assert(Clients.methods.addClient.calledWithMatch(t.sinon.match({ firstName, lastName, email })),
+    'Calls addClient with first name, last name and email');
+  t.end();
+});
+
+test('modal close', (t) => {
+  stubHelpers(t.stub, Clients);
+  const wrapper = shallow(Clients);
+  wrapper.vm.closeModal();
+  t.equal(wrapper.vm.modalDisplay, false, 'sets modal state to closed');
+  t.end();
+});
+
+test('add client', (t) => {
+  stubHelpers(t.stub, Clients);
+  const wrapper = shallow(Clients);
+  wrapper.vm.openModal();
+  t.equal(wrapper.vm.modalDisplay, true, 'sets modal state to open');
   t.end();
 });
