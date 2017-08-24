@@ -7,7 +7,19 @@
   "env": {
     "test": {
       "presets": [["env", { "modules": false }], "stage-2"],
-      "plugins": [["istanbul", { "useInlineSourceMaps": false }]]
+      "plugins": [
+        [
+          "istanbul",
+          {
+            "useInlineSourceMaps": false,
+            "include": ["src/*"],
+            "exclude": [
+              "**/*.test.js",
+              "src/views/components/*.vue"
+            ]
+          }
+        ]
+      ]
     }
   }
 }
