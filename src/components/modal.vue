@@ -10,14 +10,13 @@
           <slot class="header-action" name="header-action"/>
         </header>
 
-        <section class="modal-body"> 
-          <slot name="modal-body" />
+        <section class="body"> 
+          <slot name="body" />
         </section>
         
         <footer class="modal-footer"> 
-          <slot name="modal-footer" />
+          <slot name="footer" />
         </footer>
-
       </article>
 
     </div>
@@ -38,6 +37,7 @@ export default {
       default: '',
     },
   },
+
   methods: {
     close() {
       this.$emit('close');
@@ -105,8 +105,10 @@ export default {
       padding: $spacing-small;
       border-top: 1px solid $grey2;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: flex-start;
+
+      &:empty { display: none; }
     }
   }
 
@@ -121,12 +123,10 @@ export default {
   }
 
   .modal-close {
-    position: absolute;
-    top: $spacing-small;
-    left: 0;
     color: $black;
     background: none;
     box-shadow: none;
+    padding: 0;
     cursor: pointer;
 
     svg {

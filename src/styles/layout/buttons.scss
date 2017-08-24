@@ -84,3 +84,14 @@ button,
   // Required for Safari iPhone 5 users to be able to click submit buttons
   position: relative;
 }
+
+.add-client-button {
+  position: fixed;
+  bottom: $spacing;
+  right: $spacing;
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  line-height: 1;
+  .svg-icon { vertical-align: top; }
+}

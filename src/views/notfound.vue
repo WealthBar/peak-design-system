@@ -1,9 +1,9 @@
 <template>
-  <div class="hello">
+  <article class="404">
     <h1>{{ msg }}</h1>
     <h2>There's Nothing Here</h2>
-    <a href="/">Return Home</a>
-  </div>
+    <a href="/">Return Home</a></li>
+  </article>
 </template>
 
 <script>
@@ -20,7 +20,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 

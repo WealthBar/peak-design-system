@@ -30,7 +30,6 @@ test('views/modal the slot title is filled when provided', (t) => {
     slots: { title: testTemplate },
   });
   const element = wrapper.find('h2');
-  console.log(wrapper.slots);
   t.equal(element.length, 1, 'the title is the expected one');
   t.end();
 });

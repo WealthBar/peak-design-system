@@ -2,11 +2,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
 }
 
 #app { min-height: 100vh; }
@@ -46,8 +48,9 @@ menu {
 p {
   font-size: 1rem;
   line-height: $baseline-height;
-  margin-bottom: $spacing;
 }
+
+p + p { margin-bottom: $spacing; }
 
 h1 {
   font-family: $header-font;

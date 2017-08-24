@@ -10,21 +10,27 @@ test('router/plugins/auth: plugin installer', (t) => {
   t.end();
 });
 
-test('router/plugins/auth: checkAuth navigation guard', (t) => {
+test('router/plugins/auth: checkAuth navigation guard', async (t) => {
   const storeStub = t.stub(store, 'getters');
+  t.stub(store, 'dispatch');
   storeStub.value({ isLoggedIn: true });
-  const routeStub = {
-    matched: [{ meta: { requiresAuth: true } }],
-    fullPath: '/full-path',
+  let routeStub = {
+    matched: [{ meta: { requiresAuth: false } }],
   };
   const nextStub = t.spy();
-  checkAuth(routeStub, routeStub, nextStub);
-  t.assert(nextStub.calledWithExactly(), 'Calls next if requiresAuth: true and logged in.');
-  nextStub.reset();
 
-  storeStub.value({ isLoggedIn: false });
-  checkAuth(routeStub, routeStub, nextStub);
-  t.assert(nextStub.calledWith(t.sinon.match({ path: '/', query: { redirect: '/full-path' } })), 'Calls next with root path if requiresAuth: true and not logged in.');
+  await checkAuth(routeStub, routeStub, nextStub);
+  t.assert(store.dispatch.notCalled, 'The store dispatcher is not called.');
+  t.assert(nextStub.calledWithExactly(), 'Calls next.');
+
+  store.dispatch.reset();
+  routeStub = {
+    matched: [{ meta: { requiresAuth: true } }],
+  };
+  await checkAuth(routeStub, routeStub, nextStub);
+  t.assert(store.dispatch.calledOnce, 'The store dispatcher is called once.');
+  t.assert(store.dispatch.calledWith('fetchSession'), 'The store dispatcher fetches the session.');
+  t.assert(nextStub.calledWithExactly(), 'Calls next.');
 
   t.end();
 });

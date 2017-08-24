@@ -1,3 +1,15 @@
+// #app {
+//   header, form, footer {
+//     max-width: 32rem;
+//     margin: auto;
+//   }
+
+//   footer {
+//     margin: $spacing auto;
+//     text-align: center;
+//   }
+// }
+
 .components-page {
   display: flex;
   flex-direction: row;
@@ -5,7 +17,7 @@
 }
 
 nav {
-  min-width: 20rem;
+  min-width: 10rem;
 }
 
 section.example { //replace with main
