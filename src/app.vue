@@ -5,6 +5,7 @@
       <ul slot="content"  class="side-menu-content">
         <li><router-link @click.native="toggleMenu" to="/">Typography</router-link></li>
         <li><router-link @click.native="toggleMenu" to="/components/icons">Icons</router-link></li>
+        <li><router-link @click.native="toggleMenu" to="/components/loginexample">Login</router-link></li>
         <li><router-link @click.native="toggleMenu" to="/components/modalexample">Modal</router-link></li>
         <li><router-link @click.native="toggleMenu" to="/components/contextmenuexample">Context Menu</router-link></li>
         <li><router-link @click.native="toggleMenu" to="/components/sidemenuexample">Side Menu</router-link></li>
