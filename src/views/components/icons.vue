@@ -10,6 +10,8 @@
 </template>
 
 <script>
-import '@/lib/icons';
+  import '@/lib/icons';
+  
+  export default { };
 </script>
 
