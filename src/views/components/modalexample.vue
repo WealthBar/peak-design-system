@@ -5,7 +5,7 @@
       <label for="modal-title">Header</label>
       <input type="text" id="modal-title" v-model="title"></input>
       <label for="modal-action">Header Action</label>
-      <input type="text" id="header-action" v-model="headerAction"></input>
+      <input type="text" id="modal-action" v-model="headerAction"></input>
       <label for="modal-body">Body</label>
       <textarea class="large" id="modal-body" v-model="bodyData"></textarea>
       <label for="modal-footer">Footer</label>
@@ -16,7 +16,7 @@
     <!-- modal constructor -->
     <modal :title="title" :displayed="displayedData" @close="close" >
       <!-- slotted action for the header -->
-      <a slot="header-action" href="#">{{ headerAction }}</a> 
+      <a slot="title-action" href="#">{{ headerAction }}</a> 
 
       <!-- either create content and assign a slot OR -->
       <form slot="body" v-if="!bodyData">

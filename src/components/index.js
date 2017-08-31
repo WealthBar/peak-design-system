@@ -4,6 +4,20 @@ import login from './login';
 import banner from './banner';
 import sideMenu from './side_menu';
 import toggleSwitch from './toggle_switch';
+import list from './list';
+import profile from './profile';
+import password from './password';
 
 /* eslint-disable import/prefer-default-export */
-export { modal, contextMenu, login, banner, sideMenu, toggleSwitch };
+export {
+  modal,
+  contextMenu,
+  login,
+  banner,
+  sideMenu,
+  toggleSwitch,
+  list,
+  profile,
+  password,
+};
+
