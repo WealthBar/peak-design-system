@@ -13,17 +13,24 @@
        <!-- <li><router-link :to="example.path">{{example.name}}</router-link></li>-->
       </ul>
     </side-menu>
-
-    <router-view></router-view>
+    <login v-if="isLoginDisplayed"></login>
+    <router-view id="app" v-if="!isLoginDisplayed"></router-view>
   </body>
 </template>
 
 <script>
-import { banner, sideMenu } from '@/components';
+import { banner, login, sideMenu } from '@/components';
+import { mapGetters } from '@/lib/vue';
 
 export default {
   name: 'app',
-  components: { banner, sideMenu },
+  computed: {
+    ...mapGetters(['isLoggedIn']),
+    isLoginDisplayed() {
+      return this.$route.meta.requiresAuth === true && this.isLoggedIn === false;
+    },
+  },
+  components: { banner, login, sideMenu },
   data() {
     return {
       menuDisplay: false,
