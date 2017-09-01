@@ -34,3 +34,15 @@ export default {
   },
 };
 </script>
+
+
+<style lang="scss" scoped>
+  @import 'base/variables';
+
+  form {
+    padding: $spacing-large 0;
+    max-width: 32rem;
+    margin: auto;
+  }
+</style>
+

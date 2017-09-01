@@ -26,8 +26,7 @@ test('views/modal the slot title is empty by default', (t) => {
 
 test('views/modal the slot title is filled when provided', (t) => {
   const wrapper = shallow(modal, {
-    propsData: { displayed: true },
-    slots: { title: testTemplate },
+    propsData: { displayed: true, title: testTemplate },
   });
   const element = wrapper.find('h2');
   t.equal(element.length, 1, 'the title is the expected one');

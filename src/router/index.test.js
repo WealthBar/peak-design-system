@@ -4,7 +4,7 @@ import router from './index';
 test('The router has view routes.', (t) => {
   const routes = router.options.routes;
   t.assert(Array.find(routes, r => r.path === '/'), 'Has the root route');
-  t.assert(Array.find(routes, r => r.path === '/clients'), 'Has the /clients route');
+  t.assert(Array.find(routes, r => r.path === '/components'), 'Has the /components route');
   t.assert(Array.find(routes, r => r.path === '*'), 'Has the * route');
   t.end();
 });

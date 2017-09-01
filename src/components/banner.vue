@@ -3,7 +3,7 @@
     <button id="menu-toggle" @click.self="menuToggle">
       <svgicon name="menu" height="1.25rem" width="1.25rem" alt="Menu Icon"></svgicon><span>Menu</span>
     </button>
-    <img class="logo" src="~@/assets/logo.svg">
+    <router-link to="/"><img class="logo" src="~@/assets/logo.svg"></router-link>
     <button id="search-toggle" @click.self="searchToggle">
       <svgicon name="search" height="1.25rem" width="1.25rem" alt="Search Icon"></svgicon><span>Search</span>
     </button>
