@@ -23,3 +23,7 @@ yarn start
 
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Knowledge Base
+
+Links and extra relevant information for this repo can be found [here](https://paper.dropbox.com/doc/WSH2FfqsF4M4lrXLFs73E)
