@@ -21,7 +21,7 @@ select,
 textarea {
   font-family: $body-font;
   font-size: 1rem;
-  line-height: $baseline-height;
+  line-height: 1;
   color: $black;
 
   // -- font smooving
@@ -48,32 +48,34 @@ menu {
 p {
   font-size: 1rem;
   line-height: $baseline-height;
+  margin-bottom: $spacing;
 }
-
-p + p { margin-bottom: $spacing; }
 
 h1 {
   font-family: $header-font;
   font-size: 1.875rem;
-  line-height: $baseline-height*2;
+  line-height: $baseline-height;
 }
 
 h2 {
   font-family: $header-font;
   font-size: 1.5rem;
   line-height: $baseline-height*1.5;
+  padding: $baseline-height/4 0;
 }
 
 h3 {
   font-family: $header-font;
   font-size: 1.25rem;
   line-height: $baseline-height;
+  padding: $baseline-height/2 0;
 }
 
 h4 {
   font-family: $header-font;
   font-size: 1rem;
   line-height: $baseline-height;
+  padding: $baseline-height/2 0;
 }
 
 h5 {
@@ -93,7 +95,7 @@ em {
 
 small {
   font-size: 0.875rem;
-  line-height: 1.375rem;
+  // line-height: 1.375rem;
 }
 
 a {
@@ -107,6 +109,10 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+li {
+  line-height: 1.5;
 }
 
 hr {
