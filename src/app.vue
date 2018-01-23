@@ -18,10 +18,10 @@
       </p>
       <hr/>
       <section>
-        <p class="one-three">
+        <p class="one-four">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
         </p>
-        <p class="one-four">
+        <p class="one-four-five">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
         </p>
         <p class="one-five">
@@ -30,10 +30,10 @@
       </section>
       <hr/>
       <section>
-        <p class="one-three">
+        <p class="one-four">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor.
         </p>
-        <p class="one-four">
+        <p class="one-four-five">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
         <p class="one-five">
@@ -55,6 +55,7 @@
 
             <p>WealthBar collects information needed to provide services and meet the regulatory requirements of our industry. When you open an account or sign up for services, we collect personal information which may include but is not limited to the following:</p>
 
+            <h3>List</h3>
             <ul>
               <li>Your name and date of birth</li>
               <li>Contact details</li>
@@ -158,11 +159,15 @@ export default {
     margin: auto;
   }
 
-  .one-three {
-    line-height: 1.4;
+  .logo {
+    margin: 2rem 4rem;
   }
 
   .one-four {
+    line-height: 1.4;
+  }
+
+  .one-four-five {
     line-height: 1.45;
   }
 
