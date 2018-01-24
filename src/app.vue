@@ -18,30 +18,82 @@
       </p>
       <hr/>
       <section>
-        <p class="one-four">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
-        </p>
-        <p class="one-four-five">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
-        </p>
-        <p class="one-five">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
-        </p>
+        <header class="paragraphs">
+          <h2>Font Size 1rem/Line Height Default</h2>
+          <h2>Font Size 1rem/Line Height 1.45</h2>
+          <h2>Font Size 1rem/Line Height 1.5</h2>
+        </header>
+        <div class="paragraphs">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
+          </p>
+          <p class="one-four-five">
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
+          </p>
+          <p class="one-five">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
+          </p>
+        </div>
+      </section>
+      <hr/>
+       <hr/>
+      <section>
+        <header class="paragraphs">
+          <h2>Font Size 1.125rem/Line Height Default</h2>
+          <h2>Font Size 1.125rem/Line Height 1.45</h2>
+          <h2>Font Size 1.125rem/Line Height 1.5</h2>
+        </header>
+        <div class="paragraphs large">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
+          </p>
+          <p class="one-four-five">
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
+          </p>
+          <p class="one-five">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
+          </p>
+        </div>
       </section>
       <hr/>
       <section>
-        <p class="one-four">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor.
-        </p>
-        <p class="one-four-five">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <p class="one-five">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor.
-        </p>
+        <header class="paragraphs">
+          <h2>Line Height Default</h2>
+          <h2>Line Height 1.45</h2>
+          <h2>Line Height 1.5</h2>
+        </header>
+        <div class="paragraphs">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <p class="one-four-five">
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <p class="one-five">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
       </section>
       <hr/>
-        <section>
+           <section>
+        <header class="paragraphs">
+          <h2>Font Size 1.125rem/Line Height Default</h2>
+          <h2>Font Size 1.125rem/Line Height 1.45</h2>
+          <h2>Font Size 1.125rem/Line Height 1.5</h2>
+        </header>
+        <div class="paragraphs large">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <p class="one-four-five">
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <p class="one-five">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+      </section>
+        <!-- <section>
           <h1>Privacy Policy</h1>
         </section>
         <section>
@@ -135,7 +187,7 @@
             <p>If you believe that any information we have on file for you is incorrect or incomplete, please write to or email us as soon as possible, at the above address. We will promptly correct any information found to be incorrect.</p>
           </div>
           <button>Button</button>
-        </section>
+        </section> -->
     </article>
     <footer>
 
@@ -155,16 +207,11 @@ export default {
   @import 'style.scss';
 
   main {
-    max-width: 36rem;
     margin: auto;
   }
 
   .logo {
     margin: 2rem 4rem;
-  }
-
-  .one-four {
-    line-height: 1.4;
   }
 
   .one-four-five {
@@ -173,6 +220,18 @@ export default {
 
   .one-five {
     line-height: 1.5;
+  }
+
+  .paragraphs {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    p { margin-left: 2rem; }
+  }
+
+  .large p {
+    font-size: 1.125rem;
+    line-height: 1.675rem;
   }
 
 </style>
