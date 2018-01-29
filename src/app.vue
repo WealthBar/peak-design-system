@@ -17,61 +17,67 @@
         <small>This is small body copy</small>
       </p>
       <hr/>
-      <section>
-        <header class="paragraphs">
+      <section class="thirds">
+        <div>
           <h2>1.25 ratio 1rem(16px), 1.25rem(20px)</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+
+        <div>
           <h2>1.375 ratio 1rem(16px), 1.375rem(22px)</h2>
+          <p class="one-three-eighths">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
+          </p>
+          <p class="one-three-eighths">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+
+        <div>
           <h2>1.5 ratio 1rem(16px), 1.5rem(24px)</h2>
-        </header>
-        <div class="paragraphs">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
-          </p>
-          <p class="one-three-eighths">
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
-          </p>
           <p class="one-half">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
-          </p>
-        </div>
-        <div class="paragraphs">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
-          <p class="one-three-eighths">
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
           <p class="one-half">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
+
       </section>
       <hr/>
-      <section>
-        <header class="paragraphs">
+      <section class="thirds">
+
+        <div>
           <h2>1.333 ratio 1.125rem(18px), 1.375rem(24px)</h2>
-          <h2>1.444 ratio 1.125rem(18px), 1.5rem(26px)</h2>
-          <h2>1.555 ratio 1.125rem(18px), 1.625rem(28px)</h2>
-        </header>
-        <div class="paragraphs large">
-          <p class="one-three-eighths">
+          <p class="large one-three-eighths">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
           </p>
-          <p class="one-half">
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
-          </p>
-          <p class="one-five-eights">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
-          </p>
-        </div>
-        <div class="paragraphs large">
-          <p class="one-three-eighths">
+          <p class="large one-three-eighths">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
-          <p class="one-half">
+        </div>
+
+        <div>
+          <h2>1.444 ratio 1.125rem(18px), 1.5rem(26px)</h2>
+          <p class="large one-half">
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
+          </p>
+          <p class="large one-half">
              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
-          <p class="one-five-eights">
+        </div>
+
+        <div>
+          <h2>1.555 ratio 1.125rem(18px), 1.625rem(28px)</h2>
+          <p class="large one-five-eights">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo condimentum odio in auctor. Integer consectetur augue purus, eget gravida eros tincidunt ut. Maecenas efficitur laoreet turpis in sodales. Aenean porta ligula magna, sed vestibulum odio facilisis quis. Donec vitae tincidunt nibh, at laoreet purus. Curabitur blandit sit amet tortor eget blandit. Vestibulum eu convallis diam. Curabitur a ultrices elit, in placerat lectus. Fusce fringilla, quam ut rutrum posuere, neque purus venenatis justo, et vestibulum nisi lacus vel ipsum. Fusce leo est, iaculis vitae efficitur vel, dictum ut lacus. Ut dignissim nec massa laoreet lacinia. Donec lacinia porta risus vitae tempor. Duis tincidunt nibh diam, eu mattis libero sagittis ac.
+          </p>
+          <p class="large one-five-eights">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
@@ -197,13 +203,12 @@ export default {
     margin: 2rem 4rem;
   }
 
-  section > div,
-  section > header {
+  section.thirds {
     display: flex;
     width: 100%;
     align-items: flex-start;
 
-    h2, p {
+    > div {
       flex: 1 0 33%;
       padding: 0 1rem;
     }
@@ -213,10 +218,10 @@ export default {
     font-size: 1rem;
     line-height: 1.25rem;
     &.one-three-eighths { line-height: 1.375rem; }
+    &.one-seven-sixteenths { line-height: 1.4375rem; }
     &.one-half { line-height: 1.5rem; }
     &.one-five-eights { line-height: 1.625rem; }
+    &.large { font-size: 1.125rem; }
   }
-
-  .large p { font-size: 1.125rem; }
 
 </style>
