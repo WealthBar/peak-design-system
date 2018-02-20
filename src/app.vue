@@ -86,6 +86,11 @@ h1 {
     display: flex;
     width: 100%;
     align-items: flex-start;
+    flex-direction: column;
+
+    @media #{$sw-medium} {
+      flex-direction: row;
+    }
 
     > div {
       flex: 1 0 33%;
