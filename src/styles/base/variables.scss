@@ -58,3 +58,9 @@ $sw-small: 'screen and (max-width: 32em)'; // use sparingly
 $sw-medium: 'screen and (min-width: 32em)';
 $sw-large: 'screen and (min-width: 52.25em)';
 $sw-xlarge: 'screen and (min-width: 75em)';
+
+// --  -- //
+
+@media #{$sw-medium} {
+  $baseline-height: 1.45rem;
+}
