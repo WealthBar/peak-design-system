@@ -20,8 +20,12 @@ input,
 select,
 textarea {
   font-family: "GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-feature-settings: "kern", "liga", "ss02", "ss04";
+  font-weight: normal;
   font-size: 1rem;
-  line-height: 1;
+  line-height: 1.375rem;
+  margin: 0;
+  padding: 0;
   color: $black;
 
   // -- font smooving
@@ -99,12 +103,11 @@ svg {
 
 a,
 button {
-  font-family: "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   color: #00b298;
   text-decoration: underline;
   text-decoration-color: #4dd6b2;
-  //text-decoration-skip-ink: auto;
+  // text-decoration-skip-ink: auto;
   display: inline-block;
   -moz-appearance: none;
   cursor: pointer;
@@ -160,4 +163,10 @@ pre {
   color: $grey4;
 }
 
-/* stylelint-enable */
+.tab-numbers {
+  font-feature-settings: "kern", "liga", "tnum", "ss04";
+}
+
+.subtle {
+  color: rgba(0.48, 0.48, 0.48, 0.5);
+}
