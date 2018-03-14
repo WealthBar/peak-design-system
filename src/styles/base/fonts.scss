@@ -1,129 +1,45 @@
 @import url("//hello.myfonts.net/count/32ed97");
 
 @font-face {
-  font-family: 'GT-Walsheim-Bold';
-  src: url('~@/assets/fonts/gt-walsheim/GTWalsheimBold.eot');
+  font-family: 'GT-Walsheim';
+  src: url('/fonts/gt-walsheim/GTWalsheimLight.eot');
   src:
-    local('GT Walsheim Bold'),
-    local('GTWalsheimBold'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold.eot?#iefix') format('embedded-opentype'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold.woff2') format('woff2'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold.woff') format('woff'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold.ttf') format('truetype');
+    local('GT Walsheim Light'),
+    local('GTWalsheimLight'),
+    url('/fonts/gt-walsheim/GTWalsheimMedium.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'GT-Walsheim-Bold';
-  src: url('~@/assets/fonts/gt-walsheim/GTWalsheimBold.eot');
+  font-family: 'GT-Walsheim';
+  src: url('/fonts/gt-walsheim/GTWalsheimLight.eot');
   src:
-    local('GT Walsheim Bold'),
-    local('GTWalsheimBold'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold.eot?#iefix') format('embedded-opentype'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold.woff2') format('woff2'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold.woff') format('woff'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'GT-Walsheim-Bold';
-  src: url('~@/assets/fonts/gt-walsheim/GTWalsheimBold-Oblique.eot');
-  src:
-    local('GT Walsheim Bold Oblique'),
-    local('GTWalsheimBold-Oblique'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold-Oblique.eot?#iefix') format('embedded-opentype'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold-Oblique.woff2') format('woff2'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold-Oblique.woff') format('woff'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold-Oblique.ttf') format('truetype');
+    local('GT Walsheim Light'),
+    local('GTWalsheimLight'),
+    url('/fonts/gt-walsheim/GTWalsheimMedium.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'GT-Walsheim-Bold';
-  src: url('~@/assets/fonts/gt-walsheim/GTWalsheimBold-Oblique.eot');
+  font-family: 'GT-Walsheim';
+  src: url('/fonts/gt-walsheim/GTWalsheimMedium.eot');
   src:
-    local('GT Walsheim Bold Oblique'),
-    local('GTWalsheimBold-Oblique'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold-Oblique.eot?#iefix') format('embedded-opentype'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold-Oblique.woff2') format('woff2'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold-Oblique.woff') format('woff'),
-    url('~@/assets/fonts/gt-walsheim/GTWalsheimBold-Oblique.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Avenir';
-  src: url('~@/assets/fonts/avenir/32ED97_3_0.eot');
-  src:
-    local('Avenir Heavy'),
-    local('Avenir-Heavy'),
-    url('~@/assets/fonts/avenir/32ED97_3_0.eot?#iefix') format('embedded-opentype'),
-    url('~@/assets/fonts/avenir/32ED97_3_0.woff2') format('woff2'),
-    url('~@/assets/fonts/avenir/32ED97_3_0.woff') format('woff'),
-    url('~@/assets/fonts/avenir/32ED97_3_0.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Avenir';
-  src: url('/~@/assets/fonts/avenir/32ED97_2_0.eot');
-  src:
-    local('Avenir Book'),
-    local('Avenir-Book'),
-    url('~@/assets/fonts/avenir/32ED97_2_0.eot?#iefix') format('embedded-opentype'),
-    url('~@/assets/fonts/avenir/32ED97_2_0.woff2') format('woff2'),
-    url('~@/assets/fonts/avenir/32ED97_2_0.woff') format('woff'),
-    url('~@/assets/fonts/avenir/32ED97_2_0.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Avenir';
-  src: url('~@/assets/fonts/avenir/32ED97_1_0.eot');
-  src:
-    local('Avenir Book Oblique'),
-    local('Avenir-BookOblique'),
-    url('~@/assets/fonts/avenir/32ED97_1_0.eot?#iefix') format('embedded-opentype'),
-    url('~@/assets/fonts/avenir/32ED97_1_0.woff2') format('woff2'),
-    url('~@/assets/fonts/avenir/32ED97_1_0.woff') format('woff'),
-    url('~@/assets/fonts/avenir/32ED97_1_0.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Avenir';
-  src: url('~@/assets/fonts/avenir/32ED97_0_0.eot');
-  src:
-    local('Avenir Heavy'),
-    local('Avenir-Heavy'),
-    url('~@/assets/fonts/avenir/32ED97_0_0.eot?#iefix') format('embedded-opentype'),
-    url('~@/assets/fonts/avenir/32ED97_0_0.woff2') format('woff2'),
-    url('~@/assets/fonts/avenir/32ED97_0_0.woff') format('woff'),
-    url('~@/assets/fonts/avenir/32ED97_0_0.ttf') format('truetype');
+    local('GT Walsheim Medium'),
+    local('GTWalsheimMedium'),
+    url('/fonts/gt-walsheim/GTWalsheimMedium.eot?#iefix') format('embedded-opentype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'WealthBar';
-  src: url('~@/assets/fonts/wealthbar/WealthBar.eot');
+  font-family: 'GT-Walsheim';
+  src: url('/fonts/gt-walsheim/GTWalsheimMedium.eot');
   src:
-    url('~@/assets/fonts/wealthbar/WealthBar.eot') format('embedded-opentype'),
-    url('~@/assets/fonts/wealthbar/WealthBar.woff2') format('woff2'),
-    url('~@/assets/fonts/wealthbar/WealthBar.woff') format('woff'),
-    url('~@/assets/fonts/wealthbar/WealthBar.ttf') format('truetype'),
-    url('~@/assets/fonts/wealthbar/WealthBar.svg') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  vertical-align: bottom;
+    local('GT Walsheim Medium'),
+    local('GTWalsheimMedium'),
+    url('/fonts/gt-walsheim/GTWalsheimMedium.eot?#iefix') format('embedded-opentype');
+  font-weight: bold;
+  font-style: italic;
 }
