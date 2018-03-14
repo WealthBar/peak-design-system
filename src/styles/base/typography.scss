@@ -160,19 +160,21 @@ pre,
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1rem; /* 2 */
+  font-family: 'Fira Mono', monospace; /* 1 */
+  font-size: 0.875rem; /* 2 */
 }
 
-pre {
-  margin: 1rem;
-  padding: 1rem;
+pre code {
+  margin: 1rem 0;
+  padding: 0.75rem;
   background: $brand-lighter;
-  color: $brand;
+  color: $brand-med;
+  border: 1px solid rgba($brand, 0.25);
+  border-radius: $br;
 }
 
 .tab-numbers {
-  font-feature-settings: "kern", "liga", "tnum", "ss04";
+  font-feature-settings: "kern", "liga", "tnum", "ss02", "ss04";
 }
 
 .subtle {
