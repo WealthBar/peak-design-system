@@ -1,12 +1,12 @@
 <template>
-
+<h2>Index</h2>
 </template>
 
 <script>
 
 export default {
   head: {
-    title: 'WealthBar Starter',
+    title: 'Peak Design System',
   },
 };
 </script>

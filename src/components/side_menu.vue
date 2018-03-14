@@ -1,10 +1,10 @@
 <template>
   <transition name="open-menu">
-    <div class="side-menu-overlay" v-if="opened" @click="close">
+    <div v-if="opened" @click="close">
       <div class="side-menu" @click.stop>
-        <button class="menu-close" @click="close">
+        <!-- <button class="menu-close" @click="close">
           <svgicon name="close" alt="close"/>
-        </button>
+        </button> -->
         <nav>
           <slot name="content" />
         </nav>
@@ -100,11 +100,6 @@ export default {
     }
   }
 
-  .open-menu-enter-active,
-  .open-menu-leave-active {
-    transition: none 0.3s ease-in;
-  }
-
   .side-menu-overlay {
     position: fixed;
     left: 0;
@@ -121,35 +116,13 @@ export default {
     pointer-events: none;
   }
 
-  .side-menu-overlay::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 178, 152, 0.7);
-    opacity: 1;
-    will-change: opacity;
-    pointer-events: auto;
-    transition: opacity 0.3s ease-in;
-  }
-
-  .open-menu-enter.side-menu-overlay::after,
-  .open-menu-leave-to.side-menu-overlay::after {
-    opacity: 0;
-    pointer-events: none;
-  }
-
   .side-menu {
     position: relative;
     width: calc(100% - #{$spacing-huge});
     height: 100%;
     padding: 0 0 $spacing-large - $spacing-med 0;
-    background-color: $white;
+    background-color: $grey1;
     color: $black;
-    box-shadow: 4px 0 40px rgba(0, 0, 0, 0.24);
     display: flex;
     flex-direction: column;
     transform: none;
@@ -158,6 +131,7 @@ export default {
     pointer-events: auto;
     transition: transform 0.3s ease;
     font-size: $baseline-height;
+    border-right: 1px solid $grey2;
   }
 
   @media #{$sw-medium} {
@@ -165,11 +139,6 @@ export default {
       width: 30%;
       max-width: 300px;
     }
-  }
-
-  .open-menu-enter .side-menu,
-  .open-menu-leave-to .side-menu {
-    transform: translateX(-103%);
   }
 
 </style>
