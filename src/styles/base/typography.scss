@@ -9,6 +9,15 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  position: relative;
 }
 
 #app { min-height: 100vh; }
@@ -128,13 +137,12 @@ button:focus {
 }
 
 ul {
-  list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 1rem;
 }
 
 li {
-  line-height: 1.5;
+  padding: 0 0 0.25rem;
 }
 
 hr {
@@ -159,8 +167,8 @@ samp {
 pre {
   margin: 1rem;
   padding: 1rem;
-  background: $grey1;
-  color: $grey4;
+  background: $brand-lighter;
+  color: $brand;
 }
 
 .tab-numbers {
