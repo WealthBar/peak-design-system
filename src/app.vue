@@ -1,51 +1,15 @@
 <template>
-  <body>
-    <main class="home">
-      <side-menu :opened="menuDisplayed" >
-        <div slot="content">
-          <img class="logo" src="~@//assets/logo.svg">
-          <ul class="side-menu-content">
-            test
-          </ul>
-        </div>
-      </side-menu>
-      <article>
-      <section>
-        <h2>Font Stack</h2>
-        <hr/>
-        <h3>headers</h3>
-        <pre>
-          <code>"GT-Walsheim-Bold", sans-serif !default;</code>
-        </pre>
-        <h3>body/copy</h3>
-          <pre>
-            <code>"Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif !default;</code>
-          </pre>
-      </section>
-      <section>
-        <h2>Headers</h2>
-        <hr/>
-        <h1>H1 Header Element</h1>
-        <pre>
-          <code>
-            h1 {
-              font-size: 1.875rem;
-              line-height: 1.375rem;
-              font-weight: 600; //GT Walsheim Medium
-            }
-          </code>
-        </pre>
-      </section>
-      </article>
-    </main>
-  </body>
+  <div>
+    <ul>
+      <li><router-link to="/typography">Type</router-link></li>
+    </ul>
+  <router-view></router-view>
+  </div>
 </template>
 
 <script>
-  import { sideMenu } from '@/components';
 
   export default {
-    components: { sideMenu },
     data() {
       return {
         menuDisplayed: true,
@@ -63,6 +27,11 @@
 
   .logo {
     margin: 2rem 4rem;
+  }
+
+  .logo-area {
+    display: flex;
+    justify-content: center;
   }
 
   section.thirds {

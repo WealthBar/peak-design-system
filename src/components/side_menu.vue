@@ -1,6 +1,6 @@
 <template>
   <transition name="open-menu">
-    <div class="side-menu-overlay" v-if="opened" @click="close">
+    <div v-if="opened" @click="close">
       <div class="side-menu" @click.stop>
         <!-- <button class="menu-close" @click="close">
           <svgicon name="close" alt="close"/>
@@ -121,9 +121,8 @@ export default {
     width: calc(100% - #{$spacing-huge});
     height: 100%;
     padding: 0 0 $spacing-large - $spacing-med 0;
-    background-color: $white;
+    background-color: $grey1;
     color: $black;
-    box-shadow: 4px 0 40px rgba(0, 0, 0, 0.24);
     display: flex;
     flex-direction: column;
     transform: none;
@@ -132,6 +131,7 @@ export default {
     pointer-events: auto;
     transition: transform 0.3s ease;
     font-size: $baseline-height;
+    border-right: 1px solid $grey2;
   }
 
   @media #{$sw-medium} {

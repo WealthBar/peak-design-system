@@ -10,7 +10,6 @@
         <a @click="displayedData = !displayedData"><svgicon name="filter" alt="filter"/><span>Sort by {{currentOrder.label}}</span></a>
         <span class="results" v-if="visibleListItems.length >= 2">{{visibleListItems.length}} Results</span>
         <span class="results" v-if="visibleListItems.length < 2">{{visibleListItems.length}} Result</span>
-
       </nav>
       <header class="header-labels">
         <span>{{label}}</span>
