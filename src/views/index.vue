@@ -6,7 +6,7 @@
 
 export default {
   head: {
-    title: 'WealthBar Starter',
+    title: 'Peak Design System',
   },
 };
 </script>

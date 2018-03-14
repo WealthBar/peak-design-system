@@ -1,14 +1,6 @@
 <template>
   <body>
-    <main class="home">
-      <side-menu :opened="menuDisplayed" >
-        <div slot="content">
-          <img class="logo" src="~@//assets/logo.svg">
-          <ul class="side-menu-content">
-            test
-          </ul>
-        </div>
-      </side-menu>
+    <main class="typography">
       <article>
       <section>
         <h2>Font Stack</h2>

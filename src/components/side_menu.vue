@@ -2,9 +2,9 @@
   <transition name="open-menu">
     <div class="side-menu-overlay" v-if="opened" @click="close">
       <div class="side-menu" @click.stop>
-        <button class="menu-close" @click="close">
+        <!-- <button class="menu-close" @click="close">
           <svgicon name="close" alt="close"/>
-        </button>
+        </button> -->
         <nav>
           <slot name="content" />
         </nav>
@@ -100,11 +100,6 @@ export default {
     }
   }
 
-  .open-menu-enter-active,
-  .open-menu-leave-active {
-    transition: none 0.3s ease-in;
-  }
-
   .side-menu-overlay {
     position: fixed;
     left: 0;
@@ -118,27 +113,6 @@ export default {
 
   .open-menu-enter.side-menu-overlay,
   .open-menu-leave-to.side-menu-overlay {
-    pointer-events: none;
-  }
-
-  .side-menu-overlay::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 178, 152, 0.7);
-    opacity: 1;
-    will-change: opacity;
-    pointer-events: auto;
-    transition: opacity 0.3s ease-in;
-  }
-
-  .open-menu-enter.side-menu-overlay::after,
-  .open-menu-leave-to.side-menu-overlay::after {
-    opacity: 0;
     pointer-events: none;
   }
 
@@ -165,11 +139,6 @@ export default {
       width: 30%;
       max-width: 300px;
     }
-  }
-
-  .open-menu-enter .side-menu,
-  .open-menu-leave-to .side-menu {
-    transform: translateX(-103%);
   }
 
 </style>
