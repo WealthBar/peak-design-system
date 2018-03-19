@@ -102,7 +102,7 @@ export default {
     border-radius: $spacing-tiny;
     margin: $spacing-small;
     padding: $spacing-small;
-    border: 1px solid $grey2;
+    border: 1px solid $grey;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
     position: fixed;
     bottom: 0;

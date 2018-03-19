@@ -92,7 +92,7 @@ export default {
     cursor: pointer;
 
     svg {
-      fill: $grey3;
+      fill: $darkgrey;
     }
 
     &:hover, &:active {
@@ -121,9 +121,10 @@ export default {
     width: calc(100% - #{$spacing-huge});
     height: 100%;
     padding: 0 0 $spacing-large - $spacing-med 0;
-    background-color: $grey1;
+    background-color: $lightgrey;
     color: $black;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     transform: none;
     will-change: transform;
@@ -131,7 +132,7 @@ export default {
     pointer-events: auto;
     transition: transform 0.3s ease;
     font-size: $baseline-height;
-    border-right: 1px solid $grey2;
+    border-right: 1px solid $grey;
   }
 
   @media #{$sw-medium} {

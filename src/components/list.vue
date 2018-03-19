@@ -103,7 +103,7 @@ export default {
   .sort {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px $grey2 solid;
+    border-bottom: 1px $grey solid;
     padding: 0 0 $spacing-small;
 
     @media #{$sw-large} {
@@ -112,7 +112,7 @@ export default {
     }
 
     .results {
-      color: $grey3;
+      color: $darkgrey;
     }
   }
 
@@ -126,12 +126,12 @@ export default {
   .header-labels {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px $grey2 solid;
+    border-bottom: 1px $grey solid;
     padding: $spacing-med $spacing-small;
   }
 
   .header-labels > span {
-    color: $grey3;
+    color: $darkgrey;
 
     &:first-child {
       width: 20vw;
@@ -144,7 +144,7 @@ export default {
 
   .list > li > span {
     &:nth-child(even) {
-      color: $grey3;
+      color: $darkgrey;
     }
   }
 

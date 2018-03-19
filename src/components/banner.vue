@@ -7,11 +7,11 @@
     <button id="search-toggle" @click.self="searchToggle">
       <svgicon name="search" height="1.25rem" width="1.25rem" alt="Search Icon"></svgicon><span>Search</span>
     </button>
-    
+
   </header>
-    
+
 </template>
-  
+
 <script>
 
 import '@/lib/icons/menu';
@@ -38,7 +38,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     height: $spacing-large;
-    border-bottom: 1px solid $grey2;
+    border-bottom: 1px solid $grey;
     @media #{$sw-medium} { height: $spacing-huge; }
   }
 
@@ -59,4 +59,3 @@ export default {
     .svg-icon { vertical-align: top; }
   }
 </style>
-  

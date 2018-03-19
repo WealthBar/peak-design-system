@@ -9,18 +9,9 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
-  box-sizing: border-box;
-  overflow-x: hidden;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  position: relative;
-}
-
-#app { min-height: 100vh; }
+// #app { min-height: 100vh; }
 
 html,
 body,
@@ -28,13 +19,9 @@ button,
 input,
 select,
 textarea {
-  font-family: "GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-feature-settings: "kern", "liga", "ss02", "ss04";
-  font-weight: normal;
+  font-family: $body-font;
   font-size: 1rem;
-  line-height: 1.375rem;
-  margin: 0;
-  padding: 0;
+  line-height: $baseline-height;
   color: $black;
 
   // -- font smooving
@@ -54,109 +41,122 @@ figcaption,
 figure,
 main,
 details,
-menu {
+menu,
+dialog {
   display: block;
 }
 
-h1 {
-  font-weight: bold;
-  font-size: 1.5rem;
-  line-height: 1.875rem;
-  padding: 0;
-  margin: 1.875rem 0 1rem;
-  max-width: 100%;
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  margin: 0;
-  margin: 1.75rem 0 1rem;
-  max-width: 100%;
-}
-
-h3 {
-  font-weight: bold;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  padding: 0;
-  margin: 1.5rem 0 1rem;
-  max-width: 100%;
-}
-
-h4 {
-  font-size: 1rem;
-  line-height: 1.375rem;
-  padding: 0;
-  margin: 1.375rem 0 1rem;
-  max-width: 100%;
+input {
+  margin: $spacing-small 0;
+  border-radius: $spacing-tiny;
+  border: 1.5px solid $grey;
+  padding: $spacing-tiny;
+  background-color: $verylightgrey;
 }
 
 p {
-  margin: 0 0 1rem;
-
-  &.large {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    margin: 0 0 1.125rem;
-  }
-
-  &.small {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    margin: 0 0 0.875rem;
-  }
-}
-
-strong { font-weight: bold; }
-
-em { font-style: italic; }
-
-small { font-size: 0.875rem; }
-
-a,
-button {
-  font-weight: normal;
-  color: #00b298;
-  text-decoration: underline;
-  text-decoration-color: #4dd6b2;
-  // text-decoration-skip-ink: auto;
-  display: inline-block;
-  -moz-appearance: none;
-  cursor: pointer;
   font-size: 1rem;
-  line-height: 1.375rem;
-  background: none;
-  padding: 0;
-  border: 0;
-  transition: all 150ms ease;
+  line-height: $baseline-height;
 }
 
-a:hover,
-a:focus,
-button:hover,
-button:focus {
-  text-decoration-color: #00b298;
-  transition: all 150ms ease;
+p + p { margin-bottom: $spacing; }
+
+h1 {
+  font-family: $header-font;
+  font-size: 1.5rem;
+  line-height: $baseline-height*2;
+}
+
+h2 {
+  font-family: $header-font;
+  font-size: 1.375rem;
+  line-height: $baseline-height*1.5;
+}
+
+h3 {
+  font-family: $header-font;
+  font-size: 1.125rem;
+  line-height: $baseline-height;
+}
+
+h4 {
+  font-family: $header-font;
+  font-size: 1rem;
+  line-height: $baseline-height;
+}
+
+h5 {
+  font-family: $body-font;
+  font-size: 1.125rem;
+  font-weight: normal;
+  line-height: $baseline-height;
+}
+
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: normal;
+  color: $lightblack;
+}
+
+small {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+a {
+  // color: $brand;
+  color: $black;
+  text-decoration: underline;
+  cursor: pointer;
+  &:visited { color: $brand; }
+  &:hover, &:focus { color: $brand-med; }
 }
 
 ul {
-  padding: 0;
-  margin: 0 0 1rem;
-}
-
-li {
-  margin: 0 0 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: $spacing-small 0;
 }
 
 hr {
   box-sizing: content-box;
   height: 1px;
-  margin: 1rem 0;
-  background-color: $grey2;
+  width: 100%;
+  margin: $spacing-small 0;
+  background-color: $grey;
   border: none;
   overflow: visible;
+}
+
+dl {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid $grey;
+  padding: $spacing-med;
+
+  &:last-child {
+    border-bottom: 1px solid $grey;
+  }
+
+  @media #{$sw-large} {
+    border: none;
+    padding: $spacing-small 0 0;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  strong {
+    display: block;
+    font-family: $header-font;
+    font-size: 1rem;
+    line-height: $baseline-height;
+  }
 }
 
 /* stylelint-disable */
@@ -190,4 +190,6 @@ pre code {
   font-feature-settings: "kern", "liga", "tnum", "ss02", "ss04";
 }
 
-.subtle { color: rgba($black, 0.77); }
+.negative {
+  color: $negative;
+}

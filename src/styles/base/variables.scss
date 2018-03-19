@@ -5,6 +5,7 @@ $brand-lighter: #e9f9f6;
 $brand-light: #4dd6b2;
 $brand-med: #008f7a;
 $brand-dark: #0e6b64;
+$brand-lightest:#d4e5de;
 
 $color2: #4464e4;
 $color2-light: #7994fe;
@@ -20,18 +21,22 @@ $color4-med: #7154ea;
 $color4-dark: #4c40bc;
 
 $alert: #e96654;
+$alert-lighter: #f3dbd9;
 $alert-light: #fd8f74;
 $alert-med: #d23d3d;
 $alert-dark: #b92028;
 
 $warning: #f0b911;
 
+$negative: $alert;
+
 // -- Greyscale -- //
 $white: #fff;
-$grey1: #f1f1f1;
-$grey2: #dfdfdf;
-$grey3: #a3a3a3;
-$grey4: #5b5b5b;
+$verylightgrey: #f6f7f8;
+$lightgrey: #f1f1f1;
+$grey: #dfdfdf;
+$darkgrey: #bbb;
+$lightblack: #777;
 $black: #303030;
 
 // -- Spacing sizes -- //
@@ -50,8 +55,8 @@ $button-height: 2rem;
 $baseline-height: 1.375rem;
 
 // -- Font Stacks -- //
-// $body-font: "GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-// $header-font: "GT-Walsheim", sans-serif !default;
+$body-font: "GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$header-font: "GT-Walsheim", sans-serif !default;
 
 // -- Media Queries -- //
 $sw-small: 'screen and (max-width: 32em)'; // use sparingly
