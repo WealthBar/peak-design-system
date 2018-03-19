@@ -1,6 +1,6 @@
 <template>
   <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-    <div v-if="displayed" class="modal-overlay" :class="{ 'fullscreen': fullscreen }" @click.self="close"> 
+    <div v-if="displayed" class="modal-overlay" :class="{ 'fullscreen': fullscreen }" @click.self="close">
       <dialog class="modal-box animate" @click.self.prevent>
         <header :class="{ 'title': title }">
           <button class="modal-close" @click.self.capture="close">
@@ -12,11 +12,11 @@
           </div>
         </header>
 
-        <section class="body"> 
+        <section class="body">
           <slot name="body" />
         </section>
-        
-        <footer class="modal-footer"> 
+
+        <footer class="modal-footer">
           <slot name="footer" />
         </footer>
       </dialog>
@@ -94,7 +94,7 @@ header {
   min-height: $spacing*2;
 
   &.title {
-    border-bottom: 1px solid $grey2;
+    border-bottom: 1px solid $grey;
     padding: $spacing-small;
 
     .modal-close { top: $spacing; }
@@ -129,7 +129,7 @@ header {
   cursor: pointer;
 
   svg {
-    fill: $grey3;
+    fill: $darkgrey;
   }
 
   &:hover, &:active {
@@ -141,7 +141,7 @@ section { padding: $spacing-small; }
 
 footer {
   padding: $spacing-small;
-  border-top: 1px solid $grey2;
+  border-top: 1px solid $grey;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;

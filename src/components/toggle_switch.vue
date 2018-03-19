@@ -96,14 +96,14 @@
 
   input + label::before {
     right: $baseline-height * 0.01;
-    border: $baseline-height * 0.01 solid $grey2;
+    border: $baseline-height * 0.01 solid $grey;
     border-radius: $baseline-height * 1.5;
     transition: all 0.4s;
   }
 
   input + label::after {
     width: $baseline-height * 1.5;
-    border: $baseline-height * 0.01 solid $grey2;
+    border: $baseline-height * 0.01 solid $grey;
     border-radius: 100%;
     transition: all 0.4s;
   }

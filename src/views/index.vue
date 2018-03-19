@@ -1,5 +1,10 @@
 <template>
-<h2>Index</h2>
+  <div class="">
+    <section>
+      <h1>Peak</h1>
+      <p>Use this design system to craft beautiful, scalable, and consistent experiences for Canadians investing in their futures.</p>
+    </section>
+  </div>
 </template>
 
 <script>
