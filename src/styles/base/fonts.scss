@@ -2,44 +2,56 @@
 
 @font-face {
   font-family: 'GT-Walsheim';
-  src: url('/fonts/gt-walsheim/GTWalsheimLight.eot');
+  src: url('/fonts/gt-walsheim/GT-Walsheim-Light.eot');
   src:
     local('GT Walsheim Light'),
-    local('GTWalsheimLight'),
-    url('/fonts/gt-walsheim/GTWalsheimMedium.eot?#iefix') format('embedded-opentype');
+    local('GT-Walsheim-Light'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Light.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Light.woff2') format('woff2'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Light.woff') format('woff'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Light.ttf')  format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'GT-Walsheim';
-  src: url('/fonts/gt-walsheim/GTWalsheimLight.eot');
+  src: url('/fonts/gt-walsheim/GT-Walsheim-Light.eot');
   src:
     local('GT Walsheim Light'),
-    local('GTWalsheimLight'),
-    url('/fonts/gt-walsheim/GTWalsheimMedium.eot?#iefix') format('embedded-opentype');
+    local('GT-Walsheim-Light'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Light.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Light.woff2') format('woff2'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Light.woff') format('woff'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Light.ttf')  format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'GT-Walsheim';
-  src: url('/fonts/gt-walsheim/GTWalsheimMedium.eot');
+  src: url('/fonts/gt-walsheim/GT-Walsheim-Medium.eot');
   src:
     local('GT Walsheim Medium'),
-    local('GTWalsheimMedium'),
-    url('/fonts/gt-walsheim/GTWalsheimMedium.eot?#iefix') format('embedded-opentype');
+    local('GT-Walsheim-Medium'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Medium.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Medium.woff2') format('woff2'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Medium.woff') format('woff'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Medium.ttf')  format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'GT-Walsheim';
-  src: url('/fonts/gt-walsheim/GTWalsheimMedium.eot');
+  src: url('/fonts/gt-walsheim/GT-Walsheim-Medium.eot');
   src:
     local('GT Walsheim Medium'),
-    local('GTWalsheimMedium'),
-    url('/fonts/gt-walsheim/GTWalsheimMedium.eot?#iefix') format('embedded-opentype');
+    local('GT-Walsheim-Medium'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Medium.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Medium.woff2') format('woff2'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Medium.woff') format('woff'),
+    url('/fonts/gt-walsheim/GT-Walsheim-Medium.ttf')  format('truetype');
   font-weight: bold;
   font-style: italic;
 }

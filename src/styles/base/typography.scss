@@ -62,8 +62,8 @@ h1 {
   font-weight: bold;
   font-size: 1.5rem;
   line-height: 1.875rem;
-  margin: 0;
-  padding: 1.875rem 0 1rem;
+  padding: 0;
+  margin: 1.875rem 0 1rem;
   max-width: 100%;
 }
 
@@ -72,7 +72,7 @@ h2 {
   font-size: 1.25rem;
   line-height: 1.75rem;
   margin: 0;
-  padding: 1.75rem 0 1rem;
+  margin: 1.75rem 0 1rem;
   max-width: 100%;
 }
 
@@ -80,35 +80,40 @@ h3 {
   font-weight: bold;
   font-size: 1.125rem;
   line-height: 1.5rem;
-  margin: 0;
-  padding: 1.5rem 0 1rem;
+  padding: 0;
+  margin: 1.5rem 0 1rem;
   max-width: 100%;
 }
 
 h4 {
   font-size: 1rem;
   line-height: 1.375rem;
-  margin: 0;
-  padding: 1.375rem 0 1rem;
+  padding: 0;
+  margin: 1.375rem 0 1rem;
   max-width: 100%;
 }
 
 p {
-  padding: 0 0 1rem;
+  margin: 0 0 1rem;
+
+  &.large {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    margin: 0 0 1.125rem;
+  }
+
+  &.small {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    margin: 0 0 0.875rem;
+  }
 }
 
-hr {
-  border: none;
-  background: #4dd6b2;
-  height: 1px;
-  margin: 0;
-  padding: 0;
-}
+strong { font-weight: bold; }
 
-svg {
-  width: auto;
-  height: auto;
-}
+em { font-style: italic; }
+
+small { font-size: 0.875rem; }
 
 a,
 button {
@@ -137,18 +142,18 @@ button:focus {
 }
 
 ul {
-  margin: 0;
-  padding: 0 0 1rem;
+  padding: 0;
+  margin: 0 0 1rem;
 }
 
 li {
-  padding: 0 0 0.25rem;
+  margin: 0 0 0.25rem;
 }
 
 hr {
   box-sizing: content-box;
   height: 1px;
-  margin: $spacing-small 0;
+  margin: 1rem 0;
   background-color: $grey2;
   border: none;
   overflow: visible;
@@ -157,26 +162,32 @@ hr {
 /* stylelint-disable */
 
 pre,
-code,
-kbd,
-samp {
-  font-family: 'Fira Mono', monospace; /* 1 */
-  font-size: 0.875rem; /* 2 */
+code {
+  font-family: 'Fira Mono', monospace;
+  font-size: 0.875rem;
+  display: block;
+}
+
+pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  margin: 0 0 1rem;
 }
 
 pre code {
-  margin: 1rem 0;
+  margin: 0;
   padding: 0.75rem;
   background: $brand-lighter;
   color: $brand-med;
   border: 1px solid rgba($brand, 0.25);
   border-radius: $br;
+
 }
 
 .tab-numbers {
   font-feature-settings: "kern", "liga", "tnum", "ss02", "ss04";
 }
 
-.subtle {
-  color: rgba(0.48, 0.48, 0.48, 0.5);
-}
+.subtle { color: rgba($black, 0.77); }
