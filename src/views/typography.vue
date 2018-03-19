@@ -56,7 +56,8 @@ padding: 16px 0px 16px</pre></p>
       <h2>Font Stack</h2>
       <p>We use the same font stack regardless of the device. GT Walsheim is our typeface for it’s friendly and unique personality, as well as its web readability.</p>
       <pre><code>"GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;</code></pre>
-      <section>
+    </section>
+    <section>
         <h2><a name="links">Links</a></h2>
         Lorem ipsum dolor amet seitan kombucha deep v austin actually four dollar toast cronut green juice sriracha jianbing farm-to-table wayfarers glossier aesthetic dreamcatcher. Authentic knausgaard street art leggings sriracha, raclette blog lumbersexual. IPhone retro copper mug dreamcatcher 90's 8-bit artisan. Succulents hoodie you probably haven't heard of them kombucha. Typewriter literally skateboard sriracha fixie migas godard ugh.
 
