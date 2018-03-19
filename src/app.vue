@@ -7,30 +7,30 @@
       <input v-model="search" placeholder="Search">
       <div class="units-container">
         <p>Units</p>
-        <!-- <div class="unit-selector">
-          <li v-bind:class="{ active: isActive }" @click="isVisible"><a href="#">rem</a></li>
-          <li v-bind:class="{ active: isActive }" @click="isVisible"><a href="#">px</a></li>
-        </div> -->
+        <div class="unit-selector">
+          <li v-bind:class="{ active: isActive }" @click="isVisible">rem</li>
+          <li v-bind:class="{ active: isActive }" @click="isVisible">px</li>
+        </div>
       </div>
       <nav class="main-navigation">
       <h3>Visuals</h3>
         <ul>
           <li @click="navVisible"><router-link to="/typography">Typography</router-link></li>
           <ul v-if="toggleNav">
-            <li class="secondary-link"><a href="#">Headers</a></li>
-            <li class="secondary-link"><a href="#">Paragraphs</a></li>
-            <li class="secondary-link"><a href="#">Links</a></li>
-            <li class="secondary-link"><a href="#">Lists</a></li>
-            <li class="secondary-link"><a href="#">Line Lengths</a></li>
-            <li class="secondary-link"><a href="#">Font Stack</a></li>
-            <li class="secondary-link"><a href="#">Measurements</a></li>
+            <li class="secondary-link"><a href="#headers">Headers</a></li>
+            <li class="secondary-link"><a href="#paragraphs">Paragraphs</a></li>
+            <li class="secondary-link"><a href="#links">Links</a></li>
+            <li class="secondary-link"><a href="#lists">Lists</a></li>
+            <li class="secondary-link"><a href="#line">Line Length</a></li>
+            <li class="secondary-link"><a href="#stack">Font Stack</a></li>
+            <li class="secondary-link"><a href="#measurements">Measurements</a></li>
           </ul>
-          <li @click="navVisible"><router-link to="">Colour</router-link></li>
+          <li><router-link to="">Colour</router-link></li>
         </ul>
         <h3>Components</h3>
         <ul>
-          <li @click="navVisible"><router-link to="">Buttons</router-link></li>
-          <li @click="navVisible"><router-link to="">Inputs</router-link></li>
+          <li><router-link to="">Buttons</router-link></li>
+          <li><router-link to="">Inputs</router-link></li>
         </ul>
       </nav>
     </div>
@@ -47,6 +47,7 @@
       return {
         toggleNav: false,
         isActive: false,
+        search: '',
       };
     },
     methods: {
