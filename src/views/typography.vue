@@ -45,7 +45,7 @@ padding: 16px 0px 16px</pre></p>
       <pre><code>&lt;p&gt;This is &lt;strong&gt;strong text&lt;/strong&gt; used in a paragraph.&lt;/p&gt;</code></pre>
     </section>
     <section>
-      <h2>Links</h2>
+      <h2><a name="links">Links</a></h2>
       <p>This is our default style for text links within paragraphs. Links inherit the paragraph’s size and style. We use progressive enhancement with a basic fallback if browsers don’t support certain types of styling.</p>
       <p><a href="#">This is a link</a></p>
       <p><button>Button link</button></p>
@@ -53,86 +53,10 @@ padding: 16px 0px 16px</pre></p>
 &lt;button&gt;button link&lt;/button&gt;</code></pre>
     </section>
     <section>
-      <h2>Font Stack</h2>
+      <h2><a name="stack">Font Stack</a></h2>
       <p>We use the same font stack regardless of the device. GT Walsheim is our typeface for it’s friendly and unique personality, as well as its web readability.</p>
       <pre><code>"GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;</code></pre>
-    </section>
-    <section>
-        <h2><a name="links">Links</a></h2>
-        Lorem ipsum dolor amet seitan kombucha deep v austin actually four dollar toast cronut green juice sriracha jianbing farm-to-table wayfarers glossier aesthetic dreamcatcher. Authentic knausgaard street art leggings sriracha, raclette blog lumbersexual. IPhone retro copper mug dreamcatcher 90's 8-bit artisan. Succulents hoodie you probably haven't heard of them kombucha. Typewriter literally skateboard sriracha fixie migas godard ugh.
-
-        Live-edge retro chartreuse vegan shoreditch austin PBR&B single-origin coffee hammock synth green juice fanny pack banh mi activated charcoal. Adaptogen pork belly VHS locavore. Selfies deep v lomo try-hard artisan. Hammock woke man braid aesthetic wayfarers unicorn pitchfork. Irony letterpress bushwick fashion axe, lyft mumblecore flannel tote bag etsy. Bushwick gastropub banh mi, beard leggings kombucha craft beer authentic man braid live-edge chillwave.
-
-        Cornhole PBR&B taxidermy, biodiesel activated charcoal etsy meh blue bottle DIY drinking vinegar tilde letterpress mustache. Literally letterpress meggings, hammock small batch actually dreamcatcher green juice. Ramps taxidermy vexillologist everyday carry chartreuse quinoa cronut, lyft DIY taiyaki. Sartorial adaptogen distillery glossier, mlkshk narwhal meditation fanny pack pickled gluten-free wolf venmo photo booth. VHS photo booth wayfarers godard 8-bit locavore yuccie cray adaptogen messenger bag selfies try-hard street art hammock. Selvage put a bird on it lomo microdosing unicorn portland la croix chartreuse hell of pour-over hella drinking vinegar.
-
-        Succulents taxidermy bushwick plaid +1 air plant bicycle rights pok pok. Echo park selfies put a bird on it kogi fingerstache. Snackwave lomo bicycle rights pop-up cloud bread PBR&B wayfarers dreamcatcher leggings gentrify air plant squid. Tilde biodiesel kitsch quinoa. Hexagon four loko try-hard plaid kale chips godard shabby chic readymade live-edge. Swag glossier af, photo booth try-hard pug cred tattooed butcher. Offal mumblecore XOXO church-key.
-
-        Hella dreamcatcher gochujang, shaman 90's taxidermy stumptown paleo butcher. Kogi irony street art, seitan polaroid butcher pinterest live-edge scenester gochujang. Cold-pressed art party air plant, pitchfork twee deep v etsy chillwave kinfolk. Helvetica tumeric succulents, fixie hoodie aesthetic woke scenester. Small batch polaroid master cleanse, edison bulb yr copper mug bitters before they sold out wayfarers. Synth poutine shoreditch butcher, taiyaki flannel yr distillery.
-
-        Oh. You need a little dummy text for your mockup? How quaint.
-    </section>
-    <div>
-      <button id="topBtn" title="Go to top">Top</button>
-    </div>
-    <section>
-      <h2><a name="lists">Lists</a></h2>
-
-      Lorem ipsum dolor amet seitan kombucha deep v austin actually four dollar toast cronut green juice sriracha jianbing farm-to-table wayfarers glossier aesthetic dreamcatcher. Authentic knausgaard street art leggings sriracha, raclette blog lumbersexual. IPhone retro copper mug dreamcatcher 90's 8-bit artisan. Succulents hoodie you probably haven't heard of them kombucha. Typewriter literally skateboard sriracha fixie migas godard ugh.
-
-      Live-edge retro chartreuse vegan shoreditch austin PBR&B single-origin coffee hammock synth green juice fanny pack banh mi activated charcoal. Adaptogen pork belly VHS locavore. Selfies deep v lomo try-hard artisan. Hammock woke man braid aesthetic wayfarers unicorn pitchfork. Irony letterpress bushwick fashion axe, lyft mumblecore flannel tote bag etsy. Bushwick gastropub banh mi, beard leggings kombucha craft beer authentic man braid live-edge chillwave.
-
-      Cornhole PBR&B taxidermy, biodiesel activated charcoal etsy meh blue bottle DIY drinking vinegar tilde letterpress mustache. Literally letterpress meggings, hammock small batch actually dreamcatcher green juice. Ramps taxidermy vexillologist everyday carry chartreuse quinoa cronut, lyft DIY taiyaki. Sartorial adaptogen distillery glossier, mlkshk narwhal meditation fanny pack pickled gluten-free wolf venmo photo booth. VHS photo booth wayfarers godard 8-bit locavore yuccie cray adaptogen messenger bag selfies try-hard street art hammock. Selvage put a bird on it lomo microdosing unicorn portland la croix chartreuse hell of pour-over hella drinking vinegar.
-
-      Succulents taxidermy bushwick plaid +1 air plant bicycle rights pok pok. Echo park selfies put a bird on it kogi fingerstache. Snackwave lomo bicycle rights pop-up cloud bread PBR&B wayfarers dreamcatcher leggings gentrify air plant squid. Tilde biodiesel kitsch quinoa. Hexagon four loko try-hard plaid kale chips godard shabby chic readymade live-edge. Swag glossier af, photo booth try-hard pug cred tattooed butcher. Offal mumblecore XOXO church-key.
-
-      Hella dreamcatcher gochujang, shaman 90's taxidermy stumptown paleo butcher. Kogi irony street art, seitan polaroid butcher pinterest live-edge scenester gochujang. Cold-pressed art party air plant, pitchfork twee deep v etsy chillwave kinfolk. Helvetica tumeric succulents, fixie hoodie aesthetic woke scenester. Small batch polaroid master cleanse, edison bulb yr copper mug bitters before they sold out wayfarers. Synth poutine shoreditch butcher, taiyaki flannel yr distillery.
-
-      Oh. You need a little dummy text for your mockup? How quaint.
-    </section>
-    <section>
-      <h2><a name="line">Line Length</a></h2>
-
-      Lorem ipsum dolor amet seitan kombucha deep v austin actually four dollar toast cronut green juice sriracha jianbing farm-to-table wayfarers glossier aesthetic dreamcatcher. Authentic knausgaard street art leggings sriracha, raclette blog lumbersexual. IPhone retro copper mug dreamcatcher 90's 8-bit artisan. Succulents hoodie you probably haven't heard of them kombucha. Typewriter literally skateboard sriracha fixie migas godard ugh.
-
-      Live-edge retro chartreuse vegan shoreditch austin PBR&B single-origin coffee hammock synth green juice fanny pack banh mi activated charcoal. Adaptogen pork belly VHS locavore. Selfies deep v lomo try-hard artisan. Hammock woke man braid aesthetic wayfarers unicorn pitchfork. Irony letterpress bushwick fashion axe, lyft mumblecore flannel tote bag etsy. Bushwick gastropub banh mi, beard leggings kombucha craft beer authentic man braid live-edge chillwave.
-
-      Cornhole PBR&B taxidermy, biodiesel activated charcoal etsy meh blue bottle DIY drinking vinegar tilde letterpress mustache. Literally letterpress meggings, hammock small batch actually dreamcatcher green juice. Ramps taxidermy vexillologist everyday carry chartreuse quinoa cronut, lyft DIY taiyaki. Sartorial adaptogen distillery glossier, mlkshk narwhal meditation fanny pack pickled gluten-free wolf venmo photo booth. VHS photo booth wayfarers godard 8-bit locavore yuccie cray adaptogen messenger bag selfies try-hard street art hammock. Selvage put a bird on it lomo microdosing unicorn portland la croix chartreuse hell of pour-over hella drinking vinegar.
-
-      Succulents taxidermy bushwick plaid +1 air plant bicycle rights pok pok. Echo park selfies put a bird on it kogi fingerstache. Snackwave lomo bicycle rights pop-up cloud bread PBR&B wayfarers dreamcatcher leggings gentrify air plant squid. Tilde biodiesel kitsch quinoa. Hexagon four loko try-hard plaid kale chips godard shabby chic readymade live-edge. Swag glossier af, photo booth try-hard pug cred tattooed butcher. Offal mumblecore XOXO church-key.
-
-      Hella dreamcatcher gochujang, shaman 90's taxidermy stumptown paleo butcher. Kogi irony street art, seitan polaroid butcher pinterest live-edge scenester gochujang. Cold-pressed art party air plant, pitchfork twee deep v etsy chillwave kinfolk. Helvetica tumeric succulents, fixie hoodie aesthetic woke scenester. Small batch polaroid master cleanse, edison bulb yr copper mug bitters before they sold out wayfarers. Synth poutine shoreditch butcher, taiyaki flannel yr distillery.
-
-      Oh. You need a little dummy text for your mockup? How quaint.
-    </section>
-    <section>
-      <h2><a name="stack">Font Stack</a></h2>
-      Lorem ipsum dolor amet seitan kombucha deep v austin actually four dollar toast cronut green juice sriracha jianbing farm-to-table wayfarers glossier aesthetic dreamcatcher. Authentic knausgaard street art leggings sriracha, raclette blog lumbersexual. IPhone retro copper mug dreamcatcher 90's 8-bit artisan. Succulents hoodie you probably haven't heard of them kombucha. Typewriter literally skateboard sriracha fixie migas godard ugh.
-
-      Live-edge retro chartreuse vegan shoreditch austin PBR&B single-origin coffee hammock synth green juice fanny pack banh mi activated charcoal. Adaptogen pork belly VHS locavore. Selfies deep v lomo try-hard artisan. Hammock woke man braid aesthetic wayfarers unicorn pitchfork. Irony letterpress bushwick fashion axe, lyft mumblecore flannel tote bag etsy. Bushwick gastropub banh mi, beard leggings kombucha craft beer authentic man braid live-edge chillwave.
-
-      Cornhole PBR&B taxidermy, biodiesel activated charcoal etsy meh blue bottle DIY drinking vinegar tilde letterpress mustache. Literally letterpress meggings, hammock small batch actually dreamcatcher green juice. Ramps taxidermy vexillologist everyday carry chartreuse quinoa cronut, lyft DIY taiyaki. Sartorial adaptogen distillery glossier, mlkshk narwhal meditation fanny pack pickled gluten-free wolf venmo photo booth. VHS photo booth wayfarers godard 8-bit locavore yuccie cray adaptogen messenger bag selfies try-hard street art hammock. Selvage put a bird on it lomo microdosing unicorn portland la croix chartreuse hell of pour-over hella drinking vinegar.
-
-      Succulents taxidermy bushwick plaid +1 air plant bicycle rights pok pok. Echo park selfies put a bird on it kogi fingerstache. Snackwave lomo bicycle rights pop-up cloud bread PBR&B wayfarers dreamcatcher leggings gentrify air plant squid. Tilde biodiesel kitsch quinoa. Hexagon four loko try-hard plaid kale chips godard shabby chic readymade live-edge. Swag glossier af, photo booth try-hard pug cred tattooed butcher. Offal mumblecore XOXO church-key.
-
-      Hella dreamcatcher gochujang, shaman 90's taxidermy stumptown paleo butcher. Kogi irony street art, seitan polaroid butcher pinterest live-edge scenester gochujang. Cold-pressed art party air plant, pitchfork twee deep v etsy chillwave kinfolk. Helvetica tumeric succulents, fixie hoodie aesthetic woke scenester. Small batch polaroid master cleanse, edison bulb yr copper mug bitters before they sold out wayfarers. Synth poutine shoreditch butcher, taiyaki flannel yr distillery.
-
-      Oh. You need a little dummy text for your mockup? How quaint.
-    </section>
-        <section>
-      <h2><a name="measurements">Measurements</a></h2>
-      Lorem ipsum dolor amet seitan kombucha deep v austin actually four dollar toast cronut green juice sriracha jianbing farm-to-table wayfarers glossier aesthetic dreamcatcher. Authentic knausgaard street art leggings sriracha, raclette blog lumbersexual. IPhone retro copper mug dreamcatcher 90's 8-bit artisan. Succulents hoodie you probably haven't heard of them kombucha. Typewriter literally skateboard sriracha fixie migas godard ugh.
-
-      Live-edge retro chartreuse vegan shoreditch austin PBR&B single-origin coffee hammock synth green juice fanny pack banh mi activated charcoal. Adaptogen pork belly VHS locavore. Selfies deep v lomo try-hard artisan. Hammock woke man braid aesthetic wayfarers unicorn pitchfork. Irony letterpress bushwick fashion axe, lyft mumblecore flannel tote bag etsy. Bushwick gastropub banh mi, beard leggings kombucha craft beer authentic man braid live-edge chillwave.
-
-      Cornhole PBR&B taxidermy, biodiesel activated charcoal etsy meh blue bottle DIY drinking vinegar tilde letterpress mustache. Literally letterpress meggings, hammock small batch actually dreamcatcher green juice. Ramps taxidermy vexillologist everyday carry chartreuse quinoa cronut, lyft DIY taiyaki. Sartorial adaptogen distillery glossier, mlkshk narwhal meditation fanny pack pickled gluten-free wolf venmo photo booth. VHS photo booth wayfarers godard 8-bit locavore yuccie cray adaptogen messenger bag selfies try-hard street art hammock. Selvage put a bird on it lomo microdosing unicorn portland la croix chartreuse hell of pour-over hella drinking vinegar.
-
-      Succulents taxidermy bushwick plaid +1 air plant bicycle rights pok pok. Echo park selfies put a bird on it kogi fingerstache. Snackwave lomo bicycle rights pop-up cloud bread PBR&B wayfarers dreamcatcher leggings gentrify air plant squid. Tilde biodiesel kitsch quinoa. Hexagon four loko try-hard plaid kale chips godard shabby chic readymade live-edge. Swag glossier af, photo booth try-hard pug cred tattooed butcher. Offal mumblecore XOXO church-key.
-
-      Hella dreamcatcher gochujang, shaman 90's taxidermy stumptown paleo butcher. Kogi irony street art, seitan polaroid butcher pinterest live-edge scenester gochujang. Cold-pressed art party air plant, pitchfork twee deep v etsy chillwave kinfolk. Helvetica tumeric succulents, fixie hoodie aesthetic woke scenester. Small batch polaroid master cleanse, edison bulb yr copper mug bitters before they sold out wayfarers. Synth poutine shoreditch butcher, taiyaki flannel yr distillery.
-
-      Oh. You need a little dummy text for your mockup? How quaint.
-    </section>
-
+      </section>
   </article>
 </template>
 
