@@ -5,8 +5,11 @@
     <section>
       <h2><a name="headers">Headers</a></h2>
       <p>Headers create hierarchy in a layout and make scanning easy. Use them for content such as page titles or section titles. We have mobile and desktop header styles so that our typography is responsive to screen real estate.</p>
-
-      <p>[ mobile | desktop ]</p>
+      <toggle-view>
+        <ul slot="content" class="unit-selector">
+          <li v-for="view in views" @click="selected = view.screen, toggleUnits(view.screen)" :key="view.screen" :class="{'active': selected === view.screen}">{{view.screen}}</li>
+        </ul>
+      </toggle-view>
 
       <h1>H1 This is a <span class="large">huge</span> huge header.</h1>
       <pre><code>&lt;h1&gt;H1 This is a huge header.&lt;/h1&gt;</code></pre>
@@ -61,13 +64,23 @@ padding: 16px 0px 16px</pre></p>
 </template>
 
 <script>
+  import toggleView from '../components/toggle_view';
+
   export default {
     data() {
       return {
         title: 'Typography',
+        views: [
+          { screen: 'Desktop' },
+          { screen: 'Mobile' },
+        ],
+        selected: 'Desktop',
       };
     },
     methods: {
+    },
+    components: {
+      toggleView,
     },
   };
 </script>

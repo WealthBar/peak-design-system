@@ -5,12 +5,12 @@
         <router-link to="/"><img class="wb-logo" src="~@//assets/logo.svg"></router-link>
       </div>
       <input v-model="search" placeholder="Search">
-      <div class="units-container">
-        <p>Units</p>
-        <ul class="unit-selector" >
-          <li v-for="unit in units" :key="unit.id" v-bind:class="{ active: unit.id === selected}" @click="selected = unit.id, toggleUnits(unit.id)">{{unit.id}}</li>
+      <toggle-view>
+        <p slot="label">Units</p>
+        <ul slot="content" class="unit-selector">
+          <li v-for="unit in units" @click="selected = unit.id, toggleUnits(unit.id)" :key="unit.id" :class="{'active': selected === unit.id}">{{unit.id}}</li>
         </ul>
-      </div>
+      </toggle-view>
       <nav class="main-navigation">
       <h3>Visuals</h3>
         <ul>
@@ -40,6 +40,7 @@
 </template>
 
 <script>
+  import toggleView from './components/toggle_view';
 
   export default {
     data() {
@@ -61,6 +62,7 @@
         console.log(unit);
       },
     },
+    components: { toggleView },
   };
 </script>
 
@@ -73,7 +75,7 @@
 
   #app-view {
     display: flex;
-    height: 100%;
+    min-height: 100vw;
   }
 
   .side-menu {
@@ -89,46 +91,13 @@
   }
 
   .logo {
-    padding: $spacing-small;
+    padding: $spacing-small 0;
     margin-bottom: $spacing-med;
   }
 
   .wb-logo {
     height: 1.6rem;
-    width: 100%;
-  }
-
-  .units-container {
-    margin: $spacing-small 0;
-    display: flex;
-    align-items: center;
-
-    p {
-      margin-right: $spacing-small;
-    }
-  }
-
-  .unit-selector {
-    display: flex;
-    border: 1px solid $brand-lightest;
-    border-radius: $spacing-tiny;
-    padding: 0;
-
-    li {
-      padding: 0 $spacing-tiny;
-      color: $brand;
-      font-size: 14px;
-    }
-  }
-
-  li.active {
-    background-color: $brand;
-    color: $white;
-  }
-
-  .active.unit-selector {
-    background-color: $brand;
-    p { color: $white; }
+    width: 10rem;
   }
 
   .secondary-link {
