@@ -7,6 +7,8 @@ import toggleSwitch from './toggle_switch';
 import list from './list';
 import profile from './profile';
 import password from './password';
+import toggleView from './toggle_view';
+
 
 /* eslint-disable import/prefer-default-export */
 export {
@@ -19,5 +21,5 @@ export {
   list,
   profile,
   password,
+  toggleView,
 };
-
