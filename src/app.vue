@@ -7,10 +7,9 @@
       <input v-model="search" placeholder="Search">
       <div class="units-container">
         <p>Units</p>
-        <div class="unit-selector">
-          <li v-bind:class="{ active: isActive }" @click="isVisible">rem</li>
-          <li v-bind:class="{ active: isActive }" @click="isVisible">px</li>
-        </div>
+        <ul class="unit-selector" >
+          <li v-for="unit in units" :key="unit.id" v-bind:class="{ active: unit.id === selected}" @click="selected = unit.id, toggleUnits(unit.id)">{{unit.id}}</li>
+        </ul>
       </div>
       <nav class="main-navigation">
       <h3>Visuals</h3>
@@ -46,7 +45,11 @@
     data() {
       return {
         toggleNav: false,
-        isActive: false,
+        units: [
+          { id: 'rem' },
+          { id: 'px' },
+        ],
+        selected: 'px',
         search: '',
       };
     },
@@ -54,8 +57,8 @@
       navVisible() {
         this.toggleNav = !this.toggleNav;
       },
-      isVisible() {
-        this.isActive = !this.isActive;
+      toggleUnits(unit) {
+        console.log(unit);
       },
     },
   };
@@ -70,16 +73,14 @@
 
   #app-view {
     display: flex;
-    min-height: calc(100vh - 40vh);
+    height: 100%;
   }
 
   .side-menu {
     padding: $spacing-med $spacing-large;
     flex: 0 0 20vw;
     width: 17.5rem;
-    height: 100vw;
     background-color: $verylightgrey;
-    opacity: 75%;
     left: 0;
     top: 0;
     overflow: hidden;
@@ -100,6 +101,7 @@
   .units-container {
     margin: $spacing-small 0;
     display: flex;
+    align-items: center;
 
     p {
       margin-right: $spacing-small;
@@ -110,17 +112,18 @@
     display: flex;
     border: 1px solid $brand-lightest;
     border-radius: $spacing-tiny;
-    height: 1.5rem;
+    padding: 0;
 
     li {
-      text-align: center;
+      padding: 0 $spacing-tiny;
       color: $brand;
-
-      &:nth-child(2) {
-        background-color: $brand;
-        color: $white;
-      }
+      font-size: 14px;
     }
+  }
+
+  li.active {
+    background-color: $brand;
+    color: $white;
   }
 
   .active.unit-selector {
