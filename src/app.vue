@@ -58,9 +58,9 @@
       navVisible() {
         this.toggleNav = !this.toggleNav;
       },
-      toggleUnits(unit) {
-        console.log(unit);
-      },
+      // toggleUnits(unit) {
+      //   // console.log(unit);
+      // },
     },
     components: { toggleView },
   };
