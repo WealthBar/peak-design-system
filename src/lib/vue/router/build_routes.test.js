@@ -69,7 +69,12 @@ test('buildRoutes', (t) => {
   const component = {};
   context.returns({ default: component });
   context.keys = () => ['./index.vue', './other.vue'];
-  const routes = buildRoutes(context);
+  let routes = buildRoutes(context);
   t.equal(routes.length, 2, 'creates 2 routes for two keys in the context');
+
+  context.keys = () => ['./index.vue', './clients.vue', './clients/_id.vue'];
+  routes = buildRoutes(context);
+  const parent = routes.find(r => r.name === 'clients');
+  t.assert(parent.children[0].path === '/clients/:id?', 'creates a nested child route');
   t.end();
 });
