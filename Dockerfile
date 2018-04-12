@@ -2,7 +2,8 @@ FROM node:8-alpine
 
 ENV NODE_ENV=production NPM_ENV=production
 
-WORKDIR /app
+RUN mkdir /app
+ADD dist /app
 
 COPY package.json .
 COPY yarn.lock .
@@ -12,5 +13,8 @@ RUN yarn install --frozen-lockfile --prod
 
 COPY . .
 RUN yarn build
+
+EXPOSE 80
+
 
 CMD [ "yarn", "start" ]
