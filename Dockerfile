@@ -22,7 +22,7 @@ FROM node:8-alpine AS node-build
 
 RUN apk --no-cache add git bash
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Install node_modules
 COPY package.json yarn.lock ./
