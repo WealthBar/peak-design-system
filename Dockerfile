@@ -18,7 +18,7 @@
 
 
 # NodeJS Build
-FROM node:8-alpine AS node-build
+FROM node:8-alpine
 
 RUN apk --no-cache add git bash
 
@@ -29,7 +29,7 @@ COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile --prod
 
 # Build webpack
-COPY .babelrc .eslintrc.js tsconfig.json tslint.json ./
+COPY .babelrc .eslintrc.js ./
 COPY webpack ./webpack
 RUN NODE_ENV=production yarn build
 COPY . .
