@@ -1,37 +1,17 @@
-# FROM node:8-alpine
-
-# ENV NODE_ENV=production NPM_ENV=production
-
-# mkdir /app
-
-
-# COPY package.json .
-# COPY yarn.lock .
-# COPY packages ./packages
-
-# RUN yarn install --frozen-lockfile --prod
-
-# COPY . .
-# RUN yarn build
-
-# CMD [ "yarn", "start" ]
-
-
-# NodeJS Build
 FROM node:8-alpine
 
-RUN apk --no-cache add git bash
+ENV NODE_ENV=production NPM_ENV=production
 
 WORKDIR /app
 
-# Install node_modules
-COPY package.json yarn.lock ./
+COPY package.json .
+COPY yarn.lock .
+COPY packages ./packages
+
 RUN yarn install --frozen-lockfile --prod
 
-# Build webpack
-RUN NODE_ENV=production yarn build
 COPY . .
+RUN yarn build
 
-# Run
-EXPOSE 5000
+EXPOSE 5001
 CMD [ "yarn", "start" ]
