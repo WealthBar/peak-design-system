@@ -1,12 +1,16 @@
-
 FROM node:8-alpine
-RUN apk --no-cache add git bash
 
-# Install node_modules
-COPY . ./
+ENV NODE_ENV=production NPM_ENV=production
+
+WORKDIR /app
+
+COPY package.json .
+COPY yarn.lock .
+COPY packages ./packages
+
 RUN yarn install --frozen-lockfile --prod
-RUN NODE_ENV=production yarn build
 
-# Run
+COPY . .
 RUN yarn build
+
 CMD [ "yarn", "start" ]
