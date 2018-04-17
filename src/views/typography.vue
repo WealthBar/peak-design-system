@@ -32,10 +32,14 @@
       <p>This is a paragraph.</p>
       <div class="code-split">
       <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
-      <p><pre>font-size: 16px
-line-height: 22px
-font-weight: normal
-padding: 16px 0px 16px</pre></p>
+      <p>
+        <pre>
+          font-size: 16px
+          line-height: 22px
+          font-weight: normal
+          padding: 16px 0px 16px
+        </pre>
+      </p>
       </div>
       <h2>Additional Styles</h2>
       <p class="small">This is a small text paragraph.</small></p>

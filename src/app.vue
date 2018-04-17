@@ -36,11 +36,16 @@
     <div class="pages">
       <router-view></router-view>
     </div>
+    <back-to-top visibleOffset="800">
+      <svgicon name="arrow-up" height="2rem" width="2rem" color="#fff" alt="Arrow Icon"></svgicon>
+    </back-to-top>
   </div>
 </template>
 
 <script>
+  import '@/lib/icons/arrow-up';
   import toggleView from './components/toggle_view';
+  import BackToTop from './components/back_to_top';
 
   export default {
     data() {
@@ -58,11 +63,11 @@
       navVisible() {
         this.toggleNav = !this.toggleNav;
       },
-      // toggleUnits(unit) {
-      //   // console.log(unit);
-      // },
+      toggleUnits(unit) {
+        console.log(unit);
+      },
     },
-    components: { toggleView },
+    components: { toggleView, BackToTop },
   };
 </script>
 
@@ -108,6 +113,15 @@
     flex: 1;
     height: 100%;
     margin: $spacing-med $spacing-large;
+  }
+
+  .svg-icon {
+    padding: 0.5rem;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50px;
+    background: linear-gradient(180deg, #4dd6b2 0%, #00b298 100%);
   }
 
 </style>
