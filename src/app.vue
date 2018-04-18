@@ -47,6 +47,7 @@
   import toggleView from './components/toggle_view';
   import BackToTop from './components/back_to_top';
 
+
   export default {
     data() {
       return {
@@ -80,7 +81,7 @@
 
   #app-view {
     display: flex;
-    min-height: 100vw;
+    height: 100vh;
   }
 
   .side-menu {
@@ -111,8 +112,7 @@
 
   .pages {
     flex: 1;
-    height: 100%;
-    margin: $spacing-med $spacing-large;
+    width: 100%;
   }
 
   .svg-icon {

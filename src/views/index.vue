@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <section>
+  <div class="main-container">
+    <section class="intro">
       <h1>Peak</h1>
       <p>Use this design system to craft beautiful, scalable, and consistent experiences for Canadians investing in their futures.</p>
     </section>
@@ -17,8 +17,21 @@ export default {
 </script>
 
 <style scoped>
- main {
-   max-width: 32em;
-   margin: auto;
- }
+  .main-container {
+    display: flex;
+    height: 100%;
+    background-image: url('../assets/homepage-bkg.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .intro {
+    width: 20rem;
+    margin: 28rem 8rem;
+  }
+
+  .intro > h1 {
+    font-size: 2.3rem;
+  }
+
 </style>
