@@ -21,7 +21,7 @@ export default {
     display: flex;
     height: 100%;
     background-image: url('../assets/homepage-bkg.jpg');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
   }
 
