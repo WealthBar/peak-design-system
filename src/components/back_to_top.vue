@@ -21,7 +21,7 @@ export default {
   props: {
     text: {
       type: String,
-      default: 'Voltar ao topo',
+      default: 'Back to top',
     },
     visibleOffset: {
       type: [String, Number],
@@ -87,9 +87,6 @@ export default {
     position: fixed;
     z-index: 1000;
     cursor: pointer;
-  }
-
-  .vue-back-to-top .default {
     width: 36px;
     height: 36px;
     margin: 3px;

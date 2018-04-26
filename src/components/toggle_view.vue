@@ -8,29 +8,19 @@
 <script>
   export default {
     props: {
-      views: {
-        type: Array,
-        default: () => [],
-      },
       units: {
-        type: Array,
-        default: () => [],
+        type: String,
       },
-    },
-    methods: {
-      // close() {
-      //   this.$emit('close');
-      // },
     },
   };
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import 'base/variables';
 
   .units-container {
-    margin: $spacing-small 0;
+    margin-top: $spacing;
     display: flex;
     align-items: center;
 
@@ -46,9 +36,9 @@
     padding: 0;
 
     li {
-      padding: 0 $spacing-tiny;
+      padding: $spacing-tiny $spacing-small;
       color: $brand;
-      font-size: 14px;
+      font-size: 16px;
       margin: 0;
     }
   }

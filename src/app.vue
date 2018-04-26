@@ -2,31 +2,37 @@
   <div id="app-view">
     <div class="side-menu">
       <div class="logo">
-        <router-link to="/"><img class="wb-logo" src="~@//assets/logo.svg"></router-link>
+        <router-link to="/"><img class="wb-logo" src="~@/assets/logo.svg"></router-link>
       </div>
-      <input v-model="search" placeholder="Search">
+      <div class="placeholder-container">
+        <span class="placeholder">
+          <svgicon name="search" alt="search" height="1.5rem" width="1.5rem" />
+          <span class="placeholder-label">{{ placeholder }}</span>
+        </span>
+        <input type="search" name="search" v-model="search">
+      </div>
       <toggle-view>
         <p slot="label">Units</p>
         <ul slot="content" class="unit-selector">
-          <li v-for="unit in units" @click="selected = unit.id, toggleUnits(unit.id)" :key="unit.id" :class="{'active': selected === unit.id}">{{unit.id}}</li>
+          <li v-for="unit in getUnits" @click="setUnit(unit)" :key="unit" :class="{'active': getSelectedUnit === unit}">{{unit}}</li>
         </ul>
       </toggle-view>
       <nav class="main-navigation">
-      <h3>Visuals</h3>
+      <h5>Visuals</h5>
         <ul>
-          <li @click="navVisible"><router-link to="/typography">Typography</router-link></li>
+          <li @click="navVisible"><router-link to="typography">Typography</router-link></li>
           <ul v-if="toggleNav">
             <li class="secondary-link"><a href="#headers">Headers</a></li>
             <li class="secondary-link"><a href="#paragraphs">Paragraphs</a></li>
             <li class="secondary-link"><a href="#links">Links</a></li>
             <li class="secondary-link"><a href="#lists">Lists</a></li>
-            <li class="secondary-link"><a href="#line">Line Length</a></li>
-            <li class="secondary-link"><a href="#stack">Font Stack</a></li>
+            <li class="secondary-link"><a href="#line-length">Line Length</a></li>
+            <li class="secondary-link"><a href="#font-stack">Font Stack</a></li>
             <li class="secondary-link"><a href="#measurements">Measurements</a></li>
           </ul>
           <li><router-link to="">Colour</router-link></li>
         </ul>
-        <h3>Components</h3>
+        <h5>Components</h5>
         <ul>
           <li><router-link to="">Buttons</router-link></li>
           <li><router-link to="">Inputs</router-link></li>
@@ -37,13 +43,15 @@
       <router-view></router-view>
     </div>
     <back-to-top visibleOffset="800">
-      <svgicon name="arrow-up" height="2rem" width="2rem" color="#fff" alt="Arrow Icon"></svgicon>
+      <svgicon name="arrow-up" height="1.25rem" width="1.25rem" color="#fff" alt="Arrow Icon"></svgicon>
     </back-to-top>
   </div>
 </template>
 
 <script>
   import '@/lib/icons/arrow-up';
+  import '@/lib/icons/search';
+  import { mapActions, mapGetters } from '@/lib/vue';
   import toggleView from './components/toggle_view';
   import BackToTop from './components/back_to_top';
 
@@ -52,27 +60,33 @@
     data() {
       return {
         toggleNav: false,
-        units: [
-          { id: 'rem' },
-          { id: 'px' },
-        ],
-        selected: 'px',
+        placeholder: 'Search',
         search: '',
       };
     },
+    updated() {
+      if (this.$route.name === 'root') {
+        this.toggleNav = false;
+      }
+    },
+    computed: {
+      ...mapGetters(['getSelectedUnit', 'getUnits']),
+    },
     methods: {
+      ...mapActions(['setUnit']),
+
       navVisible() {
         this.toggleNav = !this.toggleNav;
       },
       toggleUnits(unit) {
-        console.log(unit);
+        this.selected = unit;
       },
     },
     components: { toggleView, BackToTop },
   };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import 'style.scss';
 
   main {
@@ -81,14 +95,36 @@
 
   #app-view {
     display: flex;
-    height: 100vh;
+  }
+
+  .placeholder-container {
+    position: relative;
+
+    .placeholder {
+      position: absolute;
+      z-index: 2;
+      top: 0.9rem;
+      color: #777;
+
+      .placeholder-label {
+        font-size: 14px;
+      }
+    }
+
+    .svg-icon {
+      padding-left: 0.5rem;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 50px;
+    }
   }
 
   .side-menu {
     padding: $spacing-med $spacing-large;
     flex: 0 0 20vw;
-    width: 17.5rem;
-    background-color: $verylightgrey;
+    min-width: 17.5rem;
+    max-width: 17.5rem;
+    background-color: $lightgrey;
     left: 0;
     top: 0;
     overflow: hidden;
@@ -113,15 +149,6 @@
   .pages {
     flex: 1;
     width: 100%;
-  }
-
-  .svg-icon {
-    padding: 0.5rem;
-    color: #fff;
-    text-align: center;
-    line-height: 30px;
-    border-radius: 50px;
-    background: linear-gradient(180deg, #4dd6b2 0%, #00b298 100%);
   }
 
 </style>

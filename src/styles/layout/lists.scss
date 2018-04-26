@@ -2,6 +2,16 @@ ul {
   list-style-type: none;
 }
 
+ul li ul {
+  list-style-type: circle;
+  margin-left: $spacing-med;
+}
+
+ol li ol {
+  list-style-type: lower-alpha;
+  margin-left: $spacing-med;
+}
+
 li {
   white-space: nowrap;
   padding: 0;
