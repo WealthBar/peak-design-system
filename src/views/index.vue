@@ -1,8 +1,10 @@
 <template>
   <div class="main-container">
     <section class="intro">
-      <h1>Peak</h1>
-      <p>Use this design system to craft beautiful, scalable, and consistent experiences for Canadians investing in their futures.</p>
+      <div class="intro-content">
+        <h1>Peak</h1>
+        <p>Use this design system to craft beautiful, scalable, and consistent experiences for Canadians investing in their futures.</p>
+      </div>
     </section>
   </div>
 </template>
@@ -16,7 +18,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
+  @import 'style.scss';
+
   .main-container {
     display: flex;
     height: 100%;
@@ -26,12 +30,19 @@ export default {
   }
 
   .intro {
-    width: 20rem;
     margin: 28rem 8rem;
   }
 
-  .intro > h1 {
-    font-size: 2.3rem;
+  .intro-content {
+    padding-right: 20rem;
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+    }
   }
 
 </style>
