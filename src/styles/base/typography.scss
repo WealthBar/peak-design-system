@@ -139,7 +139,14 @@ a:focus,
 button:hover,
 button:focus {
   text-decoration-color: #00b298;
+  color: #008579;
+  background-color: #e0f5f2;
   transition: all 150ms ease;
+}
+
+a:active,
+a:focus {
+  text-decoration: none;
 }
 
 input {
