@@ -21,7 +21,7 @@
           </ul>
         </toggle-view>
 
-        <h1> H1 This is a super large header.</h1>{{getSelectedScreen}}
+        <h1> H1 This is a super large header.</h1>
         <div class="code-sample">
           <pre><code>&lt;h1&gt; H1 This is a super large header.&lt;/h1&gt;</code></pre>
           <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
