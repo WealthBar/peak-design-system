@@ -137,6 +137,11 @@
     margin-bottom: $spacing-med;
   }
 
+  .logo > a:hover,
+  a:active {
+    background-color: transparent;
+  }
+
   .wb-logo {
     height: 1.6rem;
     width: 10rem;
