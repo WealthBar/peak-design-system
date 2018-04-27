@@ -311,7 +311,7 @@
         <div v-if="selected === 'States'" class="link-states">
           <div>
             <p>Inactive state</p>
-            <p><a href="#">A link goes like this.</a></p>
+            <p ><a class="inactive" href="#">A link goes like this.</a></p>
           </div>
             <div>
               <p>Hover state</p>
@@ -550,6 +550,15 @@
     display: flex;
     flex-direction: row;
 
+    .inactive:hover,
+    .inactive:focus,
+    .inactive:active {
+      background-color: transparent;
+      text-decoration-color: #4dd6b2;
+      color: #00b298;
+      text-decoration: underline;
+    }
+
     div {
       margin-right: $spacing;
     }
@@ -678,6 +687,7 @@
 
       p {
         font-size: 0.875rem;
+        max-width: 26rem;
       }
     }
   }

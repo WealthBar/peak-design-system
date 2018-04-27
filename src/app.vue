@@ -121,9 +121,10 @@
 
   .side-menu {
     padding: $spacing-med $spacing-large;
-    flex: 0 0 20vw;
     min-width: 17.5rem;
     max-width: 17.5rem;
+    position: fixed;
+    height: 100%;
     background-color: $lightgrey;
     left: 0;
     top: 0;
@@ -138,7 +139,8 @@
   }
 
   .logo > a:hover,
-  a:active {
+  a:active,
+  a:focus {
     background-color: transparent;
   }
 
@@ -154,6 +156,7 @@
   .pages {
     flex: 1;
     width: 100%;
+    margin-left: 17.5rem;
   }
 
 </style>
