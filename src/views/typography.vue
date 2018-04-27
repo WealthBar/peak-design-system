@@ -17,14 +17,14 @@
 
         <toggle-view>
           <ul slot="content" class="unit-selector">
-            <li v-for="view in views" @click="selected = view.screen, toggleScreen(view.screen)" :key="view.screen" :class="{'active': selected === view.screen}">{{view.screen}}</li>
+            <li v-for="screen in getScreens" @click="setScreen(screen)" :key="screen" :class="{'active': getSelectedScreen === screen}">{{screen}}</li>
           </ul>
         </toggle-view>
 
-        <h1> H1 This is a super large header.</h1>
+        <h1> H1 This is a super large header.</h1>{{getSelectedScreen}}
         <div class="code-sample">
           <pre><code>&lt;h1&gt; H1 This is a super large header.&lt;/h1&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem'" class="css-px">
+          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
             <ul>
               <li>font-size: 2.25rem;</li>
               <li>line-height: 3rem;</li>
@@ -32,7 +32,23 @@
               <li>padding: 2.25rem 0px 1rem;</li>
             </ul>
           </div>
-          <div div v-else class="css-px">
+          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
+            <ul>
+              <li>font-size: 1.625rem;</li>
+              <li>line-height: 2rem;</li>
+              <li>font-weight: 500;</li>
+              <li>padding: 1.625rem 0px 1rem;</li>
+            </ul>
+          </div>
+          <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
+            <ul>
+              <li>font-size: 26px;</li>
+              <li>line-height: 32px;</li>
+              <li>font-weight: 500;</li>
+              <li>padding: 26px 0px 16px;</li>
+            </ul>
+          </div>
+          <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'"  class="css-px">
             <ul>
               <li>font-size: 36px;</li>
               <li>line-height: 48px;</li>
@@ -45,7 +61,7 @@
         <h2>H2 This is a huge header.</h2>
         <div class="code-sample">
           <pre><code>&lt;h2&gt; H2 This is a huge header.&lt;/h2&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem'" class="css-px">
+          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
             <ul>
               <li>font-size: 1.875rem;</li>
               <li>line-height: 2.25rem;</li>
@@ -53,7 +69,23 @@
               <li>padding: 1.875rem 0px 1rem;</li>
             </ul>
           </div>
-          <div div v-else class="css-px">
+          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
+            <ul>
+              <li>font-size: 1.5rem;</li>
+              <li>line-height: 1.875rem;</li>
+              <li>font-weight: 500;</li>
+              <li>padding: 1.5rem 0px 1rem;</li>
+            </ul>
+          </div>
+          <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
+            <ul>
+              <li>font-size: 24px;</li>
+              <li>line-height: 30px;</li>
+              <li>font-weight: 500;</li>
+              <li>padding: 24px 0px 16px;</li>
+            </ul>
+          </div>
+          <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
             <ul>
               <li>font-size: 30px;</li>
               <li>line-height: 36px;</li>
@@ -66,7 +98,7 @@
         <h3>H3 This is a big header.</h3>
         <div class="code-sample">
           <pre><code>&lt;h3&gt; H3 This is a big header.&lt;/h3&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem'" class="css-px">
+          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
             <ul>
               <li>font-size: 1.5rem;</li>
               <li>line-height: 1.875rem;</li>
@@ -74,7 +106,23 @@
               <li>padding: 1.5rem 0px 1rem;</li>
             </ul>
           </div>
-          <div div v-else class="css-px">
+          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
+            <ul>
+              <li>font-size: 1.375rem;</li>
+              <li>line-height: 1.75rem;</li>
+              <li>font-weight: 500;</li>
+              <li>padding: 1.375rem 0px 1rem;</li>
+            </ul>
+          </div>
+          <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
+            <ul>
+              <li>font-size: 22px;</li>
+              <li>line-height: 28px;</li>
+              <li>font-weight: 500;</li>
+              <li>padding: 22px 0px 16px;</li>
+            </ul>
+          </div>
+          <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
             <ul>
               <li>font-size: 24px;</li>
               <li>line-height: 30px;</li>
@@ -87,7 +135,7 @@
         <h4>H4 This is a medium header.</h4>
         <div class="code-sample">
           <pre><code>&lt;h4&gt; H4 This is a medium header.&lt;/h4&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem'" class="css-px">
+          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
             <ul>
               <li>font-size: 1.25rem;</li>
               <li>line-height: 1.625rem;</li>
@@ -95,7 +143,23 @@
               <li>padding: 1.25rem 0px 1rem;</li>
             </ul>
           </div>
-          <div div v-else class="css-px">
+          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
+            <ul>
+              <li>font-size: 1.125rem;</li>
+              <li>line-height: 1.5rem;</li>
+              <li>font-weight: 500;</li>
+              <li>padding: 1.125rem 0px 1rem;</li>
+            </ul>
+          </div>
+          <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
+            <ul>
+              <li>font-size: 18px;</li>
+              <li>line-height: 24px;</li>
+              <li>font-weight: 500;</li>
+              <li>padding: 18px 0px 16px;</li>
+            </ul>
+          </div>
+          <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
             <ul>
               <li>font-size: 20px;</li>
               <li>line-height: 26px;</li>
@@ -108,7 +172,7 @@
         <h5>H5 This is a small header.</h5>
         <div class="code-sample">
           <pre><code>&lt;h5&gt; H5 This is a small header.&lt;/h5&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem'" class="css-px">
+          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
             <ul>
               <li>font-size: 1.125rem;</li>
               <li>line-height: 1.5rem;</li>
@@ -116,7 +180,23 @@
               <li>padding: 1.125rem 0px 1rem;</li>
             </ul>
           </div>
-          <div v-else class="css-px">
+          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
+            <ul>
+              <li>font-size: 1rem;</li>
+              <li>line-height: 1.375rem;</li>
+              <li>font-weight: 500;</li>
+              <li>padding: 1rem 0px 1rem;</li>
+            </ul>
+          </div>
+          <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
+            <ul>
+              <li>font-size: 16px;</li>
+              <li>line-height: 22px;</li>
+              <li>font-weight: 500;</li>
+              <li>padding: 16px 0px 16px;</li>
+            </ul>
+          </div>
+          <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
             <ul>
               <li>font-size: 18px;</li>
               <li>line-height: 24px;</li>
@@ -224,11 +304,26 @@
 
         <toggle-view>
           <ul slot="content" class="unit-selector">
-            <li v-for="state in states" @click="initial = state.format, toggleState(state.format)" :key="state.format" :class="{'active': initial === state.format}">{{state.format}}</li>
+            <li v-for="state in states" @click="selected = state.format" :key="state.format" :class="{'active': selected === state.format}">{{state.format}}</li>
           </ul>
         </toggle-view>
 
-        <p><a href="#">A link goes like this.</a></p>
+        <div v-if="selected === 'States'" class="link-states">
+          <div>
+            <p>Inactive state</p>
+            <p><a href="#">A link goes like this.</a></p>
+          </div>
+            <div>
+              <p>Hover state</p>
+              <p><a href="#">A link goes like this.</a></p>
+          </div>
+            <div>
+              <p>Active + focus state</p>
+              <p><a href="#">A link goes like this.</a></p>
+          </div>
+        </div>
+        <p v-else><a href="#">A link goes like this.</a></p>
+
 
         <div class="code-sample">
         <pre><code>&lt;a href="#"&gt;link&lt;/a&gt;
@@ -357,7 +452,7 @@
 <script>
   import '@/lib/icons/close';
   import '@/lib/icons/check';
-  import { mapGetters } from '@/lib/vue';
+  import { mapGetters, mapActions } from '@/lib/vue';
   import toggleView from '../components/toggle_view';
 
   export default {
@@ -365,28 +460,18 @@
       return {
         name: 'typography',
         title: 'Typography',
-        views: [
-          { screen: 'Desktop' },
-          { screen: 'Mobile' },
-        ],
         states: [
           { format: 'Live demo' },
           { format: 'States' },
         ],
-        selected: 'Desktop',
-        initial: 'Live demo',
+        selected: 'Live demo',
       };
     },
     computed: {
-      ...mapGetters(['getSelectedUnit']),
+      ...mapGetters(['getSelectedUnit', 'getSelectedScreen', 'getScreens']),
     },
     methods: {
-      // toggleScreen(screen) {
-      //   console.log(screen, 'screen typography');
-      // },
-      // toggleState(state) {
-      //   console.log(state, 'state typography');
-      // },
+      ...mapActions(['setScreen']),
     },
     components: {
       toggleView,
@@ -458,6 +543,15 @@
     .text-description {
       flex: 2;
       max-width: 26rem;
+    }
+  }
+
+  .link-states {
+    display: flex;
+    flex-direction: row;
+
+    div {
+      margin-right: $spacing;
     }
   }
 
