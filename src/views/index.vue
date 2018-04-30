@@ -23,7 +23,7 @@ export default {
 
   .main-container {
     display: flex;
-    height: 100%;
+    height: 100vh;
     background-image: url('../assets/homepage-bkg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -34,7 +34,7 @@ export default {
   }
 
   .intro-content {
-    padding-right: 20rem;
+    width: 40rem;
 
     h1 {
       font-size: 3rem;

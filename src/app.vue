@@ -4,13 +4,6 @@
       <div class="logo">
         <router-link to="/"><img class="wb-logo" src="~@/assets/logo.svg"></router-link>
       </div>
-      <div class="placeholder-container">
-        <span class="placeholder">
-          <svgicon name="search" alt="search" height="1.5rem" width="1.5rem" />
-          <span class="placeholder-label">{{ placeholder }}</span>
-        </span>
-        <input type="search" name="search" v-model="search">
-      </div>
       <toggle-view>
         <p slot="label">Units</p>
         <ul slot="content" class="unit-selector">
@@ -20,8 +13,8 @@
       <nav class="main-navigation">
       <h5>Visuals</h5>
         <ul>
-          <li @click="navVisible"><router-link to="typography">Typography</router-link></li>
-          <ul v-if="toggleNav">
+          <li><router-link to="typography">Typography</router-link></li>
+          <ul v-if="$route.path === '/typography'">
             <li class="secondary-link"><a href="#headers">Headers</a></li>
             <li class="secondary-link"><a href="#paragraphs">Paragraphs</a></li>
             <li class="secondary-link"><a href="#links">Links</a></li>
@@ -30,12 +23,12 @@
             <li class="secondary-link"><a href="#font-stack">Font Stack</a></li>
             <li class="secondary-link"><a href="#measurements">Measurements</a></li>
           </ul>
-          <li><router-link to="">Colour</router-link></li>
+          <li><router-link class="coming-soon" to="">Colour (Coming soon!)</router-link></li>
         </ul>
         <h5>Components</h5>
         <ul>
-          <li><router-link to="">Buttons</router-link></li>
-          <li><router-link to="">Inputs</router-link></li>
+          <li><router-link class="coming-soon" to="">Buttons (Coming soon!)</router-link></li>
+          <li ><router-link class="coming-soon" to="">Inputs (Coming soon!)</router-link></li>
         </ul>
       </nav>
     </div>
@@ -57,13 +50,6 @@
 
 
   export default {
-    data() {
-      return {
-        toggleNav: false,
-        placeholder: 'Search',
-        search: '',
-      };
-    },
     updated() {
       if (this.$route.name === 'root') {
         this.toggleNav = false;
@@ -74,10 +60,6 @@
     },
     methods: {
       ...mapActions(['setUnit']),
-
-      navVisible() {
-        this.toggleNav = !this.toggleNav;
-      },
       toggleUnits(unit) {
         this.selected = unit;
       },
@@ -97,40 +79,20 @@
     display: flex;
   }
 
-  .placeholder-container {
-    position: relative;
-
-    .placeholder {
-      position: absolute;
-      z-index: 2;
-      top: 0.9rem;
-      color: #777;
-
-      .placeholder-label {
-        font-size: 14px;
-      }
-    }
-
-    .svg-icon {
-      padding-left: 0.5rem;
-      text-align: center;
-      line-height: 30px;
-      border-radius: 50px;
-    }
-  }
-
   .side-menu {
     padding: $spacing-med $spacing-large;
     min-width: 17.5rem;
     max-width: 17.5rem;
     position: fixed;
     height: 100%;
-    background-color: $lightgrey;
+    background-color: $verylightgrey;
     left: 0;
     top: 0;
     overflow: hidden;
     pointer-events: auto;
     border-right: 1px solid $grey;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.1);
+    opacity: 0.75;
   }
 
   .logo {
@@ -157,6 +119,10 @@
     flex: 1;
     width: 100%;
     margin-left: 17.5rem;
+  }
+
+  .coming-soon {
+    color: #86868f;
   }
 
 </style>

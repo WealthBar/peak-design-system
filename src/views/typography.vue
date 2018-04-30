@@ -21,7 +21,8 @@
           </ul>
         </toggle-view>
 
-        <h1> H1 This is a super large header.</h1>
+        <h1 class="mobile-h1" v-if="getSelectedScreen === 'Mobile'">H1 This is a super large header.</h1>
+        <h1 v-else> H1 This is a super large header.</h1>
         <div class="code-sample">
           <pre><code>&lt;h1&gt; H1 This is a super large header.&lt;/h1&gt;</code></pre>
           <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
@@ -57,8 +58,8 @@
             </ul>
           </div>
         </div>
-
-        <h2>H2 This is a huge header.</h2>
+        <h2 class="mobile-h2" v-if="getSelectedScreen === 'Mobile'" >H2 This is a huge header.</h2>
+        <h2 v-else >H2 This is a huge header.</h2>
         <div class="code-sample">
           <pre><code>&lt;h2&gt; H2 This is a huge header.&lt;/h2&gt;</code></pre>
           <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
@@ -95,7 +96,8 @@
           </div>
         </div>
 
-        <h3>H3 This is a big header.</h3>
+        <h3 class="mobile-h3" v-if="getSelectedScreen === 'Mobile'" >H3 This is a big header.</h3>
+        <h3 v-else >H3 This is a big header.</h3>
         <div class="code-sample">
           <pre><code>&lt;h3&gt; H3 This is a big header.&lt;/h3&gt;</code></pre>
           <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
@@ -132,7 +134,8 @@
           </div>
         </div>
 
-        <h4>H4 This is a medium header.</h4>
+        <h4 class="mobile-h4" v-if="getSelectedScreen === 'Mobile'">H4 This is a medium header.</h4>
+        <h4 v-else>H4 This is a medium header.</h4>
         <div class="code-sample">
           <pre><code>&lt;h4&gt; H4 This is a medium header.&lt;/h4&gt;</code></pre>
           <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
@@ -169,7 +172,8 @@
           </div>
         </div>
 
-        <h5>H5 This is a small header.</h5>
+        <h5 class="mobile-h4" v-if="getSelectedScreen === 'Mobile'">H5 This is a small header.</h5>
+        <h5 v-else>H5 This is a small header.</h5>
         <div class="code-sample">
           <pre><code>&lt;h5&gt; H5 This is a small header.&lt;/h5&gt;</code></pre>
           <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
@@ -431,11 +435,10 @@
             <div class="code-sample">
               <pre><code>font-feature-settings: "kern", "liga", “pnum”, "ss04";</code></pre>
             </div>
-            <h4>H4 This is a small header.</h4>
             <p>For lists and tables with numbers, we use tabular figures (also known as monospaced numbers) for all text. This will ensure vertical alignment among numbers and special characters.</p>
             <div class="code-sample">
-              <pre><code>font-feature-settings: "kern", "liga", “tnum”, "ss04";</code>
-              <code>&lt;span class="tab-numbers"&gt;0123456789&lt;/span&gt;</code></pre>
+              <pre><code>font-feature-settings: "kern", "liga", “tnum”, "ss04";</code></pre>
+              <pre><code>&lt;span class="tab-numbers"&gt;0123456789&lt;/span&gt;</code></pre>
             </div>
           </div>
         </div>
@@ -546,6 +549,26 @@
     }
   }
 
+  .mobile-h1 {
+    font-size: 1.625rem;
+  }
+
+  .mobile-h2 {
+    font-size: 1.5rem;
+  }
+
+  .mobile-h3 {
+    font-size: 1.375rem;
+  }
+
+  .mobile-h4 {
+    font-size: 1.125rem;
+  }
+
+  .mobile-h5 {
+    font-size: 1rem;
+  }
+
   .link-states {
     display: flex;
     flex-direction: row;
@@ -624,7 +647,6 @@
       .line-60,
       .line-80,
       .line-105 {
-        width: 2px;
         height: 90%;
         position: absolute;
       }
@@ -640,19 +662,19 @@
       }
 
       .line-60 {
-        border: 1px solid #00b298;
+        border-left: 1px solid #00b298;
         left: 436px;
         opacity: 0.5;
       }
 
       .line-80 {
-        border: 1px solid #00b298;
+        border-left: 1px solid #00b298;
         margin-left: 592px;
         opacity: 0.5;
       }
 
       .line-105 {
-        border: 1px solid #e96654;
+        border-left: 1px solid #e96654;
         margin-left: 736px;
         opacity: 0.5;
       }
@@ -688,6 +710,10 @@
       p {
         font-size: 0.875rem;
         max-width: 26rem;
+      }
+
+      .code-sample {
+        flex-direction: column;
       }
     }
   }
