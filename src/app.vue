@@ -17,7 +17,7 @@
           <ul v-if="$route.path === '/typography'">
             <li class="secondary-link"><a href="#headers">Headers</a></li>
             <li class="secondary-link"><a href="#paragraphs">Paragraphs</a></li>
-            <li class="secondary-link"><a href="#links">Links</a></li>
+            <li class="secondary-link coming-soon"><a href="#links">Links (Coming soon!)</a></li>
             <li class="secondary-link"><a href="#lists">Lists</a></li>
             <li class="secondary-link"><a href="#line-length">Line Length</a></li>
             <li class="secondary-link"><a href="#font-stack">Font Stack</a></li>
@@ -85,12 +85,12 @@
     max-width: 17.5rem;
     position: fixed;
     height: 100%;
-    background-color: $verylightgrey;
+    background-color: $pearl-50;
     left: 0;
     top: 0;
     overflow: hidden;
     pointer-events: auto;
-    border-right: 1px solid $grey;
+    border-right: 1px solid $pearl-100;
     box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.1);
     opacity: 0.75;
   }
@@ -122,7 +122,7 @@
   }
 
   .coming-soon {
-    color: #86868f;
+    color: $pearl-500;
   }
 
 </style>

@@ -95,10 +95,10 @@ export default {
     line-height: 30px;
     border-radius: 50px;
     padding: 3px;
-    background: linear-gradient(180deg, #4dd6b2 0%, #00b298 100%);
+    background: linear-gradient(180deg, #4dd6b2 0%, $jade-300 100%);
   }
 
   .vue-back-to-top .default span {
-    color: #fff;
+    color: $white;
   }
 </style>

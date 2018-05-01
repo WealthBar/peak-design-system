@@ -3,6 +3,7 @@
     <article>
       <div class="typography-intro">
         <h1>Typography</h1>
+        <a name="typography"></a>
         <p class="intro-copy">WealthBar’s typography is a balance between readability and personality. Using our set of defined typography styles ensures consistent quality and a clear hierarchy.</p>
         <div class="download-typography">
           <p>Instantly apply on-point typography! 👌🏾</p>
@@ -303,41 +304,6 @@
       <hr />
 
       <section>
-        <h2 class="section-headers"><a name="links">Links</a></h2>
-        <p class="intro-copy">This is our default style for text links within paragraphs. Links inherit the paragraph’s size and style. We use progressive enhancement with a basic fallback if browsers don’t support certain types of styling. </p>
-
-        <toggle-view>
-          <ul slot="content" class="unit-selector">
-            <li v-for="state in states" @click="selected = state.format" :key="state.format" :class="{'active': selected === state.format}">{{state.format}}</li>
-          </ul>
-        </toggle-view>
-
-        <div v-if="selected === 'States'" class="link-states">
-          <div>
-            <p>Inactive state</p>
-            <p ><a class="inactive" href="#">A link goes like this.</a></p>
-          </div>
-            <div>
-              <p>Hover state</p>
-              <p><a href="#">A link goes like this.</a></p>
-          </div>
-            <div>
-              <p>Active + focus state</p>
-              <p><a href="#">A link goes like this.</a></p>
-          </div>
-        </div>
-        <p v-else><a href="#">A link goes like this.</a></p>
-
-
-        <div class="code-sample">
-        <pre><code>&lt;a href="#"&gt;link&lt;/a&gt;
-&lt;button&gt;link&lt;/button&gt;</code></pre>
-        </div>
-      </section>
-
-      <hr />
-
-      <section>
         <h2 class="section-headers"><a name="lists">Lists</a></h2>
         <p class="intro-copy">Lists inherit the paragraph’s style and use the paragraph’s spacing between list items to improve readability. List items are indented 8px.</p>
 
@@ -463,11 +429,6 @@
       return {
         name: 'typography',
         title: 'Typography',
-        states: [
-          { format: 'Live demo' },
-          { format: 'States' },
-        ],
-        selected: 'Live demo',
       };
     },
     computed: {
@@ -501,7 +462,7 @@
     position: absolute;
     top: 44px;
     right: 244px;
-    border: 1px solid $grey;
+    border: 1px solid $pearl-100;
     padding: 1.5rem;
     width: 14rem;
     border-radius: 2px;
@@ -518,7 +479,12 @@
       text-decoration: none;
       font-size: 24px;
       font-weight: bold;
-      color: $black;
+      color: $pearl-900;
+    }
+
+    a:hover,
+    a:focus {
+      background-color: transparent;
     }
   }
 
@@ -569,24 +535,6 @@
     font-size: 1rem;
   }
 
-  .link-states {
-    display: flex;
-    flex-direction: row;
-
-    .inactive:hover,
-    .inactive:focus,
-    .inactive:active {
-      background-color: transparent;
-      text-decoration-color: #4dd6b2;
-      color: #00b298;
-      text-decoration: underline;
-    }
-
-    div {
-      margin-right: $spacing;
-    }
-  }
-
   .bulleted-list-example {
     ul,
     ol {
@@ -623,12 +571,12 @@
 
         p:first-of-type + p {
           margin-left: 292px;
-          color: #e96654;
+          color: $ruby-300;
         }
 
         p:nth-child(3),
         p:nth-child(5) {
-          color: #00b298;
+          color: $jade-300;
           margin-left: 48px;
         }
 
@@ -637,7 +585,7 @@
         }
 
         p:last-child {
-          color: #e96654;
+          color: $ruby-300;
           margin-left: 124px;
         }
       }
@@ -652,7 +600,7 @@
       }
 
       .line-0 {
-        border-left: 1px solid #bbb;
+        border-left: 1px solid $pearl-100;
       }
 
       .line-50 {
@@ -662,13 +610,13 @@
       }
 
       .line-60 {
-        border-left: 1px solid #00b298;
+        border-left: 1px solid $jade-300;
         left: 436px;
         opacity: 0.5;
       }
 
       .line-80 {
-        border-left: 1px solid #00b298;
+        border-left: 1px solid $jade-300;
         margin-left: 592px;
         opacity: 0.5;
       }
