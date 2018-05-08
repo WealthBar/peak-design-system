@@ -22,7 +22,6 @@ export default {
 
   actions: {
     setScreen({ commit }, selectedScreen) {
-      console.log(selectedScreen, 'actions');
       commit('updateSelectedScreen', selectedScreen);
     },
   },

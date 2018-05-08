@@ -482,6 +482,8 @@
       color: $pearl-900;
     }
 
+    a[name] { padding-top: 1.875rem; }
+
     a:hover,
     a:focus {
       background-color: transparent;

@@ -88,11 +88,9 @@
     background-color: $pearl-50;
     left: 0;
     top: 0;
-    overflow: hidden;
+    overflow-y: auto;
     pointer-events: auto;
     border-right: 1px solid $pearl-100;
-    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.1);
-    opacity: 0.75;
   }
 
   .logo {
