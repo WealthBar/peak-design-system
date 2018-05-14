@@ -20,13 +20,9 @@
   @import 'base/variables';
 
   .units-container {
-    margin-top: $spacing;
     display: flex;
     align-items: center;
-
-    p {
-      margin-right: $spacing-small;
-    }
+    > * { margin: 0 0.5rem 0 0; }
   }
 
   .unit-selector {
@@ -35,23 +31,22 @@
     border-radius: $spacing-tiny;
     padding: 0;
 
-    li {
+    > * {
       padding: $spacing-tiny $spacing-small;
       color: $brand;
+      text-decoration: none;
       font-size: 16px;
       margin: 0;
+
+      &.active {
+        background-color: $brand;
+        color: $white;
+      }
     }
   }
-
-  li.active {
-    background-color: $brand;
-    color: $white;
-  }
-
-  .active.unit-selector {
-    background-color: $brand;
-
-    p { color: $white; }
-  }
+  // .active.unit-selector {
+  //   background-color: $brand;
+  //   p { color: $white; }
+  // }
 
 </style>

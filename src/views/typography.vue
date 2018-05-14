@@ -17,9 +17,9 @@
         <p class="intro-copy">Headers create hierarchy in a layout and make scanning easy. Use them for content such as page titles or section titles. We have mobile and desktop header styles so that our typography is responsive to screen real estate. </p>
 
         <toggle-view>
-          <ul slot="content" class="unit-selector">
-            <li v-for="screen in getScreens" @click="setScreen(screen)" :key="screen" :class="{'active': getSelectedScreen === screen}">{{screen}}</li>
-          </ul>
+          <div slot="content" class="unit-selector">
+            <a v-for="screen in getScreens" @click="setScreen(screen)" :key="screen" :class="{'active': getSelectedScreen === screen}">{{screen}}</a>
+          </div>
         </toggle-view>
 
         <h1 class="mobile-h1" v-if="getSelectedScreen === 'Mobile'">H1 This is a super large header.</h1>
@@ -359,23 +359,23 @@
 
         <div class="line-length-container">
           <div class="line-length-content">
-            <div class="line-length-labels">
-            <p class="subtle small">Characters</p>
-            <p class="small">50</p>
-            <p class="small">60</p>
-            <p class="small">Ideal 🎉</p>
-            <p class="small">80</p>
-            <p class="small">105</p>
-            </div>
+            <p class="line-length-labels">
+              <span class="subtle small">Characters</span>
+              <span class="small char-50">50</span>
+              <span class="small char-60">60</span>
+              <span class="small ideal">Ideal 🎉</span>
+              <span class="small char-80">80</span>
+              <span class="small char-104">104</span>
+            </p>
             <div class="line-0"></div>
             <div class="line-50"></div>
             <div class="line-60"></div>
             <div class="line-80"></div>
-            <div class="line-105"></div>
+            <div class="line-104"></div>
             <p class="line-length-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam* condimentum, magna* at eleifend facilisis, tellus justo finibus est, sed maximus diam urna quis eros. Aliquam dictum ultrices magna.</p>
             <p class="line-length-60">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam* condimentum, magna* at eleifend facilisis, tellus justo finibus est, sed maximus diam urna quis eros. Aliquam dictum ultrices magna.</p>
             <p class="line-length-80">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam* condimentum, magna* at eleifend facilisis, tellus justo finibus est, sed maximus diam urna quis eros. Aliquam dictum ultrices magna.</p>
-            <p class="line-length-105">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam* condimentum, magna* at eleifend facilisis, tellus justo finibus est, sed maximus diam urna quis eros. Aliquam dictum ultrices magna.</p>
+            <p class="line-length-104">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam* condimentum, magna* at eleifend facilisis, tellus justo finibus est, sed maximus diam urna quis eros. Aliquam dictum ultrices magna.</p>
           </div>
         </div>
         <hr />
@@ -384,9 +384,7 @@
         <h2 class="section-headers"><a name="font-stack">Font Stack</a></h2>
         <p class="intro-copy">We use the same font stack regardless of the device. GT Walsheim is our typeface for it’s friendly and unique personality, as well as its web readability.</p>
 
-        <div class="code-sample">
         <pre><code>font-family: "GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;</code></pre>
-        </div>
 
         <h4>Alternative glyphs</h4>
         <p class="intro-copy">This refers to alphanumeric characters where we’ve deviated from GT Walsheim’s default for readability reasons.</p>
@@ -398,21 +396,18 @@
           </div>
           <div class="alternative-copy">
             <p>Across the board we use the alternate Y, both lower and uppercase. </p>
-            <div class="code-sample">
-              <pre><code>font-feature-settings: "kern", "liga", “pnum”, "ss04";</code></pre>
-            </div>
+            <pre><code>font-feature-settings: "kern", "liga", “pnum”, "ss04";</code></pre>
+
             <p>For lists and tables with numbers, we use tabular figures (also known as monospaced numbers) for all text. This will ensure vertical alignment among numbers and special characters.</p>
-            <div class="code-sample">
-              <pre><code>font-feature-settings: "kern", "liga", “tnum”, "ss04";</code></pre>
-              <pre><code>&lt;span class="tab-numbers"&gt;0123456789&lt;/span&gt;</code></pre>
-            </div>
+            <pre><code>font-feature-settings: "kern", "liga", “tnum”, "ss04";</code></pre>
+            <pre><code>&lt;span class="tab-numbers"&gt;0123456789&lt;/span&gt;</code></pre>
           </div>
         </div>
         <hr />
       </section>
       <section>
         <h2 class="section-headers"><a name="measurements">Measurements</a></h2>
-        <p class="intro-copy">We use REM to ensure our typography stays scalable in a responsive web world. Our base REM is 16px, which means 2px is equal to 0.125rem, or 1/8rem. </p>
+        <p class="intro-copy">We use REM to ensure our typography stays <button>scalable</button>  in a responsive web world. Our base REM is 16px, which means 2px is equal to 0.125rem, or 1/8rem. </p>
       </section>
     </article>
   </section>
@@ -474,159 +469,75 @@
     }
   }
 
-  .section-headers {
-    a {
-      text-decoration: none;
-      font-size: 24px;
-      font-weight: bold;
-      color: $pearl-900;
-    }
-
-    a[name] { padding-top: 1.875rem; }
-
-    a:hover,
-    a:focus {
-      background-color: transparent;
-    }
-  }
-
   .code-sample {
     display: flex;
 
-    pre {
-      margin-right: $spacing-large;
-      width: 25rem;
-
-      code {
-        font-size: 14px;
-      }
+    > * {
+      margin-right: 1rem;
+      width: 28rem;
     }
 
-    .css-px > ul {
-      list-style-type: none;
-    }
-
-    .css-px > ul > li {
-      font-size: 14px;
-      line-height: 1;
-    }
-
-    .text-description {
-      flex: 2;
-      max-width: 26rem;
-    }
-  }
-
-  .mobile-h1 {
-    font-size: 1.625rem;
-  }
-
-  .mobile-h2 {
-    font-size: 1.5rem;
-  }
-
-  .mobile-h3 {
-    font-size: 1.375rem;
-  }
-
-  .mobile-h4 {
-    font-size: 1.125rem;
-  }
-
-  .mobile-h5 {
-    font-size: 1rem;
-  }
-
-  .bulleted-list-example {
-    ul,
-    ol {
-      margin-left: 2rem;
-    }
-  }
-
-  .bulleted-list-example > ul {
-    list-style-type: disc;
+    ul { list-style: none; }
   }
 
   .line-length-container {
     padding-bottom: 1rem;
 
     .line-length-content {
-      .line-length-50 {
-        max-width: 24rem;
-      }
+      .line-length-50 { max-width: 22rem; }
 
-      .line-length-60 {
-        max-width: 28rem;
-      }
+      .line-length-60 { max-width: 28rem; }
 
-      .line-length-80 {
-        max-width: 34rem;
-      }
+      .line-length-80 { max-width: 38rem; }
 
-      .line-length-105 {
-        max-width: 48rem;
-      }
+      .line-length-104 { max-width: 52rem; }
 
       .line-length-labels {
-        display: flex;
-
-        p:first-of-type + p {
-          margin-left: 292px;
-          color: $ruby-300;
+        .char-50,
+        .char-60,
+        .char-80,
+        .char-104,
+        .ideal {
+          position: absolute;
+          top: 0;
         }
 
-        p:nth-child(3),
-        p:nth-child(5) {
-          color: $jade-300;
-          margin-left: 48px;
-        }
-
-        p:nth-child(4) {
-          margin-left: 40px;
-        }
-
-        p:last-child {
-          color: $ruby-300;
-          margin-left: 124px;
-        }
+        .char-50 { left: 22rem; }
+        .char-60 { left: 28rem; }
+        .ideal { left: 31rem; }
+        .char-80 { left: 38rem; }
+        .char-104 { left: 52rem; }
       }
 
       .line-0,
       .line-50,
       .line-60,
       .line-80,
-      .line-105 {
+      .line-104 {
         height: 90%;
         position: absolute;
-      }
-
-      .line-0 {
-        border-left: 1px solid $pearl-100;
+        border-left: 1px solid $pearl-500;
+        opacity: 0.5;
       }
 
       .line-50 {
-        border-left: 1px solid #e96654;
-        left: 372px;
-        opacity: 0.5;
+        border-color: #e96654;
+        left: 22rem;
       }
 
       .line-60 {
-        border-left: 1px solid $jade-300;
-        left: 436px;
-        opacity: 0.5;
+        border-color: $jade-300;
+        left: 28rem;
       }
 
       .line-80 {
-        border-left: 1px solid $jade-300;
-        margin-left: 592px;
-        opacity: 0.5;
+        border-color: $jade-300;
+        left: 38rem;
       }
 
-      .line-105 {
-        border-left: 1px solid #e96654;
-        margin-left: 736px;
-        opacity: 0.5;
+      .line-104 {
+        border-color: #e96654;
+        left: 52rem;
       }
     }
   }
@@ -647,23 +558,6 @@
 
       img {
         width: 21rem;
-      }
-    }
-
-    .alternative-copy {
-      margin-right: 32rem;
-
-      h4 {
-        font-size: 1.125rem;
-      }
-
-      p {
-        font-size: 0.875rem;
-        max-width: 26rem;
-      }
-
-      .code-sample {
-        flex-direction: column;
       }
     }
   }

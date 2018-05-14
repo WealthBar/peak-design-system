@@ -5,10 +5,10 @@
         <router-link to="/"><img class="wb-logo" src="~@/assets/logo.svg"></router-link>
       </div>
       <toggle-view>
-        <p slot="label">Units</p>
-        <ul slot="content" class="unit-selector">
-          <li v-for="unit in getUnits" @click="setUnit(unit)" :key="unit" :class="{'active': getSelectedUnit === unit}">{{unit}}</li>
-        </ul>
+        <label slot="label">Units</label>
+        <div slot="content" class="unit-selector">
+          <a v-for="unit in getUnits" @click="setUnit(unit)" :key="unit" :class="{'active': getSelectedUnit === unit}">{{unit}}</a>
+        </div>
       </toggle-view>
       <nav class="main-navigation">
       <h5>Visuals</h5>
@@ -93,6 +93,27 @@
     border-right: 1px solid $pearl-100;
   }
 
+  .unit-selector { list-style: none; }
+
+  .main-navigation {
+    list-style: none;
+
+    a {
+      text-decoration: none;
+      color: $pearl-900;
+      padding: 0.5rem;
+      margin: 0.125rem 0;
+      display: block;
+
+      &:hover, &:focus {
+        background: $mint-100;
+        color: $jade-500;
+      }
+    }
+    .coming-soon { color: $pearl-300; }
+    ul { list-style: none; }
+  }
+
   .logo {
     padding: $spacing-small 0;
     margin-bottom: $spacing-med;
@@ -107,10 +128,6 @@
   .wb-logo {
     height: 1.6rem;
     width: 10rem;
-  }
-
-  .secondary-link {
-    padding-left: $spacing;
   }
 
   .pages {

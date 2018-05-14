@@ -58,38 +58,38 @@ menu {
   display: block;
 }
 
-h1 {
+h1, .h1 {
   font-size: 2.25rem;
   line-height: 3rem;
-  padding: 1.875rem 0 1rem;
+  margin: 1.875rem 0 1rem;
   font-weight: bold;
 }
 
 h2 {
   font-size: 1.875rem;
   line-height: 2.25rem;
-  padding: 1.875rem 0 1rem;
+  margin: 1.875rem 0 1rem;
   font-weight: bold;
 }
 
 h3 {
   font-size: 1.5rem;
   line-height: 1.875rem;
-  padding: 1.5rem 0 1rem;
+  margin: 1.5rem 0 1rem;
   font-weight: bold;
 }
 
 h4 {
   font-size: 1.25rem;
   line-height: 1.625rem;
-  padding: 1.25rem 0 1rem;
+  margin: 1.25rem 0 1rem;
   font-weight: bold;
 }
 
 h5 {
   font-size: 1.125rem;
   line-height: 1.5rem;
-  padding: 1.125rem 0 1rem;
+  margin: 1.125rem 0 1rem;
   font-weight: bold;
 }
 
@@ -116,39 +116,34 @@ em { font-style: italic; }
 
 small { font-size: 0.875rem; }
 
-a,
-button {
-  font-weight: normal;
+a {
   color: $jade-500;
   text-decoration: underline;
-  text-decoration-color: rgba(0, 178, 152, 0.6);
-  // text-decoration-skip-ink: auto;
-  display: inline-block;
-  -moz-appearance: none;
-  cursor: pointer;
-  font-size: 1rem;
-  line-height: 1.375rem;
-  background: none;
-  padding: 0;
-  border: 0;
   transition: all 150ms ease;
+  cursor: pointer;
 }
 
 a:hover,
 a:focus,
-button:hover,
-button:focus {
-  text-decoration-color: rgba(0, 178, 152, 0.6);
-  color: $jade-500;
-  background-color: #e0f5f2;
+a:active {
+  color: $jade-300;
   transition: all 150ms ease;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
-a:active,
-a:focus {
-  text-decoration: none;
-  color: $jade-300;
+button {
+  color: $jade-500;
+  text-decoration: underline;
+  display: inline;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  background: none;
+  -moz-appearance: none;
+  padding: 0;
+  border: 0;
+  transition: all 150ms ease;
 }
 
 input {
@@ -166,10 +161,6 @@ ol {
 ul {
   padding: 0;
   margin: 0 0 1rem;
-}
-
-li {
-  margin: 0 0 0.25rem;
 }
 
 hr {
@@ -196,6 +187,7 @@ pre {
   white-space: -o-pre-wrap;
   word-wrap: break-word;
   margin: 0 0 1rem;
+  max-width: 100%;
 }
 
 pre code {
@@ -204,7 +196,7 @@ pre code {
   background: $jade-50;
   color: $brand-med;
   border-radius: $br;
-  border: 1px solid $brand-lightest;
+  border: 1px solid $brand-med;
 
 }
 
