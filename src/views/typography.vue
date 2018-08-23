@@ -455,10 +455,11 @@
 
   .download-typography {
     position: absolute;
-    top: 44px;
-    right: 244px;
+    top: 2rem;
+    left: 35rem;
     border: 1px solid $pearl-100;
     margin: 1.5rem;
+    padding: 0.5rem;
     width: 14rem;
     border-radius: 2px;
     background-color: $white;
