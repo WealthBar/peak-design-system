@@ -5,7 +5,7 @@
         <router-link to="/"><img class="wb-logo" src="~@/assets/logo.svg"></router-link>
       </div>
       <toggle-view>
-        <label slot="label">Units</label>
+        <label slot="label" class="label-inline">Units</label>
         <div slot="content" class="unit-selector">
           <a v-for="unit in getUnits" @click="setUnit(unit)" :key="unit" :class="{'active': getSelectedUnit === unit}">{{unit}}</a>
         </div>
@@ -80,9 +80,8 @@
   }
 
   .side-menu {
-    padding: $spacing-med $spacing-large;
-    min-width: 17.5rem;
-    max-width: 17.5rem;
+    padding: 0.75rem 3rem;
+    width: 17.5rem;
     position: fixed;
     height: 100%;
     background-color: $pearl-50;
@@ -98,6 +97,8 @@
   .main-navigation {
     list-style: none;
 
+    ul ul { margin: 0; }
+
     a {
       text-decoration: none;
       color: $pearl-900;
@@ -106,7 +107,7 @@
       display: block;
 
       &:hover, &:focus {
-        background: $mint-100;
+        background: $jade-50;
         color: $jade-500;
       }
     }
@@ -115,8 +116,8 @@
   }
 
   .logo {
-    padding: $spacing-small 0;
-    margin-bottom: $spacing-med;
+    padding: 0.25rem 0;
+    margin-bottom: 0.5rem;
   }
 
   .logo > a:hover,

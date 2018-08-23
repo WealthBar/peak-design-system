@@ -31,7 +31,7 @@
               <li>font-size: 2.25rem;</li>
               <li>line-height: 3rem;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 2.25rem 0px 1rem;</li>
+              <li>margin: 2.25rem 0px 1rem;</li>
             </ul>
           </div>
           <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
@@ -39,7 +39,7 @@
               <li>font-size: 1.625rem;</li>
               <li>line-height: 2rem;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 1.625rem 0px 1rem;</li>
+              <li>margin: 1.625rem 0px 1rem;</li>
             </ul>
           </div>
           <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
@@ -47,7 +47,7 @@
               <li>font-size: 26px;</li>
               <li>line-height: 32px;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 26px 0px 16px;</li>
+              <li>margin: 26px 0px 16px;</li>
             </ul>
           </div>
           <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'"  class="css-px">
@@ -55,7 +55,7 @@
               <li>font-size: 36px;</li>
               <li>line-height: 48px;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 36px 0px 16px;</li>
+              <li>margin: 36px 0px 16px;</li>
             </ul>
           </div>
         </div>
@@ -68,7 +68,7 @@
               <li>font-size: 1.875rem;</li>
               <li>line-height: 2.25rem;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 1.875rem 0px 1rem;</li>
+              <li>margin: 1.875rem 0px 1rem;</li>
             </ul>
           </div>
           <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
@@ -76,7 +76,7 @@
               <li>font-size: 1.5rem;</li>
               <li>line-height: 1.875rem;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 1.5rem 0px 1rem;</li>
+              <li>margin: 1.5rem 0px 1rem;</li>
             </ul>
           </div>
           <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
@@ -84,7 +84,7 @@
               <li>font-size: 24px;</li>
               <li>line-height: 30px;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 24px 0px 16px;</li>
+              <li>margin: 24px 0px 16px;</li>
             </ul>
           </div>
           <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
@@ -92,7 +92,7 @@
               <li>font-size: 30px;</li>
               <li>line-height: 36px;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 30px 0px 16px;</li>
+              <li>margin: 30px 0px 16px;</li>
             </ul>
           </div>
         </div>
@@ -106,7 +106,7 @@
               <li>font-size: 1.5rem;</li>
               <li>line-height: 1.875rem;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 1.5rem 0px 1rem;</li>
+              <li>margin: 1.5rem 0px 1rem;</li>
             </ul>
           </div>
           <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
@@ -114,7 +114,7 @@
               <li>font-size: 1.375rem;</li>
               <li>line-height: 1.75rem;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 1.375rem 0px 1rem;</li>
+              <li>margin: 1.375rem 0px 1rem;</li>
             </ul>
           </div>
           <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
@@ -122,7 +122,7 @@
               <li>font-size: 22px;</li>
               <li>line-height: 28px;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 22px 0px 16px;</li>
+              <li>margin: 22px 0px 16px;</li>
             </ul>
           </div>
           <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
@@ -130,7 +130,7 @@
               <li>font-size: 24px;</li>
               <li>line-height: 30px;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 24px 0px 16px;</li>
+              <li>margin: 24px 0px 16px;</li>
             </ul>
           </div>
         </div>
@@ -144,7 +144,7 @@
               <li>font-size: 1.25rem;</li>
               <li>line-height: 1.625rem;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 1.25rem 0px 1rem;</li>
+              <li>margin: 1.25rem 0px 1rem;</li>
             </ul>
           </div>
           <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
@@ -152,7 +152,7 @@
               <li>font-size: 1.125rem;</li>
               <li>line-height: 1.5rem;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 1.125rem 0px 1rem;</li>
+              <li>margin: 1.125rem 0px 1rem;</li>
             </ul>
           </div>
           <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
@@ -160,7 +160,7 @@
               <li>font-size: 18px;</li>
               <li>line-height: 24px;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 18px 0px 16px;</li>
+              <li>margin: 18px 0px 16px;</li>
             </ul>
           </div>
           <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
@@ -168,7 +168,7 @@
               <li>font-size: 20px;</li>
               <li>line-height: 26px;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 20px 0px 16px;</li>
+              <li>margin: 20px 0px 16px;</li>
             </ul>
           </div>
         </div>
@@ -182,7 +182,7 @@
               <li>font-size: 1.125rem;</li>
               <li>line-height: 1.5rem;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 1.125rem 0px 1rem;</li>
+              <li>margin: 1.125rem 0px 1rem;</li>
             </ul>
           </div>
           <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
@@ -190,7 +190,7 @@
               <li>font-size: 1rem;</li>
               <li>line-height: 1.375rem;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 1rem 0px 1rem;</li>
+              <li>margin: 1rem 0px 1rem;</li>
             </ul>
           </div>
           <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
@@ -198,7 +198,7 @@
               <li>font-size: 16px;</li>
               <li>line-height: 22px;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 16px 0px 16px;</li>
+              <li>margin: 16px 0px 16px;</li>
             </ul>
           </div>
           <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
@@ -206,7 +206,7 @@
               <li>font-size: 18px;</li>
               <li>line-height: 24px;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 18px 0px 16px;</li>
+              <li>margin: 18px 0px 16px;</li>
             </ul>
           </div>
         </div>
@@ -227,7 +227,7 @@
               <li>font-size: 1rem;</li>
               <li>line-height: 1.375rem;</li>
               <li>font-weight: 500;</li>
-              <li>padding: 1rem 0px 1rem;</li>
+              <li>margin: 1rem 0px 1rem;</li>
             </ul>
           </div>
           <div v-else class="css-px">
@@ -235,7 +235,7 @@
               <li>font-size: 16px;</li>
               <li>line-height: 22px;</li>
               <li>font-weight: 300;</li>
-              <li>padding: 16px 0px 16px;</li>
+              <li>margin: 16px 0px 16px;</li>
             </ul>
           </div>
         </div>
@@ -249,14 +249,14 @@
             <ul>
               <li>font-size: 1.125rem;</li>
               <li>line-height: 1.5rem;</li>
-              <li>padding: 1.125rem 0px 1.125rem;</li>
+              <li>margin: 1.125rem 0px 1.125rem;</li>
             </ul>
           </div>
           <div v-else class="css-px">
             <ul>
               <li>font-size: 18px;</li>
               <li>line-height: 24px;</li>
-              <li>padding: 18px 0px 18px;</li>
+              <li>margin: 18px 0px 18px;</li>
             </ul>
           </div>
         </div>
@@ -269,14 +269,14 @@
             <ul>
               <li>font-size: 0.875rem;</li>
               <li>line-height: 1.52rem;</li>
-              <li>padding: 0.875rem 0px 0.875rem;</li>
+              <li>margin: 0.875rem 0px 0.875rem;</li>
             </ul>
           </div>
           <div div v-else class="css-px">
             <ul>
               <li>font-size: 14px;</li>
               <li>line-height: 20px;</li>
-              <li>padding: 14px 0px 14px;</li>
+              <li>margin: 14px 0px 14px;</li>
             </ul>
           </div>
         </div>
@@ -442,7 +442,7 @@
   @import 'style.scss';
 
   .typography-page {
-    padding: 2rem 4rem;
+    margin: 2rem 4rem;
   }
 
   .typography-intro {
@@ -458,7 +458,7 @@
     top: 44px;
     right: 244px;
     border: 1px solid $pearl-100;
-    padding: 1.5rem;
+    margin: 1.5rem;
     width: 14rem;
     border-radius: 2px;
     background-color: $white;
@@ -545,15 +545,15 @@
   .alternative-glyphs-container {
     display: flex;
     position: relative;
-    margin-top: $spacing-large;
+    margin-top: 3rem;
 
     .alternative-examples {
       display: flex;
       flex-direction: column;
-      margin-right: $spacing-large;
+      margin-right: 3rem;
 
       img:first-of-type {
-        margin-bottom: $spacing;
+        margin-bottom: 1rem;
       }
 
       img {
