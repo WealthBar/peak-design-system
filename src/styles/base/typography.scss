@@ -286,14 +286,18 @@ pre {
   max-width: 100%;
 }
 
-pre code {
+code {
   margin: 0;
   padding: 0.75rem;
   background: $jade-50;
   color: $jade-500;
   border-radius: 0.25rem;
   border: 1px solid $jade-100;
-
+  &.alt {
+    background: $pearl-50;
+    color: $pearl-700;
+    border-color: $pearl-300;
+  }
 }
 
 .tab-numbers {

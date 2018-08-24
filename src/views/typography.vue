@@ -1,5 +1,5 @@
 <template>
-  <section class="typography-page">
+  <!-- <section class="typography-page"> -->
     <article>
       <div class="typography-intro">
         <h1>Typography</h1>
@@ -24,14 +24,8 @@
         <h1 :class="[ mobile ? 'mobile' : 'desktop' ]">H1 This is a super large header.</h1>
         <div class="code-sample">
           <!-- <h3>Markup</h3> -->
-          <pre><code>&lt;h1&gt; H1 This is a super large header.&lt;/h1&gt;</code></pre>
-          <!-- <h3>Style</h3>
-          <pre><code>
-            font-size: {{unitValue(26)}};
-            line-height: {{unitValue(32)}};
-            font-weight: 500;
-            margin: {{unitValue(26)}} 0px {{unitValue(16)}};
-          </code></pre> -->
+          <!-- <pre><code>&lt;h1&gt; H1 This is a super large header.&lt;/h1&gt;</code></pre>
+
           <div class="css-px">
             <ul v-if="mobile">
               <li>font-size: {{unitValue(26)}};</li>
@@ -45,8 +39,29 @@
               <li>font-weight: 500;</li>
               <li>margin: {{unitValue(36)}} 0px {{unitValue(16)}};</li>
             </ul>
-          </div>
+          </div> -->
+        <div>
+          <strong>Markup</strong>
+          <code>&lt;h1&gt; H1 This is a super large header.&lt;/h1&gt;</code>
         </div>
+        <div>
+          <strong>Style</strong>
+          <code v-if="mobile" class="alt">
+            font-size: {{unitValue(26)}};</br>
+            line-height: {{unitValue(32)}};</br>
+            font-weight: 500;</br>
+            margin: {{unitValue(26)}} 0px {{unitValue(16)}};
+          </code>
+          <code v-else class="alt">
+            font-size: {{unitValue(36)}};</br>
+            line-height: {{unitValue(48)}};</br>
+            font-weight: 500;</br>
+            margin: {{unitValue(36)}} 0px {{unitValue(16)}};
+          </code>
+        </div>
+        </div>
+
+        <hr>
 
         <h2 :class="[ mobile ? 'mobile' : 'desktop' ]">H2 This is a huge header.</h2>
         <div class="code-sample">
@@ -302,7 +317,7 @@
         <p class="intro-copy">We use REM to ensure our typography stays <button>scalable</button>  in a responsive web world. Our base REM is 16px, which means 2px is equal to 0.125rem, or 1/8rem. </p>
       </section>
     </article>
-  </section>
+  <!-- </section> -->
 </template>
 
 <script>

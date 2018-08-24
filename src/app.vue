@@ -23,7 +23,7 @@
             <li class="secondary-link"><a href="#font-stack">Font Stack</a></li>
             <li class="secondary-link"><a href="#measurements">Measurements</a></li>
           </ul>
-          <li><router-link class="coming-soon" to="">Colour (Coming soon!)</router-link></li>
+          <li><router-link to="colour">Colour</router-link></li>
         </ul>
         <h5>Components</h5>
         <ul>
@@ -96,8 +96,6 @@
 
   .main-navigation {
     list-style: none;
-
-    ul ul { margin: 0; }
 
     a {
       text-decoration: none;
