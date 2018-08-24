@@ -16,197 +16,111 @@
         <h2 class="section-headers"><a name="headers">Headers</a></h2>
         <p class="intro-copy">Headers create hierarchy in a layout and make scanning easy. Use them for content such as page titles or section titles. We have mobile and desktop header styles so that our typography is responsive to screen real estate. </p>
 
-        <toggle-view>
-          <div slot="content" class="unit-selector">
-            <a v-for="screen in getScreens" @click="setScreen(screen)" :key="screen" :class="{'active': getSelectedScreen === screen}">{{screen}}</a>
-          </div>
-        </toggle-view>
+        <button class="toggle" @click="mobile = !mobile">
+          <span :data-active="!mobile">Desktop</span>
+          <span :data-active="mobile">Mobile</span>
+        </button>
 
-        <h1 class="mobile-h1" v-if="getSelectedScreen === 'Mobile'">H1 This is a super large header.</h1>
-        <h1 v-else> H1 This is a super large header.</h1>
+        <h1 :class="[ mobile ? 'mobile' : 'desktop' ]">H1 This is a super large header.</h1>
         <div class="code-sample">
+          <!-- <h3>Markup</h3> -->
           <pre><code>&lt;h1&gt; H1 This is a super large header.&lt;/h1&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 2.25rem;</li>
-              <li>line-height: 3rem;</li>
+          <!-- <h3>Style</h3>
+          <pre><code>
+            font-size: {{unitValue(26)}};
+            line-height: {{unitValue(32)}};
+            font-weight: 500;
+            margin: {{unitValue(26)}} 0px {{unitValue(16)}};
+          </code></pre> -->
+          <div class="css-px">
+            <ul v-if="mobile">
+              <li>font-size: {{unitValue(26)}};</li>
+              <li>line-height: {{unitValue(32)}};</li>
               <li>font-weight: 500;</li>
-              <li>margin: 2.25rem 0px 1rem;</li>
+              <li>margin: {{unitValue(26)}} 0px {{unitValue(16)}};</li>
             </ul>
-          </div>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 1.625rem;</li>
-              <li>line-height: 2rem;</li>
+            <ul v-else>
+              <li>font-size: {{unitValue(36)}};</li>
+              <li>line-height: {{unitValue(48)}};</li>
               <li>font-weight: 500;</li>
-              <li>margin: 1.625rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 26px;</li>
-              <li>line-height: 32px;</li>
-              <li>font-weight: 500;</li>
-              <li>margin: 26px 0px 16px;</li>
-            </ul>
-          </div>
-          <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'"  class="css-px">
-            <ul>
-              <li>font-size: 36px;</li>
-              <li>line-height: 48px;</li>
-              <li>font-weight: 500;</li>
-              <li>margin: 36px 0px 16px;</li>
+              <li>margin: {{unitValue(36)}} 0px {{unitValue(16)}};</li>
             </ul>
           </div>
         </div>
-        <h2 class="mobile-h2" v-if="getSelectedScreen === 'Mobile'" >H2 This is a huge header.</h2>
-        <h2 v-else >H2 This is a huge header.</h2>
+
+        <h2 :class="[ mobile ? 'mobile' : 'desktop' ]">H2 This is a huge header.</h2>
         <div class="code-sample">
           <pre><code>&lt;h2&gt; H2 This is a huge header.&lt;/h2&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 1.875rem;</li>
-              <li>line-height: 2.25rem;</li>
+          <div class="css-px">
+            <ul v-if="mobile">
+              <li>font-size: {{unitValue(24)}};</li>
+              <li>line-height: {{unitValue(30)}};</li>
               <li>font-weight: 500;</li>
-              <li>margin: 1.875rem 0px 1rem;</li>
+              <li>margin: {{unitValue(24)}} 0px {{unitValue(16)}};</li>
             </ul>
-          </div>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 1.5rem;</li>
-              <li>line-height: 1.875rem;</li>
+            <ul v-else>
+              <li>font-size: {{unitValue(30)}};</li>
+              <li>line-height: {{unitValue(36)}};</li>
               <li>font-weight: 500;</li>
-              <li>margin: 1.5rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 24px;</li>
-              <li>line-height: 30px;</li>
-              <li>font-weight: 500;</li>
-              <li>margin: 24px 0px 16px;</li>
-            </ul>
-          </div>
-          <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 30px;</li>
-              <li>line-height: 36px;</li>
-              <li>font-weight: 500;</li>
-              <li>margin: 30px 0px 16px;</li>
+              <li>margin: {{unitValue(30)}} 0px {{unitValue(16)}};</li>
             </ul>
           </div>
         </div>
 
-        <h3 class="mobile-h3" v-if="getSelectedScreen === 'Mobile'" >H3 This is a big header.</h3>
-        <h3 v-else >H3 This is a big header.</h3>
+        <h3 :class="[ mobile ? 'mobile' : 'desktop' ]">H3 This is a big header.</h3>
         <div class="code-sample">
           <pre><code>&lt;h3&gt; H3 This is a big header.&lt;/h3&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 1.5rem;</li>
-              <li>line-height: 1.875rem;</li>
+
+          <div class="css-px">
+            <ul v-if="mobile">
+              <li>font-size: {{unitValue(22)}};</li>
+              <li>line-height: {{unitValue(28)}};</li>
               <li>font-weight: 500;</li>
-              <li>margin: 1.5rem 0px 1rem;</li>
+              <li>margin: {{unitValue(22)}} 0px {{unitValue(16)}};</li>
             </ul>
-          </div>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 1.375rem;</li>
-              <li>line-height: 1.75rem;</li>
+            <ul v-else>
+              <li>font-size: {{unitValue(24)}};</li>
+              <li>line-height: {{unitValue(30)}};</li>
               <li>font-weight: 500;</li>
-              <li>margin: 1.375rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 22px;</li>
-              <li>line-height: 28px;</li>
-              <li>font-weight: 500;</li>
-              <li>margin: 22px 0px 16px;</li>
-            </ul>
-          </div>
-          <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 24px;</li>
-              <li>line-height: 30px;</li>
-              <li>font-weight: 500;</li>
-              <li>margin: 24px 0px 16px;</li>
+              <li>margin: {{unitValue(24)}} 0px {{unitValue(16)}};</li>
             </ul>
           </div>
         </div>
 
-        <h4 class="mobile-h4" v-if="getSelectedScreen === 'Mobile'">H4 This is a medium header.</h4>
-        <h4 v-else>H4 This is a medium header.</h4>
+        <h4 :class="[ mobile ? 'mobile' : 'desktop' ]">H4 This is a medium header.</h4>
         <div class="code-sample">
           <pre><code>&lt;h4&gt; H4 This is a medium header.&lt;/h4&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 1.25rem;</li>
-              <li>line-height: 1.625rem;</li>
+          <div class="css-px">
+            <ul v-if="mobile">
+              <li>font-size: {{unitValue(18)}};</li>
+              <li>line-height: {{unitValue(24)}};</li>
               <li>font-weight: 500;</li>
-              <li>margin: 1.25rem 0px 1rem;</li>
+              <li>margin: {{unitValue(18)}} 0px {{unitValue(16)}};</li>
             </ul>
-          </div>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 1.125rem;</li>
-              <li>line-height: 1.5rem;</li>
+            <ul v-else>
+              <li>font-size: {{unitValue(20)}};</li>
+              <li>line-height: {{unitValue(26)}};</li>
               <li>font-weight: 500;</li>
-              <li>margin: 1.125rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 18px;</li>
-              <li>line-height: 24px;</li>
-              <li>font-weight: 500;</li>
-              <li>margin: 18px 0px 16px;</li>
-            </ul>
-          </div>
-          <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 20px;</li>
-              <li>line-height: 26px;</li>
-              <li>font-weight: 500;</li>
-              <li>margin: 20px 0px 16px;</li>
+              <li>margin: {{unitValue(20)}} 0px {{unitValue(16)}};</li>
             </ul>
           </div>
         </div>
 
-        <h5 class="mobile-h4" v-if="getSelectedScreen === 'Mobile'">H5 This is a small header.</h5>
-        <h5 v-else>H5 This is a small header.</h5>
+        <h5 :class="[ mobile ? 'mobile' : 'desktop' ]">H5 This is a small header.</h5>
         <div class="code-sample">
           <pre><code>&lt;h5&gt; H5 This is a small header.&lt;/h5&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 1.125rem;</li>
-              <li>line-height: 1.5rem;</li>
+          <div class="css-px">
+            <ul v-if="mobile">
+              <li>font-size: {{unitValue(16)}};</li>
+              <li>line-height: {{unitValue(22)}};</li>
               <li>font-weight: 500;</li>
-              <li>margin: 1.125rem 0px 1rem;</li>
+              <li>margin: {{unitValue(16)}} 0px {{unitValue(16)}};</li>
             </ul>
-          </div>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 1rem;</li>
-              <li>line-height: 1.375rem;</li>
+            <ul v-else>
+              <li>font-size: {{unitValue(18)}};</li>
+              <li>line-height: {{unitValue(24)}};</li>
               <li>font-weight: 500;</li>
-              <li>margin: 1rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 16px;</li>
-              <li>line-height: 22px;</li>
-              <li>font-weight: 500;</li>
-              <li>margin: 16px 0px 16px;</li>
-            </ul>
-          </div>
-          <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 18px;</li>
-              <li>line-height: 24px;</li>
-              <li>font-weight: 500;</li>
-              <li>margin: 18px 0px 16px;</li>
+              <li>margin: {{unitValue(18)}} 0px {{unitValue(16)}};</li>
             </ul>
           </div>
         </div>
@@ -222,20 +136,12 @@
         <p>This is a paragraph.</p>
         <div class="code-sample">
           <pre><code>&lt;p&gt; This is a paragraph.&lt;/p&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem'" class="css-px">
+          <div class="css-px">
             <ul>
-              <li>font-size: 1rem;</li>
-              <li>line-height: 1.375rem;</li>
-              <li>font-weight: 500;</li>
-              <li>margin: 1rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div v-else class="css-px">
-            <ul>
-              <li>font-size: 16px;</li>
-              <li>line-height: 22px;</li>
+              <li>font-size: {{unitValue(16)}};</li>
+              <li>line-height: {{unitValue(22)}};</li>
               <li>font-weight: 300;</li>
-              <li>margin: 16px 0px 16px;</li>
+              <li>margin: {{unitValue(16)}} 0px {{unitValue(16)}};</li>
             </ul>
           </div>
         </div>
@@ -245,18 +151,11 @@
 
         <div class="code-sample">
           <pre><code>&lt;span class="large"&gt; This is large text.&lt;/span&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem'" class="css-px">
+          <div class="css-px">
             <ul>
-              <li>font-size: 1.125rem;</li>
-              <li>line-height: 1.5rem;</li>
-              <li>margin: 1.125rem 0px 1.125rem;</li>
-            </ul>
-          </div>
-          <div v-else class="css-px">
-            <ul>
-              <li>font-size: 18px;</li>
-              <li>line-height: 24px;</li>
-              <li>margin: 18px 0px 18px;</li>
+              <li>font-size: {{unitValue(18)}};</li>
+              <li>line-height: {{unitValue(24)}};</li>
+              <li>margin: {{unitValue(18)}} 0px {{unitValue(18)}};</li>
             </ul>
           </div>
         </div>
@@ -265,18 +164,11 @@
         <div class="code-sample">
           <pre><code>&lt;small&gt; This is a small text.&lt;/small&gt;
 &lt;span class="small"&gt; This is an alternate small text.&lt;/span&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem'" class="css-px">
+          <div class="css-px">
             <ul>
-              <li>font-size: 0.875rem;</li>
-              <li>line-height: 1.52rem;</li>
-              <li>margin: 0.875rem 0px 0.875rem;</li>
-            </ul>
-          </div>
-          <div div v-else class="css-px">
-            <ul>
-              <li>font-size: 14px;</li>
-              <li>line-height: 20px;</li>
-              <li>margin: 14px 0px 14px;</li>
+              <li>font-size: {{unitValue(14)}};</li>
+              <li>line-height: {{unitValue(20)}};</li>
+              <li>margin: {{unitValue(14)}} 0px {{unitValue(14)}};</li>
             </ul>
           </div>
         </div>
@@ -330,7 +222,7 @@
 
         <h4>Numbered List</h4>
         <div class="bulleted-list-example">
-          <ol >
+          <ol>
             <li>Hey, here’s something that’s part of a list</li>
             <li>Here’s a long piece of text. What should go here I wonder. Just enough to push it to two lines. There we go!
               <ol>
@@ -424,6 +316,7 @@
       return {
         name: 'typography',
         title: 'Typography',
+        mobile: false,
       };
     },
     computed: {
@@ -431,6 +324,12 @@
     },
     methods: {
       ...mapActions(['setScreen']),
+      unitValue(value, ratio = 16) {
+        if (this.getSelectedUnit === 'rem') {
+          return `${value / ratio}${this.getSelectedUnit}`;
+        }
+        return `${value}${this.getSelectedUnit}`;
+      },
     },
     components: {
       toggleView,

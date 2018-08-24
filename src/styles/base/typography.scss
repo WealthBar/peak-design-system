@@ -64,6 +64,20 @@ h1, .h1 {
   line-height: 2rem;
   padding: 0;
   margin: 2rem 0 1rem;
+
+  @mixin desktop {
+    font-size: 2.25rem;
+    line-height: 3rem;
+    margin: 3rem 0 1rem;
+  }
+
+  &:not(.mobile) {
+    @media #{$screen-width-medium} {
+      @include desktop;
+    }
+  }
+
+  &.desktop { @include desktop; }
 }
 
 h2, .h2 {
@@ -72,6 +86,20 @@ h2, .h2 {
   line-height: 1.875rem;
   padding: 0;
   margin: 1.875rem 0 1rem;
+
+  @mixin desktop {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    margin: 2.25rem 0 1rem;
+  }
+
+  &:not(.mobile) {
+    @media #{$screen-width-medium} {
+      @include desktop;
+    }
+  }
+
+  &.desktop { @include desktop; }
 }
 
 h3, .h3 {
@@ -80,6 +108,20 @@ h3, .h3 {
   line-height: 1.75rem;
   padding: 0;
   margin: 1.75rem 0 1rem;
+
+  @mixin desktop {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    margin: 1.875rem 0 1rem;
+  }
+
+  &:not(.mobile) {
+    @media #{$screen-width-medium} {
+      @include desktop;
+    }
+  }
+
+  &.desktop { @include desktop; }
 }
 
 h4, .h4 {
@@ -88,6 +130,20 @@ h4, .h4 {
   line-height: 1.5rem;
   padding: 0;
   margin: 1.5rem 0 1rem;
+
+  @mixin desktop {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    margin: 1.625rem 0 1rem;
+  }
+
+  &:not(.mobile) {
+    @media #{$screen-width-medium} {
+      @include desktop;
+    }
+  }
+
+  &.desktop { @include desktop; }
 }
 
 h5, .h5 {
@@ -96,38 +152,20 @@ h5, .h5 {
   line-height: 1.25rem;
   padding: 0;
   margin: 1.25rem 0 1rem;
-}
 
-@media #{$screen-width-medium} {
-  h1, .h1 {
-    font-size: 2.25rem;
-    line-height: 3rem;
-    margin: 3rem 0 1rem;
-  }
-
-  h2, .h2 {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    margin: 2.25rem 0 1rem;
-  }
-
-  h3, .h3 {
-    font-size: 1.5rem;
-    line-height: 1.875rem;
-    margin: 1.875rem 0 1rem;
-  }
-
-  h4, .h4 {
-    font-size: 1.25rem;
-    line-height: 1.625rem;
-    margin: 1.625rem 0 1rem;
-  }
-
-  h5, .h5 {
+  @mixin desktop {
     font-size: 1.125rem;
     line-height: 1.5rem;
     margin: 1.5rem 0 1rem;
   }
+
+  &:not(.mobile) {
+    @media #{$screen-width-medium} {
+      @include desktop;
+    }
+  }
+
+  &.desktop { @include desktop; }
 }
 
 p {
