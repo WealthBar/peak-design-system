@@ -65,6 +65,8 @@ h1, .h1 {
   padding: 0;
   margin: 2rem 0 1rem;
 
+  // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
+  // if using in apps use as @media #{$screen-width-medium} { … }
   @mixin desktop {
     font-size: 2.25rem;
     line-height: 3rem;
@@ -87,6 +89,8 @@ h2, .h2 {
   padding: 0;
   margin: 1.875rem 0 1rem;
 
+  // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
+  // if using in apps use as @media #{$screen-width-medium} { … }
   @mixin desktop {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -109,6 +113,8 @@ h3, .h3 {
   padding: 0;
   margin: 1.75rem 0 1rem;
 
+  // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
+  // if using in apps use as @media #{$screen-width-medium} { … }
   @mixin desktop {
     font-size: 1.5rem;
     line-height: 1.875rem;
@@ -131,6 +137,8 @@ h4, .h4 {
   padding: 0;
   margin: 1.5rem 0 1rem;
 
+  // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
+  // if using in apps use as @media #{$screen-width-medium} { … }
   @mixin desktop {
     font-size: 1.25rem;
     line-height: 1.625rem;
@@ -153,6 +161,8 @@ h5, .h5 {
   padding: 0;
   margin: 1.25rem 0 1rem;
 
+  // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
+  // if using in apps use as @media #{$screen-width-medium} { … }
   @mixin desktop {
     font-size: 1.125rem;
     line-height: 1.5rem;
@@ -259,13 +269,14 @@ input {
   background-color: $pearl-50;
 }
 
-ol {
-  font-family: "GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif, monospace;
-}
-
-ul {
+ul, ol {
   padding: 0;
   margin: 0 0 1rem;
+  list-style-position: inside;
+}
+
+li {
+  margin: 0 0 0.25rem;
 }
 
 /* stylelint-disable */
@@ -274,30 +285,34 @@ pre,
 code {
   font-family: 'Fira Mono', monospace;
   font-size: 0.875rem;
-  display: block;
 }
 
 pre {
-  white-space: pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -o-pre-wrap;
-  word-wrap: break-word;
-  margin: 0 0 1rem;
-  max-width: 100%;
+  white-space: normal;
+  word-wrap: normal;
+  margin: 0;
+  padding: 0;
+  code {
+    white-space: pre-line;
+    white-space: -moz-pre-line;
+    white-space: -o-pre-line;
+    word-wrap: break-word;
+    display: block;
+    padding: 0.75rem;
+    background: $jade-50;
+    color: $jade-500;
+    border-radius: 0.25rem;
+    border: 1px solid $jade-100;
+    &.css {
+      background: $amethyst-50;
+      color: $amethyst-700;
+      border-color: $amethyst-300;
+    }
+  }
 }
 
 code {
-  margin: 0;
-  padding: 0.75rem;
-  background: $jade-50;
-  color: $jade-500;
-  border-radius: 0.25rem;
-  border: 1px solid $jade-100;
-  &.alt {
-    background: $pearl-50;
-    color: $pearl-700;
-    border-color: $pearl-300;
-  }
+
 }
 
 .tab-numbers {

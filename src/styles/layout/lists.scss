@@ -1,13 +1,15 @@
 ul, ol {
-  list-style-position: outside;
+  list-style-position: inside;
 }
 
 ul ul {
+  margin-top: 0.25rem;
   margin-left: 1rem;
   list-style-type: circle;
 }
 
 ol ol {
+  margin-top: 0.25rem;
   margin-left: 1rem;
   list-style-type: lower-roman;
 }
