@@ -1,0 +1,33 @@
+
+.container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.container-mid {
+  width: 100%;
+  max-width: $mid-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+  @media #{$screen-width-medium} { padding: 0 3rem; }
+}
+
+.container-min {
+  width: 100%;
+  max-width: $min-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+  @media #{$screen-width-medium} { padding: 0 3rem; }
+}
+
+.container-paragraph {
+  width: 100%;
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  @media #{$screen-width-medium} {
+    padding: 0 1rem;
+  }
+}

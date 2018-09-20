@@ -5,25 +5,25 @@
         <router-link to="/"><img class="wb-logo" src="~@/assets/logo.svg"></router-link>
       </div>
       <toggle-view>
-        <p slot="label">Units</p>
-        <ul slot="content" class="unit-selector">
-          <li v-for="unit in getUnits" @click="setUnit(unit)" :key="unit" :class="{'active': getSelectedUnit === unit}">{{unit}}</li>
-        </ul>
+        <label slot="label" class="label-inline">Units</label>
+        <div slot="content" class="unit-selector">
+          <a v-for="unit in getUnits" @click="setUnit(unit)" :key="unit" :class="{'active': getSelectedUnit === unit}">{{unit}}</a>
+        </div>
       </toggle-view>
       <nav class="main-navigation">
       <h5>Visuals</h5>
         <ul>
           <li><router-link to="typography">Typography</router-link></li>
           <ul v-if="$route.path === '/typography'">
-            <li class="secondary-link"><a href="#headers">Headers</a></li>
-            <li class="secondary-link"><a href="#paragraphs">Paragraphs</a></li>
+            <li class="secondary-link"><a href="#headers">Headers Text</a></li>
+            <li class="secondary-link"><a href="#body">Body Text</a></li>
             <li class="secondary-link coming-soon"><a href="#links">Links (Coming soon!)</a></li>
             <li class="secondary-link"><a href="#lists">Lists</a></li>
             <li class="secondary-link"><a href="#line-length">Line Length</a></li>
             <li class="secondary-link"><a href="#font-stack">Font Stack</a></li>
             <li class="secondary-link"><a href="#measurements">Measurements</a></li>
           </ul>
-          <li><router-link class="coming-soon" to="">Colour (Coming soon!)</router-link></li>
+          <li><router-link to="colour">Colour</router-link></li>
         </ul>
         <h5>Components</h5>
         <ul>
@@ -68,7 +68,7 @@
   };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import 'style.scss';
 
   main {
@@ -80,22 +80,36 @@
   }
 
   .side-menu {
-    padding: $spacing-med $spacing-large;
+    padding: 0.75rem;
     min-width: 17.5rem;
-    max-width: 17.5rem;
-    position: fixed;
-    height: 100%;
     background-color: $pearl-50;
-    left: 0;
-    top: 0;
-    overflow-y: auto;
-    pointer-events: auto;
     border-right: 1px solid $pearl-100;
   }
 
+  .unit-selector { list-style: none; }
+
+  .main-navigation {
+    list-style: none;
+
+    a {
+      text-decoration: none;
+      color: $pearl-900;
+      padding: 0.5rem;
+      margin: 0.125rem 0;
+      display: block;
+
+      &:hover, &:focus {
+        background: $jade-50;
+        color: $jade-500;
+      }
+    }
+    .coming-soon { color: $pearl-300; }
+    ul { list-style: none; }
+  }
+
   .logo {
-    padding: $spacing-small 0;
-    margin-bottom: $spacing-med;
+    padding: 0.25rem 0;
+    margin-bottom: 0.5rem;
   }
 
   .logo > a:hover,
@@ -109,14 +123,10 @@
     width: 10rem;
   }
 
-  .secondary-link {
-    padding-left: $spacing;
-  }
-
   .pages {
-    flex: 1;
-    width: 100%;
-    margin-left: 17.5rem;
+    flex: 1 1 100%;
+    // width: 100%;
+    // margin-left: 17.5rem;
   }
 
   .coming-soon {

@@ -58,119 +58,184 @@ menu {
   display: block;
 }
 
-h1 {
-  font-size: 2.25rem;
-  line-height: 3rem;
-  padding: 1.875rem 0 1rem;
+h1, .h1 {
   font-weight: bold;
+  font-size: 1.625rem;
+  line-height: 2rem;
+  padding: 0;
+  margin: 2rem 0 1rem;
+
+  // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
+  // if using in apps use as @media #{$screen-width-medium} { … }
+  @mixin desktop {
+    font-size: 2.25rem;
+    line-height: 3rem;
+    margin: 3rem 0 1rem;
+  }
+
+  &:not(.mobile) {
+    @media #{$screen-width-medium} {
+      @include desktop;
+    }
+  }
+
+  &.desktop { @include desktop; }
 }
 
-h2 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  padding: 1.875rem 0 1rem;
+h2, .h2 {
   font-weight: bold;
-}
-
-h3 {
   font-size: 1.5rem;
   line-height: 1.875rem;
-  padding: 1.5rem 0 1rem;
-  font-weight: bold;
+  padding: 0;
+  margin: 1.875rem 0 1rem;
+
+  // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
+  // if using in apps use as @media #{$screen-width-medium} { … }
+  @mixin desktop {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    margin: 2.25rem 0 1rem;
+  }
+
+  &:not(.mobile) {
+    @media #{$screen-width-medium} {
+      @include desktop;
+    }
+  }
+
+  &.desktop { @include desktop; }
 }
 
-h4 {
+h3, .h3 {
+  font-weight: bold;
   font-size: 1.25rem;
-  line-height: 1.625rem;
-  padding: 1.25rem 0 1rem;
-  font-weight: bold;
+  line-height: 1.75rem;
+  padding: 0;
+  margin: 1.75rem 0 1rem;
+
+  // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
+  // if using in apps use as @media #{$screen-width-medium} { … }
+  @mixin desktop {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    margin: 1.875rem 0 1rem;
+  }
+
+  &:not(.mobile) {
+    @media #{$screen-width-medium} {
+      @include desktop;
+    }
+  }
+
+  &.desktop { @include desktop; }
 }
 
-h5 {
+h4, .h4 {
+  font-weight: bold;
   font-size: 1.125rem;
   line-height: 1.5rem;
-  padding: 1.125rem 0 1rem;
+  padding: 0;
+  margin: 1.5rem 0 1rem;
+
+  // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
+  // if using in apps use as @media #{$screen-width-medium} { … }
+  @mixin desktop {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    margin: 1.625rem 0 1rem;
+  }
+
+  &:not(.mobile) {
+    @media #{$screen-width-medium} {
+      @include desktop;
+    }
+  }
+
+  &.desktop { @include desktop; }
+}
+
+h5, .h5 {
   font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  padding: 0;
+  margin: 1.25rem 0 1rem;
+
+  // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
+  // if using in apps use as @media #{$screen-width-medium} { … }
+  @mixin desktop {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    margin: 1.5rem 0 1rem;
+  }
+
+  &:not(.mobile) {
+    @media #{$screen-width-medium} {
+      @include desktop;
+    }
+  }
+
+  &.desktop { @include desktop; }
 }
 
 p {
-  font-size: 1rem;
-  line-height: $baseline-height;
+  padding: 0;
   margin: 0 0 1rem;
-
-  &.large {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-  }
-
-  &.small {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    margin: 0.875rem 0;
-  }
 }
 
-strong { font-weight: bold; }
+p.large {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  margin: 0 0 1.125rem;
+}
 
-em { font-style: italic; }
+small, .small {
+  font-size: 0.875rem;
+}
 
-small { font-size: 0.875rem; }
+sup {
+  font-size: 0.5em;
+  line-height: 0.5em;
+}
 
-a,
-button {
-  font-weight: normal;
+label {
+  display: block;
+  margin: 1rem 0 0;
+  font-weight: bold;
+
+  &.label-inline { margin: 0.5rem 0.25rem; }
+}
+
+strong, b, .strong { font-weight: bold; }
+em, i, var, .em { font-style: normal; }
+
+input, button, select, textarea { font-family: inherit; }
+
+var { font-style: normal; }
+
+.tab-numbers {
+  font-feature-settings: "kern", "liga", "tnum", "ss02", "ss04";
+}
+
+.subtle { color: rgba(55, 55, 63, 0.77); }
+
+.capitalize { text-transform: capitalize; }
+.uppercase { text-transform: uppercase; }
+
+.center { text-align: center; }
+
+a, .link {
   color: $jade-500;
   text-decoration: underline;
-  text-decoration-color: rgba(0, 178, 152, 0.6);
-  // text-decoration-skip-ink: auto;
-  display: inline-block;
-  -moz-appearance: none;
   cursor: pointer;
-  font-size: 1rem;
-  line-height: 1.375rem;
-  background: none;
-  padding: 0;
-  border: 0;
-  transition: all 150ms ease;
+  &:visited { color: $jade-700; }
+  &:hover, &:focus { color: $jade-700; }
+  &.href-plain { text-decoration: none; }
+  &.inherit { color: inherit; }
 }
 
-a:hover,
-a:focus,
-button:hover,
-button:focus {
-  text-decoration-color: rgba(0, 178, 152, 0.6);
-  color: $jade-500;
-  background-color: #e0f5f2;
-  transition: all 150ms ease;
-  text-decoration: none;
-}
-
-a:active,
-a:focus {
-  text-decoration: none;
-  color: $jade-300;
-}
-
-input {
-  margin: $spacing-small 0;
-  border-radius: $spacing-tiny;
-  border: 1px solid $grey;
-  padding: $spacing-tiny;
-  background-color: $verylightgrey;
-}
-
-ol {
-  font-family: "GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif, monospace;
-}
-
-ul {
-  padding: 0;
-  margin: 0 0 1rem;
-}
-
-li {
-  margin: 0 0 0.25rem;
-}
+strong, b, .strong { font-weight: bold; }
+em, i, var, .em { font-style: normal; }
 
 hr {
   box-sizing: content-box;
@@ -181,30 +246,72 @@ hr {
   overflow: visible;
 }
 
+button {
+  color: $jade-500;
+  text-decoration: underline;
+  display: inline;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  background: none;
+  -moz-appearance: none;
+  padding: 0;
+  border: 0;
+  transition: all 150ms ease;
+}
+
+input {
+  margin: 0.5rem 0;
+  border-radius: 0.25rem;
+  border: 1px solid $pearl-300;
+  padding: 0.25rem;
+  background-color: $pearl-50;
+}
+
+ul, ol {
+  padding: 0;
+  margin: 0 0 1rem;
+  list-style-position: inside;
+}
+
+li {
+  margin: 0 0 0.25rem;
+}
+
 /* stylelint-disable */
 
 pre,
 code {
   font-family: 'Fira Mono', monospace;
   font-size: 0.875rem;
-  display: block;
 }
 
 pre {
-  white-space: pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -o-pre-wrap;
-  word-wrap: break-word;
-  margin: 0 0 1rem;
+  white-space: normal;
+  word-wrap: normal;
+  margin: 0;
+  padding: 0;
+  code {
+    white-space: pre-line;
+    white-space: -moz-pre-line;
+    white-space: -o-pre-line;
+    word-wrap: break-word;
+    display: block;
+    padding: 0.75rem;
+    background: $jade-50;
+    color: $jade-500;
+    border-radius: 0.25rem;
+    border: 1px solid $jade-100;
+    &.css {
+      background: $amethyst-50;
+      color: $amethyst-700;
+      border-color: $amethyst-300;
+    }
+  }
 }
 
-pre code {
-  margin: 0;
-  padding: 0.75rem;
-  background: $jade-50;
-  color: $brand-med;
-  border-radius: $br;
-  border: 1px solid $brand-lightest;
+code {
 
 }
 

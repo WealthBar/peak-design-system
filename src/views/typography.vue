@@ -1,315 +1,331 @@
 <template>
-  <section class="typography-page">
-    <article>
-      <div class="typography-intro">
-        <h1>Typography</h1>
-        <a name="typography"></a>
-        <p class="intro-copy">WealthBar’s typography is a balance between readability and personality. Using our set of defined typography styles ensures consistent quality and a clear hierarchy.</p>
-        <div class="download-typography">
-          <p>Instantly apply on-point typography! 👌🏾</p>
-          <button type="button" href="#">Download the CSS file</button>
+  <article class="container-mid">
+    <h1>Typography</h1>
+    <div class="typography-intro">
+      <p>WealthBar’s typography is a balance between readability and personality. Using our set of defined typography styles ensures consistent quality and a clear hierarchy.</p>
+      <div class="download-typography">
+        <p>Instantly apply on-point typography! 👌🏾</p>
+        <button type="button" href="#">Download the CSS file</button>
+      </div>
+    </div>
+    <hr />
+    <strong>Screen Size</strong>
+      <button class="toggle" @click="isMobile = !isMobile">
+        <span :data-active="!isMobile">Desktop</span>
+        <span :data-active="isMobile">Mobile</span>
+      </button>
+    <section>
+      <h2 id="headers">Header Text</h2>
+      <p>Headers create hierarchy in a layout and make scanning easy. Use them for content such as page titles or section titles. We have mobile and desktop header styles so that our typography is responsive to screen real estate. </p>
+
+
+      <h3>H1 header</h3>
+      <hr>
+      <div class="example">
+        <strong>Example</strong>
+        <div>
+          <h1 :class="[ isMobile ? 'mobile' : 'desktop' ]">This is a super large header.</h1>
         </div>
       </div>
-      <hr />
-
-      <section>
-        <h2 class="section-headers"><a name="headers">Headers</a></h2>
-        <p class="intro-copy">Headers create hierarchy in a layout and make scanning easy. Use them for content such as page titles or section titles. We have mobile and desktop header styles so that our typography is responsive to screen real estate. </p>
-
-        <toggle-view>
-          <ul slot="content" class="unit-selector">
-            <li v-for="screen in getScreens" @click="setScreen(screen)" :key="screen" :class="{'active': getSelectedScreen === screen}">{{screen}}</li>
-          </ul>
-        </toggle-view>
-
-        <h1 class="mobile-h1" v-if="getSelectedScreen === 'Mobile'">H1 This is a super large header.</h1>
-        <h1 v-else> H1 This is a super large header.</h1>
+      <div class="attributes">
         <div class="code-sample">
-          <pre><code>&lt;h1&gt; H1 This is a super large header.&lt;/h1&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 2.25rem;</li>
-              <li>line-height: 3rem;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 2.25rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 1.625rem;</li>
-              <li>line-height: 2rem;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 1.625rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 26px;</li>
-              <li>line-height: 32px;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 26px 0px 16px;</li>
-            </ul>
-          </div>
-          <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'"  class="css-px">
-            <ul>
-              <li>font-size: 36px;</li>
-              <li>line-height: 48px;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 36px 0px 16px;</li>
-            </ul>
-          </div>
+          <strong>Markup</strong>
+          <pre><code class="html">&lt;h1&gt;This is a super large header.&lt;/h1&gt;</code></pre>
         </div>
-        <h2 class="mobile-h2" v-if="getSelectedScreen === 'Mobile'" >H2 This is a huge header.</h2>
-        <h2 v-else >H2 This is a huge header.</h2>
         <div class="code-sample">
-          <pre><code>&lt;h2&gt; H2 This is a huge header.&lt;/h2&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 1.875rem;</li>
-              <li>line-height: 2.25rem;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 1.875rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 1.5rem;</li>
-              <li>line-height: 1.875rem;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 1.5rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 24px;</li>
-              <li>line-height: 30px;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 24px 0px 16px;</li>
-            </ul>
-          </div>
-          <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 30px;</li>
-              <li>line-height: 36px;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 30px 0px 16px;</li>
-            </ul>
-          </div>
+          <strong>Style</strong>
+          <pre v-if="isMobile">
+            <code class="css">font-size: {{unitValue(26)}};
+            line-height: {{unitValue(32)}};
+            font-weight: 500;
+            margin: {{unitValue(26)}} {{unitValue(0)}} {{unitValue(16)}};</code>
+          </pre>
+          <pre v-else>
+            <code class="css">font-size: {{unitValue(36)}};
+            line-height: {{unitValue(48)}};
+            font-weight: 500;
+            margin: {{unitValue(36)}} {{unitValue(0)}} {{unitValue(16)}};</code>
+          </pre>
         </div>
+      </div>
 
-        <h3 class="mobile-h3" v-if="getSelectedScreen === 'Mobile'" >H3 This is a big header.</h3>
-        <h3 v-else >H3 This is a big header.</h3>
+      <h3>H2 header</h3>
+      <hr>
+      <div class="example">
+        <strong>Example</strong>
+        <div>
+          <h2 :class="[ isMobile ? 'mobile' : 'desktop' ]">This is a huge header.</h2>
+        </div>
+      </div>
+      <div class="attributes">
         <div class="code-sample">
-          <pre><code>&lt;h3&gt; H3 This is a big header.&lt;/h3&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 1.5rem;</li>
-              <li>line-height: 1.875rem;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 1.5rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 1.375rem;</li>
-              <li>line-height: 1.75rem;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 1.375rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 22px;</li>
-              <li>line-height: 28px;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 22px 0px 16px;</li>
-            </ul>
-          </div>
-          <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 24px;</li>
-              <li>line-height: 30px;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 24px 0px 16px;</li>
-            </ul>
-          </div>
+          <strong>Markup</strong>
+          <pre>
+            <code class="html">&lt;h2&gt;This is a huge header.&lt;/h2&gt;</code>
+          </pre>
         </div>
-
-        <h4 class="mobile-h4" v-if="getSelectedScreen === 'Mobile'">H4 This is a medium header.</h4>
-        <h4 v-else>H4 This is a medium header.</h4>
         <div class="code-sample">
-          <pre><code>&lt;h4&gt; H4 This is a medium header.&lt;/h4&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 1.25rem;</li>
-              <li>line-height: 1.625rem;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 1.25rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 1.125rem;</li>
-              <li>line-height: 1.5rem;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 1.125rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 18px;</li>
-              <li>line-height: 24px;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 18px 0px 16px;</li>
-            </ul>
-          </div>
-          <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 20px;</li>
-              <li>line-height: 26px;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 20px 0px 16px;</li>
-            </ul>
-          </div>
+          <strong>Style</strong>
+          <pre v-if="isMobile" >
+            <code class="css">font-size: {{unitValue(24)}};
+            line-height: {{unitValue(30)}};
+            font-weight: 500;
+            margin: {{unitValue(24)}} {{unitValue(0)}} {{unitValue(16)}};</code>
+          </pre>
+          <pre v-else>
+            <code class="css">font-size: {{unitValue(30)}};
+            line-height: {{unitValue(36)}};
+            font-weight: 500;
+            margin: {{unitValue(30)}} {{unitValue(0)}} {{unitValue(16)}};</code>
+          </pre>
         </div>
+      </div>
 
-        <h5 class="mobile-h4" v-if="getSelectedScreen === 'Mobile'">H5 This is a small header.</h5>
-        <h5 v-else>H5 This is a small header.</h5>
+
+      <h3>H3 header</h3>
+      <hr>
+      <div class="example">
+        <strong>Example</strong>
+        <div>
+          <h3 :class="[ isMobile ? 'mobile' : 'desktop' ]">This is a big header.</h3>
+        </div>
+      </div>
+      <div class="attributes">
         <div class="code-sample">
-          <pre><code>&lt;h5&gt; H5 This is a small header.&lt;/h5&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 1.125rem;</li>
-              <li>line-height: 1.5rem;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 1.125rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div v-if="getSelectedUnit === 'rem' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 1rem;</li>
-              <li>line-height: 1.375rem;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 1rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Mobile'" class="css-px">
-            <ul>
-              <li>font-size: 16px;</li>
-              <li>line-height: 22px;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 16px 0px 16px;</li>
-            </ul>
-          </div>
-          <div v-else-if="getSelectedUnit === 'px' && getSelectedScreen === 'Desktop'" class="css-px">
-            <ul>
-              <li>font-size: 18px;</li>
-              <li>line-height: 24px;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 18px 0px 16px;</li>
-            </ul>
-          </div>
+          <strong>Markup</strong>
+          <pre>
+            <code class="html">&lt;h3&gt;This is a big header.&lt;/h3&gt;</code>
+          </pre>
         </div>
-      </section>
-
-      <section>
-        <h2 class="section-headers"><a name="paragraphs">Paragraphs</a></h2>
-        <p class="intro-copy">Paragraphs are optimized for web readability. For additional emphasis or de-emphasis, we have 4 style classes that can be applied as needed to our base Paragraph style.</p>
-
-        <h4>Base style</h4>
-        <p class="intro-copy">Our base paragraph style is the foundation of our typography. All styles are variants of this style. It is also the default text style, meaning if no style is applied or specified, it should use this style.</p>
-
-        <p>This is a paragraph.</p>
         <div class="code-sample">
-          <pre><code>&lt;p&gt; This is a paragraph.&lt;/p&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem'" class="css-px">
-            <ul>
-              <li>font-size: 1rem;</li>
-              <li>line-height: 1.375rem;</li>
-              <li>font-weight: 500;</li>
-              <li>padding: 1rem 0px 1rem;</li>
-            </ul>
-          </div>
-          <div v-else class="css-px">
-            <ul>
-              <li>font-size: 16px;</li>
-              <li>line-height: 22px;</li>
-              <li>font-weight: 300;</li>
-              <li>padding: 16px 0px 16px;</li>
-            </ul>
-          </div>
+          <strong>Style</strong>
+          <pre v-if="isMobile">
+            <code class="css">font-size: {{unitValue(22)}};
+            line-height: {{unitValue(28)}};
+            font-weight: 500;
+            margin: {{unitValue(22)}} {{unitValue(0)}} {{unitValue(16)}};</code>
+          </pre>
+          <pre v-else>
+            <code class="css">font-size: {{unitValue(24)}};
+            line-height: {{unitValue(30)}};
+            font-weight: 500;
+            margin: {{unitValue(24)}} {{unitValue(0)}} {{unitValue(16)}};</code>
+          </pre>
         </div>
+      </div>
 
-        <h4>Additional Styles</h4>
-        <p class="large">This is large text.</p>
-
+      <h3>H4 header</h3>
+      <hr>
+      <div class="example">
+        <strong>Example</strong>
+        <div>
+          <h4 :class="[ isMobile ? 'mobile' : 'desktop' ]">This is a medium header.</h4>
+        </div>
+      </div>
+      <div class="attributes">
         <div class="code-sample">
-          <pre><code>&lt;span class="large"&gt; This is large text.&lt;/span&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem'" class="css-px">
-            <ul>
-              <li>font-size: 1.125rem;</li>
-              <li>line-height: 1.5rem;</li>
-              <li>padding: 1.125rem 0px 1.125rem;</li>
-            </ul>
-          </div>
-          <div v-else class="css-px">
-            <ul>
-              <li>font-size: 18px;</li>
-              <li>line-height: 24px;</li>
-              <li>padding: 18px 0px 18px;</li>
-            </ul>
-          </div>
+          <strong>Markup</strong>
+          <pre>
+            <code class="html">&lt;h4&gt;This is a medium header.&lt;/h4&gt;</code>
+          </pre>
         </div>
-
-        <p class="small">This is small text.</p>
         <div class="code-sample">
-          <pre><code>&lt;small&gt; This is a small text.&lt;/small&gt;
-&lt;span class="small"&gt; This is an alternate small text.&lt;/span&gt;</code></pre>
-          <div v-if="getSelectedUnit === 'rem'" class="css-px">
-            <ul>
-              <li>font-size: 0.875rem;</li>
-              <li>line-height: 1.52rem;</li>
-              <li>padding: 0.875rem 0px 0.875rem;</li>
-            </ul>
-          </div>
-          <div div v-else class="css-px">
-            <ul>
-              <li>font-size: 14px;</li>
-              <li>line-height: 20px;</li>
-              <li>padding: 14px 0px 14px;</li>
-            </ul>
-          </div>
+          <strong>Style</strong>
+          <pre v-if="isMobile">
+            <code class="css">font-size: {{unitValue(18)}};
+            line-height: {{unitValue(24)}};
+            font-weight: 500;
+            margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(16)}};</code>
+          </pre>
+          <pre v-else>
+            <code class="css">font-size: {{unitValue(20)}};
+            line-height: {{unitValue(26)}};
+            font-weight: 500;
+            margin: {{unitValue(20)}} {{unitValue(0)}} {{unitValue(16)}};</code>
+          </pre>
         </div>
+      </div>
 
-        <p>This is <span class="subtle">subtle text</span></p>
+      <h3>H5 header</h3>
+      <hr>
+      <div class="example">
+        <strong>Example</strong>
+        <div>
+          <h5 :class="[ isMobile ? 'mobile' : 'desktop' ]">This is a small header.</h5>
+        </div>
+      </div>
+      <div class="attributes">
         <div class="code-sample">
-          <pre><code>&lt;span class="subtle"&gt; This is a subtle text.&lt;/small&gt;</code></pre>
-          <div class="text-description">
-            <p>This style de-emphasizes sentences or paragraphs, such as for micro-copy, minor details, or information that isn’t useful for most users.</p>
-            <p>colour: 77% $black;</p>
-          </div>
+          <strong>Markup</strong>
+          <pre>
+            <code class="html">&lt;h5&gt;This is a small header.&lt;/h5&gt;</code>
+          </pre>
         </div>
-
-        <p> <strong>This is strong text</strong></p>
         <div class="code-sample">
-          <pre><code>&lt;p&gt; This is strong text.&lt;/p&gt;</code></pre>
-          <div class="text-description">
-            <p>This style provides additional emphasis to bring attention to a specific word or phrases; don’t use for entire sentences or paragraphs.
-            <p>font-weight: 500;</p>
-            <p>Don’t use the <span>&lt;b&gt;</span> tag, ever! 💀</p>
-          </div>
+          <strong>Style</strong>
+          <pre v-if="isMobile">
+            <code class="css">font-size: {{unitValue(16)}};
+            line-height: {{unitValue(22)}};
+            font-weight: 500;
+            margin: {{unitValue(16)}} {{unitValue(0)}} {{unitValue(16)}};</code>
+          </pre>
+          <pre v-else><code class="css">
+            font-size: {{unitValue(18)}};
+            line-height: {{unitValue(24)}};
+            font-weight: 500;
+            margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(16)}};</code>
+          </pre>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <hr />
+    <section>
+      <h2 id="body">Body Text</h2>
+      <p>Body text is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style classes that can be applied as needed to our base paragraph style.</p>
 
-      <section>
-        <h2 class="section-headers"><a name="lists">Lists</a></h2>
-        <p class="intro-copy">Lists inherit the paragraph’s style and use the paragraph’s spacing between list items to improve readability. List items are indented 8px.</p>
+      <h3>Paragraph</h3>
+      <hr>
+      <div class="example">
+        <strong>Example</strong>
+        <div>
+          <p>This is a paragraph.</p>
+        </div>
+      </div>
+      <div class="attributes">
+        <div class="code-sample">
+          <strong>Markup</strong>
+          <pre><code class="html">&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+        </div>
+        <div class="code-sample">
+          <strong>Style</strong>
+          <pre>
+            <code class="css">font-size: {{unitValue(16)}};
+            line-height: {{unitValue(22)}};
+            font-weight: 300;
+            margin: {{unitValue(0)}} {{unitValue(0)}} {{unitValue(16)}};</code>
+          </pre>
+        </div>
+      </div>
+      <strong>Notes</strong>
+      <p>Our base paragraph style is the foundation of our typography. All styles are variants of this style. It is also the default text style, meaning if no style is applied or specified, it should use this style.</p>
 
-        <h4>Bulleted List</h4>
-        <div class="bulleted-list-example">
-          <ul >
+      <h3>Large Text</h3>
+      <hr>
+      <div class="example">
+        <strong>Example</strong>
+        <div>
+          <p class="large">This is large paragraph text.</p>
+        </div>
+      </div>
+      <div class="attributes">
+        <div class="code-sample">
+          <strong>Markup</strong>
+          <pre>
+            <code class="html">&lt;p class="large"&gt;This is large paragraph text.&lt;/p&gt;</code>
+          </pre>
+        </div>
+        <div class="code-sample">
+          <strong>Style</strong>
+          <pre>
+            <code class="css">font-size: {{unitValue(18)}};
+            line-height: {{unitValue(24)}};
+            font-weight: 300;
+            margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(18)}};</code>
+          </pre>
+        </div>
+      </div>
+      <strong>Notes</strong>
+      <p>Only designed to work when applied to a paragraph &lt;p&gt; element.</p>
+
+      <h3>Small Text</h3>
+      <hr>
+      <div class="example">
+        <strong>Example</strong>
+        <div>
+          <p class="small">This is small paragraph text.</p>
+          <small>This is a small text block.</small>
+        </div>
+      </div>
+      <div class="attributes">
+        <div class="code-sample">
+          <strong>Markup</strong>
+          <pre>
+            <code class="html">&lt;p class="small"&gt;This is small paragraph text.&lt;/p&gt;<br>&lt;small&gt;This is a small text block.&lt;/small&gt;</code>
+          </pre>
+        </div>
+        <div class="code-sample">
+          <strong>Style</strong>
+          <pre>
+            <code class="css">font-size: {{unitValue(14)}};</code>
+          </pre>
+        </div>
+      </div>
+      <strong>Notes</strong>
+      <p>Small text, whether set as a class or as an inline element inherits basic sizing and spacing from the parent (eg: paragraph &lt;p&gt;) element.</p>
+
+      <h3>Subtle Text</h3>
+      <hr>
+      <div class="example">
+        <strong>Example</strong>
+        <div>
+          <p >This is <span class="subtle">subtle text</span> in a paragraph.</p>
+        </div>
+      </div>
+      <div class="attributes">
+        <div class="code-sample">
+          <strong>Markup</strong>
+          <pre>
+            <code class="html">&lt;p&gt;This is &lt;span class="subtle"&gt;subtle text&lt;/p&gt; in a paragraph.&lt;/p&gt;</code>
+          </pre>
+        </div>
+        <div class="code-sample">
+          <strong>Style</strong>
+          <pre>
+            <code class="css">color: rgba(55, 55, 63, 0.77);
+            // 77% of $pearl-700; //</code>
+          </pre>
+        </div>
+      </div>
+      <strong>Notes</strong>
+      <p>This style de-emphasizes sentences or paragraphs, such as for micro-copy, minor details, or information that isn’t useful for most users.</p>
+
+
+      <h3>Strong Text</h3>
+      <hr>
+      <div class="example">
+        <strong>Example</strong>
+        <div>
+          <p>This is <strong>strong text</strong> in a paragraph.</p>
+        </div>
+      </div>
+      <div class="attributes">
+        <div class="code-sample">
+          <strong>Markup</strong>
+          <pre>
+            <code class="html">&lt;p&gt;This is &lt;strong&gt;strong text&lt;/strong&gt; in a paragraph.&lt;/p&gt;</code>
+          </pre>
+        </div>
+        <div class="code-sample">
+          <strong>Style</strong>
+          <pre>
+            <code class="css">font-weight: 500;</code>
+          </pre>
+        </div>
+      </div>
+      <strong>Notes</strong>
+      <p>This style provides additional emphasis to bring attention to a specific word or phrases; don’t use for entire sentences or paragraphs. <strong>Don’t use the <span>&lt;b&gt;</span> tag, ever!</strong> 💀</p>
+    </section>
+
+    <section>
+      <h2 id="lists">Lists</h2>
+      <p>Lists inherit the paragraph’s style and use the paragraph’s spacing between list items to improve readability. List items are indented {{unitValue(8)}}.</p>
+
+      <h3>Bulleted List</h3>
+      <hr>
+      <div class="example">
+        <strong>Example</strong>
+        <div>
+          <ul>
             <li>Hey, here’s something that’s part of a list</li>
             <li>Here’s a long piece of text. What should go here I wonder. Just enough to push it to two lines. There we go!
               <ul>
@@ -318,19 +334,41 @@
             </li>
           </ul>
         </div>
-
+      </div>
+      <div class="attributes">
         <div class="code-sample">
+          <strong>Markup</strong>
           <pre>
-          <code>&lt;ul&gt;
-  &lt;li&gt;unordered list item&lt;/li&gt;
-  &lt;li&gt;unordered list item&lt;/li&gt;
-  &lt;li&gt;unordered list item&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+            <code class="html">&lt;ul&gt;
+              &nbsp;&nbsp;&lt;li&gt;unordered list item&lt;/li&gt;
+              &nbsp;&nbsp;&lt;li&gt;unordered list item&lt;/li&gt;
+              &nbsp;&nbsp;&lt;li&gt;unordered list item&lt;/li&gt;
+            &lt;/ul&gt;
+          </code>
+          </pre>
         </div>
+        <div class="code-sample">
+          <strong>Style</strong>
+          <pre>
+            <code class="css">ul {
+              &nbsp;&nbsp;padding: 0;
+              &nbsp;&nbsp;margin: 0 0 1rem;
+              &nbsp;&nbsp;list-style-position: inside;
+            }
 
-        <h4>Numbered List</h4>
-        <div class="bulleted-list-example">
-          <ol >
+            li {
+              &nbsp;&nbsp;margin: 0 0 0.25rem;
+            }</code>
+          </pre>
+        </div>
+      </div>
+
+      <h3>Numbered List</h3>
+      <hr>
+      <div class="example">
+        <strong>Example</strong>
+        <div>
+          <ol>
             <li>Hey, here’s something that’s part of a list</li>
             <li>Here’s a long piece of text. What should go here I wonder. Just enough to push it to two lines. There we go!
               <ol>
@@ -339,83 +377,107 @@
             </li>
           </ol>
         </div>
-
+      </div>
+      <div class="attributes">
         <div class="code-sample">
+          <strong>Markup</strong>
           <pre>
-          <code>&lt;ol&gt;
-  &lt;li&gt;first list item&lt;/li&gt;
-  &lt;li&gt;first list item&lt;/li&gt;
-  &lt;li&gt;first list item&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
+            <code class="html">&lt;ol&gt;
+            &nbsp;&nbsp;&lt;li&gt;first list item&lt;/li&gt;
+            &nbsp;&nbsp;&lt;li&gt;second list item&lt;/li&gt;
+            &nbsp;&nbsp;&lt;li&gt;third list item&lt;/li&gt;
+            &lt;/ol&gt;</code>
+          </pre>
         </div>
-        <hr />
-      </section>
-      <section>
-        <h2 class="section-headers"><a name="line-length">Line length</a></h2>
-        <p class="intro-copy">Our ideal range is from 60 to 80 characters. The character count in a line of text has a big impact on readability. <a href="#">See further reading on the topic.</a> </p>
-
-        <h4>Test it out</h4>
-        <p class="intro-copy">Copy & paste the Lorem Ipsum paragraph below into your design file or code. You should only have 1 asterisk* since asterisks* are at 60 and 80 characters. If you have 0 or 2, that means your text is too narrow or too wide. </p>
-
-        <div class="line-length-container">
-          <div class="line-length-content">
-            <div class="line-length-labels">
-            <p class="subtle small">Characters</p>
-            <p class="small">50</p>
-            <p class="small">60</p>
-            <p class="small">Ideal 🎉</p>
-            <p class="small">80</p>
-            <p class="small">105</p>
-            </div>
-            <div class="line-0"></div>
-            <div class="line-50"></div>
-            <div class="line-60"></div>
-            <div class="line-80"></div>
-            <div class="line-105"></div>
-            <p class="line-length-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam* condimentum, magna* at eleifend facilisis, tellus justo finibus est, sed maximus diam urna quis eros. Aliquam dictum ultrices magna.</p>
-            <p class="line-length-60">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam* condimentum, magna* at eleifend facilisis, tellus justo finibus est, sed maximus diam urna quis eros. Aliquam dictum ultrices magna.</p>
-            <p class="line-length-80">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam* condimentum, magna* at eleifend facilisis, tellus justo finibus est, sed maximus diam urna quis eros. Aliquam dictum ultrices magna.</p>
-            <p class="line-length-105">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam* condimentum, magna* at eleifend facilisis, tellus justo finibus est, sed maximus diam urna quis eros. Aliquam dictum ultrices magna.</p>
-          </div>
-        </div>
-        <hr />
-      </section>
-      <section>
-        <h2 class="section-headers"><a name="font-stack">Font Stack</a></h2>
-        <p class="intro-copy">We use the same font stack regardless of the device. GT Walsheim is our typeface for it’s friendly and unique personality, as well as its web readability.</p>
-
         <div class="code-sample">
-        <pre><code>font-family: "GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;</code></pre>
-        </div>
+          <strong>Style</strong>
+          <pre>
+            <code class="css">ol {
+              &nbsp;&nbsp;padding: 0;
+              &nbsp;&nbsp;margin: 0 0 1rem;
+              &nbsp;&nbsp;list-style-position: inside;
+            }
 
-        <h4>Alternative glyphs</h4>
-        <p class="intro-copy">This refers to alphanumeric characters where we’ve deviated from GT Walsheim’s default for readability reasons.</p>
-
-        <div class="alternative-glyphs-container">
-          <div class="alternative-examples">
-            <img src="~@/assets/alternative-y.png" />
-            <img src="~@/assets/tabular-figures@2x.png" />
-          </div>
-          <div class="alternative-copy">
-            <p>Across the board we use the alternate Y, both lower and uppercase. </p>
-            <div class="code-sample">
-              <pre><code>font-feature-settings: "kern", "liga", “pnum”, "ss04";</code></pre>
-            </div>
-            <p>For lists and tables with numbers, we use tabular figures (also known as monospaced numbers) for all text. This will ensure vertical alignment among numbers and special characters.</p>
-            <div class="code-sample">
-              <pre><code>font-feature-settings: "kern", "liga", “tnum”, "ss04";</code></pre>
-              <pre><code>&lt;span class="tab-numbers"&gt;0123456789&lt;/span&gt;</code></pre>
-            </div>
-          </div>
+            li {
+              &nbsp;&nbsp;margin: 0 0 0.25rem;
+            }</code>
+          </pre>
         </div>
-        <hr />
-      </section>
-      <section>
-        <h2 class="section-headers"><a name="measurements">Measurements</a></h2>
-        <p class="intro-copy">We use REM to ensure our typography stays scalable in a responsive web world. Our base REM is 16px, which means 2px is equal to 0.125rem, or 1/8rem. </p>
-      </section>
-    </article>
-  </section>
+      </div>
+    </section>
+
+    <section>
+      <h2 id="line-length">Line length</h2>
+      <p>Our ideal range is from 60 to 80 characters. The character count in a line of text has a big impact on readability. <a href="#">See further reading on the topic.</a> </p>
+
+      <h4>Test it out</h4>
+      <p>Copy & paste the Lorem Ipsum paragraph below into your design file or code. You should only have 1 asterisk* since asterisks* are at 60 and 80 characters. If you have 0 or 2, that means your text is too narrow or too wide. </p>
+
+      <div class="line-length-container">
+        <div class="line-length-content">
+          <p class="line-length-labels">
+            <span class="subtle small">Characters</span>
+            <span class="small char-50">50</span>
+            <span class="small char-60">60</span>
+            <span class="small ideal">Ideal 🎉</span>
+            <span class="small char-80">80</span>
+            <span class="small char-104">104</span>
+          </p>
+          <div class="line-0"></div>
+          <div class="line-50"></div>
+          <div class="line-60"></div>
+          <div class="line-80"></div>
+          <div class="line-104"></div>
+          <p class="line-length-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam* condimentum, magna* at eleifend facilisis, tellus justo finibus est, sed maximus diam urna quis eros. Aliquam dictum ultrices magna.</p>
+          <p class="line-length-60">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam* condimentum, magna* at eleifend facilisis, tellus justo finibus est, sed maximus diam urna quis eros. Aliquam dictum ultrices magna.</p>
+          <p class="line-length-80">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam* condimentum, magna* at eleifend facilisis, tellus justo finibus est, sed maximus diam urna quis eros. Aliquam dictum ultrices magna.</p>
+          <p class="line-length-104">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam* condimentum, magna* at eleifend facilisis, tellus justo finibus est, sed maximus diam urna quis eros. Aliquam dictum ultrices magna.</p>
+        </div>
+      </div>
+      <hr />
+    </section>
+    <section>
+      <h2 id="font-stack">Font Stack</h2>
+      <p>We use the same font stack regardless of the device. GT Walsheim is our typeface for it’s friendly and unique personality, as well as its web readability.</p>
+
+      <pre><code class="css">font-family: "GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;</code></pre>
+
+      <h3>Alternative glyphs</h3>
+      <hr>
+      <p>This refers to alphanumeric characters where we’ve deviated from GT Walsheim’s default for readability reasons.</p>
+
+      <p>Across the board we use the alternate Y, both lower and uppercase. </p>
+      <div class="alternative-glyphs-container">
+        <div class="alternative-examples">
+          <img src="~@/assets/alternative-y.png" />
+        </div>
+        <div class="alternative-copy">
+          <strong>Style</strong>
+          <pre><code class="css">font-feature-settings: "kern", "liga", “pnum”, "ss04";</code></pre>
+        </div>
+      </div>
+      <h3>Tabular Figures</h3>
+      <hr>
+      <p>For lists and tables with numbers, we use tabular figures (also known as monospaced numbers) for all text. This will ensure vertical alignment among numbers and special characters.</p>
+      <div class="alternative-glyphs-container">
+        <div class="alternative-examples">
+          <img src="~@/assets/tabular-figures@2x.png" />
+        </div>
+        <div class="alternative-copy">
+          <strong>Style</strong>
+          <pre><code class="css">font-feature-settings: "kern", "liga", “tnum”, "ss04";</code></pre>
+          <strong>Markup</strong>
+          <pre><code>&lt;span class="tab-numbers"&gt;0123456789&lt;/span&gt;</code></pre>
+        </div>
+      </div>
+
+
+    </section>
+    <section>
+      <h2 id="measurements">Measurements</h2>
+      <p>We use REM to ensure our typography stays <button>scalable</button>  in a responsive web world. Our base REM is 16px, which means 2px is equal to 0.125rem, or 1/8rem. </p>
+    </section>
+  </article>
 </template>
 
 <script>
@@ -429,13 +491,21 @@
       return {
         name: 'typography',
         title: 'Typography',
+        isMobile: false,
+        isPx: false,
       };
     },
     computed: {
-      ...mapGetters(['getSelectedUnit', 'getSelectedScreen', 'getScreens']),
+      ...mapGetters(['getSelectedUnit', 'getUnits', 'getSelectedScreen', 'getScreens']),
     },
     methods: {
-      ...mapActions(['setScreen']),
+      ...mapActions(['setScreen', 'setUnits']),
+      unitValue(value, ratio = 16) {
+        if (this.getSelectedUnit === 'rem') {
+          return `${value / ratio}${this.getSelectedUnit}`;
+        }
+        return `${value}${this.getSelectedUnit}`;
+      },
     },
     components: {
       toggleView,
@@ -447,11 +517,14 @@
   @import 'style.scss';
 
   .typography-page {
-    padding: 2rem 4rem;
+    margin: 2rem 4rem;
   }
 
   .typography-intro {
     position: relative;
+    display: flex;
+
+    > p { flex: 1 1 100%; }
   }
 
   .intro-copy {
@@ -459,12 +532,10 @@
   }
 
   .download-typography {
-    position: absolute;
-    top: 44px;
-    right: 244px;
     border: 1px solid $pearl-100;
-    padding: 1.5rem;
-    width: 14rem;
+    margin: 0 2rem;
+    padding: 0.5rem;
+    // width: 14rem;
     border-radius: 2px;
     background-color: $white;
     z-index: 2;
@@ -474,197 +545,99 @@
     }
   }
 
-  .section-headers {
-    a {
-      text-decoration: none;
-      font-size: 24px;
-      font-weight: bold;
-      color: $pearl-900;
-    }
-
-    a[name] { padding-top: 1.875rem; }
-
-    a:hover,
-    a:focus {
-      background-color: transparent;
-    }
+  .attributes {
+    display: flex;
+    margin-bottom: 1rem;
   }
 
   .code-sample {
     display: flex;
+    flex-direction: column;
+    flex: 1 1 50%;
+    &:last-child { padding-left: 1rem; }
+    pre { flex: 1 1 50%; }
+    code { height: 100%; }
+  }
 
-    pre {
-      margin-right: $spacing-large;
-      width: 25rem;
+  .example {
+    margin-bottom: 1rem;
 
-      code {
-        font-size: 14px;
-      }
+    > :last-child {
+      background: $pearl-50;
+      border: 1px solid $pearl-300;
+      border-radius: 0.25rem;
     }
-
-    .css-px > ul {
-      list-style-type: none;
-    }
-
-    .css-px > ul > li {
-      font-size: 14px;
-      line-height: 1;
-    }
-
-    .text-description {
-      flex: 2;
-      max-width: 26rem;
-    }
-  }
-
-  .mobile-h1 {
-    font-size: 1.625rem;
-  }
-
-  .mobile-h2 {
-    font-size: 1.5rem;
-  }
-
-  .mobile-h3 {
-    font-size: 1.375rem;
-  }
-
-  .mobile-h4 {
-    font-size: 1.125rem;
-  }
-
-  .mobile-h5 {
-    font-size: 1rem;
-  }
-
-  .bulleted-list-example {
-    ul,
-    ol {
-      margin-left: 2rem;
-    }
-  }
-
-  .bulleted-list-example > ul {
-    list-style-type: disc;
   }
 
   .line-length-container {
     padding-bottom: 1rem;
 
     .line-length-content {
-      .line-length-50 {
-        max-width: 24rem;
-      }
+      .line-length-50 { max-width: 22rem; }
 
-      .line-length-60 {
-        max-width: 28rem;
-      }
+      .line-length-60 { max-width: 28rem; }
 
-      .line-length-80 {
-        max-width: 34rem;
-      }
+      .line-length-80 { max-width: 38rem; }
 
-      .line-length-105 {
-        max-width: 48rem;
-      }
+      .line-length-104 { max-width: 52rem; }
 
       .line-length-labels {
-        display: flex;
-
-        p:first-of-type + p {
-          margin-left: 292px;
-          color: $ruby-300;
+        .char-50,
+        .char-60,
+        .char-80,
+        .char-104,
+        .ideal {
+          position: absolute;
+          top: 0;
         }
 
-        p:nth-child(3),
-        p:nth-child(5) {
-          color: $jade-300;
-          margin-left: 48px;
-        }
-
-        p:nth-child(4) {
-          margin-left: 40px;
-        }
-
-        p:last-child {
-          color: $ruby-300;
-          margin-left: 124px;
-        }
+        .char-50 { left: 22rem; }
+        .char-60 { left: 28rem; }
+        .ideal { left: 31rem; }
+        .char-80 { left: 38rem; }
+        .char-104 { left: 52rem; }
       }
 
       .line-0,
       .line-50,
       .line-60,
       .line-80,
-      .line-105 {
+      .line-104 {
         height: 90%;
         position: absolute;
-      }
-
-      .line-0 {
-        border-left: 1px solid $pearl-100;
+        border-left: 1px solid $pearl-500;
+        opacity: 0.5;
       }
 
       .line-50 {
-        border-left: 1px solid #e96654;
-        left: 372px;
-        opacity: 0.5;
+        border-color: #e96654;
+        left: 22rem;
       }
 
       .line-60 {
-        border-left: 1px solid $jade-300;
-        left: 436px;
-        opacity: 0.5;
+        border-color: $jade-300;
+        left: 28rem;
       }
 
       .line-80 {
-        border-left: 1px solid $jade-300;
-        margin-left: 592px;
-        opacity: 0.5;
+        border-color: $jade-300;
+        left: 38rem;
       }
 
-      .line-105 {
-        border-left: 1px solid #e96654;
-        margin-left: 736px;
-        opacity: 0.5;
+      .line-104 {
+        border-color: #e96654;
+        left: 52rem;
       }
     }
   }
 
   .alternative-glyphs-container {
     display: flex;
-    position: relative;
-    margin-top: $spacing-large;
+    align-items: center;
 
     .alternative-examples {
-      display: flex;
-      flex-direction: column;
-      margin-right: $spacing-large;
-
-      img:first-of-type {
-        margin-bottom: $spacing;
-      }
-
-      img {
-        width: 21rem;
-      }
-    }
-
-    .alternative-copy {
-      margin-right: 32rem;
-
-      h4 {
-        font-size: 1.125rem;
-      }
-
-      p {
-        font-size: 0.875rem;
-        max-width: 26rem;
-      }
-
-      .code-sample {
-        flex-direction: column;
-      }
+      margin-right: 3rem;
+      img { max-width: 21rem; }
     }
   }
 </style>

@@ -1,46 +1,15 @@
-ul {
-  list-style-type: none;
+ul, ol {
+  list-style-position: inside;
 }
 
-ul li ul {
+ul ul {
+  margin-top: 0.25rem;
+  margin-left: 1rem;
   list-style-type: circle;
-  margin-left: $spacing-med;
 }
 
-ol li ol {
-  list-style-type: lower-alpha;
-  margin-left: $spacing-med;
-}
-
-li {
-  white-space: nowrap;
-  padding: 0;
-  border: none;
-  border-bottom: 1px solid $lightgrey;
-
-  &:last-child { border-bottom: none; }
-  @media #{$sw-medium} {
-    border-bottom: none;
-  }
-
-  a {
-    display: block;
-    width: 100%;
-    color: $black;
-    text-decoration: none;
-    padding: $spacing-small $spacing-small;
-
-    &.active {
-      color: $brand;
-    }
-
-    @media #{$sw-medium} {
-      &:hover, &:focus {
-        background: rgba($brand, 0.1);
-        color: $brand;
-      }
-
-      border-radius: $br;
-    }
-  }
+ol ol {
+  margin-top: 0.25rem;
+  margin-left: 1rem;
+  list-style-type: lower-roman;
 }

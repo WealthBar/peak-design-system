@@ -1,6 +1,6 @@
 <template>
   <div class="units-container">
-    <slot name="label" />
+    <slot name="label"/>
     <slot class="unit-selector" name="content" />
   </div>
 </template>
@@ -20,38 +20,29 @@
   @import 'base/variables';
 
   .units-container {
-    margin-top: $spacing;
     display: flex;
     align-items: center;
-
-    p {
-      margin-right: $spacing-small;
-    }
+    > * { margin: 0 0.5rem 0 0; }
   }
 
   .unit-selector {
     display: flex;
-    border: 1px solid $brand-lightest;
-    border-radius: $spacing-tiny;
+    border: 1px solid $jade-300;
+    border-radius: 0.25rem;
     padding: 0;
 
-    li {
-      padding: $spacing-tiny $spacing-small;
-      color: $brand;
+    a {
+      padding: 0.25rem 0.5rem;
+      color: $jade-300;
+      text-decoration: none;
       font-size: 16px;
       margin: 0;
+
+      &.active {
+        background-color: $jade-300;
+        color: $white;
+      }
     }
-  }
-
-  li.active {
-    background-color: $brand;
-    color: $white;
-  }
-
-  .active.unit-selector {
-    background-color: $brand;
-
-    p { color: $white; }
   }
 
 </style>
