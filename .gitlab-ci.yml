@@ -19,7 +19,7 @@ variables:
 
 .build_image: &build_image
   - docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
-  - docker build --build-arg CI_COMMIT_SHA=$CI_COMMIT_SHA --build-arg SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN -t $CONTAINER_TAG .
+  - docker build --build-arg CI_COMMIT_SHA=$CI_COMMIT_SHA --build-arg -t $CONTAINER_TAG .
   - docker push $CONTAINER_TAG
 
 .deploy_image: &deploy_image
@@ -52,6 +52,7 @@ test:
   stage: test
   services:
   script:
+  - npm install node-sass
   - yarn install
   - yarn run ci
   artifacts:
