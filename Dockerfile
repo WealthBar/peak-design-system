@@ -28,7 +28,7 @@ COPY packages ./packages
 RUN yarn install --frozen-lockfile --prod
 
 COPY . .
-COPY --from=build /app/dist dist
+COPY --from=build /app/dist .
 
 EXPOSE 5001
 CMD [ "yarn", "start" ]
