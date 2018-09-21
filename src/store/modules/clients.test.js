@@ -41,7 +41,7 @@ test('store/modules/clients action fetchClients', async (t) => {
   const data = {
     data: {
       data: [
-        { id: 1, email: 'em@ail.com', first_name: 'first', last_name: 'last' },
+        { id: 1, email: 'em@ail.com', firstName: 'first', lastName: 'last' },
       ],
     },
   };

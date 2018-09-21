@@ -11,9 +11,9 @@ export default {
   },
   data: {
     data: [
-      { id: 1, email: 'clientone@test.test', first_name: 'John', last_name: 'Doe' },
-      { id: 2, email: 'clienttwo@test.test', first_name: 'Jane', last_name: 'Doe' },
-      { id: 3, email: 'clientthree@test.test', first_name: 'Jimmy', last_name: 'Doe' },
+      { id: 1, email: 'clientone@test.test', firstName: 'John', lastName: 'Doe' },
+      { id: 2, email: 'clienttwo@test.test', firstName: 'Jane', lastName: 'Doe' },
+      { id: 3, email: 'clientthree@test.test', firstName: 'Jimmy', lastName: 'Doe' },
     ],
   },
 };

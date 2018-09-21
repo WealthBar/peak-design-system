@@ -32,9 +32,9 @@ export default {
         const fetchedClients = await fetchClients.execute();
         const clients = fetchedClients.data.data.map(
           ({
-            id, email, first_name, last_name,
+            id, email, firstName, lastName,
           }) => ({
-            id, email, firstName: first_name, lastName: last_name,
+            id, email, firstName, lastName,
           }));
         commit('updateClients', clients);
       } catch (exception) {
