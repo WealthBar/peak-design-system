@@ -1,55 +1,38 @@
-image: "node:8"
+# image: "node:8"
 
-stages:
-  - test
-  - build
-  - deploy
+# stages:
+#   - test
+#   - build
+#   - deploy
 
-variables:
-  CONTAINER_REGISTRY: gitlab.wealth.bar:4567
-  CONTAINER_IMAGE: gitlab.wealth.bar:4567/$CI_PROJECT_PATH
-  CONTAINER_TAG: gitlab.wealth.bar:4567/$CI_PROJECT_PATH:$CI_COMMIT_SHA
-  DOKKU_TAG: dokku/$CI_PROJECT_NAME:next
+# variables:
+#   CONTAINER_REGISTRY: gitlab.wealth.bar:4567
+#   CONTAINER_IMAGE: gitlab.wealth.bar:4567/$CI_PROJECT_PATH
+#   CONTAINER_TAG: gitlab.wealth.bar:4567/$CI_PROJECT_PATH:$CI_COMMIT_SHA
+#   DOKKU_TAG: dokku/$CI_PROJECT_NAME:next
 
-# Cache gems and javascript modules in between builds
-.dokku_deploy: &dokku_deploy
-  - eval $(ssh-agent -s)
-  - ssh-add <(echo "$DOKKU_DEV_SSH_KEY")
-  - mkdir -p ~/.ssh
-  # For Docker builds disable host key checking. Be aware that by adding that
-  # you are suspectible to man-in-the-middle attacks.
-  # WARNING: Use this only with the Docker executor, if you use it with shell
-  # you will overwrite your user's SSH config.
-  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+# # Cache gems and javascript modules in between builds
+# .dokku_deploy: &dokku_deploy
+#   - eval $(ssh-agent -s)
+#   - ssh-add <(echo "$DOKKU_DEV_SSH_KEY")
+#   - mkdir -p ~/.ssh
+#   # For Docker builds disable host key checking. Be aware that by adding that
+#   # you are suspectible to man-in-the-middle attacks.
+#   # WARNING: Use this only with the Docker executor, if you use it with shell
+#   # you will overwrite your user's SSH config.
+#   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
-.dokku_deploy_prod: &dokku_deploy_prod
-  - eval $(ssh-agent -s)
-  - ssh-add <(echo "$DOKKU_PROD_SSH_KEY")
-  - mkdir -p ~/.ssh
-  # For Docker builds disable host key checking. Be aware that by adding that
-  # you are suspectible to man-in-the-middle attacks.
-  # WARNING: Use this only with the Docker executor, if you use it with shell
-  # you will overwrite your user's SSH config.
-  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+# .dokku_deploy_prod: &dokku_deploy_prod
+#   - eval $(ssh-agent -s)
+#   - ssh-add <(echo "$DOKKU_PROD_SSH_KEY")
+#   - mkdir -p ~/.ssh
+#   # For Docker builds disable host key checking. Be aware that by adding that
+#   # you are suspectible to man-in-the-middle attacks.
+#   # WARNING: Use this only with the Docker executor, if you use it with shell
+#   # you will overwrite your user's SSH config.
+#   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
-test:
-  variables:
-    NODE_ENV: test
-  stage: test
-  services:
-  script:
-  - yarn install
-  - yarn run ci
-  artifacts:
-    paths:
-      - coverage/
-    expire_in: 1 week
-  tags:
-    - node
-  cache:
-    key: "packages-2017-04-10"
-    paths:
-    - node_modules/
+
 
 # build_image:
 #   tags: [docker]
@@ -66,21 +49,21 @@ test:
 #     - docker push $CONTAINER_TAG
 #     - docker push $CONTAINER_IMAGE:latest
 
-build_demo_image:
-  tags: [docker]
-  variables:
-    DEMO: 'true'
-  stage: build   # build image only after test passed
-  only: [master] # build and push images only for master branch commits
-  image: docker:git # use simple git docker image
-  services:
-    - docker:dind
-  script:
-    - echo $DEMO_CONFIG > ./config/prod.env.js
-    - docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
-    - docker pull $CONTAINER_IMAGE:demo || true
-    - docker build --cache-from $CONTAINER_IMAGE:demo -t $CONTAINER_IMAGE:demo .
-    - docker push $CONTAINER_IMAGE:demo
+# build_demo_image:
+#   tags: [docker]
+#   variables:
+#     DEMO: 'true'
+#   stage: build   # build image only after test passed
+#   only: [master] # build and push images only for master branch commits
+#   image: docker:git # use simple git docker image
+#   services:
+#     - docker:dind
+#   script:
+#     - echo $DEMO_CONFIG > ./config/prod.env.js
+#     - docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
+#     - docker pull $CONTAINER_IMAGE:demo || true
+#     - docker build --cache-from $CONTAINER_IMAGE:demo -t $CONTAINER_IMAGE:demo .
+#     - docker push $CONTAINER_IMAGE:demo
 
 # deploy:
 #   stage: deploy
@@ -93,13 +76,131 @@ build_demo_image:
 #     - ssh $DOKKU_PROD_SSH "docker-direct tag $CONTAINER_TAG $DOKKU_TAG"
 #     - ssh $DOKKU_PROD_SSH "tags:deploy valet next"
 
-deploy_demo:
+# deploy_demo:
+#   stage: deploy
+#   only: [master] # build and push images only for master branch commits
+#   environment: development
+#   before_script: *dokku_deploy
+#   script:
+#     - ssh $DOKKU_DEV_SSH "docker-direct login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY"
+#     - ssh $DOKKU_DEV_SSH "docker-direct pull $CONTAINER_IMAGE:demo"
+#     - ssh $DOKKU_DEV_SSH "docker-direct tag $CONTAINER_IMAGE:demo $DOKKU_TAG"
+#     - ssh $DOKKU_DEV_SSH "tags:deploy valet next"
+
+image: "node:10-alpine"
+
+# Cache gems and javascript modules in between builds
+cache:
+  untracked: true
+  key: "packages-2018-05-23"
+  paths:
+  - node_modules/
+
+variables:
+  NODE_ENV: test
+  CONTAINER_REGISTRY: gitlab.wealth.bar:4567
+  CONTAINER_IMAGE: gitlab.wealth.bar:4567/$CI_PROJECT_PATH
+  CONTAINER_TAG: gitlab.wealth.bar:4567/$CI_PROJECT_PATH:$CI_COMMIT_SHA
+  DOKKU_TAG: dokku/$CI_PROJECT_NAME
+  DOKKU_SSH: dokku@dev-dk.wealth.bar
+  KUBECONFIG: /etc/deploy/config
+  CACHE_VERSION: 1
+
+.build_image: &build_image
+  - docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
+  - docker build --build-arg CI_COMMIT_SHA=$CI_COMMIT_SHA --build-arg SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN -t $CONTAINER_TAG .
+  - docker push $CONTAINER_TAG
+
+.deploy_image: &deploy_image
+  - eval $(ssh-agent -s)
+  - ssh-add <(echo "$DOKKU_SSH_KEY")
+  - mkdir -p ~/.ssh
+  - ssh-keyscan $DOKKU_SSH_HOST >> ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+  - ssh dokku@$DOKKU_SSH_HOST "docker-direct login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY"
+  - ssh dokku@$DOKKU_SSH_HOST "docker-direct pull $CONTAINER_TAG"
+  - ssh dokku@$DOKKU_SSH_HOST "docker-direct tag $CONTAINER_TAG dokku/$APP_NAME:latest"
+  - ssh dokku@$DOKKU_SSH_HOST "tags:deploy $APP_NAME latest"
+
+.build_template: &build_template
+  stage: build
+  tags: [build]
+  script: *build_image
+
+.deploy_template: &deploy_template
+  stage: deploy
+  tags: [build]
+  script: *deploy_image
+
+# .dokku_deploy: &dokku_deploy
+#   - apk update && apk add openssh openssh-client
+#   - eval $(ssh-agent -s)
+#   - echo "$DOKKU_SSH_KEY" | ssh-add -
+#   - mkdir -p ~/.ssh
+#   # For Docker builds disable host key checking. Be aware that by adding that
+#   # you are susceptible to man-in-the-middle attacks.
+#   # WARNING: Use this only with the Docker executor, if you use it with shell
+#   # you will overwrite your user's SSH config.
+#   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+stages:
+  - test
+  - build
+  - deploy
+
+test:
+  stage: test
+  services:
+  script:
+  - yarn install
+  - yarn run ci
+  artifacts:
+    paths:
+      - coverage/
+    expire_in: 1 week
+  tags:
+    - node
+  cache:
+    key: peak-$CACHE_VERSION
+    paths:
+      - node_modules
+
+build_master:
+  <<: *build_template
+  only: [master]
+
+dokku_deploy:
+  <<: *deploy_template
+  variables:
+    DOKKU_SSH_HOST: '$DOKKU_DEV_SSH_HOST'
+    DOKKU_SSH_KEY: '$DOKKU_DEV_SSH_KEY'
+    APP_NAME: peak-design-system
+  environment:
+    name: production
+    url: https://peak-design-system.dev-dk.wealth.bar
+  only: [master]
+
+deploy:
   stage: deploy
   only: [master] # build and push images only for master branch commits
-  environment: development
-  before_script: *dokku_deploy
+  environment: production
+  before_script: *dokku_deploy_prod
   script:
-    - ssh $DOKKU_DEV_SSH "docker-direct login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY"
-    - ssh $DOKKU_DEV_SSH "docker-direct pull $CONTAINER_IMAGE:demo"
-    - ssh $DOKKU_DEV_SSH "docker-direct tag $CONTAINER_IMAGE:demo $DOKKU_TAG"
-    - ssh $DOKKU_DEV_SSH "tags:deploy valet next"
+    - ssh $DOKKU_PROD_SSH "docker-direct login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY"
+    - ssh $DOKKU_PROD_SSH "docker-direct pull $CONTAINER_TAG"
+    - ssh $DOKKU_PROD_SSH "docker-direct tag $CONTAINER_TAG $DOKKU_TAG"
+    - ssh $DOKKU_PROD_SSH "tags:deploy valet next"
+
+kube_deploy:
+  stage: deploy
+  environment: production
+  only: [master]
+  image: roffe/kubectl:v1.11.2
+  environment:
+    name: kubernetes_production
+    url: https://peak.prod-k.wealth.bar
+  script:
+    - mkdir -p /etc/deploy/
+    - echo ${KUBE_CONFIG} | base64 -d > ${KUBECONFIG}
+    - kubectl set image deployments/peak-deployment peak=gitlab.wealth.bar:4567/$CI_PROJECT_PATH:$CI_COMMIT_SHA
+  when: manual

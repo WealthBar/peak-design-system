@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: peak-deployment
+  labels:
+    app: peak
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: peak
+  template:
+    metadata:
+      labels:
+        app: peak
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - name: peak
+        image: gitlab.wealth.bar:4567/wealthbar/peak-design-system:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5001

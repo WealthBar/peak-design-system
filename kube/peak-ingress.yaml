@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: peak-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    certmanager.k8s.io/cluster-issuer: letsencrypt
+    kubernetes.io/tls-acme: "true"
+spec:
+  rules:
+  - host: peak.prod-k.wealth.bar
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: peak
+          servicePort: 80
+  tls:
+  - secretName: peak-prod-k-wealth-bar-prod-tls
+    hosts:
+    - peak.prod-k.wealth.bar
