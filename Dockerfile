@@ -9,13 +9,13 @@ RUN npm install node-sass
 RUN yarn install
 
 # Build webpack
-COPY .babelrc .eslintrc.js .stylelintrc ./
+ARG CI_COMMIT_SHA
+COPY .babelrc .eslintrc.js .stylelintrc index.html ./
 COPY build ./build
 COPY config ./config
 COPY src ./src
 COPY public ./public
 COPY util ./util
-ARG CI_COMMIT_SHA
 RUN NODE_ENV=production yarn build
 
 FROM node:10-alpine
@@ -25,10 +25,13 @@ ENV NODE_ENV=production NPM_ENV=production
 COPY package.json .
 COPY yarn.lock .
 COPY packages ./packages
+COPY build ./build
+COPY config ./config
+COPY public ./public
+COPY util ./util
 RUN yarn install --frozen-lockfile --prod
 
-COPY . .
-COPY --from=build /app/dist .
+COPY --from=build /app/dist /app/dist
 
 EXPOSE 5001
 CMD [ "yarn", "start" ]
