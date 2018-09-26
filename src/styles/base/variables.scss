@@ -1,4 +1,4 @@
-/// -- Brand New Colours -- //
+// -- Brand New Colours -- //
 // ----------------------- //
 $jade-50: #ecf9f5;
 $jade-100: #68ccb1;
@@ -13,9 +13,9 @@ $amethyst-300: #787a97;
 $amethyst-500: #5d5f7a;
 $amethyst-700: #464855;
 
-$amber-50: #fee5a0;
-$amber-100: #f5be44;
-$amber-300: #da9f18;
+$amber-100: #fee5a0;
+$amber-300: #f5be44;
+$amber-500: #da9f18;
 
 $mint-50: #ebf4f1;
 $mint-100: #d2e6de;
@@ -32,6 +32,7 @@ $emerald-500: #0a884e;
 $emerald-700: #086749;
 
 // New Neutrals
+$pearl-0: #fff;
 $pearl-50: #f7f7f8;
 $pearl-100: #e4e4ea;
 $pearl-300: #d0d0d9;
@@ -39,11 +40,13 @@ $pearl-500: #86868f;
 $pearl-700: #606068;
 $pearl-900: #37373f;
 
-$white: #fff;
-
-// -- Font Stacks -- //
-$body-font: "GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$header-font: "GT-Walsheim", sans-serif !default;
+$white: $pearl-0;
+$black: $pearl-900;
+$jade: $jade-300;
+$amethyst: $amethyst-300;
+$amber: $amber-300;
+$neg: $ruby-500;
+$pos: $emerald-500;
 
 // -- Media Queries -- //
 $screen-width-small: 'screen and (min-width: 32rem)';
@@ -52,6 +55,4 @@ $screen-width-medium: 'screen and (min-width: 48rem)';
 $screen-width-large: 'screen and (min-width: 64rem)';
 $screen-width-xlarge: 'screen and (min-width: 96rem)';
 
-$min-width: 48rem;
-$mid-width: 64rem;
 $max-width: 96rem;
