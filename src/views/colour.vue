@@ -36,6 +36,11 @@
         <strong>$jade-700</strong>
         <span>#0E6B64</span>
       </div>
+      <div class="colour-block dark" style="background: #10504E;">
+        <strong>$jade-900</strong>
+        <span>#10504E</span>
+      </div>
+
     </div>
 
     <br>
