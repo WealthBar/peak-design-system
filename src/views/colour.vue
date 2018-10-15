@@ -73,15 +73,15 @@
     </div>
     <div class="color-pallete">
       <div class="colour-block" style="background: #fee5a0;">
-        <strong>$amber-100</strong>
+        <strong>$amber-50</strong>
         <span>#FEE5A0</span>
       </div>
       <div class="colour-block" style="background: #F5BE44;">
-        <strong>$amber-300</strong>
+        <strong>$amber-100</strong>
         <span>#9D9FBC</span>
       </div>
       <div class="colour-block" style="background: #da9f18;">
-        <strong>$amber-500</strong>
+        <strong>$amber-300</strong>
         <span>#DA9F18</span>
       </div>
     </div>
@@ -188,7 +188,7 @@
 export default {};
 </script>
 <style lang="scss">
-  @import 'style.scss';
+  @import 'base/variables.scss';
 
   .colour-block {
     padding: 0.5rem;

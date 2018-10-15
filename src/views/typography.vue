@@ -514,7 +514,7 @@
 </script>
 
 <style lang="scss">
-  @import 'style.scss';
+  @import 'base/variables.scss';
 
   .typography-page {
     margin: 2rem 4rem;
