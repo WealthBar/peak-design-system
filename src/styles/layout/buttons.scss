@@ -1,126 +1,172 @@
-// -- Button Normalization -- //
 
-button,
-html [type="button"], /* 1 */
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button; /* 2 */
-}
+/* --------   Mixins: keep them LOCALIZED!   -------- */
 
-// -- Remove the inner border and padding in Firefox. --//
+@mixin outline($default, $hover) {
+  border-color: $default;
+  color: $default;
+  background: transparent;
 
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-// -- Restore the focus styles unset by the previous rule. --//
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
-[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
-}
-
-/**
- * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
- */
-
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
-}
-
-// -- Button Styling -- //
-
-button {
-  border: none;
-  background: none;
-  color: $brand;
-  cursor: pointer;
-  text-decoration: none;
-
-  &:disabled {
-    color: $darkgrey;
-    cursor: default;
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: $hover;
+    color: white;
+    background: $hover;
   }
 }
 
+@mixin flat($default, $hover) {
+  border-color: transparent;
+  color: $default;
+  background: transparent;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: transparent;
+    color: $hover;
+    background: transparent;
+  }
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+/* --------   Buttons   -------- */
+
+/* --------   let's cover our bases, shall we   -------- */
+a.button,
+button.button,
 button[type="button"],
 button[type="reset"],
-button[type="submit"],
-.button {
-  @include button;
-  @include button-colors();
-  // Removes 300ms delay on IE touch enabled browsers
-  touch-action: manipulation;
-  // Required for Safari iPhone 5 users to be able to click submit buttons
-  position: relative;
-}
-
-button[type="button"]:disabled,
-button[type="reset"]:disabled,
-button[type="submit"]:disabled,
-.button:disabled {
-  background: none;
-  box-shadow: none;
-  color: $darkgrey;
-  border: 1px solid $grey;
-  cursor: default;
-}
-
-button.silver,
-[type="button"].silver,
-[type="reset"].silver,
-[type="submit"].silver,
-.button.silver {
-  @include button-colors(#f6f6f6, $white, #f6f6f6, $black);
-
-  border: 1px solid $grey;
-}
-
-a.button {
-  text-decoration: none;
-  color: $white;
+button[type="submit"] {
+  // --- DEFAULT BUTTON COLOUR ---//
+  -webkit-appearance: button;
   display: inline-block;
-  padding-top: 0.25rem;
+  cursor: pointer;
+  font: inherit;
+  font-weight: bold;
+  line-height: 1.375rem;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.375rem 0.75rem;
+  background: $jade-500;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: $jade-700;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 2px 1px $jade-100;
+  }
+
+  &::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+
+  &.outline { @include outline($jade-500, $jade-700); }
+  &.flat { @include flat($jade-500, $jade-900); }
+
+  // --- BUTTON COLOUR VARIANTS ---//
+
+  // alt colour styling
+  &.alt {
+    border-color: $amethyst-500;
+    color: white;
+    background: $amethyst-500;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $amethyst-700;
+      color: white;
+      background: $amethyst-700;
+    }
+
+    &.outline { @include outline($amethyst-500, $amethyst-700); }
+    &.flat { @include flat($amethyst-500, $amethyst-700); }
+  }
+
+  // alert colour styling
+
+  &.alert {
+    border-color: $amber-300;
+    color: white;
+    background: $amber-300;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $amber-300;
+      color: $white;
+      background: $amber-300;
+    }
+
+    &.outline { @include outline($amber-300, $amber-300); }
+    &.flat { @include flat($amber-300, $amber-300); }
+  }
+
+  // neg colour styling
+
+  &.neg {
+    border-color: $ruby-500;
+    color: white;
+    background: $ruby-500;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $ruby-700;
+      color: $white;
+      background: $ruby-700;
+    }
+
+    &.outline { @include outline($ruby-500, $ruby-700); }
+    &.flat { @include flat($ruby-500, $ruby-700); }
+  }
+
+  // pos colour styling
+
+  &.pos {
+    border-color: $emerald-500;
+    color: white;
+    background: $emerald-500;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $emerald-700;
+      color: $white;
+      background: $emerald-700;
+    }
+
+    &.outline { @include outline($emerald-500, $emerald-700); }
+    &.flat { @include flat($emerald-500, $emerald-700); }
+  }
+
+  // --- KEEP LAST! subtle colour styling - to remain uneffected by color variants ---//
+
+  &.subtle {
+    border-color: $pearl-300;
+    color: $pearl-900;
+    background: white;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $pearl-300;
+      color: $pearl-900;
+      background: $pearl-50;
+    }
+  }
 }

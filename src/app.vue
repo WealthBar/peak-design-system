@@ -27,7 +27,7 @@
         </ul>
         <h5>Components</h5>
         <ul>
-          <li><router-link class="coming-soon" to="">Buttons (Coming soon!)</router-link></li>
+          <li><router-link to="buttons">Buttons</router-link></li>
           <li ><router-link class="coming-soon" to="">Inputs (Coming soon!)</router-link></li>
         </ul>
       </nav>
@@ -77,6 +77,7 @@
 
   #app-view {
     display: flex;
+    min-height: 100vh;
   }
 
   .side-menu {

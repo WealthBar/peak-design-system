@@ -1,26 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-tap-highlight-color: transparent;
-}
-
-html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  touch-action: manipulation;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  position: relative;
-}
-
-#app { min-height: 100vh; }
 
 html,
 body,
@@ -44,42 +21,12 @@ textarea {
   text-rendering: optimizeLegibility;
 }
 
-article,
-aside,
-footer,
-header,
-nav,
-section,
-figcaption,
-figure,
-main,
-details,
-menu {
-  display: block;
-}
-
 h1, .h1 {
   font-weight: bold;
   font-size: 1.625rem;
   line-height: 2rem;
   padding: 0;
   margin: 2rem 0 1rem;
-
-  // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
-  // if using in apps use as @media #{$screen-width-medium} { … }
-  @mixin desktop {
-    font-size: 2.25rem;
-    line-height: 3rem;
-    margin: 3rem 0 1rem;
-  }
-
-  &:not(.mobile) {
-    @media #{$screen-width-medium} {
-      @include desktop;
-    }
-  }
-
-  &.desktop { @include desktop; }
 }
 
 h2, .h2 {
@@ -88,22 +35,6 @@ h2, .h2 {
   line-height: 1.875rem;
   padding: 0;
   margin: 1.875rem 0 1rem;
-
-  // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
-  // if using in apps use as @media #{$screen-width-medium} { … }
-  @mixin desktop {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    margin: 2.25rem 0 1rem;
-  }
-
-  &:not(.mobile) {
-    @media #{$screen-width-medium} {
-      @include desktop;
-    }
-  }
-
-  &.desktop { @include desktop; }
 }
 
 h3, .h3 {
@@ -112,22 +43,6 @@ h3, .h3 {
   line-height: 1.75rem;
   padding: 0;
   margin: 1.75rem 0 1rem;
-
-  // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
-  // if using in apps use as @media #{$screen-width-medium} { … }
-  @mixin desktop {
-    font-size: 1.5rem;
-    line-height: 1.875rem;
-    margin: 1.875rem 0 1rem;
-  }
-
-  &:not(.mobile) {
-    @media #{$screen-width-medium} {
-      @include desktop;
-    }
-  }
-
-  &.desktop { @include desktop; }
 }
 
 h4, .h4 {
@@ -136,22 +51,6 @@ h4, .h4 {
   line-height: 1.5rem;
   padding: 0;
   margin: 1.5rem 0 1rem;
-
-  // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
-  // if using in apps use as @media #{$screen-width-medium} { … }
-  @mixin desktop {
-    font-size: 1.25rem;
-    line-height: 1.625rem;
-    margin: 1.625rem 0 1rem;
-  }
-
-  &:not(.mobile) {
-    @media #{$screen-width-medium} {
-      @include desktop;
-    }
-  }
-
-  &.desktop { @include desktop; }
 }
 
 h5, .h5 {
@@ -160,22 +59,6 @@ h5, .h5 {
   line-height: 1.25rem;
   padding: 0;
   margin: 1.25rem 0 1rem;
-
-  // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
-  // if using in apps use as @media #{$screen-width-medium} { … }
-  @mixin desktop {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    margin: 1.5rem 0 1rem;
-  }
-
-  &:not(.mobile) {
-    @media #{$screen-width-medium} {
-      @include desktop;
-    }
-  }
-
-  &.desktop { @include desktop; }
 }
 
 p {
@@ -207,29 +90,44 @@ label {
 }
 
 strong, b, .strong { font-weight: bold; }
+
 em, i, var, .em { font-style: normal; }
 
 input, button, select, textarea { font-family: inherit; }
 
 var { font-style: normal; }
 
-.tab-numbers {
-  font-feature-settings: "kern", "liga", "tnum", "ss02", "ss04";
-}
+.tab-numbers { font-feature-settings: "kern", "liga", "tnum", "ss02", "ss04"; }
 
-.subtle { color: rgba(55, 55, 63, 0.77); }
+.subtle { color: rgba($pearl-900, 0.77); }
 
 .capitalize { text-transform: capitalize; }
 .uppercase { text-transform: uppercase; }
 
 .center { text-align: center; }
 
-a, .link {
+a, button, .link {
   color: $jade-500;
   text-decoration: underline;
+  display: inline;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
   cursor: pointer;
+  background: none;
+  -moz-appearance: none;
+  padding: 0;
+  border: 0;
+  transition: all 300ms ease-out;
+
+  &::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+
   &:visited { color: $jade-700; }
   &:hover, &:focus { color: $jade-700; }
+  &:focus { outline: none; }
   &.href-plain { text-decoration: none; }
   &.inherit { color: inherit; }
 }
@@ -246,21 +144,6 @@ hr {
   overflow: visible;
 }
 
-button {
-  color: $jade-500;
-  text-decoration: underline;
-  display: inline;
-  font-weight: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  cursor: pointer;
-  background: none;
-  -moz-appearance: none;
-  padding: 0;
-  border: 0;
-  transition: all 150ms ease;
-}
-
 input {
   margin: 0.5rem 0;
   border-radius: 0.25rem;
@@ -272,14 +155,12 @@ input {
 ul, ol {
   padding: 0;
   margin: 0 0 1rem;
-  list-style-position: inside;
+  // list-style-position: inside;
 }
 
 li {
   margin: 0 0 0.25rem;
 }
-
-/* stylelint-disable */
 
 pre,
 code {
@@ -292,6 +173,7 @@ pre {
   word-wrap: normal;
   margin: 0;
   padding: 0;
+
   code {
     white-space: pre-line;
     white-space: -moz-pre-line;
@@ -303,6 +185,7 @@ pre {
     color: $jade-500;
     border-radius: 0.25rem;
     border: 1px solid $jade-100;
+
     &.css {
       background: $amethyst-50;
       color: $amethyst-700;
@@ -311,12 +194,44 @@ pre {
   }
 }
 
-code {
+/* -------- SMALL SCREEN MEDIA QUERIES ------- */
 
+@media #{$screen-max-small} {
+  .small-screen-hide { display: none !important; }
 }
 
-.tab-numbers {
-  font-feature-settings: "kern", "liga", "tnum", "ss02", "ss04";
-}
+/* -------- LARGE SCREEN MEDIA QUERIES ------- */
 
-.subtle { color: rgba($pearl-900, 0.77); }
+@media #{$screen-width-medium} {
+  .large-screen-hide { display: none !important; }
+
+  h1, .h1 {
+    font-size: 2.25rem;
+    line-height: 3rem;
+    margin: 3rem 0 1rem;
+  }
+
+  h2, .h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    margin: 2.25rem 0 1rem;
+  }
+
+  h3, .h3 {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    margin: 1.875rem 0 1rem;
+  }
+
+  h4, .h4 {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    margin: 1.625rem 0 1rem;
+  }
+
+  h5, .h5 {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    margin: 1.5rem 0 1rem;
+  }
+}
