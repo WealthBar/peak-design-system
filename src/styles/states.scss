@@ -119,27 +119,3 @@ h5, .h5 {
 
   &.desktop { @include desktop; }
 }
-
-.attributes {
-  display: flex;
-  margin-bottom: 1rem;
-}
-
-.code-sample {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 50%;
-  &:last-child { padding-left: 1rem; }
-  pre { flex: 1 1 50%; }
-  code { height: 100%; }
-}
-
-.example {
-  margin-bottom: 1rem;
-
-  > :last-child {
-    background: $pearl-50;
-    border: 1px solid $pearl-300;
-    border-radius: 0.25rem;
-  }
-}

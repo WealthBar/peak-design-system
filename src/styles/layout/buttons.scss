@@ -4,6 +4,7 @@
 @mixin outline($default, $hover) {
   border-color: $default;
   color: $default;
+  fill: $default;
   background: transparent;
 
   &:hover,
@@ -11,6 +12,7 @@
   &:focus {
     border-color: $hover;
     color: white;
+    fill: white;
     background: $hover;
   }
 }
@@ -18,15 +20,65 @@
 @mixin flat($default, $hover) {
   border-color: transparent;
   color: $default;
+  fill: $default;
   background: transparent;
+  // stroke: $default;
 
   &:hover,
   &:active,
   &:focus {
     border-color: transparent;
     color: $hover;
+    fill: $hover;
     background: transparent;
   }
+}
+
+/* --------   Eveything begins here: Reset links and buttons to same default style/behaviour   -------- */
+
+a, button, .link {
+  color: $jade-500;
+  fill: $jade-500;
+  text-decoration: underline;
+  display: flex;
+  align-items: baseline;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  background: none;
+  -moz-appearance: none;
+  padding: 0;
+  border: 0;
+  transition: all 300ms ease-out;
+
+  svg {
+    top: 0.125rem;
+    height: 0.875rem;
+    width: auto;
+    border-bottom: 1px solid $jade-500;
+    padding: 0 0 1px;
+  }
+
+  &::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+
+  &:visited {
+    color: $jade-900;
+    fill: $jade-900;
+    svg { border-color: $jade-900; }
+  }
+
+  &:hover, &:focus {
+    color: $jade-700;
+    fill: $jade-700;
+    svg { border-color: $jade-700; }
+  }
+  &:focus { outline: none; }
+  &.href-plain { text-decoration: none; }
+  &.inherit { color: inherit; }
 }
 
 ::-webkit-file-upload-button {
@@ -44,18 +96,20 @@ button[type="reset"],
 button[type="submit"] {
   // --- DEFAULT BUTTON COLOUR ---//
   -webkit-appearance: button;
-  display: inline-block;
   cursor: pointer;
   font: inherit;
   font-weight: bold;
   line-height: 1.375rem;
   color: white;
+  fill: white;
   text-align: center;
   text-decoration: none;
   padding: 0.375rem 0.75rem;
   background: $jade-500;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+
+  svg { border: none; }
 
   &:hover,
   &:active,
@@ -156,9 +210,26 @@ button[type="submit"] {
 
   // --- KEEP LAST! subtle colour styling - to remain uneffected by color variants ---//
 
+  &.icon {
+    &:not(.before):not(.after) {
+      border-radius: 50%;
+      padding: 0.5rem;
+
+      svg {
+        top: 0;
+        width: 1.125rem;
+        height: 1.125rem;
+      }
+    }
+
+    &.before svg { margin-right: 0.5rem; }
+    &.after svg { margin-left: 0.5rem; }
+  }
+
   &.subtle {
     border-color: $pearl-300;
     color: $pearl-900;
+    fill: $pearl-900;
     background: white;
 
     &:hover,
@@ -166,6 +237,7 @@ button[type="submit"] {
     &:focus {
       border-color: $pearl-300;
       color: $pearl-900;
+      fill: $pearl-900;
       background: $pearl-50;
     }
   }
