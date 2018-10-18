@@ -1,18 +1,18 @@
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
 metadata:
-  name: peak-prod-k-wealth-bar-prod
+  name: peak-wealth-bar-prod
   namespace: default
 spec:
-  secretName: peak-prod-k-wealth-bar-prod-tls
+  secretName: peak-wealth-bar-prod-tls
   issuerRef:
     name: letsencrypt
-  commonName: peak.prod-k.wealth.bar
+  commonName: peak.wealth.bar
   dnsNames:
-  - peak.prod-k.wealth.bar
+  - peak.wealth.bar
   acme:
     config:
     - http01:
         ingressClass: nginx
       domains:
-      - peak.prod-k.wealth.bar
+      - peak.wealth.bar

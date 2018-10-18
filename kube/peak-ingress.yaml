@@ -8,7 +8,7 @@ metadata:
     kubernetes.io/tls-acme: "true"
 spec:
   rules:
-  - host: peak.prod-k.wealth.bar
+  - host: peak.wealth.bar
     http:
       paths:
       - path: /
@@ -16,6 +16,6 @@ spec:
           serviceName: peak
           servicePort: 80
   tls:
-  - secretName: peak-prod-k-wealth-bar-prod-tls
+  - secretName: peak-wealth-bar-prod-tls
     hosts:
-    - peak.prod-k.wealth.bar
+    - peak.wealth.bar
