@@ -6,7 +6,6 @@
       <div class="attributes">
         <strong>Example</strong>
         <div class="example">
-
           <button>No Type</button>
           <button type="button">Type Button</button>
           <button type="button" class="outline">Outline</button>
@@ -121,6 +120,7 @@
       </div>
       <hr>
     </section>
+
     <section>
       <h3>Icon Buttons</h3>
       <div class="attributes">
@@ -251,6 +251,73 @@
           </code></pre>
         </div>
       </div>
+      <hr>
+    </section>
+    <section>
+      <h3>Large Buttons</h3>
+      <div class="attributes">
+        <strong>Example</strong>
+        <div class="example">
+          <button class="large">No Type</button>
+          <button type="button" class="large icon after">Type Button</button>
+          <button type="button" class="outline large">Outline</button>
+          <button type="button" class="flat large">Flat</button>
+          <button type="button" class="subtle large">Subtle</button>
+          <button type="button" class="large icon after">Type Button
+            <svg width="16" height="16" viewBox="0 0 16 16">
+              <path d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            </svg>
+          </button>
+          <button type="button" class="large icon">
+            <svg width="16" height="16" viewBox="0 0 16 16">
+              <path d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="code-sample">
+          <strong>Markup</strong>
+          <pre><code class="html">&lt;button class="large"&gt;No Type&lt;/button&gt;
+          &lt;button type="button" class="large"&gt;Type Button&lt;/button&gt;
+          &lt;button type="button" class="outline large"&gt;Outline&lt;/button&gt;
+          &lt;button type="button" class="flat large"&gt;Flat&lt;/button&gt;
+          &lt;button type="button" class="subtle large"&gt;Subtle&lt;/button&gt;
+          </code></pre>
+        </div>
+      </div>
+      <hr>
+    </section>
+    <section>
+      <h3>Small Buttons</h3>
+      <div class="attributes">
+        <strong>Example</strong>
+        <div class="example">
+          <button class="small">No Type</button>
+          <button type="button" class="small">Type Button</button>
+          <button type="button" class="outline small">Outline</button>
+          <button type="button" class="flat small">Flat</button>
+          <button type="button" class="subtle small">Subtle</button>
+          <button type="button" class="small icon after">Type Button
+            <svg width="16" height="16" viewBox="0 0 16 16">
+              <path d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            </svg>
+          </button>
+          <button type="button" class="small icon">
+            <svg width="16" height="16" viewBox="0 0 16 16">
+              <path d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="code-sample">
+          <strong>Markup</strong>
+          <pre><code class="html">&lt;button class="small"&gt;No Type&lt;/button&gt;
+          &lt;button type="button" class="small"&gt;Type Button&lt;/button&gt;
+          &lt;button type="button" class="outline small"&gt;Outline&lt;/button&gt;
+          &lt;button type="button" class="flat small"&gt;Flat&lt;/button&gt;
+          &lt;button type="button" class="subtle small"&gt;Subtle&lt;/button&gt;
+          </code></pre>
+        </div>
+      </div>
+      <hr>
     </section>
   </article>
 </template>

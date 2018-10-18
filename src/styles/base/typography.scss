@@ -72,7 +72,7 @@ p.large {
   margin: 0 0 1.125rem;
 }
 
-small, .small {
+small, p.small, {
   font-size: 0.875rem;
 }
 
@@ -155,7 +155,6 @@ input {
 ul, ol {
   padding: 0;
   margin: 0 0 1rem;
-  // list-style-position: inside;
 }
 
 li {
