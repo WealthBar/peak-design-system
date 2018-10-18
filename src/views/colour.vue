@@ -192,7 +192,7 @@
 <script>
 export default {};
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   @import 'base/variables.scss';
 
   .colour-block {

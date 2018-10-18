@@ -77,7 +77,6 @@
   }
 
   .side-menu {
-    // padding: 0.75rem;
     min-width: 17.5rem;
     background-color: $pearl-50;
     border-right: 1px solid $pearl-100;
