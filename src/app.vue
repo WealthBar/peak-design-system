@@ -4,14 +4,13 @@
       <div class="logo">
         <router-link to="/"><img class="wb-logo" src="~@/assets/logo.svg"></router-link>
       </div>
-      <toggle-view>
+      <toggle-view class="units-contianer">
         <label slot="label" class="label-inline">Units</label>
         <div slot="content" class="unit-selector">
           <a v-for="unit in getUnits" @click="setUnit(unit)" :key="unit" :class="{'active': getSelectedUnit === unit}">{{unit}}</a>
         </div>
       </toggle-view>
       <nav class="main-navigation">
-      <h5>Visuals</h5>
         <ul>
           <li><router-link to="typography">Typography</router-link></li>
           <ul v-if="$route.path === '/typography'">
@@ -24,9 +23,6 @@
             <li class="secondary-link"><a href="#measurements">Measurements</a></li>
           </ul>
           <li><router-link to="colour">Colour</router-link></li>
-        </ul>
-        <h5>Components</h5>
-        <ul>
           <li><router-link to="buttons">Buttons</router-link></li>
           <li ><router-link class="coming-soon" to="">Inputs (Coming soon!)</router-link></li>
         </ul>
@@ -81,12 +77,12 @@
   }
 
   .side-menu {
-    padding: 0.75rem;
+    // padding: 0.75rem;
     min-width: 17.5rem;
     background-color: $pearl-50;
     border-right: 1px solid $pearl-100;
   }
-
+  .units-contianer { padding: 0.5rem 1rem; }
   .unit-selector { list-style: none; }
 
   .main-navigation {
@@ -95,7 +91,7 @@
     a {
       text-decoration: none;
       color: $pearl-900;
-      padding: 0.5rem;
+      padding: 0.5rem 1rem;
       margin: 0.125rem 0;
       display: block;
 
@@ -109,7 +105,7 @@
   }
 
   .logo {
-    padding: 0.25rem 0;
+    padding: 1rem;
     margin-bottom: 0.5rem;
 
     a:hover,

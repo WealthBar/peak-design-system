@@ -1,5 +1,5 @@
 <template>
-  <div class="units-container">
+  <div>
     <slot name="label"/>
     <slot class="unit-selector" name="content" />
   </div>
@@ -16,10 +16,10 @@
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import 'base/variables';
 
-  .units-container {
+  div {
     display: flex;
     align-items: center;
     > * { margin: 0 0.5rem 0 0; }
