@@ -71,7 +71,7 @@ test:
 build_image:
   tags: [docker]
   stage: build   # build image only after test passed
-  only: [fix.build_deployment] # build and push images only for master branch commits
+  only: [master] # build and push images only for master branch commits
   image: docker:git # use simple git docker image
   services:
     - docker:dind
