@@ -27,7 +27,7 @@
         </ul>
         <h5>Components</h5>
         <ul>
-          <li><router-link class="coming-soon" to="">Buttons (Coming soon!)</router-link></li>
+          <li><router-link to="buttons">Buttons</router-link></li>
           <li ><router-link class="coming-soon" to="">Inputs (Coming soon!)</router-link></li>
         </ul>
       </nav>
@@ -77,6 +77,7 @@
 
   #app-view {
     display: flex;
+    min-height: 100vh;
   }
 
   .side-menu {
@@ -110,12 +111,12 @@
   .logo {
     padding: 0.25rem 0;
     margin-bottom: 0.5rem;
-  }
 
-  .logo > a:hover,
-  a:active,
-  a:focus {
-    background-color: transparent;
+    a:hover,
+    a:active,
+    a:focus {
+      background-color: transparent;
+    }
   }
 
   .wb-logo {
@@ -123,11 +124,7 @@
     width: 10rem;
   }
 
-  .pages {
-    flex: 1 1 100%;
-    // width: 100%;
-    // margin-left: 17.5rem;
-  }
+  .pages { flex: 1 1 100%; }
 
   .coming-soon {
     color: $pearl-500;

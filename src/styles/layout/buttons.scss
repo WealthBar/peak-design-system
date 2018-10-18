@@ -1,126 +1,249 @@
-// -- Button Normalization -- //
+/* --------   Mixins: keep them LOCALIZED!   -------- */
 
-button,
-html [type="button"], /* 1 */
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button; /* 2 */
-}
+@mixin outline($default, $hover) {
+  border-color: $default;
+  color: $default;
+  fill: $default;
+  background: white;
 
-// -- Remove the inner border and padding in Firefox. --//
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-// -- Restore the focus styles unset by the previous rule. --//
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
-[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
-}
-
-/**
- * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
- */
-
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
-}
-
-// -- Button Styling -- //
-
-button {
-  border: none;
-  background: none;
-  color: $brand;
-  cursor: pointer;
-  text-decoration: none;
-
-  &:disabled {
-    color: $darkgrey;
-    cursor: default;
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: $hover;
+    color: white;
+    fill: white;
+    background: $hover;
   }
 }
 
+@mixin flat($default, $hover) {
+  border-color: transparent;
+  color: $default;
+  fill: $default;
+  background: transparent;
+  padding: 0.375rem 0;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: transparent;
+    color: $hover;
+    fill: $hover;
+    background: transparent;
+  }
+}
+
+/* --------   Eveything begins here: Reset links and buttons to same default style/behaviour   -------- */
+
+a, button, .link {
+  color: $jade-500;
+  fill: $jade-500;
+  text-decoration: underline;
+  display: flex;
+  align-items: baseline;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  background: none;
+  -moz-appearance: none;
+  padding: 0;
+  border: 0;
+  transition: all 300ms ease-out;
+
+  svg {
+    top: 0.125rem;
+    height: 0.875rem;
+    width: auto;
+    border-bottom: 1px solid $jade-500;
+    padding: 0 0 1px;
+  }
+
+  &::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+
+  &:visited {
+    color: $jade-900;
+    fill: $jade-900;
+    svg { border-color: $jade-900; }
+  }
+
+  &:hover, &active, &:focus {
+    color: $jade-700;
+    fill: $jade-700;
+
+    svg { border-color: $jade-700; }
+  }
+
+  &:focus {
+    outline: none;
+    background: rgba(128, 128, 128, 0.2);
+  }
+
+  &.href-plain { text-decoration: none; }
+  &.inherit { color: inherit; }
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+/* --------   Buttons   -------- */
+
+/* --------   let's cover our bases, shall we   -------- */
+a.button,
+button.button,
 button[type="button"],
 button[type="reset"],
-button[type="submit"],
-.button {
-  @include button;
-  @include button-colors();
-  // Removes 300ms delay on IE touch enabled browsers
-  touch-action: manipulation;
-  // Required for Safari iPhone 5 users to be able to click submit buttons
-  position: relative;
-}
-
-button[type="button"]:disabled,
-button[type="reset"]:disabled,
-button[type="submit"]:disabled,
-.button:disabled {
-  background: none;
-  box-shadow: none;
-  color: $darkgrey;
-  border: 1px solid $grey;
-  cursor: default;
-}
-
-button.silver,
-[type="button"].silver,
-[type="reset"].silver,
-[type="submit"].silver,
-.button.silver {
-  @include button-colors(#f6f6f6, $white, #f6f6f6, $black);
-
-  border: 1px solid $grey;
-}
-
-a.button {
+button[type="submit"] {
+  // --- DEFAULT BUTTON STYLING ---//
+  -webkit-appearance: button;
+  cursor: pointer;
+  font: inherit;
+  font-weight: bold;
+  line-height: 1.375rem;
+  color: white;
+  fill: white;
+  text-align: center;
   text-decoration: none;
-  color: $white;
-  display: inline-block;
-  padding-top: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  background: $jade-500;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+
+  svg { border: none; }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: $jade-700;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 2px 1px $jade-100;
+  }
+
+  &::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+
+  &.outline { @include outline($jade-500, $jade-700); }
+  &.flat { @include flat($jade-500, $jade-900); }
+
+  // --- BUTTON COLOUR VARIANTS ---//
+
+  // alt colour styling
+  &.alt {
+    border-color: $amethyst-500;
+    color: white;
+    background: $amethyst-500;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $amethyst-700;
+      color: white;
+      background: $amethyst-700;
+    }
+
+    &.outline { @include outline($amethyst-500, $amethyst-700); }
+    &.flat { @include flat($amethyst-500, $amethyst-700); }
+  }
+
+  // alert colour styling
+
+  &.alert {
+    border-color: $amber-300;
+    color: white;
+    background: $amber-300;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $amber-300;
+      color: $white;
+      background: $amber-300;
+    }
+
+    &.outline { @include outline($amber-300, $amber-300); }
+    &.flat { @include flat($amber-300, $amber-300); }
+  }
+
+  // neg colour styling
+
+  &.neg {
+    border-color: $ruby-500;
+    color: white;
+    background: $ruby-500;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $ruby-700;
+      color: $white;
+      background: $ruby-700;
+    }
+
+    &.outline { @include outline($ruby-500, $ruby-700); }
+    &.flat { @include flat($ruby-500, $ruby-700); }
+  }
+
+  // pos colour styling
+
+  &.pos {
+    border-color: $emerald-500;
+    color: white;
+    background: $emerald-500;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $emerald-700;
+      color: $white;
+      background: $emerald-700;
+    }
+
+    &.outline { @include outline($emerald-500, $emerald-700); }
+    &.flat { @include flat($emerald-500, $emerald-700); }
+  }
+
+  // --- KEEP LAST! subtle colour styling - to remain uneffected by color variants ---//
+
+  &.icon {
+    &:not(.before):not(.after) {
+      border-radius: 50%;
+      padding: 0.5rem;
+
+      svg {
+        top: 0;
+        width: 1.125rem;
+        height: 1.125rem;
+      }
+    }
+
+    &.before svg { margin-right: 0.5rem; }
+    &.after svg { margin-left: 0.5rem; }
+  }
+
+  &.subtle {
+    border-color: $pearl-300;
+    color: $pearl-900;
+    fill: $pearl-900;
+    background: white;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: $pearl-300;
+      color: $pearl-900;
+      fill: $pearl-900;
+      background: $pearl-50;
+    }
+  }
 }
