@@ -19,8 +19,10 @@ variables:
 
 .build_image: &build_image
   - docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
-  - docker build --build-arg CI_COMMIT_SHA=$CI_COMMIT_SHA -t $CONTAINER_TAG .
+  - docker pull $CONTAINER_IMAGE:latest
+  - docker build --cache-from $CONTAINER_IMAGE:latest -t $CONTAINER_TAG -t $CONTAINER_IMAGE:latest .
   - docker push $CONTAINER_TAG
+  - docker push $CONTAINER_IMAGE:latest
 
 .deploy_image: &deploy_image
   - eval $(ssh-agent -s)
@@ -66,9 +68,19 @@ test:
     paths:
       - node_modules
 
-build_master:
-  <<: *build_template
-  only: [master]
+build_image:
+  tags: [docker]
+  stage: build   # build image only after test passed
+  only: [master] # build and push images only for master branch commits
+  image: docker:git # use simple git docker image
+  services:
+    - docker:dind
+  script:
+    - docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
+    # - docker pull $CONTAINER_IMAGE:latest
+    - docker build --cache-from $CONTAINER_IMAGE:latest -t $CONTAINER_TAG -t $CONTAINER_IMAGE:latest .
+    - docker push $CONTAINER_TAG
+    - docker push $CONTAINER_IMAGE:latest
 
 dokku_deploy:
   <<: *deploy_template
@@ -93,4 +105,3 @@ kube_deploy:
     - mkdir -p /etc/deploy/
     - echo ${KUBE_CONFIG} | base64 -d > ${KUBECONFIG}
     - kubectl set image deployments/peak-deployment peak=gitlab.wealth.bar:4567/$CI_PROJECT_PATH:$CI_COMMIT_SHA
-  when: manual
