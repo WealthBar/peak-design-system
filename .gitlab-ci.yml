@@ -100,7 +100,7 @@ kube_deploy:
   image: roffe/kubectl:v1.11.2
   environment:
     name: kubernetes_production
-    url: https://peak.prod-k.wealth.bar
+    url: https://peak.wealth.bar
   script:
     - mkdir -p /etc/deploy/
     - echo ${KUBE_CONFIG} | base64 -d > ${KUBECONFIG}
