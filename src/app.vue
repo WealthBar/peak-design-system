@@ -4,12 +4,12 @@
       <div class="logo">
         <router-link to="/"><img class="wb-logo" src="~@/assets/logo.svg"></router-link>
       </div>
-      <toggle-view class="units-contianer">
+      <div class="units-contianer">
         <label slot="label" class="label-inline">Units</label>
-        <div slot="content" class="unit-selector">
-          <a v-for="unit in getUnits" @click="setUnit(unit)" :key="unit" :class="{'active': getSelectedUnit === unit}">{{unit}}</a>
+        <div class="unit-selector" slot="content">
+          <a class="button outline"  v-for="unit in getUnits" @click="setUnit(unit)" :key="unit" :class="{'active': getSelectedUnit === unit}">{{unit}}</a>
         </div>
-      </toggle-view>
+      </div>
       <nav class="main-navigation">
         <ul>
           <li><router-link to="typography">Typography</router-link></li>
@@ -81,8 +81,24 @@
     background-color: $pearl-50;
     border-right: 1px solid $pearl-100;
   }
-  .units-contianer { padding: 0.5rem 1rem; }
-  .unit-selector { list-style: none; }
+
+  .units-contianer {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+
+  .unit-selector {
+    display: flex;
+
+    *:not(:last-child) {
+      border-radius: 0;
+      border-right: none;
+    }
+
+    :first-child { border-radius: 0.25rem 0 0 0.25rem; }
+    :last-child { border-radius: 0 0.25rem 0.25rem 0; }
+  }
 
   .main-navigation {
     list-style: none;

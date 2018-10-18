@@ -1,34 +1,65 @@
 /* --------   Mixins: keep them LOCALIZED!   -------- */
 
-@mixin outline($default, $hover) {
+@mixin fill($default, $active, $hover ) {
+  border-color: transparent;
+  color: white;
+  fill: white;
+  background: $default;
+
+  &:hover, &:focus, {
+    border-color: transparent;
+    color: white;
+    fill: white;
+    background: $hover;
+  }
+
+  &:active, &.active {
+    border-color: transparent;
+    color: white;
+    fill: white;
+    background: $active;
+  }
+}
+
+@mixin outline($default, $active, $hover ) {
   border-color: $default;
   color: $default;
   fill: $default;
-  background: white;
+  background: transparent;
 
-  &:hover,
-  &:active,
-  &:focus {
+  &:hover, &:focus, {
     border-color: $hover;
     color: white;
     fill: white;
     background: $hover;
   }
+
+  &:active, &.active {
+    border-color: $active;
+    color: white;
+    fill: white;
+    background: $active;
+  }
 }
 
-@mixin flat($default, $hover) {
+@mixin flat($default, $active, $hover) {
   border-color: transparent;
   color: $default;
   fill: $default;
   background: transparent;
   padding: 0.375rem 0;
 
-  &:hover,
-  &:active,
-  &:focus {
+  &:hover, &:focus {
     border-color: transparent;
     color: $hover;
     fill: $hover;
+    background: transparent;
+  }
+
+  &:active, &.active {
+    border-color: transparent;
+    color: $active;
+    fill: $active;
     background: transparent;
   }
 }
@@ -64,22 +95,27 @@ a, button, .link {
     padding: 0;
   }
 
+  &:focus {
+    outline: none;
+    background: rgba(128, 128, 128, 0.2);
+  }
+
   &:visited {
     color: $jade-900;
     fill: $jade-900;
     svg { border-color: $jade-900; }
   }
 
-  &:hover, &active, &:focus {
-    color: $jade-700;
-    fill: $jade-700;
-
-    svg { border-color: $jade-700; }
+  &:hover, &:focus {
+    color: $jade-900;
+    fill: $jade-900;
+    svg { border-color: $jade-900; }
   }
 
-  &:focus {
-    outline: none;
-    background: rgba(128, 128, 128, 0.2);
+  &:active, &.active {
+    color: $jade-700;
+    fill: $jade-700;
+    svg { border-color: $jade-700; }
   }
 
   &.href-plain { text-decoration: none; }
@@ -105,23 +141,14 @@ button[type="submit"] {
   font: inherit;
   font-weight: bold;
   line-height: 1.125rem;
-  color: white;
-  fill: white;
   text-align: center;
+  justify-content: center;
   text-decoration: none;
   padding: 0.5rem 0.75rem;
-  background: $jade-500;
   border: 1px solid transparent;
   border-radius: 0.25rem;
 
   svg { border: none; }
-
-  &:hover,
-  &:active,
-  &:focus {
-    background: $jade-700;
-    text-decoration: none;
-  }
 
   &:focus {
     outline: none;
@@ -133,84 +160,41 @@ button[type="submit"] {
     padding: 0;
   }
 
-  &.outline { @include outline($jade-500, $jade-700); }
-  &.flat { @include flat($jade-500, $jade-900); }
+  @include fill($jade-500, $jade-700, $jade-900);
+  &.outline { @include outline($jade-500, $jade-700, $jade-900); }
+  &.flat { @include flat($jade-500, $jade-700, $jade-900); }
 
   // --- BUTTON COLOUR VARIANTS ---//
 
   // alt colour styling
   &.alt {
-    border-color: $amethyst-500;
-    color: white;
-    background: $amethyst-500;
-
-    &:hover,
-    &:active,
-    &:focus {
-      border-color: $amethyst-700;
-      color: white;
-      background: $amethyst-700;
-    }
-
-    &.outline { @include outline($amethyst-500, $amethyst-700); }
-    &.flat { @include flat($amethyst-500, $amethyst-700); }
+    @include fill($amethyst-500, $amethyst-500, $amethyst-700);
+    &.outline { @include outline($amethyst-500, $amethyst-500, $amethyst-700); }
+    &.flat { @include flat($amethyst-500, $amethyst-300, $amethyst-700); }
   }
 
   // alert colour styling
 
   &.alert {
-    border-color: $amber-300;
-    color: white;
-    background: $amber-300;
-
-    &:hover,
-    &:active,
-    &:focus {
-      border-color: $amber-300;
-      color: $white;
-      background: $amber-300;
-    }
-
-    &.outline { @include outline($amber-300, $amber-300); }
-    &.flat { @include flat($amber-300, $amber-300); }
+    @include fill($amber-300, $amber-100, $amber-300);
+    &.outline { @include outline($amber-300, $amber-100, $amber-300); }
+    &.flat { @include flat($amber-300, $amber-100, $amber-300); }
   }
 
   // neg colour styling
 
   &.neg {
-    border-color: $ruby-500;
-    color: white;
-    background: $ruby-500;
-
-    &:hover,
-    &:active,
-    &:focus {
-      border-color: $ruby-700;
-      color: $white;
-      background: $ruby-700;
-    }
-
-    &.outline { @include outline($ruby-500, $ruby-700); }
-    &.flat { @include flat($ruby-500, $ruby-700); }
+    @include fill($ruby-500, $ruby-500, $ruby-700);
+    &.outline { @include outline($ruby-500, $ruby-500, $ruby-700); }
+    &.flat { @include flat($ruby-500, $ruby-500, $ruby-700); }
   }
 
   // pos colour styling
 
   &.pos {
-    border-color: $emerald-500;
-    color: white;
-    background: $emerald-500;
-
-    &:hover,
-    &:active,
-    &:focus {
-      border-color: $emerald-700;
-      color: $white;
-      background: $emerald-700;
-    }
-
-    &.outline { @include outline($emerald-500, $emerald-700); }
-    &.flat { @include flat($emerald-500, $emerald-700); }
+    @include fill($emerald-500, $emerald-500, $emerald-700);
+    &.outline { @include outline($emerald-500, $emerald-500, $emerald-700); }
+    &.flat { @include flat($emerald-500, $emerald-500, $emerald-700); }
   }
 
   // --- KEEP LAST! subtle colour styling - to remain uneffected by color variants ---//
@@ -255,13 +239,19 @@ button[type="submit"] {
     fill: $pearl-900;
     background: white;
 
-    &:hover,
-    &:active,
-    &:focus {
+    &:hover, &:focus {
       border-color: $pearl-300;
       color: $pearl-900;
       fill: $pearl-900;
-      background: $pearl-50;
+      background: $pearl-300;
+    }
+
+
+    &:active, &.active {
+      border-color: $pearl-100;
+      color: $pearl-900;
+      fill: $pearl-900;
+      background: $pearl-100;
     }
   }
 
