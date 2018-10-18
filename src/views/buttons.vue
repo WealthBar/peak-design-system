@@ -1,5 +1,5 @@
 <template>
-  <article class="container-mid">
+  <article class="container">
     <h1>Buttons</h1>
     <section>
       <h3>Default Buttons</h3>

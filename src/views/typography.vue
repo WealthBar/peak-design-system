@@ -1,5 +1,5 @@
 <template>
-  <article class="container-mid">
+  <article class="container">
     <h1>Typography</h1>
     <div class="typography-intro">
       <p>WealthBar’s typography is a balance between readability and personality. Using our set of defined typography styles ensures consistent quality and a clear hierarchy.</p>

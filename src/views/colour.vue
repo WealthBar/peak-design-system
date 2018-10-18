@@ -1,5 +1,5 @@
 <template>
-  <article class="container-mid">
+  <article class="container">
     <h1>Colour</h1>
     <p>WealthBar’s fresh colour palette fits our light, anti-institution personality without being too young or too loud. Colour also plays an important functional role. When properly used, colour can highlight, de-emphasize, contrast, or add emotion to our communication and UI.</p>
 
