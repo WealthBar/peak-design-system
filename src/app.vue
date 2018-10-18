@@ -111,12 +111,12 @@
   .logo {
     padding: 0.25rem 0;
     margin-bottom: 0.5rem;
-  }
 
-  .logo > a:hover,
-  a:active,
-  a:focus {
-    background-color: transparent;
+    a:hover,
+    a:active,
+    a:focus {
+      background-color: transparent;
+    }
   }
 
   .wb-logo {
@@ -124,11 +124,7 @@
     width: 10rem;
   }
 
-  .pages {
-    flex: 1 1 100%;
-    // width: 100%;
-    // margin-left: 17.5rem;
-  }
+  .pages { flex: 1 1 100%; }
 
   .coming-soon {
     color: $pearl-500;

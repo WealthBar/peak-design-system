@@ -1,14 +1,8 @@
 <template>
   <transition name="back-to-top-fade">
-    <div class="vue-back-to-top" :style="`bottom:${this.bottom};right:${this.right};`" v-show="visible" @click="backToTop">
-      <slot>
-        <div class="default">
-          <span>
-            {{ text }}
-          </span>
-        </div>
-      </slot>
-    </div>
+    <button type="button" class="button icon" :style="`bottom:${this.bottom};right:${this.right};`" v-show="visible" @click="backToTop">
+      <slot>{{ text }}</slot>
+    </button>
   </transition>
 </template>
 
@@ -73,7 +67,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import 'style';
+  button {
+    position: fixed;
+    z-index: 1000;
+  }
 
   .back-to-top-fade-enter-active, .back-to-top-fade-leave-active {
     transition: opacity 0.7s;
@@ -81,24 +78,5 @@ export default {
 
   .back-to-top-fade-enter, .back-to-top-fade-leave-to {
     opacity: 0;
-  }
-
-  .vue-back-to-top {
-    position: fixed;
-    z-index: 1000;
-    cursor: pointer;
-    width: 36px;
-    height: 36px;
-    margin: 3px;
-    color: #fff;
-    text-align: center;
-    line-height: 30px;
-    border-radius: 50px;
-    padding: 3px;
-    background: linear-gradient(180deg, #4dd6b2 0%, $jade-300 100%);
-  }
-
-  .vue-back-to-top .default span {
-    color: $white;
   }
 </style>
