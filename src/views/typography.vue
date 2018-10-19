@@ -547,16 +547,23 @@
 
   .attributes {
     display: flex;
+    flex-direction: column;
     margin-bottom: 1rem;
+
+    @media #{$screen-width-large} {
+      flex-direction: row;
+    }
   }
 
   .code-sample {
     display: flex;
     flex-direction: column;
-    flex: 1 1 50%;
-    &:last-child { padding-left: 1rem; }
-    pre { flex: 1 1 50%; }
-    code { height: 100%; }
+    @media #{$screen-width-large} {
+      flex: 1 1 50%;
+      &:last-child { padding-left: 1rem; }
+      pre { flex: 1 1 50%; }
+      code { height: 100%; }
+    }
   }
 
   .example {
@@ -633,11 +640,15 @@
 
   .alternative-glyphs-container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    @media #{$screen-width-large} {
+      flex-direction: row;
+      align-items: center;
 
-    .alternative-examples {
-      margin-right: 3rem;
-      img { max-width: 21rem; }
+      .alternative-examples {
+        margin-right: 3rem;
+        img { max-width: 21rem; }
+      }
     }
   }
 </style>

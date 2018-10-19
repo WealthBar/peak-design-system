@@ -1,8 +1,8 @@
 .toggle {
   display: inline-block;
   padding: 0;
-  color: $jade-300;
-  border: 1px solid $jade-300;
+  color: $jade-500;
+  border: 1px solid $jade-500;
   background: transparent;
   border-radius: 1rem;
   text-decoration: none;
@@ -19,7 +19,7 @@
     &:last-child:not([data-active="true"]) { padding-left: 0.25rem; }
 
     &[data-active="true"] {
-      background: $jade-300;
+      background: $jade-500;
       color: $white;
       padding: 0 0.5rem;
     }
