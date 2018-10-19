@@ -1,27 +1,27 @@
 /* --------   Mixins: keep them LOCALIZED!   -------- */
 
-@mixin fill($default, $active, $hover ) {
+@mixin fill($default, $active, $hover, $text: white ) {
   border-color: transparent;
-  color: white;
-  fill: white;
+  color: $text;
+  fill: $text;
   background: $default;
 
   &:hover, &:focus, {
     border-color: transparent;
-    color: white;
-    fill: white;
+    color: $text;
+    fill: $text;
     background: $hover;
   }
 
   &:active, &.active {
     border-color: transparent;
-    color: white;
-    fill: white;
+    color: $text;
+    fill: $text;
     background: $active;
   }
 }
 
-@mixin outline($default, $active, $hover ) {
+@mixin outline($default, $active, $hover, $text: white ) {
   border-color: $default;
   color: $default;
   fill: $default;
@@ -29,15 +29,15 @@
 
   &:hover, &:focus, {
     border-color: $hover;
-    color: white;
-    fill: white;
+    color: $text;
+    fill: $text;
     background: $hover;
   }
 
   &:active, &.active {
     border-color: $active;
-    color: white;
-    fill: white;
+    color: $text;
+    fill: $text;
     background: $active;
   }
 }
@@ -136,7 +136,6 @@ button[type="button"],
 button[type="reset"],
 button[type="submit"] {
   // --- DEFAULT BUTTON STYLING ---//
-  -webkit-appearance: button;
   cursor: pointer;
   font: inherit;
   font-weight: bold;
@@ -147,6 +146,7 @@ button[type="submit"] {
   padding: 0.5rem 0.75rem;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  white-space: nowrap;
 
   svg { border: none; }
 
@@ -176,9 +176,16 @@ button[type="submit"] {
   // alert colour styling
 
   &.alert {
-    @include fill($amber-300, $amber-100, $amber-300);
-    &.outline { @include outline($amber-300, $amber-100, $amber-300); }
-    &.flat { @include flat($amber-300, $amber-100, $amber-300); }
+    @include fill($amber-100, $amber-100, $amber-300, $pearl-900);
+
+    &.outline {
+      @include outline($amber-300, $amber-300, $amber-300, $pearl-900);
+
+      color: $pearl-900;
+      fill: $pearl-900;
+    }
+
+    &.flat { @include flat($amber-300, $amber-300, $amber-100); }
   }
 
   // neg colour styling

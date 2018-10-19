@@ -1,55 +1,58 @@
 <template>
-  <div id="app-view">
-    <div class="side-menu">
-      <div class="logo">
-        <router-link to="/"><img class="wb-logo" src="~@/assets/logo.svg"></router-link>
-      </div>
-      <div class="units-contianer">
-        <label slot="label" class="label-inline">Units</label>
-        <div class="unit-selector" slot="content">
-          <a class="button outline"  v-for="unit in getUnits" @click="setUnit(unit)" :key="unit" :class="{'active': getSelectedUnit === unit}">{{unit}}</a>
+  <main>
+    <div id="app-view" :class="{'nav-open': navOpen}">
+      <div class="side-menu">
+        <div class="logo">
+          <router-link to="/"><img class="wb-logo" src="~@/assets/logo.svg"></router-link>
         </div>
-      </div>
-      <nav class="main-navigation">
-        <ul>
-          <li><router-link to="typography">Typography</router-link></li>
-          <ul v-if="$route.path === '/typography'">
-            <li class="secondary-link"><a href="#headers">Headers Text</a></li>
-            <li class="secondary-link"><a href="#body">Body Text</a></li>
-            <li class="secondary-link coming-soon"><a href="#links">Links (Coming soon!)</a></li>
-            <li class="secondary-link"><a href="#lists">Lists</a></li>
-            <li class="secondary-link"><a href="#line-length">Line Length</a></li>
-            <li class="secondary-link"><a href="#font-stack">Font Stack</a></li>
-            <li class="secondary-link"><a href="#measurements">Measurements</a></li>
+        <div class="units-contianer">
+          <label slot="label" class="label-inline">Units</label>
+          <div class="unit-selector" slot="content">
+            <a class="button outline"  v-for="unit in getUnits" @click="setUnit(unit)" :key="unit" :class="{'active': getSelectedUnit === unit}">{{unit}}</a>
+          </div>
+        </div>
+        <nav class="main-navigation">
+          <ul>
+            <li><router-link to="typography">Typography</router-link></li>
+            <ul v-if="$route.path === '/typography'">
+              <li class="secondary-link"><a href="#headers">Headers Text</a></li>
+              <li class="secondary-link"><a href="#body">Body Text</a></li>
+              <li class="secondary-link coming-soon"><a href="#links">Links (Coming soon!)</a></li>
+              <li class="secondary-link"><a href="#lists">Lists</a></li>
+              <li class="secondary-link"><a href="#line-length">Line Length</a></li>
+              <li class="secondary-link"><a href="#font-stack">Font Stack</a></li>
+              <li class="secondary-link"><a href="#measurements">Measurements</a></li>
+            </ul>
+            <li><router-link to="colour">Colour</router-link></li>
+            <li><router-link to="buttons">Buttons</router-link></li>
+            <li ><router-link class="coming-soon" to="">Inputs (Coming soon!)</router-link></li>
           </ul>
-          <li><router-link to="colour">Colour</router-link></li>
-          <li><router-link to="buttons">Buttons</router-link></li>
-          <li ><router-link class="coming-soon" to="">Inputs (Coming soon!)</router-link></li>
-        </ul>
-      </nav>
+        </nav>
+      </div>
+      <div class="page">
+        <!-- <button id="menu-toggle" type="button" class="outline" @click="toggleNav()">Menu</button> -->
+        <router-view></router-view>
+      </div>
+
     </div>
-    <div class="pages">
-      <router-view></router-view>
-    </div>
-    <back-to-top visibleOffset="800">
+      <back-to-top visibleOffset="800">
       <svgicon name="arrow-up" height="1.25rem" width="1.25rem" color="#fff" alt="Arrow Icon"></svgicon>
     </back-to-top>
-  </div>
+  </main>
 </template>
 
 <script>
   import '@/lib/icons/arrow-up';
   import '@/lib/icons/search';
   import { mapActions, mapGetters } from '@/lib/vue';
-  import toggleView from './components/toggle_view';
   import BackToTop from './components/back_to_top';
 
 
   export default {
-    updated() {
-      if (this.$route.name === 'root') {
-        this.toggleNav = false;
-      }
+    data() {
+      return {
+        navOpen: true,
+      };
     },
     computed: {
       ...mapGetters(['getSelectedUnit', 'getUnits']),
@@ -59,8 +62,11 @@
       toggleUnits(unit) {
         this.selected = unit;
       },
+      toggleNav() {
+        this.navOpen = !this.navOpen;
+      },
     },
-    components: { toggleView, BackToTop },
+    components: { BackToTop },
   };
 </script>
 
@@ -73,11 +79,22 @@
 
   #app-view {
     display: flex;
-    min-height: 100vh;
+
+    &.nav-open {
+      .side-menu { width: auto; }
+      // .page { transform: translateX(17.5rem); }
+    }
   }
 
   .side-menu {
-    min-width: 17.5rem;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    width: 0;
+    flex: 0 0 auto;
+    min-height: 100vh;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
     background-color: $pearl-50;
     border-right: 1px solid $pearl-100;
   }
@@ -135,7 +152,13 @@
     width: 10rem;
   }
 
-  .pages { flex: 1 1 100%; }
+  .page { flex: 1 1 auto; }
+
+  #menu-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
 
   .coming-soon {
     color: $pearl-500;

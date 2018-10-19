@@ -328,15 +328,25 @@ export default {};
   @import 'base/variables.scss';
 
   .example {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
     padding: 1rem;
     margin-bottom: 1rem;
     background: $pearl-50;
     border: 1px solid $pearl-300;
     border-radius: 0.25rem;
-    &.start { justify-content: flex-start; }
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: auto;
+    > * { margin-bottom: 1rem; }
+    @media #{$screen-width-large} {
+      flex-direction: row;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      > * { margin: 0; }
+      &.start { justify-content: flex-start; }
+    }
   }
 
   .code-sample { margin-bottom: 1rem; }
