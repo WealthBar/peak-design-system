@@ -1,0 +1,83 @@
+a, button, .link {
+  color: $jade-500;
+  fill: $jade-500;
+  text-decoration: underline;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  background: none;
+  -moz-appearance: none;
+  padding: 0;
+  border: 0;
+  transition: all 300ms ease-out;
+
+  // make inline SVG icons look and behave like linked text
+  svg { vertical-align: middle; }
+
+  svg.inline {
+    top: 0.125rem;
+    height: 0.875rem;
+    width: auto;
+    border-bottom: 1px solid $jade-500;
+    padding: 0 0 1px;
+  }
+
+  &::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+
+  &:focus {
+    outline: none;
+    background: rgba(128, 128, 128, 0.2);
+  }
+
+  &:visited {
+    color: $jade-500;
+    fill: $jade-500;
+    svg { border-color: $jade-500; }
+  }
+
+  &:hover, &:focus {
+    color: $jade-900;
+    fill: $jade-900;
+    svg { border-color: $jade-900; }
+  }
+
+  &:active, &.active {
+    color: $jade-700;
+    fill: $jade-700;
+    svg { border-color: $jade-700; }
+  }
+
+  &.href-plain { text-decoration: none; }
+
+  @mixin variant($default, $active, $hover) {
+    color: $default;
+    fill: $default;
+
+    &:hover, &:focus {
+      color: $hover;
+      fill: $hover;
+    }
+
+    &:active, &.active {
+      color: $active;
+      fill: $active;
+    }
+  }
+
+  &.alt { @include variant($amethyst-500, $amethyst-300, $amethyst-700); }
+  &.alert { @include variant($amber-300, $amber-300, $amber-100); }
+  &.neg { @include variant($ruby-500, $ruby-500, $ruby-700); }
+  &.pos { @include variant($emerald-500, $emerald-500, $emerald-700); }
+  &.small { font-size: 0.875rem; }
+
+  &.large {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  &.inherit { color: inherit; }
+}

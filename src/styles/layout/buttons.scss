@@ -1,4 +1,4 @@
-/* --------   Mixins: keep them LOCALIZED!   -------- */
+/* --------   Mixins SPECIFICALLY for buttons: keep them LOCALIZED!   -------- */
 
 @mixin fill($default, $active, $hover, $text: white ) {
   border-color: transparent;
@@ -64,83 +64,22 @@
   }
 }
 
-/* --------   Eveything begins here: Reset links and buttons to same default style/behaviour   -------- */
+/* --------   End Mixins   -------- */
 
-a, button, .link {
-  color: $jade-500;
-  fill: $jade-500;
-  text-decoration: underline;
-  display: flex;
-  align-items: baseline;
-  font-weight: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  cursor: pointer;
-  background: none;
-  -moz-appearance: none;
-  padding: 0;
-  border: 0;
-  transition: all 300ms ease-out;
+/* --------   BUTTON STYLING   -------- */
 
-  svg {
-    top: 0.125rem;
-    height: 0.875rem;
-    width: auto;
-    border-bottom: 1px solid $jade-500;
-    padding: 0 0 1px;
-  }
-
-  &::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
-  }
-
-  &:focus {
-    outline: none;
-    background: rgba(128, 128, 128, 0.2);
-  }
-
-  &:visited {
-    color: $jade-900;
-    fill: $jade-900;
-    svg { border-color: $jade-900; }
-  }
-
-  &:hover, &:focus {
-    color: $jade-900;
-    fill: $jade-900;
-    svg { border-color: $jade-900; }
-  }
-
-  &:active, &.active {
-    color: $jade-700;
-    fill: $jade-700;
-    svg { border-color: $jade-700; }
-  }
-
-  &.href-plain { text-decoration: none; }
-  &.inherit { color: inherit; }
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-
-/* --------   Buttons   -------- */
-
-/* --------   let's cover our bases, shall we   -------- */
 a.button,
 button.button,
 button[type="button"],
 button[type="reset"],
 button[type="submit"] {
-  // --- DEFAULT BUTTON STYLING ---//
   cursor: pointer;
   font: inherit;
   font-weight: bold;
   line-height: 1.125rem;
   text-align: center;
+  // display: flex;
+  // align-items: baseline;
   justify-content: center;
   text-decoration: none;
   padding: 0.5rem 0.75rem;
@@ -148,11 +87,15 @@ button[type="submit"] {
   border-radius: 0.25rem;
   white-space: nowrap;
 
-  svg { border: none; }
+  svg {
+    top: 0.125rem;
+    height: 0.875rem;
+    width: auto;
+  }
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 2px 1px $pearl-500;
+    box-shadow: 0 0 2px 2px $pearl-500;
   }
 
   &::-moz-focus-inner {
@@ -207,6 +150,9 @@ button[type="submit"] {
   // --- KEEP LAST! subtle colour styling - to remain uneffected by color variants ---//
 
   &.icon {
+    display: flex;
+    align-items: baseline;
+
     &:not(.before):not(.after) {
       border-radius: 50%;
       padding: 0.5rem;
@@ -234,10 +180,20 @@ button[type="submit"] {
           height: 0.875rem;
         }
       }
+
+      &.flat {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
 
     &.before svg { margin-right: 0.5rem; }
     &.after svg { margin-left: 0.5rem; }
+
+    &.flat {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &.subtle {
@@ -267,6 +223,11 @@ button[type="submit"] {
     line-height: 1.625rem;
     padding: 0.5rem 1rem;
 
+    &.flat {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
     svg {
       top: 0.25rem;
       width: 1.125rem;
@@ -276,8 +237,13 @@ button[type="submit"] {
 
   &.small {
     font-size: 0.875rem;
-    padding: 0.25rem 0.5rem;
     line-height: 1.125rem;
+    padding: 0.25rem 0.5rem;
+
+    &.flat {
+      padding-left: 0;
+      padding-right: 0;
+    }
 
     svg {
       top: 0.125rem;
@@ -285,4 +251,9 @@ button[type="submit"] {
       height: 0.75rem;
     }
   }
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
 }

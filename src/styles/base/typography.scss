@@ -81,59 +81,16 @@ sup {
   line-height: 0.5em;
 }
 
-label {
-  display: block;
-  margin: 1rem 0 0;
-  font-weight: bold;
-
-  &.label-inline { margin: 0.5rem 0.25rem; }
-}
-
 strong, b, .strong { font-weight: bold; }
-
 em, i, var, .em { font-style: normal; }
-
-input, button, select, textarea { font-family: inherit; }
-
 var { font-style: normal; }
+del { color: $ruby-500; }
 
 .tab-numbers { font-feature-settings: "kern", "liga", "tnum", "ss02", "ss04"; }
-
 .subtle { color: rgba($pearl-900, 0.77); }
-
 .capitalize { text-transform: capitalize; }
 .uppercase { text-transform: uppercase; }
-
 .center { text-align: center; }
-
-a, button, .link {
-  color: $jade-500;
-  text-decoration: underline;
-  display: inline;
-  font-weight: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  cursor: pointer;
-  background: none;
-  -moz-appearance: none;
-  padding: 0;
-  border: 0;
-  transition: all 300ms ease-out;
-
-  &::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
-  }
-
-  &:visited { color: $jade-500; }
-  &:hover, &:focus { color: $jade-700; }
-  &:focus { outline: none; }
-  &.href-plain { text-decoration: none; }
-  &.inherit { color: inherit; }
-}
-
-strong, b, .strong { font-weight: bold; }
-em, i, var, .em { font-style: normal; }
 
 hr {
   box-sizing: content-box;
@@ -142,14 +99,6 @@ hr {
   background-color: $pearl-100;
   border: none;
   overflow: visible;
-}
-
-input {
-  margin: 0.5rem 0;
-  border-radius: 0.25rem;
-  border: 1px solid $pearl-300;
-  padding: 0.25rem;
-  background-color: $pearl-50;
 }
 
 ul, ol {
@@ -165,32 +114,6 @@ pre,
 code {
   font-family: 'Fira Mono', monospace;
   font-size: 0.875rem;
-}
-
-pre {
-  white-space: normal;
-  word-wrap: normal;
-  margin: 0;
-  padding: 0;
-
-  code {
-    white-space: pre-line;
-    white-space: -moz-pre-line;
-    white-space: -o-pre-line;
-    word-wrap: break-word;
-    display: block;
-    padding: 0.75rem;
-    background: $jade-50;
-    color: $jade-500;
-    border-radius: 0.25rem;
-    border: 1px solid $jade-100;
-
-    &.css {
-      background: $amethyst-50;
-      color: $amethyst-700;
-      border-color: $amethyst-300;
-    }
-  }
 }
 
 /* -------- SMALL SCREEN MEDIA QUERIES ------- */

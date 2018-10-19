@@ -119,3 +119,29 @@ h5, .h5 {
 
   &.desktop { @include desktop; }
 }
+
+pre {
+  white-space: normal;
+  word-wrap: normal;
+  margin: 0;
+  padding: 0;
+
+  code {
+    white-space: pre-line;
+    white-space: -moz-pre-line;
+    white-space: -o-pre-line;
+    word-wrap: break-word;
+    display: block;
+    padding: 0.75rem;
+    background: $jade-50;
+    color: $jade-500;
+    border-radius: 0.25rem;
+    border: 1px solid $jade-100;
+
+    &.css {
+      background: $amethyst-50;
+      color: $amethyst-700;
+      border-color: $amethyst-300;
+    }
+  }
+}
