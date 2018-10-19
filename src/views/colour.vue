@@ -151,40 +151,40 @@
     <h3>Neutral</h3>
     <p>Our neutral palette is based on an off-black with a subtle purple hue.</p>
     <div class="colour-block desktop-only" style="border: 1px solid #f7f7f8; border-bottom: none;">
-      <strong>White</strong>
+      <strong>$white</strong>
     </div>
     <div class="color-pallete">
       <div class="colour-block" style="border: 1px solid #f7f7f8;">
-        <strong><span class="mobile-only">White / </span>Pearl-0</strong>
+        <strong><span class="mobile-only">$white / </span>$pearl-0</strong>
         <span>#FFFFFF</span>
       </div>
       <div class="colour-block" style="background: #f7f7f8;">
-        <strong>Pearl-50</strong>
+        <strong>$pearl-50</strong>
         <span>#F7F7F8</span>
       </div>
       <div class="colour-block" style="background: #e4e4ea;">
-        <strong>Pearl-100</strong>
+        <strong>$pearl-100</strong>
         <span>#E4E4EA</span>
       </div>
       <div class="colour-block" style="background: #d0d0d9;">
-        <strong>Pearl-300</strong>
+        <strong>$pearl-300</strong>
         <span>#D0D0D9</span>
       </div>
       <div class="colour-block dark" style="background: #86868F;">
-        <strong>Pearl-500</strong>
+        <strong>$pearl-500</strong>
         <span>#86868F</span>
       </div>
       <div class="colour-block dark" style="background: #606068;">
-        <strong>Pearl-700</strong>
+        <strong>$pearl-700</strong>
         <span>#606068</span>
       </div>
       <div class="colour-block dark" style="background: #37373f;">
-        <strong><span class="mobile-only">Black / </span>Pearl-900</strong>
+        <strong><span class="mobile-only">$black / </span>$pearl-900</strong>
         <span>#37373F</span>
       </div>
     </div>
     <div class="colour-block dark desktop-only" style="background: #37373f;">
-      <strong >Black</strong>
+      <strong >$black</strong>
     </div>
     <h2>Usage</h2>
   </article>

@@ -8,7 +8,7 @@
         <div class="units-contianer">
           <label slot="label" class="label-inline">Units</label>
           <div class="unit-selector" slot="content">
-            <a class="button outline"  v-for="unit in getUnits" @click="setUnit(unit)" :key="unit" :class="{'active': getSelectedUnit === unit}">{{unit}}</a>
+            <a class="button outline small"  v-for="unit in getUnits" @click="setUnit(unit)" :key="unit" :class="{'active': getSelectedUnit === unit}">{{unit}}</a>
           </div>
         </div>
         <nav class="main-navigation">
