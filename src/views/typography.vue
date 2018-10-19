@@ -169,8 +169,8 @@
             font-weight: 500;
             margin: {{unitValue(16)}} {{unitValue(0)}} {{unitValue(16)}};</code>
           </pre>
-          <pre v-else><code class="css">
-            font-size: {{unitValue(18)}};
+          <pre v-else>
+            <code class="css">font-size: {{unitValue(18)}};
             line-height: {{unitValue(24)}};
             font-weight: 500;
             margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(16)}};</code>
@@ -634,6 +634,10 @@
       .line-104 {
         border-color: #e96654;
         left: 52rem;
+      }
+
+      @media #{$screen-max-small} {
+        .line-length-104, .line-104, .char-104 { display: none; }
       }
     }
   }
