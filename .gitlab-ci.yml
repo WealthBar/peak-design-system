@@ -12,38 +12,8 @@ variables:
   CONTAINER_REGISTRY: gitlab.wealth.bar:4567
   CONTAINER_IMAGE: gitlab.wealth.bar:4567/$CI_PROJECT_PATH
   CONTAINER_TAG: gitlab.wealth.bar:4567/$CI_PROJECT_PATH:$CI_COMMIT_SHA
-  DOKKU_TAG: dokku/$CI_PROJECT_NAME
-  DOKKU_SSH: dokku@dev-dk.wealth.bar
   KUBECONFIG: /etc/deploy/config
   CACHE_VERSION: 1
-
-.build_image: &build_image
-  - docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
-  - docker pull $CONTAINER_IMAGE:latest
-  - docker build --cache-from $CONTAINER_IMAGE:latest -t $CONTAINER_TAG -t $CONTAINER_IMAGE:latest .
-  - docker push $CONTAINER_TAG
-  - docker push $CONTAINER_IMAGE:latest
-
-.deploy_image: &deploy_image
-  - eval $(ssh-agent -s)
-  - ssh-add <(echo "$DOKKU_SSH_KEY")
-  - mkdir -p ~/.ssh
-  - ssh-keyscan $DOKKU_SSH_HOST >> ~/.ssh/known_hosts
-  - chmod 644 ~/.ssh/known_hosts
-  - ssh dokku@$DOKKU_SSH_HOST "docker-direct login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY"
-  - ssh dokku@$DOKKU_SSH_HOST "docker-direct pull $CONTAINER_TAG"
-  - ssh dokku@$DOKKU_SSH_HOST "docker-direct tag $CONTAINER_TAG dokku/$APP_NAME:latest"
-  - ssh dokku@$DOKKU_SSH_HOST "tags:deploy $APP_NAME latest"
-
-.build_template: &build_template
-  stage: build
-  tags: [build]
-  script: *build_image
-
-.deploy_template: &deploy_template
-  stage: deploy
-  tags: [build]
-  script: *deploy_image
 
 stages:
   - test
@@ -77,29 +47,17 @@ build_image:
     - docker:dind
   script:
     - docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
-    # - docker pull $CONTAINER_IMAGE:latest
+    - docker pull $CONTAINER_IMAGE:latest
     - docker build --cache-from $CONTAINER_IMAGE:latest -t $CONTAINER_TAG -t $CONTAINER_IMAGE:latest .
     - docker push $CONTAINER_TAG
     - docker push $CONTAINER_IMAGE:latest
 
-dokku_deploy:
-  <<: *deploy_template
-  variables:
-    DOKKU_SSH_HOST: '$DOKKU_DEV_SSH_HOST'
-    DOKKU_SSH_KEY: '$DOKKU_DEV_SSH_KEY'
-    APP_NAME: peak-design-system
-  environment:
-    name: production
-    url: https://peak-design-system.dev-dk.wealth.bar
-  only: [master]
-
-kube_deploy:
+deploy:
   stage: deploy
-  environment: production
   only: [master]
   image: roffe/kubectl:v1.11.2
   environment:
-    name: kubernetes_production
+    name: production
     url: https://peak.wealth.bar
   script:
     - mkdir -p /etc/deploy/
