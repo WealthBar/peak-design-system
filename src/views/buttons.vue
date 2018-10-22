@@ -48,7 +48,6 @@
           &lt;a href="" class="href-plain"&gt;No Underline&lt;/a&gt;
           &lt;a href="" class="small"&gt;Small Link&lt;/a&gt;
           &lt;a href="" class="large"&gt;Large Link&lt;/a&gt;
-
           </code></pre>
         </div>
       </div>
