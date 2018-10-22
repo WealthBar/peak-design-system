@@ -57,6 +57,7 @@
         <strong>Example</strong>
         <div class="example">
           <a href="" class="button">Link</a>
+          <span class="button">Span</span>
           <button class="button">Class Button</button>
           <button type="button">Type Button</button>
           <button type="reset">Reset Button</button>
@@ -65,7 +66,8 @@
         <div class="code-sample">
           <strong>Markup</strong>
           <pre><code class="html">&lt;a href="" class="button"&gt;Link&lt;/a&gt;
-            &lt;button class="button"&gt;Class Button&lt;/button&gt;
+          &lt;span class="button"&gt;Link&lt;/span&gt;
+          &lt;button class="button"&gt;Class Button&lt;/button&gt;
           &lt;button type="button"&gt;Type Button&lt;/button&gt;
           &lt;button type="reset"&gt;Reset Button&lt;/button&gt;
           &lt;button type="button"&gt;Submit Button&lt;/button&gt;

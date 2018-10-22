@@ -73,6 +73,7 @@
 /* --------   BUTTON STYLING   -------- */
 
 a.button,
+span.button,
 button.button,
 button[type="button"],
 button[type="reset"],
@@ -88,6 +89,7 @@ button[type="submit"] {
   border: 1px solid transparent;
   border-radius: 0.25rem;
   white-space: nowrap;
+  transition: all 0.3s ease-out;
 
   svg {
     height: 0.875rem;
