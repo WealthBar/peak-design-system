@@ -13,6 +13,11 @@ a, button, .link {
   border: 0;
   transition: all 300ms ease-out;
 
+  svg {
+    width: auto;
+    height: auto;
+  }
+
   &::-moz-focus-inner {
     border-style: none;
     padding: 0;
