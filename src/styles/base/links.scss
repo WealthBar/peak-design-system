@@ -48,6 +48,7 @@ a, button, .link {
   &:active, &.active {
     color: $jade-700;
     fill: $jade-700;
+    background: none;
     svg { border-color: $jade-700; }
   }
 
@@ -72,6 +73,8 @@ a, button, .link {
   &.alert { @include variant($amber-300, $amber-300, $amber-100); }
   &.neg { @include variant($ruby-500, $ruby-500, $ruby-700); }
   &.pos { @include variant($emerald-500, $emerald-500, $emerald-700); }
+  &.invert { @include variant($pearl-0, $pearl-50, $pearl-100); }
+  &.dark { @include variant($pearl-900, $pearl-900, $pearl-700); }
   &.small { font-size: 0.875rem; }
 
   &.large {

@@ -24,7 +24,7 @@
               <li class="secondary-link"><a href="#measurements">Measurements</a></li>
             </ul>
             <li><router-link to="colour">Colour</router-link></li>
-            <li><router-link to="buttons">Buttons</router-link></li>
+            <li><router-link to="buttons">Links &amp; Buttons</router-link></li>
             <li ><router-link class="coming-soon" to="">Inputs (Coming soon!)</router-link></li>
           </ul>
         </nav>
