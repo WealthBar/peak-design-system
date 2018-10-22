@@ -53,8 +53,11 @@
     border-color: transparent;
     color: $hover;
     fill: $hover;
-    background: rgba(128, 128, 128, 0.2);
+  }
+
+  &:focus {
     box-shadow: none;
+    background: rgba(128, 128, 128, 0.2);
   }
 
   &:active, &.active {
