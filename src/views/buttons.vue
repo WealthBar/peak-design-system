@@ -27,25 +27,28 @@
         <div class="example">
           <a href="">Link</a>
           <a href="" class="alt">Alt Link</a>
-          <a href="" class="alert href-plain">Alert Link</a>
+          <a href="" class="alert">Alert Link</a>
           <a href="" class="neg">Neg Link</a>
           <a href="" class="pos">Pos Link</a>
           <a href="" class="light">Light Link</a>
           <a href="" class="dark">Dark Link</a>
+          <a href="" class="href-plain">No Underline</a>
           <a href="" class="small">Small Link</a>
           <a href="" class="large">Large Link</a>
         </div>
         <div class="code-sample">
           <strong>Markup</strong>
           <pre><code class="html">&lt;a href=""&gt;Link&lt;/a&gt;
-          &lt;a href="" class="alt href-plain"&gt;Alt Link&lt;/a&gt;
+          &lt;a href="" class="alt"&gt;Alt Link&lt;/a&gt;
           &lt;a href="" class="alert"&gt;Alert Link&lt;/a&gt;
           &lt;a href="" class="neg"&gt;Neg Link&lt;/a&gt;
           &lt;a href="" class="pos"&gt;Pos Link&lt;/a&gt;
           &lt;a href="" class="light"&gt;Invert Link&lt;/a&gt;
           &lt;a href="" class="dark"&gt;Dark Link&lt;/a&gt;
+          &lt;a href="" class="href-plain"&gt;No Underline&lt;/a&gt;
           &lt;a href="" class="small"&gt;Small Link&lt;/a&gt;
           &lt;a href="" class="large"&gt;Large Link&lt;/a&gt;
+
           </code></pre>
         </div>
       </div>
