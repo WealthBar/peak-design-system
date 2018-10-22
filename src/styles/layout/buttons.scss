@@ -53,7 +53,8 @@
     border-color: transparent;
     color: $hover;
     fill: $hover;
-    background: transparent;
+    background: rgba(128, 128, 128, 0.2);
+    box-shadow: none;
   }
 
   &:active, &.active {
@@ -86,7 +87,6 @@ button[type="submit"] {
   white-space: nowrap;
 
   svg {
-    top: 0.125rem;
     height: 0.875rem;
     width: auto;
   }
@@ -180,6 +180,7 @@ button[type="submit"] {
       }
 
       &.flat {
+        border-radius: 0;
         padding-left: 0;
         padding-right: 0;
       }
