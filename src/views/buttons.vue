@@ -206,27 +206,27 @@
         <strong>Example</strong>
         <div class="example">
           <button class="icon">
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1.000000, 0)">
+            <svg viewBox="0 0 16 16" transform="translate(1.000000, 0)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
           </button>
           <button type="button" class="icon">
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1.000000, 0)">
+            <svg viewBox="0 0 16 16" transform="translate(1.000000, 0)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
           </button>
           <button type="button" class="outline icon">
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1.000000, 0)">
+            <svg viewBox="0 0 16 16" transform="translate(1.000000, 0)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
           </button>
           <button type="button" class="flat icon">
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1.000000, 0)">
+            <svg viewBox="0 0 16 16" transform="translate(1.000000, 0)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
           </button>
           <button type="button" class="subtle icon">
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1.000000, 0)">
+            <svg viewBox="0 0 16 16" transform="translate(1.000000, 0)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
           </button>
@@ -246,31 +246,31 @@
         <div class="example">
           <button class="icon after">
             Unstyled
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1, 2)">
+            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
           </button>
           <button type="button" class="icon after">
             Fill
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1, 2)">
+            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
           </button>
           <button type="button" class="outline icon after">
             Outline
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1, 2)">
+            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
           </button>
           <button type="button" class="flat icon after">
             Flat
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1, 2)">
+            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
           </button>
           <button type="button" class="subtle icon after">
             Subtle
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1, 2)">
+            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
           </button>
@@ -288,32 +288,32 @@
         <h4>Icon Before</h4>
         <strong>Example</strong>
         <div class="example">
-          <button>
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1, 2)">
+          <button class="icon before">
+            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
             Unstyled
           </button>
           <button type="button" class="icon before">
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1, 2)">
+            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
             Fill
           </button>
           <button type="button" class="outline icon before">
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1, 2)">
+            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
             Outline
           </button>
           <button type="button" class="flat icon before">
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1, 2)">
+            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
             Flat
           </button>
           <button type="button" class="subtle icon before">
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1, 2)">
+            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
             Subtle
@@ -342,12 +342,12 @@
           <button type="button" class="flat large">Flat</button>
           <button type="button" class="subtle large">Subtle</button>
           <button type="button" class="large icon after">Fill
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1, 2)">
+            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
           </button>
           <button type="button" class="large icon">
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1, 0)">
+            <svg viewBox="0 0 16 16" transform="translate(1, 0)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
           </button>
@@ -375,12 +375,12 @@
           <button type="button" class="flat small">Flat</button>
           <button type="button" class="subtle small">Subtle</button>
           <button type="button" class="small icon after">Fill
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1, 2)">
+            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
           </button>
           <button type="button" class="small icon">
-            <svg width="16px" height="16px" viewBox="0 0 16 16" transform="translate(1, 0)">
+            <svg viewBox="0 0 16 16" transform="translate(1, 0)">
               <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
             </svg>
           </button>
