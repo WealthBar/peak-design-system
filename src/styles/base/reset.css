@@ -47,7 +47,7 @@ body { min-height: 100%; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, dialog, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+footer, header, hgroup, menu, nav, picture, section {
   display: block;
 }
 
