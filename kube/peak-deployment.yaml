@@ -15,10 +15,10 @@ spec:
         app: peak
     spec:
       imagePullSecrets:
-      - name: regcred
+      - name: wealthbar-ci-pull-secret
       containers:
       - name: peak
-        image: gitlab.wealth.bar:4567/wealthbar/peak-design-system:latest
+        image: quay.io/wealthbar/peak-design-system:master
         imagePullPolicy: Always
         ports:
         - containerPort: 5001
