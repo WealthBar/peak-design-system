@@ -9,9 +9,9 @@ cache:
 
 variables:
   NODE_ENV: test
-  CONTAINER_REGISTRY: gitlab.wealth.bar:4567
-  CONTAINER_IMAGE: gitlab.wealth.bar:4567/$CI_PROJECT_PATH
-  CONTAINER_TAG: gitlab.wealth.bar:4567/$CI_PROJECT_PATH:$CI_COMMIT_SHA
+  CONTAINER_REGISTRY: quay.io/wealthbar
+  CONTAINER_IMAGE: quay.io/wealthbar/$CI_PROJECT_NAME
+  CONTAINER_TAG: quay.io/wealthbar/$CI_PROJECT_NAME:$CI_COMMIT_SHA
   KUBECONFIG: /etc/deploy/config
   CACHE_VERSION: 1
 
@@ -62,4 +62,4 @@ deploy:
   script:
     - mkdir -p /etc/deploy/
     - echo ${KUBE_CONFIG} | base64 -d > ${KUBECONFIG}
-    - kubectl set image deployments/peak-deployment peak=gitlab.wealth.bar:4567/$CI_PROJECT_PATH:$CI_COMMIT_SHA
+    - kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/$CI_PROJECT_PATH:$CI_COMMIT_SHA
