@@ -114,15 +114,15 @@
         <span>#FCEFED</span>
       </div>
       <div class="colour-block dark" style="background: #e96654;">
-        <strong>$ruby-100</strong>
+        <strong>$ruby-300</strong>
         <span>#E96654</span>
       </div>
       <div class="colour-block dark" style="background: #d93939;">
-        <strong>$ruby-300</strong>
+        <strong>$ruby-500</strong>
         <span>#D93939</span>
       </div>
       <div class="colour-block dark" style="background: #b31a1a;">
-        <strong>$ruby-500</strong>
+        <strong>$ruby-700</strong>
         <span>#B31A1A</span>
       </div>
     </div>
@@ -135,15 +135,15 @@
         <span>#E9F7E6</span>
       </div>
       <div class="colour-block dark" style="background: #24b33b;">
-        <strong>$emerald-100</strong>
+        <strong>$emerald-300</strong>
         <span>#24B33B</span>
       </div>
       <div class="colour-block dark" style="background: #0a884e;">
-        <strong>$emerald-300</strong>
+        <strong>$emerald-500</strong>
         <span>#0A884E</span>
       </div>
       <div class="colour-block dark" style="background: #086749;">
-        <strong>$emerald-500</strong>
+        <strong>$emerald-700</strong>
         <span>#086749</span>
       </div>
     </div>
