@@ -54,6 +54,6 @@ deploy:
   script:
     - apk add --no-cache curl
     - mkdir -p /etc/deploy/
-    - "curl --request GET --url https://api.digitalocean.com/v2/kubernetes/clusters/$DO_CLUSTER_ID/kubeconfig --header 'authorization: Bearer $DO_TOKEN' > $KUBECONFIG"
+    - "curl --request GET --url https://api.digitalocean.com/v2/kubernetes/clusters/${$DO_CLUSTER_ID}/kubeconfig --header 'authorization: Bearer ${DO_TOKEN}' > ${KUBECONFIG}"
     - cat $KUBECONFIG # for testing
     - kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/$CI_PROJECT_PATH:$CI_COMMIT_SHA
