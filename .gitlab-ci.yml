@@ -40,10 +40,9 @@ build_image:
     - docker:dind
   script:
     - docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
-    - docker pull $CONTAINER_IMAGE:latest
-    - docker build --cache-from $CONTAINER_IMAGE:latest -t $CONTAINER_TAG -t $CONTAINER_IMAGE:latest .
+    - docker pull $CONTAINER_IMAGE:master
+    - docker build --cache-from $CONTAINER_IMAGE:master -t $CONTAINER_TAG .
     - docker push $CONTAINER_TAG
-    - docker push $CONTAINER_IMAGE:latest
 
 deploy:
   stage: deploy
