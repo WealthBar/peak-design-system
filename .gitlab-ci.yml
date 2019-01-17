@@ -54,5 +54,5 @@ deploy:
     url: https://peak.wealth.bar
   script:
     - mkdir -p /etc/deploy/
-    - curl --request GET --url https://api.digitalocean.com/v2/kubernetes/clusters/$DO_CLUSTER_ID/kubeconfig --header 'authorization: Bearer $DO_TOKEN' | base64 -d > ${KUBECONFIG}
+    - "curl --request GET --url https://api.digitalocean.com/v2/kubernetes/clusters/$DO_CLUSTER_ID/kubeconfig --header 'authorization: Bearer $DO_TOKEN' | base64 -d > ${KUBECONFIG}"
     - kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/$CI_PROJECT_PATH:$CI_COMMIT_SHA
