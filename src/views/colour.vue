@@ -83,7 +83,7 @@
       </div>
       <div class="colour-block" style="background: #F5BE44;">
         <strong>$amber-100</strong>
-        <span>#9D9FBC</span>
+        <span>#F5BE44</span>
       </div>
       <div class="colour-block" style="background: #da9f18;">
         <strong>$amber-300</strong>
