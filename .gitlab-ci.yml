@@ -1,12 +1,5 @@
 image: "node:10-alpine"
 
-# Cache gems and javascript modules in between builds
-cache:
-  untracked: true
-  key: "packages-2018-05-23"
-  paths:
-  - node_modules/
-
 variables:
   NODE_ENV: test
   CONTAINER_REGISTRY: quay.io/wealthbar
@@ -61,5 +54,5 @@ deploy:
     url: https://peak.wealth.bar
   script:
     - mkdir -p /etc/deploy/
-    - echo ${KUBE_CONFIG} | base64 -d > ${KUBECONFIG}
+    - curl --request GET --url https://api.digitalocean.com/v2/kubernetes/clusters/$DO_CLUSTER_ID/kubeconfig --header 'authorization: Bearer $DO_TOKEN' | base64 -d > ${KUBECONFIG}
     - kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/$CI_PROJECT_PATH:$CI_COMMIT_SHA
