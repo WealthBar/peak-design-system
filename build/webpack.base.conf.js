@@ -1,13 +1,21 @@
 const path = require('path');
+const { VueLoaderPlugin } = require('vue-loader');
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const utils = require('./utils');
 const config = require('../config');
 const vueLoaderConfig = require('./vue-loader.conf');
+
+const devMode = process.env.NODE_ENV !== 'production';
+const configEnv = devMode ? config.dev.env : config.build.env;
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
 }
 
 module.exports = {
+  mode: 'development',
   entry: {
     app: './src/main.js',
   },
@@ -16,7 +24,7 @@ module.exports = {
     filename: '[name].js',
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+      : config.dev.assetsPublicPath,
   },
   resolve: {
     extensions: ['.js', '.vue'],
@@ -27,13 +35,28 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: [resolve('src'), resolve('test')],
-        options: {
-          formatter: require('eslint-friendly-formatter'),
-        },
+        test: /\.po$/,
+        use: [
+          'json-loader', {
+            loader: 'po-loader',
+            options: { format: 'mf' },
+          },
+        ],
+      },
+      {
+        test: /\.(scss|css)$/,
+        use: [
+          devMode ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              data: `@import "peak/theme/wealthbar.scss";`,
+              includePaths: ['src/styles'],
+            },
+          },
+        ],
       },
       {
         test: /\.vue$/,
@@ -50,7 +73,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+          name: utils.assetsPath('img/[name].[hash:7].[ext]'),
         },
       },
       {
@@ -63,4 +86,16 @@ module.exports = {
       },
     ],
   },
+
+  plugins: [
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /fr-ca/),
+    // copy public static assets
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, `../${config.build.assetsSubDirectory}`),
+        ignore: ['.*'],
+      },
+    ]),
+    new VueLoaderPlugin(),
+  ],
 };

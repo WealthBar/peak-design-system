@@ -6,7 +6,7 @@ module.exports = {
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'assets',
+    assetsSubDirectory: 'src/assets',
     publicSubDirectory: 'public',
     assetsPublicPath: '/',
     productionSourceMap: true,
@@ -26,7 +26,7 @@ module.exports = {
     env: require('./dev.env'),
     port: 8020,
     autoOpenBrowser: true,
-    assetsSubDirectory: 'assets',
+    assetsSubDirectory: 'src/assets',
     assetsPublicPath: '/',
     proxyTable: {},
     // CSS Sourcemaps off by default because relative paths are "buggy"

@@ -71,7 +71,7 @@
 </script>
 
 <style lang="scss">
-  @import 'style.scss';
+  @import 'peak.scss';
 
   main {
     margin: auto;
