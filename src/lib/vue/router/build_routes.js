@@ -30,8 +30,7 @@ export function parsePathTemplate(path) {
 }
 
 export function hasChildren(path) {
-  return !path.match(/(index)\.vue$/i) &&
-   !path.match(/\/_(\w+).vue$/i);
+  return !path.match(/(index)\.vue$/i) && !path.match(/\/_(\w+).vue$/i);
 }
 
 export function generateRoute(key, component) {
