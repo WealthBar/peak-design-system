@@ -402,7 +402,6 @@
 export default {};
 </script>
 <style lang="scss" scoped>
-  @import 'base/variables.scss';
 
   .example {
     padding: 1rem;

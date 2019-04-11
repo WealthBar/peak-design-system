@@ -1,10 +1,8 @@
-require('./check-versions')()
 
 var config = require('../config')
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
-
 var opn = require('opn')
 var path = require('path')
 var express = require('express')
@@ -31,13 +29,14 @@ var devMiddleware = require('webpack-dev-middleware')(compiler, {
 var hotMiddleware = require('webpack-hot-middleware')(compiler, {
   log: () => {}
 })
+
 // force page reload when html-webpack-plugin template changes
-compiler.plugin('compilation', function (compilation) {
-  compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
-    hotMiddleware.publish({ action: 'reload' })
-    cb()
-  })
-})
+compiler.hooks.compilation.tap('ValetHtmlReload', (compilation) => {
+  compilation.hooks.htmlWebpackPluginAfterEmit.tapAsync('ValetHtmlReload', (data, cb) => {
+    hotMiddleware.publish({ action: 'reload' });
+    cb(null, data);
+  });
+});
 
 // proxy api requests
 Object.keys(proxyTable).forEach(function (context) {
@@ -79,7 +78,7 @@ devMiddleware.waitUntilValid(() => {
   _resolve()
 })
 
-var server = app.listen(port)
+var server = app.listen(port, '0.0.0.0')
 
 module.exports = {
   ready: readyPromise,

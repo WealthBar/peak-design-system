@@ -193,7 +193,6 @@
 export default {};
 </script>
 <style lang="scss" scoped>
-  @import 'base/variables.scss';
 
   .colour-block {
     padding: 0.5rem;

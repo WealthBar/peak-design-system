@@ -6,7 +6,7 @@
   fill: $text;
   background: $default;
 
-  &:hover, &:focus, {
+  &:hover, &:focus {
     border-color: transparent;
     color: $text;
     fill: $text;
@@ -27,7 +27,7 @@
   fill: $default;
   background: transparent;
 
-  &:hover, &:focus, {
+  &:hover, &:focus {
     border-color: $hover;
     color: $text;
     fill: $text;
@@ -74,10 +74,12 @@
 
 a.button,
 span.button,
+label.button,
 button.button,
 button[type="button"],
 button[type="reset"],
 button[type="submit"] {
+  display: inline-block;
   cursor: pointer;
   font: inherit;
   font-weight: bold;
@@ -92,13 +94,14 @@ button[type="submit"] {
   transition: all 0.3s ease-out;
 
   svg {
-    height: 0.875rem;
-    width: auto;
+    height: 1rem;
+    width: 1rem;
+    flex: 0 0 1rem;
   }
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 2px 2px $pearl-500;
+    box-shadow: 0 0 2px 2px $neutral-500;
   }
 
   &::-moz-focus-inner {
@@ -106,55 +109,74 @@ button[type="submit"] {
     padding: 0;
   }
 
-  @include fill($jade-500, $jade-700, $jade-900);
-  &.outline { @include outline($jade-500, $jade-700, $jade-500); }
-  &.flat { @include flat($jade-500, $jade-700, $jade-900); }
+  &.full { width: 100%; }
+
+  @include fill($primary-500, $primary-700, $primary-900);
+  &.outline { @include outline($primary-500, $primary-700, $primary-500); }
+  &.flat { @include flat($primary-500, $primary-700, $primary-900); }
 
   // --- BUTTON COLOUR VARIANTS ---//
 
   // alt colour styling
   &.alt {
-    @include fill($amethyst-500, $amethyst-500, $amethyst-700);
-    &.outline { @include outline($amethyst-500, $amethyst-700, $amethyst-500); }
-    &.flat { @include flat($amethyst-500, $amethyst-300, $amethyst-700); }
+    @include fill($secondary-500, $secondary-500, $secondary-700);
+    &.outline { @include outline($secondary-500, $secondary-700, $secondary-500); }
+    &.flat { @include flat($secondary-500, $secondary-300, $secondary-700); }
+  }
+
+  &.success {
+    @include fill($neutral-900, $neutral-900, $neutral-900);
+    &.outline { @include fill($neutral-900, $neutral-900, $neutral-900); }
   }
 
   // alert colour styling
 
   &.alert {
-    @include fill($amber-100, $amber-100, $amber-300, $pearl-900);
+    @include fill($tertiary-100, $tertiary-100, $tertiary-300, $neutral-900);
 
     &.outline {
-      @include outline($amber-300, $amber-300, $amber-100, $pearl-900);
+      @include outline($tertiary-300, $tertiary-300, $tertiary-100, $neutral-900);
 
-      color: $pearl-900;
-      fill: $pearl-900;
+      color: $neutral-900;
+      fill: $neutral-900;
     }
 
-    &.flat { @include flat($amber-300, $amber-300, $amber-100); }
+    &.flat { @include flat($tertiary-300, $tertiary-300, $tertiary-100); }
   }
 
   // neg colour styling
 
   &.neg {
-    @include fill($ruby-500, $ruby-500, $ruby-700);
-    &.outline { @include outline($ruby-500, $ruby-700, $ruby-500); }
-    &.flat { @include flat($ruby-500, $ruby-500, $ruby-700); }
+    @include fill($neg-500, $neg-500, $neg-700);
+    &.outline { @include outline($neg-500, $neg-700, $neg-500); }
+    &.flat { @include flat($neg-500, $neg-500, $neg-700); }
   }
 
   // pos colour styling
 
   &.pos {
-    @include fill($emerald-500, $emerald-500, $emerald-700);
-    &.outline { @include outline($emerald-500, $emerald-700, $emerald-500); }
-    &.flat { @include flat($emerald-500, $emerald-500, $emerald-700); }
+    @include fill($pos-500, $pos-500, $pos-700);
+    &.outline { @include outline($pos-500, $pos-700, $pos-500); }
+    &.flat { @include flat($pos-500, $pos-500, $pos-700); }
+  }
+
+  &.dark {
+    @include fill($neutral-900, $primary-700, $neutral-700);
+    &.outline { @include outline($neutral-900, $primary-700, $neutral-900); }
+    &.flat { @include flat($neutral-900, $primary-500, $primary-700); }
+  }
+
+  &.light {
+    @include fill($neutral-50, $primary-300, $neutral-300, $black);
+    &.outline { @include outline($neutral-50, $primary-300, $neutral-50, $neutral-900); }
+    &.flat { @include flat($neutral-50, $primary-500, $primary-300); }
   }
 
   // --- KEEP LAST! subtle colour styling - to remain uneffected by color variants ---//
 
   &.icon {
     display: flex;
-    align-items: baseline;
+    align-items: center;
 
     &:not(.before):not(.after) {
       border-radius: 50%;
@@ -164,6 +186,7 @@ button[type="submit"] {
         top: 0;
         width: 1.125rem;
         height: 1.125rem;
+        flex: 0 0 1.125rem;
       }
 
       &.large {
@@ -172,6 +195,7 @@ button[type="submit"] {
         svg {
           width: 1.625rem;
           height: 1.625rem;
+          flex: 0 0 1.625rem;
         }
       }
 
@@ -181,6 +205,7 @@ button[type="submit"] {
         svg {
           width: 0.875rem;
           height: 0.875rem;
+          flex: 0 0 0.875rem;
         }
       }
 
@@ -201,24 +226,24 @@ button[type="submit"] {
   }
 
   &.subtle {
-    border-color: $pearl-300;
-    color: $pearl-900;
-    fill: $pearl-900;
+    border-color: $neutral-300;
+    color: $neutral-900;
+    fill: $neutral-900;
     background: white;
 
     &:hover, &:focus {
-      border-color: $pearl-300;
-      color: $pearl-900;
-      fill: $pearl-900;
-      background: $pearl-300;
+      border-color: $neutral-300;
+      color: $neutral-900;
+      fill: $neutral-900;
+      background: $neutral-300;
     }
 
 
     &:active, &.active {
-      border-color: $pearl-100;
-      color: $pearl-900;
-      fill: $pearl-900;
-      background: $pearl-100;
+      border-color: $neutral-100;
+      color: $neutral-900;
+      fill: $neutral-900;
+      background: $neutral-100;
     }
   }
 
@@ -235,6 +260,7 @@ button[type="submit"] {
     svg {
       width: 1.125rem;
       height: 1.125rem;
+      flex: 0 0 1.125rem;
     }
   }
 
@@ -251,6 +277,7 @@ button[type="submit"] {
     svg {
       width: 0.75rem;
       height: 0.75rem;
+      flex: 0 0 0.75rem;
     }
   }
 }

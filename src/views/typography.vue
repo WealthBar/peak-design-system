@@ -514,7 +514,130 @@
 </script>
 
 <style lang="scss" scoped>
-  @import 'base/variables.scss';
+
+  h1, .h1 {
+    font-weight: bold;
+    font-size: 1.625rem;
+    line-height: 2rem;
+    padding: 0;
+    margin: 2rem 0 1rem;
+
+    // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
+    // if using in apps use as @media #{$screen-width-medium} { … }
+    @mixin desktop {
+      font-size: 2.25rem;
+      line-height: 3rem;
+      margin: 3rem 0 1rem;
+    }
+
+    &:not(.mobile) {
+      @media #{$screen-width-medium} {
+        @include desktop;
+      }
+    }
+
+    &.desktop { @include desktop; }
+  }
+
+  h2, .h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    padding: 0;
+    margin: 1.875rem 0 1rem;
+
+    // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
+    // if using in apps use as @media #{$screen-width-medium} { … }
+    @mixin desktop {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+      margin: 2.25rem 0 1rem;
+    }
+
+    &:not(.mobile) {
+      @media #{$screen-width-medium} {
+        @include desktop;
+      }
+    }
+
+    &.desktop { @include desktop; }
+  }
+
+  h3, .h3 {
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    padding: 0;
+    margin: 1.75rem 0 1rem;
+
+    // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
+    // if using in apps use as @media #{$screen-width-medium} { … }
+    @mixin desktop {
+      font-size: 1.5rem;
+      line-height: 1.875rem;
+      margin: 1.875rem 0 1rem;
+    }
+
+    &:not(.mobile) {
+      @media #{$screen-width-medium} {
+        @include desktop;
+      }
+    }
+
+    &.desktop { @include desktop; }
+  }
+
+  h4, .h4 {
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    padding: 0;
+    margin: 1.5rem 0 1rem;
+
+    // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
+    // if using in apps use as @media #{$screen-width-medium} { … }
+    @mixin desktop {
+      font-size: 1.25rem;
+      line-height: 1.625rem;
+      margin: 1.625rem 0 1rem;
+    }
+
+    &:not(.mobile) {
+      @media #{$screen-width-medium} {
+        @include desktop;
+      }
+    }
+
+    &.desktop { @include desktop; }
+  }
+
+  h5, .h5 {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    padding: 0;
+    margin: 1.25rem 0 1rem;
+
+    // Desktop sizing done as SCSS mixin to allow for toggled sizing on any screen
+    // if using in apps use as @media #{$screen-width-medium} { … }
+    @mixin desktop {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      margin: 1.5rem 0 1rem;
+    }
+
+    &:not(.mobile) {
+      @media #{$screen-width-medium} {
+        @include desktop;
+      }
+    }
+
+    &.desktop { @include desktop; }
+  }
+
+  ul, ol {
+    list-style-position: inside;
+  }
 
   .typography-page {
     margin: 2rem 4rem;

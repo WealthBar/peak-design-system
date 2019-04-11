@@ -17,7 +17,6 @@
 </script>
 
 <style lang="scss" scoped>
-  @import 'base/variables';
 
   div {
     display: flex;
