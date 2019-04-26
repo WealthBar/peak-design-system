@@ -14,6 +14,11 @@ nav ul ul {
   list-style-type: circle;
 }
 
+p code {
+  background: $primary-50;
+  color: $primary-500;
+}
+
 pre {
   white-space: normal;
   word-wrap: normal;
@@ -27,15 +32,15 @@ pre {
     word-wrap: break-word;
     display: block;
     padding: 0.75rem;
-    background: $jade-50;
-    color: $jade-500;
+    background: $primary-50;
+    color: $primary-500;
     border-radius: 0.25rem;
-    border: 1px solid $jade-100;
+    border: 1px solid $primary-100;
 
     &.css {
-      background: $amethyst-50;
-      color: $amethyst-700;
-      border-color: $amethyst-300;
+      background: $secondary-50;
+      color: $secondary-700;
+      border-color: $secondary-300;
     }
   }
 }
@@ -43,8 +48,8 @@ pre {
 .toggle {
   display: inline-block;
   padding: 0;
-  color: $jade-500;
-  border: 1px solid $jade-500;
+  color: $primary-500;
+  border: 1px solid $primary-500;
   background: transparent;
   border-radius: 1rem;
   text-decoration: none;
@@ -61,7 +66,7 @@ pre {
     &:last-child:not([data-active="true"]) { padding-left: 0.25rem; }
 
     &[data-active="true"] {
-      background: $jade-500;
+      background: $primary-500;
       color: $white;
       padding: 0 0.5rem;
     }
