@@ -1,7 +1,6 @@
 <template>
-  <section>
-    <h3>Assante Connect Brand</h3>
-    <p>These colours are used across marketing, product, and beyond. These colours define our brand and play a large part in the visual identity of WealthBar.</p>
+  <section class="theme">
+    <p>These colours are used across marketing, product, and beyond. These colours define our brand and play a large part in the visual identity of Assante Connect.</p>
     <div class="colour-block dark primary">
       <strong>Blue</strong>
     </div>
@@ -89,11 +88,11 @@
     <div class="color-pallete">
       <div class="colour-block bg50">
         <strong>$bg-50</strong>
-        <span>#EBF4F1</span>
+        <span>#eaf5fd</span>
       </div>
       <div class="colour-block bg100">
         <strong>$bg-100</strong>
-        <span>#D2E6DE</span>
+        <span>#d3e6f4</span>
       </div>
     </div>
 
@@ -192,7 +191,7 @@
 </template>
 <style lang="scss" scoped>
   @import 'peak/theme/assante.scss';
-
+  .theme { padding-bottom: 2rem; }
   .colour-block {
     padding: 0.5rem;
     border-bottom: 1px solid $white;

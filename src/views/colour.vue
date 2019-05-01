@@ -9,26 +9,47 @@
 
     <h3>Colour Weight</h3>
     <p>In an effort to bulletproof our system of colours, we use weights from 50 to 900, similar to font weights. Weight is defined by the contrast ratio of the colour against white, allowing us to convey relevant weights across our entire colour palette. This means <code>$pos-50</code> and <code>$neg-50</code> should be pretty close in weight, even if they’re on opposite ends of the colour spectrum.</p>
-    <li><router-link to="./">WealthBar</router-link></li>
-    <li><router-link to="assante">Assante Connect</router-link></li>
-    <router-view></router-view>
+
+    <h3>Themes</h3>
+    <p>White label themes are use 1:1 colour matches to create a unique theme vairant based on the colours associated with the brand.</p>
+    <p>
+      <strong>Note for Devs:</strong> Using the generalized naming conventions for colours (<code>$primary-300</code>, <code>$bg-50</code>, <code>$tertiary-100</code>, etc) will automatically swap out colours based on the application build process. If you requirements state to use a specific colour regardless of theme the <code>$[name]-[weight]</code> convention will work (eg: <code>$jade-300</code>)
+    </p>
+    <sub-page-navigation :tabs="tabs" :activeTab="tab" @clicked="setTab" />
+    <wealthbar-theme v-if="tab === 'wealthbar'"/>
+    <assante-theme v-if="tab === 'assante'"/>
   </article>
 </template>
 <script>
-import wealthbar from './colour/index.vue'
-import assante from './colour/assante.vue'
 
-// const router = new VueRouter({
-//   routes: [
-//     { path: '/', component: User }
-//   ]
-// })
+import wealthbarTheme from './colour/wealthbar.vue';
+import assanteTheme from './colour/assante.vue';
+import SubPageNavigation from '@/components/sub-page-navigation';
 
 export default {
-  // routes: [
-  //   { path: '/colour', component: wealthbar  },
-  //   { path: '/colour/assante', component: assante },
-  // ]
+  components: { SubPageNavigation, wealthbarTheme, assanteTheme },
+  data() {
+    return {
+      tabs: [
+        {
+          name: 'Wealthbar',
+          route: 'wealthbar'
+        },
+        {
+          name: 'Assante Connect',
+          route: 'assante'
+        },
+      ],
+      tab: 'wealthbar'
+    };
+  },
+  methods: {
+    setTab(selectedTab) {
+      this.tab = selectedTab
+    },
+  },
 };
-
 </script>
+<style lang="scss" scoped>
+  .container { padding-bottom: 2rem; }
+</style>

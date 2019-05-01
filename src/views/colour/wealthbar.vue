@@ -1,6 +1,5 @@
 <template>
-  <section>
-    <h3>WealthBar Theme</h3>
+  <section class="theme">
     <p>These colours are used across marketing, product, and beyond. These colours define our brand and play a large part in the visual identity of WealthBar.</p>
     <div class="colour-block dark primary">
       <strong>Jade</strong>
@@ -191,7 +190,7 @@
   </section>
 </template>
 <style lang="scss" scoped>
-
+  .theme { padding-bottom: 2rem; }
   .colour-block {
     padding: 0.5rem;
     border-bottom: 1px solid $white;
