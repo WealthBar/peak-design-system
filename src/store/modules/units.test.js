@@ -12,7 +12,7 @@ test('Units module state', (t) => {
 });
 
 test('Units module getters/getSelectedUnit', (t) => {
-  const data = 'px';
+  const data = 'rem';
   store.state.units.units = data;
   t.equal(store.getters.getSelectedUnit, data, 'Gets the selected unit.');
   t.end();
