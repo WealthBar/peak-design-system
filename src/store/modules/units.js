@@ -2,7 +2,7 @@
 export default {
   state: {
     units: ['rem', 'px'],
-    selected: 'px',
+    selected: 'rem',
   },
 
   getters: {
