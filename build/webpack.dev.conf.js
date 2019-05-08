@@ -1,18 +1,17 @@
 
-const path = require('path');
+// const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
-const utils = require('./utils');
 const baseWebpackConfig = require('./webpack.base.conf');
 const config = require('../config');
 
 
-function resolve(dir) {
-  return path.join(__dirname, '..', dir);
-}
+// function resolve(dir) {
+//   return path.join(__dirname, '..', dir);
+// }
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach((name) => {
