@@ -17,7 +17,6 @@ test:
   stage: test
   services:
   script:
-  - npm install node-sass
   - yarn install
   - yarn run ci
   artifacts:

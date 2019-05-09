@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 COPY packages ./packages
 # Separately install node-sass with npm since it's a problem with yarn
-RUN yarn add node-sass
+# RUN yarn add node-sass
 RUN yarn install
 
 # Build webpack

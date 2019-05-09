@@ -8,7 +8,6 @@ const config = require('../config');
 const vueLoaderConfig = require('./vue-loader.conf');
 
 const devMode = process.env.NODE_ENV !== 'production';
-const configEnv = devMode ? config.dev.env : config.build.env;
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
@@ -48,7 +47,7 @@ module.exports = {
         use: [
           devMode ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
-          'postcss-loader',
+          // 'postcss-loader',
           {
             loader: 'sass-loader',
             options: {

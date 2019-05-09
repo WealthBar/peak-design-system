@@ -12,33 +12,29 @@ const utils = require('./utils');
 
 const env = config.build.env;
 
-// function resolve(dir) {
-//   return path.join(__dirname, '..', dir);
-// }
-
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('js/[name].[hash].js'),
-    chunkFilename: utils.assetsPath('js/[id].[hash].js')
+    chunkFilename: utils.assetsPath('js/[id].[hash].js'),
   },
   optimization: {
     // Should be able to remove with Webpack 5
     minimizer: [
       new OptimizeCSSAssetsPlugin({}),
-      new TerserWebpackPlugin({ sourceMap: true })
-    ]
+      new TerserWebpackPlugin({ sourceMap: true }),
+    ],
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
-      'process.env': env
+      'process.env': env,
     }),
     // extract css into its own file
     new MiniCssExtractPlugin({
-      filename: utils.assetsPath('css/[name].[contenthash].css')
+      filename: utils.assetsPath('css/[name].[contenthash].css'),
     }),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
@@ -50,14 +46,14 @@ const webpackConfig = merge(baseWebpackConfig, {
       minify: {
         removeComments: true,
         collapseWhitespace: true,
-        removeAttributeQuotes: true
+        removeAttributeQuotes: true,
         // more options:
         // https://github.com/kangax/html-minifier#options-quick-reference
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: 'dependency'
-    })
-  ]
+      chunksSortMode: 'dependency',
+    }),
+  ],
 });
 
 if (config.build.productionGzip) {
@@ -65,12 +61,10 @@ if (config.build.productionGzip) {
     new CompressionWebpackPlugin({
       asset: '[path].gz[query]',
       algorithm: 'gzip',
-      test: new RegExp(
-        `\\.(${config.build.productionGzipExtensions.join('|')})$`
-      ),
+      test: new RegExp(`\\.(${config.build.productionGzipExtensions.join('|')})$`),
       threshold: 10240,
-      minRatio: 0.8
-    })
+      minRatio: 0.8,
+    }),
   );
 }
 
