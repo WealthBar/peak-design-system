@@ -48,8 +48,6 @@ a, button, .link {
     svg { border-color: $primary-700; }
   }
 
-
-
   @mixin variant($default, $active, $hover) {
     color: $default;
     fill: $default;
@@ -69,8 +67,8 @@ a, button, .link {
   &.alert { @include variant($tertiary-300, $tertiary-300, $tertiary-100); }
   &.neg { @include variant($neg-500, $neg-500, $neg-700); }
   &.pos { @include variant($pos-500, $pos-500, $pos-700); }
-  &.light { @include variant($neutral-0, $primary-100, $primary-300); }
-  &.dark { @include variant($neutral-900, $primary-700, $primary-500); }
+  &.light { @include variant($neutral-0, $neutral-50, $neutral-100); }
+  &.dark { @include variant($neutral-900, $neutral-900, $neutral-700); }
   &.small { font-size: 0.875rem; }
 
   &.large {
@@ -80,4 +78,10 @@ a, button, .link {
 
   &.href-plain { text-decoration: none; }
   &.inherit { color: inherit; }
+
+  &:disabled, &.disabled {
+    fill: $neutral-500;
+    color: $neutral-500;
+    cursor: default;
+  }
 }

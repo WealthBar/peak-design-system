@@ -19,6 +19,16 @@
     fill: $text;
     background: $active;
   }
+
+  &:disabled, &.disabled {
+    border-color: $neutral-300;
+    color: $neutral-500;
+    font-weight: normal;
+    fill: $neutral-500;
+    background: $neutral-50;
+    outline: none;
+    cursor: default;
+  }
 }
 
 @mixin outline($default, $active, $hover, $text: white ) {
@@ -39,6 +49,16 @@
     color: $text;
     fill: $text;
     background: $active;
+  }
+
+  &:disabled, &.disabled {
+    border-color: $neutral-300;
+    color: $neutral-500;
+    font-weight: normal;
+    fill: $neutral-500;
+    background: $neutral-50;
+    outline: none;
+    cursor: default;
   }
 }
 
@@ -65,6 +85,16 @@
     color: $active;
     fill: $active;
     background: transparent;
+  }
+
+  &:disabled, &.disabled {
+    fill: $neutral-500;
+    color: $neutral-500;
+    font-weight: normal;
+    cursor: default;
+    background: transparent;
+    outline: none;
+    border: none;
   }
 }
 
@@ -244,6 +274,16 @@ button[type="submit"] {
       color: $neutral-900;
       fill: $neutral-900;
       background: $neutral-100;
+    }
+
+    &:disabled, &.disabled {
+      border-color: $neutral-300;
+      color: $neutral-500;
+      font-weight: normal;
+      fill: $neutral-500;
+      background: $neutral-50;
+      cursor: default;
+      outline: none;
     }
   }
 

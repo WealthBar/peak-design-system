@@ -396,6 +396,30 @@
       </div>
       <hr>
     </section>
+
+    <section>
+      <h3>Disabled Buttons</h3>
+      <div class="attributes">
+        <strong>Example</strong>
+        <div class="example">
+          <button disabled>Unstyled</button>
+          <button type="button" disabled>Fill</button>
+          <button type="button" class="outline" disabled>Outline</button>
+          <button type="button" class="flat" disabled>Flat</button>
+          <button type="button" class="subtle" disabled>Subtle</button>
+        </div>
+        <div class="code-sample">
+          <strong>Markup</strong>
+          <pre><code class="html">&lt;button disabled&gt;Unstyled&lt;/button&gt;
+          &lt;button type="button" disabled&gt;Fill&lt;/button&gt;
+          &lt;button type="button" class="outline" disabled&gt;Outline&lt;/button&gt;
+          &lt;button type="button" class="flat" disabled&gt;Flat&lt;/button&gt;
+          &lt;button type="button" class="subtle" disabled&gt;Subtle&lt;/button&gt;
+          </code></pre>
+        </div>
+      </div>
+      <hr>
+    </section>
   </article>
 </template>
 <script>
