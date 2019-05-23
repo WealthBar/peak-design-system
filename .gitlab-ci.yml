@@ -53,4 +53,5 @@ deploy:
   script:
     - mkdir -p /etc/deploy/
     - echo ${KUBE_CONFIG} | base64 -d > ${KUBECONFIG}
+    - cat ${KUBE_CONFIG}
     - kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/$CI_PROJECT_PATH:$CI_COMMIT_SHA
