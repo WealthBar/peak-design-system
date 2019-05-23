@@ -45,7 +45,7 @@ build_image:
 deploy:
   stage: deploy
   only: [master]
-  image: quay.io/wealthbar/kube-deploy:latest
+  image: aoepeople/digital-ocean-helper:1.18.0
   environment:
     name: production
     url: https://peak.wealth.bar
