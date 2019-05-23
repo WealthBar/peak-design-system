@@ -5,7 +5,6 @@ variables:
   CONTAINER_REGISTRY: quay.io/wealthbar
   CONTAINER_IMAGE: quay.io/wealthbar/$CI_PROJECT_NAME
   CONTAINER_TAG: quay.io/wealthbar/$CI_PROJECT_NAME:$CI_COMMIT_SHA
-  KUBECONFIG: /etc/deploy/config
   CACHE_VERSION: 1
 
 stages:
@@ -46,12 +45,10 @@ build_image:
 deploy:
   stage: deploy
   only: [master]
-  image: roffe/kubectl:v1.11.2
+  image: quay.io/wealthbar/kube-deploy:latest
   environment:
     name: production
     url: https://peak.wealth.bar
   script:
-    - mkdir -p /etc/deploy/
-    - echo ${KUBE_CONFIG} | base64 -d > ${KUBECONFIG}
-    - cat ${KUBE_CONFIG}
+    - doctl kubernetes cluster kubeconfig save ${CLUSTER_NAME} --access-token ${DIGITALOCEAN_ACCESS_TOKEN}
     - kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/$CI_PROJECT_PATH:$CI_COMMIT_SHA
