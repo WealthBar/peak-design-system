@@ -51,4 +51,4 @@ deploy:
     url: https://peak.wealth.bar
   script:
     - doctl kubernetes cluster kubeconfig save ${CLUSTER_NAME} --access-token ${DIGITALOCEAN_ACCESS_TOKEN}
-    - kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/$CI_PROJECT_PATH:$CI_COMMIT_SHA
+    - kubectl set image deployments/peak-deployment peak=$CONTAINER_TAG
