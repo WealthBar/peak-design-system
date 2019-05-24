@@ -78,7 +78,7 @@
       </div>
       <hr>
     </section>
-    <section>
+    <section id="primary">
       <h3>Primary Buttons</h3>
       <div class="attributes">
         <strong>Example</strong>
@@ -102,7 +102,7 @@
       <hr>
     </section>
 
-    <section>
+    <section id="alternate">
       <h3>Alternate Buttons</h3>
       <div class="attributes">
         <strong>Example</strong>
@@ -126,7 +126,7 @@
       <hr>
     </section>
 
-    <section>
+    <section id="alert">
       <h3>Alert Buttons</h3>
       <div class="attributes">
         <strong>Example</strong>
@@ -150,7 +150,7 @@
       <hr>
     </section>
 
-    <section>
+    <section id="negative">
       <h3>Negative Buttons</h3>
       <div class="attributes">
         <strong>Example</strong>
@@ -174,7 +174,7 @@
       <hr>
     </section>
 
-    <section>
+    <section id="positive">
       <h3>Positive Buttons</h3>
       <div class="attributes">
         <strong>Example</strong>
@@ -198,7 +198,7 @@
       <hr>
     </section>
 
-    <section>
+    <section id="icon">
       <h3>Icon Buttons</h3>
       <div class="attributes">
         <h4>Default</h4>
@@ -330,7 +330,7 @@
       </div>
       <hr>
     </section>
-    <section>
+    <section id="large">
       <h3>Large Buttons</h3>
       <div class="attributes">
         <strong>Example</strong>
@@ -363,7 +363,7 @@
       </div>
       <hr>
     </section>
-    <section>
+    <section id="small">
       <h3>Small Buttons</h3>
       <div class="attributes">
         <strong>Example</strong>
@@ -397,7 +397,7 @@
       <hr>
     </section>
 
-    <section>
+    <section id="disabled">
       <h3>Disabled Buttons</h3>
       <div class="attributes">
         <strong>Example</strong>
