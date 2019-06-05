@@ -10,22 +10,25 @@
     </div>
     <hr />
     <section>
+      <h2 id="units">Units in Peak: REMs vs Pixels</h2>
+      <p>We use REMs (Relavive em) to ensure our typography stays scalable in a responsive web world. The Peak base unit of measure is <code>1rem == 16px</code>, which means 2px is equal to 0.125rem, or 1/8 of a REM. Ideally we want to adhire to this <strong>1/8th rem scale</strong> as much as possible.</p>
+    </section>
+    <section>
       <h2 id="headers">Header Text</h2>
       <p>Headers create hierarchy in a layout and make scanning easy. Use them for content such as page titles or section titles. We have mobile and desktop header styles so that our typography is responsive to screen real estate. </p>
 
 
       <h3>H1 header</h3>
-      <hr>
       <div class="example">
-        <strong>Example</strong>
+        <!--  -->
         <div>
-          <h1 :class="getSelectedScreen">This is a super large header.</h1>
+          <h1 :class="getSelectedScreen">This is a super large H1 header.</h1>
         </div>
       </div>
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre><code class="html">&lt;h1&gt;This is a super large header.&lt;/h1&gt;</code></pre>
+          <pre><code class="html">&lt;h1&gt;This is a super large H1 header.&lt;/h1&gt;</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
@@ -44,19 +47,20 @@
         </div>
       </div>
 
+
+
       <h3>H2 header</h3>
-      <hr>
       <div class="example">
-        <strong>Example</strong>
+
         <div>
-          <h2 :class="getSelectedScreen">This is a huge header.</h2>
+          <h2 :class="getSelectedScreen">This is a huge H2 header.</h2>
         </div>
       </div>
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
           <pre>
-            <code class="html">&lt;h2&gt;This is a huge header.&lt;/h2&gt;</code>
+            <code class="html">&lt;h2&gt;This is a huge H2 header.&lt;/h2&gt;</code>
           </pre>
         </div>
         <div class="code-sample">
@@ -78,18 +82,17 @@
 
 
       <h3>H3 header</h3>
-      <hr>
       <div class="example">
-        <strong>Example</strong>
+
         <div>
-          <h3 :class="getSelectedScreen">This is a big header.</h3>
+          <h3 :class="getSelectedScreen">This is a big H3 header.</h3>
         </div>
       </div>
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
           <pre>
-            <code class="html">&lt;h3&gt;This is a big header.&lt;/h3&gt;</code>
+            <code class="html">&lt;h3&gt;This is a big H3 header.&lt;/h3&gt;</code>
           </pre>
         </div>
         <div class="code-sample">
@@ -110,18 +113,17 @@
       </div>
 
       <h3>H4 header</h3>
-      <hr>
       <div class="example">
-        <strong>Example</strong>
+
         <div>
-          <h4 :class="getSelectedScreen">This is a medium header.</h4>
+          <h4 :class="getSelectedScreen">This is a medium H4 header.</h4>
         </div>
       </div>
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
           <pre>
-            <code class="html">&lt;h4&gt;This is a medium header.&lt;/h4&gt;</code>
+            <code class="html">&lt;h4&gt;This is a medium H4 header.&lt;/h4&gt;</code>
           </pre>
         </div>
         <div class="code-sample">
@@ -142,18 +144,17 @@
       </div>
 
       <h3>H5 header</h3>
-      <hr>
       <div class="example">
-        <strong>Example</strong>
+
         <div>
-          <h5 :class="getSelectedScreen">This is a small header.</h5>
+          <h5 :class="getSelectedScreen">This is a small H5 header.</h5>
         </div>
       </div>
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
           <pre>
-            <code class="html">&lt;h5&gt;This is a small header.&lt;/h5&gt;</code>
+            <code class="html">&lt;h5&gt;This is a small H5 header.&lt;/h5&gt;</code>
           </pre>
         </div>
         <div class="code-sample">
@@ -179,9 +180,10 @@
       <p>Body text is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style classes that can be applied as needed to our base paragraph style.</p>
 
       <h3>Paragraph</h3>
-      <hr>
+      <p>Our base paragraph style is the foundation of our typography. All styles are variants of this style. It is also the default text style, meaning if no style is applied or specified, it should use this style.</p>
+
       <div class="example">
-        <strong>Example</strong>
+
         <div>
           <p>This is a paragraph.</p>
         </div>
@@ -201,13 +203,11 @@
           </pre>
         </div>
       </div>
-      <strong>Notes</strong>
-      <p>Our base paragraph style is the foundation of our typography. All styles are variants of this style. It is also the default text style, meaning if no style is applied or specified, it should use this style.</p>
 
       <h3>Large Text</h3>
-      <hr>
+      <p>Only designed to work when applied to a paragraph &lt;p&gt; element.</p>
       <div class="example">
-        <strong>Example</strong>
+
         <div>
           <p class="large">This is large paragraph text.</p>
         </div>
@@ -229,15 +229,15 @@
           </pre>
         </div>
       </div>
-      <strong>Notes</strong>
-      <p>Only designed to work when applied to a paragraph &lt;p&gt; element.</p>
+
 
       <h3>Small Text</h3>
-      <hr>
+      <p>Whether set as a class or as an inline element inherits basic sizing and spacing from the parent (eg: paragraph &lt;p&gt;) element.</p>
       <div class="example">
-        <strong>Example</strong>
+
         <div>
           <p class="small">This is small paragraph text.</p>
+          <br>
           <small>This is a small text block.</small>
         </div>
       </div>
@@ -255,13 +255,11 @@
           </pre>
         </div>
       </div>
-      <strong>Notes</strong>
-      <p>Small text, whether set as a class or as an inline element inherits basic sizing and spacing from the parent (eg: paragraph &lt;p&gt;) element.</p>
 
       <h3>Subtle Text</h3>
-      <hr>
+      <p>This style de-emphasizes sentences or paragraphs, such as for micro-copy, minor details, or information that isn’t useful for most users.</p>
       <div class="example">
-        <strong>Example</strong>
+
         <div>
           <p >This is <span class="subtle">subtle text</span> in a paragraph.</p>
         </div>
@@ -281,14 +279,13 @@
           </pre>
         </div>
       </div>
-      <strong>Notes</strong>
-      <p>This style de-emphasizes sentences or paragraphs, such as for micro-copy, minor details, or information that isn’t useful for most users.</p>
-
 
       <h3>Strong Text</h3>
-      <hr>
+      <p>This style provides additional emphasis to bring attention to a specific word or phrases; don’t use for entire sentences or paragraphs.
+        <br><strong>Don’t use the <span>&lt;b&gt;</span> tag, ever!</strong> 💀
+      </p>
       <div class="example">
-        <strong>Example</strong>
+
         <div>
           <p>This is <strong>strong text</strong> in a paragraph.</p>
         </div>
@@ -307,8 +304,7 @@
           </pre>
         </div>
       </div>
-      <strong>Notes</strong>
-      <p>This style provides additional emphasis to bring attention to a specific word or phrases; don’t use for entire sentences or paragraphs. <strong>Don’t use the <span>&lt;b&gt;</span> tag, ever!</strong> 💀</p>
+
     </section>
 
     <section>
@@ -316,15 +312,19 @@
       <p>Lists inherit the paragraph’s style and use the paragraph’s spacing between list items to improve readability. List items are indented {{unitValue(8)}}.</p>
 
       <h3>Bulleted List</h3>
-      <hr>
       <div class="example">
-        <strong>Example</strong>
+
         <div>
           <ul>
-            <li>Hey, here’s something that’s part of a list</li>
+            <li>Hey, here’s something that’s part of default list</li>
+            <li>This is the second item in the list. What should go here I wonder. Just enough to push it to two lines. There we go!</li>
+          </ul>
+          <ul class="bullet">
+            <li>Hey, here’s something that’s part of a bulleted list</li>
             <li>Here’s a long piece of text. What should go here I wonder. Just enough to push it to two lines. There we go!
-              <ul>
-                <li>Here’s an example of a nested list item.</li>
+              <ul class="bullet">
+                <li>This is a nested bulleted list</li>
+                <li>Let's have one more item</li>
               </ul>
             </li>
           </ul>
@@ -337,7 +337,17 @@
             <code class="html">&lt;ul&gt;
               &nbsp;&nbsp;&lt;li&gt;unordered list item&lt;/li&gt;
               &nbsp;&nbsp;&lt;li&gt;unordered list item&lt;/li&gt;
+            &lt;/ul&gt;
+
+            &lt;ul class="bullet"&gt;
               &nbsp;&nbsp;&lt;li&gt;unordered list item&lt;/li&gt;
+              &nbsp;&nbsp;&lt;li&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;unordered list item
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="bullet"&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;unordered list item&lt;/li&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;unordered list item&lt;/li&gt;
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+              &nbsp;&nbsp;&lt;/li&gt;
             &lt;/ul&gt;
           </code>
           </pre>
@@ -348,28 +358,26 @@
             <code class="css">ul {
               &nbsp;&nbsp;padding: 0;
               &nbsp;&nbsp;margin: 0 0 1rem;
-              &nbsp;&nbsp;list-style-position: inside;
-            }
+              &nbsp;&nbsp;list-style: none;
+              }
 
-            li {
-              &nbsp;&nbsp;margin: 0 0 0.25rem;
+              ul.bullet { list-style: disc; }
+
+              li ul {
+              &nbsp;&nbsp;padding-left: 1rem;
+              &nbsp;&nbsp;margin: 0;
             }</code>
           </pre>
         </div>
       </div>
 
       <h3>Numbered List</h3>
-      <hr>
       <div class="example">
-        <strong>Example</strong>
+
         <div>
           <ol>
-            <li>Hey, here’s something that’s part of a list</li>
-            <li>Here’s a long piece of text. What should go here I wonder. Just enough to push it to two lines. There we go!
-              <ol>
-                <li>Here’s an example of a nested list item.</li>
-              </ol>
-            </li>
+            <li>Hey, here’s something that’s part of an ordered list</li>
+            <li>Here’s a long piece of text. What should go here I wonder. Just enough to push it to two lines. There we go!</li>
           </ol>
         </div>
       </div>
@@ -380,7 +388,6 @@
             <code class="html">&lt;ol&gt;
             &nbsp;&nbsp;&lt;li&gt;first list item&lt;/li&gt;
             &nbsp;&nbsp;&lt;li&gt;second list item&lt;/li&gt;
-            &nbsp;&nbsp;&lt;li&gt;third list item&lt;/li&gt;
             &lt;/ol&gt;</code>
           </pre>
         </div>
@@ -390,11 +397,12 @@
             <code class="css">ol {
               &nbsp;&nbsp;padding: 0;
               &nbsp;&nbsp;margin: 0 0 1rem;
-              &nbsp;&nbsp;list-style-position: inside;
-            }
+              &nbsp;&nbsp;list-style: decimal;
+              }
 
-            li {
-              &nbsp;&nbsp;margin: 0 0 0.25rem;
+              li ol {
+              &nbsp;&nbsp;padding-left: 1rem;
+              &nbsp;&nbsp;margin: 0;
             }</code>
           </pre>
         </div>
@@ -402,8 +410,9 @@
     </section>
 
     <section>
-      <h2 id="line-length">Line length</h2>
-      <p>Our ideal range is from 60 to 80 characters. The character count in a line of text has a big impact on readability. <a href="#">See further reading on the topic.</a> </p>
+      <h2>General Reccomendations</h2>
+      <h3 id="line-length">Line length</h3>
+      <p>Our ideal range is from 60 to 80 characters. The character count in a line of text has a big impact on readability.</p>
 
       <h4>Test it out</h4>
       <p>Copy & paste the Lorem Ipsum paragraph below into your design file or code. You should only have 1 asterisk* since asterisks* are at 60 and 80 characters. If you have 0 or 2, that means your text is too narrow or too wide. </p>
@@ -429,7 +438,6 @@
           <p class="line-length-104">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam* condimentum, magna* at eleifend facilisis, tellus justo finibus est, sed maximus diam urna quis eros. Aliquam dictum ultrices magna.</p>
         </div>
       </div>
-      <hr />
     </section>
     <section>
       <h2 id="font-stack">Font Stack</h2>
@@ -438,7 +446,6 @@
       <pre><code class="css">font-family: "GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;</code></pre>
 
       <h3>Alternative glyphs</h3>
-      <hr>
       <p>This refers to alphanumeric characters where we’ve deviated from GT Walsheim’s default for readability reasons.</p>
 
       <p>Across the board we use the alternate Y, both lower and uppercase. </p>
@@ -452,7 +459,6 @@
         </div>
       </div>
       <h3>Tabular Figures</h3>
-      <hr>
       <p>For lists and tables with numbers, we use tabular figures (also known as monospaced numbers) for all text. This will ensure vertical alignment among numbers and special characters.</p>
       <div class="alternative-glyphs-container">
         <div class="alternative-examples">
@@ -626,6 +632,12 @@
     &.desktop { @include desktop; }
   }
 
+  section {
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid $neutral-300;
+    }
+
   ul, ol {
     list-style-position: inside;
   }
@@ -683,10 +695,27 @@
   .example {
     margin-bottom: 1rem;
 
-    > :last-child {
-      background: $pearl-50;
-      border: 1px solid $pearl-300;
-      border-radius: 0.25rem;
+    > div {
+      background: $tertiary-50;
+      border-top: 1px solid $white;
+      border-bottom: 1px solid $white;
+      > h1, > h2, > h3, > h4, > h5, > h6 {
+        background: $white;
+        border-top: 1px solid $tertiary-100;
+        border-bottom: 1px solid $tertiary-100;
+      }
+      > p, > strong, > small, > .small, > .subtle {
+        background: $white;
+        border-bottom: 1px solid $tertiary-100;
+      }
+      ul, ol {
+        background: $tertiary-50;
+        border-bottom: 1px solid $tertiary-100;
+        li {
+          background: $white;
+          ul, ol { border-bottom: none; }
+        }
+      }
     }
   }
 
