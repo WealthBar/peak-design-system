@@ -9,18 +9,6 @@
       </div>
     </div>
     <hr />
-    <div>
-      <label for="unit-toggle">Units</label>
-      <button id="unit-toggle" class="toggle" @click="toggleUnit">
-        <span v-for="unit in getUnits" :key="unit" :data-active="getSelectedUnit === unit">{{unit}}</span>
-      </button>
-    </div>
-    <div></div>
-      <label for="screen-toggle">Screen Size</label>
-      <button id="screen-toggle"class="toggle" @click="toggleScreen">
-        <span v-for="screen in getScreens" :key="screen" :data-active="getSelectedScreen === screen">{{screen}}</span>
-      </button>
-    </div>
     <section>
       <h2 id="headers">Header Text</h2>
       <p>Headers create hierarchy in a layout and make scanning easy. Use them for content such as page titles or section titles. We have mobile and desktop header styles so that our typography is responsive to screen real estate. </p>
@@ -501,7 +489,7 @@
       };
     },
     computed: {
-      ...mapGetters(['getSelectedUnit', 'getUnits', 'getSelectedScreen', 'getScreens']),
+      ...mapGetters(['getSelectedUnit', 'getSelectedScreen']),
 
     },
     methods: {
@@ -511,12 +499,6 @@
           return `${value / ratio}${this.getSelectedUnit}`;
         }
         return `${value}${this.getSelectedUnit}`;
-      },
-      toggleUnit() {
-        this.setUnit(this.getSelectedUnit == 'px' ? 'rem': 'px');
-      },
-      toggleScreen() {
-        this.setScreen(this.getSelectedScreen == 'desktop' ? 'mobile': 'desktop');
       },
     },
   };

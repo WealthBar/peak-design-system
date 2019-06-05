@@ -6,7 +6,21 @@
           <router-link to="/"><img class="wb-logo" src="~@/assets/logo.svg"></router-link>
         </div>
 
+
         <nav class="main-navigation">
+          <div>
+            <label for="unit-toggle">Units</label>
+            <button id="unit-toggle" class="toggle" @click="toggleUnit">
+              <span v-for="unit in getUnits" :key="unit" :data-active="getSelectedUnit === unit">{{unit}}</span>
+            </button>
+          </div>
+          <div>
+            <label for="screen-toggle">Screen Size</label>
+            <button id="screen-toggle"class="toggle" @click="toggleScreen">
+              <span v-for="screen in getScreens" :key="screen" :data-active="getSelectedScreen === screen">{{screen}}</span>
+            </button>
+          </div>
+          <hr>
           <ul>
             <li><router-link to="typography">Typography</router-link></li>
             <ul v-if="$route.path === '/typography'">
@@ -40,6 +54,7 @@
   import '@/lib/icons/arrow-up';
   import '@/lib/icons/search';
   import BackToTop from './components/back_to_top';
+  import { mapGetters, mapActions } from '@/lib/vue';
 
 
   export default {
@@ -48,7 +63,18 @@
         navOpen: true,
       };
     },
+    computed: {
+      ...mapGetters(['getSelectedUnit', 'getUnits', 'getSelectedScreen', 'getScreens']),
+
+    },
     methods: {
+      ...mapActions(['setScreen', 'setUnit']),
+      toggleUnit() {
+        this.setUnit(this.getSelectedUnit == 'px' ? 'rem': 'px');
+      },
+      toggleScreen() {
+        this.setScreen(this.getSelectedScreen == 'desktop' ? 'mobile': 'desktop');
+      },
       toggleNav() {
         this.navOpen = !this.navOpen;
       },
@@ -103,7 +129,7 @@
 
   .main-navigation {
     list-style: none;
-
+    > div { padding: 0 1rem; }
     a {
       text-decoration: none;
       color: $pearl-900;
@@ -121,9 +147,7 @@
   }
 
   .logo {
-    padding: 1rem;
-    margin-bottom: 0.5rem;
-
+    padding: 1rem 1rem 0;
     a:hover,
     a:active,
     a:focus {
