@@ -217,7 +217,7 @@
     dom-event-types "^1.0.0"
     lodash "^4.17.4"
 
-"@wealthbar/peak-base.css@^1.0.6":
+"@wealthbar/peak-base.css@>=1.0.0":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@wealthbar/peak-base.css/-/peak-base.css-1.0.6.tgz#5ba151db7c972885fb807cf67da942ec2bf274e2"
   integrity sha512-lKRl79R+X1OPL/q0NCq5yzsba1CAPttrF76MWXOBkiPMff0p4XtfbfBtbNnmkl5M0NqsK0qtGgJL5FomgogPtQ==
