@@ -190,7 +190,7 @@
   </section>
 </template>
 <style lang="scss" scoped>
-  @import 'peak/theme/assante.scss';
+  @import "~@wealthbar/peak-base.css/theme/assante.scss";
   .theme { padding-bottom: 2rem; }
   .colour-block {
     padding: 0.5rem;
