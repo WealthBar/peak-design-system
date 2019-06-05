@@ -46,7 +46,7 @@ pre {
 }
 
 .toggle {
-  display: inline-block;
+  display: block;
   padding: 0;
   color: $primary-500;
   border: 1px solid $primary-500;
@@ -55,7 +55,12 @@ pre {
   text-decoration: none;
   line-height: 1.5rem;
   cursor: pointer;
-
+  &.inline-label {
+    @media #{$screen-width-medium} {
+      display: inline-block;
+      margin-left: 0.5rem;
+    }
+  }
   span {
     padding: 0 0.5rem;
     border-radius: 1rem;
@@ -72,3 +77,5 @@ pre {
     }
   }
 }
+
+label { display: inline-block; }

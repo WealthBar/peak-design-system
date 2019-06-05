@@ -51,7 +51,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              data: `@import "peak/theme/wealthbar.scss";`,
+              data: `@import "~@wealthbar/peak-base.css/theme/wealthbar.scss";`,
               includePaths: ['src/styles'],
             },
           },

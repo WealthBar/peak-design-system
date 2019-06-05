@@ -1,8 +1,8 @@
 
 export default {
   state: {
-    screens: ['Desktop', 'Mobile'],
-    selectedScreen: 'Desktop',
+    screens: ['desktop', 'mobile'],
+    selectedScreen: 'desktop',
   },
 
   getters: {

@@ -2,7 +2,7 @@
   <article class="container">
     <h1>Links &amp; Buttons</h1>
     <section>
-      <h2>Links</h2>
+      <h3>Links</h3>
       <div class="attributes">
         <strong>Example</strong>
         <div class="example">
@@ -21,7 +21,7 @@
       <hr>
     </section>
     <section>
-      <h2>Link Variants</h2>
+      <h3>Link Variants</h3>
       <div class="attributes">
         <strong>Example</strong>
         <div class="example">
@@ -54,7 +54,7 @@
       <hr>
     </section>
     <section>
-      <h2>Buttons</h2>
+      <h3>Buttons</h3>
       <div class="attributes">
         <strong>Example</strong>
         <div class="example">

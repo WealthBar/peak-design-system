@@ -5,12 +5,7 @@
         <div class="logo">
           <router-link to="/"><img class="wb-logo" src="~@/assets/logo.svg"></router-link>
         </div>
-        <div class="units-contianer">
-          <label slot="label" class="label-inline">Units</label>
-          <div class="unit-selector" slot="content">
-            <a class="button outline small"  v-for="unit in getUnits" @click="setUnit(unit)" :key="unit" :class="{'active': getSelectedUnit === unit}">{{unit}}</a>
-          </div>
-        </div>
+
         <nav class="main-navigation">
           <ul>
             <li><router-link to="typography">Typography</router-link></li>
@@ -44,7 +39,6 @@
 <script>
   import '@/lib/icons/arrow-up';
   import '@/lib/icons/search';
-  import { mapActions, mapGetters } from '@/lib/vue';
   import BackToTop from './components/back_to_top';
 
 
@@ -54,14 +48,7 @@
         navOpen: true,
       };
     },
-    computed: {
-      ...mapGetters(['getSelectedUnit', 'getUnits']),
-    },
     methods: {
-      ...mapActions(['setUnit']),
-      toggleUnits(unit) {
-        this.selected = unit;
-      },
       toggleNav() {
         this.navOpen = !this.navOpen;
       },
@@ -71,7 +58,8 @@
 </script>
 
 <style lang="scss">
-  @import 'peak.scss';
+  @import '~@wealthbar/peak-base.css';
+  @import 'peak-states';
 
   main {
     margin: auto;
@@ -82,14 +70,10 @@
 
     &.nav-open {
       .side-menu { width: auto; }
-      // .page { transform: translateX(17.5rem); }
     }
   }
 
   .side-menu {
-    // position: absolute;
-    // top: 0;
-    // left: 0;
     width: 0;
     flex: 0 0 auto;
     min-height: 100vh;

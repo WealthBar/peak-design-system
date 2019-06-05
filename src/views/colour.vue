@@ -32,7 +32,7 @@ export default {
     return {
       tabs: [
         {
-          name: 'Wealthbar',
+          name: 'WealthBar',
           route: 'wealthbar'
         },
         {

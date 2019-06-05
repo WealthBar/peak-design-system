@@ -5,15 +5,22 @@
       <p>WealthBar’s typography is a balance between readability and personality. Using our set of defined typography styles ensures consistent quality and a clear hierarchy.</p>
       <div class="download-typography">
         <p>Instantly apply on-point typography! 👌🏾</p>
-        <button type="button" href="#">Download the CSS file</button>
+        <button type="button" href="https://www.npmjs.com/package/@wealthbar/peak-base.css">Install the Peak Package</button>
       </div>
     </div>
     <hr />
-    <strong>Screen Size</strong>
-      <button class="toggle" @click="isMobile = !isMobile">
-        <span :data-active="!isMobile">Desktop</span>
-        <span :data-active="isMobile">Mobile</span>
+    <div>
+      <label for="unit-toggle">Units</label>
+      <button id="unit-toggle" class="toggle" @click="toggleUnit">
+        <span v-for="unit in getUnits" :key="unit" :data-active="getSelectedUnit === unit">{{unit}}</span>
       </button>
+    </div>
+    <div></div>
+      <label for="screen-toggle">Screen Size</label>
+      <button id="screen-toggle"class="toggle" @click="toggleScreen">
+        <span v-for="screen in getScreens" :key="screen" :data-active="getSelectedScreen === screen">{{screen}}</span>
+      </button>
+    </div>
     <section>
       <h2 id="headers">Header Text</h2>
       <p>Headers create hierarchy in a layout and make scanning easy. Use them for content such as page titles or section titles. We have mobile and desktop header styles so that our typography is responsive to screen real estate. </p>
@@ -24,7 +31,7 @@
       <div class="example">
         <strong>Example</strong>
         <div>
-          <h1 :class="[ isMobile ? 'mobile' : 'desktop' ]">This is a super large header.</h1>
+          <h1 :class="getSelectedScreen">This is a super large header.</h1>
         </div>
       </div>
       <div class="attributes">
@@ -34,7 +41,7 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre v-if="isMobile">
+          <pre v-if="getSelectedScreen == 'mobile'">
             <code class="css">font-size: {{unitValue(26)}};
             line-height: {{unitValue(32)}};
             font-weight: 500;
@@ -54,7 +61,7 @@
       <div class="example">
         <strong>Example</strong>
         <div>
-          <h2 :class="[ isMobile ? 'mobile' : 'desktop' ]">This is a huge header.</h2>
+          <h2 :class="getSelectedScreen">This is a huge header.</h2>
         </div>
       </div>
       <div class="attributes">
@@ -66,7 +73,7 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre v-if="isMobile" >
+          <pre v-if="getSelectedScreen == 'mobile'" >
             <code class="css">font-size: {{unitValue(24)}};
             line-height: {{unitValue(30)}};
             font-weight: 500;
@@ -87,7 +94,7 @@
       <div class="example">
         <strong>Example</strong>
         <div>
-          <h3 :class="[ isMobile ? 'mobile' : 'desktop' ]">This is a big header.</h3>
+          <h3 :class="getSelectedScreen">This is a big header.</h3>
         </div>
       </div>
       <div class="attributes">
@@ -99,7 +106,7 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre v-if="isMobile">
+          <pre v-if="getSelectedScreen == 'mobile'">
             <code class="css">font-size: {{unitValue(22)}};
             line-height: {{unitValue(28)}};
             font-weight: 500;
@@ -119,7 +126,7 @@
       <div class="example">
         <strong>Example</strong>
         <div>
-          <h4 :class="[ isMobile ? 'mobile' : 'desktop' ]">This is a medium header.</h4>
+          <h4 :class="getSelectedScreen">This is a medium header.</h4>
         </div>
       </div>
       <div class="attributes">
@@ -131,7 +138,7 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre v-if="isMobile">
+          <pre v-if="getSelectedScreen == 'mobile'">
             <code class="css">font-size: {{unitValue(18)}};
             line-height: {{unitValue(24)}};
             font-weight: 500;
@@ -151,7 +158,7 @@
       <div class="example">
         <strong>Example</strong>
         <div>
-          <h5 :class="[ isMobile ? 'mobile' : 'desktop' ]">This is a small header.</h5>
+          <h5 :class="getSelectedScreen">This is a small header.</h5>
         </div>
       </div>
       <div class="attributes">
@@ -163,7 +170,7 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre v-if="isMobile">
+          <pre v-if="getSelectedScreen == 'mobile'">
             <code class="css">font-size: {{unitValue(16)}};
             line-height: {{unitValue(22)}};
             font-weight: 500;
@@ -484,7 +491,6 @@
   import '@/lib/icons/close';
   import '@/lib/icons/check';
   import { mapGetters, mapActions } from '@/lib/vue';
-  import toggleView from '../components/toggle_view';
 
   export default {
     data() {
@@ -492,23 +498,26 @@
         name: 'typography',
         title: 'Typography',
         isMobile: false,
-        isPx: false,
       };
     },
     computed: {
       ...mapGetters(['getSelectedUnit', 'getUnits', 'getSelectedScreen', 'getScreens']),
+
     },
     methods: {
-      ...mapActions(['setScreen', 'setUnits']),
+      ...mapActions(['setScreen', 'setUnit']),
       unitValue(value, ratio = 16) {
         if (this.getSelectedUnit === 'rem') {
           return `${value / ratio}${this.getSelectedUnit}`;
         }
         return `${value}${this.getSelectedUnit}`;
       },
-    },
-    components: {
-      toggleView,
+      toggleUnit() {
+        this.setUnit(this.getSelectedUnit == 'px' ? 'rem': 'px');
+      },
+      toggleScreen() {
+        this.setScreen(this.getSelectedScreen == 'desktop' ? 'mobile': 'desktop');
+      },
     },
   };
 </script>
@@ -645,7 +654,7 @@
 
   .typography-intro {
     position: relative;
-    display: flex;
+    @media #{$screen-width-medium} { display: flex; }
 
     > p { flex: 1 1 100%; }
   }
