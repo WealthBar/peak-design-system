@@ -237,15 +237,15 @@
 
         <div>
           <p class="small">This is small paragraph text.</p>
-          <br>
-          <small>This is a small text block.</small>
+          <p>Regular text <small>(This is a small text block)</small> wrapping the small text.</p>
         </div>
       </div>
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
           <pre>
-            <code class="html">&lt;p class="small"&gt;This is small paragraph text.&lt;/p&gt;<br>&lt;small&gt;This is a small text block.&lt;/small&gt;</code>
+            <code class="html">&lt;p class="small"&gt;This is small paragraph text.&lt;/p&gt;
+              &lt;p&gt;Regular text &lt;small&gt;(This is a small text block)&lt;/small&gt; wrapping the small text.&lt;/p&gt;</code>
           </pre>
         </div>
         <div class="code-sample">
@@ -311,7 +311,7 @@
       <h2 id="lists">Lists</h2>
       <p>Lists inherit the paragraph’s style and use the paragraph’s spacing between list items to improve readability. List items are indented {{unitValue(8)}}.</p>
 
-      <h3>Bulleted List</h3>
+      <h3>Unordered List</h3>
       <div class="example">
 
         <div>
@@ -371,7 +371,7 @@
         </div>
       </div>
 
-      <h3>Numbered List</h3>
+      <h3>Ordered List</h3>
       <div class="example">
 
         <div>
@@ -694,11 +694,10 @@
 
   .example {
     margin-bottom: 1rem;
-
     > div {
       background: $tertiary-50;
-      border-top: 1px solid $white;
-      border-bottom: 1px solid $white;
+      border-top: 1px solid $tertiary-100;
+      border-bottom: 1px solid $tertiary-100;
       > h1, > h2, > h3, > h4, > h5, > h6 {
         background: $white;
         border-top: 1px solid $tertiary-100;
@@ -710,10 +709,14 @@
       }
       ul, ol {
         background: $tertiary-50;
+        border-top: none;
         border-bottom: 1px solid $tertiary-100;
         li {
           background: $white;
-          ul, ol { border-bottom: none; }
+          ul, ol {
+            border-top: 1px solid $tertiary-100;
+            border-bottom: none;
+          }
         }
       }
     }
