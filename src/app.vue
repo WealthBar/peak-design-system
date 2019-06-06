@@ -2,35 +2,34 @@
   <main>
     <div id="app-view" :class="{'nav-open': navOpen}">
       <div class="side-menu">
-        <div class="logo">
+        <div class="menu-header">
           <router-link to="/"><img class="wb-logo" src="~@/assets/logo.svg"></router-link>
-        </div>
 
-
-        <nav class="main-navigation">
-          <div>
+          <div class="toggles">
             <label for="unit-toggle">Units</label>
             <button id="unit-toggle" class="toggle" @click="toggleUnit">
               <span v-for="unit in getUnits" :key="unit" :data-active="getSelectedUnit === unit">{{unit}}</span>
             </button>
-          </div>
-          <div>
+
             <label for="screen-toggle">Screen Size</label>
             <button id="screen-toggle"class="toggle" @click="toggleScreen">
               <span v-for="screen in getScreens" :key="screen" :data-active="getSelectedScreen === screen">{{screen}}</span>
             </button>
           </div>
           <hr>
+        </div>
+
+        <nav class="main-navigation">
           <ul>
             <li><router-link to="typography">Typography</router-link></li>
             <ul v-if="$route.path === '/typography'">
+              <li class="secondary-link"><a href="#units">Units</a></li>
               <li class="secondary-link"><a href="#headers">Headers Text</a></li>
               <li class="secondary-link"><a href="#body">Body Text</a></li>
-              <li class="secondary-link coming-soon"><a href="#links">Links (Coming soon!)</a></li>
               <li class="secondary-link"><a href="#lists">Lists</a></li>
               <li class="secondary-link"><a href="#line-length">Line Length</a></li>
               <li class="secondary-link"><a href="#font-stack">Font Stack</a></li>
-              <li class="secondary-link"><a href="#measurements">Measurements</a></li>
+
             </ul>
             <li><router-link to="colour">Colour</router-link></li>
             <li><router-link to="buttons">Links &amp; Buttons</router-link></li>
@@ -103,10 +102,10 @@
     width: 0;
     flex: 0 0 auto;
     min-height: 100vh;
-    overflow: hidden;
+    // overflow: hidden;
     transition: all 0.3s ease-out;
-    background-color: $pearl-50;
-    border-right: 1px solid $pearl-100;
+    background-color: $neutral-50;
+    border-right: 1px solid $neutral-100;
   }
 
   .units-contianer {
@@ -129,7 +128,7 @@
 
   .main-navigation {
     list-style: none;
-    > div { padding: 0 1rem; }
+
     a {
       text-decoration: none;
       color: $pearl-900;
@@ -146,12 +145,21 @@
     ul { list-style: none; }
   }
 
-  .logo {
-    padding: 1rem 1rem 0;
+  .menu-header {
+      // background-color: $neutral-50;
+      // position: sticky;
+      // top: 0px;
+      // z-index: 10;
     a:hover,
     a:active,
     a:focus {
       background-color: transparent;
+    }
+    .toggles {padding: 0 1rem;}
+    .wb-logo {
+      height: 1.6rem;
+      width: 10rem;
+      margin: 1rem 1rem 0;
     }
   }
 

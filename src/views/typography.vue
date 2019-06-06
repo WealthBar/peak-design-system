@@ -10,12 +10,45 @@
     </div>
     <hr />
     <section>
-      <h2 id="units">Units in Peak: REMs vs Pixels</h2>
-      <p>We use REMs (Relavive em) to ensure our typography stays scalable in a responsive web world. The Peak base unit of measure is <code>1rem == 16px</code>, which means 2px is equal to 0.125rem, or 1/8 of a REM. Ideally we want to adhire to this <strong>1/8th rem scale</strong> as much as possible.</p>
+      <h2 id="units">Units in Peak: use rem!</h2>
+      <p>We use rems (Relative EMs) to ensure our typography stays scalable in a responsive web world. Peak's base unit of measure is <code>1rem</code> == <code class="alt">16px</code>. Too put it another way <strong>2px is equal to 0.125rem</strong>, or <strong>1/8 of a rem</strong>. Ideally we want to adhire to this 1/8th rem scale as much as possible.</p>
+      <p>Here's some additional notes to keep in mind:</p>
+      <ul class="bullet">
+        <li>Use <strong>1/4 rem increments</strong> (<code>0</code> - <code>0.25</code> - <code>0.5</code> - <code>0.75</code> - <code>1</code>) when possible.</li>
+        <li>Always use rems for <code>padding</code> and <code>margin</code>.</li>
+        <li>Opt for rems as sizing for <code>svg</code> &amp; <code>img</code> when possible.</li>
+        <li>Use pixels for anything smaller then <code>0.125rem</code>. Eg: <code class="alt">1px</code> for hairline borders.</li>
+      </ul>
+      <table class="convert">
+        <th colspan="9"><h4 class="no-margin">PX to REM conversion chart</h4></th>
+        <tr>
+          <td><code class="alt">px</code></td>
+          <td><code class="alt">2</code></td>
+          <td><code class="alt">4</code></td>
+          <td><code class="alt">6</code></td>
+          <td><code class="alt">8</code></td>
+          <td><code class="alt">10</code></td>
+          <td><code class="alt">12</code></td>
+          <td><code class="alt">14</code></td>
+          <td><code class="alt">16</code></td>
+        </tr>
+        <tr>
+          <td><code>rem</code></td>
+          <td><code>0.125</code></td>
+          <td><code>0.25</code></td>
+          <td><code>0.375</code></td>
+          <td><code>0.5</code></td>
+          <td><code>0.625</code></td>
+          <td><code>0.75</code></td>
+          <td><code>0.875</code></td>
+          <td><code>1</code></td>
+        </tr>
+      </table>
+
     </section>
     <section>
       <h2 id="headers">Header Text</h2>
-      <p>Headers create hierarchy in a layout and make scanning easy. Use them for content such as page titles or section titles. We have mobile and desktop header styles so that our typography is responsive to screen real estate. </p>
+      <p>Headers create hierarchy in a layout and make scanning easy. Use them for content such as page titles or section titles. We have mobile and desktop header styles so that our typography is responsive to screen real estate.</p>
 
 
       <h3>H1 header</h3>
@@ -33,21 +66,19 @@
         <div class="code-sample">
           <strong>Style</strong>
           <pre v-if="getSelectedScreen == 'mobile'">
-            <code class="css">font-size: {{unitValue(26)}};
+            <code class="css" :class="getSelectedUnit">font-size: {{unitValue(26)}};
             line-height: {{unitValue(32)}};
             font-weight: 500;
             margin: {{unitValue(26)}} {{unitValue(0)}} {{unitValue(16)}};</code>
           </pre>
           <pre v-else>
-            <code class="css">font-size: {{unitValue(36)}};
+            <code class="css" :class="getSelectedUnit">font-size: {{unitValue(36)}};
             line-height: {{unitValue(48)}};
             font-weight: 500;
             margin: {{unitValue(36)}} {{unitValue(0)}} {{unitValue(16)}};</code>
           </pre>
         </div>
       </div>
-
-
 
       <h3>H2 header</h3>
       <div class="example">
@@ -66,13 +97,13 @@
         <div class="code-sample">
           <strong>Style</strong>
           <pre v-if="getSelectedScreen == 'mobile'" >
-            <code class="css">font-size: {{unitValue(24)}};
+            <code class="css" :class="getSelectedUnit">font-size: {{unitValue(24)}};
             line-height: {{unitValue(30)}};
             font-weight: 500;
             margin: {{unitValue(24)}} {{unitValue(0)}} {{unitValue(16)}};</code>
           </pre>
           <pre v-else>
-            <code class="css">font-size: {{unitValue(30)}};
+            <code class="css" :class="getSelectedUnit">font-size: {{unitValue(30)}};
             line-height: {{unitValue(36)}};
             font-weight: 500;
             margin: {{unitValue(30)}} {{unitValue(0)}} {{unitValue(16)}};</code>
@@ -98,13 +129,13 @@
         <div class="code-sample">
           <strong>Style</strong>
           <pre v-if="getSelectedScreen == 'mobile'">
-            <code class="css">font-size: {{unitValue(22)}};
+            <code class="css" :class="getSelectedUnit">font-size: {{unitValue(22)}};
             line-height: {{unitValue(28)}};
             font-weight: 500;
             margin: {{unitValue(22)}} {{unitValue(0)}} {{unitValue(16)}};</code>
           </pre>
           <pre v-else>
-            <code class="css">font-size: {{unitValue(24)}};
+            <code class="css" :class="getSelectedUnit">font-size: {{unitValue(24)}};
             line-height: {{unitValue(30)}};
             font-weight: 500;
             margin: {{unitValue(24)}} {{unitValue(0)}} {{unitValue(16)}};</code>
@@ -129,13 +160,13 @@
         <div class="code-sample">
           <strong>Style</strong>
           <pre v-if="getSelectedScreen == 'mobile'">
-            <code class="css">font-size: {{unitValue(18)}};
+            <code class="css" :class="getSelectedUnit">font-size: {{unitValue(18)}};
             line-height: {{unitValue(24)}};
             font-weight: 500;
             margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(16)}};</code>
           </pre>
           <pre v-else>
-            <code class="css">font-size: {{unitValue(20)}};
+            <code class="css" :class="getSelectedUnit">font-size: {{unitValue(20)}};
             line-height: {{unitValue(26)}};
             font-weight: 500;
             margin: {{unitValue(20)}} {{unitValue(0)}} {{unitValue(16)}};</code>
@@ -160,13 +191,13 @@
         <div class="code-sample">
           <strong>Style</strong>
           <pre v-if="getSelectedScreen == 'mobile'">
-            <code class="css">font-size: {{unitValue(16)}};
+            <code class="css" :class="getSelectedUnit">font-size: {{unitValue(16)}};
             line-height: {{unitValue(22)}};
             font-weight: 500;
             margin: {{unitValue(16)}} {{unitValue(0)}} {{unitValue(16)}};</code>
           </pre>
           <pre v-else>
-            <code class="css">font-size: {{unitValue(18)}};
+            <code class="css" :class="getSelectedUnit">font-size: {{unitValue(18)}};
             line-height: {{unitValue(24)}};
             font-weight: 500;
             margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(16)}};</code>
@@ -196,7 +227,7 @@
         <div class="code-sample">
           <strong>Style</strong>
           <pre>
-            <code class="css">font-size: {{unitValue(16)}};
+            <code class="css" :class="getSelectedUnit">font-size: {{unitValue(16)}};
             line-height: {{unitValue(22)}};
             font-weight: 300;
             margin: {{unitValue(0)}} {{unitValue(0)}} {{unitValue(16)}};</code>
@@ -222,7 +253,7 @@
         <div class="code-sample">
           <strong>Style</strong>
           <pre>
-            <code class="css">font-size: {{unitValue(18)}};
+            <code class="css" :class="getSelectedUnit">font-size: {{unitValue(18)}};
             line-height: {{unitValue(24)}};
             font-weight: 300;
             margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(18)}};</code>
@@ -251,7 +282,7 @@
         <div class="code-sample">
           <strong>Style</strong>
           <pre>
-            <code class="css">font-size: {{unitValue(14)}};</code>
+            <code class="css" :class="getSelectedUnit">font-size: {{unitValue(14)}};</code>
           </pre>
         </div>
       </div>
@@ -274,7 +305,7 @@
         <div class="code-sample">
           <strong>Style</strong>
           <pre>
-            <code class="css">color: rgba(55, 55, 63, 0.77);
+            <code class="css" :class="getSelectedUnit">color: rgba(55, 55, 63, 0.77);
             // 77% of $pearl-700; //</code>
           </pre>
         </div>
@@ -300,11 +331,31 @@
         <div class="code-sample">
           <strong>Style</strong>
           <pre>
-            <code class="css">font-weight: 500;</code>
+            <code class="css" :class="getSelectedUnit">font-weight: 500;</code>
           </pre>
         </div>
       </div>
-
+      <h3>No Margins</h3>
+      <p>Default margins on any header or block element (eg: <code>&lt;h2&gt;</code> or <code>&lt;p&gt;</code>) can be removed by adding a class of <code>no-margin</code> to it.</p>
+      <div class="example">
+        <div>
+          <h3 class="no-margin">This is H3 element has no margin.</h3>
+        </div>
+      </div>
+      <div class="attributes">
+        <div class="code-sample">
+          <strong>Markup</strong>
+          <pre>
+            <code class="html">&lt;h3 class="no-margin&gt;This is H3 element has no margin.&lt;/h3&gt;</code>
+          </pre>
+        </div>
+        <div class="code-sample">
+          <strong>Style</strong>
+          <pre>
+            <code class="css" :class="getSelectedUnit">margin: 0;</code>
+          </pre>
+        </div>
+      </div>
     </section>
 
     <section>
@@ -355,16 +406,16 @@
         <div class="code-sample">
           <strong>Style</strong>
           <pre>
-            <code class="css">ul {
+            <code class="css" :class="getSelectedUnit">ul {
               &nbsp;&nbsp;padding: 0;
-              &nbsp;&nbsp;margin: 0 0 1rem;
+              &nbsp;&nbsp;margin: 0 0 {{unitValue(16)}};
               &nbsp;&nbsp;list-style: none;
               }
 
               ul.bullet { list-style: disc; }
 
               li ul {
-              &nbsp;&nbsp;padding-left: 1rem;
+              &nbsp;&nbsp;padding-left: {{unitValue(16)}};
               &nbsp;&nbsp;margin: 0;
             }</code>
           </pre>
@@ -394,14 +445,14 @@
         <div class="code-sample">
           <strong>Style</strong>
           <pre>
-            <code class="css">ol {
+            <code class="css" :class="getSelectedUnit">ol {
               &nbsp;&nbsp;padding: 0;
-              &nbsp;&nbsp;margin: 0 0 1rem;
+              &nbsp;&nbsp;margin: 0 0 {{unitValue(16)}};
               &nbsp;&nbsp;list-style: decimal;
               }
 
               li ol {
-              &nbsp;&nbsp;padding-left: 1rem;
+              &nbsp;&nbsp;padding-left: {{unitValue(16)}};
               &nbsp;&nbsp;margin: 0;
             }</code>
           </pre>
@@ -473,10 +524,6 @@
       </div>
 
 
-    </section>
-    <section>
-      <h2 id="measurements">Measurements</h2>
-      <p>We use REM to ensure our typography stays <button>scalable</button>  in a responsive web world. Our base REM is 16px, which means 2px is equal to 0.125rem, or 1/8rem. </p>
     </section>
   </article>
 </template>
@@ -642,6 +689,23 @@
     list-style-position: inside;
   }
 
+  .convert {
+    width: 100%;
+    margin: 0 0 1rem;
+    @media #{$screen-width-medium} { table-layout: fixed; }
+    h4 {
+      text-align: left;
+    }
+    td {
+      text-align: center;
+      padding: 0.125rem;
+    }
+    code {
+      display: block;
+      padding: 0.125rem;
+    }
+  }
+
   .typography-page {
     margin: 2rem 4rem;
   }
@@ -693,11 +757,12 @@
   }
 
   .example {
-    margin-bottom: 1rem;
+
     > div {
       background: $tertiary-50;
       border-top: 1px solid $tertiary-100;
       border-bottom: 1px solid $tertiary-100;
+      margin-bottom: 1rem;
       > h1, > h2, > h3, > h4, > h5, > h6 {
         background: $white;
         border-top: 1px solid $tertiary-100;
@@ -705,7 +770,9 @@
       }
       > p, > strong, > small, > .small, > .subtle {
         background: $white;
+        border-top: 1px solid $tertiary-100;
         border-bottom: 1px solid $tertiary-100;
+        &:first-child { border-top: none; }
       }
       ul, ol {
         background: $tertiary-50;
@@ -719,6 +786,10 @@
           }
         }
       }
+    }
+    .no-margin {
+      margin: 0 !important;
+      border: none;
     }
   }
 
