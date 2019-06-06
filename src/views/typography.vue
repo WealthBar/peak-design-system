@@ -53,10 +53,7 @@
 
       <h3>H1 header</h3>
       <div class="example">
-        <!--  -->
-        <div>
-          <h1 :class="getSelectedScreen">This is a super large H1 header.</h1>
-        </div>
+        <h1 :class="getSelectedScreen">This is a super large H1 header.</h1>
       </div>
       <div class="attributes">
         <div class="code-sample">
@@ -82,10 +79,7 @@
 
       <h3>H2 header</h3>
       <div class="example">
-
-        <div>
-          <h2 :class="getSelectedScreen">This is a huge H2 header.</h2>
-        </div>
+        <h2 :class="getSelectedScreen">This is a huge H2 header.</h2>
       </div>
       <div class="attributes">
         <div class="code-sample">
@@ -114,10 +108,7 @@
 
       <h3>H3 header</h3>
       <div class="example">
-
-        <div>
-          <h3 :class="getSelectedScreen">This is a big H3 header.</h3>
-        </div>
+        <h3 :class="getSelectedScreen">This is a big H3 header.</h3>
       </div>
       <div class="attributes">
         <div class="code-sample">
@@ -145,10 +136,7 @@
 
       <h3>H4 header</h3>
       <div class="example">
-
-        <div>
-          <h4 :class="getSelectedScreen">This is a medium H4 header.</h4>
-        </div>
+        <h4 :class="getSelectedScreen">This is a medium H4 header.</h4>
       </div>
       <div class="attributes">
         <div class="code-sample">
@@ -176,10 +164,7 @@
 
       <h3>H5 header</h3>
       <div class="example">
-
-        <div>
-          <h5 :class="getSelectedScreen">This is a small H5 header.</h5>
-        </div>
+        <h5 :class="getSelectedScreen">This is a small H5 header.</h5>
       </div>
       <div class="attributes">
         <div class="code-sample">
@@ -214,10 +199,7 @@
       <p>Our base paragraph style is the foundation of our typography. All styles are variants of this style. It is also the default text style, meaning if no style is applied or specified, it should use this style.</p>
 
       <div class="example">
-
-        <div>
-          <p>This is a paragraph.</p>
-        </div>
+        <p>This is a paragraph.</p>
       </div>
       <div class="attributes">
         <div class="code-sample">
@@ -238,10 +220,7 @@
       <h3>Large Text</h3>
       <p>Only designed to work when applied to a paragraph &lt;p&gt; element.</p>
       <div class="example">
-
-        <div>
-          <p class="large">This is large paragraph text.</p>
-        </div>
+        <p class="large">This is large paragraph text.</p>
       </div>
       <div class="attributes">
         <div class="code-sample">
@@ -265,11 +244,8 @@
       <h3>Small Text</h3>
       <p>Whether set as a class or as an inline element inherits basic sizing and spacing from the parent (eg: paragraph &lt;p&gt;) element.</p>
       <div class="example">
-
-        <div>
-          <p class="small">This is small paragraph text.</p>
-          <p>Regular text <small>(This is a small text block)</small> wrapping the small text.</p>
-        </div>
+        <p class="small">This is small paragraph text.</p>
+        <p>Regular text <small>(This is a small text block)</small> wrapping the small text.</p>
       </div>
       <div class="attributes">
         <div class="code-sample">
@@ -290,10 +266,7 @@
       <h3>Subtle Text</h3>
       <p>This style de-emphasizes sentences or paragraphs, such as for micro-copy, minor details, or information that isn’t useful for most users.</p>
       <div class="example">
-
-        <div>
-          <p >This is <span class="subtle">subtle text</span> in a paragraph.</p>
-        </div>
+        <p >This is <span class="subtle">subtle text</span> in a paragraph.</p>
       </div>
       <div class="attributes">
         <div class="code-sample">
@@ -316,10 +289,7 @@
         <br><strong>Don’t use the <span>&lt;b&gt;</span> tag, ever!</strong> 💀
       </p>
       <div class="example">
-
-        <div>
-          <p>This is <strong>strong text</strong> in a paragraph.</p>
-        </div>
+        <p>This is <strong>strong text</strong> in a paragraph.</p>
       </div>
       <div class="attributes">
         <div class="code-sample">
@@ -338,9 +308,7 @@
       <h3>No Margins</h3>
       <p>Default margins on any header or block element (eg: <code>&lt;h2&gt;</code> or <code>&lt;p&gt;</code>) can be removed by adding a class of <code>no-margin</code> to it.</p>
       <div class="example">
-        <div>
-          <h3 class="no-margin">This is H3 element has no margin.</h3>
-        </div>
+        <h3 class="no-margin">This is H3 element has no margin.</h3>
       </div>
       <div class="attributes">
         <div class="code-sample">
@@ -364,22 +332,19 @@
 
       <h3>Unordered List</h3>
       <div class="example">
-
-        <div>
-          <ul>
-            <li>Hey, here’s something that’s part of default list</li>
-            <li>This is the second item in the list. What should go here I wonder. Just enough to push it to two lines. There we go!</li>
-          </ul>
-          <ul class="bullet">
-            <li>Hey, here’s something that’s part of a bulleted list</li>
-            <li>Here’s a long piece of text. What should go here I wonder. Just enough to push it to two lines. There we go!
-              <ul class="bullet">
-                <li>This is a nested bulleted list</li>
-                <li>Let's have one more item</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+        <ul>
+          <li>Hey, here’s something that’s part of default list</li>
+          <li>This is the second item in the list. What should go here I wonder. Just enough to push it to two lines. There we go!</li>
+        </ul>
+        <ul class="bullet">
+          <li>Hey, here’s something that’s part of a bulleted list</li>
+          <li>Here’s a long piece of text. What should go here I wonder. Just enough to push it to two lines. There we go!
+            <ul class="bullet">
+              <li>This is a nested bulleted list</li>
+              <li>Let's have one more item</li>
+            </ul>
+          </li>
+        </ul>
       </div>
       <div class="attributes">
         <div class="code-sample">
@@ -424,13 +389,10 @@
 
       <h3>Ordered List</h3>
       <div class="example">
-
-        <div>
-          <ol>
-            <li>Hey, here’s something that’s part of an ordered list</li>
-            <li>Here’s a long piece of text. What should go here I wonder. Just enough to push it to two lines. There we go!</li>
-          </ol>
-        </div>
+        <ol>
+          <li>Hey, here’s something that’s part of an ordered list</li>
+          <li>Here’s a long piece of text. What should go here I wonder. Just enough to push it to two lines. There we go!</li>
+        </ol>
       </div>
       <div class="attributes">
         <div class="code-sample">
@@ -685,10 +647,6 @@
     border-bottom: 1px solid $neutral-300;
     }
 
-  ul, ol {
-    list-style-position: inside;
-  }
-
   .convert {
     width: 100%;
     margin: 0 0 1rem;
@@ -711,9 +669,7 @@
   }
 
   .typography-intro {
-    position: relative;
     @media #{$screen-width-medium} { display: flex; }
-
     > p { flex: 1 1 100%; }
   }
 
@@ -725,7 +681,6 @@
     border: 1px solid $pearl-100;
     margin: 0 2rem;
     padding: 0.5rem;
-    // width: 14rem;
     border-radius: 2px;
     background-color: $white;
     z-index: 2;
@@ -757,33 +712,30 @@
   }
 
   .example {
-
-    > div {
-      background: $tertiary-50;
+    background: $tertiary-50;
+    border-top: 1px solid $tertiary-100;
+    border-bottom: 1px solid $tertiary-100;
+    margin-bottom: 1rem;
+    > h1, > h2, > h3, > h4, > h5, > h6 {
+      background: $white;
       border-top: 1px solid $tertiary-100;
       border-bottom: 1px solid $tertiary-100;
-      margin-bottom: 1rem;
-      > h1, > h2, > h3, > h4, > h5, > h6 {
+    }
+    > p, > strong, > small, > .small, > .subtle {
+      background: $white;
+      border-top: 1px solid $tertiary-100;
+      border-bottom: 1px solid $tertiary-100;
+      &:first-child { border-top: none; }
+    }
+    ul, ol {
+      background: $tertiary-50;
+      border-top: none;
+      border-bottom: 1px solid $tertiary-100;
+      li {
         background: $white;
-        border-top: 1px solid $tertiary-100;
-        border-bottom: 1px solid $tertiary-100;
-      }
-      > p, > strong, > small, > .small, > .subtle {
-        background: $white;
-        border-top: 1px solid $tertiary-100;
-        border-bottom: 1px solid $tertiary-100;
-        &:first-child { border-top: none; }
-      }
-      ul, ol {
-        background: $tertiary-50;
-        border-top: none;
-        border-bottom: 1px solid $tertiary-100;
-        li {
-          background: $white;
-          ul, ol {
-            border-top: 1px solid $tertiary-100;
-            border-bottom: none;
-          }
+        ul, ol {
+          border-top: 1px solid $tertiary-100;
+          border-bottom: none;
         }
       }
     }
