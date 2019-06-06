@@ -1,12 +1,14 @@
-$container-padding: 3rem;
+// $container-padding: 3rem;
 
-.container {
-  width: 100%;
-  max-width: $xlarge-width + ($container-padding * 2); // add in padding to account for it in width of container.
-  margin: 0 auto;
-  padding: 0 $container-padding / 2;
-  @media #{$screen-width-medium} { padding: 0 $container-padding; }
-}
+// .container {
+//   width: 100%;
+//   max-width: $xlarge-width + ($container-padding * 2); // add in padding to account for it in width of container.
+//   margin: 0 auto;
+//   padding: 0 $container-padding / 2;
+//   @media #{$screen-width-medium} { padding: 0 $container-padding; }
+// }
+
+@import 'containers';
 
 nav ul ul {
   margin-top: 0.25rem;
