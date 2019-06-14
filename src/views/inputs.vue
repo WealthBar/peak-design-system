@@ -2,15 +2,20 @@
   <article class="container-small">
     <h1>Inputs</h1>
     <section>
-      <label for="search">Search</label>
-      <input id="search" type="search" name="search">
+      <label for="search-input">Search</label>
+      <input id="search-input" type="search" placeholder="search" name="search">
     </section>
     <section>
-      <label for="firstname">First name</label>
-      <input id="firstname" type="text" name="firstname" placeholder="First" required>
+      <label for="text-input">Text Input</label>
+      <input id="text-input" type="text" name="text-input" placeholder="placeholder" required>
+      <p class="input-text">This is help text</p>
 
-      <label for="lastname">Last name</label>
-      <input id="lastname" type="text" name="lastname" placeholder="Last" disabled>
+      <label for="disabled-input">Disabled Input</label>
+      <input id="disabled-input" type="text" name="disabled-input" placeholder="placeholder" disabled>
+
+      <label for="error-input">Error Input</label>
+      <input id="error-input" type="text" name="error-input" placeholder="placeholder" class="error">
+      <p class="input-text error">This is error text</p>
     </section>
 
     <section>
@@ -18,22 +23,20 @@
       <input type="password" id="text" name="text" placeholder="password">
     </section>
 
+
     <section class="half-width">
-
-
-      <label for="companywebsite">Company website</label>
-      <input id="companywebsite" v-model="companyWebsite" type="text" name="companywebsite" class="error">
-
-
-      <label for="companyphone">Company phone</label>
-      <input id="companyphone" v-model="companyPhone" type="text" name="companyphone">
-
-    </section>
-    <section class="half-width">
-
+      <div>
+        <label for="companyphone">Company phone</label>
+        <input id="companyphone" v-model="companyPhone" type="text" name="companyphone">
+      </div>
+      <div>
         <label for="streetaddress">Street address</label>
         <input id="streetaddress" v-model="streetAddress" type="text" name="streetaddress">
-
+      </div>
+      <div>
+        <label for="streetaddress">Street address</label>
+        <input id="streetaddress" v-model="streetAddress" type="text" name="streetaddress">
+      </div>
     </section>
     <section>
 
@@ -67,7 +70,8 @@
     </section>
     <hr>
     <section>
-      <textarea></textarea>
+      <label for="textarea">Textarea</label>
+      <textarea id="textarea"></textarea>
     </section>
     <section>
       <input id="check" name="checked" type="checkbox" checked>
@@ -85,5 +89,25 @@
   export default { };
 </script>
 <style lang="scss" scoped>
+.half-width {
+  display: flex;
+  > * {
+    margin-right: 0.75rem;
+    &:last-child { margin-right: 0; }
+  }
+  @supports(display: grid){
+    display: grid;
+    // grid-auto-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, 80rem);
+    grid-template-rows: auto;
+    grid-column-gap: 0.75rem;
+    > * { margin: 0; }
+  }
+}
 
+.input-text {
+  font-size: 0.875rem;
+  margin: 0;
+  &.error { color: $neg-500; }
+}
 </style>

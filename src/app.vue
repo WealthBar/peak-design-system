@@ -12,7 +12,7 @@
             </button>
 
             <label for="screen-toggle">Screen Size</label>
-            <button id="screen-toggle"class="toggle" @click="toggleScreen">
+            <button id="screen-toggle" class="toggle" @click="toggleScreen">
               <span v-for="screen in getScreens" :key="screen" :data-active="getSelectedScreen === screen">{{screen}}</span>
             </button>
           </div>
@@ -34,6 +34,7 @@
             <li><router-link to="colour">Colour</router-link></li>
             <li><router-link to="buttons">Links &amp; Buttons</router-link></li>
             <li ><router-link to="inputs">Inputs</router-link></li>
+            <li ><router-link to="svg">SVG Icons</router-link></li>
           </ul>
         </nav>
       </div>

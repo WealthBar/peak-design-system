@@ -233,7 +233,7 @@
         <div class="code-sample">
           <strong>Markup</strong>
           <pre><code class="html">&lt;button class="icon"&gt;Unstyled&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
-          &lt;button type="button" class="icon after"&gt;Fill&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
+          &lt;button type="button" class="icon"&gt;Fill&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
           &lt;button type="button" class="outline"&gt;Outline&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
           &lt;button type="button" class="flat"&gt;Flat&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
           &lt;button type="button" class="subtle"&gt;Subtle&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
