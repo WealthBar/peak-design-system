@@ -205,28 +205,28 @@
         <strong>Example</strong>
         <div class="example">
           <button class="icon">
-            <svg viewBox="0 0 16 16" transform="translate(1.000000, 0)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
             </svg>
           </button>
           <button type="button" class="icon">
-            <svg viewBox="0 0 16 16" transform="translate(1.000000, 0)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
             </svg>
           </button>
           <button type="button" class="outline icon">
-            <svg viewBox="0 0 16 16" transform="translate(1.000000, 0)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
             </svg>
           </button>
           <button type="button" class="flat icon">
-            <svg viewBox="0 0 16 16" transform="translate(1.000000, 0)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
             </svg>
           </button>
           <button type="button" class="subtle icon">
-            <svg viewBox="0 0 16 16" transform="translate(1.000000, 0)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
             </svg>
           </button>
         </div>
@@ -245,32 +245,32 @@
         <div class="example">
           <button class="icon after">
             Unstyled
-            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
             </svg>
           </button>
           <button type="button" class="icon after">
             Fill
-            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
             </svg>
           </button>
           <button type="button" class="outline icon after">
             Outline
-            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
             </svg>
           </button>
           <button type="button" class="flat icon after">
             Flat
-            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
             </svg>
           </button>
           <button type="button" class="subtle icon after">
             Subtle
-            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
             </svg>
           </button>
         </div>
@@ -288,32 +288,32 @@
         <strong>Example</strong>
         <div class="example">
           <button class="icon before">
-            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
             </svg>
             Unstyled
           </button>
           <button type="button" class="icon before">
-            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
             </svg>
             Fill
           </button>
           <button type="button" class="outline icon before">
-            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
             </svg>
             Outline
           </button>
           <button type="button" class="flat icon before">
-            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
             </svg>
             Flat
           </button>
           <button type="button" class="subtle icon before">
-            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
             </svg>
             Subtle
           </button>
@@ -341,13 +341,13 @@
           <button type="button" class="flat large">Flat</button>
           <button type="button" class="subtle large">Subtle</button>
           <button type="button" class="large icon after">Fill
-            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
             </svg>
           </button>
           <button type="button" class="large icon">
-            <svg viewBox="0 0 16 16" transform="translate(1, 0)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
             </svg>
           </button>
         </div>
@@ -374,13 +374,13 @@
           <button type="button" class="flat small">Flat</button>
           <button type="button" class="subtle small">Subtle</button>
           <button type="button" class="small icon after">Fill
-            <svg viewBox="0 0 16 16" transform="translate(1, 2)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
             </svg>
           </button>
           <button type="button" class="small icon">
-            <svg viewBox="0 0 16 16" transform="translate(1, 0)">
-              <path  d="M6.426 0l-.89.89 6.48 6.481H0V8.63h12.016l-6.48 6.48.89.89 8-8z"/>
+            <svg viewBox="0 0 32 32">
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
             </svg>
           </button>
         </div>

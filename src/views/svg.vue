@@ -1,6 +1,6 @@
 <template>
   <article class="container">
-    <h1>SVGs</h1>
+    <h1>SVG Icons</h1>
 
     <div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">

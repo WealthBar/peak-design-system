@@ -33,13 +33,12 @@
             </ul>
             <li><router-link to="colour">Colour</router-link></li>
             <li><router-link to="buttons">Links &amp; Buttons</router-link></li>
-            <li ><router-link to="inputs">Inputs</router-link></li>
+            <!-- <li ><router-link to="inputs">Inputs</router-link></li> -->
             <li ><router-link to="svg">SVG Icons</router-link></li>
           </ul>
         </nav>
       </div>
       <div class="page">
-        <!-- <button id="menu-toggle" type="button" class="outline" @click="toggleNav()">Menu</button> -->
         <router-view></router-view>
       </div>
 
