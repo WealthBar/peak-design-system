@@ -345,6 +345,6 @@ L16,14z"/>
 <polygon points="27,19 22,19 22,14 20,14 20,19 15,19 15,21 20,21 20,26 22,26 22,21 27,21 "/>
 <path d="M27,16V7.6L20.4,1H5v30h22v-7h-2v5H7V3h11v7h7v6H27z M20,3.4L24.6,8H20V3.4z"/>
 </svg>`,
-name: 'add-document'
-  }
+    name: 'add-document',
+  },
 ];

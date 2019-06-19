@@ -2,7 +2,7 @@
   <article class="container">
     <h1>SVG Icons</h1>
 
-    <div v-for="svg in svg" class="svg-item" :key="svg.name">
+    <div v-for="svg in svg" :key="svg.name" class="svg-item" :id="svg.name">
       <header>
         <i v-html="svg.icon"></i>
         <h4 class="no-margin">{{svg.name}}</h4>
@@ -15,6 +15,7 @@
 <script>
   import svg from './svg.data.js';
   export default {
+    components: { svg },
     data() {
       return { svg };
     },
