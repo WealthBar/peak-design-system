@@ -2,6 +2,23 @@
   <article class="container">
     <h1>Links &amp; Buttons</h1>
     <section>
+      <h3>Usage Guidelines</h3>
+        <h4>Choosing Colour</h4>
+          <table style="width:100%">
+            <thead>
+              <th>Colour</th>
+              <th>When to choose this colour</th>
+            </thead>
+            <tr>
+              <td>Primary</td>
+              <td>
+                  <p>The most commonly chosen colour</p>
+                  <p>The default colour choice</p>
+              </td>
+            </tr>
+          </table>
+    </section>
+    <section>
       <h3>Links</h3>
       <div class="attributes">
         <strong>Example</strong>
@@ -450,5 +467,23 @@ export default {};
   }
 
   .code-sample { margin-bottom: 1rem; }
+  table{
+    border: 1px solid $neutral-300;
+  }
+  th{
+    background: $neutral-50;
+    text-align: left;
+    border: 1px solid $neutral-300;
+    padding: 0.5rem;
+    font-weight: bold;
+  }
+  td{
+    text-align: left;
+    border: 1px solid $neutral-300;
+    padding: 0.5rem;
+    p{
+      margin-bottom: 0.25rem;
+    }
+  }
 
 </style>
