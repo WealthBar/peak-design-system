@@ -16,6 +16,75 @@
                   <p>The default colour choice</p>
               </td>
             </tr>
+            <tr>
+              <td>Alternate</td>
+              <td>
+                  <p>If the Primary colour cannot be chosen because of visual clashes</p>
+                  <p>If there is already a Primary button present</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Alert</td>
+              <td>
+                  <p>If actions are suggested, or for warnings</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Negative</td>
+              <td>
+                  <p>If actions are destructive, such as deleting an invite or removing a photo</p>
+                  <p>For important CTAs on marketing collateral</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Positive</td>
+              <td>
+                  <p>An additive action in direct contrast with destructive actions</p>
+              </td>
+            </tr>
+          </table>
+        <h4>Choosing Style</h4>
+          <table style="width:100%">
+            <thead>
+              <th>Style</th>
+              <th>When to choose this style</th>
+            </thead>
+            <tr>
+              <td>Primary</td>
+              <td>
+                  <p>For primary actions; the most important, common, and/or encouraged action</p>
+                  <p>Only use 1 primary button per screen</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Outline</td>
+              <td>
+                  <p>For mandatory, but secondary actions</p>
+                  <p>For actions that aren’t common and/or encouraged, but required</p>
+                  <p>For example, if there are two options, Agree and Disagree and the former is the expected answer, then Agree would use Primary and Disagree would use Outline</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Subtle</td>
+              <td>
+                  <p>For optional actions</p>
+                  <p>For example, if there are two buttons, `Send` and `Edit` for a message and editing it is optional, then `Send` would use Primary and `Edit` would use Subtle. If `Edit` was a mandatory action, then it would use the Outline style instead</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Flat</td>
+              <td>
+                  <p>When using a button doesn’t work</p>
+                  <p>When the screen already has a Primary and Outline button</p>
+                  <p>Often used for navigation</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Unstyled</td>
+              <td>
+                  <p>For button actions that should look like text links</p>
+              </td>
+            </tr>
           </table>
     </section>
     <section>
