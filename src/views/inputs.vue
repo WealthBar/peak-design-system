@@ -1,12 +1,14 @@
 <template>
-  <article class="container-small">
+  <article class="container">
     <h1>Inputs</h1>
     <section>
       <label for="search-input">Search</label>
       <input id="search-input" type="search" placeholder="search" name="search">
-    </section>
-    <section>
-      <label for="text-input">Text Input</label>
+
+      <label for="search-disabled-input">Search Disabled</label>
+      <input id="search-disabled-input" type="search" placeholder="search" name="search" disabled>
+
+      <label for="text-input">Text Input<span>Optional</span></label>
       <input id="text-input" type="text" name="text-input" placeholder="placeholder" required>
       <p class="input-text">This is help text</p>
 
@@ -15,59 +17,88 @@
 
       <label for="error-input">Error Input</label>
       <input id="error-input" type="text" name="error-input" placeholder="placeholder" class="error">
-      <p class="input-text error">This is error text</p>
-    </section>
+      <p class="input-text error">I am Error.</p>
 
-    <section>
       <label for="text">Password Input</label>
-      <input type="password" id="text" name="text" placeholder="password">
+      <input type="password" id="text" name="text">
     </section>
 
+    <label for="Birthday">Inline Input</label>
+    <div class="inline-input">
+      <input id="b-day" v-model="day" type="text" name="birthday" maxlength="2">
+      <input id="b-month" v-model="month" type="text" name="birthday-month" maxlength="2">
+      <input id="b-year" v-model="year" type="text" name="birthday-year" maxlength="4">
+    </div>
 
-    <section class="half-width">
-      <div>
-        <label for="companyphone">Company phone</label>
+    <section class="inline-input full">
+      <div class="one">
+        <label for="companyphone">Inline Input Full</label>
         <input id="companyphone" v-model="companyPhone" type="text" name="companyphone">
       </div>
-      <div>
-        <label for="streetaddress">Street address</label>
+      <div class="two">
+        <label for="streetaddress">Label Two</label>
         <input id="streetaddress" v-model="streetAddress" type="text" name="streetaddress">
+        <p class="input-text">This is help text</p>
       </div>
-      <div>
-        <label for="streetaddress">Street address</label>
+      <div class="three">
+        <label for="streetaddress">Third Label</label>
         <input id="streetaddress" v-model="streetAddress" type="text" name="streetaddress">
       </div>
     </section>
-    <section>
 
-      <label for="city">City</label>
-      <input id="city" v-model="city" type="text" name="city">
+    <label for="inline-button">Inline Button</label>
+    <div class="inline-button">
+      <input id="inline-button" v-model="inlineButton" type="text" name="inline-button">
+      <button type="button">Submit</button>
+    </div>
+    <p class="input-text">This is help text</p>
 
-      <div id="province-postal" class="profile-info-field">
-        <label for="province">Province</label>
-        <div class="select-container">
-          <select id="province" name="province" class="select-menu">
-            <option value="" />
-            <option value="AB">Alberta</option>
-            <option value="BC">British Columbia</option>
-            <option value="MB">Manitoba</option>
-            <option value="NB">New Brunswick</option>
-            <option value="NL">Newfoundland and Labrador</option>
-            <option value="NS">Nova Scotia</option>
-            <option value="ON">Ontario</option>
-            <option value="PE">Prince Edward Island</option>
-            <option value="QC">Quebec</option>
-            <option value="SK">Saskatchewan</option>
-            <option value="NT">Northwest Territories</option>
-            <option value="NU">Nunavut</option>
-            <option value="YT">Yukon</option>
-          </select>
-        </div>
+    <label for="province">Select</label>
+    <select id="province" name="province">
+      <option value="BC">British Columbia</option>
+      <option value="AB">Alberta</option>
+      <option value="MB">Manitoba</option>
+      <option value="NB">New Brunswick</option>
+      <option value="NL">Newfoundland and Labrador</option>
+      <option value="NS">Nova Scotia</option>
+      <option value="ON">Ontario</option>
+      <option value="PE">Prince Edward Island</option>
+      <option value="QC">Quebec</option>
+      <option value="SK">Saskatchewan</option>
+      <option value="NT">Northwest Territories</option>
+      <option value="NU">Nunavut</option>
+      <option value="YT">Yukon</option>
+    </select>
 
+    <label for="select-disabled">Disabled Select</label>
+    <select id="select-disabled" name="select-disabled" disabled>
+      <option value="AB">Alberta</option>
+      <option value="BC">British Columbia</option>
+      <option value="MB">Manitoba</option>
+      <option value="NB">New Brunswick</option>
+      <option value="NL">Newfoundland and Labrador</option>
+      <option value="NS">Nova Scotia</option>
+      <option value="ON">Ontario</option>
+      <option value="PE">Prince Edward Island</option>
+      <option value="QC">Quebec</option>
+      <option value="SK">Saskatchewan</option>
+      <option value="NT">Northwest Territories</option>
+      <option value="NU">Nunavut</option>
+      <option value="YT">Yukon</option>
+    </select>
+
+    <fieldset class="inline-input full">
+    <!-- <section class="multi-input"> -->
+      <div>
         <label for="postalcode">Postal code</label>
         <input id="postalcode" v-model="postalCode" type="text" name="postalcode" maxlength="7">
       </div>
-    </section>
+      <div>
+        <label for="country">Country</label>
+        <input id="country" v-model="country" type="text" name="country">
+      </div>
+    <!-- </section> -->
+    </fieldset>
     <hr>
     <section>
       <label for="textarea">Textarea</label>
@@ -89,25 +120,6 @@
   export default { };
 </script>
 <style lang="scss" scoped>
-.half-width {
-  display: flex;
-  > * {
-    margin-right: 0.75rem;
-    &:last-child { margin-right: 0; }
-  }
-  @supports(display: grid){
-    display: grid;
-    // grid-auto-columns: 1fr;
-    grid-template-columns: repeat(auto-fit, 80rem);
-    grid-template-rows: auto;
-    grid-column-gap: 0.75rem;
-    > * { margin: 0; }
-  }
-}
-
-.input-text {
-  font-size: 0.875rem;
-  margin: 0;
-  &.error { color: $neg-500; }
-}
+// #b-day, #b-month { max-width: 3rem; }
+// #b-year { max-width: 6rem; }
 </style>
