@@ -103,16 +103,41 @@
     <section>
       <label for="textarea">Textarea</label>
       <textarea id="textarea"></textarea>
-    </section>
-    <section>
+
       <input id="check" name="checked" type="checkbox" checked>
       <label for="check">Checkbox</label>
 
-    <div>
       <input id="uncheck" name="unchecked" type="checkbox">
       <label for="uncheck">UnCheckbox</label>
-    </div>
+
     </section>
+    <form>
+      <input type="radio" id="contactChoice1" name="contact" value="email">
+      <label for="contactChoice1">Email</label>
+      <input type="radio" id="contactChoice2" name="contact" value="phone">
+      <label for="contactChoice2">Phone</label>
+      <input type="radio" id="contactChoice3" name="contact" value="mail">
+      <label for="contactChoice3">Mail</label>
+    </form>
+
+    <div class="fancy-radio-button">
+        <input type="radio" id="other-countries-yes" @click="radioYes()" name="other-countries" />
+        <label for="other-countries-yes">Yes</label>
+      </div>
+
+    <div class="fancy-radio-button">
+      <input type="radio" id="other-countries-no" @click="radioNo()" name="other-countries" />
+      <label for="other-countries-no">No</label>
+    </div>
+
+    <input type="radio" id="other-countries-yes" class="fancy-radio-button" @click="radioYes()" name="other-countries" />
+    <label for="other-countries-yes">Yes</label>
+
+    <input type="radio" id="other-countries-no" @click="radioNo()" name="other-countries" />
+    <label for="other-countries-no">No</label>
+
+    <input type="radio" id="other-countries-maybe" class="fancy-radio-button" @click="radioNo()" name="other-countries" />
+    <label for="other-countries-maybe">Maybe</label>
 
   </article>
 </template>
@@ -120,6 +145,4 @@
   export default { };
 </script>
 <style lang="scss" scoped>
-// #b-day, #b-month { max-width: 3rem; }
-// #b-year { max-width: 6rem; }
 </style>
