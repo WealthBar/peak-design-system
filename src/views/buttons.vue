@@ -284,6 +284,54 @@
       <hr>
     </section>
 
+    <section id="dark">
+      <h3>Dark Buttons</h3>
+      <div class="attributes">
+        <strong>Example</strong>
+        <div class="example">
+          <button class="dark">Unstyled</button>
+          <button type="button" class="dark">Fill</button>
+          <button type="button" class="outline dark">Outline</button>
+          <button type="button" class="flat dark">Flat</button>
+          <button type="button" class="subtle dark">Subtle</button>
+        </div>
+        <div class="code-sample">
+          <strong>Markup</strong>
+          <pre><code class="html">&lt;button class="dark"&gt;Unstyled&lt;/button&gt;
+          &lt;button type="button" class="dark"&gt;Fill&lt;/button&gt;
+          &lt;button type="button" class="outline dark"&gt;Outline&lt;/button&gt;
+          &lt;button type="button" class="flat dark"&gt;Flat&lt;/button&gt;
+          &lt;button type="button" class="subtle dark"&gt;Subtle&lt;/button&gt;
+          </code></pre>
+        </div>
+      </div>
+      <hr>
+    </section>
+
+    <section id="light">
+      <h3>Light Buttons</h3>
+      <div class="attributes">
+        <strong>Example</strong>
+        <div class="example dark">
+          <button class="light">Unstyled</button>
+          <button type="button" class="light">Fill</button>
+          <button type="button" class="outline light">Outline</button>
+          <button type="button" class="flat light">Flat</button>
+          <button type="button" class="subtle light">Subtle</button>
+        </div>
+        <div class="code-sample">
+          <strong>Markup</strong>
+          <pre><code class="html">&lt;button class="light"&gt;Unstyled&lt;/button&gt;
+          &lt;button type="button" class="light"&gt;Fill&lt;/button&gt;
+          &lt;button type="button" class="outline light"&gt;Outline&lt;/button&gt;
+          &lt;button type="button" class="flat light"&gt;Flat&lt;/button&gt;
+          &lt;button type="button" class="subtle light"&gt;Subtle&lt;/button&gt;
+          </code></pre>
+        </div>
+      </div>
+      <hr>
+    </section>
+
     <section id="icon">
       <h3>Icon Buttons</h3>
       <div class="attributes">
@@ -516,8 +564,8 @@ export default {};
   .example {
     padding: 1rem;
     margin-bottom: 1rem;
-    background: $pearl-50;
-    border: 1px solid $pearl-300;
+    background: $neutral-50;
+    border: 1px solid $neutral-300;
     border-radius: 0.25rem;
     display: flex;
     flex-direction: column;
@@ -533,6 +581,7 @@ export default {};
       > * { margin: 0; }
       &.start { justify-content: flex-start; }
     }
+    &.dark { background: $neutral-900; }
   }
 
   .code-sample { margin-bottom: 1rem; }

@@ -88,7 +88,6 @@
     </select>
 
     <fieldset class="inline-input full">
-    <!-- <section class="multi-input"> -->
       <div>
         <label for="postalcode">Postal code</label>
         <input id="postalcode" v-model="postalCode" type="text" name="postalcode" maxlength="7">
@@ -97,9 +96,9 @@
         <label for="country">Country</label>
         <input id="country" v-model="country" type="text" name="country">
       </div>
-    <!-- </section> -->
+
     </fieldset>
-    <hr>
+
     <section>
       <label for="textarea">Textarea</label>
       <textarea id="textarea"></textarea>
@@ -110,34 +109,45 @@
       <input id="uncheck" name="unchecked" type="checkbox">
       <label for="uncheck">UnCheckbox</label>
 
+      <input id="semi-fancy-check" class="semi-fancy" name="semi-fancy-check" type="checkbox">
+      <label for="semi-fancy-check">Semi Fancy Checkbox
+        <span>With more info to describe the option.</span>
+      </label>
     </section>
-    <form>
-      <input type="radio" id="contactChoice1" name="contact" value="email">
-      <label for="contactChoice1">Email</label>
-      <input type="radio" id="contactChoice2" name="contact" value="phone">
-      <label for="contactChoice2">Phone</label>
-      <input type="radio" id="contactChoice3" name="contact" value="mail">
-      <label for="contactChoice3">Mail</label>
-    </form>
 
-    <div class="fancy-radio-button">
-        <input type="radio" id="other-countries-yes" @click="radioYes()" name="other-countries" />
+    <fieldset name="contact">
+    <legend>Preferred method of contact</legend>
+      <input type="radio" id="email-radio" name="contact" value="email">
+      <label for="email-radio">Email</label>
+      <input type="radio" id="phone-radio" name="contact" value="phone">
+      <label for="phone-radio">Phone</label>
+      <input type="radio" id="mail-radio" name="contact" value="mail">
+      <label for="mail-radio">Mail</label>
+    </fieldset>
+
+    <!-- <div class="fancy-radio-button"> -->
+        <input type="radio" id="other-countries-yes" class="fancy" @click="radioYes()" name="other-countries" />
         <label for="other-countries-yes">Yes</label>
-      </div>
+      <!-- </div> -->
 
-    <div class="fancy-radio-button">
-      <input type="radio" id="other-countries-no" @click="radioNo()" name="other-countries" />
+    <!-- <div class="fancy-radio-button"> -->
+      <input type="radio" id="other-countries-no" class="fancy" @click="radioNo()" name="other-countries" />
       <label for="other-countries-no">No</label>
-    </div>
 
-    <input type="radio" id="other-countries-yes" class="fancy-radio-button" @click="radioYes()" name="other-countries" />
-    <label for="other-countries-yes">Yes</label>
+      <input type="radio" id="other-countries-other" class="semi-fancy" @click="radioNo()" name="other-countries" />
+      <label for="other-countries-other">Semi Fancy
+        <span>With more info to describe the option.</span>
+      </label>
 
-    <input type="radio" id="other-countries-no" @click="radioNo()" name="other-countries" />
-    <label for="other-countries-no">No</label>
+    <!-- </div> -->
 
-    <input type="radio" id="other-countries-maybe" class="fancy-radio-button" @click="radioNo()" name="other-countries" />
-    <label for="other-countries-maybe">Maybe</label>
+    <input type="radio" id="other-countries-maybe" class="fancy" @click="radioNo()" name="other-countries" />
+    <label for="other-countries-maybe">Fancy
+      <span>With more info to describe the option.</span>
+    </label>
+
+    <label for="range">Range slider</label>
+    <input id="range" type="range" min="0" max="100" value="25">
 
   </article>
 </template>
@@ -145,4 +155,7 @@
   export default { };
 </script>
 <style lang="scss" scoped>
+#b-day { max-width: 8rem; }
+#b-month { max-width: 16rem; }
+#b-year { max-width: 4rem; }
 </style>
