@@ -2,6 +2,92 @@
   <article class="container">
     <h1>Links &amp; Buttons</h1>
     <section>
+      <h3>Usage Guidelines</h3>
+      <h4>Choosing Colour</h4>
+      <table>
+        <thead>
+          <th>Colour</th>
+          <th>When to choose this colour</th>
+        </thead>
+        <tr>
+          <td>Primary</td>
+          <td>
+            <p>The most commonly chosen colour</p>
+            <p>The default colour choice</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Alternate</td>
+          <td>
+            <p>If the Primary colour cannot be chosen because of visual clashes</p>
+            <p>If there is already a Primary button present</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Alert</td>
+          <td>
+            <p>If actions are suggested, or for warnings</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Negative</td>
+          <td>
+            <p>If actions are destructive, such as deleting an invite or removing a photo</p>
+            <p>For important CTAs on marketing collateral</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Positive</td>
+          <td>
+            <p>An additive action in direct contrast with destructive actions</p>
+          </td>
+        </tr>
+      </table>
+      <h4>Choosing Style</h4>
+      <table>
+        <thead>
+          <th>Style</th>
+          <th>When to choose this style</th>
+        </thead>
+        <tr>
+          <td>Primary</td>
+          <td>
+            <p>For primary actions; the most important, common, and/or encouraged action</p>
+            <p>Only use 1 primary button per screen</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Outline</td>
+          <td>
+            <p>For mandatory, but secondary actions</p>
+            <p>For actions that aren’t common and/or encouraged, but required</p>
+            <p>For example, if there are two options, Agree and Disagree and the former is the expected answer, then Agree would use Primary and Disagree would use Outline</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Subtle</td>
+          <td>
+            <p>For optional actions</p>
+            <p>For example, if there are two buttons, <code>Send</code> and <code>Edit</code> for a message and editing it is optional, then <code>Send</code> would use Primary and <code>Edit</code> would use Subtle. If <code>Edit</code> was a mandatory action, then it would use the Outline style instead</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Flat</td>
+          <td>
+            <p>When using a button doesn’t work</p>
+            <p>When the screen already has a Primary and Outline button</p>
+            <p>Often used for navigation</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Unstyled</td>
+          <td>
+            <p>For button actions that should look like text links</p>
+          </td>
+        </tr>
+      </table>
+    </section>
+    <section>
       <h3>Links</h3>
       <div class="attributes">
         <strong>Example</strong>
@@ -450,5 +536,25 @@ export default {};
   }
 
   .code-sample { margin-bottom: 1rem; }
+  table{
+    width: 100%;
+    border: 1px solid $neutral-300;
+  }
+  th{
+    background: $neutral-50;
+    text-align: left;
+    border: 1px solid $neutral-300;
+    padding: 0.5rem;
+    font-weight: bold;
+  }
+  td{
+    text-align: left;
+    border: 1px solid $neutral-300;
+    padding: 0.5rem;
+    &:first-child { width: 20%; }
+    p{
+      margin-bottom: 0.25rem;
+    }
+  }
 
 </style>
