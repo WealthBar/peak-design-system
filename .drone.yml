@@ -14,7 +14,7 @@ steps:
 
 ---
 kind: pipeline
-name: build-master
+name: build-and-deploy-master
 
 steps:
 - name: build
@@ -35,14 +35,6 @@ steps:
     branch: master
     event: push
 
-depends_on:
-- test
-
----
-kind: pipeline
-name: cluster-deploy-master
-
-steps:
 - name: cluster-deploy
   image: aoepeople/digital-ocean-helper:1.18.0
   environment:
@@ -58,4 +50,4 @@ steps:
     event: push
 
 depends_on:
-- build-master
+- test
