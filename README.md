@@ -1,6 +1,6 @@
-# wealthbar-vue-starter
+# Peak Design System
 
-> Boilerplate for new WealthBar Vue apps
+> The Peak Design System
 
 ## Build Setup
 
