@@ -1,0 +1,53 @@
+kind: pipeline
+name: test
+
+steps:
+- name: test
+  image: node:10-alpine
+  environment:
+    NODE_ENV: test
+  commands:
+  - yarn install
+  - yarn run ci
+  when:
+    event: push
+
+---
+kind: pipeline
+name: build-and-deploy-master
+
+steps:
+- name: build
+  image: plugins/docker
+  settings:
+    repo: quay.io/wealthbar/peak-design-system
+    registry: quay.io
+    cache_from:
+      - "quay.io/wealthbar/peak-design-system:master"
+    tags:
+      - latest
+      - "${DRONE_COMMIT_SHA}"
+    username:
+      from_secret: registry_username
+    password:
+      from_secret: registry_password
+  when:
+    branch: master
+    event: push
+
+- name: cluster-deploy
+  image: aoepeople/digital-ocean-helper:1.18.0
+  environment:
+    CLUSTER_NAME:
+      from_secret: cluster_name
+    DIGITALOCEAN_ACCESS_TOKEN:
+      from_secret: digitalocean_access_token
+  commands:
+  - "doctl kubernetes cluster kubeconfig save $CLUSTER_NAME --access-token $DIGITALOCEAN_ACCESS_TOKEN"
+  - "kubectl set image deployments/peak-design-system-deployment peak-design-system=quay.io/wealthbar/peak-design-system:${DRONE_COMMIT_SHA}"
+  when:
+    branch: master
+    event: push
+
+depends_on:
+- test
