@@ -19,10 +19,6 @@ jobs:
         yarn run ci
 
   build:
-    on:
-    push:
-      branches:
-      - master
     runs-on: ubuntu-latest
     env:
       CONTAINER_IMAGE: quay.io/wealthbar/peak-design-system
