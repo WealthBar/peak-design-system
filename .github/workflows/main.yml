@@ -19,11 +19,24 @@ jobs:
         yarn run ci
 
   build:
+    on:
+    push:
+      branches:
+      - master
     runs-on: ubuntu-latest
-    steps:
+    env:
+      CONTAINER_IMAGE: quay.io/wealthbar/peak-design-system
+      CONTAINER_REGISTRY: quay.io/wealthbar
+      REGISTRY_USER: ${{ secrets.registry_user }}
+      REGISTRY_KEY: ${{ secrets.registry_key }}
+    steps:    
     - uses: actions/checkout@v1
     
     - name: Build
-      run: echo Test
+      run: |
+        docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
+        docker pull $CONTAINER_IMAGE:latest || true
+        docker build --cache-from $CONTAINER_IMAGE:latest --build-arg CI_COMMIT_SHA=$GITHUB_SHA -t $CONTAINER_IMAGE:$GITHUB_SHA -t $CONTAINER_IMAGE:latest .
+      if: github.branch == 'master'
       
     needs: test
