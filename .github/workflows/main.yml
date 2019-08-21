@@ -20,12 +20,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    env:
-      CONTAINER_IMAGE: quay.io/wealthbar/peak-design-system
-      CONTAINER_REGISTRY: quay.io/wealthbar
-      REGISTRY_USER: ${{ secrets.registry_user }}
-      REGISTRY_KEY: ${{ secrets.registry_key }}
-    steps:    
+    steps
     - uses: actions/checkout@v1
     
     - name: Build
@@ -34,5 +29,10 @@ jobs:
         docker pull $CONTAINER_IMAGE:latest || true
         docker build --cache-from $CONTAINER_IMAGE:latest --build-arg CI_COMMIT_SHA=$GITHUB_SHA -t $CONTAINER_IMAGE:$GITHUB_SHA -t $CONTAINER_IMAGE:latest .
       if: github.branch == 'master'
+      env:
+        CONTAINER_IMAGE: quay.io/wealthbar/peak-design-system
+        CONTAINER_REGISTRY: quay.io/wealthbar
+        REGISTRY_USER: ${{ secrets.registry_user }}
+        REGISTRY_KEY: ${{ secrets.registry_key }}
       
     needs: test
