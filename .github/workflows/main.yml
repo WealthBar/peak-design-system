@@ -26,4 +26,4 @@ jobs:
     - name: Build
       run: echo Test
       
-      needs: test
+    needs: test
