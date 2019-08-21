@@ -1,5 +1,8 @@
-name: CI
-on: [push]
+name: Build and deploy to production
+on:
+  push:
+    branches:
+    - master
 
 jobs:
   test:
@@ -33,7 +36,5 @@ jobs:
         docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
         docker pull $CONTAINER_IMAGE:latest || true
         docker build --cache-from $CONTAINER_IMAGE:latest --build-arg CI_COMMIT_SHA=$GITHUB_SHA -t $CONTAINER_IMAGE:$GITHUB_SHA -t $CONTAINER_IMAGE:latest .
-      if: github.branch == 'master'
-      
       
     needs: test
