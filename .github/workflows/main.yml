@@ -1,5 +1,4 @@
 name: CI
-
 on: [push]
 
 jobs:
@@ -18,3 +17,13 @@ jobs:
       run: |
         yarn install
         yarn run ci
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    
+    - name: Build
+      run: echo Test
+      
+      needs: test
