@@ -46,23 +46,24 @@ jobs:
     steps:
     - name: Save DigitalOcean kubeconfig
       uses: digitalocean/action-doctl@master
-      secrets: 
-      - digitalocean_access_token
       env:
         CLUSTER_NAME: ${{ secrets.cluster_name }}
-      args: 
-      - doctl kubernetes cluster kubeconfig save $CLUSTER_NAME
-      
+        DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.digitalocean_access_token }}
+      with:
+        args: '"kubernetes cluster kubeconfig show $CLUSTER_NAME > $HOME/.kubeconfig"'
+        
     - name: Deploy to Kubernetes cluster
       uses: docker://lachlanevenson/k8s-kubectl
-      runs: sh -l -c
-      args: 
-      - kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/peak-design-system:${GITHUB_SHA}
+      with:
+        entrypoint: sh
+        args: -l -c "kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/peak-design-system:${GITHUB_SHA}"
         
     - name: Verify deployment
       uses: docker://lachlanevenson/k8s-kubectl
-      runs: sh -l -c
-      args:
-      - kubectl rollout status deployments/peak-deployment
+      env:
+        DEPLOYMENT: peak-deployment
+      with:
+        entrypoint: sh
+        args: -l -c "kubectl --kubeconfig=$HOME/.kubeconfig rollout status deployment/$DEPLOYMENT"
     
     needs: build
