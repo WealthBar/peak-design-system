@@ -36,22 +36,10 @@ jobs:
         docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
         docker pull $CONTAINER_IMAGE:latest || true
         docker build --cache-from $CONTAINER_IMAGE:latest --build-arg CI_COMMIT_SHA=$GITHUB_SHA -t $CONTAINER_IMAGE:$GITHUB_SHA -t $CONTAINER_IMAGE:latest .
-    
-  push_to_quay:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Push to Quay
-      env:
-        CONTAINER_IMAGE: quay.io/wealthbar/peak-design-system
-        CONTAINER_REGISTRY: quay.io/wealthbar
-        REGISTRY_USER: ${{ secrets.registry_user }}
-        REGISTRY_KEY: ${{ secrets.registry_key }}
-      run: |
-        docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
         docker push $CONTAINER_IMAGE:$GITHUB_SHA
         docker push $CONTAINER_IMAGE:latest
       
-    needs: [test, build]
+    needs: [test]
     
   deploy:
     runs-on: ubuntu-latest
@@ -78,4 +66,4 @@ jobs:
         entrypoint: sh
         args: -l -c "kubectl --kubeconfig=$HOME/.kubeconfig rollout status deployment/$DEPLOYMENT"
     
-    needs: push_to_quay
+    needs: build
