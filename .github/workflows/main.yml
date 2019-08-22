@@ -44,11 +44,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    - name: Set up DigitalOcean helpers
+      uses: docker://aoepeople/digital-ocean-helper:1.18.0
+    
     - name: Deploy to Kubernetes cluster
       env:
         CLUSTER_NAME: ${{ secrets.cluster_name }}
         DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.digitalocean_access_token }}
-      uses: docker://aoepeople/digital-ocean-helper:1.18.0
       run: |
         "doctl kubernetes cluster kubeconfig save $CLUSTER_NAME --access-token $DIGITALOCEAN_ACCESS_TOKEN"
         "kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/peak-design-system:${GITHUB_SHA}"
