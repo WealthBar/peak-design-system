@@ -1,4 +1,4 @@
-name: Build and deploy to production
+name: PR Validation
 on:
   pull_request:
     branches:
