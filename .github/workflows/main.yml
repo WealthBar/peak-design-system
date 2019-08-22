@@ -37,8 +37,6 @@ jobs:
         docker pull $CONTAINER_IMAGE:latest || true
         docker build --cache-from $CONTAINER_IMAGE:latest --build-arg CI_COMMIT_SHA=$GITHUB_SHA -t $CONTAINER_IMAGE:$GITHUB_SHA -t $CONTAINER_IMAGE:latest .
         docker push $CONTAINER_IMAGE:$GITHUB_SHA
-      
-    needs: [test]
     
   update_latest_image:
     runs-on: ubuntu-latest
