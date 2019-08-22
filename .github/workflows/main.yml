@@ -56,7 +56,7 @@ jobs:
       uses: docker://lachlanevenson/k8s-kubectl
       with:
         entrypoint: sh
-        args: -l -c "kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/peak-design-system:${GITHUB_SHA}"
+        args: -l -c "kubectl --kubeconfig=$HOME/.kubeconfig set image deployments/peak-deployment peak=quay.io/wealthbar/peak-design-system:${GITHUB_SHA}"
         
     - name: Verify deployment
       uses: docker://lachlanevenson/k8s-kubectl
