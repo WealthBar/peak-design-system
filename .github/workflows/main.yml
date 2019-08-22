@@ -43,15 +43,26 @@ jobs:
     
   deploy:
     runs-on: ubuntu-latest
-    container:
-      image: aoepeople/digital-ocean-helper:1.18.0
     steps:
-    - name: Deploy to Kubernetes cluster
+    - name: Save DigitalOcean kubeconfig
+      uses: digitalocean/action-doctl@master
+      secrets: 
+      - digitalocean_access_token
       env:
         CLUSTER_NAME: ${{ secrets.cluster_name }}
-        DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.digitalocean_access_token }}
-      run: |
-        "doctl kubernetes cluster kubeconfig save $CLUSTER_NAME --access-token $DIGITALOCEAN_ACCESS_TOKEN"
-        "kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/peak-design-system:${GITHUB_SHA}"
+      args: 
+      - doctl kubernetes cluster kubeconfig save $CLUSTER_NAME
+      
+    - name: Deploy to Kubernetes cluster
+      uses: docker://lachlanevenson/k8s-kubectl
+      runs: sh -l -c
+      args: 
+      - kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/peak-design-system:${GITHUB_SHA}
+        
+    - name: Verify deployment
+      uses: docker://lachlanevenson/k8s-kubectl
+      runs: sh -l -c
+      args:
+      - kubectl rollout status deployments/peak-deployment
     
     needs: build
