@@ -8,7 +8,7 @@
         <h4 class="no-margin">{{svg.name}}</h4>
         <!-- <button type="button"><span>copy</span></button> -->
       </header>
-      <pre><code>{{svg.icon}}</code></pre>
+      <pre><code class="language-svg">{{svg.icon}}</code></pre>
     </div>
   </article>
 </template>

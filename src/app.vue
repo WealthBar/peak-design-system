@@ -44,7 +44,9 @@
 
     </div>
       <back-to-top visibleOffset="800">
-      <svgicon name="arrow-up" height="1.25rem" width="1.25rem" color="#fff" alt="Arrow Icon"></svgicon>
+      <svg viewBox="0 0 32 32">
+        <polygon points="28.7,17.8 16,5.1 3.3,17.8 4.7,19.2 15,8.9 15,28 17,28 17,8.9 27.3,19.2"/>
+      </svg>
     </back-to-top>
   </main>
 </template>
@@ -83,7 +85,8 @@
 </script>
 
 <style lang="scss">
-  @import '~@wealthbar/peak-base.css';
+  @import '~@wealthbar/peak-base.css/scss/base/index';
+  @import '~@wealthbar/peak-base.css/scss/patterns/index';
   @import 'peak-states';
 
   main {
