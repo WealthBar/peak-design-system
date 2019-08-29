@@ -182,7 +182,7 @@
       <div class="inline-input">
         <input id="inline-pattern" type="text" name="inline-pattern" style="max-width: 8rem;">
         <input id="inline-pattern-two" type="text" name="inline-pattern-two" style="max-width: 16rem;">
-        <input id="inline-pattern-three" type="text" name="inline-pattern-two" style="max-width: 32rem;">
+        <input id="inline-pattern-three" type="text" name="inline-pattern-three" style="max-width: 32rem;">
       </div>
       <p class="input-text">Supports <code>max-width</code> via CSS</p>
 
