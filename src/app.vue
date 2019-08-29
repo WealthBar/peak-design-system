@@ -29,11 +29,16 @@
               <li class="secondary-link"><a href="#lists">Lists</a></li>
               <li class="secondary-link"><a href="#line-length">Line Length</a></li>
               <li class="secondary-link"><a href="#font-stack">Font Stack</a></li>
-
             </ul>
             <li><router-link to="colour">Colour</router-link></li>
             <li><router-link to="buttons">Links &amp; Buttons</router-link></li>
-            <!-- <li ><router-link to="inputs">Inputs</router-link></li> -->
+            <li ><router-link to="inputs">Inputs</router-link></li>
+            <ul v-if="$route.path === '/inputs'">
+              <li class="secondary-link"><a href="#text">Text inputs</a></li>
+              <li class="secondary-link"><a href="#non-text">Non-text inputs</a></li>
+              <li class="secondary-link"><a href="#non-input">Non-input elements</a></li>
+              <li class="secondary-link"><a href="#layout">Input layout patterns</a></li>
+            </ul>
             <li ><router-link to="svg">SVG Icons</router-link></li>
           </ul>
         </nav>
@@ -44,14 +49,14 @@
 
     </div>
       <back-to-top visibleOffset="800">
-      <svgicon name="arrow-up" height="1.25rem" width="1.25rem" color="#fff" alt="Arrow Icon"></svgicon>
+      <svg viewBox="0 0 32 32">
+        <polygon points="28.7,17.8 16,5.1 3.3,17.8 4.7,19.2 15,8.9 15,28 17,28 17,8.9 27.3,19.2"/>
+      </svg>
     </back-to-top>
   </main>
 </template>
 
 <script>
-  import '@/lib/icons/arrow-up';
-  import '@/lib/icons/search';
   import BackToTop from './components/back_to_top';
   import { mapGetters, mapActions } from '@/lib/vue';
 
@@ -83,7 +88,8 @@
 </script>
 
 <style lang="scss">
-  @import '~@wealthbar/peak-base.css';
+  @import '~@wealthbar/peak-style/scss/base/index';
+  @import '~@wealthbar/peak-style/scss/patterns/index';
   @import 'peak-states';
 
   main {

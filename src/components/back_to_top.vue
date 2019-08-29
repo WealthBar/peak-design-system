@@ -7,9 +7,6 @@
 </template>
 
 <script>
-import '@/lib/icons/arrow-up';
-
-
 export default {
   name: 'BackToTop',
   props: {

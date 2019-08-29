@@ -8,7 +8,7 @@
         <h4 class="no-margin">{{svg.name}}</h4>
         <!-- <button type="button"><span>copy</span></button> -->
       </header>
-      <pre><code>{{svg.icon}}</code></pre>
+      <pre><code class="language-svg">{{svg.icon}}</code></pre>
     </div>
   </article>
 </template>
@@ -21,8 +21,7 @@
     },
   };
 </script>
-<style lang="scss">
-  // unscoped for easier copying from browser
+<style lang="scss" scoped>
   div.svg-item {
     border-bottom: 1px solid $neutral-100;
     header {
@@ -30,7 +29,7 @@
       display: flex;
       align-items: center;
     }
-    svg {
+    i {
       width: 2rem;
       height: 2rem;
       margin-right: 1rem;
