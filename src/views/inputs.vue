@@ -117,39 +117,38 @@
 
       <h3>Non-text input style options</h3>
 
-      <input type="checkbox" id="semi-fancy-check" class="semi-fancy" name="semi-fancy-check" >
+      <input type="checkbox" id="semi-fancy-check" class="semi-fancy" name="semi-fancy-check">
       <label for="semi-fancy-check">Semi-fancy checkbox
         <span>With more info to describe the option.</span>
       </label>
 
-      <input type="radio" id="fancy-radio" class="fancy" name="fancy-radio" />
+      <input type="radio" id="fancy-radio" class="fancy" name="fancy-radio"/>
       <label for="fancy-radio">Fancy radio</label>
-      <input type="radio" id="semi-fancy-radio" class="semi-fancy" name="fancy-radio" />
-      <label for="semi-fancy-radio">Semi-fancy radio
-      </label>
-      <input type="radio" id="fancy-radio-alt" class="fancy" name="fancy-radio" />
+
+      <input type="radio" id="semi-fancy-radio" class="semi-fancy" name="fancy-radio"/>
+      <label for="semi-fancy-radio">Semi-fancy radio</label>
+
+      <input type="radio" id="fancy-radio-alt" class="fancy" name="fancy-radio"/>
       <label for="fancy-radio-alt">Fancy radio description
         <span>With more info to describe the option. Can be used with fancy and semi-fancy classes.</span>
       </label>
 
       <strong>Markup</strong>
-      <pre><code class="language-html">&lt;legend&gt;Checkbox&lt;/legend&gt;
-&lt;input type="checkbox" id="checkbox-one" name="checkbox-one"&gt;
-&lt;label for="checkbox-one"&gt;Checkbox item one&lt;/label&gt;
-&lt;input type="checkbox" id="checkbox-two" name="checkbox-two"&gt;
-&lt;label for="checkbox-two"&gt;Checkbox item two&lt;/label&gt;
+      <pre><code class="language-html">&lt;input type="checkbox" id="semi-fancy-check" class="semi-fancy" name="semi-fancy-check"&gt;
+&lt;label for="semi-fancy-check"&gt;Semi-fancy checkbox
+  &lt;span&gt;With more info to describe the option.&lt;/span&gt;
+&lt;/label&gt;
 
-&lt;legend&gt;Radio&lt;/legend&gt;
-&lt;input type="radio" id="radio-option-one" name="radio-option-one"/&gt;
-&lt;label for="radio-option-one"&gt;Option one&lt;/label&gt;
-&lt;input type="radio" id="radio-option-two" name="radio-option-two"/&gt;
-&lt;label for="radio-option-two"&gt;Option two&lt;/label&gt;
-&lt;input type="radio" id="radio-option-three" name="radio-option-three"/&gt;
-&lt;label for="radio-option-three"&gt;Option three&lt;/label&gt;
+&lt;input type="radio" id="fancy-radio" class="fancy" name="fancy-radio"/&gt;
+&lt;label for="fancy-radio"&gt;Fancy radio&lt;/label&gt;
 
-&lt;label for="range"&gt;Range&lt;/label&gt;
-&lt;input type="range" id="range" min="0" max="100" value="25"/&gt;
-      </code></pre>
+&lt;input type="radio" id="semi-fancy-radio" class="semi-fancy" name="fancy-radio"/&gt;
+&lt;label for="semi-fancy-radio"&gt;Semi-fancy radio&lt;/label&gt;
+
+&lt;input type="radio" id="fancy-radio-alt" class="fancy" name="fancy-radio"/&gt;
+&lt;label for="fancy-radio-alt"&gt;Fancy radio description
+  &lt;span&gt;With more info to describe the option. Can be used with fancy and semi-fancy classes.&lt;/span&gt;
+&lt;/label&gt;</code></pre>
     </section>
 
     <section id="non-input">
