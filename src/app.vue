@@ -35,9 +35,7 @@
             <li ><router-link to="inputs">Inputs</router-link></li>
             <ul v-if="$route.path === '/inputs'">
               <li class="secondary-link"><a href="#text">Text inputs</a></li>
-              <!-- <li class="secondary-link"><a href="#text-style">Text input style</a></li> -->
               <li class="secondary-link"><a href="#non-text">Non-text inputs</a></li>
-              <!-- <li class="secondary-link"><a href="#non-text-style">Non-text input style</a></li> -->
               <li class="secondary-link"><a href="#non-input">Non-input elements</a></li>
               <li class="secondary-link"><a href="#layout">Input layout patterns</a></li>
             </ul>
