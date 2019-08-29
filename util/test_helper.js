@@ -1,6 +1,5 @@
 require('browser-env')();
 const Vue = require('vue');
-const svgicon = require('vue-svgicon');
 require('./tape_sinon');
 
 Vue.config.productionTip = false;
