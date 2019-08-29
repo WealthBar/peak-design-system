@@ -29,11 +29,18 @@
               <li class="secondary-link"><a href="#lists">Lists</a></li>
               <li class="secondary-link"><a href="#line-length">Line Length</a></li>
               <li class="secondary-link"><a href="#font-stack">Font Stack</a></li>
-
             </ul>
             <li><router-link to="colour">Colour</router-link></li>
             <li><router-link to="buttons">Links &amp; Buttons</router-link></li>
             <li ><router-link to="inputs">Inputs</router-link></li>
+            <ul v-if="$route.path === '/inputs'">
+              <li class="secondary-link"><a href="#text">Text inputs</a></li>
+              <!-- <li class="secondary-link"><a href="#text-style">Text input style</a></li> -->
+              <li class="secondary-link"><a href="#non-text">Non-text inputs</a></li>
+              <!-- <li class="secondary-link"><a href="#non-text-style">Non-text input style</a></li> -->
+              <li class="secondary-link"><a href="#non-input">Non-input elements</a></li>
+              <li class="secondary-link"><a href="#layout">Input layout patterns</a></li>
+            </ul>
             <li ><router-link to="svg">SVG Icons</router-link></li>
           </ul>
         </nav>

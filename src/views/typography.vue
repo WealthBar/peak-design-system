@@ -62,18 +62,14 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre v-if="getSelectedScreen == 'mobile'">
-            <code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(26)}};
-            line-height: {{unitValue(32)}};
-            font-weight: 500;
-            margin: {{unitValue(26)}} {{unitValue(0)}} {{unitValue(16)}};</code>
-          </pre>
-          <pre v-else>
-            <code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(36)}};
-            line-height: {{unitValue(48)}};
-            font-weight: 500;
-            margin: {{unitValue(36)}} {{unitValue(0)}} {{unitValue(16)}};</code>
-          </pre>
+          <pre v-if="getSelectedScreen == 'mobile'"><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(26)}};
+line-height: {{unitValue(32)}};
+font-weight: 500;
+margin: {{unitValue(26)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
+          <pre v-else><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(36)}};
+line-height: {{unitValue(48)}};
+font-weight: 500;
+margin: {{unitValue(36)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
         </div>
       </div>
 
@@ -84,24 +80,18 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre>
-            <code class="language-html">&lt;h2&gt;This is a huge H2 header.&lt;/h2&gt;</code>
-          </pre>
+          <pre><code class="language-html">&lt;h2&gt;This is a huge H2 header.&lt;/h2&gt;</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre v-if="getSelectedScreen == 'mobile'" >
-            <code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(24)}};
-            line-height: {{unitValue(30)}};
-            font-weight: 500;
-            margin: {{unitValue(24)}} {{unitValue(0)}} {{unitValue(16)}};</code>
-          </pre>
-          <pre v-else>
-            <code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(30)}};
-            line-height: {{unitValue(36)}};
-            font-weight: 500;
-            margin: {{unitValue(30)}} {{unitValue(0)}} {{unitValue(16)}};</code>
-          </pre>
+          <pre v-if="getSelectedScreen == 'mobile'" ><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(24)}};
+line-height: {{unitValue(30)}};
+font-weight: 500;
+margin: {{unitValue(24)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
+          <pre v-else><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(30)}};
+line-height: {{unitValue(36)}};
+font-weight: 500;
+margin: {{unitValue(30)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
         </div>
       </div>
 
@@ -113,23 +103,18 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre>
-            <code class="language-html">&lt;h3&gt;This is a big H3 header.&lt;/h3&gt;</code>
-          </pre>
+          <pre><code class="language-html">&lt;h3&gt;This is a big H3 header.&lt;/h3&gt;</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre v-if="getSelectedScreen == 'mobile'">
-            <code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(22)}};
-            line-height: {{unitValue(28)}};
-            font-weight: 500;
-            margin: {{unitValue(22)}} {{unitValue(0)}} {{unitValue(16)}};</code>
-          </pre>
-          <pre v-else>
-            <code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(24)}};
-            line-height: {{unitValue(30)}};
-            font-weight: 500;
-            margin: {{unitValue(24)}} {{unitValue(0)}} {{unitValue(16)}};</code>
+          <pre v-if="getSelectedScreen == 'mobile'"><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(22)}};
+line-height: {{unitValue(28)}};
+font-weight: 500;
+margin: {{unitValue(22)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
+          <pre v-else><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(24)}};
+line-height: {{unitValue(30)}};
+font-weight: 500;
+margin: {{unitValue(24)}} {{unitValue(0)}} {{unitValue(16)}};</code>
           </pre>
         </div>
       </div>
@@ -141,24 +126,18 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre>
-            <code class="language-html">&lt;h4&gt;This is a medium H4 header.&lt;/h4&gt;</code>
-          </pre>
+          <pre><code class="language-html">&lt;h4&gt;This is a medium H4 header.&lt;/h4&gt;</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre v-if="getSelectedScreen == 'mobile'">
-            <code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(18)}};
-            line-height: {{unitValue(24)}};
-            font-weight: 500;
-            margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(16)}};</code>
-          </pre>
-          <pre v-else>
-            <code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(20)}};
-            line-height: {{unitValue(26)}};
-            font-weight: 500;
-            margin: {{unitValue(20)}} {{unitValue(0)}} {{unitValue(16)}};</code>
-          </pre>
+          <pre v-if="getSelectedScreen == 'mobile'"><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(18)}};
+line-height: {{unitValue(24)}};
+font-weight: 500;
+margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
+          <pre v-else><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(20)}};
+line-height: {{unitValue(26)}};
+font-weight: 500;
+margin: {{unitValue(20)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
         </div>
       </div>
 
@@ -169,24 +148,18 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre>
-            <code class="language-html">&lt;h5&gt;This is a small H5 header.&lt;/h5&gt;</code>
-          </pre>
+          <pre><code class="language-html">&lt;h5&gt;This is a small H5 header.&lt;/h5&gt;</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre v-if="getSelectedScreen == 'mobile'">
-            <code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(16)}};
-            line-height: {{unitValue(22)}};
-            font-weight: 500;
-            margin: {{unitValue(16)}} {{unitValue(0)}} {{unitValue(16)}};</code>
-          </pre>
-          <pre v-else>
-            <code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(18)}};
-            line-height: {{unitValue(24)}};
-            font-weight: 500;
-            margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(16)}};</code>
-          </pre>
+          <pre v-if="getSelectedScreen == 'mobile'"><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(16)}};
+line-height: {{unitValue(22)}};
+font-weight: 500;
+margin: {{unitValue(16)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
+          <pre v-else><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(18)}};
+line-height: {{unitValue(24)}};
+font-weight: 500;
+margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
         </div>
       </div>
     </section>
@@ -208,12 +181,10 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre>
-            <code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(16)}};
-            line-height: {{unitValue(22)}};
-            font-weight: 300;
-            margin: {{unitValue(0)}} {{unitValue(0)}} {{unitValue(16)}};</code>
-          </pre>
+          <pre><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(16)}};
+line-height: {{unitValue(22)}};
+font-weight: 300;
+margin: {{unitValue(0)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
         </div>
       </div>
 
@@ -225,18 +196,14 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre>
-            <code class="language-html">&lt;p class="large"&gt;This is large paragraph text.&lt;/p&gt;</code>
-          </pre>
+          <pre><code class="language-html">&lt;p class="large"&gt;This is large paragraph text.&lt;/p&gt;</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre>
-            <code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(18)}};
-            line-height: {{unitValue(24)}};
-            font-weight: 300;
-            margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(18)}};</code>
-          </pre>
+          <pre><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(18)}};
+line-height: {{unitValue(24)}};
+font-weight: 300;
+margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(18)}};</code></pre>
         </div>
       </div>
 
@@ -250,16 +217,12 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre>
-            <code class="language-html">&lt;p class="small"&gt;This is small paragraph text.&lt;/p&gt;
-              &lt;p&gt;Regular text &lt;small&gt;(This is a small text block)&lt;/small&gt; wrapping the small text.&lt;/p&gt;</code>
-          </pre>
+          <pre><code class="language-html">&lt;p class="small"&gt;This is small paragraph text.&lt;/p&gt;
+&lt;p&gt;Regular text &lt;small&gt;(This is a small text block)&lt;/small&gt; wrapping the small text.&lt;/p&gt;</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre>
-            <code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(14)}};</code>
-          </pre>
+          <pre><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(14)}};</code></pre>
         </div>
       </div>
 
@@ -271,16 +234,12 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre>
-            <code class="language-html">&lt;p&gt;This is &lt;span class="subtle"&gt;subtle text&lt;/p&gt; in a paragraph.&lt;/p&gt;</code>
-          </pre>
+          <pre><code class="language-html">&lt;p&gt;This is &lt;span class="subtle"&gt;subtle text&lt;/p&gt; in a paragraph.&lt;/p&gt;</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre>
-            <code class="language-css" :class="getSelectedUnit">color: rgba(55, 55, 63, 0.77);
-            // 77% of $pearl-700; //</code>
-          </pre>
+          <pre><code class="language-css" :class="getSelectedUnit">color: rgba(55, 55, 63, 0.77);
+// 77% of $pearl-700; //</code></pre>
         </div>
       </div>
 
@@ -309,15 +268,11 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre>
-            <code class="language-html">&lt;h3 class="no-margin"&gt;This is H3 element has no margin.&lt;/h3&gt;</code>
-          </pre>
+          <pre><code class="language-html">&lt;h3 class="no-margin"&gt;This is H3 element has no margin.&lt;/h3&gt;</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre>
-            <code class="language-css" :class="getSelectedUnit">margin: 0;</code>
-          </pre>
+          <pre><code class="language-css" :class="getSelectedUnit">margin: 0;</code></pre>
         </div>
       </div>
     </section>
@@ -345,39 +300,36 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre>
-            <code class="language-html">&lt;ul&gt;
-            &nbsp;&nbsp;&lt;li&gt;unordered list item&lt;/li&gt;
-            &nbsp;&nbsp;&lt;li&gt;unordered list item&lt;/li&gt;
-            &lt;/ul&gt;
+          <pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;unordered list item&lt;/li&gt;
+  &lt;li&gt;unordered list item&lt;/li&gt;
+&lt;/ul&gt;
 
-            &lt;ul class="bullet"&gt;
-            &nbsp;&nbsp;&lt;li&gt;unordered list item&lt;/li&gt;
-            &nbsp;&nbsp;&lt;li&gt;unordered list item&nbsp;&lt;/li&gt;
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul class="bullet"&gt;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;unordered list item&lt;/li&gt;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;unordered list item&lt;/li&gt;
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
-            &lt;/ul&gt;
+&lt;ul class="bullet"&gt;
+  &lt;li&gt;unordered list item&lt;/li&gt;
+  &lt;li&gt;unordered list item&nbsp;&lt;/li&gt;
+  &lt;ul class="bullet"&gt;
+    &lt;li&gt;unordered list item&lt;/li&gt;
+    &lt;li&gt;unordered list item&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
           </code>
           </pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre>
-            <code class="language-css" :class="getSelectedUnit">ul {
-              &nbsp;&nbsp;padding: 0;
-              &nbsp;&nbsp;margin: 0 0 {{unitValue(16)}};
-              &nbsp;&nbsp;list-style: none;
-              }
+          <pre><code class="language-css" :class="getSelectedUnit">ul {
+  padding: 0;
+  margin: 0 0 {{unitValue(16)}};
+  list-style: none;
+}
 
-              ul.bullet { list-style: disc; }
+ul.bullet { list-style: disc; }
 
-              li ul {
-              &nbsp;&nbsp;padding-left: {{unitValue(16)}};
-              &nbsp;&nbsp;margin: 0;
-            }</code>
-          </pre>
+li ul {
+  padding-left: {{unitValue(16)}};
+  margin: 0;
+}</code></pre>
         </div>
       </div>
 
@@ -391,27 +343,23 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre>
-            <code class="language-html">&lt;ol&gt;
-            &nbsp;&nbsp;&lt;li&gt;first list item&lt;/li&gt;
-            &nbsp;&nbsp;&lt;li&gt;second list item&lt;/li&gt;
-            &lt;/ol&gt;</code>
-          </pre>
+          <pre><code class="language-html">&lt;ol&gt;
+  &lt;li&gt;first list item&lt;/li&gt;
+  &lt;li&gt;second list item&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre>
-            <code class="language-css" :class="getSelectedUnit">ol {
-              &nbsp;&nbsp;padding: 0;
-              &nbsp;&nbsp;margin: 0 0 {{unitValue(16)}};
-              &nbsp;&nbsp;list-style: decimal;
-              }
+          <pre><code class="language-css" :class="getSelectedUnit">ol {
+  padding: 0;
+  margin: 0 0 {{unitValue(16)}};
+  list-style: decimal;
+  }
 
-              li ol {
-              &nbsp;&nbsp;padding-left: {{unitValue(16)}};
-              &nbsp;&nbsp;margin: 0;
-            }</code>
-          </pre>
+  li ol {
+  padding-left: {{unitValue(16)}};
+  margin: 0;
+}</code></pre>
         </div>
       </div>
     </section>
@@ -638,8 +586,8 @@
 
   section {
     padding-bottom: 2rem;
-    margin-bottom: 3rem;
-    border-bottom: 1px solid $neutral-300;
+    // margin-bottom: 3rem;
+    border-bottom: 1px solid $neutral-100;
     }
 
   .convert {

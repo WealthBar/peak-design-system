@@ -20,21 +20,29 @@ td code {
 }
 
 pre {
-  white-space: normal;
-  word-wrap: normal;
+  white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
   margin: 0;
   padding: 0;
 
   code {
-    white-space: pre-line;
-    white-space: -moz-pre-line;
-    white-space: -o-pre-line;
-    word-wrap: break-word;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-spacing: normal;
+    word-break: break-word;
+    word-wrap: normal;
     display: block;
     padding: 0.75rem;
+    margin: 0 0 1.25rem;
     background: $neutral-900;
     color: $neutral-300;
     border-radius: 0.25rem;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+    hyphens: none;
   }
 }
 
