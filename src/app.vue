@@ -59,8 +59,6 @@
 </template>
 
 <script>
-  import '@/lib/icons/arrow-up';
-  import '@/lib/icons/search';
   import BackToTop from './components/back_to_top';
   import { mapGetters, mapActions } from '@/lib/vue';
 
@@ -92,8 +90,8 @@
 </script>
 
 <style lang="scss">
-  @import '~@wealthbar/peak-base.css/scss/base/index';
-  @import '~@wealthbar/peak-base.css/scss/patterns/index';
+  @import '~@wealthbar/peak-style/scss/base/index';
+  @import '~@wealthbar/peak-style/scss/patterns/index';
   @import 'peak-states';
 
   main {

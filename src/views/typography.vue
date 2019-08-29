@@ -5,7 +5,7 @@
       <p>WealthBar’s typography is a balance between readability and personality. Using our set of defined typography styles ensures consistent quality and a clear hierarchy.</p>
       <div class="download-typography">
         <p>Instantly apply on-point typography! 👌🏾</p>
-        <button type="button" href="https://www.npmjs.com/package/@wealthbar/peak-base.css">Install the Peak Package</button>
+        <button type="button" href="https://www.npmjs.com/package/@wealthbar/peak-style">Install the Peak Package</button>
       </div>
     </div>
     <hr />
@@ -433,9 +433,6 @@ li ul {
 </template>
 
 <script>
-  // import prism from 'prismjs/prism';
-  import '@/lib/icons/close';
-  import '@/lib/icons/check';
   import { mapGetters, mapActions } from '@/lib/vue';
 
   export default {
