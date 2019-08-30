@@ -261,6 +261,13 @@
           <p class="input-text">Accomodates any number of inputs</p>
         </div>
       </div>
+
+      <div class="field">
+        <label for="field-input">Field wrap class</label>
+        <input type="text" id="field-input" name="field-input">
+        <p class="input-text">A basic wrapper to ensure structure formatting</p>
+      </div>
+
       <fieldset name="fieldset">
         <legend>Fieldset with legend</legend>
         <input type="checkbox" id="fieldset-checkbox" name="fieldset-checkbox">
@@ -298,6 +305,12 @@
     &lt;input type="text" id="inline-pattern-full-three" name="inline-pattern-full-three"&gt;
     &lt;p class="input-text"&gt;Accomodates any number of inputs&lt;/p&gt;
   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="field"&gt;
+  &lt;label for="field-input"&gt;Field wrap class&lt;/label&gt;
+  &lt;input type="text" id="field-input" name="field-input"&gt;
+  &lt;p class="input-text"&gt;A basic wrapper to ensure structure formatting&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;fieldset name="fieldset"&gt;
