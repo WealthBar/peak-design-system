@@ -6,6 +6,8 @@
     <p>Additional attributes are optional and may vary depending on individual use. For accessability a <code>&lt;label&gt;</code> with a <code>for</code> attribute that matches <code>id</code> and <code>name</code> is highly recommened. Other attributes such as <code>placeholder</code>, <code>required</code>, and <code>disabled</code> will all effect the behaviour and look of the input.</p>
     </section>
 
+
+
     <section id="text">
       <h3>Text inputs</h3>
 
@@ -50,6 +52,34 @@
         <button type="button">Submit</button>
       </div>
 
+      <label for="inline-button">Inline Button<span>large outline alert</span></label>
+      <div class="inline-button">
+        <input id="inline-button" v-model="inlineButton" type="text" name="inline-button">
+        <button class=" large outline alt" type="button">Large</button>
+      </div>
+
+      <label for="inline-button">Inline Button<span>small subtle</span></label>
+      <div class="inline-button">
+        <input id="inline-button" v-model="inlineButton" type="text" name="inline-button">
+        <button class="small subtle" type="button">Small</button>
+      </div>
+
+      <label for="inline-button">Inline Button<span>flat neg</span></label>
+      <div class="inline-button">
+        <input id="inline-button" v-model="inlineButton" type="text" name="inline-button">
+        <button class="flat neg" type="button">Flat</button>
+      </div>
+
+      <label for="inline-button">Inline Button<span>icon</span></label>
+      <div class="inline-button">
+        <input id="inline-button" v-model="inlineButton" type="text" name="inline-button">
+        <button class="icon" type="button">
+          <svg viewBox="0 0 32 32">
+            <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+          </svg>
+        </button>
+      </div>
+
       <strong>Markup</strong>
       <pre><code class="language-html">&lt;label for="optional-input"&gt;Input&lt;span&gt;optional&lt;/span&gt;&lt;/label&gt;
 &lt;input type="text" id="optional-input" name="optional-input"&gt;
@@ -69,7 +99,35 @@
 &lt;div class="inline-button"&gt;
   &lt;input id="inline-button" v-model="inlineButton" type="text" name="inline-button"&gt;
   &lt;button type="button"&gt;Submit&lt;/button&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+
+&lt;label for="inline-button"&gt;Inline Button&lt;span&gt;large outline alert&lt;/span&gt;&lt;/label&gt;
+&lt;div class="inline-button"&gt;
+  &lt;input id="inline-button" v-model="inlineButton" type="text" name="inline-button"&gt;
+  &lt;button class=" large outline alt" type="button"&gt;Large&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;label for="inline-button"&gt;Inline Button&lt;span&gt;small subtle&lt;/span&gt;&lt;/label&gt;
+&lt;div class="inline-button"&gt;
+  &lt;input id="inline-button" v-model="inlineButton" type="text" name="inline-button"&gt;
+  &lt;button class="small subtle" type="button"&gt;Small&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;label for="inline-button"&gt;Inline Button&lt;span&gt;flat neg&lt;/span&gt;&lt;/label&gt;
+&lt;div class="inline-button"&gt;
+  &lt;input id="inline-button" v-model="inlineButton" type="text" name="inline-button"&gt;
+  &lt;button class="flat neg" type="button"&gt;Flat&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- comment --&gt;
+&lt;label for="inline-button"&gt;Inline Button&lt;span&gt;icon&lt;/span&gt;&lt;/label&gt;
+&lt;div class="inline-button"&gt;
+  &lt;input id="inline-button" v-model="inlineButton" type="text" name="inline-button"&gt;
+  &lt;button class="icon" type="button"&gt;
+    &lt;svg&gt;…&lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
     </section>
 
     <section id="non-text">
@@ -205,7 +263,7 @@
       </div>
       <fieldset name="fieldset">
         <legend>Fieldset with legend</legend>
-        <input type="checkbox" id="fieldset-checkbox" name="cfieldset-checkbox">
+        <input type="checkbox" id="fieldset-checkbox" name="fieldset-checkbox">
         <label for="fieldset-checkbox">Checkbox</label>
         <input type="radio" id="fieldset-radio-one" name="fieldset-radio" value="fieldset-radio-one">
         <label for="fieldset-radio-one">Radio option one</label>
@@ -254,6 +312,72 @@
   &lt;input type="text" id="text-input" name="text-input"&gt;
 &lt;/fieldset&gt;</code></pre>
     </section>
+    <section>
+      <h2>Input spacing structure</h2>
+
+      <p>The following examples showcase the basic margin and padding structure for <code>labels</code>, <code>inputs</code>, and other form elements. If there is an instance that requires an input to have no margins a class of <code>no-margin</code> can be applied — this should be used sparingly.</p>
+
+      <div class="example">
+        <label for="example">Standard Input</label>
+        <input id="example" type="text" name="example">
+
+        <label for="example-inline-button">Inline Button</label>
+        <div class="inline-button">
+          <input id="example-inline-button" type="text" name="example-inline-button">
+          <button type="button">button</button>
+        </div>
+
+        <label for="example-text-input">Password</label>
+        <input type="password" id="example-text-input" name="example-text-input">
+        <p class="input-text">input-text or <span class="neg">error-text</span></p>
+      </div>
+
+      <div class="example inline-input full">
+        <div>
+          <label for="example-inline-pattern-full-one">Inline inputs<span>full</span></label>
+          <input type="text" id="example-inline-pattern-full-one" name="example-inline-pattern-full-one">
+        </div>
+        <div>
+          <label for="example-inline-pattern-full-two">Inline label two</label>
+          <input type="text" id="example-inline-pattern-full-two" name="example-inline-pattern-full-two">
+        </div>
+        <div>
+          <label for="example-inline-pattern-full-three">Inline label three</label>
+          <input type="text" id="example-inline-pattern-full-three" name="example-inline-pattern-full-three">
+        </div>
+      </div>
+
+      <div class="example">
+        <fieldset name="example-fieldset">
+          <legend>Fieldset with legend</legend>
+          <div class="example">
+            <input type="checkbox" id="example-fieldset-checkbox" name="example-fieldset-checkbox">
+            <label for="example-fieldset-checkbox">Checkbox</label>
+            <input type="radio" id="example-fieldset-radio-one" name="example-fieldset-radio" value="fieldset-radio-one">
+            <label for="example-fieldset-radio-one">Radio one</label>
+            <input type="radio" id="example-fieldset-radio-two" name="example-fieldset-radio" value="fieldset-radio-two">
+            <label for="example-fieldset-radio-two">Radio two</label>
+          </div>
+        </fieldset>
+
+        <input type="radio" id="fancy-example-fieldset-radio-one" name="fancy-example-fieldset-radio" value="fieldset-radio-one" class="fancy">
+        <label for="fancy-example-fieldset-radio-one">Fancy radio one</label>
+        <input type="radio" id="fancy-example-fieldset-radio-two" name="fancy-example-fieldset-radio" value="fieldset-radio-two" class="fancy">
+        <label for="fancy-example-fieldset-radio-two">Fancy radio two
+          <span>With more info to describe the option. Can be used with fancy and semi-fancy classes.</span>
+        </label>
+
+        <label for="example-textarea">Textarea</label>
+        <textarea id="example-textarea" name=example-textarea></textarea>
+
+        <label for="example-select">Select</label>
+        <select id="example-select" name="example-select">
+          <option value="one">Option 1</option>
+          <option value="two">Option 2</option>
+          <option value="three">Option 3</option>
+        </select>
+      </div>
+    </section>
   </article>
 </template>
 <script>
@@ -262,7 +386,27 @@
 <style lang="scss" scoped>
   section {
     padding-bottom: 2rem;
-    // margin-bottom: 3rem;
     border-bottom: 1px solid $neutral-100;
+  }
+  .example {
+    background: $tertiary-50;
+    box-shadow: 0 1px 0 0 $tertiary-100, 0 -1px 0 0 $tertiary-100;
+    border-bottom: 1px solid transparent;
+    input, label, legend {
+      background: $white;
+      box-shadow: 0 1px 0 0 $tertiary-100, 0 -1px 0 0 $tertiary-100;
+      &:first-child { box-shadow: 0 1px 0 0 $tertiary-100 }
+    }
+    .input-text {
+      background: $white;
+      box-shadow: 0 1px 0 0 $tertiary-100;
+    }
+    fieldset {
+      border: 1px solid $secondary-300;
+      background: $secondary-50;
+      .example, input:last-child {
+        box-shadow: 0 -1px 0 0 $tertiary-100;
+      }
+    }
   }
 </style>

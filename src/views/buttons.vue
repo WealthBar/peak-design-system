@@ -358,9 +358,47 @@
           <strong>Markup</strong>
           <pre><code class="language-html">&lt;button class="icon"&gt;Unstyled&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
 &lt;button type="button" class="icon"&gt;Fill&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
-&lt;button type="button" class="outline"&gt;Outline&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
-&lt;button type="button" class="flat"&gt;Flat&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
-&lt;button type="button" class="subtle"&gt;Subtle&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;</code></pre>
+&lt;button type="button" class="icon outline"&gt;Outline&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
+&lt;button type="button" class="icon flat"&gt;Flat&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
+&lt;button type="button" class="icon subtle"&gt;Subtle&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;</code></pre>
+        </div>
+        <hr>
+        <h4>Circle</h4>
+        <strong>Example</strong>
+        <div class="example">
+          <button class="icon circle">
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+            </svg>
+          </button>
+          <button type="button" class="icon circle">
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+            </svg>
+          </button>
+          <button type="button" class="outline icon circle">
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+            </svg>
+          </button>
+          <button type="button" class="flat icon circle">
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+            </svg>
+          </button>
+          <button type="button" class="subtle icon circle">
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+            </svg>
+          </button>
+        </div>
+        <div class="code-sample">
+          <strong>Markup</strong>
+          <pre><code class="language-html">&lt;button class="icon circle"&gt;Unstyled&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
+&lt;button type="button" class="icon circle"&gt;Fill&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
+&lt;button type="button" class="icon outline circle"&gt;Outline&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
+&lt;button type="button" class="icon flat circle"&gt;Flat&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
+&lt;button type="button" class="icon subtle circle"&gt;Subtle&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;</code></pre>
         </div>
         <hr>
         <h4>Icon After</h4>
@@ -471,6 +509,11 @@
               <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
             </svg>
           </button>
+          <button type="button" class="large icon circle">
+            <svg viewBox="0 0 32 32">
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+            </svg>
+          </button>
         </div>
         <div class="code-sample">
           <strong>Markup</strong>
@@ -499,6 +542,11 @@
             </svg>
           </button>
           <button type="button" class="small icon">
+            <svg viewBox="0 0 32 32">
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+            </svg>
+          </button>
+          <button type="button" class="small icon circle">
             <svg viewBox="0 0 32 32">
               <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
             </svg>

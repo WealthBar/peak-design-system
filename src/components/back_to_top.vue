@@ -1,6 +1,6 @@
 <template>
   <transition name="back-to-top-fade">
-    <button type="button" class="button icon" :style="`bottom:${this.bottom};right:${this.right};`" v-show="visible" @click="backToTop">
+    <button type="button" class="icon circle" :style="`bottom:${this.bottom};right:${this.right};`" v-show="visible" @click="backToTop">
       <slot>{{ text }}</slot>
     </button>
   </transition>
