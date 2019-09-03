@@ -325,7 +325,7 @@
   &lt;input type="text" id="text-input" name="text-input"&gt;
 &lt;/fieldset&gt;</code></pre>
     </section>
-    <section>
+    <section id="spacing">
       <h2>Input spacing structure</h2>
 
       <p>The following examples showcase the basic margin and padding structure for <code>labels</code>, <code>inputs</code>, and other form elements. If there is an instance that requires an input to have no margins a class of <code>no-margin</code> can be applied — this should be used sparingly.</p>
