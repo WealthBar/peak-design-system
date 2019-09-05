@@ -506,7 +506,7 @@
       box-shadow: 0 1px 0 0 $tertiary-100, 0 -1px 0 0 $tertiary-100;
       &:first-child { box-shadow: 0 1px 0 0 $tertiary-100 }
     }
-    .help {
+    .help-message {
       background: $white;
       box-shadow: 0 1px 0 0 $tertiary-100;
     }
