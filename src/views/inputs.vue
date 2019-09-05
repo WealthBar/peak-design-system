@@ -243,30 +243,30 @@
         <input id="inline-pattern-two" type="text" name="inline-pattern-two" style="max-width: 16rem;">
         <input id="inline-pattern-three" type="text" name="inline-pattern-three" style="max-width: 32rem;">
       </div>
-      <p class="input-text">Supports <code>max-width</code> via CSS</p>
+      <p class="help-message">Supports <code>max-width</code> via CSS</p>
 
       <div class="inline-input full">
         <div>
           <label for="inline-pattern-full-one">Inline inputs<span class="optional">full</span></label>
           <input type="text" id="inline-pattern-full-one" name="inline-pattern-full-one">
-          <p class="input-text">Even horizontal spacing on large screen</p>
+          <p class="help-message">Even horizontal spacing on large screen</p>
         </div>
         <div>
           <label for="inline-pattern-full-two">Inline label two</label>
           <input type="text" id="inline-pattern-full-two" name="inline-pattern-full-two">
-          <p class="input-text">Full width on smaller screen</p>
+          <p class="help-message">Full width on smaller screen</p>
         </div>
         <div>
           <label for="inline-pattern-full-three">Inline label three</label>
           <input type="text" id="inline-pattern-full-three" name="inline-pattern-full-three">
-          <p class="input-text">Accomodates any number of inputs</p>
+          <p class="help-message">Accomodates any number of inputs</p>
         </div>
       </div>
 
       <div class="field">
         <label for="field-input">Field wrap class</label>
         <input type="text" id="field-input" name="field-input">
-        <p class="input-text">A basic wrapper to ensure structure formatting</p>
+        <p class="help-message">A basic wrapper to ensure structure formatting</p>
       </div>
 
       <fieldset name="fieldset">
@@ -288,30 +288,30 @@
   &lt;input id="inline-pattern-two" type="text" name="inline-pattern-two" style="max-width: 16rem;"&gt;
   &lt;input id="inline-pattern-three" type="text" name="inline-pattern-two" style="max-width: 32rem;"&gt;
 &lt;/div&gt;
-&lt;p class="input-text"&gt;Supports &lt;code&gt;max-width&lt;/code&gt; via CSS&lt;/p&gt;
+&lt;p class="help-message"&gt;Supports &lt;code&gt;max-width&lt;/code&gt; via CSS&lt;/p&gt;
 
 &lt;div class="inline-input full"&gt;
   &lt;div&gt;
     &lt;label for="inline-pattern-full-one"&gt;Inline inputs&lt;span&gt;full&lt;/span&gt;&lt;/label&gt;
     &lt;input type="text" id="inline-pattern-full-one" name="inline-pattern-full-one"&gt;
-    &lt;p class="input-text"&gt;Even horizontal spacing on large screen&lt;/p&gt;
+    &lt;p class="help-message"&gt;Even horizontal spacing on large screen&lt;/p&gt;
   &lt;/div&gt;
   &lt;div&gt;
     &lt;label for="inline-pattern-full-two"&gt;Inline label two&lt;/label&gt;
     &lt;input type="text" id="inline-pattern-full-two" name="inline-pattern-full-two"&gt;
-    &lt;p class="input-text"&gt;Full width on smaller screen&lt;/p&gt;
+    &lt;p class="help-message"&gt;Full width on smaller screen&lt;/p&gt;
   &lt;/div&gt;
   &lt;div&gt;
     &lt;label for="inline-pattern-full-three"&gt;Inline label three&lt;/label&gt;
     &lt;input type="text" id="inline-pattern-full-three" name="inline-pattern-full-three"&gt;
-    &lt;p class="input-text"&gt;Accomodates any number of inputs&lt;/p&gt;
+    &lt;p class="help-message"&gt;Accomodates any number of inputs&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class="field"&gt;
   &lt;label for="field-input"&gt;Field wrap class&lt;/label&gt;
   &lt;input type="text" id="field-input" name="field-input"&gt;
-  &lt;p class="input-text"&gt;A basic wrapper to ensure structure formatting&lt;/p&gt;
+  &lt;p class="help-message"&gt;A basic wrapper to ensure structure formatting&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;fieldset name="fieldset"&gt;
@@ -407,6 +407,14 @@
         <input id="invalid-inline-button" type="text" name="invalid-inline-button" class="invalid">
         <button type="button" class="subtle">Submit</button>
       </div>
+      <p class="warning-message">
+        <svg viewBox="0 0 32 32">
+        <path d="M16.1,4c0.7,0,1.3,0.3,1.7,0.9l11.9,18.9c0.6,0.9,0.2,1.7,0.1,2c-0.2,0.3-0.7,1-1.8,1H4.1c-1.1,0-1.6-0.7-1.8-1 c-0.2-0.3-0.5-1.1,0.1-2L14.4,5C14.7,4.4,15.4,4,16.1,4 M16.1,2c-1.3,0-2.6,0.6-3.4,1.9L0.8,22.8C-0.9,25.5,1,29,4.1,29H28 c3.1,0,5.1-3.5,3.4-6.1L19.5,3.9C18.7,2.7,17.4,2,16.1,2L16.1,2z"/>
+        <rect x="15" y="8" width="2" height="12"/>
+        <circle cx="16" cy="23.5" r="1.5"/>
+        </svg>
+        <span>Optional warning messaging</span>
+      </p>
 
       <label for="invalid-select">Select</label>
       <select id="invalid-select" name="invalid-select" class="invalid">
@@ -441,6 +449,10 @@
   &lt;input id="invalid-inline-button" type="text" name="invalid-inline-button" class="invalid"&gt;
   &lt;button type="button" class="subtle"&gt;Submit&lt;/button&gt;
 &lt;/div&gt;
+&lt;p class="warning-message"&gt;
+  &lt;svg&gt;…&lt;/svg&gt;
+  &lt;span&gt;Optional warning messaging&lt;/span&gt;
+&lt;/p&gt;
 
 &lt;label for="invalid-select"&gt;Select&lt;/label&gt;
 &lt;select id="invalid-select" name="invalid-select" class="invalid"&gt;
@@ -460,7 +472,7 @@
 &lt;input type="radio" id="invalid-radio-two" name="invalid-radio" value="invalid-radio-two" class="fancy invalid"&gt;
 &lt;label for="invalid-radio-two"&gt;Fancy radio two
   &lt;span&gt;With more info to describe the option. Can be used with fancy and semi-fancy classes.&lt;/span&gt;
-&lt;/label></code></pre>
+&lt;/label&gt;</code></pre>
     </section>
   </article>
 </template>
