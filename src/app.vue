@@ -39,6 +39,7 @@
               <li class="secondary-link"><a href="#non-input">Non-input elements</a></li>
               <li class="secondary-link"><a href="#layout">Input layout patterns</a></li>
               <li class="secondary-link"><a href="#spacing">Input spacing structure</a></li>
+              <li class="secondary-link"><a href="#invalid">Invalid &amp; error states</a></li>
             </ul>
             <li ><router-link to="svg">SVG Icons</router-link></li>
           </ul>
