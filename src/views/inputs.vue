@@ -6,29 +6,35 @@
     <p>Additional attributes are optional and may vary depending on individual use. For accessability a <code>&lt;label&gt;</code> with a <code>for</code> attribute that matches <code>id</code> and <code>name</code> is highly recommened. Other attributes such as <code>placeholder</code>, <code>required</code>, and <code>disabled</code> will all effect the behaviour and look of the input.</p>
     </section>
 
-
-
     <section id="text">
       <h3>Text inputs</h3>
 
       <label for="text-input">Text</label>
       <input type="text" id="text-input" name="text-input">
 
+      <label for="number-input">Number</label>
+      <input type="number" id="number-input" name="number-input" pattern="[0-9]*">
+
       <label for="search-input">Search</label>
       <input type="search" id="search-input" name="search-input" placeholder="search">
 
       <label for="password-input">Password</label>
-      <input type="password" id="password-input" name="password-input" required>
+      <input type="password" id="password-input" name="password-input">
 
       <strong>Markup</strong>
-      <pre><code class="language-html">&lt;label for="text-input"&gt;Text&lt;/label&gt;
+      <pre><code class="language-html">
+&lt;label for="text-input"&gt;Text&lt;/label&gt;
 &lt;input id="text-input" type="text" name="text-input"&gt;
+
+&lt;label for="number-input"&gt;Number&lt;/label&gt;
+&lt;input id="number-input" type="number" name="number-input" pattern="[0-9]*"&gt;
 
 &lt;label for="search-input"&gt;Search&lt;/label&gt;
 &lt;input type="search" id="search-input" name="search-input" placeholder="search"&gt;
 
 &lt;label for="password-input"&gt;Password&lt;/label&gt;
-&lt;input type="password" id="password-input" name="password-input" required&gt;</code></pre>
+&lt;input type="password" id="password-input" name="password-input" required&gt;
+      </code></pre>
 
       <h3>Text input style options</h3>
 
@@ -77,7 +83,8 @@
       </div>
 
       <strong>Markup</strong>
-      <pre><code class="language-html">&lt;label for="optional-input"&gt;Input&lt;span class="optional"&gt;optional&lt;/span&gt;&lt;/label&gt;
+      <pre><code class="language-html">
+&lt;label for="optional-input"&gt;Input&lt;span class="optional"&gt;optional&lt;/span&gt;&lt;/label&gt;
 &lt;input type="text" id="optional-input" name="optional-input"&gt;
 
 &lt;label for="disabled-input"&gt;Input Disabled&lt;/label&gt;
@@ -118,32 +125,34 @@
     &lt;svg&gt;…&lt;/svg&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-</code></pre>
+      </code></pre>
     </section>
 
     <section id="non-text">
       <h2>Non-text inputs</h2>
 
       <legend>Checkbox input</legend>
-
-      <input type="checkbox" id="checkbox-one" name="checkbox-one">
-      <label for="checkbox-one">Checkbox item one</label>
-      <input type="checkbox" id="checkbox-two" name="checkbox-two">
-      <label for="checkbox-two">Checkbox item two</label>
+      <fieldset>
+        <input type="checkbox" id="checkbox-input-one" name="checkbox-input-one">
+        <label for="checkbox-input-one">Checkbox one</label>
+        <input type="checkbox" id="checkbox-input-two" name="checkbox-input-two">
+        <label for="checkbox-input-two">Checkbox two</label>
+      </fieldset>
 
       <legend>Radio inputs</legend>
+      <fieldset>
+        <input type="radio" id="radio-option-one" name="radio-input"/>
+        <label for="radio-option-one">Option one</label>
 
-      <input type="radio" id="radio-option-one" name="radio-input"/>
-      <label for="radio-option-one">Option one</label>
+        <input type="radio" id="radio-option-two" name="radio-input"/>
+        <label for="radio-option-two">Option two</label>
 
-      <input type="radio" id="radio-option-two" name="radio-input"/>
-      <label for="radio-option-two">Option two</label>
+        <input type="radio" id="radio-option-three" name="radio-input"/>
+        <label for="radio-option-three">Option three</label>
+      </fieldset>
 
-      <input type="radio" id="radio-option-three" name="radio-input"/>
-      <label for="radio-option-three">Option three</label>
-
-      <label for="range">Range</label>
-      <input id="range" type="range" min="0" max="100" value="25">
+      <label for="range">Range input</label>
+      <input id="range" type="range" min="0" max="100" value="0">
 
       <legend>File input</legend>
       <label for="file-input" class="button">Upload file</label>
@@ -151,11 +160,12 @@
       <span class="help-message">File name: {{ fileName }}</span>
 
       <strong>Markup</strong>
-      <pre><code class="language-html">&lt;legend&gt;Checkbox&lt;/legend&gt;
-&lt;input type="checkbox" id="checkbox-one" name="checkbox-one"&gt;
-&lt;label for="checkbox-one"&gt;Checkbox item one&lt;/label&gt;
-&lt;input type="checkbox" id="checkbox-two" name="checkbox-two"&gt;
-&lt;label for="checkbox-two"&gt;Checkbox item two&lt;/label&gt;
+      <pre><code class="language-html">
+&lt;legend&gt;Checkbox&lt;/legend&gt;
+&lt;input type="checkbox" id="checkbox-input-one" name="checkbox-input-one"&gt;
+&lt;label for="checkbox-input-one"&gt;Checkbox one&lt;/label&gt;
+&lt;input type="checkbox" id="checkbox-input-two" name="checkbox-input-two"&gt;
+&lt;label for="checkbox-input-two"&gt;Checkbox two&lt;/label&gt;
 
 &lt;legend&gt;Radio&lt;/legend&gt;
 &lt;input type="radio" id="radio-option-one" name="radio-option-one"/&gt;
@@ -166,48 +176,65 @@
 &lt;label for="radio-option-three"&gt;Option three&lt;/label&gt;
 
 &lt;label for="range"&gt;Range&lt;/label&gt;
-&lt;input type="range" id="range" min="0" max="100" value="25"/&gt;
+&lt;input type="range" id="range" min="0" max="100" value="0"/&gt;
 
 &lt;legend&gt;File input&lt;/legend&gt;
 &lt;label for="file-input" class="button"&gt;Upload file&lt;/label&gt;
 &lt;input type="file" name="file-input" id="file-input"/&gt;
 &lt;span class="help-message"&gt;File name: {{ fileName }}&lt;/span&gt;
       </code></pre>
+      <h3>Checkbox and Radio Style Options</h3>
 
-      <h3>Non-text input style options</h3>
-
-      <input type="checkbox" id="semi-fancy-check" class="semi-fancy" name="semi-fancy-check">
-      <label for="semi-fancy-check">Semi-fancy checkbox
-        <span>With more info to describe the option.</span>
+      <input type="checkbox" id="element-check" name="element-check">
+      <label for="element-check">
+        <strong>Checkbox<span class="optional">Nested Elements</span></strong>
+        <span class="description"><code>&lt;strong&gt;</code> for primary label, <code>&lt;span class="optional"&gt;</code> for optional, and <code>&lt;span class="description"&gt;</code> is used for description text. Can be used separately and/or  in conjunction with the <code>padded</code> and <code>border</code> input classes.</span>
       </label>
 
-      <input type="radio" id="fancy-radio" class="fancy" name="fancy-radio"/>
-      <label for="fancy-radio">Fancy radio</label>
+      <input type="checkbox" class="padded" id="check-padded" name="padded-check">
+      <label for="padded-check">Checkbox Padded</label>
 
-      <input type="radio" id="semi-fancy-radio" class="semi-fancy" name="fancy-radio"/>
-      <label for="semi-fancy-radio">Semi-fancy radio</label>
+      <input type="checkbox" class="border" id="border-check" name="border-check">
+      <label for="border-check">Checkbox Border</label>
 
-      <input type="radio" id="fancy-radio-alt" class="fancy" name="fancy-radio"/>
-      <label for="fancy-radio-alt">Fancy radio description
-        <span>With more info to describe the option. Can be used with fancy and semi-fancy classes.</span>
+      <input type="radio" id="element-radio" name="radio-options">
+      <label for="element-radio">
+        <strong>Radio<span class="optional">Nested Elements</span></strong>
+        <span class="description"><code>&lt;strong&gt;</code> for primary label, <code>&lt;span class="optional"&gt;</code> for optional, and <code>&lt;span class="description"&gt;</code> is used for description text. Can be used separately and/or in conjunction with the <code>radio</code> and <code>checkbox</code> input classes.</span>
       </label>
+
+      <input type="radio" class="padded" id="padded-radio"  name="adio-options"/>
+      <label for="padded-radio">Radio Padded</label>
+
+      <input type="radio" class="border" id="border-radio" name="radio-options"/>
+      <label for="border-radio">Radio Border</label>
 
       <strong>Markup</strong>
-      <pre><code class="language-html">&lt;input type="checkbox" id="semi-fancy-check" class="semi-fancy" name="semi-fancy-check"&gt;
-&lt;label for="semi-fancy-check"&gt;Semi-fancy checkbox
-  &lt;span&gt;With more info to describe the option.&lt;/span&gt;
+      <pre><code class="language-html">
+&lt;input type="checkbox" id="element-check" name="element-check"&gt;
+&lt;label for="element-check"&gt;
+  &lt;strong&gt;Checkbox&lt;span class="optional"&gt;Nested Elements&lt;/span&gt;&lt;/strong&gt;
+  &lt;span class="description"&gt;description text goes here&lt;/span&gt;
 &lt;/label&gt;
 
-&lt;input type="radio" id="fancy-radio" class="fancy" name="fancy-radio"/&gt;
-&lt;label for="fancy-radio"&gt;Fancy radio&lt;/label&gt;
+&lt;input type="checkbox" class="padded" id="padded-check" name="padded-check"&gt;
+&lt;label for="padded-check"&gt;Checkbox Padded&lt;/label&gt;
 
-&lt;input type="radio" id="semi-fancy-radio" class="semi-fancy" name="fancy-radio"/&gt;
-&lt;label for="semi-fancy-radio"&gt;Semi-fancy radio&lt;/label&gt;
+&lt;input type="checkbox" class="border" id="border-check" name="border-check"&gt;
+&lt;label for="border-check"&gt;Checkbox Border&lt;/label&gt;
 
-&lt;input type="radio" id="fancy-radio-alt" class="fancy" name="fancy-radio"/&gt;
-&lt;label for="fancy-radio-alt"&gt;Fancy radio description
-  &lt;span&gt;With more info to describe the option. Can be used with fancy and semi-fancy classes.&lt;/span&gt;
-&lt;/label&gt;</code></pre>
+&lt;input type="radio" id="element-radio" name="radio-options"&gt;
+&lt;label for="element-radio"&gt;
+  &lt;strong&gt;Radio&lt;span class="optional"&gt;Nested Elements&lt;/span&gt;&lt;/strong&gt;
+  &lt;span class="description"&gt;description text goes here&lt;/span&gt;
+&lt;/label&gt;
+
+&lt;input type="radio" class="padded" id="padded-radio"  name="radio-options"/&gt;
+&lt;label for="padded-radio"&gt;Radio Padded&lt;/label&gt;
+
+&lt;input type="radio" class="border" id="border-radio" name="radio-options"/&gt;
+&lt;label for="border-radio"&gt;Radio Border&lt;/label&gt;
+      </code></pre>
     </section>
 
     <section id="non-input">
@@ -223,8 +250,18 @@
         <option value="three">Option 3</option>
       </select>
 
+      <legend>Legend and Fieldset</legend>
+      <fieldset>
+        <input type="radio" id="radio-fieldset-one" name="radio-fieldset"/>
+        <label for="radio-fieldset-one">Radio button one in fieldset</label>
+
+        <input type="radio" id="radio-fieldset-two" name="radio-fieldset"/>
+        <label for="radio-fieldset-two">Radio button two in fieldset</label>
+      </fieldset>
+
       <strong>Markup</strong>
-      <pre><code class="language-html">&lt;label for="textarea"&gt;Textarea&lt;/label&gt;
+      <pre><code class="language-html">
+&lt;label for="textarea"&gt;Textarea&lt;/label&gt;
 &lt;textarea id="textarea" name=textarea&gt;&lt;/textarea&gt;
 
 &lt;label for="select"&gt;Select&lt;/label&gt;
@@ -232,7 +269,13 @@
   &lt;option value="one"&gt;Option 1&lt;/option&gt;
   &lt;option value="two"&gt;Option 2&lt;/option&gt;
   &lt;option value="three"&gt;Option 3&lt;/option&gt;
-&lt;/select&gt;</code></pre>
+&lt;/select&gt;
+
+&lt;legend&gt;Legend and Fieldset&lt;/legend&gt;
+&lt;fieldset&gt;
+&lt;!-- fieldset content--&gt;
+&lt;/fieldset&gt;
+      </code></pre>
     </section>
 
     <section id="layout">
@@ -269,8 +312,8 @@
         <p class="help-message">A basic wrapper to ensure structure formatting</p>
       </div>
 
-      <fieldset name="fieldset">
-        <legend>Fieldset with legend</legend>
+      <fieldset class="fieldset">
+        <legend>Fieldset class (with legend)</legend>
         <input type="checkbox" id="fieldset-checkbox" name="fieldset-checkbox">
         <label for="fieldset-checkbox">Checkbox</label>
         <input type="radio" id="fieldset-radio-one" name="fieldset-radio" value="fieldset-radio-one">
@@ -282,7 +325,8 @@
       </fieldset>
 
       <strong>Markup</strong>
-      <pre><code class="language-html">&lt;label for="inline-pattern"&gt;Inline inputs&lt;/label&gt;
+      <pre><code class="language-html">
+&lt;label for="inline-pattern"&gt;Inline inputs&lt;/label&gt;
 &lt;div class="inline-input"&gt;
   &lt;input id="inline-pattern" type="text" name="inline-pattern" style="max-width: 8rem;"&gt;
   &lt;input id="inline-pattern-two" type="text" name="inline-pattern-two" style="max-width: 16rem;"&gt;
@@ -309,22 +353,14 @@
 &lt;/div&gt;
 
 &lt;div class="field"&gt;
-  &lt;label for="field-input"&gt;Field wrap class&lt;/label&gt;
-  &lt;input type="text" id="field-input" name="field-input"&gt;
-  &lt;p class="help-message"&gt;A basic wrapper to ensure structure formatting&lt;/p&gt;
+  &lt;!-- A basic wrapper to ensure structure formatting --&gt;
 &lt;/div&gt;
 
-&lt;fieldset name="fieldset"&gt;
-  &lt;legend&gt;Fieldset with legend&lt;/legend&gt;
-  &lt;input type="checkbox" id="fieldset-checkbox" name="cfieldset-checkbox"&gt;
-  &lt;label for="fieldset-checkbox"&gt;Checkbox&lt;/label&gt;
-  &lt;input type="radio" id="fieldset-radio-one" name="fieldset-radio" value="fieldset-radio-one"&gt;
-  &lt;label for="fieldset-radio-one"&gt;Radio option one&lt;/label&gt;
-  &lt;input type="radio" id="fieldset-radio-two" name="fieldset-radio" value="fieldset-radio-two"&gt;
-  &lt;label for="fieldset-radio-two"&gt;Radio option two&lt;/label&gt;
-  &lt;label for="text-input"&gt;Text&lt;/label&gt;
-  &lt;input type="text" id="text-input" name="text-input"&gt;
-&lt;/fieldset&gt;</code></pre>
+&lt;fieldset name="fieldset" class="fieldset"&gt;
+  &lt;legend&gt;Fieldset class (with legend)&lt;/legend&gt;
+  &lt;!-- fieldset class can be applied to any block container--&gt;
+&lt;/fieldset&gt;
+      </code></pre>
     </section>
     <section id="spacing">
       <h2>Input spacing structure</h2>
@@ -362,8 +398,8 @@
       </div>
 
       <div class="example">
-        <fieldset name="example-fieldset">
-          <legend>Fieldset with legend</legend>
+        <fieldset name="example-fieldset" class=fieldset>
+          <legend>Fieldset class with legend</legend>
           <div class="example">
             <input type="checkbox" id="example-fieldset-checkbox" name="example-fieldset-checkbox">
             <label for="example-fieldset-checkbox">Checkbox</label>
@@ -374,11 +410,11 @@
           </div>
         </fieldset>
 
-        <input type="radio" id="fancy-example-fieldset-radio-one" name="fancy-example-fieldset-radio" value="fieldset-radio-one" class="fancy">
-        <label for="fancy-example-fieldset-radio-one">Fancy radio one</label>
-        <input type="radio" id="fancy-example-fieldset-radio-two" name="fancy-example-fieldset-radio" value="fieldset-radio-two" class="fancy">
-        <label for="fancy-example-fieldset-radio-two">Fancy radio two
-          <span>With more info to describe the option. Can be used with fancy and semi-fancy classes.</span>
+        <input type="radio" id="fancy-example-fieldset-radio-one" name="fancy-example-fieldset-radio" value="fieldset-radio-one" class="padded">
+        <label for="fancy-example-fieldset-radio-one">padded radio</label>
+        <input type="radio" id="fancy-example-fieldset-radio-two" name="fancy-example-fieldset-radio" value="fieldset-radio-two" class="border">
+        <label for="fancy-example-fieldset-radio-two"><strong>border radio</strong>
+          <span class="description">Nested span wrapper with <code>description</code> class added to content in label. Can be used with fancy and semi-fancy classes.</span>
         </label>
 
         <label for="example-textarea">Textarea</label>
@@ -423,21 +459,25 @@
         <option value="three">Option 3</option>
       </select>
 
-      <fieldset name="invalid-fieldset" class="invalid">
-      <legend>Fieldset</legend>
+      <fieldset name="invalid-fieldset" class="fieldset invalid">
+      <legend>Invalid Fieldset</legend>
         <input type="checkbox" id="invalid-checkbox" name="invalid-checkbox" class="invalid">
-        <label for="invalid-checkbox">Checkbox</label>
+        <label for="invalid-checkbox">Invalid checkbox</label>
+
+        <input type="radio" id="invalid-radio" name="invalid-radio" value="invalid-radio" class="invalid">
+        <label for="invalid-radio">Invalid radio</label>
+
       </fieldset>
 
-      <input type="radio" id="invalid-radio-one" name="invalid-radio" value="invalid-radio-one" class="semi-fancy invalid">
-      <label for="invalid-radio-one">Fancy radio one</label>
-      <input type="radio" id="invalid-radio-two" name="invalid-radio" value="invalid-radio-two" class="fancy invalid">
-      <label for="invalid-radio-two">Fancy radio two
-        <span>With more info to describe the option. Can be used with fancy and semi-fancy classes.</span>
+
+      <input type="radio" id="invalid-border-radio" name="invalid-border-radio" value="invalid-border-radio" class="border invalid">
+      <label for="invalid-border-radio">invalid border radio
+        <span class="description">Nested span wrapper with <code>description</code> class added to content in label. Can be used with fancy and semi-fancy classes.</span>
       </label>
 
       <strong>Markup</strong>
-      <pre><code class="language-html">&lt;label for="invalid-text-input"&gt;Input invalid&lt;/label&gt;
+      <pre><code class="language-html">
+&lt;label for="invalid-text-input"&gt;Input invalid&lt;/label&gt;
 &lt;input type="text" id="invalid-text-input" name="invalid-text-iinput" class="invalid"&gt;
 &lt;p class="error-message"&gt;Error messaging&lt;/p&gt;
 
@@ -471,8 +511,9 @@
 &lt;label for="invalid-radio-one"&gt;Fancy radio one&lt;/label&gt;
 &lt;input type="radio" id="invalid-radio-two" name="invalid-radio" value="invalid-radio-two" class="fancy invalid"&gt;
 &lt;label for="invalid-radio-two"&gt;Fancy radio two
-  &lt;span&gt;With more info to describe the option. Can be used with fancy and semi-fancy classes.&lt;/span&gt;
-&lt;/label&gt;</code></pre>
+  &lt;span class="description"&gt;Nested span wrapper with description class added to content in label. Can be used with fancy and semi-fancy classes.&lt;/span&gt;
+&lt;/label&gt;
+      </code></pre>
     </section>
   </article>
 </template>
