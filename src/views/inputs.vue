@@ -50,7 +50,11 @@
 
       <label for="inline-button">Inline Button</label>
       <div class="inline-button">
-        <input id="inline-button" type="text" name="inline-button">
+        <select id="invalid-select" name="invalid-select" class="invalid">
+        <option value="one">Option 1</option>
+        <option value="two">Option 2</option>
+        <option value="three">Option 3</option>
+      </select>
         <button type="button">Submit</button>
       </div>
 
