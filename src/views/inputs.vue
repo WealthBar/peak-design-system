@@ -424,10 +424,10 @@
           </div>
         </fieldset>
 
-        <input type="radio" id="fancy-example-fieldset-radio-one" name="fancy-example-fieldset-radio" value="fieldset-radio-one" class="padded">
-        <label for="fancy-example-fieldset-radio-one">padded radio</label>
-        <input type="radio" id="fancy-example-fieldset-radio-two" name="fancy-example-fieldset-radio" value="fieldset-radio-two" class="border">
-        <label for="fancy-example-fieldset-radio-two"><strong>border radio</strong>
+        <input type="radio" id="example-fieldset-radio-one" name="example-fieldset-radio" value="fieldset-radio-one" class="padded">
+        <label for="example-fieldset-radio-one">padded radio</label>
+        <input type="radio" id="example-fieldset-radio-two" name="example-fieldset-radio" value="fieldset-radio-two" class="border">
+        <label for="example-fieldset-radio-two"><strong>border radio</strong>
           <span class="description">Nested span wrapper with <code>description</code> class added to content in label. Can be used with fancy and semi-fancy classes.</span>
         </label>
 
