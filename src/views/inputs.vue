@@ -44,9 +44,9 @@
       <label for="disabled-input">Disabled</label>
       <input type="text" id="disabled-input" name="disabled-input" disabled>
 
-      <label for="help-input">Help Messaging</label>
+      <label for="help-input">Help Message</label>
       <input type="text" id="help-input" name="help-input">
-      <p class="help-message">Additional input help messaging</p>
+      <p class="help-message">Additional help message</p>
 
       <label for="inline-button">Inline Button</label>
       <div class="inline-button">
@@ -91,12 +91,12 @@
 &lt;label for="optional-input"&gt;Input&lt;span class="optional"&gt;optional&lt;/span&gt;&lt;/label&gt;
 &lt;input type="text" id="optional-input" name="optional-input"&gt;
 
-&lt;label for="disabled-input"&gt;Input Disabled&lt;/label&gt;
+&lt;label for="disabled-input"&gt;Disabled&lt;/label&gt;
 &lt;input type="text" id="disabled-input" name="disabled-input" disabled&gt;
 
-&lt;label for="help-input"&gt;Input Help&lt;/label&gt;
+&lt;label for="help-input"&gt;Help Message&lt;/label&gt;
 &lt;input type="text" id="help-input" name="help-input"&gt;
-&lt;p class="help-message"&gt;Additional input messaging&lt;/p&gt;
+&lt;p class="help-message"&gt;Additional help message&lt;/p&gt;
 
 &lt;label for="inline-button"&gt;Inline Button&lt;/label&gt;
 &lt;div class="inline-button"&gt;
@@ -135,7 +135,7 @@
     <section id="non-text">
       <h2>Non-text inputs</h2>
 
-      <legend>Checkbox input</legend>
+      <legend>Checkbox</legend>
       <fieldset>
         <input type="checkbox" id="checkbox-input-one" name="checkbox-input-one">
         <label for="checkbox-input-one">Checkbox one</label>
@@ -143,7 +143,7 @@
         <label for="checkbox-input-two">Checkbox two</label>
       </fieldset>
 
-      <legend>Radio inputs</legend>
+      <legend>Radio</legend>
       <fieldset>
         <input type="radio" id="radio-option-one" name="radio-input"/>
         <label for="radio-option-one">Option one</label>
@@ -155,10 +155,10 @@
         <label for="radio-option-three">Option three</label>
       </fieldset>
 
-      <label for="range">Range input</label>
+      <label for="range">Range</label>
       <input id="range" type="range" min="0" max="100" value="0">
 
-      <legend>File input</legend>
+      <legend>File</legend>
       <label for="file-input" class="button">Upload file</label>
       <input type="file" name="file-input" id="file-input" @change="loadFile"/>
       <span class="help-message">File name: {{ fileName }}</span>
@@ -182,7 +182,7 @@
 &lt;label for="range"&gt;Range&lt;/label&gt;
 &lt;input type="range" id="range" min="0" max="100" value="0"/&gt;
 
-&lt;legend&gt;File input&lt;/legend&gt;
+&lt;legend&gt;File&lt;/legend&gt;
 &lt;label for="file-input" class="button"&gt;Upload file&lt;/label&gt;
 &lt;input type="file" name="file-input" id="file-input"/&gt;
 &lt;span class="help-message"&gt;File name: {{ fileName }}&lt;/span&gt;
