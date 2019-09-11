@@ -428,7 +428,7 @@
         <label for="example-fieldset-radio-one">padded radio</label>
         <input type="radio" id="example-fieldset-radio-two" name="example-fieldset-radio" value="fieldset-radio-two" class="border">
         <label for="example-fieldset-radio-two"><strong>border radio</strong>
-          <span class="description">Nested span wrapper with <code>description</code> class added to content in label. Can be used with fancy and semi-fancy classes.</span>
+          <span class="description">Nested span wrapper with <code>description</code> class added to content in label. Can be used with <code>padded</code> and <code>border</code> classes.</span>
         </label>
 
         <label for="example-textarea">Textarea</label>
@@ -480,13 +480,12 @@
 
         <input type="radio" id="invalid-radio" name="invalid-radio" value="invalid-radio" class="invalid">
         <label for="invalid-radio">Invalid radio</label>
-
       </fieldset>
 
-
       <input type="radio" id="invalid-border-radio" name="invalid-border-radio" value="invalid-border-radio" class="border invalid">
-      <label for="invalid-border-radio">invalid border radio
-        <span class="description">Nested span wrapper with <code>description</code> class added to content in label. Can be used with fancy and semi-fancy classes.</span>
+      <label for="invalid-border-radio">
+        <strong>Invalid border radio</strong>
+        <span class="description">Nested span wrapper with <code>description</code> class added to content in label. Can be used with <code>padded</code> and <code>border</code> classes.</span>
       </label>
 
       <strong>Markup</strong>
@@ -521,11 +520,10 @@
   &lt;label for="invalid-checkbox"&gt;Checkbox&lt;/label&gt;
 &lt;/fieldset&gt;
 
-&lt;input type="radio" id="invalid-radio-one" name="invalid-radio" value="invalid-radio-one" class="semi-fancy invalid"&gt;
-&lt;label for="invalid-radio-one"&gt;Fancy radio one&lt;/label&gt;
-&lt;input type="radio" id="invalid-radio-two" name="invalid-radio" value="invalid-radio-two" class="fancy invalid"&gt;
-&lt;label for="invalid-radio-two"&gt;Fancy radio two
-  &lt;span class="description"&gt;Nested span wrapper with description class added to content in label. Can be used with fancy and semi-fancy classes.&lt;/span&gt;
+&lt;input type="radio" id="invalid-border-radio" name="invalid-border-radio" value="invalid-border-radio" class="border invalid"&gt;
+&lt;label for="invalid-border-radio"&gt;
+  &lt;strong&gt;Invalid border radio&lt;/strong&gt;
+  &lt;span class="description"&gt;Nested span wrapper with description class added to content in label. Can be used with padded and border classes.&lt;/span&gt;
 &lt;/label&gt;
       </code></pre>
     </section>
