@@ -48,13 +48,13 @@
       <input type="text" id="help-input" name="help-input">
       <p class="help-message">Additional help message</p>
 
-      <label for="inline-button">Inline Button</label>
+      <label for="inline-select">Select Inline Button</label>
       <div class="inline-button">
-        <select id="invalid-select" name="invalid-select" class="invalid">
-        <option value="one">Option 1</option>
-        <option value="two">Option 2</option>
-        <option value="three">Option 3</option>
-      </select>
+        <select id="inline-select" name="inline-select">
+          <option value="one">Option 1</option>
+          <option value="two">Option 2</option>
+          <option value="three">Option 3</option>
+        </select>
         <button type="button">Submit</button>
       </div>
 
@@ -101,6 +101,16 @@
 &lt;label for="inline-button"&gt;Inline Button&lt;/label&gt;
 &lt;div class="inline-button"&gt;
   &lt;input id="inline-button" error-message type="text" name="inline-button"&gt;
+  &lt;button type="button"&gt;Submit&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;label for="inline-select"&gt;Select Inline Button&lt;/label&gt;
+&lt;div class="inline-button"&gt;
+  &lt;select id="inline-select" name="inline-select"&gt;
+    &lt;option value="one"&gt;Option 1&lt;/option&gt;
+    &lt;option value="two"&gt;Option 2&lt;/option&gt;
+    &lt;option value="three"&gt;Option 3&lt;/option&gt;
+  &lt;/select&gt;
   &lt;button type="button"&gt;Submit&lt;/button&gt;
 &lt;/div&gt;
 
