@@ -205,7 +205,7 @@
         <span class="description"><code>&lt;strong&gt;</code> for primary label, <code>&lt;span class="optional"&gt;</code> for optional, and <code>&lt;span class="description"&gt;</code> is used for description text. Can be used separately and/or  in conjunction with the <code>padded</code> and <code>border</code> input classes.</span>
       </label>
 
-      <input type="checkbox" class="padded" id="check-padded" name="padded-check">
+      <input type="checkbox" class="padded" id="padded-check" name="padded-check">
       <label for="padded-check">Checkbox Padded</label>
 
       <input type="checkbox" class="border" id="border-check" name="border-check">
@@ -217,7 +217,7 @@
         <span class="description"><code>&lt;strong&gt;</code> for primary label, <code>&lt;span class="optional"&gt;</code> for optional, and <code>&lt;span class="description"&gt;</code> is used for description text. Can be used separately and/or in conjunction with the <code>radio</code> and <code>checkbox</code> input classes.</span>
       </label>
 
-      <input type="radio" class="padded" id="padded-radio"  name="adio-options"/>
+      <input type="radio" class="padded" id="padded-radio"  name="radio-options"/>
       <label for="padded-radio">Radio Padded</label>
 
       <input type="radio" class="border" id="border-radio" name="radio-options"/>
