@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: peak-deployment
+  namespace: wealthbar
   labels:
     app: peak
 spec:
@@ -15,10 +16,24 @@ spec:
         app: peak
     spec:
       imagePullSecrets:
-      - name: wealthbar-ci-pull-secret
+        - name: wealthbar-ci-pull-secret
       containers:
-      - name: peak
-        image: quay.io/wealthbar/peak-design-system:master
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 5001
+        - name: peak
+          image: quay.io/wealthbar/peak-design-system:master
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5001
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5001
+            initialDelaySeconds: 10
+            timeoutSeconds: 30
+            failureThreshold: 6
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5001
+            initialDelaySeconds: 10
+            timeoutSeconds: 3
+            periodSeconds: 5

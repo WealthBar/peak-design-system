@@ -4,6 +4,7 @@ metadata:
   labels:
     app: peak
   name: peak
+  namespace: wealthbar
 spec:
   type: NodePort
   ports:
