@@ -44,7 +44,7 @@ steps:
       from_secret: digitalocean_access_token
   commands:
   - "doctl kubernetes cluster kubeconfig save $CLUSTER_NAME --access-token $DIGITALOCEAN_ACCESS_TOKEN"
-  - "kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/peak-design-system:${DRONE_COMMIT_SHA}"
+  - "kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/peak-design-system:${DRONE_COMMIT_SHA} -n wealthbar"
   when:
     branch: master
     event: push
