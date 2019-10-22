@@ -23,7 +23,7 @@
       </div>
       <div class="colour-block dark primary700">
         <strong>$primary-700</strong>
-        <span>#295da7</span>
+        <span>#2a5da8</span>
       </div>
       <div class="colour-block dark primary900">
         <strong>$primary-900</strong>
@@ -48,7 +48,7 @@
       </div>
       <div class="colour-block dark secondary300">
         <strong>$secondary-300</strong>
-        <span>#00beb7</span>
+        <span>#50c2bd</span>
       </div>
       <div class="colour-block dark secondary500">
         <strong>$secondary-500</strong>
@@ -72,7 +72,7 @@
       </div>
       <div class="colour-block tertiary100">
         <strong>$tertiary-100</strong>
-        <span>#f4e300</span>
+        <span>#f2e208</span>
       </div>
       <div class="colour-block dark tertiary300">
         <strong>$tertiary-300</strong>
@@ -137,7 +137,7 @@
       </div>
       <div class="colour-block dark pos300">
         <strong>$pos-300</strong>
-        <span>#24b33b</span>
+        <span>#2bb673</span>
       </div>
       <div class="colour-block dark pos500">
         <strong>$pos-500</strong>
