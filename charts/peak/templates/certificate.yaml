@@ -1,0 +1,27 @@
+{{- $namespace := .Release.Namespace -}}
+{{- $name := .Release.Name -}}
+{{- $service := .Release.Service -}}
+{{- $app := default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
+{{- $chart := printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
+{{- if .Values.certificate.enabled -}}
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: {{ .Values.ingress.host | replace "." "-" | trunc 63 | nospace }}-prod
+  namespace: {{ $namespace }}
+  labels:
+    app: {{ $app }}
+    chart: {{ $chart }}
+    release: {{ $name }}
+    use-digitalocean-solver: "true"
+spec:
+  secretName: {{ .Values.ingress.host | replace "." "-" | trunc 63 | nospace }}-prod-tls
+  duration: 2160h # 90d
+  renewBefore: 360h # 15d
+  commonName: {{ .Values.ingress.host }}
+  dnsNames:
+    - {{ .Values.ingress.host }}
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+{{- end -}}

@@ -1,0 +1,30 @@
+{{- if .Values.ingress.enabled -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ include "peak.fullname" . }}-ingress
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ include "peak.name" . }}
+    release: {{ .Release.Name }}
+    {{- include "peak.labels" . | nindent 4 }}
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: {{ .Values.ingress.host }}
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{ .Values.service.name}}
+              servicePort: {{ .Values.service.port }}
+  {{- if .Values.certificate.enabled }}
+  tls:
+    - secretName: {{ .Values.ingress.host | replace "." "-" | trunc 63 | nospace }}-prod-tls
+      hosts:
+        - {{ .Values.ingress.host }}
+  {{- end }}
+{{- end}}
+
+

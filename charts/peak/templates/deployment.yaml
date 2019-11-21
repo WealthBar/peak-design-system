@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "peak.fullname" . }}-deployment
+  namespace: {{ .Release.Namespace}}
+  labels:
+    app: {{ include "peak.name" . }}
+    {{- include "peak.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "peak.name" . }}
+      release: {{ .Release.Name }}
+      {{- include "peak.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "peak.name" . }}
+        release: {{ .Release.Name }}
+        {{- include "peak.selectorLabels" . | nindent 8 }}
+    spec:
+      imagePullSecrets:
+        - name: wealthbar-ci-pull-secret
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 5001
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5001
+            initialDelaySeconds: 10
+            timeoutSeconds: 30
+            failureThreshold: 6
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5001
+            initialDelaySeconds: 10
+            timeoutSeconds: 30
+            failureThreshold: 5
