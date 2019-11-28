@@ -4,20 +4,15 @@ metadata:
   name: {{ include "peak.fullname" . }}-deployment
   namespace: {{ .Release.Namespace}}
   labels:
-    app: {{ include "peak.name" . }}
     {{- include "peak.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "peak.name" . }}
-      release: {{ .Release.Name }}
-      {{- include "peak.selectorLabels" . | nindent 6 }}
+      {{- include "peak.labels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        app: {{ include "peak.name" . }}
-        release: {{ .Release.Name }}
         {{- include "peak.selectorLabels" . | nindent 8 }}
     spec:
       imagePullSecrets:
@@ -27,18 +22,18 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - containerPort: 5001
+            - containerPort: {{ .Values.deployment.probePort }}
           livenessProbe:
             httpGet:
-              path: /
-              port: 5001
+              path: {{ .Values.deployment.probePath }}
+              port: {{ .Values.deployment.probePort }}
             initialDelaySeconds: 10
             timeoutSeconds: 30
             failureThreshold: 6
           readinessProbe:
             httpGet:
-              path: /
-              port: 5001
+              path: {{ .Values.deployment.probePath }}
+              port: {{ .Values.deployment.probePort }}
             initialDelaySeconds: 10
             timeoutSeconds: 30
             failureThreshold: 5

@@ -4,14 +4,12 @@ metadata:
   name: {{ include "peak.fullname" . }}
   namespace: {{ .Release.Namespace }}
   labels:
-    app: {{ include "peak.name" . }}
-    release: {{ .Release.Name }}
     {{- include "peak.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: 5001
+      targetPort: {{ .Values.deployment.probePort }}
   selector:
     app: {{ include "peak.name" . }}
     release: {{ .Release.Name }}

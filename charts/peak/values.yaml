@@ -14,10 +14,16 @@ service:
 
 ingress:
   enabled: true
-  host: peak.wealth.bar
 
 certificate:
   enabled: true
+
+deployment:
+  probePath: /
+  probePort: 5001
+
+domains:
+  - peak.wealth.bar
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

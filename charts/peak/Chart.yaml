@@ -1,6 +1,6 @@
 apiVersion: v2
 name: peak
-version: 0.1.0
+version: 0.1.1
 appVersion: 1.16.0
 description: Website for the Peak Design System
 type: application

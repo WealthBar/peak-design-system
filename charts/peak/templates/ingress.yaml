@@ -5,26 +5,28 @@ metadata:
   name: {{ include "peak.fullname" . }}-ingress
   namespace: {{ .Release.Namespace }}
   labels:
-    app: {{ include "peak.name" . }}
-    release: {{ .Release.Name }}
     {{- include "peak.labels" . | nindent 4 }}
   annotations:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-    - host: {{ .Values.ingress.host }}
+    {{ range .Values.domains }}
+    {{- $service_name := . | replace "." "-" | trunc 63 | nospace -}}
+    - host: {{ . }}
       http:
         paths:
           - path: /
             backend:
-              serviceName: {{ .Values.service.name}}
-              servicePort: {{ .Values.service.port }}
+              serviceName: {{ $service_name}}
+              servicePort: 80
+    {{ end -}}
   {{- if .Values.certificate.enabled }}
   tls:
-    - secretName: {{ .Values.ingress.host | replace "." "-" | trunc 63 | nospace }}-prod-tls
+    {{- range .Values.domains }}
+    {{- $service_name := . | replace "." "-" | trunc 63 | nospace }}
+    - secretName: {{ $service_name }}-prod-tls
       hosts:
-        - {{ .Values.ingress.host }}
+        - {{ . }}
+    {{- end }}
   {{- end }}
-{{- end}}
-
-
+{{- end }}
