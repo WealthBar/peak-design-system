@@ -731,12 +731,12 @@ li ul {
       }
 
       .line-60 {
-        border-color: $jade-300;
+        border-color: $primary-300;
         left: 28rem;
       }
 
       .line-80 {
-        border-color: $jade-300;
+        border-color: $primary-300;
         left: 38rem;
       }
 

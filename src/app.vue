@@ -145,8 +145,8 @@
       display: block;
 
       &:hover, &:focus {
-        background: $jade-50;
-        color: $jade-500;
+        background: $primary-50;
+        color: $primary-500;
       }
     }
     .coming-soon { color: $pearl-300; }

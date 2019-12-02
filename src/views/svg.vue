@@ -14,6 +14,7 @@
 </template>
 <script>
   import svg from './svg.data.js';
+  import 'prismjs';
   export default {
     components: { svg },
     data() {
