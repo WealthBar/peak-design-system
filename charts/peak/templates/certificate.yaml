@@ -17,7 +17,7 @@ spec:
   dnsNames:
     - {{ . }}
   issuerRef:
-    name: letsencrypt-staging
+    name: letsencrypt-production
     kind: ClusterIssuer
 ---
   {{ end }}
