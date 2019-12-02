@@ -22,18 +22,18 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - containerPort: {{ .Values.deployment.probePort }}
+            - containerPort: {{ .Values.service.targetPort }}
           livenessProbe:
             httpGet:
               path: {{ .Values.deployment.probePath }}
-              port: {{ .Values.deployment.probePort }}
+              port: {{ .Values.service.targetPort }}
             initialDelaySeconds: 10
             timeoutSeconds: 30
             failureThreshold: 6
           readinessProbe:
             httpGet:
               path: {{ .Values.deployment.probePath }}
-              port: {{ .Values.deployment.probePort }}
+              port: {{ .Values.service.targetPort }}
             initialDelaySeconds: 10
             timeoutSeconds: 30
             failureThreshold: 5

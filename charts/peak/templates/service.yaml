@@ -9,7 +9,7 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: {{ .Values.deployment.probePort }}
+      targetPort: {{ .Values.deployment.targetPort }}
   selector:
     app: {{ include "peak.name" . }}
     release: {{ .Release.Name }}

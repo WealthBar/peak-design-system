@@ -1,4 +1,5 @@
 {{- if .Values.ingress.enabled -}}
+{{- $service_port := .Values.service.port  -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -17,8 +18,8 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: {{ $service_name}}
-              servicePort: 80
+              serviceName: {{ $service_name }}
+              servicePort: {{ $service_port }}
     {{ end -}}
   {{- if .Values.certificate.enabled }}
   tls:

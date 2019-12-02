@@ -11,6 +11,7 @@ service:
   name: peak
   type: NodePort
   port: 80
+  targetPort: 5001
 
 ingress:
   enabled: true
@@ -20,7 +21,6 @@ certificate:
 
 deployment:
   probePath: /
-  probePort: 5001
 
 domains:
   - peak.wealth.bar
