@@ -1,0 +1,24 @@
+{{- $namespace := .Release.Namespace -}}
+{{- if and .Values.certificate.enabled .Values.domains -}}
+  {{ range .Values.domains }}
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: {{ . | replace "." "-" | trunc 63 | nospace }}-prod
+  namespace: {{ $namespace }}
+  labels:
+    {{- include "peak.labels" $ | nindent 4 }}
+    {{- include "certificate.labels" . | nindent 4 }}
+spec:
+  secretName: {{ . | replace "." "-" | trunc 63 | nospace }}-prod-tls
+  duration: 2160h # 90d
+  renewBefore: 360h # 15d
+  commonName: {{ . }}
+  dnsNames:
+    - {{ . }}
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+---
+  {{ end }}
+{{- end -}}

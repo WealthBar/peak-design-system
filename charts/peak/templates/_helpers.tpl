@@ -1,0 +1,69 @@
+{{/* vim: set filetype=mustache: */}}
+{{/*
+Expand the name of the chart.
+*/}}
+{{- define "peak.name" -}}
+{{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
+{{/*
+Create a default fully qualified app name.
+We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+If release name contains chart name it will be used as a full name.
+*/}}
+{{- define "peak.fullname" -}}
+{{- if .Values.fullnameOverride -}}
+{{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- $name := default .Chart.Name .Values.nameOverride -}}
+{{- if contains $name .Release.Name -}}
+{{- .Release.Name | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+
+{{/*
+Create chart name and version as used by the chart label.
+*/}}
+{{- define "peak.chart" -}}
+{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
+{{/*
+Common labels
+*/}}
+{{- define "peak.labels" -}}
+app: {{ template "peak.name" . }}
+helm.sh/chart: {{ include "peak.chart" . }}
+{{ include "peak.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end -}}
+
+{{/*
+Selector labels
+*/}}
+{{- define "peak.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "peak.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end -}}
+
+{{/*
+Certificate instructions to connect the right solvers
+*/}}
+{{- define "certificate.labels" -}}
+{{- if . | regexFind "wealth\\.bar" -}}
+use-digitalocean-solver: "true"
+{{- end -}}
+{{- if . | regexFind "assanteconnect\\.com" -}}
+use-cloudflare-solver: "true"
+{{- end -}}
+{{- if . | regexFind "wealthbar\\.com" -}}
+use-cloudflare-solver: "true"
+{{- end -}}
+{{- end -}}

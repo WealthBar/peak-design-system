@@ -1,0 +1,8 @@
+apiVersion: v2
+name: peak
+version: 1.0.0
+appVersion: 1.16.0
+description: Website for the Peak Design System
+type: application
+icon: https://www.ppivalet.ca/brand/ppi/favicon-180.png
+deprecated: false
