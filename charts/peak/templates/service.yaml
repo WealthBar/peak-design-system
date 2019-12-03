@@ -11,6 +11,4 @@ spec:
     - port: {{ .Values.service.port }}
       targetPort: {{ .Values.deployment.targetPort }}
   selector:
-    app: {{ include "peak.name" . }}
-    release: {{ .Release.Name }}
     {{- include "peak.selectorLabels" . | nindent 4 }}

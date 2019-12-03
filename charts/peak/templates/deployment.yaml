@@ -9,11 +9,11 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "peak.labels" . | nindent 6 }}
+      {{- include "peak.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{- include "peak.selectorLabels" . | nindent 8 }}
+        {{- include "peak.labels" . | nindent 8 }}
     spec:
       imagePullSecrets:
         - name: wealthbar-ci-pull-secret
