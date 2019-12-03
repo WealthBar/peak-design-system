@@ -8,15 +8,16 @@
         <h4 class="no-margin">{{svg.name}}</h4>
         <!-- <button type="button"><span>copy</span></button> -->
       </header>
-      <pre><code class="language-svg">{{svg.icon}}</code></pre>
+      <prism language="svg">{{svg.icon}}</prism>
     </div>
   </article>
 </template>
 <script>
   import svg from './svg.data.js';
-  import 'prismjs';
+  import prism from 'vue-prism-component';
+
   export default {
-    components: { svg },
+    components: { prism, svg },
     data() {
       return { svg };
     },

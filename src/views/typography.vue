@@ -62,14 +62,7 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre v-if="getSelectedScreen == 'mobile'"><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(26)}};
-line-height: {{unitValue(32)}};
-font-weight: 500;
-margin: {{unitValue(26)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
-          <pre v-else><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(36)}};
-line-height: {{unitValue(48)}};
-font-weight: 500;
-margin: {{unitValue(36)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
+          <prism language="css" :class="getSelectedUnit">{{headerStyle('h1')}}</prism>
         </div>
       </div>
 
@@ -84,14 +77,7 @@ margin: {{unitValue(36)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre v-if="getSelectedScreen == 'mobile'" ><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(24)}};
-line-height: {{unitValue(30)}};
-font-weight: 500;
-margin: {{unitValue(24)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
-          <pre v-else><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(30)}};
-line-height: {{unitValue(36)}};
-font-weight: 500;
-margin: {{unitValue(30)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
+          <prism language="css" :class="getSelectedUnit">{{headerStyle('h2')}}</prism>
         </div>
       </div>
 
@@ -107,15 +93,7 @@ margin: {{unitValue(30)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre v-if="getSelectedScreen == 'mobile'"><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(22)}};
-line-height: {{unitValue(28)}};
-font-weight: 500;
-margin: {{unitValue(22)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
-          <pre v-else><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(24)}};
-line-height: {{unitValue(30)}};
-font-weight: 500;
-margin: {{unitValue(24)}} {{unitValue(0)}} {{unitValue(16)}};</code>
-          </pre>
+          <prism language="css" :class="getSelectedUnit">{{headerStyle('h3')}}</prism>
         </div>
       </div>
 
@@ -130,14 +108,7 @@ margin: {{unitValue(24)}} {{unitValue(0)}} {{unitValue(16)}};</code>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre v-if="getSelectedScreen == 'mobile'"><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(18)}};
-line-height: {{unitValue(24)}};
-font-weight: 500;
-margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
-          <pre v-else><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(20)}};
-line-height: {{unitValue(26)}};
-font-weight: 500;
-margin: {{unitValue(20)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
+          <prism language="css" :class="getSelectedUnit">{{headerStyle('h4')}}</prism>
         </div>
       </div>
 
@@ -152,14 +123,22 @@ margin: {{unitValue(20)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre v-if="getSelectedScreen == 'mobile'"><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(16)}};
-line-height: {{unitValue(22)}};
-font-weight: 500;
-margin: {{unitValue(16)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
-          <pre v-else><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(18)}};
-line-height: {{unitValue(24)}};
-font-weight: 500;
-margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
+          <prism language="css" :class="getSelectedUnit">{{headerStyle('h5')}}</prism>
+        </div>
+      </div>
+
+      <h3>H6 header</h3>
+      <div class="example">
+        <h6 :class="getSelectedScreen">This is a very small H6 header.</h6>
+      </div>
+      <div class="attributes">
+        <div class="code-sample">
+          <strong>Markup</strong>
+          <pre><code class="language-html">&lt;h6&gt;This is a very small H6 header.&lt;/h6&gt;</code></pre>
+        </div>
+        <div class="code-sample">
+          <strong>Style</strong>
+          <prism language="css" :class="getSelectedUnit">{{headerStyle('h6')}}</prism>
         </div>
       </div>
     </section>
@@ -181,10 +160,7 @@ margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(16)}};
-line-height: {{unitValue(22)}};
-font-weight: 300;
-margin: {{unitValue(0)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
+          <prism language="css" :class="getSelectedUnit">{{typeStyle('p')}}</prism>
         </div>
       </div>
 
@@ -200,10 +176,7 @@ margin: {{unitValue(0)}} {{unitValue(0)}} {{unitValue(16)}};</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(18)}};
-line-height: {{unitValue(24)}};
-font-weight: 300;
-margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(18)}};</code></pre>
+          <prism language="css" :class="getSelectedUnit">{{typeStyle('large')}}</prism>
         </div>
       </div>
 
@@ -222,7 +195,7 @@ margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(18)}};</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre><code class="language-css" :class="getSelectedUnit">font-size: {{unitValue(14)}};</code></pre>
+          <prism language="css" :class="getSelectedUnit">font-size: {{unitValue(14)}};</prism>
         </div>
       </div>
 
@@ -257,7 +230,7 @@ margin: {{unitValue(18)}} {{unitValue(0)}} {{unitValue(18)}};</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre><code class="language-css" :class="getSelectedUnit">font-weight: 500;</code></pre>
+          <pre><code class="language-css" :class="getSelectedUnit">font-weight: bold;</code></pre>
         </div>
       </div>
       <h3>No Margins</h3>
@@ -423,7 +396,7 @@ li ul {
           <strong>Style</strong>
           <pre><code class="language-css">font-feature-settings: "kern", "liga", “tnum”, "ss04";</code></pre>
           <strong>Markup</strong>
-          <pre><code>&lt;span class="tab-numbers"&gt;0123456789&lt;/span&gt;</code></pre>
+          <pre><code class="language-html">&lt;span class="tab-numbers"&gt;0123456789&lt;/span&gt;</code></pre>
         </div>
       </div>
 
@@ -434,18 +407,20 @@ li ul {
 
 <script>
   import { mapGetters, mapActions } from '@/lib/vue';
-
+  import typography from './typography.data.js';
+  import prism from 'vue-prism-component';
   export default {
+    components: { prism, typography },
     data() {
       return {
         name: 'typography',
         title: 'Typography',
         isMobile: false,
+        typography,
       };
     },
     computed: {
       ...mapGetters(['getSelectedUnit', 'getSelectedScreen']),
-
     },
     methods: {
       ...mapActions(['setScreen', 'setUnit']),
@@ -455,6 +430,25 @@ li ul {
         }
         return `${value}${this.getSelectedUnit}`;
       },
+      propScreenValue(tag, prop) {
+        return this.unitValue(typography[tag][this.getSelectedScreen][prop]);
+      },
+      propValue(tag, prop) {
+        return this.unitValue(typography[tag][prop]);
+      },
+      headerStyle(tag) {
+        return `font-size: ` + this.propScreenValue(tag, 'fontSize') +`
+line-height: `+ this.propScreenValue(tag, 'lineHeight') +`
+font-weight: bold;
+margin: ` + this.propScreenValue(tag, 'marginTop') +` 0 ` + this.propScreenValue(tag, 'marginBottom') +`;`
+      },
+      typeStyle(tag) {
+        return `font-size: ` + this.propValue(tag, 'fontSize') +`
+line-height: `+ this.propValue(tag, 'lineHeight') +`
+font-weight: normal;
+margin: 0 0 ` + this.propValue(tag, 'marginBottom') +`;`
+      },
+
     },
   };
 </script>
@@ -646,8 +640,11 @@ li ul {
     @media #{$screen-width-large} {
       flex: 1 1 50%;
       &:last-child { padding-left: 1rem; }
-      pre { flex: 1 1 50%; }
-      code { height: 100%; }
+      pre {
+        flex: 1 1 50%;
+        display: flex;
+      }
+      code { flex: 1 1 100%; }
     }
   }
 

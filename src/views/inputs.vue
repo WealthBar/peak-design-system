@@ -530,7 +530,6 @@
   </article>
 </template>
 <script>
-  import 'prismjs';
   export default {
     props: {
       fileName: {
