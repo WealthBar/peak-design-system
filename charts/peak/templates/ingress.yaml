@@ -1,5 +1,4 @@
 {{- if .Values.ingress.enabled -}}
-{{- $service_port := .Values.service.port  -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -11,8 +10,9 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
+    {{- $service_port := .Values.service.port  -}}
+    {{- $service_name := .Values.service.name  -}}
     {{ range .Values.domains }}
-    {{- $service_name := . | replace "." "-" | trunc 63 | nospace -}}
     - host: {{ . }}
       http:
         paths:
@@ -24,8 +24,8 @@ spec:
   {{- if .Values.certificate.enabled }}
   tls:
     {{- range .Values.domains }}
-    {{- $service_name := . | replace "." "-" | trunc 63 | nospace }}
-    - secretName: {{ $service_name }}-prod-tls
+    {{- $domain_name := . | replace "." "-" | trunc 63 | nospace }}
+    - secretName: {{ $domain_name }}-prod-tls
       hosts:
         - {{ . }}
     {{- end }}

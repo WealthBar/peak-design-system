@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "peak.fullname" . }}
+  name: {{ .Values.service.name }}
   namespace: {{ .Release.Namespace }}
   labels:
     {{- include "peak.labels" . | nindent 4 }}
@@ -9,6 +9,6 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: {{ .Values.deployment.targetPort }}
+      targetPort: {{ .Values.service.targetPort }}
   selector:
     {{- include "peak.selectorLabels" . | nindent 4 }}
