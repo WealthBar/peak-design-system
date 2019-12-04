@@ -58,11 +58,11 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre><code class="language-html">&lt;h1&gt;This is a super large H1 header.&lt;/h1&gt;</code></pre>
+          <prism language="markup"><h1>This is a super large H1 header.</h1></prism>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <prism language="css" :class="getSelectedUnit">{{headerStyle('h1')}}</prism>
+          <prism language="css" :code="headerStyle('h1')"></prism>
         </div>
       </div>
 
@@ -73,7 +73,7 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre><code class="language-html">&lt;h2&gt;This is a huge H2 header.&lt;/h2&gt;</code></pre>
+          <prism language="markup"><h2>This is a huge H2 header.</h2></prism>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
@@ -89,7 +89,7 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre><code class="language-html">&lt;h3&gt;This is a big H3 header.&lt;/h3&gt;</code></pre>
+          <prism language="markup"><h3>This is a big H3 header.</h3></prism>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
@@ -104,7 +104,7 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre><code class="language-html">&lt;h4&gt;This is a medium H4 header.&lt;/h4&gt;</code></pre>
+          <prism language="markup"><h4>This is a medium H4 header.</h4></prism>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
@@ -119,7 +119,7 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre><code class="language-html">&lt;h5&gt;This is a small H5 header.&lt;/h5&gt;</code></pre>
+          <prism language="markup"><h5>This is a small H5 header.</h5></prism>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
@@ -134,7 +134,7 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre><code class="language-html">&lt;h6&gt;This is a very small H6 header.&lt;/h6&gt;</code></pre>
+          <prism language="markup"><h6>This is a very small H6 header.</h6></prism>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
@@ -156,7 +156,7 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre><code class="language-html">&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+          <prism language="markup"><p>This is a paragraph.</p></prism>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
@@ -165,14 +165,14 @@
       </div>
 
       <h3>Large Text</h3>
-      <p>Only designed to work when applied to a paragraph &lt;p&gt; element.</p>
+      <p>Only designed to work when applied to a paragraph <p> element.</p>
       <div class="example">
         <p class="large">This is large paragraph text.</p>
       </div>
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre><code class="language-html">&lt;p class="large"&gt;This is large paragraph text.&lt;/p&gt;</code></pre>
+          <prism language="markup"><p class="large">This is large paragraph text.</p></prism>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
@@ -182,7 +182,7 @@
 
 
       <h3>Small Text</h3>
-      <p>Whether set as a class or as an inline element inherits basic sizing and spacing from the parent (eg: paragraph &lt;p&gt;) element.</p>
+      <p>Whether set as a class or as an inline element inherits basic sizing and spacing from the parent (eg: paragraph <p>) element.</p>
       <div class="example">
         <p class="small">This is small paragraph text.</p>
         <p>Regular text <small>(This is a small text block)</small> wrapping the small text.</p>
@@ -190,7 +190,7 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre><code class="language-html">&lt;p class="small"&gt;This is small paragraph text.&lt;/p&gt;
+          <pre><code class="language-markup">&lt;p class="small"&gt;This is small paragraph text.&lt;/p&gt;
 &lt;p&gt;Regular text &lt;small&gt;(This is a small text block)&lt;/small&gt; wrapping the small text.&lt;/p&gt;</code></pre>
         </div>
         <div class="code-sample">
@@ -207,7 +207,7 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre><code class="language-html">&lt;p&gt;This is &lt;span class="subtle"&gt;subtle text&lt;/p&gt; in a paragraph.&lt;/p&gt;</code></pre>
+          <pre><code class="language-markup">&lt;p&gt;This is &lt;span class="subtle"&gt;subtle text&lt;/p&gt; in a paragraph.&lt;/p&gt;</code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
@@ -226,26 +226,28 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre><code class="language-html">&lt;p&gt;This is &lt;strong&gt;strong text&lt;/strong&gt; in a paragraph.&lt;/p&gt;</code></pre>
+          <prism language="markup"><p>This is <strong>strong text</strong> in a paragraph.</p></prism>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre><code class="language-css" :class="getSelectedUnit">font-weight: bold;</code></pre>
+          <prism language="css" :class="getSelectedUnit">
+font-weight: bold;
+          </prism>
         </div>
       </div>
       <h3>No Margins</h3>
-      <p>Default margins on any header or block element (eg: <code>&lt;h2&gt;</code> or <code>&lt;p&gt;</code>) can be removed by adding a class of <code>no-margin</code> to it.</p>
+      <p>Default margins on any header or block element (eg: <code>h2</code> or <code>p</code>) can be removed by adding a class of <code>no-margin</code> to it.</p>
       <div class="example">
         <h3 class="no-margin">This is H3 element has no margin.</h3>
       </div>
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre><code class="language-html">&lt;h3 class="no-margin"&gt;This is H3 element has no margin.&lt;/h3&gt;</code></pre>
+          <prism language="markup"><h3 class="no-margin">This is H3 element has no margin.</h3></prism>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <pre><code class="language-css" :class="getSelectedUnit">margin: 0;</code></pre>
+          <prism language="css" :class="getSelectedUnit">margin: 0;</prism>
         </div>
       </div>
     </section>
@@ -273,7 +275,7 @@
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre><code class="language-html">&lt;ul&gt;
+          <pre><code class="language-markup">&lt;ul&gt;
   &lt;li&gt;unordered list item&lt;/li&gt;
   &lt;li&gt;unordered list item&lt;/li&gt;
 &lt;/ul&gt;
@@ -286,8 +288,7 @@
     &lt;li&gt;unordered list item&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/ul&gt;
-          </code>
-          </pre>
+          </code></pre>
         </div>
         <div class="code-sample">
           <strong>Style</strong>
@@ -302,7 +303,8 @@ ul.bullet { list-style: disc; }
 li ul {
   padding-left: {{unitValue(16)}};
   margin: 0;
-}</code></pre>
+}          </code>
+          </pre>
         </div>
       </div>
 
@@ -316,7 +318,7 @@ li ul {
       <div class="attributes">
         <div class="code-sample">
           <strong>Markup</strong>
-          <pre><code class="language-html">&lt;ol&gt;
+          <pre><code class="language-markup">&lt;ol&gt;
   &lt;li&gt;first list item&lt;/li&gt;
   &lt;li&gt;second list item&lt;/li&gt;
 &lt;/ol&gt;</code></pre>
@@ -371,7 +373,7 @@ li ul {
       <h2 id="font-stack">Font Stack</h2>
       <p>We use the same font stack regardless of the device. GT Walsheim is our typeface for it’s friendly and unique personality, as well as its web readability.</p>
 
-      <pre><code class="language-css">font-family: "GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;</code></pre>
+      <prism language="css">font-family: "GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;</prism>
 
       <h3>Alternative glyphs</h3>
       <p>This refers to alphanumeric characters where we’ve deviated from GT Walsheim’s default for readability reasons.</p>
@@ -383,7 +385,7 @@ li ul {
         </div>
         <div class="alternative-copy">
           <strong>Style</strong>
-          <pre><code class="language-css">font-feature-settings: "kern", "liga", “pnum”, "ss04";</code></pre>
+          <prism language="css">font-feature-settings: "kern", "liga", “pnum”, "ss04";</prism>
         </div>
       </div>
       <h3>Tabular Figures</h3>
@@ -394,9 +396,9 @@ li ul {
         </div>
         <div class="alternative-copy">
           <strong>Style</strong>
-          <pre><code class="language-css">font-feature-settings: "kern", "liga", “tnum”, "ss04";</code></pre>
+          <prism language="css">font-feature-settings: "kern", "liga", “tnum”, "ss04";</prism>
           <strong>Markup</strong>
-          <pre><code class="language-html">&lt;span class="tab-numbers"&gt;0123456789&lt;/span&gt;</code></pre>
+          <prism language="markup"><span class="tab-numbers">0123456789</span></prism>
         </div>
       </div>
 
@@ -408,7 +410,7 @@ li ul {
 <script>
   import { mapGetters, mapActions } from '@/lib/vue';
   import typography from './typography.data.js';
-  import prism from 'vue-prism-component';
+  import prism from 'vue-prismjs';
   export default {
     components: { prism, typography },
     data() {
@@ -644,7 +646,10 @@ margin: 0 0 ` + this.propValue(tag, 'marginBottom') +`;`
         flex: 1 1 50%;
         display: flex;
       }
-      code { flex: 1 1 100%; }
+      //   // code {
+      //   //   flex: 1 1 100%;
+      //   // }
+      // }
     }
   }
 

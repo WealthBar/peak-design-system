@@ -11,30 +11,90 @@
 
       <label for="text-input">Text</label>
       <input type="text" id="text-input" name="text-input">
+      <pre><code class="language-markup">
+&lt;label for="text-input"&gt;Text&lt;/label&gt;
+&lt;input id="text-input" type="text" name="text-input"&gt;
+      </code></pre>
 
       <label for="number-input">Number</label>
       <input type="number" id="number-input" name="number-input" pattern="[0-9]*">
+      <pre><code class="language-markup">
+&lt;label for="number-input"&gt;Number&lt;/label&gt;
+&lt;input id="number-input" type="number" name="number-input" pattern="[0-9]*"&gt;
+      </code></pre>
 
       <label for="search-input">Search</label>
       <input type="search" id="search-input" name="search-input" placeholder="search">
+      <pre><code class="language-markup">
+&lt;label for="search-input"&gt;Search&lt;/label&gt;
+&lt;input type="search" id="search-input" name="search-input" placeholder="search"&gt;
+      </code></pre>
 
       <label for="password-input">Password</label>
       <input type="password" id="password-input" name="password-input">
-
-      <strong>Markup</strong>
-      <pre><code class="language-html">
-&lt;label for="text-input"&gt;Text&lt;/label&gt;
-&lt;input id="text-input" type="text" name="text-input"&gt;
-
-&lt;label for="number-input"&gt;Number&lt;/label&gt;
-&lt;input id="number-input" type="number" name="number-input" pattern="[0-9]*"&gt;
-
-&lt;label for="search-input"&gt;Search&lt;/label&gt;
-&lt;input type="search" id="search-input" name="search-input" placeholder="search"&gt;
-
+      <pre><code class="language-markup">
 &lt;label for="password-input"&gt;Password&lt;/label&gt;
 &lt;input type="password" id="password-input" name="password-input" required&gt;
       </code></pre>
+    </section>
+    <section id="non-text">
+      <h2>Non-text inputs</h2>
+
+      <legend>Checkbox</legend>
+      <fieldset>
+        <input type="checkbox" id="checkbox-input-one" name="checkbox-input-one">
+        <label for="checkbox-input-one">Checkbox one</label>
+        <input type="checkbox" id="checkbox-input-two" name="checkbox-input-two">
+        <label for="checkbox-input-two">Checkbox two</label>
+      </fieldset>
+      <pre><code class="language-markup">
+&lt;legend&gt;Checkbox&lt;/legend&gt;
+&lt;input type="checkbox" id="checkbox-input-one" name="checkbox-input-one"&gt;
+&lt;label for="checkbox-input-one"&gt;Checkbox one&lt;/label&gt;
+&lt;input type="checkbox" id="checkbox-input-two" name="checkbox-input-two"&gt;
+&lt;label for="checkbox-input-two"&gt;Checkbox two&lt;/label&gt;
+      </code></pre>
+
+      <legend>Radio</legend>
+      <fieldset>
+        <input type="radio" id="radio-option-one" name="radio-input"/>
+        <label for="radio-option-one">Option one</label>
+
+        <input type="radio" id="radio-option-two" name="radio-input"/>
+        <label for="radio-option-two">Option two</label>
+
+        <input type="radio" id="radio-option-three" name="radio-input"/>
+        <label for="radio-option-three">Option three</label>
+      </fieldset>
+      <pre><code class="language-markup">
+&lt;legend&gt;Radio&lt;/legend&gt;
+&lt;input type="radio" id="radio-option-one" name="radio-option-one"/&gt;
+&lt;label for="radio-option-one"&gt;Option one&lt;/label&gt;
+&lt;input type="radio" id="radio-option-two" name="radio-option-two"/&gt;
+&lt;label for="radio-option-two"&gt;Option two&lt;/label&gt;
+&lt;input type="radio" id="radio-option-three" name="radio-option-three"/&gt;
+&lt;label for="radio-option-three"&gt;Option three&lt;/label&gt;
+      </code></pre>
+
+      <label for="range">Range</label>
+      <input id="range" type="range" min="0" max="100" value="0">
+      <pre><code class="language-markup">
+&lt;label for="range"&gt;Range&lt;/label&gt;
+&lt;input type="range" id="range" min="0" max="100" value="0"/&gt;
+      </code></pre>
+
+      <legend>File</legend>
+      <label for="file-input" class="button">Upload file</label>
+      <input type="file" name="file-input" id="file-input" @change="loadFile"/>
+      <span class="help-message">File name: {{ fileName }}</span>
+      <pre><code class="language-markup">
+&lt;legend&gt;File&lt;/legend&gt;
+&lt;label for="file-input" class="button"&gt;Upload file&lt;/label&gt;
+&lt;input type="file" name="file-input" id="file-input"/&gt;
+&lt;span class="help-message"&gt;File name: {{ fileName }}&lt;/span&gt;
+      </code></pre>
+    </section>
+      <!-- <strong>Markup</strong> -->
 
       <h3>Text input style options</h3>
 
@@ -87,7 +147,7 @@
       </div>
 
       <strong>Markup</strong>
-      <pre><code class="language-html">
+      <pre><code class="language-markup">
 &lt;label for="optional-input"&gt;Input&lt;span class="optional"&gt;optional&lt;/span&gt;&lt;/label&gt;
 &lt;input type="text" id="optional-input" name="optional-input"&gt;
 
@@ -140,63 +200,9 @@
   &lt;/button&gt;
 &lt;/div&gt;
       </code></pre>
-    </section>
 
-    <section id="non-text">
-      <h2>Non-text inputs</h2>
 
-      <legend>Checkbox</legend>
-      <fieldset>
-        <input type="checkbox" id="checkbox-input-one" name="checkbox-input-one">
-        <label for="checkbox-input-one">Checkbox one</label>
-        <input type="checkbox" id="checkbox-input-two" name="checkbox-input-two">
-        <label for="checkbox-input-two">Checkbox two</label>
-      </fieldset>
 
-      <legend>Radio</legend>
-      <fieldset>
-        <input type="radio" id="radio-option-one" name="radio-input"/>
-        <label for="radio-option-one">Option one</label>
-
-        <input type="radio" id="radio-option-two" name="radio-input"/>
-        <label for="radio-option-two">Option two</label>
-
-        <input type="radio" id="radio-option-three" name="radio-input"/>
-        <label for="radio-option-three">Option three</label>
-      </fieldset>
-
-      <label for="range">Range</label>
-      <input id="range" type="range" min="0" max="100" value="0">
-
-      <legend>File</legend>
-      <label for="file-input" class="button">Upload file</label>
-      <input type="file" name="file-input" id="file-input" @change="loadFile"/>
-      <span class="help-message">File name: {{ fileName }}</span>
-
-      <strong>Markup</strong>
-      <pre><code class="language-html">
-&lt;legend&gt;Checkbox&lt;/legend&gt;
-&lt;input type="checkbox" id="checkbox-input-one" name="checkbox-input-one"&gt;
-&lt;label for="checkbox-input-one"&gt;Checkbox one&lt;/label&gt;
-&lt;input type="checkbox" id="checkbox-input-two" name="checkbox-input-two"&gt;
-&lt;label for="checkbox-input-two"&gt;Checkbox two&lt;/label&gt;
-
-&lt;legend&gt;Radio&lt;/legend&gt;
-&lt;input type="radio" id="radio-option-one" name="radio-option-one"/&gt;
-&lt;label for="radio-option-one"&gt;Option one&lt;/label&gt;
-&lt;input type="radio" id="radio-option-two" name="radio-option-two"/&gt;
-&lt;label for="radio-option-two"&gt;Option two&lt;/label&gt;
-&lt;input type="radio" id="radio-option-three" name="radio-option-three"/&gt;
-&lt;label for="radio-option-three"&gt;Option three&lt;/label&gt;
-
-&lt;label for="range"&gt;Range&lt;/label&gt;
-&lt;input type="range" id="range" min="0" max="100" value="0"/&gt;
-
-&lt;legend&gt;File&lt;/legend&gt;
-&lt;label for="file-input" class="button"&gt;Upload file&lt;/label&gt;
-&lt;input type="file" name="file-input" id="file-input"/&gt;
-&lt;span class="help-message"&gt;File name: {{ fileName }}&lt;/span&gt;
-      </code></pre>
       <h3>Checkbox and Radio Style Options</h3>
 
       <input type="checkbox" id="element-check" name="element-check">
@@ -224,7 +230,7 @@
       <label for="border-radio">Radio Border</label>
 
       <strong>Markup</strong>
-      <pre><code class="language-html">
+      <pre><code class="language-markup">
 &lt;input type="checkbox" id="element-check" name="element-check"&gt;
 &lt;label for="element-check"&gt;
   &lt;strong&gt;Checkbox&lt;span class="optional"&gt;Nested Elements&lt;/span&gt;&lt;/strong&gt;
@@ -274,7 +280,7 @@
       </fieldset>
 
       <strong>Markup</strong>
-      <pre><code class="language-html">
+      <pre><code class="language-markup">
 &lt;label for="textarea"&gt;Textarea&lt;/label&gt;
 &lt;textarea id="textarea" name=textarea&gt;&lt;/textarea&gt;
 
@@ -339,7 +345,7 @@
       </fieldset>
 
       <strong>Markup</strong>
-      <pre><code class="language-html">
+      <pre><code class="language-markup">
 &lt;label for="inline-pattern"&gt;Inline inputs&lt;/label&gt;
 &lt;div class="inline-input"&gt;
   &lt;input id="inline-pattern" type="text" name="inline-pattern" style="max-width: 8rem;"&gt;
@@ -489,7 +495,7 @@
       </label>
 
       <strong>Markup</strong>
-      <pre><code class="language-html">
+      <pre><code class="language-markup">
 &lt;label for="invalid-text-input"&gt;Input invalid&lt;/label&gt;
 &lt;input type="text" id="invalid-text-input" name="invalid-text-iinput" class="invalid"&gt;
 &lt;p class="error-message"&gt;Error messaging&lt;/p&gt;
