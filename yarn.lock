@@ -217,10 +217,10 @@
     dom-event-types "^1.0.0"
     lodash "^4.17.4"
 
-"@wealthbar/peak-style@^1.2.10":
-  version "1.2.10"
-  resolved "https://registry.yarnpkg.com/@wealthbar/peak-style/-/peak-style-1.2.10.tgz#9709adeec77188e2be7a49f204043822214519ed"
-  integrity sha512-TUR5JZhaVQ8N2irMwycAOSnlTL5NftQGAuymk6uvhauN6lgrTCGAnC08/eFneDVNJgBjyMTB0kqq502jiVnmKw==
+"@wealthbar/peak-style@^1.2.11":
+  version "1.2.11"
+  resolved "https://registry.yarnpkg.com/@wealthbar/peak-style/-/peak-style-1.2.11.tgz#29cc1649bfe62932cf15a103f7f84474603e29c1"
+  integrity sha512-mbX7R7+3tI/WNcxnNE9gNP5tsd1wmQPD1evqUb6zs8uN5zr+9A5zsRkKaFSido8bTDYWw1PjJRhKHflER4VePA==
   dependencies:
     node-sass "^4.12.0"
 
@@ -6989,7 +6989,7 @@ pretty-ms@^2.1.0:
     parse-ms "^1.0.0"
     plur "^1.0.0"
 
-prismjs@^1.6.0:
+prismjs@^1.17.1, prismjs@^1.6.0:
   version "1.17.1"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.17.1.tgz#e669fcbd4cdd873c35102881c33b14d0d68519be"
   integrity sha512-PrEDJAFdUGbOP6xK/UsfkC5ghJsPJviKgnQOoxaDbBjwc8op68Quupwt1DeAFoG8GImPhiKXAvvsH7wDSLsu1Q==

@@ -32,16 +32,22 @@
             </ul>
             <li><router-link to="colour">Colour</router-link></li>
             <li><router-link to="buttons">Links &amp; Buttons</router-link></li>
-            <li ><router-link to="inputs">Inputs</router-link></li>
+            <li><router-link to="inputs">Form Elements</router-link></li>
             <ul v-if="$route.path === '/inputs'">
               <li class="secondary-link"><a href="#text">Text inputs</a></li>
               <li class="secondary-link"><a href="#non-text">Non-text inputs</a></li>
               <li class="secondary-link"><a href="#non-input">Non-input elements</a></li>
-              <li class="secondary-link"><a href="#layout">Input layout patterns</a></li>
               <li class="secondary-link"><a href="#spacing">Input spacing structure</a></li>
+            </ul>
+            <li><router-link to="input-patterns">Form Patterns</router-link></li>
+            <ul v-if="$route.path === '/input-patterns'">
+              <li class="secondary-link"><a href="#general">General Input Patterns</a></li>
+              <li class="secondary-link"><a href="#inline">Inline Button Patterns</a></li>
+              <li class="secondary-link"><a href="#check-radio">Checkbox &amp; Radio Patterns</a></li>
+              <li class="secondary-link"><a href="#layout">Input Layout Patterns</a></li>
               <li class="secondary-link"><a href="#invalid">Invalid &amp; error states</a></li>
             </ul>
-            <li ><router-link to="svg">SVG Icons</router-link></li>
+            <li><router-link to="svg">SVG Icons</router-link></li>
           </ul>
         </nav>
       </div>
@@ -154,10 +160,6 @@
   }
 
   .menu-header {
-      // background-color: $neutral-50;
-      // position: sticky;
-      // top: 0px;
-      // z-index: 10;
     a:hover,
     a:active,
     a:focus {
