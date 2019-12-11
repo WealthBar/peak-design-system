@@ -36,15 +36,21 @@ steps:
       event: push
 
   - name: cluster-deploy
-    image: aoepeople/digital-ocean-helper:1.18.0
+    image: cerebralchaos/do-k8s-helper:latest
     environment:
       CLUSTER_NAME:
         from_secret: cluster_name
       DIGITALOCEAN_ACCESS_TOKEN:
         from_secret: digitalocean_access_token
+     CHART_REPO_USER:
+        from_secret: chart_repo_user
+      CHART_REPO_TOKEN:
+        from_secret: chart_repo_token
     commands:
       - "doctl kubernetes cluster kubeconfig save $CLUSTER_NAME --access-token $DIGITALOCEAN_ACCESS_TOKEN"
-      - "kubectl set image deployments/peak-deployment peak=quay.io/wealthbar/peak-design-system:${DRONE_COMMIT_SHA} -n peak-design"
+      - "helm repo add --username $CHART_REPO_USER --password $CHART_REPO_TOKEN chartroom 'https://raw.githubusercontent.com/WealthBar/chartroom/master/'"
+      - "helm repo update"
+      - "helm upgrade --install peak chartroom/peak --namespace peak-design --set image.tag=${DRONE_COMMIT_SHA}"
     when:
       branch: master
       event: push
