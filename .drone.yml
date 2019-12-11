@@ -42,7 +42,7 @@ steps:
         from_secret: cluster_name
       DIGITALOCEAN_ACCESS_TOKEN:
         from_secret: digitalocean_access_token
-     CHART_REPO_USER:
+      CHART_REPO_USER:
         from_secret: chart_repo_user
       CHART_REPO_TOKEN:
         from_secret: chart_repo_token
