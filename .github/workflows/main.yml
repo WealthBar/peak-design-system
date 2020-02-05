@@ -1,0 +1,61 @@
+name: Build and deploy to production
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        uses: actions/checkout@v1
+
+      - name: Use Node.js 10
+        uses: actions/setup-node@v1
+        with:
+          version: 10.x
+
+      - name: Run tests
+        run: |
+          yarn install
+          yarn run ci
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Build
+        env:
+          CONTAINER_IMAGE: quay.io/wealthbar/peak-design-system
+          CONTAINER_REGISTRY: quay.io/wealthbar
+          REGISTRY_USER: ${{ secrets.registry_user }}
+          REGISTRY_KEY: ${{ secrets.registry_key }}
+        run: |
+          docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
+          docker pull $CONTAINER_IMAGE:latest || true
+          docker build --cache-from $CONTAINER_IMAGE:latest --build-arg CI_COMMIT_SHA=$GITHUB_SHA -t $CONTAINER_IMAGE:$GITHUB_SHA -t $CONTAINER_IMAGE:latest .
+          docker push $CONTAINER_IMAGE:$GITHUB_SHA
+          docker push $CONTAINER_IMAGE:latest
+
+    needs: test
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: docker://cerebralchaos/do-k8s-helper:latest
+
+      - name: Deploy to Kubernetes cluster
+        env:
+          CLUSTER_NAME: ${{ secrets.cluster_name }}
+          DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.digitalocean_access_token }}
+          CHART_REPO_USER: ${{ secrets.chart_repo_user}}
+          CHART_REPO_TOKEN: ${{ secrets.chart_repo_token}}
+        run: |
+          doctl kubernetes cluster kubeconfig save $CLUSTER_NAME --access-token $DIGITALOCEAN_ACCESS_TOKEN
+          helm repo add --username $CHART_REPO_USER --password $CHART_REPO_TOKEN chartroom 'https://raw.githubusercontent.com/WealthBar/chartroom/master/'
+          helm repo update
+          helm upgrade --install peak chartroom/peak --namespace peak-design --set image.tag=${GITHUB_SHA}
+
+    needs: build
