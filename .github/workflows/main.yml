@@ -44,14 +44,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Save DigitalOcean kubeconfig
-        uses: digitalocean/action-doctl@master
+      - name: GitHub Action for DigitalOcean - doctl
+        uses: digitalocean/action-doctl@v1.6.0
         env:
           DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.digitalocean_access_token }}
           CLUSTER_NAME: ${{ secrets.cluster_name }}
         with:
-          # args: kubernetes cluster kubeconfig show $CLUSTER_NAME > $GITHUB_WORKSPACE/.kubeconfig
-          args: kubernetes cluster list
+          args: kubernetes cluster kubeconfig show wealthbar-k8s-prod-1 > $GITHUB_WORKSPACE/.kubeconfig
 
       - name: Set K8s Config env
         run: |
