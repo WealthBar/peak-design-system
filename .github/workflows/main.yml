@@ -14,7 +14,7 @@ jobs:
       - name: Use Node.js 10
         uses: actions/setup-node@v1
         with:
-          version: 10.x
+          node-version: 10.x
 
       - name: Run tests
         run: |
@@ -44,7 +44,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: docker://cerebralchaos/do-k8s-helper:latest
+      - name: Save DigitalOcean kubeconfig
+        uses: digitalocean/action-doctl@master
+        env:
+          DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+        with:
+          args: kubernetes cluster kubeconfig show $CLUSTER_NAME > $GITHUB_WORKSPACE/.kubeconfig
+
+      - name: Set K8s Config env
+        run: |
+          export KUBECONFIG=$GITHUB_WORKSPACE/.kubeconfig
 
       - name: Deploy to Kubernetes cluster
         env:
@@ -53,7 +62,6 @@ jobs:
           CHART_REPO_USER: ${{ secrets.chart_repo_user}}
           CHART_REPO_TOKEN: ${{ secrets.chart_repo_token}}
         run: |
-          doctl kubernetes cluster kubeconfig save $CLUSTER_NAME --access-token $DIGITALOCEAN_ACCESS_TOKEN
           helm repo add --username $CHART_REPO_USER --password $CHART_REPO_TOKEN chartroom 'https://raw.githubusercontent.com/WealthBar/chartroom/master/'
           helm repo update
           helm upgrade --install peak chartroom/peak --namespace peak-design --set image.tag=${GITHUB_SHA}
