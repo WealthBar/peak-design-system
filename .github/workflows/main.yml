@@ -49,8 +49,13 @@ jobs:
           DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.digitalocean_access_token }}
           CLUSTER_NAME: ${{ secrets.cluster_name }}
         run: |
+<<<<<<< HEAD
           sudo snap install doctl
           doctl kubernetes cluster kubeconfig show $CLUSTER_NAME --access-token $DIGITALOCEAN_ACCESS_TOKEN > $GITHUB_WORKSPACE/.kubeconfig
+=======
+          curl -sL https://github.com/digitalocean/doctl/releases/download/v1.38.0/doctl-1.38.0-linux-amd64.tar.gz | tar -xzv
+          doctl kubernetes cluster kubeconfig save $CLUSTER_NAME --access-token $DIGITALOCEAN_ACCESS_TOKEN
+>>>>>>> 8924c505d50feaf8c7674825d647ff1da0fd11ec
 
       - name: Deploy to Kubernetes cluster
         env:
