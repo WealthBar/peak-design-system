@@ -45,16 +45,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: GitHub Action for DigitalOcean - doctl
-        uses: digitalocean/action-doctl@v1.6.0
         env:
           DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.digitalocean_access_token }}
           CLUSTER_NAME: ${{ secrets.cluster_name }}
-        with:
-          args: kubernetes cluster kubeconfig show wealthbar-k8s-prod-1 > $GITHUB_WORKSPACE/.kubeconfig
-
-      - name: Set K8s Config env
         run: |
-          export KUBECONFIG=$GITHUB_WORKSPACE/.kubeconfig
+          curl -sL https://github.com/digitalocean/doctl/releases/download/v1.38.0/doctl-1.38.0-linux-amd64.tar.gz | tar -xzv
+          doctl kubernetes cluster kubeconfig save $CLUSTER_NAME --access-token $DIGITALOCEAN_ACCESS_TOKEN
 
       - name: Deploy to Kubernetes cluster
         env:
