@@ -44,6 +44,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: chrnorm/deployment-action@releases/v1
+        name: Start Peak Deployment
+        id: deployment
+        with:
+          token: "${{ github.token }}"
+          target-url: https://peak.wealth.bar/
+          environment: production
+
       - name: Save DigitalOcean kubeconfig
         uses: digitalocean/action-doctl@master
         env:
@@ -52,6 +60,21 @@ jobs:
         with:
           args: kubernetes cluster kubeconfig show $CLUSTER_NAME > $GITHUB_WORKSPACE/.kubeconfig
 
+      # - name: Helm Deploy
+      #   uses: vimeda/helm@v1.6.1
+      #   env:
+      #     KUBECONFIG_FILE: '$GITHUB_WORKSPACE/.kubeconfig'
+      #   with:
+      #     release: "peak"
+      #     chart: "chartroom/peak"
+      #     namespace: "peak-design"
+      #     token: "${{ github.token }}"
+      #     helm: "helm3"
+      #     repo-alias: "chartroom"
+      #     repo: "https://raw.githubusercontent.com/WealthBar/chartroom/master/"
+      #     repo-username: ${{ secrets.chart_repo_user }}
+      #     repo-password: ${{ secrets.chart_repo_token }}
+
       - name: Deploy to Kubernetes cluster
         env:
           CLUSTER_NAME: ${{ secrets.cluster_name }}
@@ -59,8 +82,26 @@ jobs:
           CHART_REPO_USER: ${{ secrets.chart_repo_user}}
           CHART_REPO_TOKEN: ${{ secrets.chart_repo_token}}
         run: |
-          helm repo add --username $CHART_REPO_USER --password $CHART_REPO_TOKEN chartroom 'https://raw.githubusercontent.com/WealthBar/chartroom/master/'
-          helm repo update
-          helm upgrade --install peak chartroom/peak --kubeconfig=$GITHUB_WORKSPACE/.kubeconfig --namespace peak-design --set image.tag=${GITHUB_SHA}
+          helm3 repo add --username $CHART_REPO_USER --password $CHART_REPO_TOKEN chartroom 'https://raw.githubusercontent.com/WealthBar/chartroom/master/'
+          helm3 repo update
+          helm3 upgrade --install peak chartroom/peak --kubeconfig=$GITHUB_WORKSPACE/.kubeconfig --namespace peak-design --set image.tag=${GITHUB_SHA}
+
+      - name: Update github with deployment success status
+        if: success()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: "${{ github.token }}"
+          target-url: https://peak.wealth.bar/
+          state: "success"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
+
+      - name: Update github with deployment failure status
+        if: failure()
+        uses: chrnorm/deployment-status@releases/v1
+        with:
+          token: "${{ github.token }}"
+          target-url: https://peak.wealth.bar/
+          state: "failure"
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
 
     needs: build
