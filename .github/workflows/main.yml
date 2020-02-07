@@ -44,16 +44,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: GitHub Action for DigitalOcean - doctl
+      - name: Configure/Deploy/Verify Kubernetes
         env:
-          DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.digitalocean_access_token }}
           CLUSTER_NAME: ${{ secrets.cluster_name }}
+          DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.digitalocean_access_token }}
         run: |
-          sudo snap install doctl
-          echo $CLUSTER_NAME
-          echo $GITHUB_WORKSPACE
-          sudo doctl kubernetes cluster kubeconfig show $CLUSTER_NAME --access-token $DIGITALOCEAN_ACCESS_TOKEN > $GITHUB_WORKSPACE/.kubeconfig
-          cat $GITHUB_WORKSPACE/.kubeconfig
+          curl -L https://github.com/digitalocean/doctl/releases/download/v1.30.0/doctl-1.30.0-linux-amd64.tar.gz | tar xz
+          ./doctl kubernetes cluster kubeconfig show $CLUSTER_NAME --access-token $DIGITALOCEAN_ACCESS_TOKEN > $GITHUB_WORKSPACE/.kubeconfig
 
       - name: Deploy to Kubernetes cluster
         env:
@@ -64,6 +61,6 @@ jobs:
         run: |
           helm repo add --username $CHART_REPO_USER --password $CHART_REPO_TOKEN chartroom 'https://raw.githubusercontent.com/WealthBar/chartroom/master/'
           helm repo update
-          helm upgrade --install peak chartroom/peak --namespace peak-design --set image.tag=${GITHUB_SHA}
+          helm upgrade --install peak chartroom/peak --kubeconfig=$GITHUB_WORKSPACE/.kubeconfig --namespace peak-design --set image.tag=${GITHUB_SHA}
 
     needs: build
