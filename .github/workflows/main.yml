@@ -60,6 +60,7 @@ jobs:
         with:
           args: kubernetes cluster kubeconfig show $CLUSTER_NAME > $GITHUB_WORKSPACE/.kubeconfig
 
+      # This action doesn't work right now as it need to have access to the original values files
       # - name: Helm Deploy
       #   uses: vimeda/helm@v1.6.1
       #   env:
@@ -82,6 +83,8 @@ jobs:
           CHART_REPO_USER: ${{ secrets.chart_repo_user}}
           CHART_REPO_TOKEN: ${{ secrets.chart_repo_token}}
         run: |
+          curl -L https://get.helm.sh/helm-v3.0.3-linux-amd64.tar.gz | tar xz
+          mv ./helm /usr/bin/helm3 && chmod a+x /usr/bin/helm3
           helm3 repo add --username $CHART_REPO_USER --password $CHART_REPO_TOKEN chartroom 'https://raw.githubusercontent.com/WealthBar/chartroom/master/'
           helm3 repo update
           helm3 upgrade --install peak chartroom/peak --kubeconfig=$GITHUB_WORKSPACE/.kubeconfig --namespace peak-design --set image.tag=${GITHUB_SHA}
