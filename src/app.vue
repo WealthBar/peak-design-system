@@ -48,6 +48,10 @@
               <li class="secondary-link"><a href="#invalid">Invalid &amp; error states</a></li>
             </ul>
             <li><router-link to="svg">SVG Icons</router-link></li>
+            <li><router-link to="banners">Banners</router-link></li>
+            <li><router-link to="cards">Cards</router-link></li>
+            <li><router-link to="layouts">Layouts</router-link></li>
+            <li><router-link to="workflows">Workflows</router-link></li>
           </ul>
         </nav>
       </div>
