@@ -21,7 +21,12 @@
 
         <nav class="main-navigation">
           <ul>
-            <li><router-link to="typography">Typography</router-link></li>
+            <li><router-link to="typography">
+              Typography
+              <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/typography'}">
+                <polygon points="11,28 23,16 11,4"/>
+              </svg>
+            </router-link></li>
             <ul v-if="$route.path === '/typography'">
               <li class="secondary-link"><a href="#units">Units</a></li>
               <li class="secondary-link"><a href="#headers">Headers Text</a></li>
@@ -32,14 +37,24 @@
             </ul>
             <li><router-link to="colour">Colour</router-link></li>
             <li><router-link to="buttons">Links &amp; Buttons</router-link></li>
-            <li><router-link to="inputs">Form Elements</router-link></li>
+            <li><router-link to="inputs">
+              Form Elements
+              <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/inputs'}">
+                <polygon points="11,28 23,16 11,4"/>
+              </svg>
+            </router-link></li>
             <ul v-if="$route.path === '/inputs'">
               <li class="secondary-link"><a href="#text">Text inputs</a></li>
               <li class="secondary-link"><a href="#non-text">Non-text inputs</a></li>
               <li class="secondary-link"><a href="#non-input">Non-input elements</a></li>
               <li class="secondary-link"><a href="#spacing">Input spacing structure</a></li>
             </ul>
-            <li><router-link to="input-patterns">Form Patterns</router-link></li>
+            <li><router-link to="input-patterns">
+              Form Patterns
+              <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/input-patterns'}">
+                <polygon points="11,28 23,16 11,4"/>
+              </svg>
+            </router-link></li>
             <ul v-if="$route.path === '/input-patterns'">
               <li class="secondary-link"><a href="#general">General Input Patterns</a></li>
               <li class="secondary-link"><a href="#inline">Inline Button Patterns</a></li>
@@ -143,7 +158,18 @@ export default {
       color: $pearl-900;
       padding: 0.5rem 1rem;
       margin: 0.125rem 0;
-      display: block;
+      display: flex;
+      align-items: center;
+
+      .reveal-subnav-icon {
+        width: .75rem;
+        margin-left: .5rem;
+
+        transition: transform 200ms;
+        &.active {
+          transform: rotate(90deg);
+        }
+      }
 
       &:hover, &:focus {
         background: $primary-50;
