@@ -25,7 +25,6 @@
       </div>
 
       <div class="code-sample">
-        <strong>Markup</strong>
         <pre>
           <code class="language-markup">&lt;div class="card"&gt;
   &lt;h3&gt;Simple card&lt;/h3&gt;
