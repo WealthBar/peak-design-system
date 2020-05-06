@@ -4,19 +4,17 @@
       <h1>Workflows</h1>
 
       <p>
-        Cards in Peak have been designed to act as a wrapper with some padding, and not much else. Everything outside of the
-        <code>&lt;div class="card-actions"&gt;</code> class, simply adheares to their usual style. Meaning it allows for 
-        consistent styling behaviour at all time when using elements or classes.
+        ...
       </p>
     </section>
 
-    <h3>Workflow</h3>
+    <h3>Workflows</h3>
 
-    <div class="layout-focus workflow">
-      <div class="banner light">
+    <div class="modal-page workflow">
+      <div class="modal-page-banner light">
         <div class="banner-content">
-          <h5>Test title</h5>
-          <button type="button" class="flat" icon>close</button>
+          <h5 class="title">Test title</h5>
+          <button type="button" class="flat action" icon>Close</button>
         </div>
       </div>
 
@@ -67,11 +65,11 @@
 
     <div class="code-sample">
       <pre>
-        <code class="language-markup">&lt;div class="layout-focus workflow"&gt;
-  &lt;div class="banner light"&gt;
+        <code class="language-markup">&lt;div class="modal-page workflow"&gt;
+  &lt;div class="modal-page-banner light"&gt;
     &lt;div class="banner-content"&gt;
-      &lt;h5&gt;Test title&lt;/h5&gt;
-      &lt;button type="button" class="flat" icon&gt;close&lt;/button&gt;
+      &lt;h5 class="title"&gt;Test title&lt;/h5&gt;
+      &lt;button type="button" class="flat action" icon&gt;close&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 
@@ -139,14 +137,14 @@ export default {
 
   methods: {
     async prev(step) {
-      this.enterClasses = 'step-animated step-slide-fade-in-right';
-      this.leaveClasses = 'step-animated step-slide-fade-out-right';
+      this.enterClasses = 'slide-fade-in-right';
+      this.leaveClasses = 'slide-fade-out-right';
       this.step = 1;
     },
 
     async next(step) {
-      this.enterClasses = 'step-animated step-slide-fade-in-left';
-      this.leaveClasses = 'step-animated step-slide-fade-out-left';
+      this.enterClasses = 'slide-fade-in-left';
+      this.leaveClasses = 'slide-fade-out-left';
       this.step = 2;
     },
   }
