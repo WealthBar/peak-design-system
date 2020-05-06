@@ -70,15 +70,8 @@
 </template>
 
 <script>
-<<<<<<< HEAD
 export default { };
 </script>
 
 <style lang="scss" scoped>
 </style>
-=======
-export default {
-  
-}
-</script>
->>>>>>> Init peak showcase of new patterns
