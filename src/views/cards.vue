@@ -10,10 +10,10 @@
     </section>
 
     <section id="card">
-      <h3>Cards</h3>
+      <h3>Card</h3>
 
       <div class="card">
-        <h3>Simple card</h3>
+        <h3>Some title</h3>
 
         <div class="card-body">
           <p>Card body</p>
@@ -37,6 +37,14 @@
 &lt;/div&gt;</code>
         </pre>
       </div>
+    </section>
+
+    <section>
+      <h3>Card body styles</h3>
+
+      <p>
+        
+      </p>
 
       <div class="card">
         <h3>Example card</h3>
