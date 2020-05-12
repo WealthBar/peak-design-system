@@ -2,13 +2,9 @@
   <article class="container">
     <section>
       <h1>Layouts</h1>
-
-      <p>
-        ...
-      </p>
     </section>
 
-    <h3>Focus</h3>
+    <h3>Modal page layout</h3>
 
     <div class="modal-page">
       <div class="card">

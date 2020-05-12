@@ -2,15 +2,12 @@
   <article class="container">
     <section>
       <h1>Banners</h1>
-      <p>
-        ...
-      </p>
     </section>
 
     <section>
       <h3>Modal Page Banner</h3>
 
-      <div class="modal-page-banner light">
+      <div class="modal-page-banner">
         <div class="banner-content">
           <h5 class="title">Test title</h5>
           <button type="button" class="flat action" icon>close</button>
