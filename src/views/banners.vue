@@ -15,7 +15,6 @@
       </div>
 
       <div class="code-sample">
-        <strong>Markup</strong>
         <pre>
           <code class="language-markup">&lt;div class="modal-page-banner light"&gt;
   &lt;div class="banner-content"&gt;
