@@ -3,6 +3,8 @@
     <section>
       <h1>Workflows</h1>
 
+      <h3>Setup</h3>
+
       <p>
         Workflows are forms broken into a multi-step process. The workflow visual is made
         up of multiple Peak styles, and tied together with the workflow styles and animations.
