@@ -7,9 +7,10 @@
     <section>
       <h3>Modal Page Banner</h3>
 
-      <div class="modal-page-banner">
+      <div role="banner" class="modal-page-banner">
         <div class="banner-content">
-          <h5 class="title">Test title</h5>
+          <h5 class="banner-title">Test title</h5>
+
           <button type="button" class="flat action" icon>close</button>
         </div>
       </div>
