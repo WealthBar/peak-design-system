@@ -82,7 +82,7 @@ next(step) {
 
 
     <div class="modal-page workflow">
-      <div class="modal-page-banner">
+      <div role="banner" class="modal-page-banner">
         <div class="banner-content">
           <h5 class="title">Test title</h5>
           <button type="button" class="flat action" icon>Close</button>
@@ -93,39 +93,63 @@ next(step) {
         <transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses">
           <div class="step" v-if="step === 1" :key="step">
             <div class="card">
-              <h3>Step 1</h3>
 
-              <h5>Finance Ipsum</h5>
-              <p>
-                Securities default
-              </p>
+              <div class="card-header">
+                <h3>Step 1</h3>
+              </div>
 
-              <div class="card-actions">
-                <button type="submit" @click="next">Next</button>
+              <div class="card-body">
+                <h5>Finance Ipsum</h5>
+              
+                <p>
+                  Securities default
+                </p>
+
+                <div class="card-footer">
+                  <button type="submit" @click="next">Next</button>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="step" v-if="step === 2" :key="step">
             <div class="card">
-              <button type="button" class="flat icon before" @click="prev">
-                <svg viewBox="0 0 32 32">
-                  <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
-                </svg>
-                Back
-              </button>
+              <div class="card-header">
+                <button type="button" class="flat icon before" @click="prev">
+                  <svg viewBox="0 0 32 32">
+                    <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+                  </svg>
+                  Back
+                </button>
 
-              <h3>Step 2</h3>
+                <h3 class>Step 2</h3>
+              </div>
 
-              <h5>Finance Ipsum</h5>
-              <p>
-                Securities default investment funds exchange market index value fall Fitch corporate 
-                bonds treasury hedge fund. Term risk management gains taxpayer upswing fall receive expenses 
-                volatile issuer rise. Term fiat 401k managed shares corporate bonds tax gains funds income maturities 
-                downturn yield retirement. Bills district Fitch municipal bonds exchange bull. 
-              </p>
+              <div class="card-body">
+                <h5>Finance Ipsum</h5>
 
-              <div class="card-actions">
+                <div class="card full">
+                  <div class="card-body">
+                    <p>
+                      This is some stuff inside
+                    </p>
+
+                    <div class="inline-input full">
+                      <div>
+                        <label for="inline-pattern-one">First name</label>
+                        <input id="inline-pattern-one" type="text" name="inline-pattern-two">
+                      </div>
+
+                      <div>
+                        <label for="inline-pattern-two">Last name</label>
+                        <input id="inline-pattern-two" type="text" name="inline-pattern-two">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-footer">
                 <button type="submit" disabled>Submit</button>
               </div>
             </div>
@@ -158,7 +182,7 @@ next(step) {
             Securities default
           &lt;/p&gt;
 
-          &lt;div class="card-actions"&gt;
+          &lt;div class="card-footer"&gt;
             &lt;button type="submit" @click="next"&gt;Next&lt;/button&gt;
           &lt;/div&gt;
         &lt;/div&gt;
@@ -183,7 +207,7 @@ next(step) {
             downturn yield retirement. Bills district Fitch municipal bonds exchange bull. 
           &lt;/p&gt;
 
-          &lt;div class="card-actions"&gt;
+          &lt;div class="card-footer"&gt;
             &lt;button type="submit" disabled&gt;Submit&lt;/button&gt;
           &lt;/div&gt;
         &lt;/div&gt;

@@ -28,7 +28,7 @@
     &lt;h3&gt;Some h3 text&lt;/h3&gt;
     &lt;p&gt;Some p text&lt;/p&gt;
 
-    &lt;div class="card-actions"&gt;
+    &lt;div class="card-footer"&gt;
       &lt;button class="outlined"&gt;Cancel&lt;/button&gt;
       &lt;button type="submit"&gt;Next&lt;/button&gt;
     &lt;/div&gt;
