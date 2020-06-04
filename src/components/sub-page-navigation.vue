@@ -1,5 +1,5 @@
 <template>
-  <div class="sub-page-navigation-component">
+  <div>
     <div class="tabs">
       <button
         class="tab"
@@ -56,29 +56,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-  .sub-page-navigation-component {
-    .tabs {
-      border-bottom: 1px solid $neutral-100;
-      font-weight: bold;
-      margin-bottom: 2rem;
-      display: flex;
-      overflow-x: auto;
-
-      .tab {
-        text-decoration: none;
-        color: $black;
-        margin: 0 0.5rem;
-        padding: 0.25rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 2px solid transparent;
-
-        &:first-child { margin-left: 0.25rem; }
-        &:last-child { margin-right: 0.25rem; }
-        &:hover:not(.active) { color: $primary-300; }
-        &.active { border-bottom: 2px solid $primary-300; }
-      }
-    }
-  }
-</style>
