@@ -9,7 +9,7 @@
       >
         {{tab.name}}
       </button>
-      </div>
+    </div>
   </div>
 </template>
 
