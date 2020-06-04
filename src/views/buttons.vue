@@ -565,7 +565,7 @@
     </section>
 
     <section id="wide">
-      <h3>Wide Buttons</h3>
+      <h3>Full Width Buttons</h3>
       <div class="attributes">
         <strong>Example</strong>
         <div class="example">
