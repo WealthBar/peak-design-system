@@ -564,6 +564,31 @@
       <hr>
     </section>
 
+    <section id="wide">
+      <h3>Full Width Buttons</h3>
+      <div class="attributes">
+        <strong>Example</strong>
+        <div class="example">
+          <button type="button" class="full">Fill</button>
+          <button type="button" class="outline full">Outline</button>
+          <button type="button" class="subtle full">Subtle</button>
+          <button type="button" class="full icon after">Fill
+            <svg viewBox="0 0 32 32">
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+            </svg>
+          </button>
+        </div>
+        <div class="code-sample">
+          <strong>Markup</strong>
+          <pre><code class="language-markup">&lt;button type="button" class="full"&gt;Fill&lt;/button&gt;
+&lt;button type="button" class="outline full"&gt;Outline&lt;/button&gt;
+&lt;button type="button" class="flat full"&gt;Flat&lt;/button&gt;
+&lt;button type="button" class="subtle full"&gt;Subtle&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+      <hr>
+    </section>
+
     <section id="disabled">
       <h3>Disabled Buttons</h3>
       <div class="attributes">
@@ -638,6 +663,12 @@
     &:first-child { width: 20%; }
     p{
       margin-bottom: 0.25rem;
+    }
+  }
+
+  #wide button:nth-child(n+2) {
+    @media #{$screen-width-large} {
+      margin-left: 1rem;
     }
   }
 
