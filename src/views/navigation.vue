@@ -3,32 +3,46 @@
     <h1>Navigation</h1>
 
     <section id="tab-navigation">
-      <h3>Tab Sub-Page Navigation</h3>
+      <h3>Tabs</h3>
 
       <strong>Example</strong>
       <div class="example">
-        <sub-page-navigation :tabs="tabs" :activeTab="tab" @clicked="setTab" />
-        <p v-if="tab === 'cypress'">Sub-page content related to Cypress Mountain</p>
-        <p v-if="tab === 'fromme'">Sub-page content related to Mount Fromme</p>
-        <p v-if="tab === 'grouse'">Sub-page content related to Grouse Mountain</p>
+        <tabs :tabs="tabs" :activeTab="tab" @clicked="setTab" />
+        <div v-if="tab === 'cypress'">
+          <dl>
+            <dt>Elevation</dt><dd>897 m</dd><br>
+            <dt>Avg. Grade</dt><dd>5.6%</dd>
+          </dl>
+        </div>
+        <div v-if="tab === 'grouse'">
+          <dl>
+            <dt>Elevation</dt><dd>239 m</dd><br>
+            <dt>Avg. Grade</dt><dd>5%</dd>
+          </dl>
+        </div>
+        <div v-if="tab === 'seymour'">
+          <dl>
+            <dt>Elevation</dt><dd>987 m</dd><br>
+            <dt>Avg. Grade</dt><dd>7%</dd>
+          </dl>
+        </div>
       </div>
 
       <strong>Markup</strong>
       <pre><code class="language-markup">
-&lt;sub-page-navigation :tabs="tabs" :activeTab="tab" @clicked="setTab" /&gt;
-&lt;p v-if="tab === 'cypress'"&gt;Sub-page content related to Cypress Mountain&lt;/p&gt;
+&lt;tabs :tabs="tabs" :activeTab="tab" @clicked="setTab" /&gt;
+&lt;div v-if="tab === 'cypress'"&gt;...&lt;/div&gt;
 ...
       </code></pre>
     </section>
   </article>
 </template>
 
-
 <script>
-import SubPageNavigation from '@/components/sub-page-navigation';
+import Tabs from '@/components/tabs';
 
 export default {
-  components: { SubPageNavigation },
+  components: { Tabs },
   data() {
     return {
       tabs: [
@@ -37,12 +51,12 @@ export default {
           route: 'cypress'
         },
         {
-          name: 'Fromme',
-          route: 'fromme'
-        },
-        {
           name: 'Grouse',
           route: 'grouse'
+        },
+        {
+          name: 'Seymour',
+          route: 'seymour'
         },
       ],
       tab: 'cypress'
@@ -56,7 +70,6 @@ export default {
 }
 </script>
 
-
 <style lang="scss" scoped>
   .example {
     padding: 1rem;
@@ -65,5 +78,15 @@ export default {
     border-radius: 0.25rem;
     width: auto;
     > * { margin-bottom: 1rem; }
+  }
+
+  dt {
+    font-weight: bold;
+    display: inline-block;
+    width: 6rem;
+  }
+
+  dd {
+    display: inline-block;
   }
 </style>
