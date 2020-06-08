@@ -4,9 +4,9 @@
 
     <section id="tab-navigation">
       <h3>Tabs</h3>
-      <tabs :tabs="tabs" :activeTab="tab" @clicked="setTab" />
+      <tabs :tabs="tabs" :active-tab="tab" @clicked="setTab" />
 
-      <div v-if="tab === 'markup'">
+      <div v-show="tab === 'markup'">
         <strong>Example Vue component markup</strong>
         <pre><code class="language-markup">
 &lt;tabs :tabs="tabs" :activeTab="tab" @clicked="setTab" /&gt;
@@ -48,7 +48,7 @@ export default {
         </code></pre>
       </div>
 
-      <div v-if="tab === 'output'">
+      <div v-show="tab === 'output'">
         <strong>Example browser output when using the Vue component</strong>
         <pre><code class="language-markup">
 &lt;div class="tabs"&gt;
@@ -63,10 +63,10 @@ export default {
 </template>
 
 <script>
-import Tabs from '@/components/tabs';
+import tabs from '@/components/tabs';
 
 export default {
-  components: { Tabs },
+  components: { tabs },
   data() {
     return {
       tabs: [
@@ -93,24 +93,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-  .example {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid $neutral-300;
-    border-radius: 0.25rem;
-    width: auto;
-    > * { margin-bottom: 1rem; }
-  }
-
-  dt {
-    font-weight: bold;
-    display: inline-block;
-    width: 6rem;
-  }
-
-  dd {
-    display: inline-block;
-  }
-</style>

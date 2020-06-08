@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <div class="tabs">
-      <button
-        class="tab"
-        v-for="(tab, index) in tabs" :key="index"
-        :class="{ 'active': localTabState === getTabRoute(tab.route) }"
-        :to="tab.route" @click="setTab(tab.route)"
-      >
-        {{tab.name}}
-      </button>
-      </div>
+  <div class="tabs">
+    <button
+      class="tab"
+      v-for="(tab, index) in tabs" :key="index"
+      :class="{ 'active': localTabState === getTabRoute(tab.route) }"
+      :to="tab.route" @click="setTab(tab.route)"
+    >
+      {{tab.name}}
+    </button>
   </div>
 </template>
 
