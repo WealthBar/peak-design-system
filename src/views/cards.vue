@@ -12,17 +12,17 @@
     <section id="card">
       <h3>Card</h3>
 
-      <div class="card">
-        <div class="card-header">
+      <div class="card step">
+        <header>
           <h3>Some title</h3>
-        </div>
+        </header>
 
-        <div class="card-body">
+        <article>
           <p>
             Term fiat 401k managed shares corporate bonds tax gains funds income maturities downturn yield 
             retirement. Bills district Fitch municipal bonds exchange bull.
           </p>
-        </div>
+        </article>
       </div>
 
       <div class="code-sample">
@@ -44,11 +44,11 @@
       <h3>Card body styles</h3>
 
       <div class="card">
-        <div class="card-header">
+        <header>
           <h3>Example card</h3>
-        </div>
+        </header>
 
-        <div class="card-body">
+        <article>
           <h5>Finance Ipsum</h5>
 
           <div class="card">
@@ -73,12 +73,12 @@
               </p>
             </div>
           </div>
-        </div>
+        </article>
 
-        <div class="card-footer">
+        <footer>
           <button type="submit" class="outline">Cancel</button>
           <button type="submit">Next</button>
-        </div>
+        </footer>
       </div>
 
       <div class="code-sample">
