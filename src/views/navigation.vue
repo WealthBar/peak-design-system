@@ -4,36 +4,60 @@
 
     <section id="tab-navigation">
       <h3>Tabs</h3>
+      <tabs :tabs="tabs" :activeTab="tab" @clicked="setTab" />
 
-      <strong>Example</strong>
-      <div class="example">
-        <tabs :tabs="tabs" :activeTab="tab" @clicked="setTab" />
-        <div v-if="tab === 'cypress'">
-          <dl>
-            <dt>Elevation</dt><dd>897 m</dd><br>
-            <dt>Avg. Grade</dt><dd>5.6%</dd>
-          </dl>
-        </div>
-        <div v-if="tab === 'grouse'">
-          <dl>
-            <dt>Elevation</dt><dd>239 m</dd><br>
-            <dt>Avg. Grade</dt><dd>5%</dd>
-          </dl>
-        </div>
-        <div v-if="tab === 'seymour'">
-          <dl>
-            <dt>Elevation</dt><dd>987 m</dd><br>
-            <dt>Avg. Grade</dt><dd>7%</dd>
-          </dl>
-        </div>
+      <div v-if="tab === 'markup'">
+        <strong>Example Vue component markup</strong>
+        <pre><code class="language-markup">
+&lt;tabs :tabs="tabs" :activeTab="tab" @clicked="setTab" /&gt;
+&lt;div v-if="tab === 'markup'"&gt;...&lt;/div&gt;
+...
+        </code></pre>
       </div>
 
-      <strong>Markup</strong>
-      <pre><code class="language-markup">
-&lt;tabs :tabs="tabs" :activeTab="tab" @clicked="setTab" /&gt;
-&lt;div v-if="tab === 'cypress'"&gt;...&lt;/div&gt;
-...
-      </code></pre>
+      <div v-if="tab === 'script'">
+        <strong>Example Vue component script</strong>
+        <pre><code>
+export default {
+  components: { Tabs },
+  data() {
+    return {
+      tabs: [
+        {
+          name: 'Markup',
+          route: 'markup'
+        },
+        {
+          name: 'Script',
+          route: 'script'
+        },
+        {
+          name: 'Output',
+          route: 'output'
+        },
+      ],
+      tab: 'markup'
+    };
+  },
+  methods: {
+    setTab(selectedTab) {
+      this.tab = selectedTab
+    },
+  },
+}
+        </code></pre>
+      </div>
+
+      <div v-if="tab === 'output'">
+        <strong>Example browser output when using the Vue component</strong>
+        <pre><code class="language-markup">
+&lt;div class="tabs"&gt;
+  &lt;button to="markup" class="tab active"&gt; Markup &lt;/button&gt;
+  &lt;button to="script" class="tab"&gt; Script &lt;/button&gt;
+  &lt;button to="output" class="tab"&gt; Output &lt;/button&gt;
+&lt;/div&gt;
+        </code></pre>
+      </div>
     </section>
   </article>
 </template>
@@ -47,19 +71,19 @@ export default {
     return {
       tabs: [
         {
-          name: 'Cypress',
-          route: 'cypress'
+          name: 'Markup',
+          route: 'markup'
         },
         {
-          name: 'Grouse',
-          route: 'grouse'
+          name: 'Script',
+          route: 'script'
         },
         {
-          name: 'Seymour',
-          route: 'seymour'
+          name: 'Output',
+          route: 'output'
         },
       ],
-      tab: 'cypress'
+      tab: 'markup'
     };
   },
   methods: {
