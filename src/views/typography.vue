@@ -8,7 +8,7 @@
         <button type="button" href="https://www.npmjs.com/package/@wealthbar/peak-style">Install the Peak Package</button>
       </div>
     </div>
-    <hr />
+    <hr>
     <section>
       <h2 id="units">Units in Peak: use rem!</h2>
       <p>We use rems (Relative EMs) to ensure our typography stays scalable in a responsive web world. Peak's base unit of measure is <code>1rem</code> == <code class="alt">16px</code>. Too put it another way <strong>2px is equal to 0.125rem</strong>, or <strong>1/8 of a rem</strong>. Ideally we want to adhire to this 1/8th rem scale as much as possible.</p>
@@ -44,7 +44,6 @@
           <td><code>1</code></td>
         </tr>
       </table>
-
     </section>
     <section>
       <h2 id="headers">Header Text</h2>
@@ -62,7 +61,7 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <prism language="css" :code="headerStyle('h1')"></prism>
+          <prism language="css" :code="headerStyle('h1')" />
         </div>
       </div>
 
@@ -77,7 +76,7 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <prism language="css" :class="getSelectedUnit">{{headerStyle('h2')}}</prism>
+          <prism language="css" :class="getSelectedUnit">{{ headerStyle('h2') }}</prism>
         </div>
       </div>
 
@@ -93,7 +92,7 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <prism language="css" :class="getSelectedUnit">{{headerStyle('h3')}}</prism>
+          <prism language="css" :class="getSelectedUnit">{{ headerStyle('h3') }}</prism>
         </div>
       </div>
 
@@ -108,7 +107,7 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <prism language="css" :class="getSelectedUnit">{{headerStyle('h4')}}</prism>
+          <prism language="css" :class="getSelectedUnit">{{ headerStyle('h4') }}</prism>
         </div>
       </div>
 
@@ -123,7 +122,7 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <prism language="css" :class="getSelectedUnit">{{headerStyle('h5')}}</prism>
+          <prism language="css" :class="getSelectedUnit">{{ headerStyle('h5') }}</prism>
         </div>
       </div>
 
@@ -138,7 +137,7 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <prism language="css" :class="getSelectedUnit">{{headerStyle('h6')}}</prism>
+          <prism language="css" :class="getSelectedUnit">{{ headerStyle('h6') }}</prism>
         </div>
       </div>
     </section>
@@ -160,12 +159,12 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <prism language="css" :class="getSelectedUnit">{{typeStyle('p')}}</prism>
+          <prism language="css" :class="getSelectedUnit">{{ typeStyle('p') }}</prism>
         </div>
       </div>
 
       <h3>Large Text</h3>
-      <p>Only designed to work when applied to a paragraph <p> element.</p>
+      <p>Only designed to work when applied to a paragraph </p><p> element.</p>
       <div class="example">
         <p class="large">This is large paragraph text.</p>
       </div>
@@ -176,13 +175,13 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <prism language="css" :class="getSelectedUnit">{{typeStyle('large')}}</prism>
+          <prism language="css" :class="getSelectedUnit">{{ typeStyle('large') }}</prism>
         </div>
       </div>
 
 
       <h3>Small Text</h3>
-      <p>Whether set as a class or as an inline element inherits basic sizing and spacing from the parent (eg: paragraph <p>) element.</p>
+      <p>Whether set as a class or as an inline element inherits basic sizing and spacing from the parent (eg: paragraph </p><p>) element.</p>
       <div class="example">
         <p class="small">This is small paragraph text.</p>
         <p>Regular text <small>(This is a small text block)</small> wrapping the small text.</p>
@@ -195,14 +194,14 @@
         </div>
         <div class="code-sample">
           <strong>Style</strong>
-          <prism language="css" :class="getSelectedUnit">font-size: {{unitValue(14)}};</prism>
+          <prism language="css" :class="getSelectedUnit">font-size: {{ unitValue(14) }};</prism>
         </div>
       </div>
 
       <h3>Subtle Text</h3>
       <p>This style de-emphasizes sentences or paragraphs, such as for micro-copy, minor details, or information that isn’t useful for most users.</p>
       <div class="example">
-        <p >This is <span class="subtle">subtle text</span> in a paragraph.</p>
+        <p>This is <span class="subtle">subtle text</span> in a paragraph.</p>
       </div>
       <div class="attributes">
         <div class="code-sample">
@@ -217,7 +216,8 @@
       </div>
 
       <h3>Strong Text</h3>
-      <p>This style provides additional emphasis to bring attention to a specific word or phrases; don’t use for entire sentences or paragraphs.
+      <p>
+        This style provides additional emphasis to bring attention to a specific word or phrases; don’t use for entire sentences or paragraphs.
         <br><strong>Don’t use the <span>&lt;b&gt;</span> tag, ever!</strong> 💀
       </p>
       <div class="example">
@@ -231,7 +231,7 @@
         <div class="code-sample">
           <strong>Style</strong>
           <prism language="css" :class="getSelectedUnit">
-font-weight: bold;
+            font-weight: bold;
           </prism>
         </div>
       </div>
@@ -254,7 +254,7 @@ font-weight: bold;
 
     <section>
       <h2 id="lists">Lists</h2>
-      <p>Lists inherit the paragraph’s style and use the paragraph’s spacing between list items to improve readability. List items are indented {{unitValue(8)}}.</p>
+      <p>Lists inherit the paragraph’s style and use the paragraph’s spacing between list items to improve readability. List items are indented {{ unitValue(8) }}.</p>
 
       <h3>Unordered List</h3>
       <div class="example">
@@ -264,7 +264,8 @@ font-weight: bold;
         </ul>
         <ul class="bullet">
           <li>Hey, here’s something that’s part of a bulleted list</li>
-          <li>Here’s a long piece of text. What should go here I wonder. Just enough to push it to two lines. There we go!
+          <li>
+            Here’s a long piece of text. What should go here I wonder. Just enough to push it to two lines. There we go!
             <ul class="bullet">
               <li>This is a nested bulleted list</li>
               <li>Let's have one more item</li>
@@ -294,14 +295,14 @@ font-weight: bold;
           <strong>Style</strong>
           <pre><code class="language-css" :class="getSelectedUnit">ul {
   padding: 0;
-  margin: 0 0 {{unitValue(16)}};
+  margin: 0 0 {{ unitValue(16) }};
   list-style: none;
 }
 
 ul.bullet { list-style: disc; }
 
 li ul {
-  padding-left: {{unitValue(16)}};
+  padding-left: {{ unitValue(16) }};
   margin: 0;
 }          </code>
           </pre>
@@ -327,12 +328,12 @@ li ul {
           <strong>Style</strong>
           <pre><code class="language-css" :class="getSelectedUnit">ol {
   padding: 0;
-  margin: 0 0 {{unitValue(16)}};
+  margin: 0 0 {{ unitValue(16) }};
   list-style: decimal;
   }
 
   li ol {
-  padding-left: {{unitValue(16)}};
+  padding-left: {{ unitValue(16) }};
   margin: 0;
 }</code></pre>
         </div>
@@ -381,7 +382,7 @@ li ul {
       <p>Across the board we use the alternate Y, both lower and uppercase. </p>
       <div class="alternative-glyphs-container">
         <div class="alternative-examples">
-          <img src="~@/assets/alternative-y.png" />
+          <img src="~@/assets/alternative-y.png">
         </div>
         <div class="alternative-copy">
           <strong>Style</strong>
@@ -392,7 +393,7 @@ li ul {
       <p>For lists and tables with numbers, we use tabular figures (also known as monospaced numbers) for all text. This will ensure vertical alignment among numbers and special characters.</p>
       <div class="alternative-glyphs-container">
         <div class="alternative-examples">
-          <img src="~@/assets/tabular-figures@2x.png" />
+          <img src="~@/assets/tabular-figures@2x.png">
         </div>
         <div class="alternative-copy">
           <strong>Style</strong>
@@ -401,58 +402,57 @@ li ul {
           <prism language="markup"><span class="tab-numbers">0123456789</span></prism>
         </div>
       </div>
-
-
     </section>
   </article>
 </template>
 
 <script>
-  import { mapGetters, mapActions } from '@/lib/vue';
-  import typography from './typography.data.js';
-  import prism from 'vue-prismjs';
-  export default {
-    components: { prism, typography },
-    data() {
-      return {
-        name: 'typography',
-        title: 'Typography',
-        isMobile: false,
-        typography,
-      };
-    },
-    computed: {
-      ...mapGetters(['getSelectedUnit', 'getSelectedScreen']),
-    },
-    methods: {
-      ...mapActions(['setScreen', 'setUnit']),
-      unitValue(value, ratio = 16) {
-        if (this.getSelectedUnit === 'rem') {
-          return `${value / ratio}${this.getSelectedUnit}`;
-        }
-        return `${value}${this.getSelectedUnit}`;
-      },
-      propScreenValue(tag, prop) {
-        return this.unitValue(typography[tag][this.getSelectedScreen][prop]);
-      },
-      propValue(tag, prop) {
-        return this.unitValue(typography[tag][prop]);
-      },
-      headerStyle(tag) {
-        return `font-size: ` + this.propScreenValue(tag, 'fontSize') +`
-line-height: `+ this.propScreenValue(tag, 'lineHeight') +`
-font-weight: bold;
-margin: ` + this.propScreenValue(tag, 'marginTop') +` 0 ` + this.propScreenValue(tag, 'marginBottom') +`;`
-      },
-      typeStyle(tag) {
-        return `font-size: ` + this.propValue(tag, 'fontSize') +`
-line-height: `+ this.propValue(tag, 'lineHeight') +`
-font-weight: normal;
-margin: 0 0 ` + this.propValue(tag, 'marginBottom') +`;`
-      },
+import { mapGetters, mapActions } from '@/lib/vue';
+import prism from 'vue-prismjs';
+import typography from './typography.data';
 
+export default {
+  components: { prism },
+  data() {
+    return {
+      name: 'typography',
+      title: 'Typography',
+      isMobile: false,
+      typography,
+    };
+  },
+  computed: {
+    ...mapGetters(['getSelectedUnit', 'getSelectedScreen']),
+  },
+  methods: {
+    ...mapActions(['setScreen', 'setUnit']),
+    unitValue(value, ratio = 16) {
+      if (this.getSelectedUnit === 'rem') {
+        return `${value / ratio}${this.getSelectedUnit}`;
+      }
+      return `${value}${this.getSelectedUnit}`;
     },
-  };
+    propScreenValue(tag, prop) {
+      return this.unitValue(typography[tag][this.getSelectedScreen][prop]);
+    },
+    propValue(tag, prop) {
+      return this.unitValue(typography[tag][prop]);
+    },
+    headerStyle(tag) {
+      return `font-size: ${this.propScreenValue(tag, 'fontSize')}
+line-height: ${this.propScreenValue(tag, 'lineHeight')}
+font-weight: bold;
+margin: ${this.propScreenValue(tag, 'marginTop')} 0 ${this.propScreenValue(tag, 'marginBottom')};`;
+    },
+    typeStyle(tag) {
+      return `font-size: ${this.propValue(tag, 'fontSize')}
+line-height: ${this.propValue(tag, 'lineHeight')}
+font-weight: normal;
+margin: 0 0 ${this.propValue(tag, 'marginBottom')};`;
+    },
+
+  },
+};
 </script>
 
 <style lang="scss" scoped>

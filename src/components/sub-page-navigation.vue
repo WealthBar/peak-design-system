@@ -2,12 +2,12 @@
   <div class="sub-page-navigation-component">
     <div class="tabs">
       <button
-        class="tab"
-        v-for="(tab, index) in tabs" :key="index"
+        v-for="(tab, index) in tabs"
+        :key="index" class="tab"
         :class="{ 'active': localTabState === getTabRoute(tab.route) }"
         :to="tab.route" @click="setTab(tab.route)"
       >
-        {{tab.name}}
+        {{ tab.name }}
       </button>
     </div>
   </div>
@@ -17,44 +17,44 @@
 export default {
   props: {
     tabs: {
-      default: [
-        {
-          name: 'First Tab',
-          route: 'tab1'
-        },
-        {
-          name: 'Second Tab',
-          route: 'tab2'
-        },
-        {
-          name: 'Third Tab',
-          route: 'tab2'
-        },
-      ],
-      type: Array
+      type: Array,
+      default() {
+        return [
+          {
+            name: 'First Tab',
+            route: 'tab1',
+          },
+          {
+            name: 'Second Tab',
+            route: 'tab2',
+          },
+          {
+            name: 'Third Tab',
+            route: 'tab2',
+          },
+        ];
+      },
     },
     activeTab: {
       default: 'tab1',
-      type: String
-    }
+      type: String,
+    },
   },
   data() {
     return {
-      localTabState: this.activeTab ? this.activeTab : this.tabs[0].route
-    }
+      localTabState: this.activeTab ? this.activeTab : this.tabs[0].route,
+    };
   },
   methods: {
     getTabRoute(route) {
-      // console.log(route);
-      return route.replace(' ', '_').toLowerCase()
+      return route.replace(' ', '_').toLowerCase();
     },
     setTab(route) {
-      console.log(route);
-      this.localTabState = route
-      this.$emit('clicked', route)
-    }
-  }
-}
+      this.localTabState = route;
+      this.$emit('clicked', route);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

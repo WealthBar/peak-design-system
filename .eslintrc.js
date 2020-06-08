@@ -2,10 +2,17 @@
 
 module.exports = {
   parserOptions: {
-    parser: "babel-eslint",
-    sourceType: "module"
+    parser: 'babel-eslint',
+    sourceType: 'module',
+    ecmaVersion: 2020
   },
-  extends: ["airbnb-base", "plugin:vue/recommended"],
+
+  extends: [
+    "airbnb-base",
+    "plugin:vue/recommended",
+    'plugin:vue/essential',
+  ],
+
   // check if imports actually resolve
   settings: {
     "import/resolver": {
@@ -14,62 +21,75 @@ module.exports = {
       }
     }
   },
+
   // add your custom rules here
   rules: {
-    // don't require .vue extension when importing
-    "import/extensions": [
-      "error",
-      "always",
+    'import/extensions': [
+      'error',
+      'always',
       {
-        js: "never",
-        vue: "never"
+        js: 'never',
+        vue: 'never'
       }
     ],
-    "import/no-extraneous-dependencies": [
-      "error",
+    'import/no-extraneous-dependencies': [
+      'error',
       {
         devDependencies: true,
         optionalDependencies: true,
         peerDependencies: true
       }
     ],
-    "max-len": [
-      2,
-      150,
-      2,
+    'max-len': [ 0 ],
+    'import/no-duplicates': 0,
+    'import/no-named-as-default': 0,
+    'no-param-reassign': ['error', { props: false }],
+    'object-curly-newline': ['error', { ObjectPattern: { multiline: true } }],
+    'consistent-return': 0,
+    'no-plusplus': 0,
+    'no-shadow': 0,
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-use-before-define': [
+      'error',
       {
-        ignoreUrls: true,
-        ignoreComments: false,
-        ignoreTemplateLiterals: true,
-        ignoreStrings: true
+        functions: false
       }
     ],
-    "import/no-duplicates": 0,
-    "import/no-named-as-default": 0,
-    "no-param-reassign": ["error", { props: false }],
-    "object-curly-newline": ["error", { ObjectPattern: { multiline: true } }],
-    "consistent-return": 0,
-    "no-plusplus": 0,
-    "no-shadow": 0,
-    // allow debugger during development
-    "no-debugger": process.env.NODE_ENV === "production" ? 2 : 0,
-    // allow console during development
-    "no-console": process.env.NODE_ENV === "production" ? 2 : 0,
-    // functions are hoisted, so it's safe to call a function in code that precedes the function's declaration
-    "no-use-before-define": ["error", { functions: false }],
-    "prefer-destructuring": 0,
-    "vue/singleline-html-element-content-newline": 0,
-    "vue/max-attributes-per-line": 0,
-    "vue/html-self-closing": [
-      "error",
+    'prefer-destructuring': 0,
+    'vue/singleline-html-element-content-newline': 0,
+    'vue/max-attributes-per-line': 0,
+    'vue/html-self-closing': [
+      'error',
       {
         html: {
-          normal: "any"
+          normal: 'any'
         }
       }
     ],
-    "guard-for-in": 0,
-    "no-restricted-syntax": 0,
-    "arrow-parens": 0
-  }
+    "vue/max-len": ["error", {
+      "code": 150,
+      "template": 500,
+      "tabWidth": 2,
+      "comments": 80,
+      "ignorePattern": "",
+      "ignoreComments": true,
+      "ignoreTrailingComments": false,
+      "ignoreUrls": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true,
+      "ignoreRegExpLiterals": true,
+      "ignoreHTMLAttributeValues": true,
+      "ignoreHTMLTextContents": true,
+    }],
+    'guard-for-in': 0,
+    'no-restricted-syntax': 0,
+    'arrow-parens': 0
+  },
+
+  root: true,
+
+  env: {
+    node: true
+  },
 };
