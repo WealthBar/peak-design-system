@@ -82,7 +82,7 @@ next(step) {
 
 
     <div class="modal-page workflow">
-      <div role="banner" class="modal-page-banner">
+      <div class="banner modal-page-banner">
         <div class="banner-content">
           <h5 class="title">Test title</h5>
           <button type="button" class="flat action" icon>Close</button>
@@ -91,68 +91,63 @@ next(step) {
 
       <form class="workflow-form" v-on:submit.prevent>
         <transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses">
-          <div class="step" v-if="step === 1" :key="step">
-            <div class="card">
+          <div class="step card" v-if="step === 1" :key="step">
+            <header>
+              <h3>Step 1</h3>
+            </header>
 
-              <div class="card-header">
-                <h3>Step 1</h3>
-              </div>
+            <article>
+              <h5>Finance Ipsum</h5>
 
-              <div class="card-body">
-                <h5>Finance Ipsum</h5>
-              
-                <p>
-                  Securities default
-                </p>
+              <p>
+                Securities default
+              </p>
+            </article>
 
-                <div class="card-footer">
-                  <button type="submit" @click="next">Next</button>
-                </div>
-              </div>
-            </div>
+            <footer>
+              <button type="submit" @click="next">Next</button>
+            </footer>
           </div>
 
-          <div class="step" v-if="step === 2" :key="step">
-            <div class="card">
-              <div class="card-header">
-                <button type="button" class="flat icon before" @click="prev">
-                  <svg viewBox="0 0 32 32">
-                    <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
-                  </svg>
-                  Back
-                </button>
+          <div class="step card" v-if="step === 2" :key="step">
+            <header>
+              <button type="button" class="flat icon before" @click="prev">
+                <svg viewBox="0 0 32 32">
+                  <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+                </svg>
+                Back
+              </button>
 
-                <h3 class>Step 2</h3>
-              </div>
+              <h3 class>Step 2</h3>
+            </header>
 
-              <div class="card-body">
+            <article>
                 <h5>Finance Ipsum</h5>
 
-                <div class="card full">
-                  <div class="card-body">
-                    <p>
-                      This is some stuff inside
-                    </p>
+              <div class="card">
+                <article>
+                  <p>
+                    This is some stuff inside
+                  </p>
 
-                    <div class="inline-input full">
-                      <div>
-                        <label for="inline-pattern-one">First name</label>
-                        <input id="inline-pattern-one" type="text" name="inline-pattern-two">
-                      </div>
+                  <div class="inline-input full">
+                    <div>
+                      <label for="inline-pattern-one">First name</label>
+                      <input id="inline-pattern-one" type="text" name="inline-pattern-two">
+                    </div>
 
-                      <div>
-                        <label for="inline-pattern-two">Last name</label>
-                        <input id="inline-pattern-two" type="text" name="inline-pattern-two">
-                      </div>
+                    <div>
+                      <label for="inline-pattern-two">Last name</label>
+                      <input id="inline-pattern-two" type="text" name="inline-pattern-two">
                     </div>
                   </div>
-                </div>
+                </article>
               </div>
+            </article>
 
-              <div class="card-footer">
-                <button type="submit" disabled>Submit</button>
-              </div>
-            </div>
+            <footer>
+              <button type="submit" disabled>Submit</button>
+            </footer>
           </div>
         </transition>
       </form>
@@ -182,7 +177,7 @@ next(step) {
             Securities default
           &lt;/p&gt;
 
-          &lt;div class="card-footer"&gt;
+          &lt;div class="step-footer"&gt;
             &lt;button type="submit" @click="next"&gt;Next&lt;/button&gt;
           &lt;/div&gt;
         &lt;/div&gt;
@@ -207,7 +202,7 @@ next(step) {
             downturn yield retirement. Bills district Fitch municipal bonds exchange bull. 
           &lt;/p&gt;
 
-          &lt;div class="card-footer"&gt;
+          &lt;div class="step-footer"&gt;
             &lt;button type="submit" disabled&gt;Submit&lt;/button&gt;
           &lt;/div&gt;
         &lt;/div&gt;
@@ -231,14 +226,14 @@ export default {
 
   methods: {
     async prev(step) {
-      this.enterClasses = 'slide-fade-in-right';
-      this.leaveClasses = 'slide-fade-out-right';
+      this.enterClasses = 'step-slide-fade-in-right';
+      this.leaveClasses = 'step-slide-fade-out-right';
       this.step = 1;
     },
 
     async next(step) {
-      this.enterClasses = 'slide-fade-in-left';
-      this.leaveClasses = 'slide-fade-out-left';
+      this.enterClasses = 'step-slide-fade-in-left';
+      this.leaveClasses = 'step-slide-fade-out-left';
       this.step = 2;
     },
   }

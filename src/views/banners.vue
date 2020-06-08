@@ -7,7 +7,7 @@
     <section>
       <h3>Modal Page Banner</h3>
 
-      <div role="banner" class="modal-page-banner">
+      <div class="banner modal-page-banner">
         <div class="banner-content">
           <h5 class="banner-title">Test title</h5>
 
