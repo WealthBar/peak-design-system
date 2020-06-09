@@ -408,11 +408,11 @@ li ul {
 
 <script>
 import { mapGetters, mapActions } from '@/lib/vue';
-import prism from 'vue-prismjs';
+// import prism from 'vue-prismjs';
 import typography from './typography.data';
 
 export default {
-  components: { prism },
+  // components: { prism },
   data() {
     return {
       name: 'typography',

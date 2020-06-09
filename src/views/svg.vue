@@ -4,20 +4,21 @@
 
     <div v-for="svg in svgs" :id="svg.name" :key="svg.name" class="svg-item">
       <header>
-        <i>{{ svg.icon }}</i>
+        <i v-html="svg.icon"></i>
         <h4 class="no-margin">{{ svg.name }}</h4>
         <!-- <button type="button"><span>copy</span></button> -->
       </header>
-      <prism language="svg" :code="svg.icon" />
+      <pre><code>{{ svg.icon }}</code></pre>
+      <!-- <prism language="svg" :code="svg.icon"></prism> -->
     </div>
   </article>
 </template>
 <script>
-import prism from 'vue-prismjs';
 import svgs from './svg.data';
+// import prism from 'vue-prismjs';
 
 export default {
-  components: { prism },
+// components: { prism, svgs },
   data() {
     return { svgs };
   },
