@@ -17,7 +17,7 @@
 
       <div v-if="tab === 'script'">
         <strong>Example Vue component script</strong>
-        <pre><code>
+      <pre><code class="language-js">
 export default {
   components: { Tabs },
   data() {
@@ -64,9 +64,10 @@ export default {
 
 <script>
 import tabs from '@/components/tabs';
+import prism from 'vue-prismjs';
 
 export default {
-  components: { tabs },
+  components: { prism, tabs },
   data() {
     return {
       tabs: [
