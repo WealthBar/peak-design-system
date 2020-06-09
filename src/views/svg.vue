@@ -4,12 +4,10 @@
 
     <div v-for="svg in svgs" :id="svg.name" :key="svg.name" class="svg-item">
       <header>
-        <i v-html="svg.icon"></i>
+        <i v-html="svg.icon"></i> <!-- eslint-disable-line -->
         <h4 class="no-margin">{{ svg.name }}</h4>
-        <!-- <button type="button"><span>copy</span></button> -->
       </header>
-      <pre class="language-svg"><code>{{ svg.icon }}</code></pre>
-      <!-- <prism language="svg" :code="svg.icon"></prism> -->
+      <pre><code class="language-svg">{{ svg.icon }}</code></pre>
     </div>
   </article>
 </template>
