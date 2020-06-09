@@ -11,6 +11,7 @@
     </div>
   </article>
 </template>
+
 <script>
 import svgs from './svg.data';
 
@@ -20,6 +21,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
   div.svg-item {
     border-bottom: 1px solid $neutral-100;

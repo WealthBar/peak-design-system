@@ -188,6 +188,7 @@
     </div>
   </section>
 </template>
+
 <style lang="scss" scoped>
   .theme { padding-bottom: 2rem; }
   .colour-block {

@@ -317,6 +317,7 @@
     </section>
   </article>
 </template>
+
 <style lang="scss" scoped>
   section {
     padding-bottom: 2rem;

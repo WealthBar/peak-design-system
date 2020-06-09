@@ -616,8 +616,10 @@
     </section>
   </article>
 </template>
+
 <script>
 </script>
+
 <style lang="scss" scoped>
 
   .example {

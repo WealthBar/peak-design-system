@@ -8,16 +8,16 @@ module.exports = {
   },
 
   extends: [
-    "airbnb-base",
-    "plugin:vue/recommended",
+    'airbnb-base',
+    'plugin:vue/strongly-recommended',
     'plugin:vue/essential',
   ],
 
   // check if imports actually resolve
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       webpack: {
-        config: "build/webpack.base.conf.js"
+        config: 'build/webpack.base.conf.js'
       }
     }
   },
@@ -40,6 +40,7 @@ module.exports = {
         peerDependencies: true
       }
     ],
+    'quotes': ['error', 'single'],
     'max-len': [ 0 ],
     'import/no-duplicates': 0,
     'import/no-named-as-default': 0,
@@ -58,6 +59,7 @@ module.exports = {
     ],
     'prefer-destructuring': 0,
     'vue/singleline-html-element-content-newline': 0,
+    'vue/padding-line-between-blocks': ['error', 'always'],
     'vue/max-attributes-per-line': 0,
     'vue/html-self-closing': [
       'error',
@@ -67,21 +69,23 @@ module.exports = {
         }
       }
     ],
-    "vue/max-len": ["error", {
-      "code": 150,
-      "template": 500,
-      "tabWidth": 2,
-      "comments": 80,
-      "ignorePattern": "",
-      "ignoreComments": true,
-      "ignoreTrailingComments": false,
-      "ignoreUrls": true,
-      "ignoreStrings": true,
-      "ignoreTemplateLiterals": true,
-      "ignoreRegExpLiterals": true,
-      "ignoreHTMLAttributeValues": true,
-      "ignoreHTMLTextContents": true,
-    }],
+    'vue/max-len': ['error',
+      {
+        'code': 150,
+        'template': 500,
+        'tabWidth': 2,
+        'comments': 80,
+        'ignorePattern': '',
+        'ignoreComments': true,
+        'ignoreTrailingComments': false,
+        'ignoreUrls': true,
+        'ignoreStrings': true,
+        'ignoreTemplateLiterals': true,
+        'ignoreRegExpLiterals': true,
+        'ignoreHTMLAttributeValues': true,
+        'ignoreHTMLTextContents': true,
+      }
+    ],
     'guard-for-in': 0,
     'no-restricted-syntax': 0,
     'arrow-parens': 0

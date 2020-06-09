@@ -20,6 +20,7 @@
     <assante-theme v-if="tab === 'assante'" />
   </article>
 </template>
+
 <script>
 
 import SubPageNavigation from '@/components/sub-page-navigation';
@@ -50,6 +51,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
   .container { padding-bottom: 2rem; }
 </style>

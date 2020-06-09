@@ -188,6 +188,7 @@
     </div>
   </section>
 </template>
+
 <style lang="scss" scoped>
   @import "~@wealthbar/peak-style/scss/theme/assante.scss";
   .theme { padding-bottom: 2rem; }
