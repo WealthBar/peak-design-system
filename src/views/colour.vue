@@ -15,16 +15,17 @@
     <p>
       <strong>Note for Devs:</strong> Using the generalized naming conventions for colours (<code>$primary-300</code>, <code>$bg-50</code>, <code>$tertiary-100</code>, etc) will automatically swap out colours based on the application build process. If you requirements state to use a specific colour regardless of theme the <code>$[name]-[weight]</code> convention will work (eg: <code>$jade-300</code>)
     </p>
-    <sub-page-navigation :tabs="tabs" :activeTab="tab" @clicked="setTab" />
-    <wealthbar-theme v-if="tab === 'wealthbar'"/>
-    <assante-theme v-if="tab === 'assante'"/>
+    <sub-page-navigation :tabs="tabs" :active-tab="tab" @clicked="setTab" />
+    <wealthbar-theme v-if="tab === 'wealthbar'" />
+    <assante-theme v-if="tab === 'assante'" />
   </article>
 </template>
+
 <script>
 
-import wealthbarTheme from './colour/wealthbar.vue';
-import assanteTheme from './colour/assante.vue';
 import SubPageNavigation from '@/components/sub-page-navigation';
+import wealthbarTheme from './colour/wealthbar';
+import assanteTheme from './colour/assante';
 
 export default {
   components: { SubPageNavigation, wealthbarTheme, assanteTheme },
@@ -33,23 +34,24 @@ export default {
       tabs: [
         {
           name: 'WealthBar',
-          route: 'wealthbar'
+          route: 'wealthbar',
         },
         {
           name: 'Assante Connect',
-          route: 'assante'
+          route: 'assante',
         },
       ],
-      tab: 'wealthbar'
+      tab: 'wealthbar',
     };
   },
   methods: {
     setTab(selectedTab) {
-      this.tab = selectedTab
+      this.tab = selectedTab;
     },
   },
 };
 </script>
+
 <style lang="scss" scoped>
   .container { padding-bottom: 2rem; }
 </style>

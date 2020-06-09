@@ -29,7 +29,6 @@
         <strong>$primary-900</strong>
         <span>#10504e</span>
       </div>
-
     </div>
 
     <br>
@@ -185,10 +184,11 @@
       </div>
     </div>
     <div class="colour-block dark desktop-only" style="background: #37373f;">
-      <strong >Onyx</strong>
+      <strong>Onyx</strong>
     </div>
   </section>
 </template>
+
 <style lang="scss" scoped>
   .theme { padding-bottom: 2rem; }
   .colour-block {

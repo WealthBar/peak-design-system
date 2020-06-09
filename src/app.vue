@@ -8,12 +8,12 @@
           <div class="toggles">
             <label for="unit-toggle">Units</label>
             <button id="unit-toggle" class="toggle" @click="toggleUnit">
-              <span v-for="unit in getUnits" :key="unit" :data-active="getSelectedUnit === unit">{{unit}}</span>
+              <span v-for="unit in getUnits" :key="unit" :data-active="getSelectedUnit === unit">{{ unit }}</span>
             </button>
 
             <label for="screen-toggle">Screen Size</label>
             <button id="screen-toggle" class="toggle" @click="toggleScreen">
-              <span v-for="screen in getScreens" :key="screen" :data-active="getSelectedScreen === screen">{{screen}}</span>
+              <span v-for="screen in getScreens" :key="screen" :data-active="getSelectedScreen === screen">{{ screen }}</span>
             </button>
           </div>
           <hr>
@@ -52,47 +52,38 @@
         </nav>
       </div>
       <div class="page">
-        <router-view></router-view>
+        <router-view />
       </div>
-
     </div>
-      <back-to-top visibleOffset="800">
-      <svg viewBox="0 0 32 32">
-        <polygon points="28.7,17.8 16,5.1 3.3,17.8 4.7,19.2 15,8.9 15,28 17,28 17,8.9 27.3,19.2"/>
-      </svg>
-    </back-to-top>
   </main>
 </template>
 
 <script>
-  import BackToTop from './components/back_to_top';
-  import { mapGetters, mapActions } from '@/lib/vue';
+import { mapGetters, mapActions } from '@/lib/vue';
 
+export default {
+  data() {
+    return {
+      navOpen: true,
+    };
+  },
+  computed: {
+    ...mapGetters(['getSelectedUnit', 'getUnits', 'getSelectedScreen', 'getScreens']),
 
-  export default {
-    data() {
-      return {
-        navOpen: true,
-      };
+  },
+  methods: {
+    ...mapActions(['setScreen', 'setUnit']),
+    toggleUnit() {
+      this.setUnit(this.getSelectedUnit === 'px' ? 'rem' : 'px');
     },
-    computed: {
-      ...mapGetters(['getSelectedUnit', 'getUnits', 'getSelectedScreen', 'getScreens']),
-
+    toggleScreen() {
+      this.setScreen(this.getSelectedScreen === 'desktop' ? 'mobile' : 'desktop');
     },
-    methods: {
-      ...mapActions(['setScreen', 'setUnit']),
-      toggleUnit() {
-        this.setUnit(this.getSelectedUnit == 'px' ? 'rem': 'px');
-      },
-      toggleScreen() {
-        this.setScreen(this.getSelectedScreen == 'desktop' ? 'mobile': 'desktop');
-      },
-      toggleNav() {
-        this.navOpen = !this.navOpen;
-      },
+    toggleNav() {
+      this.navOpen = !this.navOpen;
     },
-    components: { BackToTop },
-  };
+  },
+};
 </script>
 
 <style lang="scss">

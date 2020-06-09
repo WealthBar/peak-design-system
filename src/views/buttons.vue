@@ -330,27 +330,27 @@
         <div class="example">
           <button class="icon">
             <svg viewBox="0 0 32 32">
-              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
             </svg>
           </button>
           <button type="button" class="icon">
             <svg viewBox="0 0 32 32">
-              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
             </svg>
           </button>
           <button type="button" class="outline icon">
             <svg viewBox="0 0 32 32">
-              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
             </svg>
           </button>
           <button type="button" class="flat icon">
             <svg viewBox="0 0 32 32">
-              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
             </svg>
           </button>
           <button type="button" class="subtle icon">
             <svg viewBox="0 0 32 32">
-              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
             </svg>
           </button>
         </div>
@@ -368,27 +368,27 @@
         <div class="example">
           <button class="icon circle">
             <svg viewBox="0 0 32 32">
-              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
             </svg>
           </button>
           <button type="button" class="icon circle">
             <svg viewBox="0 0 32 32">
-              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
             </svg>
           </button>
           <button type="button" class="outline icon circle">
             <svg viewBox="0 0 32 32">
-              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
             </svg>
           </button>
           <button type="button" class="flat icon circle">
             <svg viewBox="0 0 32 32">
-              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
             </svg>
           </button>
           <button type="button" class="subtle icon circle">
             <svg viewBox="0 0 32 32">
-              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
             </svg>
           </button>
         </div>
@@ -407,31 +407,31 @@
           <button class="icon after">
             Unstyled
             <svg viewBox="0 0 32 32">
-              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
             </svg>
           </button>
           <button type="button" class="icon after">
             Fill
             <svg viewBox="0 0 32 32">
-              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
             </svg>
           </button>
           <button type="button" class="outline icon after">
             Outline
             <svg viewBox="0 0 32 32">
-              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
             </svg>
           </button>
           <button type="button" class="flat icon after">
             Flat
             <svg viewBox="0 0 32 32">
-              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
             </svg>
           </button>
           <button type="button" class="subtle icon after">
             Subtle
             <svg viewBox="0 0 32 32">
-              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
             </svg>
           </button>
         </div>
@@ -449,31 +449,31 @@
         <div class="example">
           <button class="icon before">
             <svg viewBox="0 0 32 32">
-              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
             </svg>
             Unstyled
           </button>
           <button type="button" class="icon before">
             <svg viewBox="0 0 32 32">
-              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
             </svg>
             Fill
           </button>
           <button type="button" class="outline icon before">
             <svg viewBox="0 0 32 32">
-              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
             </svg>
             Outline
           </button>
           <button type="button" class="flat icon before">
             <svg viewBox="0 0 32 32">
-              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
             </svg>
             Flat
           </button>
           <button type="button" class="subtle icon before">
             <svg viewBox="0 0 32 32">
-              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+              <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
             </svg>
             Subtle
           </button>
@@ -499,19 +499,20 @@
           <button type="button" class="outline large">Outline</button>
           <button type="button" class="flat large">Flat</button>
           <button type="button" class="subtle large">Subtle</button>
-          <button type="button" class="large icon after">Fill
+          <button type="button" class="large icon after">
+            Fill
             <svg viewBox="0 0 32 32">
-              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
             </svg>
           </button>
           <button type="button" class="large icon">
             <svg viewBox="0 0 32 32">
-              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
             </svg>
           </button>
           <button type="button" class="large icon circle">
             <svg viewBox="0 0 32 32">
-              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
             </svg>
           </button>
         </div>
@@ -536,19 +537,20 @@
           <button type="button" class="outline small">Outline</button>
           <button type="button" class="flat small">Flat</button>
           <button type="button" class="subtle small">Subtle</button>
-          <button type="button" class="small icon after">Fill
+          <button type="button" class="small icon after">
+            Fill
             <svg viewBox="0 0 32 32">
-              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
             </svg>
           </button>
           <button type="button" class="small icon">
             <svg viewBox="0 0 32 32">
-              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
             </svg>
           </button>
           <button type="button" class="small icon circle">
             <svg viewBox="0 0 32 32">
-              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
             </svg>
           </button>
         </div>
@@ -572,9 +574,10 @@
           <button type="button" class="full">Fill</button>
           <button type="button" class="outline full">Outline</button>
           <button type="button" class="subtle full">Subtle</button>
-          <button type="button" class="full icon after">Fill
+          <button type="button" class="full icon after">
+            Fill
             <svg viewBox="0 0 32 32">
-              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/>
+              <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
             </svg>
           </button>
         </div>
@@ -613,12 +616,10 @@
     </section>
   </article>
 </template>
+
 <script>
-  import prism from 'vue-prismjs';
-  export default {
-    components: { prism }
-  }
 </script>
+
 <style lang="scss" scoped>
 
   .example {
