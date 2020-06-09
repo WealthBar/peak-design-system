@@ -9,6 +9,7 @@ test('views/typography unitValue', (t) => {
 
   t.test('calculates rem units', (t) => {
     typography.computed.getSelectedUnit.returns('rem');
+    typography.computed.getSelectedScreen.returns('desktop');
     const wrapper = shallow(typography);
     t.equal(wrapper.vm.unitValue(16), '1rem', 'sets the correct value');
     t.end();
@@ -16,6 +17,7 @@ test('views/typography unitValue', (t) => {
 
   t.test('calculates px units', (t) => {
     typography.computed.getSelectedUnit.returns('px');
+    typography.computed.getSelectedScreen.returns('desktop');
     const wrapper = shallow(typography);
     t.equal(wrapper.vm.unitValue(16), '16px', 'sets the correct value');
     t.end();
