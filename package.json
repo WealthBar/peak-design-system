@@ -8,7 +8,7 @@
     "build": "node build/build.js",
     "lint": "eslint 'src/**/*.{js,vue}'",
     "ci": "yarn run lint && yarn run test:coverage",
-    "coverage": "yarn run test:coverage; open coverage/index.html",
+    "coverage": "yarn run test:coverage",
     "dev": "DEMO_MODE=true node build/dev-server.js",
     "dev:local": "DEMO_MODE=false API_URL=http://localhost:3000/api node build/dev-server.js",
     "prod": "API_URL=https://localhost:3000/api node build/prod-server.js",

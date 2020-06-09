@@ -55,20 +55,13 @@
         <router-view />
       </div>
     </div>
-    <back-to-top visible-offset="800">
-      <svg viewBox="0 0 32 32">
-        <polygon points="28.7,17.8 16,5.1 3.3,17.8 4.7,19.2 15,8.9 15,28 17,28 17,8.9 27.3,19.2" />
-      </svg>
-    </back-to-top>
   </main>
 </template>
 
 <script>
 import { mapGetters, mapActions } from '@/lib/vue';
-import BackToTop from './components/back_to_top';
 
 export default {
-  components: { BackToTop },
   data() {
     return {
       navOpen: true,
