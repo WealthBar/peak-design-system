@@ -3,20 +3,10 @@
     <div id="app-view" :class="{'nav-open': navOpen}">
       <div class="side-menu">
         <div class="menu-header">
-          <router-link to="/"><img class="wb-logo" src="~@/assets/logo.svg"></router-link>
-
-          <div class="toggles">
-            <label for="unit-toggle">Units</label>
-            <button id="unit-toggle" class="toggle" @click="toggleUnit">
-              <span v-for="unit in getUnits" :key="unit" :data-active="getSelectedUnit === unit">{{ unit }}</span>
-            </button>
-
-            <label for="screen-toggle">Screen Size</label>
-            <button id="screen-toggle" class="toggle" @click="toggleScreen">
-              <span v-for="screen in getScreens" :key="screen" :data-active="getSelectedScreen === screen">{{ screen }}</span>
-            </button>
-          </div>
-          <hr>
+          <router-link to="/">
+            <img class="wb-logo" src="~@/assets/logo.svg" />
+          </router-link>
+          <hr />
         </div>
 
         <nav class="main-navigation">
@@ -74,6 +64,7 @@
               </li>
             </ul>
             <li>
+<<<<<<< HEAD
               <router-link to="input_patterns">
                 Form Patterns
                 <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/input_patterns'}">
@@ -82,6 +73,11 @@
               </router-link>
             </li>
             <ul v-if="$route.path === '/input_patterns'">
+=======
+              <router-link to="input-patterns">Form Patterns</router-link>
+            </li>
+            <ul v-if="$route.path === '/input-patterns'">
+>>>>>>> updates to typography section for easier digestion
               <li class="secondary-link">
                 <a href="#general">General Input Patterns</a>
               </li>
@@ -179,8 +175,12 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['getSelectedUnit', 'getUnits', 'getSelectedScreen', 'getScreens']),
-
+    ...mapGetters([
+      'getSelectedUnit',
+      'getUnits',
+      'getSelectedScreen',
+      'getScreens',
+    ]),
   },
   methods: {
     ...mapActions(['setScreen', 'setUnit']),
@@ -188,7 +188,9 @@ export default {
       this.setUnit(this.getSelectedUnit === 'px' ? 'rem' : 'px');
     },
     toggleScreen() {
-      this.setScreen(this.getSelectedScreen === 'desktop' ? 'mobile' : 'desktop');
+      this.setScreen(
+        this.getSelectedScreen === 'desktop' ? 'mobile' : 'desktop',
+      );
     },
     toggleNav() {
       this.navOpen = !this.navOpen;
@@ -198,52 +200,78 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '~@wealthbar/peak-style/scss/base/index';
-  @import '~@wealthbar/peak-style/scss/patterns/index';
-  @import 'peak-states';
+@import "~@wealthbar/peak-style/scss/base/index";
+@import "~@wealthbar/peak-style/scss/patterns/index";
+@import "peak-states";
 
-  main {
-    margin: auto;
-  }
+main {
+  margin: auto;
+}
 
-  #app-view {
-    display: flex;
+#app-view {
+  display: flex;
 
-    &.nav-open {
-      .side-menu { width: auto; }
+  &.nav-open {
+    .side-menu {
+      width: auto;
     }
   }
+}
 
-  .side-menu {
-    width: 0;
-    flex: 0 0 auto;
-    min-height: 100vh;
-    // overflow: hidden;
-    transition: all 0.3s ease-out;
-    background-color: $neutral-50;
-    border-right: 1px solid $neutral-100;
+.side-menu {
+  width: 0;
+  flex: 0 0 auto;
+  min-height: 100vh;
+  // overflow: hidden;
+  transition: all 0.3s ease-out;
+  background-color: $neutral-50;
+  border-right: 1px solid $neutral-100;
+}
+
+.units-contianer {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.unit-selector {
+  display: flex;
+
+  *:not(:last-child) {
+    border-radius: 0;
+    border-right: none;
   }
 
-  .units-contianer {
-    display: flex;
-    align-items: center;
+  :first-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+  }
+  :last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+  }
+}
+
+.main-navigation {
+  list-style: none;
+
+  a {
+    text-decoration: none;
+    color: $pearl-900;
     padding: 0.5rem 1rem;
-  }
+    margin: 0.125rem 0;
+    display: block;
 
-  .unit-selector {
-    display: flex;
-
-    *:not(:last-child) {
-      border-radius: 0;
-      border-right: none;
+    &:hover,
+    &:focus {
+      background: $primary-50;
+      color: $primary-500;
     }
-
-    :first-child { border-radius: 0.25rem 0 0 0.25rem; }
-    :last-child { border-radius: 0 0.25rem 0.25rem 0; }
   }
-
-  .main-navigation {
+  .coming-soon {
+    color: $pearl-300;
+  }
+  ul {
     list-style: none;
+<<<<<<< HEAD
 
     a {
       text-decoration: none;
@@ -270,37 +298,43 @@ export default {
     }
     .coming-soon { color: $pearl-300; }
     ul { list-style: none; }
+=======
+>>>>>>> updates to typography section for easier digestion
   }
+}
 
-  .menu-header {
-    a:hover,
-    a:active,
-    a:focus {
-      background-color: transparent;
-    }
-    .toggles {padding: 0 1rem;}
-    .wb-logo {
-      height: 1.6rem;
-      width: 10rem;
-      margin: 1rem 1rem 0;
-    }
+.menu-header {
+  a:hover,
+  a:active,
+  a:focus {
+    background-color: transparent;
   }
-
+  .toggles {
+    padding: 0 1rem;
+  }
   .wb-logo {
     height: 1.6rem;
     width: 10rem;
+    margin: 1rem 1rem 0;
   }
+}
 
-  .page { flex: 1 1 auto; }
+.wb-logo {
+  height: 1.6rem;
+  width: 10rem;
+}
 
-  #menu-toggle {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-  }
+.page {
+  flex: 1 1 auto;
+}
 
-  .coming-soon {
-    color: $pearl-500;
-  }
+#menu-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
 
+.coming-soon {
+  color: $pearl-500;
+}
 </style>

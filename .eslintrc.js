@@ -10,7 +10,7 @@ module.exports = {
   extends: [
     'airbnb-base',
     'plugin:vue/strongly-recommended',
-    'plugin:vue/essential',
+    'plugin:vue/essential'
   ],
 
   // check if imports actually resolve
@@ -65,11 +65,13 @@ module.exports = {
       'error',
       {
         html: {
-          normal: 'any'
+          normal: 'never',
+          void: 'always'
         }
       }
     ],
-    'vue/max-len': ['error',
+    'vue/max-len': [
+      'error',
       {
         'code': 150,
         'template': 500,
