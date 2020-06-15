@@ -1,17 +1,19 @@
 <template>
   <article class="container">
-    <h1>Header Type</h1>
+    <header>
+      <h1>Header Text</h1>
 
-    <div class="toggles">
-      <label for="screen-toggle">Type size</label>
-      <button id="screen-toggle" class="toggle" @click="toggleScreen">
-        <span
-          v-for="screen in getScreens"
-          :key="screen"
-          :data-active="getSelectedScreen === screen"
-        >{{ screen }}</span>
-      </button>
-    </div>
+      <div class="toggles">
+        <label for="screen-toggle">Screen Variant</label>
+        <button id="screen-toggle" class="toggle" @click="toggleScreen">
+          <span
+            v-for="screen in getScreens"
+            :key="screen"
+            :data-active="getSelectedScreen === screen"
+          >{{ screen }}</span>
+        </button>
+      </div>
+    </header>
     <section>
       <h2 id="headers"></h2>
       <p>Headers create hierarchy in a layout and make scanning easy. Use them for content such as page titles or section titles. We have <strong>mobile</strong> and <strong>desktop</strong> header styles controlled by media queries based on browser's screen size. This ensures that our header typography is responsive to screen real estate.</p>
@@ -314,6 +316,12 @@ h5,
   &.desktop {
     @include desktop;
   }
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 section {

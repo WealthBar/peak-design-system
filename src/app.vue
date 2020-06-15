@@ -64,7 +64,6 @@
               </li>
             </ul>
             <li>
-<<<<<<< HEAD
               <router-link to="input_patterns">
                 Form Patterns
                 <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/input_patterns'}">
@@ -73,11 +72,6 @@
               </router-link>
             </li>
             <ul v-if="$route.path === '/input_patterns'">
-=======
-              <router-link to="input-patterns">Form Patterns</router-link>
-            </li>
-            <ul v-if="$route.path === '/input-patterns'">
->>>>>>> updates to typography section for easier digestion
               <li class="secondary-link">
                 <a href="#general">General Input Patterns</a>
               </li>
@@ -271,7 +265,6 @@ main {
   }
   ul {
     list-style: none;
-<<<<<<< HEAD
 
     a {
       text-decoration: none;
@@ -298,8 +291,6 @@ main {
     }
     .coming-soon { color: $pearl-300; }
     ul { list-style: none; }
-=======
->>>>>>> updates to typography section for easier digestion
   }
 }
 

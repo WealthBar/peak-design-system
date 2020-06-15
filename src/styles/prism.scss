@@ -35,10 +35,16 @@ pre[class*="language-"] {
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre) > code {
 	padding: 0.125em;
 	border-radius: 0.25em;
 	white-space: normal;
+	background: $neutral-900;
+  color: $primary-300;
+  &.alt {
+    background: $neutral-900;
+    color: $secondary-500;
+  }
 }
 
 .token.comment,
