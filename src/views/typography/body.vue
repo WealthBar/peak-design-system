@@ -1,10 +1,9 @@
 <template>
   <article class="container">
-    <h1>Body Type & Patterns</h1>
+    <h1>Body Type</h1>
 
     <section>
-      <h2 id="body">Body Text</h2>
-      <p>Body text is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style classes that can be applied as needed to our base paragraph style.</p>
+      <p>Body type is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style classes that can be applied as needed to our base paragraph style.</p>
 
       <h3>Paragraph</h3>
       <p>Our base paragraph style is the foundation of our typography. All styles are variants of this style. It is also the default text style, meaning if no style is applied or specified, it should use this style.</p>
