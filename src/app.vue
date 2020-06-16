@@ -67,6 +67,7 @@
             <li><router-link to="cards">Cards</router-link></li>
             <li><router-link to="layouts">Layout Patterns</router-link></li>
             <li><router-link to="navigation">Navigation</router-link></li>
+            <li><router-link to="steps">Steps</router-link></li>
             <li><router-link to="workflows">Workflows</router-link></li>
           </ul>
         </nav>
