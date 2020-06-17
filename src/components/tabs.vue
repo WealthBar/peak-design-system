@@ -26,7 +26,7 @@ export default {
         },
         {
           name: 'Third Tab',
-          route: 'tab2'
+          route: 'tab3'
         },
       ],
       type: Array

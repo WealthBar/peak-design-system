@@ -6,17 +6,17 @@
       <h3>Tabs</h3>
       <tabs :tabs="tabs" :active-tab="tab" @clicked="setTab" />
 
-      <div v-show="tab === 'markup'">
-        <strong>Example Vue component markup</strong>
+      <div v-show="tab === 'template'">
+        <strong>Example usage in a Vue component template</strong>
         <pre><code class="language-markup">
 &lt;tabs :tabs="tabs" :activeTab="tab" @clicked="setTab" /&gt;
-&lt;div v-if="tab === 'markup'"&gt;...&lt;/div&gt;
+&lt;div v-if="tab === 'template'"&gt;...&lt;/div&gt;
 ...
         </code></pre>
       </div>
 
-      <div v-if="tab === 'script'">
-        <strong>Example Vue component script</strong>
+      <div v-if="tab === 'template'">
+        <strong>Example usage in a Vue component script</strong>
       <pre><code class="language-js">
 export default {
   components: { Tabs },
@@ -24,19 +24,15 @@ export default {
     return {
       tabs: [
         {
-          name: 'Markup',
-          route: 'markup'
+          name: 'Template',
+          route: 'template'
         },
         {
-          name: 'Script',
-          route: 'script'
-        },
-        {
-          name: 'Output',
+          name: 'Browser Output',
           route: 'output'
         },
       ],
-      tab: 'markup'
+      tab: 'template'
     };
   },
   methods: {
@@ -49,10 +45,10 @@ export default {
       </div>
 
       <div v-show="tab === 'output'">
-        <strong>Example browser output when using the Vue component</strong>
+        <strong>Example browser HTML output when using the Vue component</strong>
         <pre><code class="language-markup">
 &lt;div class="tabs"&gt;
-  &lt;button to="markup" class="tab active"&gt; Markup &lt;/button&gt;
+  &lt;button to="template" class="tab active"&gt; Template &lt;/button&gt;
   &lt;button to="script" class="tab"&gt; Script &lt;/button&gt;
   &lt;button to="output" class="tab"&gt; Output &lt;/button&gt;
 &lt;/div&gt;
@@ -72,19 +68,15 @@ export default {
     return {
       tabs: [
         {
-          name: 'Markup',
-          route: 'markup'
+          name: 'Template',
+          route: 'template'
         },
         {
-          name: 'Script',
-          route: 'script'
-        },
-        {
-          name: 'Output',
+          name: 'Browser Output',
           route: 'output'
         },
       ],
-      tab: 'markup'
+      tab: 'template'
     };
   },
   methods: {
