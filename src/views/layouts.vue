@@ -31,7 +31,7 @@
 &lt;/div&gt;</code></pre>
       <div class="notice light">
         <header>
-          <h3>My H3 Header</h3>
+          <h3>H3 Header</h3>
         </header>
         <footer>
           <p>Body type is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style classes that can be applied as needed to our base paragraph style.</p>
