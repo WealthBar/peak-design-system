@@ -18,7 +18,7 @@ COPY public ./public
 COPY util ./util
 RUN NODE_ENV=production yarn build
 
-FROM node:10-alpine
+FROM node:11-alpine
 WORKDIR /app
 ENV NODE_ENV=production NPM_ENV=production
 
