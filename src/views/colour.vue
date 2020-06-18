@@ -20,11 +20,11 @@
     <assante-theme v-if="tab === 'assante'"/>
   </article>
 </template>
-<script>
 
-import wealthbarTheme from './colour/wealthbar.vue';
-import assanteTheme from './colour/assante.vue';
+<script>
 import tabs from '@/components/tabs';
+import wealthbarTheme from './colour/wealthbar';
+import assanteTheme from './colour/assante';
 
 export default {
   components: { tabs, wealthbarTheme, assanteTheme },
@@ -33,23 +33,24 @@ export default {
       tabs: [
         {
           name: 'WealthBar',
-          route: 'wealthbar'
+          route: 'wealthbar',
         },
         {
           name: 'Assante Connect',
-          route: 'assante'
+          route: 'assante',
         },
       ],
-      tab: 'wealthbar'
+      tab: 'wealthbar',
     };
   },
   methods: {
     setTab(selectedTab) {
-      this.tab = selectedTab
+      this.tab = selectedTab;
     },
   },
 };
 </script>
+
 <style lang="scss" scoped>
   .container { padding-bottom: 2rem; }
 </style>
