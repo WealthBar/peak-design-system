@@ -17,7 +17,7 @@
 
       <div v-if="tab === 'template'">
         <strong>Example usage in a Vue component script</strong>
-      <pre><code class="language-js">
+        <pre><code class="language-js">
 export default {
   components: { Tabs },
   data() {
@@ -68,20 +68,20 @@ export default {
       tabs: [
         {
           name: 'Template',
-          route: 'template'
+          route: 'template',
         },
         {
           name: 'Browser Output',
-          route: 'output'
+          route: 'output',
         },
       ],
-      tab: 'template'
+      tab: 'template',
     };
   },
   methods: {
     setTab(selectedTab) {
-      this.tab = selectedTab
+      this.tab = selectedTab;
     },
   },
-}
+};
 </script>
