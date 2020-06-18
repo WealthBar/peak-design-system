@@ -60,10 +60,9 @@ export default {
 
 <script>
 import tabs from '@/components/tabs';
-import prism from 'vue-prismjs';
 
 export default {
-  components: { prism, tabs },
+  components: { tabs },
   data() {
     return {
       tabs: [
