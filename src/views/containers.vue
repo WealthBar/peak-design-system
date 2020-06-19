@@ -6,7 +6,7 @@
         Containers are agreed upon widths between dev and design.
       </p>
     </section>
-    
+
     <section id="containers">
       <h3>container</h3>
 

@@ -21,12 +21,14 @@
 
         <nav class="main-navigation">
           <ul>
-            <li><router-link to="typography">
-              Typography
-              <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/typography'}">
-                <polygon points="11,28 23,16 11,4"/>
-              </svg>
-            </router-link></li>
+            <li>
+              <router-link to="typography">
+                Typography
+                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/typography'}">
+                  <polygon points="11,28 23,16 11,4"/>
+                </svg>
+              </router-link>
+            </li>
             <ul v-if="$route.path === '/typography'">
               <li class="secondary-link"><a href="#units">Units</a></li>
               <li class="secondary-link"><a href="#headers">Headers Text</a></li>

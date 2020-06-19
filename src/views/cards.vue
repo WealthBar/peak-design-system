@@ -6,7 +6,7 @@
         Cards in peak are simply a visual wrapper, made to respect all other styles which used cards on one way or another.
       </p>
     </section>
-    
+
     <section id="card">
       <h3>Card</h3>
 
@@ -77,7 +77,5 @@
 </template>
 
 <script>
-export default {
-  
-}
+export default { };
 </script>
