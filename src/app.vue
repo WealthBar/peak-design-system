@@ -65,6 +65,7 @@
             <li><router-link to="svg">SVG Icons</router-link></li>
             <li><router-link to="banners">Banners</router-link></li>
             <li><router-link to="cards">Cards</router-link></li>
+            <li><router-link to="containers">Containers</router-link></li>
             <li><router-link to="layouts">Layout Patterns</router-link></li>
             <li><router-link to="navigation">Navigation</router-link></li>
             <li><router-link to="steps">Steps</router-link></li>
