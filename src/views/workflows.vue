@@ -19,7 +19,7 @@
           <strong>Banners:</strong>
           .modal-page-banner
         </li>
-        <li><strong>Cards</strong></li>
+        <li><strong>Steps Cards</strong></li>
       </ol>
 
       <p>
@@ -57,10 +57,8 @@
 
 &lt;form class="workflow-form"&gt;
   &lt;transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses"&gt;
-    &lt;div class="step"&gt;
-      &lt;div class="card"&gt;
-        ...
-      &lt;/div&gt;
+    &lt;div class="step card"&gt;
+      ...
     &lt;/div&gt;
   &lt;/transition&gt;
 &lt;form&gt;
@@ -156,7 +154,7 @@ next(step) {
     <div class="code-sample">
       <pre>
         <code class="language-markup">&lt;div class="modal-page workflow"&gt;
-  &lt;div class="modal-page-banner light"&gt;
+  &lt;div class="modal-page-banner"&gt;
     &lt;div class="banner-content"&gt;
       &lt;h5 class="title"&gt;Test title&lt;/h5&gt;
       &lt;button type="button" class="flat action" icon&gt;close&lt;/button&gt;
@@ -168,23 +166,25 @@ next(step) {
       :enter-active-class="enterClasses" 
       :leave-active-class="leaveClasses" 
     &gt;
-      &lt;div class="step" v-if="step === 1" :key="step"&gt;
-        &lt;div class="card"&gt;
+      &lt;div class="step card" v-if="step === 1" :key="step"&gt;
+        &lt;header&gt;
           &lt;h3&gt;Step 1&lt;/h3&gt;
+        &lt;/header&gt;
 
+        &lt;article&gt;
           &lt;h5&gt;Finance Ipsum&lt;/h5&gt;
           &lt;p&gt;
             Securities default
           &lt;/p&gt;
+        &lt;/article&gt;
 
-          &lt;div class="step-footer"&gt;
-            &lt;button type="submit" @click="next"&gt;Next&lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
+        &lt;footer&gt;
+          &lt;button type="submit" @click="next"&gt;Next&lt;/button&gt;
+        &lt;/footer&gt;
       &lt;/div&gt;
 
-      &lt;div class="step" v-if="step === 2" :key="step"&gt;
-        &lt;div class="card"&gt;
+      &lt;div class="step card" v-if="step === 2" :key="step"&gt;
+        &lt;header&gt;
           &lt;button type="button" class="flat icon before" @click="prev"&gt;
             &lt;svg viewBox="0 0 32 32"&gt;
               &lt;polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/&gt;
@@ -193,7 +193,9 @@ next(step) {
           &lt;/button&gt;
 
           &lt;h3&gt;Step 2&lt;/h3&gt;
+        &lt;/header&gt;
 
+        &lt;article&gt;
           &lt;h5&gt;Finance Ipsum&lt;/h5&gt;
           &lt;p&gt;
             Securities default investment funds exchange market index value fall Fitch corporate 
@@ -201,11 +203,11 @@ next(step) {
             volatile issuer rise. Term fiat 401k managed shares corporate bonds tax gains funds income maturities 
             downturn yield retirement. Bills district Fitch municipal bonds exchange bull. 
           &lt;/p&gt;
+        &lt;/article&gt;
 
-          &lt;div class="step-footer"&gt;
-            &lt;button type="submit" disabled&gt;Submit&lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
+        &lt;footer&gt;
+          &lt;button type="submit" disabled&gt;Submit&lt;/button&gt;
+        &lt;/footer&gt;
       &lt;/div&gt;
     &lt;/transition&gt;
   &lt;/form&gt;
