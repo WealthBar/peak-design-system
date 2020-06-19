@@ -78,6 +78,19 @@ code.language-markup, code.language-svg {
     color: $primary-50;
   }
 }
+code.language-js {
+  background: $neutral-900;
+  color: $neutral-300;
+  .token.function, .token.string, .token.number, .token.boolean {
+    color: $primary-100;
+  }
+  .token.keyword {
+    color: $primary-300;
+  }
+  .token.punctuation {
+    color: $secondary-100;
+  }
+}
 
 .toggle {
   display: block;
