@@ -1,6 +1,6 @@
 code[class*="language-"],
 pre[class*="language-"] {
-	color: $neutral-300;
+	color: $neutral-100;
 	text-align: left;
 	white-space: pre;
   white-space: unset;
@@ -39,11 +39,11 @@ pre[class*="language-"] {
 	padding: 0.125em;
 	border-radius: 0.25em;
 	white-space: normal;
-	background: $neutral-900;
-  color: $primary-300;
+	background: $primary-50;
+  color: $primary-700;
   &.alt {
-    background: $neutral-900;
-    color: $secondary-500;
+    background: $secondary-50;
+    color: $secondary-700;
   }
 }
 
@@ -55,7 +55,7 @@ pre[class*="language-"] {
 }
 
 .token.punctuation {
-	color: $neutral-50;
+	color: $primary-50;
 }
 
 .token.namespace {
@@ -67,7 +67,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: $primary-300;
+	color: $primary-100;
 }
 
 .token.boolean,
@@ -81,7 +81,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: $neg-300;
+	color: $secondary-100;
 }
 
 .token.operator,
