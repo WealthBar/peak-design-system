@@ -26,7 +26,7 @@
         The workflow styles tie the above together styles together, and add animations styles to create the slide on navigation.
       </p>
 
-       <ol>
+      <ol>
         <li>
           .workflow
         </li>
@@ -37,17 +37,17 @@
 
       <p>
         <strong>LEFT:</strong>
-        <br />
+        <br>
         'slide-fade-in-right'
-        <br />
+        <br>
         'slide-fade-out-right';
       </p>
 
       <p>
         <strong>RIGHT:</strong>
-        <br />
+        <br>
         'slide-fade-in-left'
-        <br />
+        <br>
         'slide-fade-out-left'
       </p>
 
@@ -87,7 +87,7 @@ next(step) {
         </div>
       </div>
 
-      <form class="workflow-form" v-on:submit.prevent>
+      <form class="workflow-form" @:submit.prevent>
         <transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses">
           <div class="step card" v-if="step === 1" :key="step">
             <header>
@@ -111,7 +111,7 @@ next(step) {
             <header>
               <button type="button" class="flat icon before" @click="prev">
                 <svg viewBox="0 0 32 32">
-                  <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17"/>
+                  <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
                 </svg>
                 Back
               </button>
@@ -120,7 +120,7 @@ next(step) {
             </header>
 
             <article>
-                <h5>Finance Ipsum</h5>
+              <h5>Finance Ipsum</h5>
 
               <div class="card">
                 <article>
@@ -161,7 +161,7 @@ next(step) {
     &lt;/div&gt;
   &lt;/div&gt;
 
-  &lt;form class="workflow-form" v-on:submit.prevent&gt;
+  &lt;form class="workflow-form" @:submit.prevent&gt;
     &lt;transition 
       :enter-active-class="enterClasses" 
       :leave-active-class="leaveClasses" 
@@ -214,7 +214,6 @@ next(step) {
 &lt;/div&gt;</code>
       </pre>
     </div>
-
   </article>
 </template>
 

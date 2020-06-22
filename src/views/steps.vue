@@ -3,8 +3,8 @@
     <section>
       <h1>Steps</h1>
       <p>
-        Steps are made multi step forms. If applied, the card styling will disappear at the mobile breakpoint, 
-        and the step will fill the screen. 
+        Steps are made multi step forms. If applied, the card styling will disappear at the mobile breakpoint,
+        and the step will fill the screen.
       </p>
 
       <p>
@@ -23,7 +23,7 @@
 
         <article>
           <p>
-            Term fiat 401k managed shares corporate bonds tax gains funds income maturities downturn yield 
+            Term fiat 401k managed shares corporate bonds tax gains funds income maturities downturn yield
             retirement. Bills district Fitch municipal bonds exchange bull.
           </p>
         </article>
@@ -55,7 +55,5 @@
 </template>
 
 <script>
-export default {
-  
-}
+export default { };
 </script>
