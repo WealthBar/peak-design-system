@@ -34,7 +34,7 @@
     </section>
 
     <section id="card-step">
-      <h3>Step Card</h3>
+      <h3>Step Card example</h3>
 
       <div class="card step">
         <header>

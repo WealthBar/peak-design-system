@@ -4,14 +4,15 @@
       <h1>Steps</h1>
       <p>
         Steps are made multi step forms. If applied, the card styling will disappear at the mobile breakpoint, 
-        and the step will fill the screen. The step consists of the following html elements:
+        and the step will fill the screen. 
       </p>
 
-      <ol>
-        <li>header</li>
-        <li>article</li>
-        <li>footer</li>
-      </ol>
+      <p>
+        The step consists of the following html elements:
+        <strong>header</strong>,
+        <strong>article</strong>,
+        <strong>footer</strong>
+      </p>
     </section>
 
     <section id="card">

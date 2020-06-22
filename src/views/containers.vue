@@ -8,42 +8,74 @@
     </section>
 
     <section id="containers">
-      <h3>container</h3>
+      <h3>Default</h3>
 
       <div class="container visual-container">
         <h2>
           80rem
         </h2>
       </div>
+
+      <div class="code-sample">
+        <pre>
+          <code class="language-markup">&lt;div class="container"&gt;
+  ...
+&lt;/div&gt;</code>
+        </pre>
+      </div>
     </section>
 
     <section>
-      <h3>container-large</h3>
+      <h3>Large</h3>
 
       <div class="container-large visual-container">
         <h2>
           64rem
         </h2>
       </div>
+
+      <div class="code-sample">
+        <pre>
+          <code class="language-markup">&lt;div class="container-large"&gt;
+  ...
+&lt;/div&gt;</code>
+        </pre>
+      </div>
     </section>
 
     <section>
-      <h3>container-medium</h3>
+      <h3>Medium</h3>
 
       <div class="container-medium visual-container">
         <h2>
           48rem
         </h2>
       </div>
+
+      <div class="code-sample">
+        <pre>
+          <code class="language-markup">&lt;div class="container-medium"&gt;
+  ...
+&lt;/div&gt;</code>
+        </pre>
+      </div>
     </section>
 
     <section>
-      <h3>container-small</h3>
+      <h3>Small</h3>
 
       <div class="container-small visual-container">
         <h2>
           32rem
         </h2>
+      </div>
+
+      <div class="code-sample">
+        <pre>
+          <code class="language-markup">&lt;div class="container-small"&gt;
+  ...
+&lt;/div&gt;</code>
+        </pre>
       </div>
     </section>
   </article>
