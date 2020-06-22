@@ -25,53 +25,103 @@
               <router-link to="typography">
                 Typography
                 <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/typography'}">
-                  <polygon points="11,28 23,16 11,4"/>
+                  <polygon points="11,28 23,16 11,4" />
                 </svg>
               </router-link>
             </li>
             <ul v-if="$route.path === '/typography'">
-              <li class="secondary-link"><a href="#units">Units</a></li>
-              <li class="secondary-link"><a href="#headers">Headers Text</a></li>
-              <li class="secondary-link"><a href="#body">Body Text</a></li>
-              <li class="secondary-link"><a href="#lists">Lists</a></li>
-              <li class="secondary-link"><a href="#line-length">Line Length</a></li>
-              <li class="secondary-link"><a href="#font-stack">Font Stack</a></li>
+              <li class="secondary-link">
+                <a href="#units">Units</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#headers">Headers Text</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#body">Body Text</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#lists">Lists</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#line-length">Line Length</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#font-stack">Font Stack</a>
+              </li>
             </ul>
             <li><router-link to="colour">Colour</router-link></li>
             <li><router-link to="buttons">Links &amp; Buttons</router-link></li>
-            <li><router-link to="inputs">
-              Form Elements
-              <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/inputs'}">
-                <polygon points="11,28 23,16 11,4"/>
-              </svg>
-            </router-link></li>
+            <li>
+              <router-link to="inputs">
+                Form Elements
+                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/inputs'}">
+                  <polygon points="11,28 23,16 11,4" />
+                </svg>
+              </router-link>
+            </li>
             <ul v-if="$route.path === '/inputs'">
-              <li class="secondary-link"><a href="#text">Text inputs</a></li>
-              <li class="secondary-link"><a href="#non-text">Non-text inputs</a></li>
-              <li class="secondary-link"><a href="#non-input">Non-input elements</a></li>
-              <li class="secondary-link"><a href="#spacing">Input spacing structure</a></li>
+              <li class="secondary-link">
+                <a href="#text">Text inputs</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#non-text">Non-text inputs</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#non-input">Non-input elements</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#spacing">Input spacing structure</a>
+              </li>
             </ul>
-            <li><router-link to="input-patterns">
-              Form Patterns
-              <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/input-patterns'}">
-                <polygon points="11,28 23,16 11,4"/>
-              </svg>
-            </router-link></li>
+            <li>
+              <router-link to="input-patterns">
+                Form Patterns
+                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/input-patterns'}">
+                  <polygon points="11,28 23,16 11,4" />
+                </svg>
+              </router-link>
+            </li>
             <ul v-if="$route.path === '/input-patterns'">
-              <li class="secondary-link"><a href="#general">General Input Patterns</a></li>
-              <li class="secondary-link"><a href="#inline">Inline Button Patterns</a></li>
-              <li class="secondary-link"><a href="#check-radio">Checkbox &amp; Radio Patterns</a></li>
-              <li class="secondary-link"><a href="#layout">Input Layout Patterns</a></li>
-              <li class="secondary-link"><a href="#invalid">Invalid &amp; error states</a></li>
+              <li class="secondary-link">
+                <a href="#general">General Input Patterns</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#inline">Inline Button Patterns</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#check-radio">Checkbox &amp; Radio Patterns</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#layout">Input Layout Patterns</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#invalid">Invalid &amp; error states</a>
+              </li>
             </ul>
-            <li><router-link to="svg">SVG Icons</router-link></li>
-            <li><router-link to="banners">Banners</router-link></li>
-            <li><router-link to="cards">Cards</router-link></li>
-            <li><router-link to="containers">Containers</router-link></li>
-            <li><router-link to="layouts">Layout Patterns</router-link></li>
-            <li><router-link to="navigation">Navigation</router-link></li>
-            <li><router-link to="steps">Steps</router-link></li>
-            <li><router-link to="workflows">Workflows</router-link></li>
+            <li>
+              <router-link to="svg">SVG Icons</router-link>
+            </li>
+            <li>
+              <router-link to="banners">Banners</router-link>
+            </li>
+            <li>
+              <router-link to="cards">Cards</router-link>
+            </li>
+            <li>
+              <router-link to="containers">Containers</router-link>
+            </li>
+            <li>
+              <router-link to="layouts">Layout Patterns</router-link>
+            </li>
+            <li>
+              <router-link to="navigation">Navigation</router-link>
+            </li>
+            <li>
+              <router-link to="steps">Steps</router-link>
+            </li>
+            <li>
+              <router-link to="workflows">Workflows</router-link>
+            </li>
           </ul>
         </nav>
       </div>
