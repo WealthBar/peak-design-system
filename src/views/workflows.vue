@@ -103,7 +103,7 @@ next(step) {
             </article>
 
             <footer>
-              <button type="submit" @click="next">Next</button>
+              <button type="submit" @click.prevent="next">Next</button>
             </footer>
           </div>
 
