@@ -21,19 +21,28 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+
           ports:
             - containerPort: {{ .Values.service.targetPort }}
+
           livenessProbe:
             httpGet:
-              path: {{ .Values.deployment.probePath }}
-              port: {{ .Values.service.targetPort }}
+              path: {{ default "/" .Values.deployment.probePath }}
+              port: {{ default 5001 .Values.deployment.targetPort }}
             initialDelaySeconds: 10
             timeoutSeconds: 30
             failureThreshold: 6
           readinessProbe:
             httpGet:
-              path: {{ .Values.deployment.probePath }}
-              port: {{ .Values.service.targetPort }}
+              path: {{ default "/" .Values.deployment.probePath }}
+              port: {{ default 5001 .Values.deployment.targetPort }}
             initialDelaySeconds: 10
             timeoutSeconds: 30
             failureThreshold: 5
+          startupProbe:
+            httpGet:
+              path: {{ default "/" .Values.deployment.probePath }}
+              port: {{ default 5001 .Values.deployment.targetPort }}
+            initialDelaySeconds: 60
+            timeoutSeconds: 5
+            failureThreshold: 3
