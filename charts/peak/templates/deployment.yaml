@@ -31,21 +31,21 @@ spec:
           livenessProbe:
             httpGet:
               path: {{ default "/" .Values.deployment.probePath }}
-              port: {{ default 5001 .Values.deployment.targetPort }}
+              port: {{ default 5001 .Values.service.targetPort }}
             initialDelaySeconds: 10
             timeoutSeconds: 30
             failureThreshold: 6
           readinessProbe:
             httpGet:
               path: {{ default "/" .Values.deployment.probePath }}
-              port: {{ default 5001 .Values.deployment.targetPort }}
+              port: {{ default 5001 .Values.service.targetPort }}
             initialDelaySeconds: 10
             timeoutSeconds: 30
             failureThreshold: 5
           startupProbe:
             httpGet:
               path: {{ default "/" .Values.deployment.probePath }}
-              port: {{ default 5001 .Values.deployment.targetPort }}
+              port: {{ default 5001 .Values.service.targetPort }}
             initialDelaySeconds: 60
             timeoutSeconds: 5
             failureThreshold: 3
