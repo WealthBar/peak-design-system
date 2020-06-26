@@ -26,7 +26,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
 
           ports:
-            - containerPort: {{ .Values.service.targetPort }}
+            - containerPort: {{ default 5001 .Values.service.targetPort }}
 
           livenessProbe:
             httpGet:
@@ -34,7 +34,8 @@ spec:
               port: {{ default 5001 .Values.service.targetPort }}
             initialDelaySeconds: 10
             timeoutSeconds: 30
-            failureThreshold: 6
+            failureThreshold: 5
+            periodSeconds: 60
           readinessProbe:
             httpGet:
               path: {{ default "/" .Values.deployment.probePath }}
@@ -42,6 +43,7 @@ spec:
             initialDelaySeconds: 10
             timeoutSeconds: 30
             failureThreshold: 5
+            periodSeconds: 30
           startupProbe:
             httpGet:
               path: {{ default "/" .Values.deployment.probePath }}
