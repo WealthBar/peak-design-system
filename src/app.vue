@@ -101,27 +101,67 @@
             <li>
               <router-link to="svg">SVG Icons</router-link>
             </li>
-            <li>
-              <router-link to="banners">Banners</router-link>
+
+             <li>
+              <router-link to="/layout-structures">
+                Layout Structures
+                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/layout-structures'}">
+                  <polygon points="11,28 23,16 11,4" />
+                </svg>
+              </router-link>
             </li>
+            <ul v-if="$route.path === '/layout-structures'">
+              <li class="secondary-link">
+                <a href="#container">Container</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#banner">Banner</a>
+              </li>
+            </ul>
+
             <li>
-              <router-link to="cards">Cards</router-link>
+              <router-link to="/layout-styles">
+                Layout Styling
+                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/layout-styles'}">
+                  <polygon points="11,28 23,16 11,4" />
+                </svg>
+              </router-link>
             </li>
-            <li>
-              <router-link to="containers">Containers</router-link>
+            <ul v-if="$route.path === '/layout-styles'">
+              <li class="secondary-link">
+                <a href="#card">Card</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#notice">Notice</a>
+              </li>
+            </ul>
+
+             <li>
+              <router-link to="/workflows">
+                Workflows
+                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/workflows'}">
+                  <polygon points="11,28 23,16 11,4" />
+                </svg>
+              </router-link>
             </li>
-            <li>
-              <router-link to="layouts">Layout Patterns</router-link>
-            </li>
+            <ul v-if="$route.path === '/workflows'">
+              <li class="secondary-link">
+                <a href="#setup">Setup</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#animation">Animations</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#step">Steps</a>
+              </li>
+              <li class="secondary-link">
+                <a href="#composition">Composition</a>
+              </li>
+            </ul>
             <li>
               <router-link to="navigation">Navigation</router-link>
             </li>
-            <li>
-              <router-link to="steps">Steps</router-link>
-            </li>
-            <li>
-              <router-link to="workflows">Workflows</router-link>
-            </li>
+
           </ul>
         </nav>
       </div>

@@ -3,7 +3,7 @@
     <section>
       <h1>Steps</h1>
       <p>
-        Steps are made multi step forms. If applied, the card styling will disappear at the mobile breakpoint,
+        Steps are made for multi step forms(forms with more than 1 page). The card styling will disappear at the mobile breakpoint,
         and the step will fill the screen.
       </p>
 
