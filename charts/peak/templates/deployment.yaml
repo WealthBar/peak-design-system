@@ -21,19 +21,33 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+
           ports:
-            - containerPort: {{ .Values.service.targetPort }}
+            - containerPort: {{ default 5001 .Values.service.targetPort }}
+
           livenessProbe:
             httpGet:
-              path: {{ .Values.deployment.probePath }}
-              port: {{ .Values.service.targetPort }}
-            initialDelaySeconds: 10
-            timeoutSeconds: 30
-            failureThreshold: 6
-          readinessProbe:
-            httpGet:
-              path: {{ .Values.deployment.probePath }}
-              port: {{ .Values.service.targetPort }}
+              path: {{ default "/" .Values.deployment.probePath }}
+              port: {{ default 5001 .Values.service.targetPort }}
             initialDelaySeconds: 10
             timeoutSeconds: 30
             failureThreshold: 5
+            periodSeconds: 60
+          readinessProbe:
+            httpGet:
+              path: {{ default "/" .Values.deployment.probePath }}
+              port: {{ default 5001 .Values.service.targetPort }}
+            initialDelaySeconds: 10
+            timeoutSeconds: 30
+            failureThreshold: 5
+            periodSeconds: 30
+          startupProbe:
+            httpGet:
+              path: {{ default "/" .Values.deployment.probePath }}
+              port: {{ default 5001 .Values.service.targetPort }}
+            initialDelaySeconds: 60
+            timeoutSeconds: 5
+            failureThreshold: 3
