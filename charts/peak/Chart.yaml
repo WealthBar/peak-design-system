@@ -8,8 +8,3 @@ sources:
 home: https://peak.wealth.bar
 type: application
 deprecated: false
-
-dependencies:
-  - name: wealthbar-ci-pull-secret
-    version: "1.0.0"
-    repository: "https://raw.githubusercontent.com/WealthBar/chartroom/master"

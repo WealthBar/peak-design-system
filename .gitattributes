@@ -1,0 +1,1 @@
+charts/peak/templates/ci_cd/**/secret.yaml filter=git-crypt diff=git-crypt

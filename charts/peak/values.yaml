@@ -3,7 +3,7 @@
 replicaCount: 1
 
 image:
-  repository: quay.io/wealthbar/peak-design-system
+  repository: docker.pkg.github.com/wealthbar/peak-design-system/peak-design-system
   tag: master
   pullPolicy: Always
 
