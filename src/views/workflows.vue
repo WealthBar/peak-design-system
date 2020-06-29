@@ -94,7 +94,7 @@
         <code>article</code>,
         <code>footer</code>
       </p>
-    
+
       <div class="card step">
         <header>
           <h3>Some title</h3>
@@ -159,13 +159,13 @@
               </article>
 
               <footer>
-                <button type="submit" @click.prevent="next">Next</button>
+                <button type="submit" @click.prevent="next(2)">Next</button>
               </footer>
             </div>
 
             <div class="step card" v-if="step === 2" :key="step">
               <header>
-                <button type="button" class="flat icon before" @click="prev">
+                <button type="button" class="flat icon before" @click="prev(1)">
                   <svg viewBox="0 0 32 32">
                     <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
                   </svg>
@@ -219,24 +219,24 @@
 export default {
   data() {
     return {
-      step: 1
-    }
+      step: 1,
+    };
   },
 
   methods: {
     async prev(step) {
       this.enterClasses = 'step-slide-fade-in-right';
       this.leaveClasses = 'step-slide-fade-out-right';
-      this.step = 1;
+      this.step = step;
     },
 
     async next(step) {
       this.enterClasses = 'step-slide-fade-in-left';
       this.leaveClasses = 'step-slide-fade-out-left';
-      this.step = 2;
+      this.step = step;
     },
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss">

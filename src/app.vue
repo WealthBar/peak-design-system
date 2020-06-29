@@ -102,7 +102,7 @@
               <router-link to="svg">SVG Icons</router-link>
             </li>
 
-             <li>
+            <li>
               <router-link to="/layout-structures">
                 Layout Structures
                 <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/layout-structures'}">
@@ -136,7 +136,7 @@
               </li>
             </ul>
 
-             <li>
+            <li>
               <router-link to="/workflows">
                 Workflows
                 <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/workflows'}">
@@ -161,7 +161,6 @@
             <li>
               <router-link to="navigation">Navigation</router-link>
             </li>
-
           </ul>
         </nav>
       </div>
