@@ -126,11 +126,10 @@
   &lt;footer&gt;
     &lt;button type="submit"&gt;Okay&lt;/button&gt;
   &lt;/footer&gt;
-&lt;/div&gt;</code>
-        </pre>
+&lt;/div&gt;</code></pre>
       </div>
     </section>
-    
+
     <hr>
 
     <section id="composition">
@@ -210,8 +209,7 @@
   next(step) {
   this.enterClasses = 'slide-fade-in-left';
   this.leaveClasses = 'slide-fade-out-left';
-  },</code>
-        </pre>
+  },</code></pre>
       </div>
     </section>
   </article>

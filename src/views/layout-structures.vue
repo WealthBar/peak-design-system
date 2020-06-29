@@ -24,8 +24,7 @@
         <pre>
           <code class="language-markup">&lt;div class="container"&gt;
   ...
-&lt;/div&gt;</code>
-      </pre>
+&lt;/div&gt;</code></pre>
     </div>
 
     <h3>Large</h3>
@@ -40,8 +39,7 @@
       <pre>
         <code class="language-markup">&lt;div class="container-large"&gt;
   ...
-&lt;/div&gt;</code>
-      </pre>
+&lt;/div&gt;</code></pre>
     </div>
 
     <h3>Medium</h3>
@@ -56,8 +54,7 @@
       <pre>
         <code class="language-markup">&lt;div class="container-medium"&gt;
 ...
-&lt;/div&gt;</code>
-      </pre>
+&lt;/div&gt;</code></pre>
     </div>
 
     <h3>Small</h3>
@@ -72,8 +69,7 @@
       <pre>
         <code class="language-markup">&lt;div class="container-small"&gt;
   ...
-&lt;/div&gt;</code>
-        </pre>
+&lt;/div&gt;</code></pre>
       </div>
     </section>
     <!-- CONTAINER END -->
@@ -106,8 +102,7 @@
       &lt;button type="button" class="flat" icon&gt;close&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code>
-        </pre>
+&lt;/div&gt;</code></pre>
       </div>
     </section>
 
@@ -136,8 +131,7 @@
       &lt;button type="button" class="flat" icon&gt;close&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code>
-        </pre>
+&lt;/div&gt;</code></pre>
       </div>
     </section>
 
@@ -164,8 +158,7 @@
       &lt;button type="button" class="flat" icon&gt;close&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code>
-        </pre>
+&lt;/div&gt;</code></pre>
       </div>
     </section>
   </article>

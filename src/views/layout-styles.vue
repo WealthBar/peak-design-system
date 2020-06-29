@@ -23,16 +23,11 @@
         </button>
       </div>
 
-      <div class="code-sample">
-        <pre>
-          <code class="language-markup">&lt;div class="card"&gt;
-  ...
-&lt;/div&gt;</code>
-        </pre>
-      </div>
-    </section>
+      <pre>
+        <code class="language-markup">&lt;div class="card"&gt;
+...
+&lt;/div&gt;</code></pre>
 
-    <section id="card-step">
       <h3>Step Card example</h3>
 
       <div class="card step">
@@ -54,23 +49,20 @@
         </footer>
       </div>
 
-      <div class="code-sample">
-        <pre>
-          <code class="language-markup">&lt;div class="step card"&gt;
-  &lt;header&gt;
-    ...
-  &lt;/header&gt;
+      <pre>
+        <code class="language-markup">&lt;div class="step card"&gt;
+&lt;header&gt;
+  ...
+&lt;/header&gt;
 
-  &lt;article&gt;
-    ...
-  &lt;/article&gt;
+&lt;article&gt;
+  ...
+&lt;/article&gt;
 
-  &lt;footer&gt;
-    ...
-  &lt;/footer&gt;
-&lt;/div&gt;</code>
-        </pre>
-      </div>
+&lt;footer&gt;
+  ...
+&lt;/footer&gt;
+&lt;/div&gt;</code></pre>
     </section>
     <!-- CARD END -->
 
