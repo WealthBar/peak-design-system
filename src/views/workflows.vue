@@ -188,8 +188,7 @@
       </div>
 
 
-      <pre>
-        <code class="language-markup">&lt;form class="workflow-form"&gt;
+      <pre><code class="language-markup">&lt;form class="workflow-form"&gt;
 &lt;transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses"&gt;
   &lt;div class="step card"&gt;
     ...

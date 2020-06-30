@@ -76,7 +76,9 @@
 &lt;/div&gt;</code></pre>
 
       <div class="notice">
-        <p class="notice-content">Body type is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style classes that can be applied as needed to our base paragraph style.</p>
+        <p class="notice-content">
+          {{noticeCopy}}
+        </p>
       </div>
       <hr>
       <h3>Alternate</h3>
@@ -85,7 +87,9 @@
 &lt;/div&gt;</code></pre>
       <div class="notice alt">
         <article>
-          <p>Body type is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style classes that can be applied as needed to our base paragraph style.</p>
+          <p>
+            {{noticeCopy}}
+          </p>
         </article>
       </div>
       <hr>
@@ -99,7 +103,9 @@
           <h3>H3 Header</h3>
         </header>
         <footer>
-          <p>Body type is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style classes that can be applied as needed to our base paragraph style.</p>
+          <p>
+            {{noticeCopy}}
+          </p>
         </footer>
       </div>
       <hr>
@@ -109,7 +115,9 @@
 &lt;/div&gt;</code></pre>
       <div class="notice alert">
         <article>
-          <p>Body type is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style classes that can be applied as needed to our base paragraph style.</p>
+          <p>
+            {{noticeCopy}}
+          </p>
           <ul class="bullet">
             <li>This is a list item.</li>
             <li>This is the second item in the list.</li>
@@ -127,7 +135,9 @@
 &lt;/div&gt;</code></pre>
       <div class="notice neg">
         <article>
-          <p>Body type is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style classes that can be applied as needed to our base paragraph style.</p>
+          <p>
+            {{noticeCopy}}
+          </p>
         </article>
       </div>
     </section>
@@ -136,5 +146,14 @@
 </template>
 
 <script>
-export default { };
+export default {
+  data() {
+    return {
+      noticeCopy: `
+        Body type is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style
+        classes that can be applied as needed to our base paragraph style.
+      `
+    }
+  }
+};
 </script>

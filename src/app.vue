@@ -74,14 +74,14 @@
               </li>
             </ul>
             <li>
-              <router-link to="input-patterns">
+              <router-link to="input_patterns">
                 Form Patterns
-                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/input-patterns'}">
+                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/input_patterns'}">
                   <polygon points="11,28 23,16 11,4" />
                 </svg>
               </router-link>
             </li>
-            <ul v-if="$route.path === '/input-patterns'">
+            <ul v-if="$route.path === '/input_patterns'">
               <li class="secondary-link">
                 <a href="#general">General Input Patterns</a>
               </li>
@@ -103,14 +103,14 @@
             </li>
 
             <li>
-              <router-link to="/layout-structures">
+              <router-link to="/layout_structures">
                 Layout Structures
-                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/layout-structures'}">
+                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/layout_structures'}">
                   <polygon points="11,28 23,16 11,4" />
                 </svg>
               </router-link>
             </li>
-            <ul v-if="$route.path === '/layout-structures'">
+            <ul v-if="$route.path === '/layout_structures'">
               <li class="secondary-link">
                 <a href="#container">Container</a>
               </li>
@@ -120,14 +120,14 @@
             </ul>
 
             <li>
-              <router-link to="/layout-styles">
+              <router-link to="/layout_styles">
                 Layout Styling
-                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/layout-styles'}">
+                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/layout_styles'}">
                   <polygon points="11,28 23,16 11,4" />
                 </svg>
               </router-link>
             </li>
-            <ul v-if="$route.path === '/layout-styles'">
+            <ul v-if="$route.path === '/layout_styles'">
               <li class="secondary-link">
                 <a href="#card">Card</a>
               </li>
