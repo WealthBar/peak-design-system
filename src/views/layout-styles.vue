@@ -5,9 +5,7 @@
     <!-- CARD -->
     <section id="card">
       <h2>Card</h2>
-      <p>
-        Cards in peak are simply a visual wrapper, made to respect all other styles which used cards on one way or another.
-      </p>
+      <!-- TODO: ADD DESCRIPTION -->
 
       <div class="card">
         <h3>
@@ -15,7 +13,7 @@
         </h3>
 
         <p>
-          Card in its simplets form. All margin is applied by the html element inside
+          Card in its simplest form. All margin is applied by the HTML element inside
         </p>
 
         <button type="button">
@@ -28,7 +26,7 @@
 ...
 &lt;/div&gt;</code></pre>
 
-      <h3>Step Card example</h3>
+      <h3>Step Card</h3>
 
       <div class="card step">
         <header>
@@ -38,7 +36,7 @@
         <article>
           <p>
             Card style, with the step content addition. Card style is applied, however
-            the step styling make the needed content, and visual changes.
+            the step styling is needed for the contents visual changes.
           </p>
         </article>
 

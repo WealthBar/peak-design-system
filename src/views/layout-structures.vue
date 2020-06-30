@@ -5,13 +5,8 @@
     <!-- CONTAINER -->
     <section id="container">
       <h2>Containers</h2>
+      <!-- TODO ADD DESCRIPTION -->
 
-      <p>
-        Containers are agreed upon widths between dev and design.
-      </p>
-    </section>
-
-    <section id="containers">
       <h3>Default</h3>
 
       <div class="container visual-container">
@@ -77,8 +72,11 @@
     <hr>
 
     <!-- BANNER -->
+    <h2>Banners</h2>
+
     <section id="banner">
-      <h2>Banner</h2>
+      <h3>Banner</h3>
+      <!-- TODO ADD DESCRIPTION -->
 
       <div class="banner">
         <div class="banner-content">

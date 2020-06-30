@@ -34,7 +34,7 @@
 
     <hr>
 
-    <section id="annimation">
+    <section id="animation">
       <h3>Animations</h3>
 
       <p>
@@ -187,30 +187,29 @@
         </form>
       </div>
 
-      <div class="code-sample">
-        <pre>
-          <code class="language-markup">### TEMPLATE ###
 
-  &lt;form class="workflow-form"&gt;
-  &lt;transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses"&gt;
-    &lt;div class="step card"&gt;
-      ...
-    &lt;/div&gt;
-  &lt;/transition&gt;
-  &lt;form&gt;
+      <pre>
+        <code class="language-markup">&lt;form class="workflow-form"&gt;
+&lt;transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses"&gt;
+  &lt;div class="step card"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/transition&gt;
+&lt;form&gt;
+</code></pre>
 
-  ### VUE COMPONENT ###
-
-  prev(step) {
+      <strong>Script</strong>
+      <pre><code class="language-js">prev() {
   this.enterClasses = 'slide-fade-in-right';
   this.leaveClasses = 'slide-fade-out-right';
-  },
+  ...
+},
 
-  next(step) {
+next() {
   this.enterClasses = 'slide-fade-in-left';
   this.leaveClasses = 'slide-fade-out-left';
-  },</code></pre>
-      </div>
+  ...
+},</code></pre>
     </section>
   </article>
 </template>
@@ -220,6 +219,8 @@ export default {
   data() {
     return {
       step: 1,
+      enterClasses: null,
+      leaveClasses: null
     };
   },
 
