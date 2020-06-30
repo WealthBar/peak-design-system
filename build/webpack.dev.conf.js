@@ -26,6 +26,7 @@ module.exports = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       template: 'index.html',
       inject: true,
+      title: 'Peak Design System',
     }),
     new FriendlyErrorsPlugin(),
     new StylelintPlugin({
