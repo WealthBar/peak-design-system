@@ -18,7 +18,7 @@
       <div class="code-sample">
         <pre>
           <code class="language-markup">&lt;div class="container"&gt;
-  ...
+  &hellip;
 &lt;/div&gt;</code></pre>
       </div>
 
@@ -33,7 +33,7 @@
       <div class="code-sample">
         <pre>
           <code class="language-markup">&lt;div class="container-large"&gt;
-    ...
+    &hellip;
   &lt;/div&gt;</code></pre>
       </div>
 
@@ -48,7 +48,7 @@
       <div class="code-sample">
         <pre>
           <code class="language-markup">&lt;div class="container-medium"&gt;
-  ...
+  &hellip;
   &lt;/div&gt;</code></pre>
       </div>
 
@@ -63,7 +63,7 @@
       <div class="code-sample">
         <pre>
           <code class="language-markup">&lt;div class="container-small"&gt;
-    ...
+    &hellip;
 &lt;/div&gt;</code></pre>
       </div>
     </section>
@@ -122,33 +122,6 @@
       <div class="code-sample">
         <pre>
           <code class="language-markup">&lt;div class="banner flat"&gt;
-  &lt;div class="banner-content"&gt;
-    &lt;h5 class="banner-title"&gt;Test title&lt;/h5&gt;
-
-    &lt;div class="banner-actions"&gt;
-      &lt;button type="button" class="flat" icon&gt;close&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-      </div>
-    </section>
-
-    <section>
-      <h3>Modal Page Banner</h3>
-
-      <div class="banner modal-page-banner">
-        <div class="banner-content">
-          <h5 class="banner-title">Test title</h5>
-
-          <div class="banner-actions">
-            <button type="button" class="flat action" icon>close</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="code-sample">
-        <pre>
-          <code class="language-markup">&lt;div class="banner modal-page-banner"&gt;
   &lt;div class="banner-content"&gt;
     &lt;h5 class="banner-title"&gt;Test title&lt;/h5&gt;
 

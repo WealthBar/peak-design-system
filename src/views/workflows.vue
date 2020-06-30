@@ -3,7 +3,7 @@
     <h1>Workflows</h1>
 
     <section id="setup">
-      <h3>Setup</h3>
+      <h3>Page setup</h3>
 
       <p>
         Workflows are forms broken into a multi-step process. The workflow visual is made
@@ -24,59 +24,32 @@
           </code>
         </li>
         <li>
+          <strong>Workflow</strong>
+          <code>
+            .workflow .workflow-form
+          </code>
+        </li>
+        <li>
           <strong>Steps Cards</strong>
           <code>
             .step .card
           </code>
         </li>
       </ol>
-    </section>
 
-    <hr>
+       <pre><code class="language-markup">&lt;div class="modal-page workflow"&gt;
+  &lt;div class="banner modal-page-banner"&gt;
+    &hellip;
+  &lt;/div&gt;
 
-    <section id="animation">
-      <h3>Animations</h3>
-
-      <p>
-        The workflow styles tie the above together styles, and add animations styles to create the slide on navigation.
-      </p>
-
-      <ol>
-        <li>
-          <code>
-            .workflow
-          </code>
-        </li>
-        <li>
-          <code>
-            .workflow-form
-          </code>
-        </li>
-      </ol>
-
-      <p>
-        <strong>LEFT:</strong>
-        <br>
-        <code>
-          'slide-fade-in-right'
-        </code>
-        <br>
-        <code>
-          'slide-fade-out-right';
-        </code>
-      </p>
-
-      <p>
-        <strong>RIGHT:</strong>
-        <br>
-        <code>
-          'slide-fade-in-left'
-        </code>
-        <br>
-        <code>
-          'slide-fade-out-left'
-        </code>
-      </p>
+  &lt;form class="workflow-form"&gt;
+   &lt;transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses"&gt;
+      &lt;div class="step card"&gt;
+        &hellip;
+      &lt;/div&gt;
+    &lt;transition /&gt;
+  &lt;/form&gt;
+&lt;/div&gt;</code></pre>
     </section>
 
     <hr>
@@ -135,6 +108,47 @@
     <section id="composition">
       <h3>Composition</h3>
 
+      <p>
+        The workflow styles tie the above together styles, and add animations styles to create the slide on navigation.
+      </p>
+
+      <ol>
+        <li>
+          <code>
+            .workflow
+          </code>
+        </li>
+        <li>
+          <code>
+            .workflow-form
+          </code>
+        </li>
+      </ol>
+
+      <p>
+        <strong>LEFT:</strong>
+        <br>
+        <code>
+          'slide-fade-in-right'
+        </code>
+        <br>
+        <code>
+          'slide-fade-out-right';
+        </code>
+      </p>
+
+      <p>
+        <strong>RIGHT:</strong>
+        <br>
+        <code>
+          'slide-fade-in-left'
+        </code>
+        <br>
+        <code>
+          'slide-fade-out-left'
+        </code>
+      </p>
+
       <div class="modal-page workflow" id="composition">
         <div class="banner modal-page-banner">
           <div class="banner-content">
@@ -188,12 +202,13 @@
       </div>
 
 
-      <pre><code class="language-markup">&lt;form class="workflow-form"&gt;
-&lt;transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses"&gt;
-  &lt;div class="step card"&gt;
-    ...
-  &lt;/div&gt;
-&lt;/transition&gt;
+      <pre>
+        <code class="language-markup">&lt;form class="workflow-form"&gt;
+  &lt;transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses"&gt;
+    &lt;div class="step card"&gt;
+      &hellip;
+    &lt;/div&gt;
+  &lt;/transition&gt;
 &lt;form&gt;
 </code></pre>
 
@@ -201,13 +216,13 @@
       <pre><code class="language-js">prev() {
   this.enterClasses = 'slide-fade-in-right';
   this.leaveClasses = 'slide-fade-out-right';
-  ...
+  &hellip;
 },
 
 next() {
   this.enterClasses = 'slide-fade-in-left';
   this.leaveClasses = 'slide-fade-out-left';
-  ...
+  &hellip;
 },</code></pre>
     </section>
   </article>

@@ -20,47 +20,6 @@
           Action
         </button>
       </div>
-
-      <pre>
-        <code class="language-markup">&lt;div class="card"&gt;
-...
-&lt;/div&gt;</code></pre>
-
-      <h3>Step Card</h3>
-
-      <div class="card step">
-        <header>
-          <h3>Card with step style applied</h3>
-        </header>
-
-        <article>
-          <p>
-            Card style, with the step content addition. Card style is applied, however
-            the step styling is needed for the contents visual changes.
-          </p>
-        </article>
-
-        <footer>
-          <button type="button">
-            Action
-          </button>
-        </footer>
-      </div>
-
-      <pre>
-        <code class="language-markup">&lt;div class="step card"&gt;
-  &lt;header&gt;
-    ...
-  &lt;/header&gt;
-
-  &lt;article&gt;
-    ...
-  &lt;/article&gt;
-
-  &lt;footer&gt;
-    ...
-  &lt;/footer&gt;
-&lt;/div&gt;</code></pre>
     </section>
     <!-- CARD END -->
 

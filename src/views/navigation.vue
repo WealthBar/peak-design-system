@@ -10,8 +10,8 @@
         <strong>Example usage in a Vue component template</strong>
         <pre><code class="language-markup">
 &lt;tabs :tabs="tabs" :activeTab="tab" @clicked="setTab" /&gt;
-&lt;div v-if="tab === 'template'"&gt;...&lt;/div&gt;
-...
+&lt;div v-if="tab === 'template'"&gt;&hellip;&lt;/div&gt;
+&hellip;
         </code></pre>
       </div>
 
