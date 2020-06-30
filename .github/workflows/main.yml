@@ -24,14 +24,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout the repo
+        uses: actions/checkout@v2
 
       - name: Build
         env:
-          CONTAINER_IMAGE: quay.io/wealthbar/peak-design-system
-          CONTAINER_REGISTRY: quay.io/wealthbar
-          REGISTRY_USER: ${{ secrets.registry_user }}
-          REGISTRY_KEY: ${{ secrets.registry_key }}
+          CONTAINER_IMAGE: docker.pkg.github.com/wealthbar/peak-design-system/peak-design-system
+          CONTAINER_REGISTRY: docker.pkg.github.com
+          REGISTRY_USER: jfarseneau-wb
+          REGISTRY_KEY: ${{ secrets.GITHUB_TOKEN }}
         run: |
           docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
           docker pull $CONTAINER_IMAGE:latest || true
@@ -52,6 +53,9 @@ jobs:
           target-url: https://peak.wealth.bar/
           environment: production
 
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+
       - name: Save DigitalOcean kubeconfig
         uses: digitalocean/action-doctl@master
         env:
@@ -60,34 +64,23 @@ jobs:
         with:
           args: kubernetes cluster kubeconfig show $CLUSTER_NAME > $GITHUB_WORKSPACE/.kubeconfig
 
-      # This action doesn't work right now as it need to have access to the original values files
-      # - name: Helm Deploy
-      #   uses: vimeda/helm@v1.6.1
-      #   env:
-      #     KUBECONFIG_FILE: '$GITHUB_WORKSPACE/.kubeconfig'
-      #   with:
-      #     release: "peak"
-      #     chart: "chartroom/peak"
-      #     namespace: "peak-design"
-      #     token: "${{ github.token }}"
-      #     helm: "helm3"
-      #     repo-alias: "chartroom"
-      #     repo: "https://raw.githubusercontent.com/WealthBar/chartroom/master/"
-      #     repo-username: ${{ secrets.chart_repo_user }}
-      #     repo-password: ${{ secrets.chart_repo_token }}
+      - name: Decrypt repo
+        env:
+          GIT_CRYPT_KEY: ${{ secrets.GIT_CRYPT_KEY }}
+        run: |
+          sudo apt-get update && sudo apt-get install -qq -y git-crypt coreutils
+          echo "$GIT_CRYPT_KEY" | base64 --decode > ~/peak-design-system-git-crypt.key
+          cd $GITHUB_WORKSPACE
+          git-crypt unlock ~/peak-design-system-git-crypt.key
 
       - name: Deploy to Kubernetes cluster
         env:
           CLUSTER_NAME: ${{ secrets.cluster_name }}
           DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.digitalocean_access_token }}
-          CHART_REPO_USER: ${{ secrets.chart_repo_user}}
-          CHART_REPO_TOKEN: ${{ secrets.chart_repo_token}}
         run: |
           curl -L https://get.helm.sh/helm-v3.0.3-linux-amd64.tar.gz | tar xz
           chmod a+x ./linux-amd64/helm
-          ./linux-amd64/helm repo add --username $CHART_REPO_USER --password $CHART_REPO_TOKEN chartroom 'https://raw.githubusercontent.com/WealthBar/chartroom/master/'
-          ./linux-amd64/helm repo update
-          ./linux-amd64/helm upgrade --install peak chartroom/peak --kubeconfig=$GITHUB_WORKSPACE/.kubeconfig --namespace peak-design --set image.tag=${GITHUB_SHA}
+          ./linux-amd64/helm upgrade --install peak $GITHUB_WORKSPACE/charts/peak --kubeconfig=$GITHUB_WORKSPACE/.kubeconfig --namespace peak-design --set image.tag=${GITHUB_SHA}
 
       - name: Update github with deployment success status
         if: success()

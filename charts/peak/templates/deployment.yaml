@@ -16,7 +16,7 @@ spec:
         {{- include "peak.labels" . | nindent 8 }}
     spec:
       imagePullSecrets:
-        - name: wealthbar-ci-pull-secret
+        - name: {{ .Release.Name }}-github-package-pull-secret
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
