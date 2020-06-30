@@ -1,6 +1,0 @@
-dependencies:
-- name: wealthbar-ci-pull-secret
-  repository: https://raw.githubusercontent.com/WealthBar/chartroom/master
-  version: 1.0.0
-digest: sha256:65d29d7f3c141a73a326fe528baf0e2c46b2b0b87b06f68a0926c205eecb3719
-generated: "2020-02-26T10:34:11.46736-08:00"
