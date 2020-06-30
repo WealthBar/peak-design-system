@@ -219,7 +219,7 @@ export default {
     return {
       step: 1,
       enterClasses: null,
-      leaveClasses: null
+      leaveClasses: null,
     };
   },
 

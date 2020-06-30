@@ -49,17 +49,17 @@
 
       <pre>
         <code class="language-markup">&lt;div class="step card"&gt;
-&lt;header&gt;
-  ...
-&lt;/header&gt;
+  &lt;header&gt;
+    ...
+  &lt;/header&gt;
 
-&lt;article&gt;
-  ...
-&lt;/article&gt;
+  &lt;article&gt;
+    ...
+  &lt;/article&gt;
 
-&lt;footer&gt;
-  ...
-&lt;/footer&gt;
+  &lt;footer&gt;
+    ...
+  &lt;/footer&gt;
 &lt;/div&gt;</code></pre>
     </section>
     <!-- CARD END -->
@@ -77,7 +77,7 @@
 
       <div class="notice">
         <p class="notice-content">
-          {{noticeCopy}}
+          {{ noticeCopy }}
         </p>
       </div>
       <hr>
@@ -88,7 +88,7 @@
       <div class="notice alt">
         <article>
           <p>
-            {{noticeCopy}}
+            {{ noticeCopy }}
           </p>
         </article>
       </div>
@@ -104,7 +104,7 @@
         </header>
         <footer>
           <p>
-            {{noticeCopy}}
+            {{ noticeCopy }}
           </p>
         </footer>
       </div>
@@ -116,7 +116,7 @@
       <div class="notice alert">
         <article>
           <p>
-            {{noticeCopy}}
+            {{ noticeCopy }}
           </p>
           <ul class="bullet">
             <li>This is a list item.</li>
@@ -136,7 +136,7 @@
       <div class="notice neg">
         <article>
           <p>
-            {{noticeCopy}}
+            {{ noticeCopy }}
           </p>
         </article>
       </div>
@@ -152,8 +152,8 @@ export default {
       noticeCopy: `
         Body type is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style
         classes that can be applied as needed to our base paragraph style.
-      `
-    }
-  }
+      `,
+    };
+  },
 };
 </script>
