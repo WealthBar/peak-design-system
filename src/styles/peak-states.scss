@@ -1,22 +1,9 @@
-.page { margin-bottom: 2rem; }
 
 nav ul ul {
   margin-top: 0.25rem;
   margin-left: 1rem;
   list-style-type: circle;
 }
-
-// p code,
-// li code,
-// td code,
-// label code {
-//   background: $neutral-900;
-//   color: $primary-300;
-//   &.alt {
-//     background: $neutral-900;
-//     color: $secondary-500;
-//   }
-// }
 
 // PrismJS colours
 @import 'prism.scss';

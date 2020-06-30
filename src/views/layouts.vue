@@ -13,7 +13,7 @@
       <div class="notice">
         <p class="notice-content">Body type is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style classes that can be applied as needed to our base paragraph style.</p>
       </div>
-      <hr>
+      <hr />
       <h3>Alternate</h3>
       <pre><code class="language-markup">&lt;div class="notice alt"&gt;
   &lt;article&gt; … &lt;/article&gt;
@@ -23,7 +23,7 @@
           <p>Body type is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style classes that can be applied as needed to our base paragraph style.</p>
         </article>
       </div>
-      <hr>
+      <hr />
       <h3>Light</h3>
       <pre><code class="language-markup">&lt;div class="notice light"&gt;
   &lt;header&gt; … &lt;/header&gt;
@@ -37,7 +37,7 @@
           <p>Body type is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style classes that can be applied as needed to our base paragraph style.</p>
         </footer>
       </div>
-      <hr>
+      <hr />
       <h3>Alert</h3>
       <pre><code class="language-markup">&lt;div class="notice alert"&gt;
   &lt;article&gt; … &lt;/article&gt;
@@ -55,7 +55,7 @@
           </ul>
         </article>
       </div>
-      <hr>
+      <hr />
       <h3>Negative</h3>
       <pre><code class="language-markup">&lt;div class="notice neg"&gt;
   &lt;article&gt; … &lt;/article&gt;

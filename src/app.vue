@@ -317,7 +317,8 @@ main {
 }
 
 .page {
-  flex: 1 1 auto;
+  display: flex;
+  width: 100%;
 }
 
 #menu-toggle {
