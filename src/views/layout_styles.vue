@@ -31,7 +31,7 @@
     </section>
     <!-- CARD END -->
 
-    <hr>
+    <hr />
 
     <!-- NOTICE -->
     <section id="notice">
@@ -49,7 +49,7 @@
   &lt;p class="notice-content"&gt; … &lt;/p&gt;
 &lt;/div&gt;</code></pre>
 
-      <hr>
+      <hr />
 
       <h3>Alternate</h3>
 
@@ -65,7 +65,7 @@
   &lt;article&gt; … &lt;/article&gt;
 &lt;/div&gt;</code></pre>
 
-      <hr>
+      <hr />
 
       <h3>Light</h3>
 
@@ -85,7 +85,7 @@
   &lt;footer&gt; … &lt;/footer&gt;
 &lt;/div&gt;</code></pre>
 
-      <hr>
+      <hr />
 
       <h3>Alert</h3>
 
@@ -110,7 +110,7 @@
 &lt;/div&gt;</code></pre>
 
 
-      <hr>
+      <hr />
 
       <h3>Negative</h3>
 

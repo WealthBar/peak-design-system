@@ -5,7 +5,7 @@
 
     <h2>Palette</h2>
 
-    <hr>
+    <hr />
 
     <h3>Colour Weight</h3>
     <p>In an effort to bulletproof our system of colours, we use weights from 50 to 900, similar to font weights. Weight is defined by the contrast ratio of the colour against white, allowing us to convey relevant weights across our entire colour palette. This means <code>$pos-50</code> and <code>$neg-50</code> should be pretty close in weight, even if they’re on opposite ends of the colour spectrum.</p>

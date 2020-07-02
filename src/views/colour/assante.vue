@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <br>
+    <br />
 
     <div class="colour-block dark secondary">
       <strong>Teal</strong>
@@ -59,7 +59,7 @@
       </div>
     </div>
 
-    <br>
+    <br />
 
     <div class="colour-block tertiary">
       <strong>Yellow</strong>
@@ -79,7 +79,7 @@
       </div>
     </div>
 
-    <br>
+    <br />
 
     <div class="colour-block bg50">
       <strong>Sky</strong>
@@ -98,7 +98,7 @@
     <h4>When to choose between primary-50 & bg-50:</h4>
     <p><code>$primary-50</code> and <code>$bg-50</code> are very similar, but are used for different purposes. <code>$primary-50</code> is brighter and used in smaller doses, primarily to highlight hover or selected effects in specific UI components, such as a hover effect in a context menu item. <code>$bg-50</code> is used in marketing; it is more muted, so it is ideal for larger backgrounds, such as the footer in the brochure site.</p>
 
-    <hr>
+    <hr />
 
     <h3>UI</h3>
     <p>These colours are primarily used for functional purposes in our product interface.</p>
@@ -125,7 +125,7 @@
       </div>
     </div>
 
-    <br>
+    <br />
     <div class="colour-block pos">
       <strong>Emerald</strong>
     </div>

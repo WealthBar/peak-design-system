@@ -103,7 +103,7 @@
 &lt;span class="link"&gt;Class Link&lt;/span&gt;</code></pre>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
     <section>
       <h3>Link Variants</h3>
@@ -135,7 +135,7 @@
 &lt;a href="" class="large"&gt;Large Link&lt;/a&gt;</code></pre>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
     <section>
       <h3>Buttons</h3>
@@ -159,7 +159,7 @@
 &lt;button type="button"&gt;Submit Button&lt;/button&gt;</code></pre>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
     <section id="primary">
       <h3>Primary Buttons</h3>
@@ -181,7 +181,7 @@
 &lt;button type="button" class="subtle"&gt;Subtle&lt;/button&gt;</code></pre>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
 
     <section id="alternate">
@@ -204,7 +204,7 @@
 &lt;button type="button" class="subtle alt"&gt;Subtle&lt;/button&gt;</code></pre>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
 
     <section id="alert">
@@ -227,7 +227,7 @@
 &lt;button type="button" class="subtle alert"&gt;Subtle&lt;/button&gt;</code></pre>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
 
     <section id="negative">
@@ -250,7 +250,7 @@
 &lt;button type="button" class="subtle neg"&gt;Subtle&lt;/button&gt;</code></pre>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
 
     <section id="positive">
@@ -273,7 +273,7 @@
 &lt;button type="button" class="subtle pos"&gt;Subtle&lt;/button&gt;</code></pre>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
 
     <section id="dark">
@@ -296,7 +296,7 @@
 &lt;button type="button" class="subtle dark"&gt;Subtle&lt;/button&gt;</code></pre>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
 
     <section id="light">
@@ -319,7 +319,7 @@
 &lt;button type="button" class="subtle light"&gt;Subtle&lt;/button&gt;</code></pre>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
 
     <section id="icon">
@@ -362,7 +362,7 @@
 &lt;button type="button" class="icon flat"&gt;Flat&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
 &lt;button type="button" class="icon subtle"&gt;Subtle&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;</code></pre>
         </div>
-        <hr>
+        <hr />
         <h4>Circle</h4>
         <strong>Example</strong>
         <div class="example">
@@ -400,7 +400,7 @@
 &lt;button type="button" class="icon flat circle"&gt;Flat&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
 &lt;button type="button" class="icon subtle circle"&gt;Subtle&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;</code></pre>
         </div>
-        <hr>
+        <hr />
         <h4>Icon After</h4>
         <strong>Example</strong>
         <div class="example">
@@ -443,7 +443,7 @@
 &lt;button type="button" class="flat icon after"&gt;Flat&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;
 &lt;button type="button" class="subtle icon after"&gt;Subtle&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;</code></pre>
         </div>
-        <hr>
+        <hr />
         <h4>Icon Before</h4>
         <strong>Example</strong>
         <div class="example">
@@ -487,7 +487,7 @@
 &lt;button type="button" class="subtle icon before"&gt;Subtle&lt;svg&gt;&hellip;&lt;svg&gt;&lt;/button&gt;</code></pre>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
     <section id="large">
       <h3>Large Buttons</h3>
@@ -525,7 +525,7 @@
 &lt;button type="button" class="subtle large"&gt;Subtle&lt;/button&gt;</code></pre>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
     <section id="small">
       <h3>Small Buttons</h3>
@@ -563,7 +563,7 @@
 &lt;button type="button" class="subtle small"&gt;Subtle&lt;/button&gt;</code></pre>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
 
     <section id="wide">
@@ -589,7 +589,7 @@
 &lt;button type="button" class="subtle full"&gt;Subtle&lt;/button&gt;</code></pre>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
 
     <section id="disabled">
@@ -612,7 +612,7 @@
 &lt;button type="button" class="subtle" disabled&gt;Subtle&lt;/button&gt;</code></pre>
         </div>
       </div>
-      <hr>
+      <hr />
     </section>
   </article>
 </template>
