@@ -1,6 +1,6 @@
 <template>
   <article class="container">
-    <h1>Layout styles</h1>
+    <h1>Layout Styles</h1>
 
     <!-- CARD -->
     <section id="card">
@@ -9,19 +9,34 @@
         The <code>.card</code> is visual treatment class which can be applied to any block element to get the desired card look.
         There is no inner margin/padding — this is provided by internal containers and content. The card class is
         also used with other style patterns to provide a complete structure for content. Some examples of these
-        patterns are the <a href="http://localhost:8020/workflows#step">Workflow step</a> pattern and several (upcoming) table styles:
+        patterns are the <a href="/workflows#step">Workflow step</a> pattern and several (upcoming) table styles:
       </p>
 
-      <div class="card">
-        <p>
-          Card in its simplest form. All margin is applied by the HTML element inside
-        </p>
+      <strong>Examples</strong>
+      <div class="example">
+        <div class="card">
+          <p>
+            Card in its simplest form. Margin can be added to the content. This basic card is often used against a white background.
+          </p>
+        </div>
+
+        <div class="card shadow">
+          <p>
+            Card with box shadow. Margin can be added to the content. This box-shdaow variant is generally used on a grey background
+          </p>
+        </div>
       </div>
 
-       <pre>
-         <code class="language-markup">&lt;div class="card"&gt;
+      <strong>Markup</strong>
+      <pre><code class="language-markup">&lt;div class="card"&gt;
   &lt;p&gt;
-    Card in its simplest form. All margin is applied by the HTML element inside
+    Card in its simplest form. Margin can be added to the content. This basic card is often used against a white background.
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="card shadow"&gt;
+  &lt;p&gt;
+    Card with box shadow. Margin can be added to the content. This box-shdaow variant is generally used on a grey background
   &lt;/p&gt;
 &lt;/div&gt;</code></pre>
     </section>
@@ -138,3 +153,34 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+  .example {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: $neutral-50;
+    border: 1px solid $neutral-300;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: auto;
+    > * { margin-bottom: 1rem; }
+    @media #{$screen-width-large} {
+      flex-direction: row;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      > * { margin: 0; }
+      &.start { justify-content: flex-start; }
+    }
+    &.dark { background: $neutral-900; }
+  }
+
+  #card .card:nth-child(n+2) {
+    @media #{$screen-width-large} {
+      margin-left: 1rem;
+    }
+  }
+</style>
