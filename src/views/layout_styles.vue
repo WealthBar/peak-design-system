@@ -9,22 +9,17 @@
         The <code>.card</code> is visual treatment class which can be applied to any block element to get the desired card look.
         There is no inner margin/padding — this is provided by internal containers and content. The card class is
         also used with other style patterns to provide a complete structure for content. Some examples of these
-        patterns are the <a href="http://localhost:8020/workflows#step">Workflow step</a> pattern and several (upcoming)
-        table styles
+        patterns are the pattern and several (upcoming) table styles:
       </p>
 
-      <div class="card">
-        <h3>
-          Simple card
-        </h3>
+      <ol>
+        <li><a href="http://localhost:8020/workflows#step">Workflow step</a></li>
+      </ol>
 
+      <div class="card">
         <p>
           Card in its simplest form. All margin is applied by the HTML element inside
         </p>
-
-        <button type="button">
-          Action
-        </button>
       </div>
     </section>
     <!-- CARD END -->
