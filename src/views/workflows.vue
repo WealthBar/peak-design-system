@@ -37,7 +37,7 @@
         </li>
       </ol>
 
-       <pre><code class="language-markup">&lt;div class="modal-page workflow"&gt;
+      <pre><code class="language-markup">&lt;div class="modal-page workflow"&gt;
   &lt;div class="banner modal-page-banner"&gt;
     &hellip;
   &lt;/div&gt;
@@ -57,7 +57,7 @@
     <section id="step">
       <h3>Steps</h3>
       <p>
-        Steps are made for multi step forms(forms with more than 1 page). The card styling will disappear at the mobile breakpoint,
+        Steps are made for multi-step forms(forms with more than 1 page). The card styling will disappear at the mobile breakpoint,
         and the step will fill the screen.
       </p>
 
