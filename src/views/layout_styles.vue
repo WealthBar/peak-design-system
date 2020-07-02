@@ -21,6 +21,13 @@
           Card in its simplest form. All margin is applied by the HTML element inside
         </p>
       </div>
+
+       <pre>
+         <code class="language-markup">&lt;div class="card"&gt;
+  &lt;p&gt;
+    Card in its simplest form. All margin is applied by the HTML element inside
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
     </section>
     <!-- CARD END -->
 
