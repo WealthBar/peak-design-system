@@ -11,82 +11,51 @@
 
         <nav class="main-navigation">
           <ul>
+            <li><router-link to="/">Intro to Peak</router-link></li>
             <li>
-              <router-link to="typography">
+              <router-link to="/typography">
                 Typography
-                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/typography'}">
+                <svg viewBox="0 0 32 32" class="chevron" :class="{'active': $route.path.split('/')[1] === 'typography'}">
                   <polygon points="11,28 23,16 11,4" />
                 </svg>
               </router-link>
             </li>
-            <ul v-if="$route.path === '/typography'">
-              <li class="secondary-link">
-                <a href="#units">Units</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#headers">Headers Text</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#body">Body Text</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#lists">Lists</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#line-length">Line Length</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#font-stack">Font Stack</a>
-              </li>
+            <ul v-if="$route.path.split('/')[1] === 'typography'" class="secondary-nav">
+              <li><router-link to="/typography/font-stack">Font Stack</router-link></li>
+              <li><router-link to="/typography/headers">Headers</router-link></li>
+              <li><router-link to="/typography/body">Body Text</router-link></li>
+              <li><router-link to="/typography/lists">Lists</router-link></li>
             </ul>
             <li><router-link to="colour">Colour</router-link></li>
             <li><router-link to="buttons">Links &amp; Buttons</router-link></li>
             <li>
-              <router-link to="inputs">
+              <router-link to="/inputs">
                 Form Elements
-                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/inputs'}">
+                <svg viewBox="0 0 32 32" class="chevron" :class="{'active': $route.path.split('/')[1] === 'inputs'}">
                   <polygon points="11,28 23,16 11,4" />
                 </svg>
               </router-link>
             </li>
-            <ul v-if="$route.path === '/inputs'">
-              <li class="secondary-link">
-                <a href="#text">Text inputs</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#non-text">Non-text inputs</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#non-input">Non-input elements</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#spacing">Input spacing structure</a>
-              </li>
+            <ul v-if="$route.path.split('/')[1] === 'inputs'" class="secondary-nav">
+              <li> <a href="#text">Text inputs</a></li>
+              <li><a href="#non-text">Non-text inputs</a></li>
+              <li><a href="#non-input">Non-input elements</a></li>
+              <li><a href="#spacing">Input spacing structure</a></li>
             </ul>
             <li>
               <router-link to="input_patterns">
                 Form Patterns
-                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/input_patterns'}">
+                <svg viewBox="0 0 32 32" class="chevron" :class="{'active': $route.path.split('/')[1] === 'input_patterns'}">
                   <polygon points="11,28 23,16 11,4" />
                 </svg>
               </router-link>
             </li>
-            <ul v-if="$route.path === '/input_patterns'">
-              <li class="secondary-link">
-                <a href="#general">General Input Patterns</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#inline">Inline Button Patterns</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#check-radio">Checkbox &amp; Radio Patterns</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#layout">Input Layout Patterns</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#invalid">Invalid &amp; error states</a>
-              </li>
+            <ul v-if="$route.path.split('/')[1] === 'input_patterns'" class="secondary-nav">
+              <li><a href="#general">General Input Patterns</a></li>
+              <li><a href="#inline">Inline Button Patterns</a></li>
+              <li><a href="#check-radio">Checkbox &amp; Radio Patterns</a></li>
+              <li><a href="#layout">Input Layout Patterns</a></li>
+              <li><a href="#invalid">Invalid &amp; error states</a></li>
             </ul>
             <li>
               <router-link to="svg">SVG Icons</router-link>
@@ -95,55 +64,41 @@
             <li>
               <router-link to="/layout_structures">
                 Layout Structures
-                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/layout_structures'}">
+                <svg viewBox="0 0 32 32" class="chevron" :class="{'active': $route.path.split('/')[1] === 'layout_structures'}">
                   <polygon points="11,28 23,16 11,4" />
                 </svg>
               </router-link>
             </li>
-            <ul v-if="$route.path === '/layout_structures'">
-              <li class="secondary-link">
-                <a href="#container">Container</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#banner">Banner</a>
-              </li>
+            <ul v-if="$route.path.split('/')[1] === 'layout_structures'" class="secondary-nav">
+              <li><a href="#container">Container</a></li>
+              <li><a href="#banner">Banner</a></li>
             </ul>
 
             <li>
               <router-link to="/layout_styles">
                 Layout Styling
-                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/layout_styles'}">
+                <svg viewBox="0 0 32 32" class="chevron" :class="{'active': $route.path.split('/')[1] === 'layout_styles'}">
                   <polygon points="11,28 23,16 11,4" />
                 </svg>
               </router-link>
             </li>
             <ul v-if="$route.path === '/layout_styles'">
-              <li class="secondary-link">
-                <a href="#card">Card</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#notice">Notice</a>
-              </li>
+              <li><a href="#card">Card</a></li>
+              <li><a href="#notice">Notice</a></li>
             </ul>
 
             <li>
               <router-link to="/workflows">
                 Workflows
-                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/workflows'}">
+                <svg viewBox="0 0 32 32" class="chevron" :class="{'active': $route.path.split('/')[1] === 'workflows'}">
                   <polygon points="11,28 23,16 11,4" />
                 </svg>
               </router-link>
             </li>
             <ul v-if="$route.path === '/workflows'">
-              <li class="secondary-link">
-                <a href="#setup">Setup</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#step">Steps</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#animation">Animation</a>
-              </li>
+              <li><a href="#setup">Setup</a></li>
+              <li><a href="#step">Steps</a></li>
+              <li><a href="#animation">Animation</a></li>
             </ul>
 
             <li><router-link to="modals">Modals</router-link></li>
@@ -217,7 +172,6 @@ main {
   width: 0;
   flex: 0 0 auto;
   min-height: 100vh;
-  // overflow: hidden;
   transition: all 0.3s ease-out;
   background-color: $neutral-50;
   border-right: 1px solid $neutral-100;
@@ -247,52 +201,34 @@ main {
 
 .main-navigation {
   list-style: none;
+  width: 16rem;
 
   a {
     text-decoration: none;
     color: $pearl-900;
     padding: 0.5rem 1rem;
-    margin: 0.125rem 0;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    &:hover,
-    &:focus {
+    .chevron {
+      width: .75rem;
+      margin-left: .5rem;
+      transition: transform 200ms;
+      &.active { transform: rotate(90deg); }
+    }
+
+    &:hover, &:focus {
       background: $primary-50;
       color: $primary-500;
     }
   }
-  .coming-soon {
-    color: $pearl-300;
+  .secondary-nav {
+    border-top: 1px solid $neutral-100;
+    border-bottom: 1px solid $neutral-100;
+    a { padding-left: 2rem }
   }
-  ul {
-    list-style: none;
-
-    a {
-      text-decoration: none;
-      color: $pearl-900;
-      padding: 0.5rem 1rem;
-      margin: 0.125rem 0;
-      display: flex;
-      align-items: center;
-
-      .reveal-subnav-icon {
-        width: .75rem;
-        margin-left: .5rem;
-
-        transition: transform 200ms;
-        &.active {
-          transform: rotate(90deg);
-        }
-      }
-
-      &:hover, &:focus {
-        background: $primary-50;
-        color: $primary-500;
-      }
-    }
-    .coming-soon { color: $pearl-300; }
-    ul { list-style: none; }
-  }
+  .coming-soon { color: $pearl-300; }
 }
 
 .menu-header {
