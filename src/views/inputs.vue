@@ -10,22 +10,22 @@
       <h3>Text inputs</h3>
 
       <label for="text-input">Text</label>
-      <input id="text-input" type="text" name="text-input">
+      <input id="text-input" type="text" name="text-input" />
       <pre><code class="language-markup">&lt;label for="text-input"&gt;Text&lt;/label&gt;
 &lt;input id="text-input" type="text" name="text-input"&gt;</code></pre>
 
       <label for="number-input">Number</label>
-      <input id="number-input" type="number" name="number-input" pattern="[0-9]*">
+      <input id="number-input" type="number" name="number-input" pattern="[0-9]*" />
       <pre><code class="language-markup">&lt;label for="number-input"&gt;Number&lt;/label&gt;
 &lt;input id="number-input" type="number" name="number-input" pattern="[0-9]*"&gt;</code></pre>
 
       <label for="search-input">Search</label>
-      <input id="search-input" type="search" name="search-input" placeholder="search">
+      <input id="search-input" type="search" name="search-input" placeholder="search" />
       <pre><code class="language-markup">&lt;label for="search-input"&gt;Search&lt;/label&gt;
 &lt;input type="search" id="search-input" name="search-input" placeholder="search"&gt;</code></pre>
 
       <label for="password-input">Password</label>
-      <input id="password-input" type="password" name="password-input">
+      <input id="password-input" type="password" name="password-input" />
       <pre><code class="language-markup">&lt;label for="password-input"&gt;Password&lt;/label&gt;
 &lt;input type="password" id="password-input" name="password-input" required&gt;</code></pre>
     </section>
@@ -35,9 +35,9 @@
 
       <legend>Checkbox</legend>
       <fieldset>
-        <input id="checkbox-input-one" type="checkbox" name="checkbox-input-one">
+        <input id="checkbox-input-one" type="checkbox" name="checkbox-input-one" />
         <label for="checkbox-input-one">Checkbox one</label>
-        <input id="checkbox-input-two" type="checkbox" name="checkbox-input-two">
+        <input id="checkbox-input-two" type="checkbox" name="checkbox-input-two" />
         <label for="checkbox-input-two">Checkbox two</label>
       </fieldset>
       <pre><code class="language-markup">&lt;legend&gt;Checkbox&lt;/legend&gt;
@@ -48,13 +48,13 @@
 
       <legend>Radio</legend>
       <fieldset>
-        <input id="radio-option-one" type="radio" name="radio-input">
+        <input id="radio-option-one" type="radio" name="radio-input" />
         <label for="radio-option-one">Option one</label>
 
-        <input id="radio-option-two" type="radio" name="radio-input">
+        <input id="radio-option-two" type="radio" name="radio-input" />
         <label for="radio-option-two">Option two</label>
 
-        <input id="radio-option-three" type="radio" name="radio-input">
+        <input id="radio-option-three" type="radio" name="radio-input" />
         <label for="radio-option-three">Option three</label>
       </fieldset>
       <pre><code class="language-markup">&lt;legend&gt;Radio&lt;/legend&gt;
@@ -66,13 +66,13 @@
 &lt;label for="radio-option-three"&gt;Option three&lt;/label&gt;</code></pre>
 
       <label for="range">Range</label>
-      <input id="range" type="range" min="0" max="100" value="0">
+      <input id="range" type="range" min="0" max="100" value="0" />
       <pre><code class="language-markup">&lt;label for="range"&gt;Range&lt;/label&gt;
 &lt;input type="range" id="range" min="0" max="100" value="0"/&gt;</code></pre>
 
       <legend>File</legend>
       <label for="file-input" class="button">Upload file</label>
-      <input id="file-input" type="file" name="file-input" @change="loadFile">
+      <input id="file-input" type="file" name="file-input" @change="loadFile" />
       <span class="help-message">File name: {{ fileName }}</span>
       <pre><code class="language-markup">&lt;legend&gt;File&lt;/legend&gt;
 &lt;label for="file-input" class="button"&gt;Upload file&lt;/label&gt;
@@ -103,10 +103,10 @@
 
       <legend>Legend and Fieldset</legend>
       <fieldset>
-        <input id="radio-fieldset-one" type="radio" name="radio-fieldset">
+        <input id="radio-fieldset-one" type="radio" name="radio-fieldset" />
         <label for="radio-fieldset-one">Radio button one in fieldset</label>
 
-        <input id="radio-fieldset-two" type="radio" name="radio-fieldset">
+        <input id="radio-fieldset-two" type="radio" name="radio-fieldset" />
         <label for="radio-fieldset-two">Radio button two in fieldset</label>
       </fieldset>
       <pre><code class="language-markup">&lt;legend&gt;Legend and Fieldset&lt;/legend&gt;
@@ -123,31 +123,31 @@
 
       <div class="example">
         <label for="example">Standard Input</label>
-        <input id="example" type="text" name="example">
+        <input id="example" type="text" name="example" />
 
         <label for="example-inline-button">Inline Button</label>
         <div class="inline-button">
-          <input id="example-inline-button" type="text" name="example-inline-button">
+          <input id="example-inline-button" type="text" name="example-inline-button" />
           <button type="button">button</button>
         </div>
 
         <label for="example-text-input">Password</label>
-        <input id="example-text-input" type="password" name="example-text-input">
+        <input id="example-text-input" type="password" name="example-text-input" />
         <p class="help-message">help or <span class="neg">error</span> text</p>
       </div>
 
       <div class="example inline-input full">
         <div>
           <label for="example-inline-pattern-full-one">Inline label one</label>
-          <input id="example-inline-pattern-full-one" type="text" name="example-inline-pattern-full-one">
+          <input id="example-inline-pattern-full-one" type="text" name="example-inline-pattern-full-one" />
         </div>
         <div>
           <label for="example-inline-pattern-full-two">Inline label two</label>
-          <input id="example-inline-pattern-full-two" type="text" name="example-inline-pattern-full-two">
+          <input id="example-inline-pattern-full-two" type="text" name="example-inline-pattern-full-two" />
         </div>
         <div>
           <label for="example-inline-pattern-full-three">Inline label three</label>
-          <input id="example-inline-pattern-full-three" type="text" name="example-inline-pattern-full-three">
+          <input id="example-inline-pattern-full-three" type="text" name="example-inline-pattern-full-three" />
         </div>
       </div>
 
@@ -155,18 +155,18 @@
         <fieldset name="example-fieldset" class="fieldset">
           <legend>Fieldset class with legend</legend>
           <div class="example">
-            <input id="example-fieldset-checkbox" type="checkbox" name="example-fieldset-checkbox">
+            <input id="example-fieldset-checkbox" type="checkbox" name="example-fieldset-checkbox" />
             <label for="example-fieldset-checkbox">Checkbox</label>
-            <input id="example-fieldset-radio-one" type="radio" name="example-fieldset-radio" value="fieldset-radio-one">
+            <input id="example-fieldset-radio-one" type="radio" name="example-fieldset-radio" value="fieldset-radio-one" />
             <label for="example-fieldset-radio-one">Radio one</label>
-            <input id="example-fieldset-radio-two" type="radio" name="example-fieldset-radio" value="fieldset-radio-two">
+            <input id="example-fieldset-radio-two" type="radio" name="example-fieldset-radio" value="fieldset-radio-two" />
             <label for="example-fieldset-radio-two">Radio two</label>
           </div>
         </fieldset>
 
-        <input id="example-fieldset-radio-one" type="radio" name="example-fieldset-radio" value="fieldset-radio-one" class="padded">
+        <input id="example-fieldset-radio-one" type="radio" name="example-fieldset-radio" value="fieldset-radio-one" class="padded" />
         <label for="example-fieldset-radio-one">padded radio</label>
-        <input id="example-fieldset-radio-two" type="radio" name="example-fieldset-radio" value="fieldset-radio-two" class="border">
+        <input id="example-fieldset-radio-two" type="radio" name="example-fieldset-radio" value="fieldset-radio-two" class="border" />
         <label for="example-fieldset-radio-two"><strong>border radio</strong>
           <span class="description">Nested span wrapper with <code>description</code> class added to content in label. Can be used with <code>padded</code> and <code>border</code> classes.</span>
         </label>

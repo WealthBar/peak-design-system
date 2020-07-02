@@ -39,7 +39,7 @@
       </ol>
     </section>
 
-    <hr>
+    <hr />
 
     <section id="step">
       <h3>Steps</h3>
@@ -86,7 +86,7 @@
       </div>
     </section>
 
-    <hr>
+    <hr />
 
     <section id="animation">
       <h3>Animation</h3>

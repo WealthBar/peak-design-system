@@ -69,7 +69,7 @@
     </section>
     <!-- CONTAINER END -->
 
-    <hr>
+    <hr />
 
     <!-- BANNER -->
     <h2>Banners</h2>

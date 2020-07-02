@@ -6,17 +6,17 @@
       <h3>General Input Patterns</h3>
 
       <label for="optional-input">Input<span class="optional">optional</span></label>
-      <input id="optional-input" type="text" name="optional-input">
+      <input id="optional-input" type="text" name="optional-input" />
       <pre><code class="language-markup">&lt;label for="optional-input"&gt;Input&lt;span class="optional"&gt;optional&lt;/span&gt;&lt;/label&gt;
 &lt;input type="text" id="optional-input" name="optional-input"&gt;</code></pre>
 
       <label for="disabled-input">Disabled</label>
-      <input id="disabled-input" type="text" name="disabled-input" disabled>
+      <input id="disabled-input" type="text" name="disabled-input" disabled />
       <pre><code class="language-markup">&lt;label for="disabled-input"&gt;Disabled&lt;/label&gt;
 &lt;input type="text" id="disabled-input" name="disabled-input" disabled&gt;</code></pre>
 
       <label for="help-input">Help Message</label>
-      <input id="help-input" type="text" name="help-input">
+      <input id="help-input" type="text" name="help-input" />
       <p class="help-message">Additional help message</p>
       <pre><code class="language-markup">&lt;label for="help-input"&gt;Help Message&lt;/label&gt;
 &lt;input type="text" id="help-input" name="help-input"&gt;
@@ -27,7 +27,7 @@
       <h3>Inline Button Patterns</h3>
       <label for="inline-button">Inline Button</label>
       <div class="inline-button">
-        <input id="inline-button" type="text" name="inline-button">
+        <input id="inline-button" type="text" name="inline-button" />
         <button type="button">Submit</button>
       </div>
       <pre><code class="language-markup">&lt;label for="inline-button"&gt;Inline Button&lt;/label&gt;
@@ -57,7 +57,7 @@
 
       <label for="inline-button-large">Inline Button <span class="optional">large outline neg</span></label>
       <div class="inline-button">
-        <input id="inline-button-large" error-message type="text" name="inline-button">
+        <input id="inline-button-large" error-message type="text" name="inline-button" />
         <button class=" large outline neg" type="button">Large</button>
       </div>
       <pre><code class="language-markup">&lt;label for="inline-button"&gt;Inline Button&lt;span class="optional"&gt;large outline neg&lt;/span&gt;&lt;/label&gt;
@@ -68,7 +68,7 @@
 
       <label for="inline-button-small">Inline Button <span class="optional">small subtle</span></label>
       <div class="inline-button">
-        <input id="inline-button-small" error-message type="text" name="inline-button-small">
+        <input id="inline-button-small" error-message type="text" name="inline-button-small" />
         <button class="small subtle" type="button">Small</button>
       </div>
       <pre><code class="language-markup">&lt;label for="inline-button"&gt;Inline Button&lt;span class="optional"&gt;small subtle&lt;/span&gt;&lt;/label&gt;
@@ -79,7 +79,7 @@
 
       <label for="inline-button-flat">Inline Button <span class="optional">flat alt</span></label>
       <div class="inline-button">
-        <input id="inline-button-flat" error-message type="text" name="inline-button-flat">
+        <input id="inline-button-flat" error-message type="text" name="inline-button-flat" />
         <button class="flat alt" type="button">Flat</button>
       </div>
       <pre><code class="language-markup">&lt;label for="inline-button"&gt;Inline Button&lt;span class="optional"&gt;flat alt&lt;/span&gt;&lt;/label&gt;
@@ -90,7 +90,7 @@
 
       <label for="inline-button-icon">Inline Button <span class="optional">icon</span></label>
       <div class="inline-button">
-        <input id="inline-button-icon" error-message type="text" name="inline-button-icon">
+        <input id="inline-button-icon" error-message type="text" name="inline-button-icon" />
         <button class="icon" type="button">
           <svg viewBox="0 0 32 32">
             <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
@@ -108,28 +108,28 @@
 
     <section id="check-radio">
       <h3>Checkbox and Radio Patterns</h3>
-      <input id="element-check" type="checkbox" name="element-check">
+      <input id="element-check" type="checkbox" name="element-check" />
       <label for="element-check">
         <strong>Checkbox<span class="optional">Nested Elements</span></strong>
         <span class="description"><code>&lt;strong&gt;</code> for primary label, <code>&lt;span class="optional"&gt;</code> for optional, and <code>&lt;span class="description"&gt;</code> is used for description text. Can be used separately and/or  in conjunction with the <code>padded</code> and <code>border</code> input classes.</span>
       </label>
 
-      <input id="padded-check" type="checkbox" class="padded" name="padded-check">
+      <input id="padded-check" type="checkbox" class="padded" name="padded-check" />
       <label for="padded-check">Checkbox Padded</label>
 
-      <input id="border-check" type="checkbox" class="border" name="border-check">
+      <input id="border-check" type="checkbox" class="border" name="border-check" />
       <label for="border-check">Checkbox Border</label>
 
-      <input id="element-radio" type="radio" name="radio-options">
+      <input id="element-radio" type="radio" name="radio-options" />
       <label for="element-radio">
         <strong>Radio<span class="optional">Nested Elements</span></strong>
         <span class="description"><code>&lt;strong&gt;</code> for primary label, <code>&lt;span class="optional"&gt;</code> for optional, and <code>&lt;span class="description"&gt;</code> is used for description text. Can be used separately and/or in conjunction with the <code>radio</code> and <code>checkbox</code> input classes.</span>
       </label>
 
-      <input id="padded-radio" type="radio" class="padded" name="radio-options">
+      <input id="padded-radio" type="radio" class="padded" name="radio-options" />
       <label for="padded-radio">Radio Padded</label>
 
-      <input id="border-radio" type="radio" class="border" name="radio-options">
+      <input id="border-radio" type="radio" class="border" name="radio-options" />
       <label for="border-radio">Radio Border</label>
 
       <strong>Markup</strong>
@@ -164,9 +164,9 @@
       <h2>Input Layout Patterns</h2>
       <label for="inline-pattern">Inline inputs</label>
       <div class="inline-input">
-        <input id="inline-pattern" type="text" name="inline-pattern" style="max-width: 8rem;">
-        <input id="inline-pattern-two" type="text" name="inline-pattern-two" style="max-width: 16rem;">
-        <input id="inline-pattern-three" type="text" name="inline-pattern-three" style="max-width: 32rem;">
+        <input id="inline-pattern" type="text" name="inline-pattern" style="max-width: 8rem;" />
+        <input id="inline-pattern-two" type="text" name="inline-pattern-two" style="max-width: 16rem;" />
+        <input id="inline-pattern-three" type="text" name="inline-pattern-three" style="max-width: 32rem;" />
       </div>
       <p class="help-message">Supports <code>max-width</code> via CSS</p>
       <pre><code class="language-markup">&lt;label for="inline-pattern"&gt;Inline inputs&lt;/label&gt;
@@ -180,17 +180,17 @@
       <div class="inline-input full">
         <div>
           <label for="inline-pattern-full-one">Inline inputs<span class="optional">full</span></label>
-          <input id="inline-pattern-full-one" type="text" name="inline-pattern-full-one">
+          <input id="inline-pattern-full-one" type="text" name="inline-pattern-full-one" />
           <p class="help-message">Even horizontal spacing on large screen</p>
         </div>
         <div>
           <label for="inline-pattern-full-two">Inline label two</label>
-          <input id="inline-pattern-full-two" type="text" name="inline-pattern-full-two">
+          <input id="inline-pattern-full-two" type="text" name="inline-pattern-full-two" />
           <p class="help-message">Full width on smaller screen</p>
         </div>
         <div>
           <label for="inline-pattern-full-three">Inline label three</label>
-          <input id="inline-pattern-full-three" type="text" name="inline-pattern-full-three">
+          <input id="inline-pattern-full-three" type="text" name="inline-pattern-full-three" />
           <p class="help-message">Accomodates any number of inputs</p>
         </div>
       </div>
@@ -214,7 +214,7 @@
 
       <div class="field">
         <label for="field-input">Field wrap class</label>
-        <input id="field-input" type="text" name="field-input">
+        <input id="field-input" type="text" name="field-input" />
         <p class="help-message">A basic wrapper to ensure structure formatting</p>
       </div>
       <pre><code class="language-markup">&lt;div class="field"&gt;
@@ -223,14 +223,14 @@
 
       <fieldset class="fieldset">
         <legend>Fieldset class (with legend)</legend>
-        <input id="fieldset-checkbox" type="checkbox" name="fieldset-checkbox">
+        <input id="fieldset-checkbox" type="checkbox" name="fieldset-checkbox" />
         <label for="fieldset-checkbox">Checkbox</label>
-        <input id="fieldset-radio-one" type="radio" name="fieldset-radio" value="fieldset-radio-one">
+        <input id="fieldset-radio-one" type="radio" name="fieldset-radio" value="fieldset-radio-one" />
         <label for="fieldset-radio-one">Radio option one</label>
-        <input id="fieldset-radio-two" type="radio" name="fieldset-radio" value="fieldset-radio-two">
+        <input id="fieldset-radio-two" type="radio" name="fieldset-radio" value="fieldset-radio-two" />
         <label for="fieldset-radio-two">Radio option two</label>
         <label for="text-input">Text</label>
-        <input id="text-input" type="text" name="text-input">
+        <input id="text-input" type="text" name="text-input" />
       </fieldset>
       <pre><code class="language-markup">&lt;fieldset name="fieldset" class="fieldset"&gt;
   &lt;legend&gt;Fieldset class (with legend)&lt;/legend&gt;
@@ -243,20 +243,20 @@
       <h2>Invalid &amp; Error states</h2>
 
       <label for="invalid-input">Text input</label>
-      <input id="invalid-input" type="text" name="invalid-input" class="invalid">
+      <input id="invalid-input" type="text" name="invalid-input" class="invalid" />
       <p class="error-message">Optional error messaging</p>
       <pre><code class="language-markup">&lt;label for="invalid-text-input"&gt;Input invalid&lt;/label&gt;
 &lt;input type="text" id="invalid-text-input" name="invalid-text-iinput" class="invalid"&gt;
 &lt;p class="error-message"&gt;Error messaging&lt;/p&gt;</code></pre>
 
       <label for="invalid-search">Search input</label>
-      <input id="invalid-search" type="search" name="search-input" class="invalid">
+      <input id="invalid-search" type="search" name="search-input" class="invalid" />
       <pre><code class="language-markup">&lt;label for="invalid-search"&gt;Search input&lt;/label&gt;
 &lt;input type="search" id="invalid-search" name="search-input" class="invalid"&gt;</code></pre>
 
       <label for="invalid-inline-button">Inline Button</label>
       <div class="inline-button">
-        <input id="invalid-inline-button" type="text" name="invalid-inline-button" class="invalid">
+        <input id="invalid-inline-button" type="text" name="invalid-inline-button" class="invalid" />
         <button type="button" class="subtle">Submit</button>
       </div>
       <p class="warning-message">
@@ -292,10 +292,10 @@
 
       <fieldset name="invalid-fieldset" class="fieldset invalid">
         <legend>Invalid Fieldset</legend>
-        <input id="invalid-checkbox" type="checkbox" name="invalid-checkbox" class="invalid">
+        <input id="invalid-checkbox" type="checkbox" name="invalid-checkbox" class="invalid" />
         <label for="invalid-checkbox">Invalid checkbox</label>
 
-        <input id="invalid-radio" type="radio" name="invalid-radio" value="invalid-radio" class="invalid">
+        <input id="invalid-radio" type="radio" name="invalid-radio" value="invalid-radio" class="invalid" />
         <label for="invalid-radio">Invalid radio</label>
       </fieldset>
       <pre><code class="language-markup">&lt;fieldset name="invalid-fieldset" class="invalid"&gt;
@@ -304,7 +304,7 @@
   &lt;label for="invalid-checkbox"&gt;Checkbox&lt;/label&gt;
 &lt;/fieldset&gt;</code></pre>
 
-      <input id="invalid-border-radio" type="radio" name="invalid-border-radio" value="invalid-border-radio" class="border invalid">
+      <input id="invalid-border-radio" type="radio" name="invalid-border-radio" value="invalid-border-radio" class="border invalid" />
       <label for="invalid-border-radio">
         <strong>Invalid border radio</strong>
         <span class="description">Nested span wrapper with <code>description</code> class added to content in label. Can be used with <code>padded</code> and <code>border</code> classes.</span>
