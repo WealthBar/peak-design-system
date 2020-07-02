@@ -105,8 +105,8 @@
 
     <hr>
 
-    <section id="composition">
-      <h3>Composition</h3>
+    <section id="animation">
+      <h3>Animation</h3>
 
       <p>
         The workflow styles tie the above together styles, and add animations styles to create the slide on navigation.

@@ -149,13 +149,10 @@
                 <a href="#setup">Setup</a>
               </li>
               <li class="secondary-link">
-                <a href="#animation">Animations</a>
-              </li>
-              <li class="secondary-link">
                 <a href="#step">Steps</a>
               </li>
               <li class="secondary-link">
-                <a href="#composition">Composition</a>
+                <a href="#animation">Animation</a>
               </li>
             </ul>
             <li>
