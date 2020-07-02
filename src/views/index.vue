@@ -127,10 +127,11 @@ article {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
+  padding: 0 2rem;
 }
 section {
   margin: 2rem auto;
-  background: rgba($neutral-0, 0.8);
+  background: rgba($neutral-0, 0.9);
   padding-bottom: 2rem;
   border: 1px solid $neutral-300;
   border-radius: 0.25rem;
