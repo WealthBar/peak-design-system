@@ -6,10 +6,15 @@
     <section id="card">
       <h2>Card</h2>
       <p>
-        The <code>.card</code> is visual treatment class which can be applied to any block element to get the desired card look.
+        The <code>.card</code> is a visual treatment class which can be applied to any block element to get the desired card look.
         There is no inner margin/padding — this is provided by internal containers and content. The card class is
         also used with other style patterns to provide a complete structure for content. Some examples of these
-        patterns are the <a href="/workflows#step">Workflow step</a> pattern and several (upcoming) table styles:
+        patterns are the <a href="/workflows#step">Workflow Step</a> pattern and several (upcoming) table styles:
+      </p>
+
+      <h3>Card Variants</h3>
+      <p>
+        Besides the basic card, we have a variant that includes a box shadow.
       </p>
 
       <strong>Examples</strong>
