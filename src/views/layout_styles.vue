@@ -1,28 +1,32 @@
 <template>
   <article class="container">
-    <h1>Layout styles</h1>
+    <h1>Layout Styles</h1>
 
     <!-- CARD -->
     <section id="card">
       <h2>Card</h2>
-      <p>
-        The <code>.card</code> is visual treatment class which can be applied to any block element to get the desired card look.
-        There is no inner margin/padding — this is provided by internal containers and content. The card class is
-        also used with other style patterns to provide a complete structure for content. Some examples of these
-        patterns are the <a href="http://localhost:8020/workflows#step">Workflow step</a> pattern and several (upcoming) table styles:
-      </p>
 
-      <div class="card">
-        <p>
-          Card in its simplest form. All margin is applied by the HTML element inside
-        </p>
+      <h3>Usage Guidelines</h3>
+      <p>The <code>.card</code> class can be applied to any block element to provide visual treatment. <code>.card</code> has no inner margin/padding — this is provided by internal containers and content.</p>
+      <p>The card class can be combined with other style patterns to provide a complete structure for content. Some examples of these patterns are the <a href="/workflows#step">Workflow Step</a> pattern and several (upcoming) table styles.</p>
+      <p>There are two variants of <code>.card</code>: a default and a variant with an added box-shadow. Generally, we use the default against a white background and the shadow variant against a light grey background.</p>
+
+      <h3>Default</h3>
+      <div class="card example">
+        <p>Card in its simplest form. Margin is applied to the content. This basic card is often used against a white background.</p>
       </div>
+      <pre><code class="language-markup">&lt;div class="card"&gt;
+  &lt;p&gt;Card in its simplest form.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
 
-       <pre>
-         <code class="language-markup">&lt;div class="card"&gt;
-  &lt;p&gt;
-    Card in its simplest form. All margin is applied by the HTML element inside
-  &lt;/p&gt;
+      <hr>
+
+      <h3>Box Shadow</h3>
+      <div class="card shadow example">
+        <p>Card with box shadow. Margin is applied to the content. This box-shdaow variant is generally used on a grey background.</p>
+      </div>
+      <pre><code class="language-markup">&lt;div class="card shadow"&gt;
+  &lt;p&gt;Card with box shadow.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
     </section>
     <!-- CARD END -->
@@ -138,3 +142,15 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+  #card {
+    .example {
+      margin-bottom: 1.25rem;
+
+      p {
+        margin: 1rem 1.5rem;
+      }
+    }
+  }
+</style>
