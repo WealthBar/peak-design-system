@@ -5,44 +5,28 @@
     <!-- CARD -->
     <section id="card">
       <h2>Card</h2>
-      <p>
-        The <code>.card</code> is a visual treatment class which can be applied to any block element to get the desired card look.
-        There is no inner margin/padding — this is provided by internal containers and content. The card class is
-        also used with other style patterns to provide a complete structure for content. Some examples of these
-        patterns are the <a href="/workflows#step">Workflow Step</a> pattern and several (upcoming) table styles:
-      </p>
 
-      <h3>Card Variants</h3>
-      <p>
-        Besides the basic card, we have a variant that includes a box shadow.
-      </p>
+      <h3>Usage Guidelines</h3>
+      <p>The <code>.card</code> class can be applied to any block element to provide visual treatment. <code>.card</code> has no inner margin/padding — this is provided by internal containers and content.</p>
+      <p>The card class can be combined with other style patterns to provide a complete structure for content. Some examples of these patterns are the <a href="/workflows#step">Workflow Step</a> pattern and several (upcoming) table styles.</p>
+      <p>There are two variants of <code>.card</code>: a default and a variant with an added box-shadow. Generally, we use the default against a white background and the shadow variant against a light grey background.</p>
 
-      <strong>Examples</strong>
-      <div class="example">
-        <div class="card">
-          <p>
-            Card in its simplest form. Margin can be added to the content. This basic card is often used against a white background.
-          </p>
-        </div>
-
-        <div class="card shadow">
-          <p>
-            Card with box shadow. Margin can be added to the content. This box-shdaow variant is generally used on a grey background
-          </p>
-        </div>
+      <h3>Default</h3>
+      <div class="card example">
+        <p>Card in its simplest form. Margin is applied to the content. This basic card is often used against a white background.</p>
       </div>
-
-      <strong>Markup</strong>
       <pre><code class="language-markup">&lt;div class="card"&gt;
-  &lt;p&gt;
-    Card in its simplest form. Margin can be added to the content. This basic card is often used against a white background.
-  &lt;/p&gt;
-&lt;/div&gt;
+  &lt;p&gt;Card in its simplest form.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
 
-&lt;div class="card shadow"&gt;
-  &lt;p&gt;
-    Card with box shadow. Margin can be added to the content. This box-shdaow variant is generally used on a grey background
-  &lt;/p&gt;
+      <hr>
+
+      <h3>Box Shadow</h3>
+      <div class="card shadow example">
+        <p>Card with box shadow. Margin is applied to the content. This box-shdaow variant is generally used on a grey background.</p>
+      </div>
+      <pre><code class="language-markup">&lt;div class="card shadow"&gt;
+  &lt;p&gt;Card with box shadow.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
     </section>
     <!-- CARD END -->
@@ -160,32 +144,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .example {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background: $neutral-50;
-    border: 1px solid $neutral-300;
-    border-radius: 0.25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: auto;
-    > * { margin-bottom: 1rem; }
-    @media #{$screen-width-large} {
-      flex-direction: row;
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-      > * { margin: 0; }
-      &.start { justify-content: flex-start; }
-    }
-    &.dark { background: $neutral-900; }
-  }
+  #card {
+    .example {
+      margin-bottom: 1.25rem;
 
-  #card .card:nth-child(n+2) {
-    @media #{$screen-width-large} {
-      margin-left: 1rem;
+      p {
+        margin: 1rem 1.5rem;
+      }
     }
   }
 </style>
