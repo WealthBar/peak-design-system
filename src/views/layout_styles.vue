@@ -19,7 +19,7 @@
   &lt;p&gt;Card in its simplest form.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
 
-      <hr>
+      <hr />
 
       <h3>Box Shadow</h3>
       <div class="card shadow example">
