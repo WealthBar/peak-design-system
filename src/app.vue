@@ -11,7 +11,7 @@
 
         <nav class="main-navigation">
           <ul>
-            <li><router-link to="/">Intro to Peak</router-link></li>
+            <li><router-link to="/" exact>Intro to Peak</router-link></li>
             <li>
               <router-link to="/typography">
                 Typography
@@ -217,7 +217,7 @@ main {
       &.active { transform: rotate(90deg); }
     }
 
-    &:hover, &:focus {
+    &:hover, &:focus, &.router-link-active {
       background: $primary-50;
       color: $primary-500;
     }
