@@ -26,8 +26,8 @@
               <li><router-link to="/typography/body">Body Text</router-link></li>
               <li><router-link to="/typography/lists">Lists</router-link></li>
             </ul>
-            <li><router-link to="colour">Colour</router-link></li>
-            <li><router-link to="buttons">Links &amp; Buttons</router-link></li>
+            <li><router-link to="/colour">Colour</router-link></li>
+            <li><router-link to="/buttons">Links &amp; Buttons</router-link></li>
             <li>
               <router-link to="/inputs">
                 Form Elements
@@ -43,7 +43,7 @@
               <li><a href="#spacing">Input spacing structure</a></li>
             </ul>
             <li>
-              <router-link to="input_patterns">
+              <router-link to="/input_patterns">
                 Form Patterns
                 <svg viewBox="0 0 32 32" class="chevron" :class="{'active': $route.path.split('/')[1] === 'input_patterns'}">
                   <polygon points="11,28 23,16 11,4" />
@@ -58,20 +58,20 @@
               <li><a href="#invalid">Invalid &amp; error states</a></li>
             </ul>
             <li>
-              <router-link to="svg">SVG Icons</router-link>
+              <router-link to="/svg">SVG Icons</router-link>
             </li>
 
             <li>
-              <router-link to="/layout_structures">
+              <router-link to="/structure">
                 Layout Structures
-                <svg viewBox="0 0 32 32" class="chevron" :class="{'active': $route.path.split('/')[1] === 'layout_structures'}">
+                <svg viewBox="0 0 32 32" class="chevron" :class="{'active': $route.path.split('/').includes('structure')}">
                   <polygon points="11,28 23,16 11,4" />
                 </svg>
               </router-link>
             </li>
-            <ul v-if="$route.path.split('/')[1] === 'layout_structures'" class="secondary-nav">
-              <li><a href="#container">Container</a></li>
-              <li><a href="#banner">Banner</a></li>
+            <ul v-if="$route.path.split('/')[1] === 'structure'" class="secondary-nav">
+              <li><router-link to="/structure/containers">Containers</router-link></li>
+              <li><router-link to="/structure/banners">Banners</router-link></li>
             </ul>
 
             <li>

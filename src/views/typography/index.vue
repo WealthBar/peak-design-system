@@ -33,6 +33,10 @@ import { mapGetters, mapActions } from '@/lib/vue';
 import typography from './typography.data';
 
 export default {
+  async beforeRouteEnter(to, from, next) {
+    next('/typography/font-stack');
+  },
+
   data() {
     return {
       name: 'typography',

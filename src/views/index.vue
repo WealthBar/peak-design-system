@@ -2,10 +2,10 @@
   <article>
     <section class="container">
       <h1>Welcome to Peak!</h1>
-      <p>Peak has been desinged from the <code>&lt;html&gt;</code> up (down?) to be a scalable, modular, design system for use on any WealthBar web product. Peak's structure is broken down into three distict areas of funcionality:</p>
+      <p>Peak has been designed from the <code>&lt;html&gt;</code> up (down?) to be a scalable, modular, design system for use on any WealthBar web product. Peak's structure is broken down into three distinct areas of funcionality:</p>
       <ul class="bullet">
-        <li><strong>Base</strong><span> - Basic document setup, includes features usch as typography, colour, and element styling (<code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;input&gt;</code>, etc).</span></li>
-        <li><strong>Patterns</strong><span> - Commonly used patterns for variants, composition, and layout. These are often provided as classes to be appled to elements (eg: <code>&lt;a class="alt"&gt;</code>).</span></li>
+        <li><strong>Base</strong><span> - Basic document setup, including features such as typography, colour, and element styling (<code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;input&gt;</code>, etc).</span></li>
+        <li><strong>Patterns</strong><span> - Commonly used patterns for variants, composition, and layout. These are often provided as classes to be applied to elements (eg: <code>&lt;a class="alt"&gt;</code>).</span></li>
         <li><strong>Components</strong><span> - Javascript based components (likely Vue or framework dependent) that expand base functionality and interactivity built for reuse. For now these components are located within our working repos — in the future would be served as NPM packages.</span></li>
       </ul>
       <h2 id="units">Units in Peak: use rem!</h2>
@@ -14,7 +14,7 @@
         <code>1rem</code> ==
         <code class="alt">16px</code>. Too put it another way
         <strong>2px is equal to 0.125rem</strong>, or
-        <strong>1/8 of a rem</strong>. Ideally we want to adhire to this 1/8th rem scale as much as possible.
+        <strong>1/8 of a rem</strong>. Ideally we want to adhere to this 1/8th rem scale as much as possible.
       </p>
       <p>Here's some additional notes to keep in mind:</p>
       <ul class="bullet">

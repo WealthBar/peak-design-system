@@ -2,7 +2,7 @@ code[class*="language-"],
 pre[class*="language-"] {
 	color: $neutral-100;
 	text-align: left;
-	white-space: pre;
+	white-space: pre-wrap;
   white-space: unset;
 	word-spacing: normal;
 	word-break: break-word;
@@ -18,15 +18,16 @@ pre[class*="language-"] {
 	hyphens: none;
 }
 
-// pre[class*="language-"]
-
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 1rem 1.5rem;
   margin: 0 0 1.25rem;
 	overflow: auto;
 	border-radius: 0.25em;
-	> code { white-space: pre; }
+	> code,
+	> code[class*="language-"] {
+		white-space: pre-wrap;
+	}
 }
 
 :not(pre) > code[class*="language-"],
