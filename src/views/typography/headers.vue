@@ -2,7 +2,14 @@
   <article class="container">
     <header>
       <h1>Header Text</h1>
-      <div class="toggles">
+      <div class="page-actions">
+        <div>
+          <label for="margin-toggle">Show Margins</label>
+          <button id="margin-toggle" class="toggle" @click="showMargin = !showMargin">
+            <span :data-active="showMargin">on</span>
+            <span :data-active="!showMargin">off</span>
+          </button>
+        </div>
         <div>
           <label for="screen-toggle">Screen Variant</label>
           <button id="screen-toggle" class="toggle" @click="toggleScreen">
@@ -13,20 +20,13 @@
             >{{ screen }}</span>
           </button>
         </div>
-        <div>
-          <label for="margin-toggle">Show Margins</label>
-          <button id="margin-toggle" class="toggle" @click="showMargin = !showMargin">
-            <span :data-active="!showMargin">off</span>
-            <span :data-active="showMargin">on</span>
-          </button>
-        </div>
       </div>
     </header>
     <section>
       <p>Headers create hierarchy in a layout and make scanning easy. Use them for content such as page titles or section titles. We have <strong>mobile</strong> and <strong>desktop</strong> header styles controlled by media queries based on browser's screen size. This ensures that our header typography is responsive to screen real estate. All header elements have a bottom margin of <code>1rem</code> and maintains standard browser <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing">margin collapse principles</a>.</p>
     </section>
+
     <section>
-      <!-- <h3>H1 header</h3> -->
       <div :class="showMargin ? 'example' : ''">
         <h1 :class="getSelectedScreen">This is a super large H1 header.</h1>
         <h2 :class="getSelectedScreen">This is a huge H2 header.</h2>
@@ -35,20 +35,17 @@
         <h5 :class="getSelectedScreen">This is a small H5 header.</h5>
         <h6 :class="getSelectedScreen">This is a very small H6 header.</h6>
       </div>
-      <div class="attributes">
-        <div class="code-sample">
-          <strong>Markup</strong>
-          <pre>
-            <code class="language-markup">&lt;h1&gt;This is a super large H1 header.&lt;/h1&gt;
+      <strong>Markup</strong>
+      <pre>
+        <code class="language-markup">&lt;h1&gt;This is a super large H1 header.&lt;/h1&gt;
 &lt;h2&gt;This is a huge H2 header.&lt;/h2&gt;
 &lt;h3&gt;This is a big H3 header.&lt;/h3&gt;
 &lt;h4&gt;This is a medium H4 header.&lt;/h4&gt;
 &lt;h5&gt;This is a small H5 header.&lt;/h5&gt;
 &lt;h6&gt;This is a very small H6 header.&lt;/h6&gt;</code>
-            </pre>
-        </div>
-      </div>
+        </pre>
     </section>
+
     <section>
       <div :class="showMargin ? 'example' : ''">
         <h2 :class="getSelectedScreen">Header Spacing Example</h2>
@@ -56,16 +53,14 @@
         <h5 :class="getSelectedScreen">A Smaller Sub-head</h5>
         <p>This is my paragraph of text. this is standard text and is being used to illustrate how margins work with realtion to headers and other elements</p>
       </div>
-      <div class="attributes">
-        <div class="code-sample">
-          <strong>Markup</strong>
-          <pre><code class="language-markup">&lt;h2&gt;Huge Header Spacing Example&lt;/h2&gt;
+
+      <strong>Markup</strong>
+      <pre><code class="language-markup">&lt;h2&gt;Huge Header Spacing Example&lt;/h2&gt;
 &lt;p&gt;This is my paragraph of text. … &lt;/p&gt;
 &lt;h3&gt;Smaller Sub-head Example&lt;/h3&gt;
 &lt;p&gt;This is my paragraph of text. … &lt;/p&gt;</code></pre>
-        </div>
-      </div>
     </section>
+
     <section>
       <h3>Remove Margins</h3>
       <p>
@@ -89,7 +84,7 @@ export default {
     return {
       name: 'typography',
       title: 'Typography',
-      showMargin: false,
+      showMargin: true,
       typography,
     };
   },
@@ -276,53 +271,37 @@ h5,
 }
 
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @media #{$screen-width-large} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
-.toggles{
+.page-actions{
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
+  @media #{$screen-width-large} {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
   div {
-    margin-left: 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    margin: 0 0 1rem;
+    @media #{$screen-width-large} {
+      margin: 0 0 0 1rem;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
 
 section {
   border-bottom: 1px solid $neutral-100;
-}
-
-.attributes {
-  display: flex;
-  flex-direction: column;
-  // margin-bottom: 1rem;
-
-  @media #{$screen-width-large} {
-    flex-direction: row;
-  }
-}
-
-.code-sample {
-  width: 100%;
-  // display: flex;
-  // flex-direction: column;
-  // @media #{$screen-width-large} {
-  //   flex: 1 1 50%;
-  //   &:last-child {
-  //     padding-left: 1rem;
-  //   }
-    pre {
-      // flex: 1 1 50%;
-      // display: block;
-      // margin: 0;
-    }
-  // }
 }
 
 .example {
