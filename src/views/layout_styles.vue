@@ -69,7 +69,9 @@
       <h3>Default</h3>
 
       <div class="notice">
-        <p class="notice-content">{{ noticeCopy }}</p>
+        <p class="notice-content">
+          {{ noticeCopy }}
+        </p>
       </div>
 
       <pre><code class="language-markup">&lt;div class="notice"&gt;
@@ -82,7 +84,9 @@
 
       <div class="notice alt">
         <article>
-          <p>{{ noticeCopy }}</p>
+          <p>
+            {{ noticeCopy }}
+          </p>
         </article>
       </div>
 
@@ -99,7 +103,9 @@
           <h3>H3 Header</h3>
         </header>
         <footer>
-          <p>{{ noticeCopy }}</p>
+          <p>
+            {{ noticeCopy }}
+          </p>
         </footer>
       </div>
 
@@ -114,7 +120,9 @@
 
       <div class="notice alert">
         <article>
-          <p>{{ noticeCopy }}</p>
+          <p>
+            {{ noticeCopy }}
+          </p>
           <ul class="bullet">
             <li>This is a list item.</li>
             <li>This is the second item in the list.</li>
@@ -136,7 +144,9 @@
 
       <div class="notice neg">
         <article>
-          <p>{{ noticeCopy }}</p>
+          <p>
+            {{ noticeCopy }}
+          </p>
         </article>
       </div>
 
@@ -162,6 +172,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+<<<<<<< HEAD
 #card {
   .example {
     margin-bottom: 1.25rem;
@@ -171,4 +182,15 @@ export default {
     }
   }
 }
+=======
+  #card {
+    .example {
+      margin-bottom: 1.25rem;
+
+      p {
+        margin: 1rem 1.5rem;
+      }
+    }
+  }
+>>>>>>> Revert bumped layout_styles.vue
 </style>
