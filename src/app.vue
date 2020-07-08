@@ -134,6 +134,9 @@
               <li class="secondary-link">
                 <a href="#notice">Notice</a>
               </li>
+              <li class="secondary-link">
+                <a href="#media-box">Media Box</a>
+              </li>
             </ul>
 
             <li>

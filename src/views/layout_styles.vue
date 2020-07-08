@@ -127,6 +127,82 @@
 &lt;/div&gt;</code></pre>
     </section>
     <!-- NOTICE END -->
+    <!-- MEDIA BOX START -->
+    <section id="media-box">
+      <h2>Media Box</h2>
+
+      <p>A media box is a layout pattern used to display staff activities on various admin interfaces.</p>
+        
+      <p>The Peak implementation of <code>media-box</code> should enable the end developer to easily mark up a timeline showing multiple points of activity or multiple comments using <code>v-for</code> or something akin to it in future frameworks. As such, media-box should display itself in one of two variants, depending on what data it is given:</p>
+
+      <ul>
+        <li>Status variant - Show a basic version featuring a status update.</li>
+        <li>Comment version - Render an additional block of text, typically the body of a comment.</li>
+      </ul>
+
+      <h3>Status Variant</h3>
+
+      <div class="media-box">
+        <section class="main">
+          <div class="icon black">
+            <svg viewBox="0 0 32 32">
+              <polygon points="11,27.4 1.3,17.7 2.7,16.3 11,24.6 29.3,6.3 30.7,7.7"/>
+            </svg>
+          </div>
+          <div class="content">
+            <p class="small"><strong>User</strong> approve the request.</p>
+            <p class="subtle small">Jan 1 - 1:11pm</p>
+          </div>
+        </section>
+      </div>
+
+      <pre><code class="language-markup">&lt;div class="media-box"&gt;
+  &lt;section class="main"&gt;
+    &lt;div class="icon black"&gt;
+      &lt;svg viewBox="0 0 32 32"&gt;
+        &lt;polygon points="11,27.4 1.3,17.7 2.7,16.3 11,24.6 29.3,6.3 30.7,7.7"/&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="content"&gt;
+      &lt;p class="small"&gt;&lt;strong&gt;User&lt;/strong&gt; approve the request.&lt;/p&gt;
+      &lt;p class="subtle small"&gt;Jan 1 - 1:11pm&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+
+      <h3>Comment Variant</h3>
+
+      <div class="media-box">
+        <section class="main">
+          <div class="icon comment">
+            <p class="initial">U</p>
+          </div>
+          <div class="content">
+            <p class="small"><strong>User</strong>&nbsp;left a comment.</p>
+            <p class="subtle small">Jan 2 - 2:pm</p>
+          </div>
+        </section>
+        <section class="body">
+          <p class="small">This is a comment</p>
+        </section>
+      </div>
+
+      <pre><code class="language-markup">&lt;div class="media-box"&gt;
+  &lt;section class="main"&gt;
+    &lt;div class="icon comment"&gt;
+      &lt;p class="initial"&gt;U&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="content"&gt;
+      &lt;p class="small"&gt;&lt;strong&gt;User&lt;/strong&gt;&nbsp;left a comment.&lt;/p&gt;
+      &lt;p class="subtle small"&gt;Jan 2 - 2:pm&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  &lt;section class="body"&gt;
+    &lt;p class="small"&gt;This is a comment&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/div&gt;</code></pre>
+    </section>
+    <!-- MEDIA BOX END -->
   </article>
 </template>
 
@@ -153,4 +229,74 @@ export default {
       }
     }
   }
+
+  .media-box {
+  margin-bottom: 1rem;
+  
+  .main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .icon {
+      height: 2rem;
+      width: 2rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.black {
+        background-color: $black;
+    
+        svg {
+          fill: $white;
+        }
+      }
+    
+      &.secondary {
+        background-color: $secondary-50;
+        
+        svg {
+          fill: $secondary-500;
+        }
+      }
+    
+      &.comment {
+        background-color: $bg-50;
+    
+        p {
+          margin: 0;
+          font-size: 1rem;
+          color: $primary-500;
+        }
+      }
+
+      svg {
+        height: 1rem;
+        width: 1rem;
+      }
+    }
+
+    .content {
+      margin: 0 0 0 0.75rem;
+    }
+  }
+
+  .body {
+    margin: 1rem 0 0 2.75rem;
+    border-left: 1px solid $neutral-100;
+    padding-left: 1rem;
+
+    p {
+      white-space: pre-line;
+      word-break: break-word;
+    }
+  }
+  
+  p {
+    margin: 0;
+  }
+}
+
 </style>
