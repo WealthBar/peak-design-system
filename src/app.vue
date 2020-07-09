@@ -135,7 +135,7 @@
                 <a href="#notice">Notice</a>
               </li>
               <li class="secondary-link">
-                <a href="#media-box">Media Box</a>
+                <a href="#post">Post</a>
               </li>
             </ul>
 

@@ -127,13 +127,13 @@
 &lt;/div&gt;</code></pre>
     </section>
     <!-- NOTICE END -->
-    <!-- MEDIA BOX START -->
-    <section id="media-box">
-      <h2>Media Box</h2>
+    <!-- POST START -->
+    <section id="post">
+      <h2>Post</h2>
 
-      <p>A media box is a layout pattern used to display staff activities on various admin interfaces.</p>
+      <p>A post is a layout pattern used to display staff activities on various admin interfaces.</p>
 
-      <p>The Peak implementation of <code>media-box</code> should enable the end developer to easily mark up a timeline showing multiple points of activity or multiple comments using <code>v-for</code> or something akin to it in future frameworks. As such, media-box should display itself in one of two variants, depending on what data it is given:</p>
+      <p>The Peak implementation of <code>post</code> should enable the end developer to easily mark up a timeline showing multiple points of activity or multiple comments using <code>v-for</code> or something akin to it in future frameworks. As such, post should display itself in one of two variants, depending on what data it is given:</p>
 
       <ul>
         <li>Status variant - Show a basic version featuring a status update.</li>
@@ -142,9 +142,9 @@
 
       <h3>Status Variant</h3>
 
-      <div class="media-box">
-        <section class="main">
-          <div class="icon black">
+      <div class="post">
+        <section class="status">
+          <div class="icon dark">
             <svg viewBox="0 0 32 32">
               <polygon points="11,27.4 1.3,17.7 2.7,16.3 11,24.6 29.3,6.3 30.7,7.7" />
             </svg>
@@ -156,9 +156,9 @@
         </section>
       </div>
 
-      <pre><code class="language-markup">&lt;div class="media-box"&gt;
-  &lt;section class="main"&gt;
-    &lt;div class="icon black"&gt;
+      <pre><code class="language-markup">&lt;div class="post"&gt;
+  &lt;section class="status"&gt;
+    &lt;div class="icon dark"&gt;
       &lt;svg viewBox="0 0 32 32"&gt;
         &lt;polygon points="11,27.4 1.3,17.7 2.7,16.3 11,24.6 29.3,6.3 30.7,7.7" /&gt;
       &lt;/svg&gt;
@@ -172,32 +172,32 @@
 
       <h3>Comment Variant</h3>
 
-      <div class="media-box">
-        <section class="main">
-          <div class="icon comment">
-            <p class="initial">U</p>
+      <div class="post">
+        <section class="status">
+          <div class="icon">
+            <p>U</p>
           </div>
           <div class="content">
             <p class="small"><strong>User</strong>&nbsp;left a comment.</p>
             <p class="subtle small">Jan 2 - 2:pm</p>
           </div>
         </section>
-        <section class="body">
+        <section class="comment">
           <p class="small">This is a comment</p>
         </section>
       </div>
 
-      <pre><code class="language-markup">&lt;div class="media-box"&gt;
+      <pre><code class="language-markup">&lt;div class="post"&gt;
   &lt;section class="main"&gt;
-    &lt;div class="icon comment"&gt;
-      &lt;p class="initial"&gt;U&lt;/p&gt;
+    &lt;div class="icon"&gt;
+      &lt;p&gt;U&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class="content"&gt;
       &lt;p class="small"&gt;&lt;strong&gt;User&lt;/strong&gt;&nbsp;left a comment.&lt;/p&gt;
       &lt;p class="subtle small"&gt;Jan 2 - 2:pm&lt;/p&gt;
     &lt;/div&gt;
   &lt;/section&gt;
-  &lt;section class="body"&gt;
+  &lt;section class="comment"&gt;
     &lt;p class="small"&gt;This is a comment&lt;/p&gt;
   &lt;/section&gt;
 &lt;/div&gt;</code></pre>
