@@ -179,7 +179,7 @@
           </div>
           <div class="content">
             <p class="small"><strong>User</strong>&nbsp;left a comment.</p>
-            <p class="subtle small">Jan 2 - 2:pm</p>
+            <p class="subtle small">Jan 2 - 2:00pm</p>
           </div>
         </section>
         <section class="comment">
@@ -194,7 +194,7 @@
     &lt;/div&gt;
     &lt;div class="content"&gt;
       &lt;p class="small"&gt;&lt;strong&gt;User&lt;/strong&gt;&nbsp;left a comment.&lt;/p&gt;
-      &lt;p class="subtle small"&gt;Jan 2 - 2:pm&lt;/p&gt;
+      &lt;p class="subtle small"&gt;Jan 2 - 2:00pm&lt;/p&gt;
     &lt;/div&gt;
   &lt;/section&gt;
   &lt;section class="comment"&gt;
