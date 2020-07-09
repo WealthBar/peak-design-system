@@ -150,7 +150,7 @@
             </svg>
           </div>
           <div class="content">
-            <p class="small"><strong>User</strong> approve the request.</p>
+            <p class="small"><strong>User</strong> approved the request.</p>
             <p class="subtle small">Jan 1 - 1:11pm</p>
           </div>
         </section>
@@ -164,7 +164,7 @@
       &lt;/svg&gt;
     &lt;/div&gt;
     &lt;div class="content"&gt;
-      &lt;p class="small"&gt;&lt;strong&gt;User&lt;/strong&gt; approve the request.&lt;/p&gt;
+      &lt;p class="small"&gt;&lt;strong&gt;User&lt;/strong&gt; approved the request.&lt;/p&gt;
       &lt;p class="subtle small"&gt;Jan 1 - 1:11pm&lt;/p&gt;
     &lt;/div&gt;
   &lt;/section&gt;
