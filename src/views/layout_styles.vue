@@ -137,7 +137,7 @@
 
       <ul>
         <li>Status variant - Show a basic version featuring a status update.</li>
-        <li>Comment version - Render an additional block of text, typically the body of a comment.</li>
+        <li>Comment variant - Render an additional block of text, typically the body of a comment.</li>
       </ul>
 
       <h3>Status Variant</h3>
