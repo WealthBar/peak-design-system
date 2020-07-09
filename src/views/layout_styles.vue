@@ -236,7 +236,7 @@
 &lt;/tfoot&gt;</code></pre>
 
       <h3>Hyperlinked Rows</h3>
-      <p>If you are putting links in a table, link the entire row and apply the class <code>.link-row</code> to get rows with larger padding and a more prominent hover colour. Also, apply the class <code>.link-row-target</code> to the string that best communicates the destination of the link.</p>
+      <p>To link an entire row, simply use an <code>&lt;a&gt;</code> with <code>role='row'</code> instead of a <code>&lt;tr&gt;</code>. This 'link row' will be given larger padding and a more prominent hover colour. To complete the effect, apply the class <code>.link-row-target</code> to the string that best communicates the destination of the link.</p>
       <table class='shadow example'>
         <thead>
           <tr>
@@ -246,31 +246,31 @@
           </tr>
         </thead>
         <tbody>
-          <tr class='link-row'>
+          <a role='row' href='http://www.ecma-international.org' target='_blank'>
             <td>JavaScript</td>
             <td>Functional</td>
             <td class='link-row-target'>ecma-international.org</td>
-          </tr>
-          <tr class='link-row'>
+          </a>
+          <a role='row' href='https://www.postgresql.org' target='_blank'>
             <td>PostgreSQL</td>
             <td>Declarative</td>
             <td class='link-row-target'>postgresql.org</td>
-          </tr>
-          <tr class='link-row'>
+          </a>
+          <a role='row' href='https://golang.org' target='_blank'>
             <td>Go</td>
             <td>Multi-paradigm</td>
             <td class='link-row-target'>golang.org</td>
-          </tr>
+          </a>
         </tbody>
       </table>
-      <pre><code class="language-markup">&lt;tr class='link-row' @click='handleLinkClick'&gt;
+      <pre><code class="language-markup">&lt;a role='row' href='golang.org'&gt;
   &lt;td&gt;Go&lt;/td&gt;
   &lt;td class='link-row-target'&gt;golang.org&lt;/td&gt;
-&lt;/tr&gt;</code></pre>
+&lt;/a&gt;</code></pre>
 
       <h3>Small Text</h3>
-      <p>Tables can be given a smaller text-size in case they need to be more compact on the page. Simply add the class <code>.text-small</code></p>
-      <table class='shadow text-small example'>
+      <p>Tables can be given a smaller text-size in case they need to be more compact on the page. Simply add the class <code>.small</code></p>
+      <table class='shadow small example'>
         <thead>
           <tr>
             <th>Text Variant</th>
@@ -291,7 +291,7 @@
           </tr>
         </tbody>
       </table>
-      <pre><code class="language-markup">&lt;table class='shadow text-small'&gt;
+      <pre><code class="language-markup">&lt;table class='shadow small'&gt;
   // table content, just like the 'default' example
 &lt;/table&gt;</code></pre>
 
