@@ -201,8 +201,27 @@
     &lt;p class="small"&gt;This is a comment&lt;/p&gt;
   &lt;/section&gt;
 &lt;/div&gt;</code></pre>
+
+      <p>Our <code>post</code> component accepts the props below. Please note that the component does not localize text. The final text to be displayed - localized if necessary - must be passed to the component</p>
+
+      <ul>
+        <li><code>action</code>: A string that describes type of status update to display. The component has some internal logic to change the svg and its color based on the action. Current accepted actions are <code>'approve'</code>, <code>'assign'</code>, <code>'cancel'</code>, <code>'comment'</code>, <code>'create'</code>, <code>'reject'</code>, <code>'unassign'</code>.</li>
+        <li><code>actor</code>: A string that is name of the user who took the action.</li>
+        <li><code>time-string</code>: The string representing the time the action was taken.</li>
+        <li><code>status</code>: The specific text of status update to be displayed.</li>
+        <li><code>comment</code> (optional): If passed in as a prop, will render an additional block of text below the status update.</li>
+      </ul>
+
+      <pre><code class="language-markup">&lt;post
+  v-for="post in posts"
+  :action="post.action"
+  :actor="post.actor"
+  :status="post.status"
+  :time-string="post.timeString"
+  :comment="post.comment"
+&gt;&lt;/post&gt;</code></pre>
     </section>
-    <!-- MEDIA BOX END -->
+    <!-- POST END -->
   </article>
 </template>
 
