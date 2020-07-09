@@ -127,6 +127,9 @@
 &lt;/div&gt;</code></pre>
     </section>
     <!-- NOTICE END -->
+
+  <hr />
+
     <!-- POST START -->
     <section id="post">
       <h2>Post</h2>
@@ -142,7 +145,7 @@
 
       <h3>Status Variant</h3>
 
-      <div class="post">
+      <article class="post">
         <section class="status">
           <div class="icon dark">
             <svg viewBox="0 0 32 32">
@@ -154,9 +157,9 @@
             <p class="subtle small">Jan 1 - 1:11pm</p>
           </div>
         </section>
-      </div>
+      </article>
 
-      <pre><code class="language-markup">&lt;div class="post"&gt;
+      <pre><code class="language-markup">&lt;article class="post"&gt;
   &lt;section class="status"&gt;
     &lt;div class="icon dark"&gt;
       &lt;svg viewBox="0 0 32 32"&gt;
@@ -168,11 +171,11 @@
       &lt;p class="subtle small"&gt;Jan 1 - 1:11pm&lt;/p&gt;
     &lt;/div&gt;
   &lt;/section&gt;
-&lt;/div&gt;</code></pre>
+&lt;/article&gt;</code></pre>
 
       <h3>Comment Variant</h3>
 
-      <div class="post">
+      <article class="post">
         <section class="status">
           <div class="icon">
             <p>U</p>
@@ -185,9 +188,9 @@
         <section class="comment">
           <p class="small">This is a comment</p>
         </section>
-      </div>
+      </article>
 
-      <pre><code class="language-markup">&lt;div class="post"&gt;
+      <pre><code class="language-markup">&lt;article class="post"&gt;
   &lt;section class="main"&gt;
     &lt;div class="icon"&gt;
       &lt;p&gt;U&lt;/p&gt;
@@ -200,7 +203,7 @@
   &lt;section class="comment"&gt;
     &lt;p class="small"&gt;This is a comment&lt;/p&gt;
   &lt;/section&gt;
-&lt;/div&gt;</code></pre>
+&lt;/article&gt;</code></pre>
 
       <p>Our <code>post</code> component accepts the props below. Please note that the component does not localize text. The final text to be displayed - localized if necessary - must be passed to the component</p>
 
