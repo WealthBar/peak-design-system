@@ -128,7 +128,7 @@
     </section>
     <!-- NOTICE END -->
 
-  <hr />
+    <hr>
 
     <!-- POST START -->
     <section id="post">
