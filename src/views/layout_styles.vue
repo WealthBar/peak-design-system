@@ -153,8 +153,8 @@
             </svg>
           </div>
           <div class="content">
-            <p class="small"><strong>User</strong> approved the request.</p>
-            <time class="subtle small">Jan 1 - 1:11pm</time>
+            <p class="small no-margin"><strong>User</strong> approved the request.</p>
+            <p class="subtle small no-margin">Jan 1 - 1:11pm</p>
           </div>
         </section>
       </article>
@@ -168,7 +168,7 @@
     &lt;/div&gt;
     &lt;div class="content"&gt;
       &lt;p class="small no-margin"&gt;&lt;strong&gt;User&lt;/strong&gt; approved the request.&lt;/p&gt;
-      &lt;time class="subtle small no-margin"&gt;Jan 1 - 1:11pm&lt;/time&gt;
+      &lt;p class="subtle small no-margin"&gt;Jan 1 - 1:11pm&lt;/p&gt;
     &lt;/div&gt;
   &lt;/section&gt;
 &lt;/article&gt;</code></pre>
@@ -178,11 +178,11 @@
       <article class="post">
         <section class="status">
           <div class="icon">
-            <span>U</span>
+            <p class='no-margin'>U</p>
           </div>
           <div class="content">
-            <p class="small"><strong>User</strong>&nbsp;left a comment.</p>
-            <time class="subtle small">Jan 2 - 2:00pm</time>
+            <p class="small no-margin"><strong>User</strong>&nbsp;left a comment.</p>
+            <p class="subtle small no-margin">Jan 2 - 2:00pm</p>
           </div>
         </section>
         <p class="small comment no-margin">This is a comment</p>
@@ -195,7 +195,7 @@
     &lt;/div&gt;
     &lt;div class="content"&gt;
       &lt;p class="small no-margin"&gt;&lt;strong&gt;User&lt;/strong&gt;&nbsp;left a comment.&lt;/p&gt;
-      &lt;time class="subtle small no-margin"&gt;Jan 2 - 2:00pm&lt;/time&gt;
+      &lt;p class="subtle small no-margin"&gt;Jan 2 - 2:00pm&lt;/p&gt;
     &lt;/div&gt;
   &lt;/section&gt;
   &lt;p class="comment small no-margin"&gt;This is a comment&lt;/p&gt;
