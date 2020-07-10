@@ -154,7 +154,7 @@
           </div>
           <div class="content">
             <p class="small"><strong>User</strong> approved the request.</p>
-            <p class="subtle small">Jan 1 - 1:11pm</p>
+            <time class="subtle small">Jan 1 - 1:11pm</time>
           </div>
         </section>
       </article>
@@ -168,7 +168,7 @@
     &lt;/div&gt;
     &lt;div class="content"&gt;
       &lt;p class="small no-margin"&gt;&lt;strong&gt;User&lt;/strong&gt; approved the request.&lt;/p&gt;
-      &lt;p class="subtle small no-margin"&gt;Jan 1 - 1:11pm&lt;/p&gt;
+      &lt;time class="subtle small no-margin"&gt;Jan 1 - 1:11pm&lt;/time&gt;
     &lt;/div&gt;
   &lt;/section&gt;
 &lt;/article&gt;</code></pre>
@@ -182,12 +182,10 @@
           </div>
           <div class="content">
             <p class="small"><strong>User</strong>&nbsp;left a comment.</p>
-            <p class="subtle small">Jan 2 - 2:00pm</p>
+            <time class="subtle small">Jan 2 - 2:00pm</time>
           </div>
         </section>
-        <section class="comment">
-          <p class="small">This is a comment</p>
-        </section>
+        <p class="small comment no-margin">This is a comment</p>
       </article>
 
       <pre><code class="language-markup">&lt;article class="post"&gt;
@@ -197,12 +195,10 @@
     &lt;/div&gt;
     &lt;div class="content"&gt;
       &lt;p class="small no-margin"&gt;&lt;strong&gt;User&lt;/strong&gt;&nbsp;left a comment.&lt;/p&gt;
-      &lt;p class="subtle small no-margin"&gt;Jan 2 - 2:00pm&lt;/p&gt;
+      &lt;time class="subtle small no-margin"&gt;Jan 2 - 2:00pm&lt;/time&gt;
     &lt;/div&gt;
   &lt;/section&gt;
-  &lt;section class="comment"&gt;
-    &lt;p class="small no-margin"&gt;This is a comment&lt;/p&gt;
-  &lt;/section&gt;
+  &lt;p class="comment small no-margin"&gt;This is a comment&lt;/p&gt;
 &lt;/article&gt;</code></pre>
 
       <p>Our <code>post</code> component accepts the props below. Please note that the component does not localize text. The final text to be displayed - localized if necessary - must be passed to the component</p>
