@@ -14,14 +14,14 @@
 
       <h3>Status Variant</h3>
 
-      <post 
+      <post
         v-for="(post, index) in statuses"
         :key="`${index}status`"
         :action="post.action"
         :actor="post.actor"
         :status="post.status"
         :time-string="post.timeString"
-      ></post>
+      />
 
       <pre><code class="language-markup">&lt;article class="post"&gt;
   &lt;section class="status"&gt;
@@ -39,7 +39,7 @@
 
       <h3>Comment Variant</h3>
 
-      <post 
+      <post
         v-for="(post, index) in comments"
         :key="`${index}comment`"
         :action="post.action"
@@ -47,7 +47,7 @@
         :status="post.status"
         :time-string="post.timeString"
         :comment="post.comment"
-      ></post>
+      />
 
       <pre><code class="language-markup">&lt;article class="post"&gt;
   &lt;section class="main"&gt;
@@ -106,7 +106,7 @@ export default {
           action: 'comment',
           status: 'left a comment.',
           timeString: 'Jan 2 - 2:00PM',
-          comment: 'This is a comment\nIt can be multi-line with an unescaped "\\n"'
+          comment: 'This is a comment\nIt can be multi-line with an unescaped "\\n"',
         },
       ],
     };
