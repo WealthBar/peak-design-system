@@ -1,0 +1,7 @@
+/var/log/node/*.log {
+	missingok
+	sharedscripts
+	postrotate
+		yarn --cwd /app start > /var/log/node/app.log 2>&1
+	endscript
+}
