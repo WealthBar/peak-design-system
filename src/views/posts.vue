@@ -24,8 +24,8 @@
       />
 
       <pre><code class="language-markup">&lt;article class="post"&gt;
-  &lt;section class="status"&gt;
-    &lt;div class="icon dark"&gt;
+  &lt;section class="post-status"&gt;
+    &lt;div class="status-icon dark"&gt;
       &lt;svg viewBox="0 0 32 32"&gt;
         &lt;polygon points="11,27.4 1.3,17.7 2.7,16.3 11,24.6 29.3,6.3 30.7,7.7" /&gt;
       &lt;/svg&gt;
@@ -50,8 +50,8 @@
       />
 
       <pre><code class="language-markup">&lt;article class="post"&gt;
-  &lt;section class="main"&gt;
-    &lt;div class="icon"&gt;
+  &lt;section class="post-status"&gt;
+    &lt;div class="status-icon"&gt;
       &lt;p class="no-margin"&gt;U&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class="status-details"&gt;
@@ -59,7 +59,7 @@
       &lt;time class="subtle"&gt;Jan 2 - 2:00pm&lt;/time&gt;
     &lt;/div&gt;
   &lt;/section&gt;
-  &lt;p class="comment small no-margin"&gt;This is a comment\nIt can be multi-line with an unescaped "\n"&lt;/p&gt;
+  &lt;p class="post-comment small no-margin"&gt;This is a comment\nIt can be multi-line with an unescaped "\n"&lt;/p&gt;
 &lt;/article&gt;</code></pre>
 
       <p>Our <code>post</code> component accepts the props below. Please note that the component does not localize text. The final text to be displayed - localized if necessary - must be passed to the component</p>
