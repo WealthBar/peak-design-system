@@ -52,7 +52,7 @@
       <pre><code class="language-markup">&lt;article class="post"&gt;
   &lt;section class="post-status"&gt;
     &lt;div class="status-icon"&gt;
-      &lt;p class="no-margin"&gt;U&lt;/p&gt;
+      &lt;span&gt;U&lt;/span&gt;
     &lt;/div&gt;
     &lt;div class="status-details"&gt;
       &lt;span&gt;&lt;strong&gt;User&lt;/strong&gt; left a comment.&lt;/span&gt;
@@ -61,6 +61,8 @@
   &lt;/section&gt;
   &lt;p class="post-comment small no-margin"&gt;This is a comment\nIt can be multi-line with an unescaped "\n"&lt;/p&gt;
 &lt;/article&gt;</code></pre>
+
+      <h3>Vue Component Details</h3>
 
       <p>Our <code>post</code> component accepts the props below. Please note that the component does not localize text. The final text to be displayed - localized if necessary - must be passed to the component</p>
 

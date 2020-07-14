@@ -15,7 +15,7 @@
         <svg v-else-if="['reject', 'cancel'].includes(action)" viewBox="0 0 32 32">
           <polygon points="26.7,6.7 25.3,5.3 16,14.6 6.7,5.3 5.3,6.7 14.6,16 5.3,25.3 6.7,26.7 16,17.4 25.3,26.7 26.7,25.3 17.4,16 " />
         </svg>
-        <p v-else class="no-margin">{{ actor[0] }}</p>
+        <span v-else>{{ actor[0] }}</span>
       </div>
       <div class="status-details">
         <span><strong>{{ actor }}</strong> {{ status }}</span>
@@ -85,18 +85,12 @@ export default {
 
         &.dark {
           background-color: $black;
-
-          svg {
-            fill: $white;
-          }
+          svg { fill: $white; }
         }
 
         &.subtle {
           background-color: $secondary-50;
-
-          svg {
-            fill: $secondary-500;
-          }
+          svg { fill: $secondary-500; }
         }
 
         svg {
