@@ -13,6 +13,7 @@
     "dev:local": "DEMO_MODE=false API_URL=http://localhost:3000/api node build/dev-server.js",
     "prod": "API_URL=https://localhost:3000/api node build/prod-server.js",
     "start": "node build/prod-server.js",
+    "start:logged": "node build/prod-server.js 1> /var/log/node/app.log 2> /var/log/node/err.log",
     "test": "NODE_ENV=test wprun -c build/webpack.base.conf.js -r ./util/test_helper.js 'src/**/*.test.js' | tap-spec",
     "test:coverage": "nyc -r text-summary -r html yarn test",
     "test:debug": "NODE_ENV=test node inspect -c build/webpack.base.conf.js -r ./util/test_helper.js 'src/**/*.test.js' | tap-spec",
