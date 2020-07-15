@@ -134,9 +134,6 @@
               <li class="secondary-link">
                 <a href="#notice">Notice</a>
               </li>
-              <li class="secondary-link">
-                <a href="#post">Post</a>
-              </li>
             </ul>
 
             <li>
@@ -160,6 +157,9 @@
             </ul>
             <li>
               <router-link to="navigation">Navigation</router-link>
+            </li>
+            <li>
+              <router-link to="posts">Posts</router-link>
             </li>
           </ul>
         </nav>
