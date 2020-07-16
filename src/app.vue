@@ -161,6 +161,9 @@
             <li>
               <router-link to="navigation">Navigation</router-link>
             </li>
+            <li>
+              <router-link to="posts">Posts</router-link>
+            </li>
           </ul>
         </nav>
       </div>

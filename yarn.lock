@@ -305,10 +305,10 @@
     dom-event-types "^1.0.0"
     lodash "^4.17.4"
 
-"@wealthbar/peak-style@^1.7.5":
-  version "1.7.5"
-  resolved "https://registry.yarnpkg.com/@wealthbar/peak-style/-/peak-style-1.7.5.tgz#57d85ee08243671d683dc6d42749a6cd99784b82"
-  integrity sha512-ZA3imK7Ohn9/38yDt3BxmHv6wz7wDWelBdw7n3osBui20OipCpnkOMx3jgQjvU99CBTz3UeGm5AxCIAvkFZCqw==
+"@wealthbar/peak-style@^1.7.9":
+  version "1.7.9"
+  resolved "https://registry.yarnpkg.com/@wealthbar/peak-style/-/peak-style-1.7.9.tgz#b15f7beb34db61a9b09c8319d78593b9ec1a48d1"
+  integrity sha512-ED1p0JVPwYmDMP1ilNscEUsJ3FHcd+ZUAXlQiPakqgv1AcV7ifkFMknVB21lvbgvmR+cvIe+ehoge8uCT+sOnQ==
   dependencies:
     node-sass "^4.12.0"
 
