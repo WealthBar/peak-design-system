@@ -295,6 +295,38 @@
   // table content, just like the 'default' example
 &lt;/table&gt;</code></pre>
 
+      <h3>Large Row Padding</h3>
+      <p>For more information-dense and/or click-able rows, a thicker top &amp; bottom cell padding may be necessary. Simply apply the class <code>.pad</code> to the rows.</p>
+      <table class='shadow example'>
+        <thead>
+          <tr>
+            <th>Padding Variant</th>
+            <th>Size in Rem</th>
+            <th>Size in Pixels</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class='pad'>
+            <td>Default</td>
+            <td>0.5rem</td>
+            <td>8px</td>
+          </tr>
+          <tr class='pad'>
+            <td>Large</td>
+            <td>0.75rem</td>
+            <td>12px</td>
+          </tr>
+        </tbody>
+      </table>
+      <pre><code class="language-markup">&lt;table class='shadow'&gt;
+  &lt;tbody&gt;
+    &lt;tr class='pad'&gt;
+      &lt;td&gt;Large&lt;/td&gt;
+      &lt;td&gt;0.75rem&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
     </section>
     <!-- TABLE END -->
   </article>
