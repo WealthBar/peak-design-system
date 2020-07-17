@@ -156,6 +156,7 @@
               </li>
             </ul>
 
+            <li><router-link to="modals">Modals</router-link></li>
             <li><router-link to="navigation">Navigation</router-link></li>
             <li><router-link to="tables">Tables</router-link></li>
             <li><router-link to="posts">Posts</router-link></li>
