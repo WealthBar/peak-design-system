@@ -43,12 +43,14 @@
   &lt;/div&gt;
 
   &lt;form class="workflow-form"&gt;
-   &lt;transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses"&gt;
-      &lt;div class="step card"&gt;
-        &hellip;
-      &lt;/div&gt;
-    &lt;transition /&gt;
-  &lt;/form&gt;
+    &lt;transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses"&gt;
+      &lt;div class="step"&gt;
+        &lt;div class="card"&gt;
+          &hellip;
+        &lt;/div&gt;
+      &lt;transition /&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </section>
 
@@ -68,37 +70,41 @@
         <code>footer</code>
       </p>
 
-      <div class="card step">
-        <header>
-          <h3>Some title</h3>
-        </header>
+      <div class="step">
+        <div class="card">
+          <header>
+            <h3>Some title</h3>
+          </header>
 
-        <article>
-          <p>
-            Term fiat 401k managed shares corporate bonds tax gains funds income maturities downturn yield
-            retirement. Bills district Fitch municipal bonds exchange bull.
-          </p>
-        </article>
+          <article>
+            <p>
+              Term fiat 401k managed shares corporate bonds tax gains funds income maturities downturn yield
+              retirement. Bills district Fitch municipal bonds exchange bull.
+            </p>
+          </article>
 
-        <footer>
-          <button type="button">Next</button>
-        </footer>
+          <footer>
+            <button type="button">Next</button>
+          </footer>
+        </div>
       </div>
 
       <div class="code-sample">
         <pre>
-          <code class="language-markup">&lt;div class="step card"&gt;
-  &lt;header&gt;
-    &lt;h3&gt;Header&lt;/h3&gt;
-  &lt;/header&gt;
+          <code class="language-markup">&lt;div class="step"&gt;
+  &lt;div class="card"&gt;
+    &lt;header&gt;
+      &lt;h3&gt;Header&lt;/h3&gt;
+    &lt;/header&gt;
 
-  &lt;article&gt;
-    &lt;p&gt;Body&lt;/p&gt;
-  &lt;/article&gt;
+    &lt;article&gt;
+      &lt;p&gt;Body&lt;/p&gt;
+    &lt;/article&gt;
 
-  &lt;footer&gt;
-    &lt;button type="submit"&gt;Okay&lt;/button&gt;
-  &lt;/footer&gt;
+    &lt;footer&gt;
+      &lt;button type="submit"&gt;Okay&lt;/button&gt;
+    &lt;/footer&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
     </section>
@@ -129,11 +135,11 @@
         <strong>LEFT:</strong>
         <br>
         <code>
-          'slide-fade-in-right'
+          'slide-in-right'
         </code>
         <br>
         <code>
-          'slide-fade-out-right';
+          'slide-out-right';
         </code>
       </p>
 
@@ -141,11 +147,11 @@
         <strong>RIGHT:</strong>
         <br>
         <code>
-          'slide-fade-in-left'
+          'slide-in-left'
         </code>
         <br>
         <code>
-          'slide-fade-out-left'
+          'slide-out-left'
         </code>
       </p>
 
@@ -159,43 +165,47 @@
 
         <form class="workflow-form" @:submit.prevent>
           <transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses">
-            <div class="step card" v-if="step === 1" :key="step">
-              <header>
-                <h3>Step 1</h3>
-              </header>
+            <div class="step" v-if="step === 1" :key="step">
+              <div class="card">
+                <header>
+                  <h3>Step 1</h3>
+                </header>
 
-              <article>
-                <h5>Finance Ipsum</h5>
+                <article>
+                  <h5>Finance Ipsum</h5>
 
-                <p>
-                  Securities default
-                </p>
-              </article>
+                  <p>
+                    Securities default
+                  </p>
+                </article>
 
-              <footer>
-                <button type="submit" @click.prevent="next(2)">Next</button>
-              </footer>
+                <footer>
+                  <button type="submit" @click.prevent="next(2)">Next</button>
+                </footer>
+              </div>
             </div>
 
-            <div class="step card" v-if="step === 2" :key="step">
-              <header>
-                <button type="button" class="flat icon before" @click="prev(1)">
-                  <svg viewBox="0 0 32 32">
-                    <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
-                  </svg>
-                  Back
-                </button>
+            <div class="step" v-if="step === 2" :key="step">
+              <div class="card">
+                <header>
+                  <button type="button" class="flat icon before" @click="prev(1)">
+                    <svg viewBox="0 0 32 32">
+                      <polygon points="28,15 8.9,15 19.2,4.7 17.8,3.3 5.1,16 17.8,28.7 19.2,27.3 8.9,17 28,17" />
+                    </svg>
+                    Back
+                  </button>
 
-                <h3 class>Step 2</h3>
-              </header>
+                  <h3 class>Step 2</h3>
+                </header>
 
-              <article>
-                <h5>Finance Ipsum</h5>
-              </article>
+                <article>
+                  <h5>Finance Ipsum</h5>
+                </article>
 
-              <footer>
-                <button type="submit" disabled>Submit</button>
-              </footer>
+                <footer>
+                  <button type="submit" disabled>Submit</button>
+                </footer>
+              </div>
             </div>
           </transition>
         </form>
@@ -205,8 +215,10 @@
       <pre>
         <code class="language-markup">&lt;form class="workflow-form"&gt;
   &lt;transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses"&gt;
-    &lt;div class="step card"&gt;
-      &hellip;
+    &lt;div class="step"&gt;
+      &lt;div class="card"&gt;
+        &hellip;
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/transition&gt;
 &lt;form&gt;
@@ -214,14 +226,14 @@
 
       <strong>Script</strong>
       <pre><code class="language-js">prev() {
-  this.enterClasses = 'slide-fade-in-right';
-  this.leaveClasses = 'slide-fade-out-right';
+  this.enterClasses = 'slide-in-right';
+  this.leaveClasses = 'slide-out-right';
   &hellip;
 },
 
 next() {
-  this.enterClasses = 'slide-fade-in-left';
-  this.leaveClasses = 'slide-fade-out-left';
+  this.enterClasses = 'slide-in-left';
+  this.leaveClasses = 'slide-out-left';
   &hellip;
 },</code></pre>
     </section>
@@ -240,14 +252,14 @@ export default {
 
   methods: {
     async prev(step) {
-      this.enterClasses = 'step-slide-fade-in-right';
-      this.leaveClasses = 'step-slide-fade-out-right';
+      this.enterClasses = 'slide-in-right';
+      this.leaveClasses = 'slide-out-right';
       this.step = step;
     },
 
     async next(step) {
-      this.enterClasses = 'step-slide-fade-in-left';
-      this.leaveClasses = 'step-slide-fade-out-left';
+      this.enterClasses = 'slide-in-left';
+      this.leaveClasses = 'slide-out-left';
       this.step = step;
     },
   },
