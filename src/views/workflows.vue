@@ -14,35 +14,46 @@
         <li>
           <strong>Layouts:</strong>
           <code>
-            .modal-page
+            .workflow-page
           </code>
+          <span> - page wrapper styling for workflows.</span>
         </li>
         <li>
           <strong>Banners:</strong>
           <code>
-            .modal-page-banner
+            .banner
           </code>
+          <span> - banner for workflows.</span>
         </li>
         <li>
           <strong>Workflow</strong>
           <code>
-            .workflow .workflow-form
+            .workflow
           </code>
+          <span> - workflow container (usually on a <code>&lt;form&gt;</code> element.</span>
         </li>
         <li>
-          <strong>Steps Cards</strong>
+          <strong>Steps</strong>
           <code>
-            .step .card
+            .step
           </code>
+          <span> - workflow step container, each "page" in a flow is a step.</span>
+        </li>
+        <li>
+          <strong>Cards</strong>
+          <code>
+            .card
+          </code>
+          <span> - visual treatment and wrapper nested in each <code>.step</code>.</span>
         </li>
       </ol>
 
-      <pre><code class="language-markup">&lt;div class="modal-page workflow"&gt;
-  &lt;div class="banner modal-page-banner"&gt;
+      <pre><code class="language-markup">&lt;div class="workflow-page"&gt;
+  &lt;div class="banner"&gt;
     &hellip;
   &lt;/div&gt;
 
-  &lt;form class="workflow-form"&gt;
+  &lt;form class="workflow"&gt;
     &lt;transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses"&gt;
       &lt;div class="step"&gt;
         &lt;div class="card"&gt;
@@ -126,7 +137,7 @@
         </li>
         <li>
           <code>
-            .workflow-form
+            .step
           </code>
         </li>
       </ol>
@@ -155,15 +166,15 @@
         </code>
       </p>
 
-      <div class="modal-page workflow" id="composition">
-        <div class="banner modal-page-banner">
+      <div class="workflow-page" id="composition">
+        <div class="banner">
           <div class="banner-content">
             <h5 class="title">Test title</h5>
             <button type="button" class="flat action" icon>Close</button>
           </div>
         </div>
 
-        <form class="workflow-form" @:submit.prevent>
+        <form class="workflow" @:submit.prevent>
           <transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses">
             <div class="step" v-if="step === 1" :key="step">
               <div class="card">
@@ -213,7 +224,7 @@
 
 
       <pre>
-        <code class="language-markup">&lt;form class="workflow-form"&gt;
+        <code class="language-markup">&lt;form class="workflow"&gt;
   &lt;transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses"&gt;
     &lt;div class="step"&gt;
       &lt;div class="card"&gt;
