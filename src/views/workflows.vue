@@ -10,40 +10,30 @@
         up of multiple Peak styles, and tied together with the workflow styles and animations.
       </p>
 
+      <h4>Page Setup:</h4>
       <ol>
         <li>
-          <strong>Layouts:</strong>
-          <code>
-            .workflow-page
-          </code>
-          <span> - page wrapper styling for workflows.</span>
+          <code>.workflow-page</code>
+          <span> - page wrapper class for workflows.</span>
         </li>
         <li>
-          <strong>Banners:</strong>
-          <code>
-            .banner
-          </code>
-          <span> - banner for workflows.</span>
+          <code>.banner</code>
+          <span> - standard header banner class for workflows.</span>
+        </li>
+      </ol>
+
+      <h4>Workflow Setup:</h4>
+      <ol>
+        <li>
+          <code>.workflow</code>
+          <span> - workflow container class (usually on a <code>&lt;form&gt;</code> element.)</span>
         </li>
         <li>
-          <strong>Workflow</strong>
-          <code>
-            .workflow
-          </code>
-          <span> - workflow container (usually on a <code>&lt;form&gt;</code> element.</span>
-        </li>
-        <li>
-          <strong>Steps</strong>
-          <code>
-            .step
-          </code>
+          <code>.step</code>
           <span> - workflow step container, each "page" in a flow is a step.</span>
         </li>
         <li>
-          <strong>Cards</strong>
-          <code>
-            .card
-          </code>
+          <code>.card</code>
           <span> - visual treatment and wrapper nested in each <code>.step</code>.</span>
         </li>
       </ol>
@@ -69,54 +59,46 @@
 
     <section id="step">
       <h3>Steps</h3>
-      <p>
-        Steps are made for multi-step forms(forms with more than 1 page). The card styling will disappear at the mobile breakpoint,
-        and the step will fill the screen.
-      </p>
+      <p>Steps are made for multi-step forms(forms with more than 1 page). The card styling will disappear at the mobile breakpoint, and the step will fill the screen. Step class <strong>must</strong> be nested in <code>workflow</code> class for the style and transitions to work.</p>
 
-      <p>
-        The step consists of the following html elements:
-        <code>header</code>,
-        <code>article</code>,
-        <code>footer</code>
-      </p>
+      <p>The step can consists of the following html elements to add desired padding and structure: <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>, or any container element with the <code>card-content</code> class.</p>
+      <form class="workflow">
+        <div class="step">
+          <div class="card">
+            <header>
+              <h3>Some title</h3>
+            </header>
 
-      <div class="step">
-        <div class="card">
-          <header>
-            <h3>Some title</h3>
-          </header>
+            <article>
+              <p>Term fiat 401k managed shares corporate bonds tax gains funds income maturities downturn yield retirement. Bills district Fitch municipal bonds exchange bull.</p>
+            </article>
 
-          <article>
-            <p>
-              Term fiat 401k managed shares corporate bonds tax gains funds income maturities downturn yield
-              retirement. Bills district Fitch municipal bonds exchange bull.
-            </p>
-          </article>
-
-          <footer>
-            <button type="button">Next</button>
-          </footer>
+            <footer>
+              <button type="button">Next</button>
+            </footer>
+          </div>
         </div>
-      </div>
+      </form>
 
       <div class="code-sample">
         <pre>
-          <code class="language-markup">&lt;div class="step"&gt;
-  &lt;div class="card"&gt;
-    &lt;header&gt;
-      &lt;h3&gt;Header&lt;/h3&gt;
-    &lt;/header&gt;
+          <code class="language-markup">&lt;form class="workflow"&gt;
+  &lt;div class="step"&gt;
+    &lt;div class="card"&gt;
+      &lt;header&gt;
+        &lt;h3&gt;Header&lt;/h3&gt;
+      &lt;/header&gt;
 
-    &lt;article&gt;
-      &lt;p&gt;Body&lt;/p&gt;
-    &lt;/article&gt;
+      &lt;article&gt;
+        &lt;p&gt;Body&lt;/p&gt;
+      &lt;/article&gt;
 
-    &lt;footer&gt;
-      &lt;button type="submit"&gt;Okay&lt;/button&gt;
-    &lt;/footer&gt;
+      &lt;footer&gt;
+        &lt;button type="submit"&gt;Okay&lt;/button&gt;
+      &lt;/footer&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/form&gt;</code></pre>
       </div>
     </section>
 
@@ -125,45 +107,22 @@
     <section id="animation">
       <h3>Animation</h3>
 
-      <p>
-        The workflow styles tie the above together styles, and add animations styles to create the slide on navigation.
-      </p>
-
-      <ol>
-        <li>
-          <code>
-            .workflow
-          </code>
-        </li>
-        <li>
-          <code>
-            .step
-          </code>
-        </li>
-      </ol>
+      <p>The workflow styles tie the above together styles, and add animations styles to create the slide on navigation.</p>
 
       <p>
-        <strong>LEFT:</strong>
+        <strong>Transition to next step:</strong>
         <br>
-        <code>
-          'slide-in-right'
-        </code>
+        current step: <code>'slide-out-left'</code>
         <br>
-        <code>
-          'slide-out-right';
-        </code>
+        incoming step: <code>'slide-in-right'</code>
       </p>
 
       <p>
-        <strong>RIGHT:</strong>
+        <strong>Transition to previous step:</strong>
         <br>
-        <code>
-          'slide-in-left'
-        </code>
+        current step: <code>'slide-out-right'</code>
         <br>
-        <code>
-          'slide-out-left'
-        </code>
+        incoming step: <code>'slide-in-left'</code>
       </p>
 
       <div class="workflow-page" id="composition">
@@ -181,15 +140,10 @@
                 <header>
                   <h3>Step 1</h3>
                 </header>
-
                 <article>
                   <h5>Finance Ipsum</h5>
-
-                  <p>
-                    Securities default
-                  </p>
+                  <p>Securities default</p>
                 </article>
-
                 <footer>
                   <button type="submit" @click.prevent="next(2)">Next</button>
                 </footer>
@@ -205,14 +159,11 @@
                     </svg>
                     Back
                   </button>
-
                   <h3 class>Step 2</h3>
                 </header>
-
                 <article>
                   <h5>Finance Ipsum</h5>
                 </article>
-
                 <footer>
                   <button type="submit" disabled>Submit</button>
                 </footer>
@@ -277,8 +228,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
-  .workflow {
-    min-height: 600px;
-  }
+<style lang="scss" scoped>
+.workflow-page {
+  min-height: auto;
+  height: 24rem;
+  border: 1px solid $black;
+  border-radius: 0.25rem;
+}
 </style>
