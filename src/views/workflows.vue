@@ -37,22 +37,6 @@
           <span> - visual treatment and wrapper nested in each <code>.step</code>.</span>
         </li>
       </ol>
-
-      <pre><code class="language-markup">&lt;div class="workflow-page"&gt;
-  &lt;div class="banner"&gt;
-    &hellip;
-  &lt;/div&gt;
-
-  &lt;form class="workflow"&gt;
-    &lt;transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses"&gt;
-      &lt;div class="step"&gt;
-        &lt;div class="card"&gt;
-          &hellip;
-        &lt;/div&gt;
-      &lt;transition /&gt;
-    &lt;/form&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
     </section>
 
     <hr>
@@ -80,9 +64,9 @@
         </div>
       </form>
 
+      <strong>Markup</strong>
       <div class="code-sample">
-        <pre>
-          <code class="language-markup">&lt;form class="workflow"&gt;
+        <pre><code class="language-markup">&lt;form class="workflow"&gt;
   &lt;div class="step"&gt;
     &lt;div class="card"&gt;
       &lt;header&gt;
@@ -128,8 +112,8 @@
       <div class="workflow-page" id="composition">
         <div class="banner">
           <div class="banner-content">
-            <h5 class="title">Test title</h5>
-            <button type="button" class="flat action" icon>Close</button>
+            <h5 class="banner-title">Test title</h5>
+            <button type="button" class="flat dark banner-action" icon>Close</button>
           </div>
         </div>
 
@@ -173,9 +157,8 @@
         </form>
       </div>
 
-
-      <pre>
-        <code class="language-markup">&lt;form class="workflow"&gt;
+      <strong>Markup</strong>
+      <pre><code class="language-markup">&lt;form class="workflow"&gt;
   &lt;transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses"&gt;
     &lt;div class="step"&gt;
       &lt;div class="card"&gt;
@@ -234,5 +217,6 @@ export default {
   height: 24rem;
   border: 1px solid $black;
   border-radius: 0.25rem;
+  margin-bottom: 1rem;
 }
 </style>
