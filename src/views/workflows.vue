@@ -95,17 +95,17 @@
 
       <p>
         <strong>Transition to next step:</strong>
-        <br>
+        <br />
         current step: <code>'slide-out-left'</code>
-        <br>
+        <br />
         incoming step: <code>'slide-in-right'</code>
       </p>
 
       <p>
         <strong>Transition to previous step:</strong>
-        <br>
+        <br />
         current step: <code>'slide-out-right'</code>
-        <br>
+        <br />
         incoming step: <code>'slide-in-left'</code>
       </p>
 

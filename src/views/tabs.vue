@@ -1,9 +1,8 @@
 <template>
   <article class="container">
-    <h1>Navigation</h1>
+    <h1>Tab Navigation</h1>
 
     <section id="tab-navigation">
-      <h3>Tabs</h3>
       <tabs :tabs="tabs" :active-tab="tab" @clicked="setTab" />
 
       <div v-show="tab === 'template'">
@@ -13,9 +12,7 @@
 &lt;div v-if="tab === 'template'"&gt;&hellip;&lt;/div&gt;
 &hellip;
         </code></pre>
-      </div>
 
-      <div v-if="tab === 'template'">
         <strong>Example usage in a Vue component script</strong>
         <pre><code class="language-js">
 export default {

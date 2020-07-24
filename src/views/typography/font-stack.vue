@@ -1,7 +1,7 @@
 <template>
   <article class="container">
     <section>
-      <h1 id="font-stack">Font Stack</h1>
+      <h1 id="font-stack">Typography — Font Stack</h1>
       <p>We use the same font stack regardless of the device. GT Walsheim is our typeface for it’s friendly and unique personality, as well as its web readability.</p>
 
       <pre>
