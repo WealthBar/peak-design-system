@@ -1,67 +1,74 @@
 <template>
   <article>
     <header class="container">
-      <h1>Containers</h1>
+      <h1>Layout Structures — Containers</h1>
     </header>
+    <section class="container">
+      <p>Container classes are use on page level structural blocks (eg: <code>&lt;header&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>, etc.) to ensure propper alignment and contaimnebt of elements on the page. Useing a container will enuser that a padding is applied to the sides for smaller viewports and the container itself stays cenetered on the page at larger viewport sizes.</p>
+      <p><strong>Tip:</strong> Adjust the size of the browser window on this page to see containers in action.</p>
+    </section>
+    <header class="container"><h3>container</h3></header>
     <section class="example">
       <div class="container visual-container">
         <div>
-          <h3 class="subtle">container</h3>
-          <p>max-width: 80rem</p>
+          <strong>max-width: 80rem</strong>
         </div>
       </div>
     </section>
-
     <div class="code-sample container">
-      <pre>
-        <code class="language-markup">&lt;div class="container"&gt;
+      <strong>Markup</strong>
+      <pre><code class="language-markup">&lt;div class="container"&gt;
   &hellip;
 &lt;/div&gt;</code></pre>
     </div>
 
+    <hr />
+
+    <header class="container"><h3>container-large</h3></header>
     <section class="example">
       <div class="container-large visual-container">
         <div>
-          <h3 class="subtle">container-large</h3>
-          <p>max-width: 64rem</p>
+          <strong>max-width: 64rem</strong>
         </div>
       </div>
     </section>
-
     <div class="code-sample container">
-      <pre>
-        <code class="language-markup">&lt;div class="container-large"&gt;
+      <strong>Markup</strong>
+      <pre><code class="language-markup">&lt;div class="container-large"&gt;
   &hellip;
 &lt;/div&gt;</code></pre>
     </div>
+
+    <hr />
+
+    <header class="container"><h3>container-medium</h3></header>
     <section class="example">
       <div class="container-medium visual-container">
         <div>
-          <h3 class="subtle">container-medium</h3>
-          <p>max-width: 48rem</p>
+          <strong>max-width: 48rem</strong>
         </div>
       </div>
     </section>
-
     <div class="code-sample container">
-      <pre>
-        <code class="language-markup">&lt;div class="container-medium"&gt;
+      <strong>Markup</strong>
+      <pre><code class="language-markup">&lt;div class="container-medium"&gt;
   &hellip;
 &lt;/div&gt;</code></pre>
     </div>
 
+    <hr />
+
+    <header class="container"><h3>container-small</h3></header>
     <section class="example">
       <div class="container-small visual-container">
         <div>
-          <h3 class="subtle">container-small</h3>
-          <p>max-width: 32rem</p>
+          <strong>max-width: 32rem</strong>
         </div>
       </div>
     </section>
-
     <div class="code-sample container">
-      <pre>
-        <code class="language-markup">&lt;div class="container-small"&gt;
+      <strong>Markup</strong>
+      <pre><code class="language-markup">&lt;div class="container-small"&gt;
   &hellip;
 &lt;/div&gt;</code></pre>
     </div>
@@ -88,7 +95,8 @@ export default { };
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      padding: 0 1rem;
+      // padding: 0 1rem;
     }
+    strong { margin: 1rem; }
   }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <article class="container">
     <section id="table">
-      <h2>Table</h2>
+      <h1>Tables</h1>
       <p>Peak provides style for the <code>&lt;table&gt;</code> element</p>
 
       <h3>Default</h3>

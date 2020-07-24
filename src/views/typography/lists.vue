@@ -1,7 +1,7 @@
 <template>
   <article class="container">
     <header>
-      <h1>Lists</h1>
+      <h1>Typography — Lists</h1>
       <div class="page-actions">
         <div>
           <label for="margin-toggle">Show Margins</label>

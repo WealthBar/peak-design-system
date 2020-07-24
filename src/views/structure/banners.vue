@@ -1,67 +1,37 @@
 <template>
   <article>
     <header class="container">
-      <h1>Banners</h1>
+      <h1>Layout Structures — Banners</h1>
     </header>
-
-
-    <header class="container">
-      <h3>banner</h3>
-    </header>
-
+    <section class="container">
+      <p>Header banners are used as the primary navigaional system at the top of a given page. Banners will eventually encompase a variety of style variants. Currently the banner in peak exists for use with <router-link to="workflows">workflows</router-link>.</p>
+    </section>
     <section class="example">
       <header role="banner" class="banner">
         <div class="banner-content">
           <h5 class="banner-title">Test title</h5>
 
           <div class="banner-actions">
-            <button type="button" class="flat" icon>action 1</button>
-            <button type="button" class="flat" icon>action 2</button>
-            <button type="button" class="flat" icon>action 3</button>
+            <button type="button" class="flat dark">First</button>
+            <button type="button" class="flat dark">Second</button>
+            <button type="button" class="flat dark">Third</button>
           </div>
         </div>
       </header>
     </section>
 
     <div class="code-sample container">
-      <pre>
-        <code class="language-markup">&lt;div class="banner"&gt;
+      <strong>Markup</strong>
+      <pre><code class="language-markup">&lt;header role="banner" class="banner"&gt;
   &lt;div class="banner-content"&gt;
     &lt;h5 class="banner-title"&gt;Test title&lt;/h5&gt;
 
     &lt;div class="banner-actions"&gt;
-      &lt;button type="button" class="flat" icon&gt;close&lt;/button&gt;
+      &lt;button type="button" class="flat dark" icon&gt;First&lt;/button&gt;
+      &lt;button type="button" class="flat dark" icon&gt;Second&lt;/button&gt;
+      &lt;button type="button" class="flat dark" icon&gt;Third&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-    </div>
-    <section class="example">
-      <header class="container">
-        <h3>banner flat</h3>
-      </header>
-
-      <div class="banner flat">
-        <div class="banner-content">
-          <h5 class="banner-title">Test title</h5>
-
-          <div class="banner-actions">
-            <button type="button" class="flat" icon>action 1</button>
-            <button type="button" class="flat" icon>action 2</button>
-            <button type="button" class="flat" icon>action 3</button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="code-sample container">
-      <pre>
-        <code class="language-markup">&lt;div class="banner flat"&gt;
-&lt;div class="banner-content"&gt;
-  &lt;h5 class="banner-title"&gt;Test title&lt;/h5&gt;
-
-  &lt;div class="banner-actions"&gt;
-    &lt;button type="button" class="flat" icon&gt;close&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
   </article>
