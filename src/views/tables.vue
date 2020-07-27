@@ -1,13 +1,13 @@
 <template>
   <article class="container">
     <section id="table">
-      <h2>Table</h2>
-      <p>Peak provides style for the <code>&lt;table&gt;</code> element</p>
+      <h2>Tables</h2>
+      <p>Peak provides a <code>table.card</code> style. The basic <code>&lt;table&gt;</code> element remains unstyled.</p>
 
       <h3>Default</h3>
-      <p>Peak's table style is designed for flexibility. As such, it's not opinionated about layout but instead simply provides some visual treatment.</p>
-      <p>Generally, our table designs call for a box-shadow style. To achieve this, use the optional <code>.shadow</code> class.</p>
-      <table class="shadow example">
+      <p>Peak's <code>table.card</code> style is designed for flexibility. As such, it's not opinionated about layout but instead simply provides some visual treatment.</p>
+      <p>Generally, our table designs call for a box-shadow style. To achieve this, use the card's optional <code>.shadow</code> class.</p>
+      <table class="card shadow example">
         <thead>
           <tr>
             <th>Mountain</th>
@@ -33,7 +33,7 @@
           </tr>
         </tbody>
       </table>
-      <pre><code class="language-markup">&lt;table class='shadow'&gt;
+      <pre><code class="language-markup">&lt;table class='card shadow'&gt;
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th&gt;Mountain&lt;/th&gt;
@@ -54,7 +54,7 @@
 
       <h3>Text Alignment</h3>
       <p>Peak has global <code>.center</code> and <code>.right</code> classes, use these to specify alternative text-alignment on a column.</p>
-      <table class="shadow example">
+      <table class="card shadow example">
         <thead>
           <tr>
             <th class="center">Liquid</th>
@@ -84,7 +84,7 @@
       <h3>Total Row</h3>
       <p>Use a <code>&lt;tfoot&gt;</code> to create nice bold 'total' or 'summary' rows.</p>
       <p>Peak has a global <code>.strong</code> class in case you just need single bold cell.</p>
-      <table class="shadow example">
+      <table class="card shadow example">
         <thead>
           <tr>
             <th>Item</th>
@@ -117,7 +117,7 @@
 
       <h3>Hyperlinked Rows</h3>
       <p>To link an entire row, simply use an <code>&lt;a&gt;</code> with <code>role='row'</code> instead of a <code>&lt;tr&gt;</code>. This 'link row' will be given larger padding and a more prominent hover colour. To complete the effect, apply the class <code>.link-row-target</code> to the string that best communicates the destination of the link.</p>
-      <table class="shadow example">
+      <table class="card shadow example">
         <thead>
           <tr>
             <th>Language</th>
@@ -150,7 +150,7 @@
 
       <h3>Small Text</h3>
       <p>Tables can be given a smaller text-size in case they need to be more compact on the page. Simply add the class <code>.small</code>.</p>
-      <table class="shadow small example">
+      <table class="card shadow small example">
         <thead>
           <tr>
             <th>Text Variant</th>
@@ -171,13 +171,13 @@
           </tr>
         </tbody>
       </table>
-      <pre><code class="language-markup">&lt;table class='shadow small'&gt;
+      <pre><code class="language-markup">&lt;table class='card shadow small'&gt;
   // table content, just like the 'default' example
 &lt;/table&gt;</code></pre>
 
       <h3>Large Row Padding</h3>
       <p>For more information-dense and/or click-able rows, a thicker top &amp; bottom cell padding may be necessary. Simply add the class <code>.pad</code>.</p>
-      <table class="shadow pad example">
+      <table class="card shadow pad example">
         <thead>
           <tr>
             <th>Padding Variant</th>
@@ -198,7 +198,7 @@
           </tr>
         </tbody>
       </table>
-      <pre><code class="language-markup">&lt;table class='shadow pad'&gt;
+      <pre><code class="language-markup">&lt;table class='card shadow pad'&gt;
   // table content, just like the 'default' example
 &lt;/table&gt;</code></pre>
     </section>
