@@ -34,7 +34,7 @@ import typography from './typography.data';
 
 export default {
   async beforeRouteEnter(to, from, next) {
-    next('/typography/font-stack');
+    next('/typography/headers');
   },
 
   data() {

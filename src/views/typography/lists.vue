@@ -1,6 +1,6 @@
 <template>
   <article class="container">
-    <header>
+    <header class="peak-title">
       <h1>Typography — Lists</h1>
       <div class="page-actions">
         <div>
@@ -102,43 +102,13 @@ export default {
     return {
       name: 'lists',
       title: 'Lists',
-      showMargin: true,
+      showMargin: false,
     };
   },
 };
 </script>
 
 <style lang="scss" scoped>
-header {
-  @media #{$screen-width-large} {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
-.page-actions{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  @media #{$screen-width-large} {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 0 0 1rem;
-    @media #{$screen-width-large} {
-      margin: 0 0 0 1rem;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-}
-
 section {
   border-bottom: 1px solid $neutral-100;
 }

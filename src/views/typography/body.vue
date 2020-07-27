@@ -1,6 +1,6 @@
 <template>
   <article class="container">
-    <header>
+    <header class="peak-title">
       <h1>Typography — Body Type</h1>
       <div class="page-actions">
         <div>
@@ -107,7 +107,7 @@ export default {
     return {
       name: 'body-type',
       title: 'Body Type',
-      showMargin: true,
+      showMargin: false,
     };
   },
   computed: {
@@ -160,36 +160,6 @@ margin: 0 0 ${this.propValue(tag, 'marginBottom')};`;
 </script>
 
 <style lang="scss" scoped>
-
-header {
-  @media #{$screen-width-large} {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
-.page-actions{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  @media #{$screen-width-large} {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 0 0 1rem;
-    @media #{$screen-width-large} {
-      margin: 0 0 0 1rem;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-}
 
 section {
   padding-bottom: 2rem;

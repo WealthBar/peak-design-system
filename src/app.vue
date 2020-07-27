@@ -1,14 +1,23 @@
 <template>
   <main>
+    <header role="banner" class="banner flat">
+      <div class="banner-content full">
+        <div class="banner-masthead">
+          <button type="button" class="subtle icon dark">
+            <svg viewBox="0 0 32 32">
+              <rect x="3" y="15" width="26" height="2" />
+              <rect x="3" y="6" width="26" height="2" />
+              <rect x="3" y="24" width="26" height="2" />
+            </svg>
+          </button>
+          <router-link to="/">
+            <img class="wb-logo" src="~@/assets/logo.svg" alt="WealthBar" />
+          </router-link>
+        </div>
+      </div>
+    </header>
     <div id="app-view" :class="{'nav-open': navOpen}">
       <div class="side-menu">
-        <div class="menu-header">
-          <router-link to="/">
-            <img class="wb-logo" src="~@/assets/logo.svg" />
-          </router-link>
-          <hr />
-        </div>
-
         <nav class="main-navigation">
           <ul>
             <li>
@@ -20,10 +29,10 @@
               </router-link>
             </li>
             <ul v-if="$route.path.split('/')[1] === 'typography'" class="secondary-nav">
-              <li><router-link to="/typography/font-stack">Font Stack</router-link></li>
               <li><router-link to="/typography/headers">Headers</router-link></li>
               <li><router-link to="/typography/body">Body Text</router-link></li>
               <li><router-link to="/typography/lists">Lists</router-link></li>
+              <li><router-link to="/typography/font-stack">Font Stack</router-link></li>
             </ul>
             <li><router-link to="/colour">Colour</router-link></li>
             <li><router-link to="/buttons">Links &amp; Buttons</router-link></li>
@@ -37,9 +46,9 @@
               </router-link>
             </li>
             <ul v-if="$route.path.split('/')[1] === 'forms'" class="secondary-nav">
-              <li><router-link to="/forms/input">Input Elements</router-link></li>
+              <li><router-link to="/forms/input">Text Type Inputs</router-link></li>
+              <li><router-link to="/forms/non-text-input">Non-Text Inputs</router-link></li>
               <li><router-link to="/forms/non-input">Other Form Elements</router-link></li>
-              <li><router-link to="/forms/spacing">Form Spacing</router-link></li>
             </ul>
 
             <li>
@@ -92,9 +101,7 @@
           </ul>
         </nav>
       </div>
-      <div class="page">
-        <router-view />
-      </div>
+      <div class="page"><router-view /></div>
     </div>
   </main>
 </template>

@@ -2,16 +2,41 @@
 // PrismJS colours
 @import 'prism.scss';
 
+
+header.peak-title {
+  @media #{$screen-width-large} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .page-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @media #{$screen-width-large} {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0 0 1rem;
+      @media #{$screen-width-large} {
+        margin: 0 0 0 1rem;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+
 .toggle {
-  display: block;
-  padding: 0;
-  color: $primary-500;
   border: 1px solid $primary-500;
-  background: transparent;
   border-radius: 1rem;
-  text-decoration: none;
-  line-height: 1.5rem;
-  cursor: pointer;
+  line-height: 1;
   &.inline-label {
     @media #{$screen-width-medium} {
       display: inline-block;
@@ -19,7 +44,7 @@
     }
   }
   span {
-    padding: 0 0.5rem;
+    padding: 0.25rem 0.5rem;
     border-radius: 1rem;
     display: inline-block;
 
@@ -30,7 +55,7 @@
     &[data-active="true"] {
       background: $primary-500;
       color: $white;
-      padding: 0 0.5rem;
+      // padding: 0 0.5rem;
     }
   }
 }

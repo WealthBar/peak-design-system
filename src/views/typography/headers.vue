@@ -1,6 +1,6 @@
 <template>
   <article class="container">
-    <header>
+    <header class="peak-title">
       <h1>Typography — Header Text</h1>
       <div class="page-actions">
         <div>
@@ -84,7 +84,7 @@ export default {
     return {
       name: 'typography',
       title: 'Typography',
-      showMargin: true,
+      showMargin: false,
       typography,
     };
   },
@@ -267,36 +267,6 @@ h5,
 
   &.desktop {
     @include desktop;
-  }
-}
-
-header {
-  @media #{$screen-width-large} {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
-.page-actions{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  @media #{$screen-width-large} {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 0 0 1rem;
-    @media #{$screen-width-large} {
-      margin: 0 0 0 1rem;
-      align-items: center;
-      justify-content: center;
-    }
   }
 }
 

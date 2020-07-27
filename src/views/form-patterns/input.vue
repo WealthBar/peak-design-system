@@ -1,27 +1,90 @@
 <template>
   <article class="container">
-    <h1>Form Patterns - Input Layout</h1>
-
-    <section id="general">
-      <label for="optional-input">Input<span class="optional">optional</span></label>
+    <header class="peak-title">
+      <h1>Form Patterns - Input Layout</h1>
+      <div class="page-actions">
+        <div>
+          <label for="margin-toggle">Show Margins</label>
+          <button id="margin-toggle" class="toggle" @click="showMargin = !showMargin">
+            <span :data-active="showMargin">on</span>
+            <span :data-active="!showMargin">off</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <p>
+      Several common patterns for styling forms have been prebuilt in Peak. Often this requires adding a wrapper, class, or both to a specific element or block of text. Some patterns such as the <code>help message</code> are designed to work inline with sibling elements while others are just variants based on specific attributes such as <code>disabled</code>.
+    </p>
+    <div :class="showMargin ? 'example' : ''">
+      <label for="optional-input">
+        <span>Input</span>
+        <span class="optional">optional label text</span>
+      </label>
       <input id="optional-input" type="text" name="optional-input" />
-      <pre><code class="language-markup">&lt;label for="optional-input"&gt;Input&lt;span class="optional"&gt;optional&lt;/span&gt;&lt;/label&gt;
-&lt;input type="text" id="optional-input" name="optional-input"&gt;</code></pre>
-
-      <label for="disabled-input">Disabled</label>
-      <input id="disabled-input" type="text" name="disabled-input" disabled />
-      <pre><code class="language-markup">&lt;label for="disabled-input"&gt;Disabled&lt;/label&gt;
-&lt;input type="text" id="disabled-input" name="disabled-input" disabled&gt;</code></pre>
 
       <label for="help-input">Help Message</label>
       <input id="help-input" type="text" name="help-input" />
       <p class="help-message">Additional help message</p>
-      <pre><code class="language-markup">&lt;label for="help-input"&gt;Help Message&lt;/label&gt;
+
+      <label for="disabled-input">Disabled</label>
+      <input id="disabled-input" type="text" name="disabled-input" disabled />
+    </div>
+    <strong>Markup</strong>
+    <pre><code class="language-markup">&lt;!-- Optional Label Text --&gt;
+&lt;label for="optional-input"&gt;
+  &lt;span&gt;Input&lt;/span&gt;
+  &lt;span class="optional"&gt;optional label text&lt;/span&gt;
+&lt;/label&gt;
+&lt;input type="text" id="optional-input" name="optional-input"&gt;
+
+&lt;!-- Help Message --&gt;
+&lt;label for="help-input"&gt;Help Message&lt;/label&gt;
 &lt;input type="text" id="help-input" name="help-input"&gt;
-&lt;p class="help-message"&gt;Additional help message&lt;/p&gt;</code></pre>
-    </section>
+&lt;p class="help-message"&gt;Additional help message&lt;/p&gt;
+
+&lt;!-- Disabled Input (text type) --&gt;
+&lt;label for="disabled-input"&gt;Disabled&lt;/label&gt;
+&lt;input type="text" id="disabled-input" name="disabled-input" disabled&gt;
+</code></pre>
   </article>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      showMargin: false,
+    };
+  },
+};
+</script>
+
 <style lang="scss" scoped>
+.example {
+  display: inline-block;
+  width: 100%;
+  background: $tertiary-50;
+  box-shadow: 0 1px 0 0 $tertiary-100;
+
+  label:not(.button),
+  legend {
+    background: $white;
+    box-shadow: 0 1px 0 0 $tertiary-100, 0 -1px 0 0 $tertiary-100;
+    &:first-child {
+      box-shadow: 0 1px 0 0 $tertiary-100;
+    }
+  }
+  .help-message {
+    background: $white;
+    box-shadow: 0 1px 0 0 $tertiary-100, 0 -1px 0 0 $tertiary-100;
+  }
+  fieldset {
+    box-shadow: 0 1px 0 0 $secondary-100, 0 -1px 0 0 $secondary-100;
+    background: $secondary-50;
+    .example,
+    input:last-child {
+      box-shadow: 0 -1px 0 0 $tertiary-100;
+    }
+  }
+}
 </style>
