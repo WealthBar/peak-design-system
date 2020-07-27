@@ -76,6 +76,29 @@
   &lt;/div&gt;
 &lt;/modal&gt;</code></pre>
       <button @click="openModalWithButtons" type="button" v-t>Open Modal With Buttons</button>
+
+      <hr>
+
+      <h3>Markup</h3>
+
+      <p>To help us understand the the HTML structure that Peak's styles work with, here's an example of browser-rendered markup resulting from the use of Peak's Modal component</p>
+
+      <pre><code class="language-markup">&lt;div class="modal-overlay"&gt;&lt;/div&gt;
+&lt;div class="modal-container"&gt;
+  &lt;dialog tabindex="-1"&gt;
+    &lt;header&gt;
+      &lt;h4&gt;A Simple Modal&lt;/h4&gt;
+    &lt;/header&gt;
+    
+    &lt;article&gt;
+      &lt;p data-v-51636f00=""&gt;Hello World!&lt;/p&gt;
+    &lt;/article&gt;
+    
+    &lt;footer&gt;
+      &lt;button data-v-51636f00="" type="button"&gt;OK&lt;/button&gt;
+    &lt;/footer&gt;
+  &lt;/dialog&gt;
+&lt;/div&gt;</code></pre>
     </section>
   </article>
 </template>
