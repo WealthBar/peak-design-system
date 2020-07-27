@@ -2,7 +2,7 @@
   <article class="container">
     <section id="table">
       <h2>Tables</h2>
-      <p>Peak provides a <code>.card</code> style for the <code>&lt;table&gt;</code> element</p>
+      <p>Peak provides a <code>table.card</code> style. The basic <code>&lt;table&gt;</code> element remains unstyled.</p>
 
       <h3>Default</h3>
       <p>Peak's <code>table.card</code> style is designed for flexibility. As such, it's not opinionated about layout but instead simply provides some visual treatment.</p>
