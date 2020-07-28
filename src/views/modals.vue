@@ -89,11 +89,11 @@
     &lt;header&gt;
       &lt;h4&gt;A Simple Modal&lt;/h4&gt;
     &lt;/header&gt;
-    
+
     &lt;article&gt;
       &lt;p data-v-51636f00=""&gt;Hello World!&lt;/p&gt;
     &lt;/article&gt;
-    
+
     &lt;footer&gt;
       &lt;button data-v-51636f00="" type="button"&gt;OK&lt;/button&gt;
     &lt;/footer&gt;
