@@ -22,6 +22,11 @@ FROM node:11-alpine
 WORKDIR /app
 ENV NODE_ENV=production NPM_ENV=production
 
+RUN apk update && \
+  apk add logrotate && \
+  rm -fR /var/cache/apk/*
+COPY build/logrotate /etc/logrotate.d
+
 COPY package.json .
 COPY yarn.lock .
 COPY packages ./packages
@@ -34,4 +39,4 @@ RUN yarn install --frozen-lockfile --prod
 COPY --from=build /app/dist /app/dist
 
 EXPOSE 5001
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "start:logged" ]

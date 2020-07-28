@@ -1,0 +1,4 @@
+/var/log/node/*.log {
+	missingok
+	copytruncate
+}
