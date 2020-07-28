@@ -88,11 +88,11 @@
         <code>no-margin</code> to it.
       </p>
       <div :class="showMargin ? 'example' : ''">
-        <h3 class="no-margin">This is H3 element has no margin.</h3>
+        <p class="no-margin">This p element has no margin.</p>
       </div>
       <strong>Markup</strong>
       <pre>
-        <code class="language-markup">&lt;h3 class="no-margin"&gt;This is H3 element has no margin.&lt;/h3&gt;</code>
+        <code class="language-markup">&lt;p class="no-margin"&gt;This p element has no margin.&lt;/p&gt;</code>
       </pre>
     </section>
   </article>

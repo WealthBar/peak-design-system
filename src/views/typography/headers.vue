@@ -67,10 +67,10 @@
         <strong>Use only as required by design.</strong> Default margins on any header or block element (eg: <code>h2</code> or <code>p</code>) can be removed by adding a class of <code>no-margin</code> to it.
       </p>
       <div :class="showMargin ? 'example' : ''">
-        <h3 class="no-margin">This is H3 element has no margin.</h3>
+        <h3 class="no-margin">This H3 element has no margin.</h3>
       </div>
       <strong>Markup</strong>
-      <pre><code class="language-markup">&lt;h3 class="no-margin"&gt;This is H3 element has no margin.&lt;/h3&gt;</code></pre>
+      <pre><code class="language-markup">&lt;h3 class="no-margin"&gt;This H3 element has no margin.&lt;/h3&gt;</code></pre>
     </section>
   </article>
 </template>
