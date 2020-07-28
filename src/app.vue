@@ -59,7 +59,7 @@
             </router-link>
           </li>
           <ul v-if="$route.path.split('/')[1] === 'form-patterns'" class="secondary-nav">
-            <li><router-link to="/form-patterns/input">Input Layout</router-link></li>
+            <li><router-link to="/form-patterns/input">Input Options</router-link></li>
             <li><router-link to="/form-patterns/inline-button">Inline Button</router-link></li>
             <li><router-link to="/form-patterns/checkbox-radio">Checkbox &amp; Radio</router-link></li>
             <li><router-link to="/form-patterns/layout-patterns">Layout Patterns</router-link></li>

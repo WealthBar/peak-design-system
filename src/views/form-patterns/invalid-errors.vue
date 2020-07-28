@@ -6,12 +6,14 @@
       <label for="invalid-input">Text input</label>
       <input id="invalid-input" type="text" name="invalid-input" class="invalid" />
       <p class="error-message">Optional error messaging</p>
+      <strong>Markup</strong>
       <pre><code class="language-markup">&lt;label for="invalid-text-input"&gt;Input invalid&lt;/label&gt;
 &lt;input type="text" id="invalid-text-input" name="invalid-text-iinput" class="invalid"&gt;
 &lt;p class="error-message"&gt;Error messaging&lt;/p&gt;</code></pre>
 
       <label for="invalid-search">Search input</label>
       <input id="invalid-search" type="search" name="search-input" class="invalid" />
+      <strong>Markup</strong>
       <pre><code class="language-markup">&lt;label for="invalid-search"&gt;Search input&lt;/label&gt;
 &lt;input type="search" id="invalid-search" name="search-input" class="invalid"&gt;</code></pre>
 
@@ -28,6 +30,7 @@
         </svg>
         <span>Optional warning messaging</span>
       </p>
+      <strong>Markup</strong>
       <pre><code class="language-markup">&lt;label for="invalid-inline-button"&gt;Inline Button&lt;/label&gt;
 &lt;div class="inline-button"&gt;
   &lt;input id="invalid-inline-button" type="text" name="invalid-inline-button" class="invalid"&gt;
@@ -44,6 +47,7 @@
         <option value="two">Option 2</option>
         <option value="three">Option 3</option>
       </select>
+      <strong>Markup</strong>
       <pre><code class="language-markup">&lt;label for="invalid-select"&gt;Select&lt;/label&gt;
 &lt;select id="invalid-select" name="invalid-select" class="invalid"&gt;
   &lt;option value="one"&gt;Option 1&lt;/option&gt;
@@ -59,6 +63,7 @@
         <input id="invalid-radio" type="radio" name="invalid-radio" value="invalid-radio" class="invalid" />
         <label for="invalid-radio">Invalid radio</label>
       </fieldset>
+      <strong>Markup</strong>
       <pre><code class="language-markup">&lt;fieldset name="invalid-fieldset" class="invalid"&gt;
   &lt;legend&gt;Fieldset&lt;/legend&gt;
   &lt;input type="checkbox" id="invalid-checkbox" name="invalid-checkbox" class="invalid"&gt;
@@ -70,6 +75,7 @@
         <strong>Invalid border radio</strong>
         <span class="description">Nested span wrapper with <code>description</code> class added to content in label. Can be used with <code>padded</code> and <code>border</code> classes.</span>
       </label>
+      <strong>Markup</strong>
       <pre><code class="language-markup">&lt;input type="radio" id="invalid-border-radio" name="invalid-border-radio" value="invalid-border-radio" class="border invalid"&gt;
 &lt;label for="invalid-border-radio"&gt;
   &lt;strong&gt;Invalid border radio&lt;/strong&gt;
