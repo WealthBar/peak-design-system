@@ -1,12 +1,12 @@
 <template>
   <article class="container">
     <!-- DEFINE MODALS AT THE TOP OF THE FILE, AS A SIBLING TO THE PAGE CONTENT -->
-    <modal :displayed="modalSimple" :title="'A Simple Modal'" @close="closeModalSimple">
+    <modal :displayed="modalSimple" title="A Simple Modal" @close="closeModalSimple">
       <p slot="article">Hello World!</p>
       <button slot="footer" type="button" @click="closeModalSimple">OK</button>
     </modal>
 
-    <modal :displayed="modalWithButtons" :title="'Modal Button Options'" :show-exit="true" @close="closeModalWithButtons">
+    <modal :displayed="modalWithButtons" title="Modal Button Options" :show-exit="true" @close="closeModalWithButtons">
       <div slot="article">
         <p>This modal features the optional 'exit' button in the title bar. This button is not shown by default, but is activated by passing the prop <code>:showExit="true"</code>. The below buttons are marked up inside the <code>footer</code> slot. You can place whatever you like into the <code>footer</code> but in general our designs call for one affirmative and one negatory action.</p>
       </div>
@@ -33,9 +33,9 @@
         <li>Content, marked up using the <code>article</code> slot</li>
         <li>Button(s), marked up using the <code>footer</code> slot</li>
       </ol>
-      <pre><code class="language-markup">&lt;modal :displayed="modal" :title="'A Simple Modal'" @close="closeModal"&gt;
-  &lt;p slot='article'&gt;Hello World!&lt;/p&gt;
-  &lt;button slot='footer' type="button" @click="closeModal"&gt;OK&lt;/button&gt;
+      <pre><code class="language-markup">&lt;modal :displayed="modal" title="A Simple Modal" @close="closeModal"&gt;
+  &lt;p slot="article"&gt;Hello World!&lt;/p&gt;
+  &lt;button slot="footer" type="button" @click="closeModal"&gt;OK&lt;/button&gt;
 &lt;/modal&gt;</code></pre>
 
       <h4>Behaviour</h4>
@@ -65,7 +65,7 @@
         <li>The optional 'Exit' button in the Modal's title bar will appear if you pass the prop <code>:showExit="true"</code></li>
         <li>The <code>footer</code> slot, which generally is intended to contain an affirmative action and a negatory action.</li>
       </ol>
-      <pre><code class="language-markup">&lt;modal :displayed="modal" :title="'Button Demo'" :show-exit="true" @close="closeModal"&gt;
+      <pre><code class="language-markup">&lt;modal :displayed="modal" title="Button Demo" :show-exit="true" @close="closeModal"&gt;
   &lt;div slot="article"&gt;
     &lt;p&gt;Hello World!&lt;/p&gt;
   &lt;/div&gt;
