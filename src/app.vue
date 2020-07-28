@@ -92,6 +92,7 @@
             <li><router-link to="/layout/notice">Notice</router-link></li>
           </ul>
 
+          <li><router-link to="/modals">Modals</router-link></li>
           <li><router-link to="/workflows">Workflows</router-link></li>
           <li><router-link to="/tabs">Tab Navigation</router-link></li>
           <li><router-link to="/tables">Tables</router-link></li>
