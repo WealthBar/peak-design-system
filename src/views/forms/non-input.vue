@@ -13,18 +13,33 @@
           </div>
         </div>
       </header>
+      <p>This covers all non-input elements used in forms. For those unfamiliar — a <code>&lt;fieldset&gt;</code> is a group container for form fields like that are used for a similar purpose. The <code>&lt;legend&gt;</code> is effectivly a label for the fieldset.</p>
       <div :class="showMargin ? 'example' : ''">
         <label for="textarea">Textarea</label>
         <textarea id="textarea" name="textarea"></textarea>
-
+      </div>
+      <strong>Markup</strong>
+      <pre><code class="language-markup">&lt;label for="textarea"&gt;Textarea&lt;/label&gt;
+&lt;textarea id="textarea" name=textarea&gt;&lt;/textarea&gt;
+</code></pre>
+      <div :class="showMargin ? 'example' : ''">
         <label for="select">Select</label>
         <select id="select" name="select">
           <option value="one">Option 1</option>
           <option value="two">Option 2</option>
           <option value="three">Option 3</option>
         </select>
+      </div>
+      <strong>Markup</strong>
+      <pre><code class="language-markup">&lt;label for="select"&gt;Select&lt;/label&gt;
+&lt;select id="select" name="select"&gt;
+  &lt;option value="one"&gt;Option 1&lt;/option&gt;
+  &lt;option value="two"&gt;Option 2&lt;/option&gt;
+  &lt;option value="three"&gt;Option 3&lt;/option&gt;
+&lt;/select&gt;</code></pre>
 
-        <legend>Legend and Fieldset</legend>
+      <div :class="showMargin ? 'example' : ''">
+        <legend>Fieldset and Legend</legend>
         <fieldset>
           <input id="radio-fieldset-one" type="radio" name="radio-fieldset" />
           <label for="radio-fieldset-one">Radio button one in fieldset</label>
@@ -34,25 +49,13 @@
         </fieldset>
       </div>
       <strong>Markup</strong>
-      <pre><code class="language-markup">&lt;!-- textarea element--&gt;
-
-&lt;label for="textarea"&gt;Textarea&lt;/label&gt;
-&lt;textarea id="textarea" name=textarea&gt;&lt;/textarea&gt;
-
-&lt;!-- select element--&gt;
-
-&lt;label for="select"&gt;Select&lt;/label&gt;
-&lt;select id="select" name="select"&gt;
-  &lt;option value="one"&gt;Option 1&lt;/option&gt;
-  &lt;option value="two"&gt;Option 2&lt;/option&gt;
-  &lt;option value="three"&gt;Option 3&lt;/option&gt;
-&lt;/select&gt;
-
-&lt;!-- legend and fieldset elements--&gt;
-
-&lt;legend&gt;Legend and Fieldset&lt;/legend&gt;
+      <pre><code class="language-markup">&lt;legend&gt;Fieldset and Legend&lt;/legend&gt;
 &lt;fieldset&gt;
-  &lt;!-- fieldset content--&gt;
+  &lt;input id="radio-fieldset-one" type="radio" name="radio-fieldset" /&gt;
+  &lt;label for="radio-fieldset-one"&gt;Radio button one in fieldset&lt;/label&gt;
+
+  &lt;input id="radio-fieldset-two" type="radio" name="radio-fieldset" /&gt;
+  &lt;label for="radio-fieldset-two"&gt;Radio button two in fieldset&lt;/label>&gt;
 &lt;/fieldset&gt;</code></pre>
     </section>
   </article>
