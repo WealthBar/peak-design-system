@@ -39,7 +39,7 @@
       </ol>
     </section>
 
-    <hr>
+    <hr />
 
     <section id="step">
       <h3>Steps</h3>
@@ -86,7 +86,7 @@
       </div>
     </section>
 
-    <hr>
+    <hr />
 
     <section id="animation">
       <h3>Animation</h3>
@@ -95,17 +95,17 @@
 
       <p>
         <strong>Transition to next step:</strong>
-        <br>
+        <br />
         current step: <code>'slide-out-left'</code>
-        <br>
+        <br />
         incoming step: <code>'slide-in-right'</code>
       </p>
 
       <p>
         <strong>Transition to previous step:</strong>
-        <br>
+        <br />
         current step: <code>'slide-out-right'</code>
-        <br>
+        <br />
         incoming step: <code>'slide-in-left'</code>
       </p>
 

@@ -22,7 +22,7 @@
       <h2>Modals</h2>
       <p>Modals focus the user’s attention on one task or piece of information via an overlay on top of the page. This pattern is typically used for single-step dialog boxes. Peak's modal styles work at both mobile and desktop screen sizes. As a design pattern, modals work best with a small amount of content.</p>
 
-      <hr>
+      <hr />
 
       <h3>A Simple Modal</h3>
 
@@ -56,7 +56,7 @@
 
       <button @click="openModalSimple" type="button" v-t>Open A Simple Modal</button>
 
-      <hr>
+      <hr />
 
       <h3>Buttons</h3>
 
@@ -77,7 +77,7 @@
 &lt;/modal&gt;</code></pre>
       <button @click="openModalWithButtons" type="button" v-t>Open Modal With Buttons</button>
 
-      <hr>
+      <hr />
 
       <h3>Markup</h3>
 

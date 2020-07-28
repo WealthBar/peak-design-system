@@ -1,7 +1,7 @@
 <template>
   <div>
     <transition name="modal-fade">
-      <div v-if="displayed" class="modal-overlay" />
+      <div v-if="displayed" class="modal-overlay"></div>
     </transition>
 
     <transition name="modal-slide">
@@ -13,11 +13,11 @@
           </header>
 
           <article>
-            <slot name="article" />
+            <slot name="article"></slot>
           </article>
 
           <footer>
-            <slot name="footer" />
+            <slot name="footer"></slot>
           </footer>
         </dialog>
       </div>

@@ -1,171 +1,106 @@
 <template>
   <main>
-    <div id="app-view" :class="{'nav-open': navOpen}">
-      <div class="side-menu">
-        <div class="menu-header">
-          <router-link to="/"><img class="wb-logo" src="~@/assets/logo.svg"></router-link>
-
-          <div class="toggles">
-            <label for="unit-toggle">Units</label>
-            <button id="unit-toggle" class="toggle" @click="toggleUnit">
-              <span v-for="unit in getUnits" :key="unit" :data-active="getSelectedUnit === unit">{{ unit }}</span>
-            </button>
-
-            <label for="screen-toggle">Screen Size</label>
-            <button id="screen-toggle" class="toggle" @click="toggleScreen">
-              <span v-for="screen in getScreens" :key="screen" :data-active="getSelectedScreen === screen">{{ screen }}</span>
-            </button>
-          </div>
-          <hr>
+    <header role="banner" class="banner flat">
+      <div class="banner-content full">
+        <div class="banner-masthead">
+          <button type="button" class="subtle icon dark" @click="toggleNav()">
+            <svg viewBox="0 0 32 32">
+              <rect x="3" y="15" width="26" height="2" />
+              <rect x="3" y="6" width="26" height="2" />
+              <rect x="3" y="24" width="26" height="2" />
+            </svg>
+          </button>
+          <router-link to="/" class="logo">
+            <img class="wb-logo" src="~@/assets/logo.svg" alt="WealthBar Peak Design System Home" />
+          </router-link>
         </div>
-
-        <nav class="main-navigation">
-          <ul>
-            <li>
-              <router-link to="typography">
-                Typography
-                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/typography'}">
-                  <polygon points="11,28 23,16 11,4" />
-                </svg>
-              </router-link>
-            </li>
-            <ul v-if="$route.path === '/typography'">
-              <li class="secondary-link">
-                <a href="#units">Units</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#headers">Headers Text</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#body">Body Text</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#lists">Lists</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#line-length">Line Length</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#font-stack">Font Stack</a>
-              </li>
-            </ul>
-            <li><router-link to="colour">Colour</router-link></li>
-            <li><router-link to="buttons">Links &amp; Buttons</router-link></li>
-            <li>
-              <router-link to="inputs">
-                Form Elements
-                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/inputs'}">
-                  <polygon points="11,28 23,16 11,4" />
-                </svg>
-              </router-link>
-            </li>
-            <ul v-if="$route.path === '/inputs'">
-              <li class="secondary-link">
-                <a href="#text">Text inputs</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#non-text">Non-text inputs</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#non-input">Non-input elements</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#spacing">Input spacing structure</a>
-              </li>
-            </ul>
-            <li>
-              <router-link to="input_patterns">
-                Form Patterns
-                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/input_patterns'}">
-                  <polygon points="11,28 23,16 11,4" />
-                </svg>
-              </router-link>
-            </li>
-            <ul v-if="$route.path === '/input_patterns'">
-              <li class="secondary-link">
-                <a href="#general">General Input Patterns</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#inline">Inline Button Patterns</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#check-radio">Checkbox &amp; Radio Patterns</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#layout">Input Layout Patterns</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#invalid">Invalid &amp; error states</a>
-              </li>
-            </ul>
-            <li>
-              <router-link to="svg">SVG Icons</router-link>
-            </li>
-
-            <li>
-              <router-link to="/layout_structures">
-                Layout Structures
-                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/layout_structures'}">
-                  <polygon points="11,28 23,16 11,4" />
-                </svg>
-              </router-link>
-            </li>
-            <ul v-if="$route.path === '/layout_structures'">
-              <li class="secondary-link">
-                <a href="#container">Container</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#banner">Banner</a>
-              </li>
-            </ul>
-
-            <li>
-              <router-link to="/layout_styles">
-                Layout Styling
-                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/layout_styles'}">
-                  <polygon points="11,28 23,16 11,4" />
-                </svg>
-              </router-link>
-            </li>
-            <ul v-if="$route.path === '/layout_styles'">
-              <li class="secondary-link">
-                <a href="#card">Card</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#notice">Notice</a>
-              </li>
-            </ul>
-
-            <li>
-              <router-link to="/workflows">
-                Workflows
-                <svg viewBox="0 0 32 32" class="reveal-subnav-icon" :class="{'active': $route.path === '/workflows'}">
-                  <polygon points="11,28 23,16 11,4" />
-                </svg>
-              </router-link>
-            </li>
-            <ul v-if="$route.path === '/workflows'">
-              <li class="secondary-link">
-                <a href="#setup">Setup</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#step">Steps</a>
-              </li>
-              <li class="secondary-link">
-                <a href="#animation">Animation</a>
-              </li>
-            </ul>
-
-            <li><router-link to="modals">Modals</router-link></li>
-            <li><router-link to="navigation">Navigation</router-link></li>
-            <li><router-link to="tables">Tables</router-link></li>
-            <li><router-link to="posts">Posts</router-link></li>
+      </div>
+    </header>
+    <div id="app-view" :class="{'nav-closed': navClosed}">
+      <nav class="main-navigation">
+        <ul>
+          <li>
+            <router-link to="/typography">
+              Typography
+              <svg viewBox="0 0 32 32" class="chevron" :class="{'active': $route.path.split('/')[1] === 'typography'}">
+                <polygon points="11,28 23,16 11,4" />
+              </svg>
+            </router-link>
+          </li>
+          <ul v-if="$route.path.split('/')[1] === 'typography'" class="secondary-nav">
+            <li><router-link to="/typography/headers">Headers</router-link></li>
+            <li><router-link to="/typography/body">Body Text</router-link></li>
+            <li><router-link to="/typography/lists">Lists</router-link></li>
+            <li><router-link to="/typography/font-stack">Font Stack</router-link></li>
           </ul>
-        </nav>
-      </div>
-      <div class="page">
-        <router-view />
-      </div>
+          <li><router-link to="/colour">Colour</router-link></li>
+          <li><router-link to="/buttons">Links &amp; Buttons</router-link></li>
+
+          <li>
+            <router-link to="/forms">
+              Forms
+              <svg viewBox="0 0 32 32" class="chevron" :class="{'active': $route.path.split('/')[1] === 'forms'}">
+                <polygon points="11,28 23,16 11,4" />
+              </svg>
+            </router-link>
+          </li>
+          <ul v-if="$route.path.split('/')[1] === 'forms'" class="secondary-nav">
+            <li><router-link to="/forms/input">Text Type Inputs</router-link></li>
+            <li><router-link to="/forms/non-text-input">Non-Text Inputs</router-link></li>
+            <li><router-link to="/forms/non-input">Other Form Elements</router-link></li>
+          </ul>
+
+          <li>
+            <router-link to="/form-patterns">
+              Form Patterns
+              <svg viewBox="0 0 32 32" class="chevron" :class="{'active': $route.path.split('/')[1] === 'form-patterns'}">
+                <polygon points="11,28 23,16 11,4" />
+              </svg>
+            </router-link>
+          </li>
+          <ul v-if="$route.path.split('/')[1] === 'form-patterns'" class="secondary-nav">
+            <li><router-link to="/form-patterns/input">Input Options</router-link></li>
+            <li><router-link to="/form-patterns/inline-button">Inline Button</router-link></li>
+            <li><router-link to="/form-patterns/checkbox-radio">Checkbox &amp; Radio</router-link></li>
+            <li><router-link to="/form-patterns/layout-patterns">Layout Patterns</router-link></li>
+            <li><router-link to="/form-patterns/invalid-errors">Invalid &amp; Errors</router-link></li>
+          </ul>
+
+          <li>
+            <router-link to="/structure">
+              Layout Structures
+              <svg viewBox="0 0 32 32" class="chevron" :class="{'active': $route.path.split('/').includes('structure')}">
+                <polygon points="11,28 23,16 11,4" />
+              </svg>
+            </router-link>
+          </li>
+          <ul v-if="$route.path.split('/')[1] === 'structure'" class="secondary-nav">
+            <li><router-link to="/structure/containers">Containers</router-link></li>
+            <li><router-link to="/structure/banners">Banners</router-link></li>
+          </ul>
+
+          <li>
+            <router-link to="/layout">
+              Layout Styles
+              <svg viewBox="0 0 32 32" class="chevron" :class="{'active': $route.path.split('/')[1] === 'layout'}">
+                <polygon points="11,28 23,16 11,4" />
+              </svg>
+            </router-link>
+          </li>
+          <ul v-if="$route.path.split('/')[1] === 'layout'" class="secondary-nav">
+            <li><router-link to="/layout/card">Card</router-link></li>
+            <li><router-link to="/layout/notice">Notice</router-link></li>
+          </ul>
+
+          <li><router-link to="/modals">Modals</router-link></li>
+          <li><router-link to="/workflows">Workflows</router-link></li>
+          <li><router-link to="/tabs">Tab Navigation</router-link></li>
+          <li><router-link to="/tables">Tables</router-link></li>
+          <li><router-link to="/posts">Posts</router-link></li>
+          <li><router-link to="/svg">SVG Icons</router-link></li>
+        </ul>
+      </nav>
+      <div class="page"><router-view /></div>
     </div>
   </main>
 </template>
@@ -176,12 +111,16 @@ import { mapGetters, mapActions } from '@/lib/vue';
 export default {
   data() {
     return {
-      navOpen: true,
+      navClosed: false,
     };
   },
   computed: {
-    ...mapGetters(['getSelectedUnit', 'getUnits', 'getSelectedScreen', 'getScreens']),
-
+    ...mapGetters([
+      'getSelectedUnit',
+      'getUnits',
+      'getSelectedScreen',
+      'getScreens',
+    ]),
   },
   methods: {
     ...mapActions(['setScreen', 'setUnit']),
@@ -189,119 +128,80 @@ export default {
       this.setUnit(this.getSelectedUnit === 'px' ? 'rem' : 'px');
     },
     toggleScreen() {
-      this.setScreen(this.getSelectedScreen === 'desktop' ? 'mobile' : 'desktop');
+      this.setScreen(
+        this.getSelectedScreen === 'desktop' ? 'mobile' : 'desktop',
+      );
     },
     toggleNav() {
-      this.navOpen = !this.navOpen;
+      this.navClosed = !this.navClosed;
     },
   },
 };
 </script>
 
 <style lang="scss">
-  @import '~@wealthbar/peak-style/scss/base/index';
-  @import '~@wealthbar/peak-style/scss/patterns/index';
-  @import 'peak-states';
+@import "~@wealthbar/peak-style/scss/base/index";
+@import "~@wealthbar/peak-style/scss/patterns/index";
+@import "peak-states";
 
-  main {
-    margin: auto;
-  }
 
-  #app-view {
-    display: flex;
-
-    &.nav-open {
-      .side-menu { width: auto; }
+#app-view {
+  display: flex;
+  &.nav-closed {
+    .main-navigation {
+        left: -18rem;
+        width: 0rem;
     }
   }
+}
 
-  .side-menu {
-    width: 0;
-    flex: 0 0 auto;
-    min-height: 100vh;
-    // overflow: hidden;
-    transition: all 0.3s ease-out;
-    background-color: $neutral-50;
-    border-right: 1px solid $neutral-100;
-  }
-
-  .units-contianer {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
-  }
-
-  .unit-selector {
-    display: flex;
-
-    *:not(:last-child) {
-      border-radius: 0;
-      border-right: none;
-    }
-
-    :first-child { border-radius: 0.25rem 0 0 0.25rem; }
-    :last-child { border-radius: 0 0.25rem 0.25rem 0; }
-  }
-
-  .main-navigation {
-    list-style: none;
-
-    a {
-      text-decoration: none;
-      color: $pearl-900;
-      padding: 0.5rem 1rem;
-      margin: 0.125rem 0;
-      display: flex;
-      align-items: center;
-
-      .reveal-subnav-icon {
-        width: .75rem;
-        margin-left: .5rem;
-
-        transition: transform 200ms;
-        &.active {
-          transform: rotate(90deg);
-        }
-      }
-
-      &:hover, &:focus {
-        background: $primary-50;
-        color: $primary-500;
-      }
-    }
-    .coming-soon { color: $pearl-300; }
-    ul { list-style: none; }
-  }
-
-  .menu-header {
-    a:hover,
-    a:active,
-    a:focus {
-      background-color: transparent;
-    }
-    .toggles {padding: 0 1rem;}
-    .wb-logo {
-      height: 1.6rem;
-      width: 10rem;
-      margin: 1rem 1rem 0;
-    }
-  }
-
-  .wb-logo {
+.logo {
+  display: flex;
+  img {
     height: 1.6rem;
     width: 10rem;
+    margin: 0 0.5rem;
   }
+}
 
-  .page { flex: 1 1 auto; }
+.main-navigation {
+  min-height: 100vh;
+  transition: all 0.3s ease-out;
+  background-color: $neutral-50;
+  border-right: 1px solid $neutral-100;
+  list-style: none;
+  left: 0rem;
+  width: 18rem;
 
-  #menu-toggle {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+  a {
+    text-decoration: none;
+    color: $pearl-900;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .chevron {
+      width: .75rem;
+      margin-left: .5rem;
+      transition: transform 200ms;
+      &.active { transform: rotate(90deg); }
+    }
+
+    &:hover, &:focus, &.router-link-active {
+      background: $primary-50;
+      color: $primary-500;
+    }
   }
-
-  .coming-soon {
-    color: $pearl-500;
+  .secondary-nav {
+    border-top: 1px solid $neutral-300;
+    border-bottom: 1px solid $neutral-300;
+    a { padding-left: 2rem }
   }
+}
 
+.page {
+  display: flex;
+  flex: 1 1 100%;
+}
 </style>

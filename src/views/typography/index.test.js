@@ -1,7 +1,7 @@
 import { shallow } from 'avoriaz';
 import test from 'tape';
 import { stubHelpers } from '@/lib/vue';
-import typography from './typography';
+import typography from './index';
 
 
 test('views/typography unitValue', (t) => {
