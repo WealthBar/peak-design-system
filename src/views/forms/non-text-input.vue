@@ -13,6 +13,8 @@
       </div>
     </header>
 
+    <p>This covers all non-text style <code>&lt;input&gt;</code> elements used in forms.</p>
+
     <section id="non-text">
       <div :class="showMargin ? 'example' : ''">
         <label>Checkbox</label>

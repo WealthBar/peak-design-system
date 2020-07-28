@@ -23,31 +23,33 @@
       <div :class="showMargin ? 'example' : ''">
         <label for="text-input">Text</label>
         <input id="text-input" type="text" name="text-input" />
+      </div>
+      <strong>Markup</strong>
+      <pre><code class="language-markup">&lt;label for="text-input"&gt;Text&lt;/label&gt;
+&lt;input type="text" id="text-input"  name="text-input"&gt;</code></pre>
 
+      <div :class="showMargin ? 'example' : ''">
         <label for="number-input">Number</label>
         <input id="number-input" type="number" name="number-input" pattern="[0-9]*" />
+      </div>
+      <strong>Markup</strong>
+      <pre><code class="language-markup">&lt;label for="number-input"&gt;Number&lt;/label&gt;
+&lt;input type="number" id="number-input" name="number-input" pattern="[0-9]*"&gt;</code></pre>
 
+      <div :class="showMargin ? 'example' : ''">
         <label for="search-input">Search</label>
         <input id="search-input" type="search" name="search-input" placeholder="search" />
+      </div>
+      <strong>Markup</strong>
+      <pre><code class="language-markup">&lt;&lt;label for="search-input"&gt;Search&lt;/label&gt;
+&lt;input type="search" id="search-input" name="search-input" placeholder="search"&gt;</code></pre>
 
+      <div :class="showMargin ? 'example' : ''">
         <label for="password-input">Password</label>
         <input id="password-input" type="password" name="password-input" />
       </div>
       <strong>Markup</strong>
-      <pre><code class="language-markup">&lt;!-- text type input--&gt;
-&lt;label for="text-input"&gt;Text&lt;/label&gt;
-&lt;input type="text" id="text-input"  name="text-input"&gt;
-
-&lt;!-- number type input--&gt;
-&lt;label for="number-input"&gt;Number&lt;/label&gt;
-&lt;input type="number" id="number-input" name="number-input" pattern="[0-9]*"&gt;
-
-&lt;!-- search type input--&gt;
-&lt;label for="search-input"&gt;Search&lt;/label&gt;
-&lt;input type="search" id="search-input" name="search-input" placeholder="search"&gt;
-
-&lt;!-- password type input--&gt;
-&lt;label for="password-input"&gt;Password&lt;/label&gt;
+      <pre><code class="language-markup">&lt;label for="password-input"&gt;Password&lt;/label&gt;
 &lt;input type="password" id="password-input" name="password-input" required&gt;</code></pre>
     </section>
   </article>

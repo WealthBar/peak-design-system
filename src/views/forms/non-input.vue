@@ -78,7 +78,7 @@ export default {
   background: $tertiary-50;
   box-shadow: 0 1px 0 0 $tertiary-100;
 
-  label:not(.button),
+  label,
   legend {
     background: $white;
     box-shadow: 0 1px 0 0 $tertiary-100, 0 -1px 0 0 $tertiary-100;
@@ -86,17 +86,10 @@ export default {
       box-shadow: 0 1px 0 0 $tertiary-100;
     }
   }
-  .help-message {
-    background: $white;
-    box-shadow: 0 1px 0 0 $tertiary-100, 0 -1px 0 0 $tertiary-100;
-  }
   fieldset {
     box-shadow: 0 1px 0 0 $secondary-100, 0 -1px 0 0 $secondary-100;
     background: $secondary-50;
-    .example,
-    input:last-child {
-      box-shadow: 0 -1px 0 0 $tertiary-100;
-    }
+    label { box-shadow: none; }
   }
 }
 </style>
