@@ -9,7 +9,7 @@ image:
 
 service:
   name: peak
-  type: NodePort
+  type: ClusterIP
   port: 80
   targetPort: 5001
 
