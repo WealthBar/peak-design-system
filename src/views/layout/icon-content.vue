@@ -85,7 +85,7 @@
           </svg>
           <strong>No Indent</strong>
         </p>
-        <p>Use the class <code>.no-indent</code> to remove indenting from content.</p>
+        <p>Use the class <code>.no-indent</code> to remove indenting from content. Note this this happens by default on mobile sizes.</p>
       </div>
     </div>
 
@@ -201,7 +201,7 @@
           </svg>
           <strong>No Indent</strong>
         </p>
-        <p>Use the class <code>.no-indent</code> to remove indenting from content.</p>
+        <p>Use the class <code>.no-indent</code> to remove indenting from content. Note this this happens by default on mobile sizes.</p>
       </div>
     </div>
 
