@@ -17,8 +17,8 @@
         <p>The Icon Content pattern allows for an SVG Icon to be used like a bullet on a card's title. Paragraphs and any other content under that title become indented to match the indent of the title text.</p>
         <p>In responsive mobile, body indenting is removed.</p>
       </div>
-      
-      <hr>
+
+      <hr />
 
       <div class="icon-content">
         <svg viewBox="0 0 16 16" title="Information">
@@ -54,7 +54,7 @@
         <p>Use the class <code class="small">.small</code> to get a smaller 0.875rem (14px) font size and tighter leading.</p>
       </div>
 
-      <hr>
+      <hr />
 
       <div class="icon-content large-margin">
         <svg viewBox="0 0 16 16" title="Information">
@@ -64,7 +64,7 @@
         <p>Use the class <code>.large-margin</code> to get a larger 1.5rem (24px) margin around content at desktop sizes.</p>
       </div>
 
-      <hr>
+      <hr />
 
       <div class="icon-content no-indent">
         <svg viewBox="0 0 16 16" title="Information">
@@ -76,7 +76,7 @@
     </div>
 
     <pre><code class="language-markup">&lt;div class="card shadow"&gt;
-  &lt;div class="icon-content small"&gt;  
+  &lt;div class="icon-content small"&gt;
     &lt;svg&gt;...&lt;/svg&gt;
     &lt;p class="strong"&gt;Small&lt;/p&gt;
     &lt;p&gt;A smaller 0.875rem (14px) font size and tighter leading.&lt;/p&gt;
@@ -105,7 +105,7 @@
     <p>Our Notices are designed to display a small amount of information. They work well with a single instance of <code>icon-content</code>.</p>
 
     <div class="notice">
-      <div class="icon-content">   
+      <div class="icon-content">
         <svg viewBox="0 0 16 16" title="Information">
           <path d="M7,9.25 C7.41421356,9.25 7.75,9.58578644 7.75,10 C7.75,10.4142136 7.41421356,10.75 7,10.75 C6.58578644,10.75 6.25,10.4142136 6.25,10 C6.25,9.58578644 6.58578644,9.25 7,9.25 Z M7.5,3 L7.5,8 L6.5,8 L6.5,3 L7.5,3 Z M7,1 C10.3,1 13,3.7 13,7 C13,10.3 10.3,13 7,13 C3.7,13 1,10.3 1,7 C1,3.7 3.7,1 7,1 L7,1 Z M7,0 C3.15,0 0,3.15 0,7 C0,10.85 3.15,14 7,14 C10.85,14 14,10.85 14,7 C14,3.15 10.85,0 7,0 L7,0 Z" transform="matrix(1 0 0 -1 1 15)" />
         </svg>
@@ -124,7 +124,7 @@
       </div>
     </div>
 
-        <pre><code class="language-markup">&lt;div class="notice"&gt;
+    <pre><code class="language-markup">&lt;div class="notice"&gt;
   &lt;div class="icon-content"&gt;
     &lt;svg&gt;...&lt;/svg&gt;
     &lt;p class="strong"&gt;Default&lt;/p&gt;
@@ -156,7 +156,7 @@
         <svg viewBox="0 0 16 16" title="Information">
           <path d="M7,9.25 C7.41421356,9.25 7.75,9.58578644 7.75,10 C7.75,10.4142136 7.41421356,10.75 7,10.75 C6.58578644,10.75 6.25,10.4142136 6.25,10 C6.25,9.58578644 6.58578644,9.25 7,9.25 Z M7.5,3 L7.5,8 L6.5,8 L6.5,3 L7.5,3 Z M7,1 C10.3,1 13,3.7 13,7 C13,10.3 10.3,13 7,13 C3.7,13 1,10.3 1,7 C1,3.7 3.7,1 7,1 L7,1 Z M7,0 C3.15,0 0,3.15 0,7 C0,10.85 3.15,14 7,14 C10.85,14 14,10.85 14,7 C14,3.15 10.85,0 7,0 L7,0 Z" transform="matrix(1 0 0 -1 1 15)" />
         </svg>
-        <p class="strong">Large Margin</strong>
+        <p class="strong">Large Margin</p>
         <p>Use the class <code>.large-margin</code> to get a larger 1.5rem (24px) margin around content at desktop sizes.</p>
       </div>
     </div>
