@@ -24,11 +24,8 @@
       <h3>Box Shadow</h3>
       <div class="example">
         <div class="card shadow">
-          <header>
-            <h3>Shadow Card</h3>
-          </header>
           <article>
-            <p>Card with box shadow. Margin is applied to the contained <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;footer&gt;</code> elements. This box-shdaow variant is generally used on a grey background.</p>
+            <p>Card with box shadow. Margin is applied to the contained <code>&lt;article&gt;</code>. This box-shdaow variant is generally used on a grey background.</p>
           </article>
         </div>
       </div>

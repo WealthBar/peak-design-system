@@ -90,6 +90,7 @@
           <ul v-if="$route.path.split('/')[1] === 'layout'" class="secondary-nav">
             <li><router-link to="/layout/card">Card</router-link></li>
             <li><router-link to="/layout/notice">Notice</router-link></li>
+            <li><router-link to="/layout/icon-content">Icon Content</router-link></li>
           </ul>
 
           <li><router-link to="/modals">Modals</router-link></li>
