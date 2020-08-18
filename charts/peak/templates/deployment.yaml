@@ -18,7 +18,7 @@ spec:
       imagePullSecrets:
         - name: {{ .Release.Name }}-github-package-pull-secret
       containers:
-        - name: {{ .Chart.Name }}
+        - name: web
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
 
