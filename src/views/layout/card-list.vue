@@ -24,9 +24,11 @@
       <h3>Box Shadow</h3>
       <div class="example">
         <div class="card shadow">
-          <article>
-            <p>Card with box shadow. Margin is applied to the contained <code>&lt;article&gt;</code>. This box-shdaow variant is generally used on a grey background.</p>
-          </article>
+          <ul class="card-list flex">
+            <li><span>Card Item</span><svg width="16" height="16" viewBox="0 0 32 32"><polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16"/></svg><span class="pos tab-numbers">$1337</span></li>
+            <li><span>Code Block</span><span class="pos tab-numbers">$69</span></li>
+            <li><span>Design Pattern</span><span class="neg tab-numbers">$420</span></li>
+          </ul>
         </div>
       </div>
       <strong>Markup</strong>
@@ -56,7 +58,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .example {
-    margin-bottom: 1rem;
-  }
+  .example { margin-bottom: 1rem; }
+  svg { width: 1rem; }
 </style>
