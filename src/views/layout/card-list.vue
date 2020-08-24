@@ -13,7 +13,7 @@
             <li>If additional text styling or layout is needed, it can be applied to the list items.</li>
           </ul>
 
-          <hr>
+          <hr />
 
           <ul class="card-list">
             <li>A 'summary row' can be created by placing an <code>hr</code> between two <code>card-list</code>s.</li>
