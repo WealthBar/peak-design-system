@@ -9,7 +9,7 @@
         <div class="card">
           <ul class="card-list">
             <li>Here's <code>card-list</code> in its default form.</li>
-            <li>An unordered list of class <code>card-list</code> is nested insiade a <a href="card">card</a>.</li>
+            <li>An unordered list of class <code>card-list</code> is nested inside a <a href="card">card</a>.</li>
             <li>If additional text styling or layout is needed, it can be applied to the list items.</li>
           </ul>
 
@@ -27,6 +27,10 @@
     &lt;li&gt;…&lt;/li&gt;
     &lt;li&gt;…&lt;/li&gt;
   &lt;/ul&gt;
+  &lt;hr /&gt;
+  &lt;ul class="card-list"&gt;
+    &lt;li&gt;…&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
 
       <hr />
@@ -35,7 +39,7 @@
         <div class="card">
           <ul class="card-list compact">
             <li>Here's <code>card-list</code> with a <code>compact</code> variant.</li>
-            <li>It bhaves the same as default card list but hase tighter spacing</li>
+            <li>It behaves the same as default card list but has tighter spacing</li>
             <li>If additional text styling or layout is needed, it can be applied to the list items.</li>
           </ul>
         </div>
@@ -51,19 +55,6 @@
     </section>
   </article>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      noticeCopy: `
-        Body type is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style
-        classes that can be applied as needed to our base paragraph style.
-      `,
-    };
-  },
-};
-</script>
 
 <style lang="scss" scoped>
   .example { margin-bottom: 1rem; }
