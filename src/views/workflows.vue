@@ -33,7 +33,7 @@
           <span> - workflow step container, each "page" in a flow is a step.</span>
         </li>
         <li>
-          <code>.card</code>
+          <code>.card.modal-view</code>
           <span> - visual treatment and wrapper nested in each <code>.step</code>.</span>
         </li>
       </ol>
@@ -48,7 +48,7 @@
       <p>The step can consists of the following html elements to add desired padding and structure: <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>, or any container element with the <code>card-content</code> class.</p>
       <form class="workflow">
         <div class="step">
-          <div class="card">
+          <div class="card modal-view">
             <header>
               <h3>Some title</h3>
             </header>
@@ -120,7 +120,7 @@
         <form class="workflow" @:submit.prevent>
           <transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses">
             <div class="step" v-if="step === 1" :key="step">
-              <div class="card">
+              <div class="card modal-view">
                 <header>
                   <h3>Step 1</h3>
                 </header>
@@ -128,14 +128,14 @@
                   <h5>Finance Ipsum</h5>
                   <p>Securities default</p>
                 </article>
-                <footer>
+                <footer class="footer-next">
                   <button type="submit" @click.prevent="next(2)">Next</button>
                 </footer>
               </div>
             </div>
 
             <div class="step" v-if="step === 2" :key="step">
-              <div class="card">
+              <div class="card modal-view">
                 <header>
                   <button type="button" class="flat icon before" @click="prev(1)">
                     <svg viewBox="0 0 32 32">
@@ -148,7 +148,7 @@
                 <article>
                   <h5>Finance Ipsum</h5>
                 </article>
-                <footer>
+                <footer class="footer-next">
                   <button type="submit" disabled>Submit</button>
                 </footer>
               </div>
