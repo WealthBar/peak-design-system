@@ -91,6 +91,7 @@
             <li><router-link to="/layout/card">Card</router-link></li>
             <li><router-link to="/layout/notice">Notice</router-link></li>
             <li><router-link to="/layout/icon-content">Icon Content</router-link></li>
+            <li><router-link to="/layout/card-list">Card List</router-link></li>
           </ul>
 
           <li><router-link to="/modals">Modals</router-link></li>
