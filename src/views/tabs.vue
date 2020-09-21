@@ -5,7 +5,7 @@
     <section id="tab-navigation">
       <tabs :tabs="tabs" :active-tab="tab" @clicked="setTab" />
 
-      <div v-show="tab === 'template'">
+      <div tabindex="0" role="tabpanel" aria-labelledby="tab-template" :hidden="tab !== 'template'">
         <strong>Example usage in a Vue component template</strong>
         <pre><code class="language-markup">
 &lt;tabs :tabs="tabs" :activeTab="tab" @clicked="setTab" /&gt;
@@ -41,7 +41,7 @@ export default {
         </code></pre>
       </div>
 
-      <div v-show="tab === 'output'">
+      <div tabindex="0" role="tabpanel" aria-labelledby="tab-output" :hidden="tab !== 'output'">
         <strong>Example browser HTML output when using the Vue component</strong>
         <pre><code class="language-markup">
 &lt;div class="tabs"&gt;
@@ -50,6 +50,10 @@ export default {
   &lt;button to="output" class="tab"&gt; Output &lt;/button&gt;
 &lt;/div&gt;
         </code></pre>
+      </div>
+
+      <div tabindex="0" role="tabpanel" aria-labelledby="tab-third" :hidden="tab !== 'third'">
+        <h2>this is the third option</h2>
       </div>
     </section>
   </article>
@@ -70,6 +74,10 @@ export default {
         {
           name: 'Browser Output',
           route: 'output',
+        },
+        {
+          name: 'Third Option',
+          route: 'third',
         },
       ],
       tab: 'template',
