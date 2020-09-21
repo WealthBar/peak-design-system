@@ -67,16 +67,16 @@ export default {
     },
     tabSwitchNext(index) {
       if (index >= this.tabs.length - 1) {
-        this.tabSwitch(0)
+        this.tabSwitch(0);
       } else {
-        this.tabSwitch(index + 1)
+        this.tabSwitch(index + 1);
       }
     },
     tabSwitchPrev(index) {
       if (index <= 0) {
-        this.tabSwitch(this.tabs.length - 1)
+        this.tabSwitch(this.tabs.length - 1);
       } else {
-        this.tabSwitch(index - 1)
+        this.tabSwitch(index - 1);
       }
     },
   },
