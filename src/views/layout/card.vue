@@ -38,6 +38,31 @@
     &lt;p&gt;Card with box shadow.&lt;/p&gt;
   &lt;/article&gt;
 &lt;/div&gt;</code></pre>
+
+      <hr />
+
+      <h3>Modal-View Card</h3>
+      <div class="example">
+        <div class="card modal-view">
+          <article>
+            <p>Card layout for use with the <code>modal-page</code>/<code>workflow-page</code> views. With larger browser windows the card has a <code>max-width</code> and will center on screen. On mobile devices or small browser windows, it will fill the screen.</p>
+
+            <p>Also to note is the<code>footer-next</code> class which ensures right alignment of the next buttons for use in workflows.</p>
+          </article>
+          <footer class="footer-next">
+            <button type="button">next</button>
+          </footer>
+        </div>
+      </div>
+      <strong>Markup</strong>
+      <pre><code class="language-markup">&lt;div class="card modal-view"&gt;
+  &lt;article&gt;
+    &lt;p&gt;Card as part of a modal/workflow view&lt;/p&gt;
+  &lt;/article&gt;
+  &lt;footer class="footer-next"&gt;
+    &lt;button&gt;next&lt;/button&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;</code></pre>
     </section>
   </article>
 </template>
