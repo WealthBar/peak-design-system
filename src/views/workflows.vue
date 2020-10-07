@@ -68,7 +68,7 @@
       <div class="code-sample">
         <pre><code class="language-markup">&lt;form class="workflow"&gt;
   &lt;div class="step"&gt;
-    &lt;div class="card"&gt;
+    &lt;div class="card modal-view"&gt;
       &lt;header&gt;
         &lt;h3&gt;Header&lt;/h3&gt;
       &lt;/header&gt;
@@ -166,7 +166,7 @@
       <pre><code class="language-markup">&lt;form class="workflow"&gt;
   &lt;transition :enter-active-class="enterClasses" :leave-active-class="leaveClasses"&gt;
     &lt;div class="step"&gt;
-      &lt;div class="card"&gt;
+      &lt;div class="card modal-view"&gt;
         &hellip;
       &lt;/div&gt;
     &lt;/div&gt;
