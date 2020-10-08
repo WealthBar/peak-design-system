@@ -1,6 +1,6 @@
 <template>
-  <article class="post">
-    <section class="post-status">
+  <div class="post">
+    <div class="post-status">
       <div class="status-icon" :class="iconVariant">
         <svg v-if="action === 'create'" viewBox="0 0 32 32">
           <polygon points="28,15 17,15 17,4 15,4 15,15 4,15 4,17 15,17 15,28 17,28 17,17 28,17" />
@@ -21,9 +21,9 @@
         <span><strong>{{ actor }}</strong> {{ status }}</span>
         <time class="subtle">{{ timeString }}</time>
       </div>
-    </section>
+    </div>
     <p v-if="comment" class="post-comment small no-margin">{{ comment }}</p>
-  </article>
+  </div>
 </template>
 
 <script>
