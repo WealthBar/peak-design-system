@@ -23,8 +23,8 @@
         :time-string="post.timeString"
       />
 
-      <pre><code class="language-markup">&lt;article class="post"&gt;
-  &lt;section class="post-status"&gt;
+      <pre><code class="language-markup">&lt;div class="post"&gt;
+  &lt;div class="post-status"&gt;
     &lt;div class="status-icon dark"&gt;
       &lt;svg viewBox="0 0 32 32"&gt;
         &lt;polygon points="11,27.4 1.3,17.7 2.7,16.3 11,24.6 29.3,6.3 30.7,7.7" /&gt;
@@ -34,8 +34,8 @@
       &lt;span&gt;&lt;strong&gt;User&lt;/strong&gt; approved the request.&lt;/span&gt;
       &lt;time class="subtle"&gt;Jan 1 - 1:11pm&lt;/time&gt;
     &lt;/div&gt;
-  &lt;/section&gt;
-&lt;/article&gt;</code></pre>
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
       <h3>Comment Variant</h3>
 
@@ -49,8 +49,8 @@
         :comment="post.comment"
       />
 
-      <pre><code class="language-markup">&lt;article class="post"&gt;
-  &lt;section class="post-status"&gt;
+      <pre><code class="language-markup">&lt;div class="post"&gt;
+  &lt;div class="post-status"&gt;
     &lt;div class="status-icon"&gt;
       &lt;span&gt;U&lt;/span&gt;
     &lt;/div&gt;
@@ -58,9 +58,9 @@
       &lt;span&gt;&lt;strong&gt;User&lt;/strong&gt; left a comment.&lt;/span&gt;
       &lt;time class="subtle"&gt;Jan 2 - 2:00pm&lt;/time&gt;
     &lt;/div&gt;
-  &lt;/section&gt;
+  &lt;/div&gt;
   &lt;p class="post-comment small no-margin"&gt;This is a comment\nIt can be multi-line with an unescaped "\n"&lt;/p&gt;
-&lt;/article&gt;</code></pre>
+&lt;/div&gt;</code></pre>
 
       <h3>Vue Component Details</h3>
 
