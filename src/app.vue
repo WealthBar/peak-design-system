@@ -77,6 +77,7 @@
           <ul v-if="$route.path.split('/')[1] === 'structure'" class="secondary-nav">
             <li><router-link to="/structure/containers">Containers</router-link></li>
             <li><router-link to="/structure/banners">Banners</router-link></li>
+            <li><router-link to="/structure/icon-content">Icon Content</router-link></li>
           </ul>
 
           <li>
@@ -90,7 +91,6 @@
           <ul v-if="$route.path.split('/')[1] === 'layout'" class="secondary-nav">
             <li><router-link to="/layout/card">Card</router-link></li>
             <li><router-link to="/layout/notice">Notice</router-link></li>
-            <li><router-link to="/layout/icon-content">Icon Content</router-link></li>
             <li><router-link to="/layout/card-list">Card List</router-link></li>
           </ul>
 
