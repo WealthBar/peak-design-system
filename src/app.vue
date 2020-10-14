@@ -77,7 +77,7 @@
           <ul v-if="$route.path.split('/')[1] === 'structure'" class="secondary-nav">
             <li><router-link to="/structure/containers">Containers</router-link></li>
             <li><router-link to="/structure/banners">Banners</router-link></li>
-            <li><router-link to="/structure/icon-content">Icon Content</router-link></li>
+            <li><router-link to="/structure/icon-block">Icon Block</router-link></li>
           </ul>
 
           <li>
