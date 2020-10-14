@@ -1,4 +1,4 @@
-FROM d2-alpine as build
+FROM node:12-alpine as build
 
 WORKDIR /app
 
@@ -18,7 +18,7 @@ COPY public ./public
 COPY util ./util
 RUN NODE_ENV=production yarn build
 
-FROM d2-alpine
+FROM node:12-alpine
 WORKDIR /app
 ENV NODE_ENV=production NPM_ENV=production
 
