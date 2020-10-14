@@ -11,10 +11,10 @@ jobs:
       - name: Test
         uses: actions/checkout@v2
 
-      - name: Use Node.js 11
+      - name: Use Node.js 12
         uses: actions/setup-node@v1
         with:
-          version: 11.10.x
+          version: 12.18.x
 
       - name: Run tests
         run: |
