@@ -45,7 +45,7 @@
       <h3>Steps</h3>
       <p>Steps are made for multi-step forms(forms with more than 1 page). The card styling will disappear at the mobile breakpoint, and the step will fill the screen. Step class <strong>must</strong> be nested in <code>workflow</code> class for the style and transitions to work.</p>
 
-      <p>The step can consists of the following html elements to add desired padding and structure: <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>, or any container element with the <code>card-content</code> class.</p>
+      <p>The step can consists of the following html elements to add desired padding and structure: <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>, or any container element with the <code>card-content</code> class. The <code>&lt;footer&gt;</code> must have the <code>.footer-next</code> class when the step has a next or submit button.</p>
       <form class="workflow">
         <div class="step">
           <div class="card modal-view">
@@ -57,8 +57,11 @@
               <p>Term fiat 401k managed shares corporate bonds tax gains funds income maturities downturn yield retirement. Bills district Fitch municipal bonds exchange bull.</p>
             </article>
 
-            <footer>
+            <footer class="footer-next">
               <button type="button">Next</button>
+              <svg viewBox="0 0 32 32">
+                <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
+              </svg>
             </footer>
           </div>
         </div>
@@ -77,8 +80,11 @@
         &lt;p&gt;Body&lt;/p&gt;
       &lt;/article&gt;
 
-      &lt;footer&gt;
+      &lt;footer class="footer-next"&gt;
         &lt;button type="submit"&gt;Okay&lt;/button&gt;
+        &lt;svg viewBox="0 0 32 32"&gt;
+          &lt;polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" /&gt;
+        &lt;/svg&gt;
       &lt;/footer&gt;
     &lt;/div&gt;
   &lt;/div&gt;
