@@ -58,10 +58,12 @@
             </article>
 
             <footer class="footer-next">
-              <button type="button">Next</button>
-              <svg viewBox="0 0 32 32">
-                <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
-              </svg>
+              <button type="button" class="icon after">
+                <span>Next</span>
+                <svg viewBox="0 0 32 32">
+                  <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
+                </svg>
+              </button>
             </footer>
           </div>
         </div>
@@ -81,10 +83,12 @@
       &lt;/article&gt;
 
       &lt;footer class="footer-next"&gt;
-        &lt;button type="submit"&gt;Okay&lt;/button&gt;
-        &lt;svg viewBox="0 0 32 32"&gt;
-          &lt;polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" /&gt;
-        &lt;/svg&gt;
+        &lt;button type="submit" class="icon after"&gt;
+          &lt;span&gt;Okay&lt;span&gt;
+          &lt;svg viewBox="0 0 32 32"&gt;
+            &lt;polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" /&gt;
+          &lt;/svg&gt;
+        &lt;/button&gt;
       &lt;/footer&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -135,7 +139,7 @@
                   <p>Securities default</p>
                 </article>
                 <footer class="footer-next">
-                  <button type="submit" @click.prevent="next(2)">
+                  <button type="submit" class="icon after" @click.prevent="next(2)">
                     <span>Next</span>&nbsp;
                     <svg viewBox="0 0 32 32">
                       <polygon points="14.2,3.3 12.8,4.7 23.1,15 4,15 4,17 23.1,17 12.8,27.3 14.2,28.7 26.9,16" />
