@@ -197,7 +197,6 @@
   </article>
 </template>
 
-
 <style lang="scss" scoped>
   .example {
     margin-bottom: 1rem;

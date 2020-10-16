@@ -146,7 +146,6 @@ export default {
 @import "~@wealthbar/peak-style/scss/patterns/index";
 @import "peak-states";
 
-
 #app-view {
   display: flex;
   &.nav-closed {

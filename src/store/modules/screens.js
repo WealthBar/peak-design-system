@@ -1,4 +1,3 @@
-
 export default {
   state: {
     screens: ['desktop', 'mobile'],
