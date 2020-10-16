@@ -5,7 +5,7 @@ const Test = tape.Test;
 
 const testRun = Test.prototype.run;
 Test.prototype.run = function run(...args) {
-  this.sinon = sinon.sandbox.create({
+  this.sinon = sinon.createSandbox({
     injectInto: this,
     properties: ['stub', 'spy', 'mock', 'clock', 'request'],
     useFakeServer: true,
