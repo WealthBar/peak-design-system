@@ -1,19 +1,20 @@
 <template>
-  <div class="tabs">
+  <div>
     <nav role="tablist" aria-label="Tab List">
       <button
         class="tab"
         v-for="(tab, index) in tabs" :key="index"
-        :aria-selected="isActive(tab.route) ? 'true': 'false'"
-        :aria-controls="`panel-${tab.route}`"
-        :tabindex="isActive(tab.route) ? 0 : -1"
-        :ref="tab.route"
-        :id="`tab-${tab.route}`"
-        @keyup.up="tabSwitchPrev(index)"
-        @keyup.left="tabSwitchPrev(index)"
-        @keyup.down="tabSwitchNext(index)"
-        @keyup.right="tabSwitchNext(index)"
-        @click="setTab(tab.route)"
+        :aria-selected="isActive(tab.id) ? 'true': 'false'"
+        :aria-controls="`panel-${tab.id}`"
+        :tabindex="isActive(tab.id) ? 0 : -1"
+        :ref="tab.id"
+        :id="`tab-${tab.id}`"
+        :disabled="tab.disabled"
+        @keyup.up="switchPrevTab(index)"
+        @keyup.left="switchPrevTab(index)"
+        @keyup.down="switchNextTab(index)"
+        @keyup.right="switchNextTab(index)"
+        @click="setTab(tab)"
       >
         {{ tab.name }}
       </button>
@@ -21,13 +22,13 @@
     <div
       v-for="(tab, index) in tabs"
       :key="index"
-      :id="`panel-${tab.route}`"
+      :id="`panel-${tab.id}`"
       role="tabpanel"
       tabindex="0"
-      :aria-labelledby="`tab-${tab.route}`"
-      :hidden="!isActive(tab.route)"
+      :aria-labelledby="`tab-${tab.id}`"
+      :hidden="!isActive(tab.id)"
     >
-      <slot :name="tab.route"></slot>
+      <slot :name="tab.id"></slot>
     </div>
   </div>
 </template>
@@ -41,50 +42,58 @@ export default {
       },
       type: Array,
     },
-    activeTab: {
-      default: '',
-      type: String,
-    },
   },
   data() {
     return {
-      localTabState: this.activeTab ? this.activeTab : this.tabs[0].route,
+      localTabState: null,
+      enabledTabs: this.tabs.filter(tab => !tab.disabled),
     };
   },
   created() {
-    const startTab = this.$route.query.tab ? this.tabs.find(tab => tab.route === this.$route.query.tab) : this.tabs[0];
-    this.setTab(startTab.route);
+    let startTab = this.tabs[0];
+
+    // If routed to a tab, we validate and set it
+    if (this.$route.query.tab) {
+      startTab = this.tabs.find(tab => tab.id === this.$route.query.tab) || this.tabs[0];
+    }
+
+    // check if it's disabled, if so we take the first non-disabled tab
+    if (startTab.disabled) {
+      startTab = this.tabs.find(tab => !tab.disabled);
+    }
+    this.setTab(startTab);
   },
   methods: {
-    isActive(route) {
-      return this.localTabState === this.getTabRoute(route);
+    isActive(id) {
+      return this.localTabState === id;
     },
-    getTabRoute(route) {
-      return route.replace(' ', '_').toLowerCase();
+    setTab(tab) {
+      this.localTabState = tab.id;
+      this.$emit('change', tab);
     },
-    setTab(route) {
-      this.localTabState = route;
-      this.$router.replace({ query: { tab: route } });
-      this.$emit('clicked', route);
+    switchTab(index) {
+      this.setTab(this.tabs[index]);
+      this.$refs[this.tabs[index].id][0].focus();
     },
-    tabSwitch(index) {
-      this.setTab(this.tabs[index].route);
-      this.isActive(this.tabs[index].route);
-      this.$refs[this.tabs[index].route][0].focus();
-    },
-    tabSwitchNext(index) {
-      if (index >= this.tabs.length - 1) {
-        this.tabSwitch(0);
+    switchNextTab(index) {
+      const currentEnabledTabIndex = this.enabledTabs.findIndex(tab => tab === this.tabs[index]);
+      let nextTabIndex = 0;
+      if (currentEnabledTabIndex >= this.enabledTabs.length - 1) {
+        nextTabIndex = this.tabs.findIndex(tab => tab === this.enabledTabs[0]);
       } else {
-        this.tabSwitch(index + 1);
+        nextTabIndex = this.tabs.findIndex(tab => tab === this.enabledTabs[currentEnabledTabIndex + 1]);
       }
+      this.switchTab(nextTabIndex);
     },
-    tabSwitchPrev(index) {
-      if (index <= 0) {
-        this.tabSwitch(this.tabs.length - 1);
+    switchPrevTab(index) {
+      const currentEnabledTabIndex = this.enabledTabs.findIndex(tab => tab === this.tabs[index]);
+      let prevTabIndex = 0;
+      if (currentEnabledTabIndex <= 0) {
+        prevTabIndex = this.tabs.findIndex(tab => tab === this.enabledTabs[this.enabledTabs.length - 1]);
       } else {
-        this.tabSwitch(index - 1);
+        prevTabIndex = this.tabs.findIndex(tab => tab === this.enabledTabs[currentEnabledTabIndex - 1]);
       }
+      this.switchTab(prevTabIndex);
     },
   },
 };
