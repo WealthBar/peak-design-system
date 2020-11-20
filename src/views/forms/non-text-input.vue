@@ -90,7 +90,7 @@ export default {
   methods: {
     loadFile(event) {
       const file = event.target.files[0];
-      this.fileName = file.name;
+      this.$emit('file-name', file.name);
     },
   },
 };

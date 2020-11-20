@@ -26,7 +26,6 @@
       <strong>Markup</strong>
       <pre><code class="language-markup">&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
 
-
       <h3>Large Text</h3>
       <p>Only designed to work when applied to a paragraph element.</p>
       <div :class="showMargin ? 'example' : ''">
@@ -65,7 +64,6 @@
       <pre>
         <code class="language-markup">&lt;p&gt;This is &lt;span class="subtle"&gt;subtle text&lt;/span&gt; in a paragraph.&lt;/p&gt;</code>
       </pre>
-
 
       <h3>Strong Text</h3>
       <p>

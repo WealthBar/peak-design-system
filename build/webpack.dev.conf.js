@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base.conf');
 const config = require('../config');
 
@@ -32,5 +33,6 @@ module.exports = merge(baseWebpackConfig, {
     new StylelintPlugin({
       files: ['src/**/*.vue', 'src/**/*.scss'],
     }),
+    new ESLintPlugin(),
   ],
 });

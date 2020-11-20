@@ -7,7 +7,6 @@ import app from './app';
 import router from './router';
 import store from './store';
 
-
 /* istanbul ignore next: bootstrap code */
 (function bootstrap() {
   Vue.use(Router);

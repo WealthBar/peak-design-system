@@ -14,7 +14,6 @@
         Headers create hierarchy in a layout and make scanning easy. Use them for content such as page titles or section titles. We have mobile and desktop header styles so that our typography is responsive to screen real estate.
       </p>
 
-
       <h2 id="body">Body Text &amp; Patterns</h2>
       <p>
         Body text is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style patterns that can be applied as needed to our base paragraph style.
