@@ -2,8 +2,8 @@
   "name": "peak-design",
   "version": "1.0.0",
   "private": true,
-  "description": "Boilerplate for new WealthBar Vue apps",
-  "author": "WealthBar <developers@wealthbar.com>",
+  "description": "A design system to craft beautiful, scalable, and consistent experiences for Canadians investing in their futures",
+  "author": "CI Direct Investing <developers@cidirectinvesting.com>",
   "scripts": {
     "build": "node build/build.js",
     "lint": "eslint 'src/**/*.{js,vue}'",
@@ -20,7 +20,7 @@
     "test:watch": "NODE_ENV=test wprun -w -c build/webpack.base.conf.js -r ./util/test_helper.js 'src/**/*.test.js' | tap-spec"
   },
   "dependencies": {
-    "@wealthbar/peak-style": "^2.5.2",
+    "@wealthbar/peak-style": "^2.5.4",
     "compression-webpack-plugin": "^2.0.0",
     "connect-history-api-fallback": "^1.3.0",
     "express": "^4.15.3",
