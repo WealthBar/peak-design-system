@@ -2,8 +2,8 @@
   "name": "peak-design",
   "version": "1.0.0",
   "private": true,
-  "description": "Boilerplate for new WealthBar Vue apps",
-  "author": "WealthBar <developers@wealthbar.com>",
+  "description": "A design system to craft beautiful, scalable, and consistent experiences for Canadians investing in their futures",
+  "author": "CI Direct Investing <developers@cidirectinvesting.com>",
   "scripts": {
     "build": "node build/build.js",
     "lint": "eslint 'src/**/*.{js,vue}'",
