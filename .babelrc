@@ -1,12 +1,11 @@
 {
   "presets": [
-    ["env", { "modules": false }],
-    "stage-2"
+    ["@babel/env", { "modules": false }]
   ],
-  "plugins": ["transform-runtime"],
+  "plugins": ["@babel/plugin-transform-runtime"],
   "env": {
     "test": {
-      "presets": [["env", { "modules": false }], "stage-2"],
+      "presets": [["@babel/env", { "modules": false }]],
       "plugins": [
         [
           "istanbul",

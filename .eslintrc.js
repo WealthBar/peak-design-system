@@ -4,44 +4,29 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint',
     sourceType: 'module',
-    ecmaVersion: 2020
+    ecmaVersion: 2020,
   },
 
   extends: [
-    'airbnb-base',
+    'airbnb-base/legacy',
     'plugin:vue/strongly-recommended',
-    'plugin:vue/essential'
+    'plugin:vue/essential',
   ],
 
   // check if imports actually resolve
   settings: {
     'import/resolver': {
       webpack: {
-        config: 'build/webpack.base.conf.js'
-      }
-    }
+        config: 'build/webpack.base.conf.js',
+      },
+    },
   },
 
   // add your custom rules here
   rules: {
-    'import/extensions': [
-      'error',
-      'always',
-      {
-        js: 'never',
-        vue: 'never'
-      }
-    ],
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: true,
-        optionalDependencies: true,
-        peerDependencies: true
-      }
-    ],
-    'quotes': ['error', 'single'],
-    'max-len': [ 0 ],
+    'comma-dangle': ['error', 'always-multiline'],
+    quotes: ['error', 'single'],
+    'max-len': [0],
     'import/no-duplicates': 0,
     'import/no-named-as-default': 0,
     'no-param-reassign': ['error', { props: false }],
@@ -54,8 +39,8 @@ module.exports = {
     'no-use-before-define': [
       'error',
       {
-        functions: false
-      }
+        functions: false,
+      },
     ],
     'prefer-destructuring': 0,
     'vue/singleline-html-element-content-newline': 0,
@@ -66,36 +51,36 @@ module.exports = {
       {
         html: {
           normal: 'never',
-          void: 'always'
-        }
-      }
+          void: 'always',
+        },
+      },
     ],
     'vue/max-len': [
       'error',
       {
-        'code': 150,
-        'template': 500,
-        'tabWidth': 2,
-        'comments': 80,
-        'ignorePattern': '',
-        'ignoreComments': true,
-        'ignoreTrailingComments': false,
-        'ignoreUrls': true,
-        'ignoreStrings': true,
-        'ignoreTemplateLiterals': true,
-        'ignoreRegExpLiterals': true,
-        'ignoreHTMLAttributeValues': true,
-        'ignoreHTMLTextContents': true,
-      }
+        code: 150,
+        template: 500,
+        tabWidth: 2,
+        comments: 80,
+        ignorePattern: '',
+        ignoreComments: true,
+        ignoreTrailingComments: false,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+        ignoreRegExpLiterals: true,
+        ignoreHTMLAttributeValues: true,
+        ignoreHTMLTextContents: true,
+      },
     ],
     'guard-for-in': 0,
     'no-restricted-syntax': 0,
-    'arrow-parens': 0
+    'arrow-parens': 0,
   },
 
   root: true,
 
   env: {
-    node: true
+    node: true,
   },
 };

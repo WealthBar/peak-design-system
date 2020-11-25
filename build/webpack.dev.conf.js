@@ -1,11 +1,10 @@
 const webpack = require('webpack');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base.conf');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const config = require('../config');
-
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach((name) => {
@@ -28,7 +27,7 @@ module.exports = merge(baseWebpackConfig, {
       inject: true,
       title: 'Peak Design System',
     }),
-    new FriendlyErrorsPlugin(),
+    new ESLintPlugin(),
     new StylelintPlugin({
       files: ['src/**/*.vue', 'src/**/*.scss'],
     }),

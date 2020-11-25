@@ -1,7 +1,8 @@
+/* eslint-disable global-require */
 const path = require('path');
-const { VueLoaderPlugin } = require('vue-loader');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const utils = require('./utils');
 const config = require('../config');
@@ -51,8 +52,13 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              data: `@import "~@wealthbar/peak-style/scss/theme/wealthbar.scss";`,
-              includePaths: ['src/styles'],
+              implementation: require('sass'),
+              // eslint-disable-next-line quotes
+              additionalData: `@import "~@wealthbar/peak-style/scss/theme/wealthbar.scss";`,
+              sassOptions: {
+                includePaths: ['src/styles'],
+                fiber: require('fibers'),
+              },
             },
           },
         ],
@@ -66,13 +72,16 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src')],
+        exclude: file => (
+          /node_modules/.test(file) && !/\.vue\.js/.test(file)
+        ),
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]'),
+          name: utils.assetsPath('img/[name].[contenthash:7].[ext]'),
         },
       },
       {
@@ -80,21 +89,26 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('fonts/[name].[hash:7].[ext]'),
+          name: utils.assetsPath('fonts/[name].[contenthash:7].[ext]'),
         },
       },
     ],
   },
 
   plugins: [
-    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /fr-ca/),
+    new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /fr-ca/),
     // copy public static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, `../${config.build.assetsSubDirectory}`),
-        ignore: ['.*'],
-      },
-    ]),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, `../${config.build.assetsSubDirectory}`),
+          globOptions: {
+            ignore: ['.*'],
+          },
+        },
+      ],
+    }),
+    new MiniCssExtractPlugin(),
     new VueLoaderPlugin(),
   ],
 };

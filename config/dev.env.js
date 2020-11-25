@@ -1,4 +1,4 @@
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const prodEnv = require('./prod.env');
 
 const demoMode = process.env.DEMO_MODE !== 'false';

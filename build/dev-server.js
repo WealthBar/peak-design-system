@@ -1,15 +1,15 @@
-
 const config = require('../config');
 
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV);
 }
-const opn = require('opn');
+const open = require('open');
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
 const proxyMiddleware = require('http-proxy-middleware');
 const webpackConfig = require('./webpack.dev.conf');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // default port where dev server listens for incoming traffic
 const port = process.env.PORT || config.dev.port;
@@ -23,17 +23,16 @@ const app = express();
 const compiler = webpack(webpackConfig);
 
 const devMiddleware = require('webpack-dev-middleware')(compiler, {
-  publicPath: webpackConfig.output.publicPath,
-  quiet: true,
+  publicPath: webpackConfig.output.publicPath
 });
 
 const hotMiddleware = require('webpack-hot-middleware')(compiler, {
-  log: () => {},
+  log: () => {}
 });
 
 // force page reload when html-webpack-plugin template changes
 compiler.hooks.compilation.tap('ValetHtmlReload', (compilation) => {
-  compilation.hooks.htmlWebpackPluginAfterEmit.tapAsync('ValetHtmlReload', (data, cb) => {
+  HtmlWebpackPlugin.getHooks(compilation).afterEmit.tapAsync('ValetHtmlReload', (data, cb) => {
     hotMiddleware.publish({ action: 'reload' });
     cb(null, data);
   });
@@ -74,7 +73,7 @@ devMiddleware.waitUntilValid(() => {
   console.log(`> Listening at ${uri}\n`);
   // when env is testing, don't need open it
   if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
-    opn(uri);
+    open(uri);
   }
   _resolve();
 });

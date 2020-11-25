@@ -1,11 +1,9 @@
 // const path = require('path');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserWebpackPlugin = require('terser-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base.conf');
 const config = require('../config');
 const utils = require('./utils');
@@ -19,13 +17,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('js/[name].[hash].js'),
     chunkFilename: utils.assetsPath('js/[id].[hash].js'),
-  },
-  optimization: {
-    // Should be able to remove with Webpack 5
-    minimizer: [
-      new OptimizeCSSAssetsPlugin({}),
-      new TerserWebpackPlugin({ sourceMap: true }),
-    ],
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
@@ -58,8 +49,8 @@ const webpackConfig = merge(baseWebpackConfig, {
 
 if (config.build.productionGzip) {
   webpackConfig.plugins.push(
-    new CompressionWebpackPlugin({
-      asset: '[path].gz[query]',
+    new CompressionPlugin({
+      filename: '[path].gz[query]',
       algorithm: 'gzip',
       test: new RegExp(`\\.(${config.build.productionGzipExtensions.join('|')})$`),
       threshold: 10240,
