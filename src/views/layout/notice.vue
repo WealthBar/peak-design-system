@@ -64,6 +64,22 @@
           <p>Body type is optimized for web readability. For additional emphasis or de-emphasis, we have 4 style classes that can be applied as needed to our base paragraph style.</p>
         </article>
       </div>
+
+      <h3>Toast Notice</h3>
+      <pre><code class="language-markup">&lt;div class="notice toast"&gt;
+  &lt;p class="notice-content"&gt; … &lt;/p&gt;
+  &lt;button type="button" class="flat dark icon"&gt;
+    &lt;svg&gt; … &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      <div class="notice toast">
+        <p class="notice-content">Adding a class of <code>.toast</code> to the notice allows for the inclusion of a close button icon as sibling to a content block.</p>
+        <button type="button" class="flat dark icon">
+          <svg viewBox="0 0 32 32">
+            <polygon points="26.7,6.7 25.3,5.3 16,14.6 6.7,5.3 5.3,6.7 14.6,16 5.3,25.3 6.7,26.7 16,17.4 25.3,26.7 26.7,25.3 17.4,16" />
+          </svg>
+        </button>
+      </div>
     </section>
   </article>
 </template>
