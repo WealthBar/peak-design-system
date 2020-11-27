@@ -4,7 +4,7 @@
       <h1>Layout Structures — Containers</h1>
     </header>
     <section class="container">
-      <p>Container classes are use on page level structural blocks (eg: <code>&lt;header&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>, etc.) to ensure propper alignment and contaimnebt of elements on the page. Useing a container will enuser that a padding is applied to the sides for smaller viewports and the container itself stays cenetered on the page at larger viewport sizes.</p>
+      <p>Container classes are used on page level structural blocks (eg: <code>&lt;header&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>, etc.) to ensure proper alignment and containment of elements on the page. Using a container will ensure that padding is applied to the sides for smaller viewports and that the container itself stays centred on the page at larger viewport sizes.</p>
       <p><strong>Tip:</strong> Adjust the size of the browser window on this page to see containers in action.</p>
     </section>
     <header class="container"><h3>container</h3></header>

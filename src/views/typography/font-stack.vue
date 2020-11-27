@@ -5,7 +5,7 @@
       <p>We use the same font stack regardless of the device. GT Walsheim is our typeface for it’s friendly and unique personality, as well as its web readability.</p>
 
       <pre>
-        <code class="language-css">font-family: "GT-Walsheim", "Avenir", "Helvetica Neue", Helvetica, Arial, sans-serif;</code>
+        <code class="language-css">font-family: "GT-Walsheim", "Helvetica Neue", Helvetica, Arial, sans-serif;</code>
       </pre>
 
       <h3>Alternative glyphs</h3>
