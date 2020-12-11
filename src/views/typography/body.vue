@@ -94,6 +94,22 @@
       <pre>
         <code class="language-markup">&lt;p class="no-margin"&gt;This p element has no margin.&lt;/p&gt;</code>
       </pre>
+
+      <h3>Capitalization</h3>
+      <p>Several classes are available to help you adjust the capitalization of strings on a page:</p>
+      <ul>
+        <li>you may ask yourself, "what is that beautiful house?"</li>
+        <li class="sentence-case">you may ask yourself, "where does that highway go to?"</li>
+        <li class="title-case">and you may ask yourself, "am i right? am i wrong?"</li>
+        <li class="uppercase">and you may say to yourself, "my god! what have i done?"</li>
+      </ul>
+      <strong>Markup</strong>
+      <pre>
+        <code class="language-markup">&lt;p&gt;what is that beautiful house?&lt;/p&gt;
+&lt;p class="sentence-case"&gt;where does that highway go to?&lt;/p&gt;
+&lt;p class="title-case"&gt;am i right? am i wrong?&lt;/p&gt;
+&lt;p class="uppercase"&gt;my god! what have i done?&lt;/p&gt;</code>
+      </pre>
     </section>
   </article>
 </template>
