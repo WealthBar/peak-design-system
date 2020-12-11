@@ -11,10 +11,10 @@
         <p>This modal features the optional 'exit' button in the title bar. This button is not shown by default, but is activated by passing the prop <code>:showExit="true"</code>. The below buttons are marked up inside the <code>footer</code> slot. You can place whatever you like into the <code>footer</code> but in general our designs call for one affirmative and one negatory action.</p>
       </div>
 
-      <div slot="footer">
+      <template slot="footer">
         <button type="button" @click="closeModalWithButtons">Ok</button>
         <button type="button" class="subtle" @click="closeModalWithButtons">Cancel</button>
-      </div>
+      </template>
     </modal>
     <!-- END MODALS -->
 
@@ -70,10 +70,10 @@
     &lt;p&gt;Hello World!&lt;/p&gt;
   &lt;/div&gt;
 
-  &lt;div slot="footer"&gt;
+  &lt;template slot="footer"&gt;
     &lt;button type="button" @click="confirmAndCloseModal"&gt;Ok&lt;/button&gt;
     &lt;button type="button" class="subtle" @click="closeModal"&gt;Cancel&lt;/button&gt;
-  &lt;/div&gt;
+  &lt;/template&gt;
 &lt;/modal&gt;</code></pre>
       <button @click="openModalWithButtons" type="button" v-t>Open Modal With Buttons</button>
 
