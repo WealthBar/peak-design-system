@@ -34,6 +34,11 @@
           <pre><code class="language-markup">&lt;span class="tab-numbers"&gt;0123456789&lt;/span&gt;</code></pre>
         </div>
       </div>
+
+      <h3>Monospacing</h3>
+      <p>To create monospaced type like you might find in <code>&lt;code&gt;</code> or <code>&lt;pre&gt;</code>, use the class <code>monospace</code>:</p>
+      <p class="monospace">No! It is the bad kind of puppy!</p>
+      <pre><code class="language-markup">&lt;p class="monospace"&gt;No! It is the bad kind of puppy!&lt;/p&gt;</code></pre>
     </section>
   </article>
 </template>
