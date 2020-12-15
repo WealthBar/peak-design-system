@@ -7,12 +7,12 @@
         <template #structure>
           <h2>Base Structure for any tab UI system</h2>
           <p>The following markup represents the basic HTML structure for a working Tab UI system. Developers can choose to build their component or template if they choose but the resulting structure should match this output as closely as possible.</p>
-          <p>The <code>aria-selected="true"</code> and <code>tabindex="0"</code> attributes on each <code>&lt;button&gt;</code> determine and style the currently selected tab. Using the fanciest of javascript, <code>aria-controls="panel-ID"</code> will determine which <code>&lt;div role="tabpanel"&gt;</code> is active by the corrisponding <code>id</code> attribute.</p>
+          <p>The <code>aria-selected="true"</code> and <code>tabindex="0"</code> attributes on each <code>&lt;button&gt;</code> determine and style the currently selected tab. Using the fanciest of javascript, <code>aria-controls="panel-ID"</code> will determine which <code>&lt;div role="tabpanel"&gt;</code> is active by the corresponding <code>id</code> attribute.</p>
           <p>Inactive panels use the <code>hidden</code> attribute. <code>aria-labelledby="tab-ID"</code> ensures labeling by the corrisponding tab and <code>tabindex="0"</code> keeps the keyboard navigation happy.</p>
 
           <strong>Markup</strong>
           <pre><code class="language-markup">&lt;div class="tabs"&gt;
-    &lt;nav role="tablist" aria-label="Tab List""&gt;
+    &lt;nav role="tablist" aria-label="Tab List"&gt;
       &lt;button id="tab-one"
             class="tab"
             aria-controls="panel-one"
@@ -31,7 +31,7 @@
             aria-selected="false"
             tabindex="-1"&gt;Three
       &lt;/button&gt;
-    &lt;nav&gt;
+    &lt;/nav&gt;
 
     &lt;div id="panel-one"
         role="tabpanel"
