@@ -210,16 +210,138 @@
     <hr />
     <section id="data-table">
       <h2>Data Table</h2>
+      <p>Data Tables are designed specifically for the high density of data required by staff UIs. Table cells can be <code>.null</code> classed to visually represent NULL data. There is a column class of <code>.action-col</code> that is used to contain row maniputation (edit/delete) buttons. Additionally the <code>&lt;tfoot&gt;</code> can contain a button to manipulate (add/edit) the table.</p>
+      <table class="data-table example">
+        <thead>
+          <tr>
+            <th>Mountain Name</th>
+            <th>Elevation</th>
+            <th>Lift Count</th>
+            <th>Lodges/Huts</th>
+            <th>Bike Park</th>
+            <th class="action-col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Whistler</td>
+            <td>2182m</td>
+            <td>12</td>
+            <td>5</td>
+            <td>True</td>
+            <td class="action-col">
+              <button type="button" class="outline small icon edit">
+                <svg viewBox="0 0 32 32">
+                  <path d="M29.6,6.6l-4.2-4.2C25,2,24.5,1.8,24,1.8S23,2,22.6,2.4L3,22v7h7L29.6,9.4C30.4,8.6,30.4,7.4,29.6,6.6z M9.2,27H5v-4.2 L20.2,7.6l4.2,4.2L9.2,27z M25.8,10.4l-4.2-4.1L24,4c0,0,0,0,0,0l4.2,4.1L25.8,10.4z" />
+                </svg>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>Blackcomb</td>
+            <td>2400m</td>
+            <td>10</td>
+            <td>4</td>
+            <td class="null">Ø</td>
+            <td class="action-col">
+              <button type="button" class="outline small icon neg delete">
+                <svg viewBox="0 0 32 32">
+                  <path d="M29,5h-7V3c0-1.1-0.9-2-2-2h-8c-1.1,0-2,0.9-2,2v2H3v2h3v21c0,1.7,1.3,3,3,3h14c1.7,0,3-1.3,3-3V7h3V5z M12,3h8v2h-8V3z M24,28c0,0.6-0.4,1-1,1H9c-0.6,0-1-0.4-1-1V7h16V28z" />
+                  <rect x="12" y="10" width="2" height="16" />
+                  <rect x="18" y="10" width="2" height="16" />
+                </svg>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <button type="button" class="outline small icon before">
+            <svg viewBox="0 0 32 32">
+              <polygon points="28,15 17,15 17,4 15,4 15,15 4,15 4,17 15,17 15,28 17,28 17,17 28,17" />
+            </svg>
+            <span>Add</span>
+          </button>
+        </tfoot>
+      </table>
+      <pre><code class="language-markup">&lt;table class="data-table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Mountain Name&lt;/th&gt;
+      &lt;th&gt;Elevation&lt;/th&gt;
+      &lt;th&gt;Lift Count&lt;/th&gt;
+      &lt;th&gt;Lodges/Huts&lt;/th&gt;
+      &lt;th&gt;Bike Park&lt;/th&gt;
+      &lt;th class="action-col"&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Whistler&lt;/td&gt;
+      &lt;td&gt;2182m&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td class="action-col"&gt;
+        &lt;button type="button" class="outline small icon edit"&gt;
+          …
+        &lt;/button&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    …
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;button type="button" class="outline small icon before"&gt;
+      …
+    &lt;/button&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
     </section>
     <hr />
     <section id="data-list">
-      <h2>Data list</h2>
+      <h2>Data List</h2>
+      <p>A Data List represents a <strong>key-value</strong> data set that ca be expressed using only 2 columns and doesn't require headings for the columns.</p>
+      <dl class="data-list example">
+        <div>
+          <dt>Id</dt>
+          <dd>1234</dd>
+        </div>
+        <div>
+          <dt>Name</dt>
+          <dd>Wealthington Bartlet</dd>
+        </div>
+        <div>
+          <dt>User link</dt>
+          <dd><a href="#data-list">This is a Link</a></dd>
+        </div>
+        <div>
+          <dt>Email</dt>
+          <dd>wealthington@ci.test</dd>
+        </div>
+      </dl>
+      <pre><code class="language-markup">&lt;dl class="data-list"&gt;
+  &lt;div&gt; &lt;!-- divs act as key/value pair rows --&gt;
+    &lt;dt&gt;Id&lt;/dt&gt;
+    &lt;dd&gt;1234&lt;/dd&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;dt&gt;Name&lt;/dt&gt;
+    &lt;dd&gt;Wealthington Bartlet&lt;/dd&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;dt&gt;User link&lt;/dt&gt;
+    &lt;dd&gt;&lt;a href="http://peak.wealth.bar"&gt;This is a Link&lt;/a&gt;&lt;/dd&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;dt&gt;Email&lt;/dt&gt;
+    &lt;dd&gt;wealthington@ci.test&lt;/dd&gt;
+  &lt;/div&gt;
+&lt;/dl&gt;</code></pre>
     </section>
   </article>
 </template>
 
 <style lang="scss" scoped>
-  table.example {
+  .example {
     margin-bottom: 1rem;
   }
 </style>
