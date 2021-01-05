@@ -5,10 +5,6 @@
       <h3>Usage Guidelines</h3>
       <h4>Choosing Colour</h4>
       <dl class="data-list">
-        <!-- <thead>
-          <th>Colour</th>
-          <th>When to choose this colour</th>
-        </thead> -->
         <div>
           <dt>Primary</dt>
           <dd>
