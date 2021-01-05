@@ -1,10 +1,15 @@
 <template>
   <article class="container">
-    <section id="table">
-      <h2>Tables</h2>
-      <p>Peak provides a <code>table.card</code> style. The basic <code>&lt;table&gt;</code> element remains unstyled.</p>
-
-      <h3>Default</h3>
+    <h1>Tables</h1>
+    <p>The basic <code>&lt;table&gt;</code> defaults to unstyled.</p>
+    <ul class="bullet">
+      <li><strong><a href="#card-table">Card Table</a></strong> – <code>&lt;table class="card"&gt;</code> — general purpose user facing table.</li>
+      <li><strong><a href="#data-table">Data Table</a></strong> – <code>&lt;table class="data-table"&gt;</code> – table for staff facing UI designed for larger data sets.</li>
+      <li><strong><a href="#data-list">Data List</a></strong> – <code>&lt;dl class="data-list"&gt;</code> — definition list for staff facing UI designed for key-value pairings.</li>
+    </ul>
+    <hr />
+    <section id="card-table">
+      <h2>Card Table</h2>
       <p>Peak's <code>table.card</code> style is designed for flexibility. As such, it's not opinionated about layout but instead simply provides some visual treatment.</p>
       <p>Generally, our table designs call for a box-shadow style. To achieve this, use the card's optional <code>.shadow</code> class.</p>
       <table class="card shadow example">
@@ -201,6 +206,14 @@
       <pre><code class="language-markup">&lt;table class='card shadow pad'&gt;
   // table content, just like the 'default' example
 &lt;/table&gt;</code></pre>
+    </section>
+    <hr />
+    <section id="data-table">
+      <h2>Data Table</h2>
+    </section>
+    <hr />
+    <section id="data-list">
+      <h2>Data list</h2>
     </section>
   </article>
 </template>

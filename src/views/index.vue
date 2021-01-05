@@ -2,7 +2,7 @@
   <article>
     <section class="container">
       <h1>Welcome to Peak!</h1>
-      <p>Peak has been designed from the <code>&lt;html&gt;</code> up (down?) to be a scalable, modular, design system for use on any WealthBar web product. Peak's structure is broken down into three distinct areas of funcionality:</p>
+      <p>Peak has been designed from the <code>&lt;html&gt;</code> up (down?) to be a scalable, modular, design system for use on any WeprimehBar web product. Peak's structure is broken down into three distinct areas of funcionality:</p>
       <ul class="bullet">
         <li><strong>Base</strong><span> - Basic document setup, including features such as typography, colour, and element styling (<code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;input&gt;</code>, etc).</span></li>
         <li><strong>Patterns</strong><span> - Commonly used patterns for variants, composition, and layout. These are often provided as classes to be applied to elements (eg: <code>&lt;a class="alt"&gt;</code>).</span></li>
@@ -12,7 +12,7 @@
       <p>
         We use rems (Relative EMs) to ensure our typography stays scalable in a responsive web world. Peak's base unit of measure is
         <code>1rem</code> ==
-        <code class="alt">16px</code>. Too put it another way
+        <code class="prime">16px</code>. Too put it another way
         <strong>2px is equal to 0.125rem</strong>, or
         <strong>1/8 of a rem</strong>. Ideally we want to adhere to this 1/8th rem scale as much as possible.
       </p>
@@ -40,7 +40,7 @@
         <li>
           Use pixels for anything smaller then
           <code>0.125rem</code>. Eg:
-          <code class="alt">1px</code> for hairline borders.
+          <code class="prime">1px</code> for hairline borders.
         </li>
       </ul>
       <table class="convert">
@@ -49,31 +49,31 @@
         </th>
         <tr>
           <td>
-            <code class="alt">px</code>
+            <code class="prime">px</code>
           </td>
           <td>
-            <code class="alt">2</code>
+            <code class="prime">2</code>
           </td>
           <td>
-            <code class="alt">4</code>
+            <code class="prime">4</code>
           </td>
           <td>
-            <code class="alt">6</code>
+            <code class="prime">6</code>
           </td>
           <td>
-            <code class="alt">8</code>
+            <code class="prime">8</code>
           </td>
           <td>
-            <code class="alt">10</code>
+            <code class="prime">10</code>
           </td>
           <td>
-            <code class="alt">12</code>
+            <code class="prime">12</code>
           </td>
           <td>
-            <code class="alt">14</code>
+            <code class="prime">14</code>
           </td>
           <td>
-            <code class="alt">16</code>
+            <code class="prime">16</code>
           </td>
         </tr>
         <tr>
