@@ -219,9 +219,7 @@
 </template>
 
 <style lang="scss" scoped>
-  #table {
-    .example {
-      margin-bottom: 1rem;
-    }
+  table.example {
+    margin-bottom: 1rem;
   }
 </style>
