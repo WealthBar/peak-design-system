@@ -74,7 +74,7 @@ module.exports = {
       'error',
       {
         'code': 150,
-        'template': 500,
+        'template': 1000,
         'tabWidth': 2,
         'comments': 80,
         'ignorePattern': '',

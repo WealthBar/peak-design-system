@@ -305,10 +305,10 @@
     dom-event-types "^1.0.0"
     lodash "^4.17.4"
 
-"@wealthbar/peak-style@^3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@wealthbar/peak-style/-/peak-style-3.0.2.tgz#08c941670b5623d9d125f3d783c0552163f23860"
-  integrity sha512-7H2jOrHocMTgI9Bhydyq99FX8i97gKIyYcX7yZLkZ42ZfNR9q3Spb+UXr+LKNyCyfDK7Dgm3c8BRNmFq6CbWjA==
+"@wealthbar/peak-style@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@wealthbar/peak-style/-/peak-style-3.1.1.tgz#14960646833696d5454834f63d50640ebbc14232"
+  integrity sha512-MVlNu1zWv5EIXqXr+nhRz3RCi7995PO1Mjqzgadj7wYj6+xGuLf8yUoJGU0SJohSa3W1MhlcNnUNyCCLvlqBmw==
 
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
@@ -7453,10 +7453,10 @@ pretty-ms@^2.1.0:
     parse-ms "^1.0.0"
     plur "^1.0.0"
 
-prismjs@^1.20.0:
-  version "1.20.0"
-  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.20.0.tgz#9b685fc480a3514ee7198eac6a3bf5024319ff03"
-  integrity sha512-AEDjSrVNkynnw6A+B1DsFkd6AVdTnp+/WoUixFRULlCLZVRZlVQMVWio/16jv7G1FscUxQxOQhWwApgbnxr6kQ==
+prismjs@^1.23.0:
+  version "1.23.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.23.0.tgz#d3b3967f7d72440690497652a9d40ff046067f33"
+  integrity sha512-c29LVsqOaLbBHuIbsTxaKENh1N2EQBOHaWv7gkHN4dgRbxSREqDnDbtFJYdpPauS4YCplMSNCABQ6Eeor69bAA==
   optionalDependencies:
     clipboard "^2.0.0"
 
