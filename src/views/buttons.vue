@@ -4,84 +4,88 @@
     <section>
       <h3>Usage Guidelines</h3>
       <h4>Choosing Colour</h4>
-      <dl class="data-list">
-        <div>
-          <dt>Primary</dt>
-          <dd>
+      <table>
+        <thead>
+          <th>Colour</th>
+          <th>When to choose this colour</th>
+        </thead>
+        <tr>
+          <td>Primary</td>
+          <td>
             <p>The most commonly chosen colour</p>
             <p>The default colour choice</p>
-          </dd>
-        </div>
-        <div>
-          <dt>Alternate</dt>
-          <dd>
+          </td>
+        </tr>
+        <tr>
+          <td>Alternate</td>
+          <td>
             <p>If the Primary colour cannot be chosen because of visual clashes</p>
             <p>If there is already a Primary button present</p>
-          </dd>
-        </div>
-        <div>
-          <dt>Alert</dt>
-          <dd>
+          </td>
+        </tr>
+        <tr>
+          <td>Alert</td>
+          <td>
             <p>If actions are suggested, or for warnings</p>
-          </dd>
-        </div>
-        <div>
-          <dt>Negative</dt>
-          <dd>
+          </td>
+        </tr>
+        <tr>
+          <td>Negative</td>
+          <td>
             <p>If actions are destructive, such as deleting an invite or removing a photo</p>
             <p>For important CTAs on marketing collateral</p>
-          </dd>
-        </div>
-        <div>
-          <dt>Positive</dt>
-          <dd>
+          </td>
+        </tr>
+        <tr>
+          <td>Positive</td>
+          <td>
             <p>An additive action in direct contrast with destructive actions</p>
-          </dd>
-        </div>
-      </dl>
+          </td>
+        </tr>
+      </table>
       <h4>Choosing Style</h4>
-      <dl class="data-list">
-        <!-- <thead>
+      <table>
+        <thead>
           <th>Style</th>
           <th>When to choose this style</th>
-        </thead> -->
-        <div>
-          <dt>Primary</dt>
-          <dd>
+        </thead>
+        <tr>
+          <td>Primary</td>
+          <td>
             <p>For primary actions; the most important, common, and/or encouraged action</p>
             <p>Only use 1 primary button per screen</p>
-          </dd>
-        </div>
-        <div>
-          <dt>Outline</dt>
-          <dd>
+          </td>
+        </tr>
+        <tr>
+          <td>Outline</td>
+          <td>
             <p>For mandatory, but secondary actions</p>
             <p>For actions that aren’t common and/or encouraged, but required</p>
             <p>For example, if there are two options, Agree and Disagree and the former is the expected answer, then Agree would use Primary and Disagree would use Outline</p>
-          </dd>
-        </div>
-        <div>
-          <dt>Subtle</dt>
-          <dd>
+          </td>
+        </tr>
+        <tr>
+          <td>Subtle</td>
+          <td>
             <p>For optional actions</p>
             <p>For example, if there are two buttons, <code>Send</code> and <code>Edit</code> for a message and editing it is optional, then <code>Send</code> would use Primary and <code>Edit</code> would use Subtle. If <code>Edit</code> was a mandatory action, then it would use the Outline style instead</p>
-          </dd>
-        </div>
-        <div>
-          <dt>Flat</dt>
-          <dd>
+          </td>
+        </tr>
+        <tr>
+          <td>Flat</td>
+          <td>
             <p>When using a button doesn’t work</p>
             <p>When the screen already has a Primary and Outline button</p>
             <p>Often used for navigation</p>
-          </dd>
-        </div>
-        <div>
-          <dt>Unstyled</dt>
-          <dd>
+          </td>
+        </tr>
+        <tr>
+          <td>Unstyled</td>
+          <td>
             <p>For button actions that should look like text links</p>
-          </dd>
-        </div>
-      </dl>
+          </td>
+        </tr>
+      </table>
     </section>
     <section>
       <h3>Links</h3>
