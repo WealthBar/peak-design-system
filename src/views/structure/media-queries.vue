@@ -40,7 +40,6 @@ $screen-max-small: 'screen and (max-width: 47.999rem)'; // use sparingly - used 
 </template>
 
 <script>
-import 'prismjs/components/prism-scss';
 
 export default { };
 </script>
