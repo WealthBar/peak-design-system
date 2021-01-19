@@ -134,9 +134,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~@wealthbar/peak-style/scss/base/index";
-@import "~@wealthbar/peak-style/scss/patterns/index";
-@import "peak-states";
+@import "../node_modules/@wealthbar/peak-style/scss/base/index";
+@import "../node_modules/@wealthbar/peak-style/scss/patterns/index";
+@import "./styles/peak-states";
 
 
 #app-view {

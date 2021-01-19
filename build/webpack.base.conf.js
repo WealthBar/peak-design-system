@@ -45,16 +45,15 @@ module.exports = {
       {
         test: /\.(scss|css)$/,
         use: [
-          devMode ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
-          // 'postcss-loader',
           {
             loader: 'sass-loader',
             options: {
-              data: `@import "~@wealthbar/peak-style/scss/theme/wealthbar.scss";`,
-              includePaths: ['src/styles'],
+              additionalData: `@import "~@wealthbar/peak-style/scss/theme/wealthbar.scss";`,
             },
           },
+
         ],
       },
       {
