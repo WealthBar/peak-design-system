@@ -148,7 +148,7 @@
                 </footer>
               </div>
             </div>
-
+<!--
             <div class="step" v-if="step === 2" :key="step">
               <div class="card modal-view">
                 <header>
@@ -167,7 +167,7 @@
                   <button type="submit" disabled>Submit</button>
                 </footer>
               </div>
-            </div>
+            </div> -->
           </transition>
         </form>
       </div>
