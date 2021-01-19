@@ -109,24 +109,15 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from '@/lib/vue';
-
 export default {
   data() {
     return {
       navClosed: false,
+      getSelectedUnit: 'rem',
+      getSelectedScreen: 'desktop',
     };
   },
-  computed: {
-    ...mapGetters([
-      'getSelectedUnit',
-      'getUnits',
-      'getSelectedScreen',
-      'getScreens',
-    ]),
-  },
   methods: {
-    ...mapActions(['setScreen', 'setUnit']),
     toggleUnit() {
       this.setUnit(this.getSelectedUnit === 'px' ? 'rem' : 'px');
     },

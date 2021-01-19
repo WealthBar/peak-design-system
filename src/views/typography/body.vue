@@ -124,18 +124,11 @@ export default {
       name: 'body-type',
       title: 'Body Type',
       showMargin: false,
+      getSelectedUnit: 'rem',
+      getSelectedScreen: 'desktop',
     };
   },
-  computed: {
-    ...mapGetters([
-      'getSelectedUnit',
-      'getUnits',
-      'getSelectedScreen',
-      'getScreens',
-    ]),
-  },
   methods: {
-    ...mapActions(['setScreen', 'setUnit']),
     toggleUnit() {
       this.setUnit(this.getSelectedUnit === 'px' ? 'rem' : 'px');
     },

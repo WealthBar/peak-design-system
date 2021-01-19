@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from '@/lib/vue';
 import typography from './typography.data';
 
 export default {
@@ -44,52 +43,6 @@ export default {
       isMobile: false,
       typography,
     };
-  },
-  computed: {
-    ...mapGetters([
-      'getSelectedUnit',
-      'getUnits',
-      'getSelectedScreen',
-      'getScreens',
-    ]),
-  },
-  methods: {
-    ...mapActions(['setScreen', 'setUnit']),
-    toggleUnit() {
-      this.setUnit(this.getSelectedUnit === 'px' ? 'rem' : 'px');
-    },
-    toggleScreen() {
-      this.setScreen(
-        this.getSelectedScreen === 'desktop' ? 'mobile' : 'desktop',
-      );
-    },
-    unitValue(value, ratio = 16) {
-      if (this.getSelectedUnit === 'rem') {
-        return `${value / ratio}${this.getSelectedUnit}`;
-      }
-      return `${value}${this.getSelectedUnit}`;
-    },
-    propScreenValue(tag, prop) {
-      return this.unitValue(typography[tag][this.getSelectedScreen][prop]);
-    },
-    propValue(tag, prop) {
-      return this.unitValue(typography[tag][prop]);
-    },
-    headerStyle(tag) {
-      return `font-size: ${this.propScreenValue(tag, 'fontSize')}
-line-height: ${this.propScreenValue(tag, 'lineHeight')}
-font-weight: bold;
-margin: ${this.propScreenValue(tag, 'marginTop')} 0 ${this.propScreenValue(
-  tag,
-  'marginBottom',
-)};`;
-    },
-    typeStyle(tag) {
-      return `font-size: ${this.propValue(tag, 'fontSize')}
-line-height: ${this.propValue(tag, 'lineHeight')}
-font-weight: normal;
-margin: 0 0 ${this.propValue(tag, 'marginBottom')};`;
-    },
   },
 };
 </script>

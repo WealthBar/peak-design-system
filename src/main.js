@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import prism from 'prismjs';
 import app from './app';
-import store from './store';
+// import store from './store';
 
 import routes from './views/routes';
 
@@ -15,7 +15,7 @@ const router = createRouter({
 /* istanbul ignore next: bootstrap code */
 createApp(app)
   .use(router)
-  .use(store)
+  // .use(store)
   .mixin({ mounted() { prism.highlightAll(); } })
   .mount('#app');
 // (function bootstrap() {

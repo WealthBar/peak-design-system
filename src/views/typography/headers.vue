@@ -76,7 +76,6 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from '@/lib/vue';
 import typography from './typography.data';
 
 export default {
@@ -86,18 +85,11 @@ export default {
       title: 'Typography',
       showMargin: false,
       typography,
+      getSelectedUnit: 'rem',
+      getSelectedScreen: 'desktop',
     };
   },
-  computed: {
-    ...mapGetters([
-      'getSelectedUnit',
-      'getUnits',
-      'getSelectedScreen',
-      'getScreens',
-    ]),
-  },
   methods: {
-    ...mapActions(['setScreen', 'setUnit']),
     toggleScreen() {
       this.setScreen(
         this.getSelectedScreen === 'desktop' ? 'mobile' : 'desktop',
