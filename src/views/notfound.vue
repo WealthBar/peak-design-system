@@ -9,7 +9,7 @@
 <script>
 export default {
   route: {
-    path: '*',
+    path: '/(.*)*',
   },
 
   head: {
