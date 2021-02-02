@@ -15,9 +15,14 @@
     <p>
       <strong>Note for Devs:</strong> Using the generalized naming conventions for colours (<code>$primary-300</code>, <code>$bg-50</code>, <code>$tertiary-100</code>, etc) will automatically swap out colours based on the application build process. If your requirements state to use a specific colour regardless of theme the <code>$[name]-[weight]</code> convention will work (eg: <code>$jade-300</code>)
     </p>
-    <tabs :tabs="tabs" :active-tab="tab" @clicked="setTab" />
-    <wealthbar-theme v-if="tab === 'wealthbar'" />
-    <assante-theme v-if="tab === 'assante'" />
+    <tabs :tabs="tabs" @change="setTab">
+      <template #wealthbar>
+        <wealthbar-theme />
+      </template>
+      <template #assante>
+        <assante-theme />
+      </template>
+    </tabs>
   </article>
 </template>
 
@@ -33,11 +38,13 @@ export default {
       tabs: [
         {
           name: 'WealthBar',
-          route: 'wealthbar',
+          id: 'wealthbar',
+          disabled: false,
         },
         {
           name: 'Assante Connect',
-          route: 'assante',
+          id: 'assante',
+          disabled: false,
         },
       ],
       tab: 'wealthbar',
