@@ -15,7 +15,7 @@
     <p>
       <strong>Note for Devs:</strong> Using the generalized naming conventions for colours (<code>$primary-300</code>, <code>$bg-50</code>, <code>$tertiary-100</code>, etc) will automatically swap out colours based on the application build process. If your requirements state to use a specific colour regardless of theme the <code>$[name]-[weight]</code> convention will work (eg: <code>$jade-300</code>)
     </p>
-    <tabs :tabs="tabs" @change="setTab" >
+    <tabs :tabs="tabs" @change="setTab">
       <template #wealthbar>
         <wealthbar-theme />
       </template>
