@@ -10,7 +10,8 @@
       </ul>
 
       <h2 id="open-source">Peak is open!</h2>
-      <p>The public repo for Peak Style can be found on GitHub — it is free to use and modify under the MIT license. Additionally, Peak Style is also available to download as an NPM dependency.
+      <p>
+        The public repo for Peak Style can be found on GitHub — it is free to use and modify under the MIT license. Additionally, Peak Style is also available to download as an NPM dependency.
       </p>
       <ul class="bullet">
         <li>
