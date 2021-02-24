@@ -8,6 +8,20 @@
         <li><strong>Patterns</strong><span> - Commonly used patterns for variants, composition, and layout. These are often provided as classes to be applied to elements (eg: <code>&lt;a class="alt"&gt;</code>).</span></li>
         <li><strong>Components</strong><span> - Javascript based components (likely Vue or framework dependent) that expand base functionality and interactivity built for reuse. For now these components are located within our working repos — in the future would be served as NPM packages.</span></li>
       </ul>
+
+      <h2 id="open-source">Peak is open!</h2>
+      <p>
+        The public repo for Peak Style can be found on GitHub — it is free to use and modify under the MIT license. Additionally, Peak Style is available to download as an NPM dependency.
+      </p>
+      <ul class="bullet">
+        <li>
+          <a href="https://github.com/WealthBar/peak-style">GitHub repo for Peak Style</a>
+        </li>
+        <li>
+          <a href="https://www.npmjs.com/package/@wealthbar/peak-style">NPM Package @wealthbar/peak-style</a>
+        </li>
+      </ul>
+
       <h2 id="units">Units in Peak: use rem!</h2>
       <p>
         We use rems (Relative EMs) to ensure our typography stays scalable in a responsive web world. Peak's base unit of measure is
