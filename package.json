@@ -1,9 +1,10 @@
 {
-  "name": "peak-design",
-  "version": "1.0.0",
-  "private": true,
+  "name": "peak-design-system",
+  "version": "1.1.0",
+  "contributors": ["Andrew Pengelly", "Sharifa Samuels", "Travis Rempel"],
+  "license": "MIT",
   "description": "A design system to craft beautiful, scalable, and consistent experiences for Canadians investing in their futures",
-  "author": "CI Direct Investing <developers@cidirectinvesting.com>",
+  "author": "CI Direct Investing (WealthBar) <developers@cidirectinvesting.com>",
   "scripts": {
     "build": "node build/build.js",
     "lint": "eslint 'src/**/*.{js,vue}'",
