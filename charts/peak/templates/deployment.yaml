@@ -57,7 +57,7 @@ spec:
               mountPath: "/var/log/node"
 
         - name: logger
-          image: docker.pkg.github.com/nk-wb/remote_syslog/remote_syslog:0.1
+          image: ghcr.io/wealthbar/remote_syslog:latest
           imagePullPolicy: Always
 
           volumeMounts:
