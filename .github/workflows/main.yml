@@ -29,12 +29,10 @@ jobs:
 
       - name: Build
         env:
-          CONTAINER_IMAGE: docker.pkg.github.com/wealthbar/peak-design-system/peak-design-system
-          CONTAINER_REGISTRY: docker.pkg.github.com
-          REGISTRY_USER: jfarseneau-wb
-          REGISTRY_KEY: ${{ secrets.GITHUB_TOKEN }}
+          CONTAINER_REGISTRY: ghcr.io
+          CONTAINER_IMAGE: ghcr.io/wealthbar/peak-design-system
         run: |
-          docker login $CONTAINER_REGISTRY -u $REGISTRY_USER -p $REGISTRY_KEY
+          echo ${{ secrets.GITHUB_TOKEN }} | docker login $CONTAINER_REGISTRY -u $GITHUB_ACTOR --password-stdin
           docker pull $CONTAINER_IMAGE:latest || true
           docker build --cache-from $CONTAINER_IMAGE:latest --build-arg CI_COMMIT_SHA=$GITHUB_SHA -t $CONTAINER_IMAGE:$GITHUB_SHA -t $CONTAINER_IMAGE:latest .
           docker push $CONTAINER_IMAGE:$GITHUB_SHA
@@ -45,14 +43,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: chrnorm/deployment-action@releases/v1
-        name: Start Peak Deployment
-        id: deployment
-        with:
-          token: "${{ github.token }}"
-          target-url: https://peak.wealth.bar/
-          environment: production
-
       - name: Checkout the repo
         uses: actions/checkout@v2
 
@@ -81,23 +71,5 @@ jobs:
           curl -L https://get.helm.sh/helm-v3.0.3-linux-amd64.tar.gz | tar xz
           chmod a+x ./linux-amd64/helm
           ./linux-amd64/helm upgrade --install peak $GITHUB_WORKSPACE/charts/peak --kubeconfig=$GITHUB_WORKSPACE/.kubeconfig --namespace peak-design --atomic --timeout 5m --set image.tag=${GITHUB_SHA}
-
-      - name: Update github with deployment success status
-        if: success()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: "${{ github.token }}"
-          target-url: https://peak.wealth.bar/
-          state: "success"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-
-      - name: Update github with deployment failure status
-        if: failure()
-        uses: chrnorm/deployment-status@releases/v1
-        with:
-          token: "${{ github.token }}"
-          target-url: https://peak.wealth.bar/
-          state: "failure"
-          deployment_id: ${{ steps.deployment.outputs.deployment_id }}
 
     needs: build
